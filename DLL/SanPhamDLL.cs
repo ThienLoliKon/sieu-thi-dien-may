@@ -55,9 +55,9 @@ namespace DLL
 			{
 				entityUpdate.ten_san_pham = updateNew.ten_san_pham;
 				entityUpdate.ma_nha_san_xuat = updateNew.ma_nha_san_xuat;
-				entityUpdate.Email = updateNew.ma_nha_cung_cap;
-				entityUpdate.SoDienThoai = updateNew.khoi_luong;
-				entityUpdate.ChucVu = updateNew.gia_tien;
+				entityUpdate.ma_nha_cung_cap = updateNew.ma_nha_cung_cap;
+				entityUpdate.khoi_luong = updateNew.khoi_luong;
+				entityUpdate.gia_tien = updateNew.gia_tien;
 				entityUpdate.ngay_san_xuat = updateNew.ngay_san_xuat;
 				db.SubmitChanges();
 				return 1;

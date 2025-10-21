@@ -113,6 +113,12 @@ namespace DLL
     partial void Deletevi_pham(vi_pham instance);
     #endregion
 		
+		public DBSTDMDataContext() : 
+				base(global::DLL.Properties.Settings.Default.dien_mayConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
+		
 		public DBSTDMDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
