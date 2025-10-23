@@ -97,7 +97,7 @@ namespace he_thong_dien_may
 			{
 				HeaderText = "Gía tiền",
 				DataPropertyName = "gia_tien",
-				Width = 200,
+				Width = 300,
 				DefaultCellStyle = new DataGridViewCellStyle { Format = "N0" } // Hiển thị số nguyên, có dấu phẩy
 			});
 
