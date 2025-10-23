@@ -128,7 +128,7 @@ namespace BUS
 
 			foreach (var indexData in listData)
 			{
-				dt.Rows.Add(indexData.ma_nha_cung_cap, indexData.ten_san_pham, indexData.ma_nha_cung_cap, indexData.khoi_luong, indexData.gia_tien, indexData.ngay_san_xuat);
+				dt.Rows.Add(indexData.ma_san_pham, indexData.ten_san_pham, indexData.ma_nha_san_xuat, indexData.ma_nha_cung_cap, indexData.khoi_luong, indexData.gia_tien, indexData.ngay_san_xuat);
 			}
 			return dt;
 		}

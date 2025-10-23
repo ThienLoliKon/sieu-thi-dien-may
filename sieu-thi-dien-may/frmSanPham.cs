@@ -31,7 +31,7 @@ namespace he_thong_dien_may
 			cboMaNhaSX.Text = "";
 			cboMaNhaCC.Text = "";
 			txtKhoiLUong.Text = "";
-			txtGiaTien.Text = "";
+			a.Text = "";
 			dtpNgaySanXuat.Value = DateTime.Now;
 		}
 
@@ -60,15 +60,15 @@ namespace he_thong_dien_may
 
 			dgvSanPham.Columns.Add(new DataGridViewTextBoxColumn
 			{
-				HeaderText = "Mã Phiếu Nhập Kho",
-				DataPropertyName = "mã phiếu nhập kho",
+				HeaderText = "Mã sản phẩm",
+				DataPropertyName = "ma_san_pham",
 				Width = 100
 			});
 
 			dgvSanPham.Columns.Add(new DataGridViewTextBoxColumn
 			{
-				HeaderText = "Mã Nhà Cung Cấp",
-				DataPropertyName = "mã nhà cung cấp",
+				HeaderText = "Tên sản phẩm",
+				DataPropertyName = "ten_san_pham",
 				Width = 200
 			});
 
@@ -76,7 +76,7 @@ namespace he_thong_dien_may
 			{
 				HeaderText = "Mã nhà sản xuất",
 				DataPropertyName = "ma_nha_san_xuat",
-				Width = 300
+				Width = 100
 			});
 
 			dgvSanPham.Columns.Add(new DataGridViewTextBoxColumn
@@ -97,7 +97,8 @@ namespace he_thong_dien_may
 			{
 				HeaderText = "Gía tiền",
 				DataPropertyName = "gia_tien",
-				Width = 100
+				Width = 200,
+				DefaultCellStyle = new DataGridViewCellStyle { Format = "N0" } // Hiển thị số nguyên, có dấu phẩy
 			});
 
 			dgvSanPham.Columns.Add(new DataGridViewTextBoxColumn
@@ -113,13 +114,13 @@ namespace he_thong_dien_may
 		private void btnThem_Click(object sender, EventArgs e)
 		{
 			SanPhamBUS bus = new SanPhamBUS();
-			bus.AddSanPham(txtTenSanPham.Text,cboMaNhaSX.ValueMember,cboMaNhaCC.ValueMember,txtKhoiLUong.Text,txtGiaTien.Text,dtpNgaySanXuat.Value);
+			bus.AddSanPham(txtTenSanPham.Text,cboMaNhaSX.ValueMember,cboMaNhaCC.ValueMember,txtKhoiLUong.Text,a.Text,dtpNgaySanXuat.Value);
 			loadData();
 		}
 
 		private void btnSua_Click(object sender, EventArgs e)
 		{
-			bus.UpdateSanPham(txtMaSanPham.Text,txtTenSanPham.Text, cboMaNhaSX.ValueMember, cboMaNhaCC.ValueMember, txtKhoiLUong.Text, txtGiaTien.Text, dtpNgaySanXuat.Value);
+			bus.UpdateSanPham(txtMaSanPham.Text,txtTenSanPham.Text, cboMaNhaSX.ValueMember, cboMaNhaCC.ValueMember, txtKhoiLUong.Text, a.Text, dtpNgaySanXuat.Value);
 			loadData();
 		}
 
@@ -137,8 +138,8 @@ namespace he_thong_dien_may
 
 				txtMaSanPham.Text = dgvSanPham.Rows[line].Cells[0].Value.ToString();
 				txtTenSanPham.Text = dgvSanPham.Rows[line].Cells[1].Value.ToString();
-				cboMaNhaSX.Text = dgvSanPham.Rows[line].Cells[2].Value.ToString();
-				cboMaNhaCC.Text = dgvSanPham.Rows[line].Cells[3].Value.ToString();
+				cboMaNhaSX.SelectedValue = dgvSanPham.Rows[line].Cells[2].Value.ToString();
+				cboMaNhaCC.SelectedValue = dgvSanPham.Rows[line].Cells[3].Value.ToString();
 				txtKhoiLUong.Text = dgvSanPham.Rows[line].Cells[4].Value.ToString();
 				txtGiaTien.Text = dgvSanPham.Rows[line].Cells[5].Value.ToString();
 				dtpNgaySanXuat.Value = Convert.ToDateTime(dgvSanPham.Rows[line].Cells[6].Value);
