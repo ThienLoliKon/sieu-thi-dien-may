@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DLL
 {
-	internal class BaoHanhDLL
+	public class BaoHanhDLL
 	{
 		DBSTDMDataContext db = new DBSTDMDataContext();
 		public BaoHanhDLL()
@@ -70,7 +70,7 @@ namespace DLL
 		{
 			List<bao_hanh> list = new List<bao_hanh>();
 			IEnumerable<bao_hanh> query = from item in db.bao_hanhs
-										  where item.ma_khach_hang.Contains(name_id)
+										  where item.ma_khach_hang.Contains(name_id) || item.ma_bao_hanh.Contains(name_id)
 										  select item;
 			foreach (var item in query)
 			{
@@ -78,6 +78,30 @@ namespace DLL
 			}
 			return list;
 		}
+		public string TaoMaBaoHanh()
+		{
+			// Lấy danh sách mã TacGia và kiểm tra có dữ liệu hay không
+			var listItem = db.bao_hanhs.Select(p => p.ma_bao_hanh).ToList();
 
+			int maxId = 0;
+
+			if (listItem.Any()) // Kiểm tra nếu có dữ liệu
+			{
+				maxId = listItem
+							.Where(m => m.StartsWith("SP")) // Lọc các mã bắt đầu bằng "TG"
+							.Select(m => int.Parse(m.Substring(3))) // Lấy phần số sau "TG"
+							.Max(); // Lấy giá trị lớn nhất
+			}
+
+			// Tăng giá trị ID lớn nhất
+			maxId++;
+
+			// Tạo mã mới với tiền tố "NXB" và đảm bảo đúng định dạng
+			return "SP" + maxId.ToString("D3");
+		}
+		public bool check(string id)
+		{
+			return db.bao_hanhs.Any(p => p.ma_bao_hanh == id);
+		}
 	}
 }

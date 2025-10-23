@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,87 +17,110 @@ namespace he_thong_dien_may
 		{
 			InitializeComponent();
 		}
+		SanPhamBUS bus = new SanPhamBUS();
 
+		public void loadData()
+		{
+			dgvSanPham.DataSource = bus.GetAllSanPhamAsTable();
+		}
 		
-
-		private void txtNgayXS_TextChanged(object sender, EventArgs e)
+		public void clearData()
 		{
-
+			txtMaSanPham.Text = "";
+			txtTenSanPham.Text = "";
+			cboMaNhaSX.Text = "";
+			cboMaNhaCC.Text = "";
+			txtKhoiLUong.Text = "";
+			txtGiaTien.Text = "";
+			dtpNgaySanXuat.Value = DateTime.Now;
 		}
 
-		private void txtGiaTien_Click(object sender, EventArgs e)
+		public void loadNhaSX()
 		{
-
+			//load nha san xuat
+			NhaSXBUS busNhaSX = new NhaSXBUS();
+			cboMaNhaSX.DataSource = busNhaSX.GetAllNhaCungCapAsTable();
+			cboMaNhaSX.DisplayMember = "ten_nha_san_xuat";
+			cboMaNhaSX.ValueMember = "ma_nha_san_xuat";
 		}
 
-		private void foreverTextBox5_TextChanged(object sender, EventArgs e)
+		public void loadNhaCC()
 		{
-
+			//load nha cung cap
+			NhaCCBUS busNhaCC = new NhaCCBUS();
+			cboMaNhaCC.DataSource = busNhaCC.GetAllNhaCungCapAsTable();
+			cboMaNhaCC.DisplayMember = "ten_nha_cung_cap";
+			cboMaNhaCC.ValueMember = "ma_nha_cung_cap";
 		}
 
-		private void foreverLabel8_Click(object sender, EventArgs e)
+
+		private void frmSanPham_Load(object sender, EventArgs e)
 		{
+			dgvSanPham.AutoGenerateColumns = false;
 
+			dgvSanPham.Columns.Add(new DataGridViewTextBoxColumn
+			{
+				HeaderText = "Mã Phiếu Nhập Kho",
+				DataPropertyName = "mã phiếu nhập kho",
+				Width = 100
+			});
+
+			dgvSanPham.Columns.Add(new DataGridViewTextBoxColumn
+			{
+				HeaderText = "Mã Nhà Cung Cấp",
+				DataPropertyName = "mã nhà cung cấp",
+				Width = 200
+			});
+
+			dgvSanPham.Columns.Add(new DataGridViewTextBoxColumn
+			{
+				HeaderText = "Mã nhà sản xuất",
+				DataPropertyName = "ma_nha_san_xuat",
+				Width = 300
+			});
+
+			dgvSanPham.Columns.Add(new DataGridViewTextBoxColumn
+			{
+				HeaderText = "Mã nhà cung cấp",
+				DataPropertyName = "ma_nha_cung_cap",
+				Width = 100
+			});
+
+			dgvSanPham.Columns.Add(new DataGridViewTextBoxColumn
+			{
+				HeaderText = "Khối lượng",
+				DataPropertyName = "khoi_luong",
+				Width = 100
+			});
+
+			dgvSanPham.Columns.Add(new DataGridViewTextBoxColumn
+			{
+				HeaderText = "Gía tiền",
+				DataPropertyName = "gia_tien",
+				Width = 100
+			});
+
+			dgvSanPham.Columns.Add(new DataGridViewTextBoxColumn
+			{
+				HeaderText = "Ngày sản xuất",
+				DataPropertyName = "ngay_san_xuat",
+				Width = 200
+			});
+			loadData();
+			loadNhaCC();
+			loadNhaSX();
 		}
-
-		private void txtKhoiLUong_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void foreverLabel4_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void txtMaNCC_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void foreverLabel3_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void txtMaNXS_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void foreverLabel2_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void txtTenSanPham_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void foreverLabel1_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void txtMaSanPham_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void foreverLabel6_Click(object sender, EventArgs e)
-		{
-
-		}
-
 		private void btnThem_Click(object sender, EventArgs e)
 		{
-
+			SanPhamBUS bus = new SanPhamBUS();
+			bus.AddSanPham(txtTenSanPham.Text,cboMaNhaSX.ValueMember,cboMaNhaCC.ValueMember,txtKhoiLUong.Text,txtGiaTien.Text,dtpNgaySanXuat.Value);
+			loadData();
 		}
 
 		private void btnSua_Click(object sender, EventArgs e)
 		{
-
+			bus.UpdateSanPham(txtMaSanPham.Text,txtTenSanPham.Text, cboMaNhaSX.ValueMember, cboMaNhaCC.ValueMember, txtKhoiLUong.Text, txtGiaTien.Text, dtpNgaySanXuat.Value);
+			loadData();
 		}
 
 		private void btnThoat_Click(object sender, EventArgs e)
@@ -104,14 +128,27 @@ namespace he_thong_dien_may
 			this.Close();
 		}
 
-		private void poisonDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
 
+		private void dgvSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			try
+			{
+				int line = dgvSanPham.CurrentCell.RowIndex;
+
+				txtMaSanPham.Text = dgvSanPham.Rows[line].Cells[0].Value.ToString();
+				txtTenSanPham.Text = dgvSanPham.Rows[line].Cells[1].Value.ToString();
+				cboMaNhaSX.Text = dgvSanPham.Rows[line].Cells[2].Value.ToString();
+				cboMaNhaCC.Text = dgvSanPham.Rows[line].Cells[3].Value.ToString();
+				txtKhoiLUong.Text = dgvSanPham.Rows[line].Cells[4].Value.ToString();
+				txtGiaTien.Text = dgvSanPham.Rows[line].Cells[5].Value.ToString();
+				dtpNgaySanXuat.Value = Convert.ToDateTime(dgvSanPham.Rows[line].Cells[6].Value);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("loi" + ex);
+			}
 		}
 
-		private void btnTimKiem_Click(object sender, EventArgs e)
-		{
 
-		}
 	}
 }

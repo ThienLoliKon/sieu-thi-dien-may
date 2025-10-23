@@ -28,10 +28,13 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.foreverForm1 = new ReaLTaiizor.Forms.ForeverForm();
+			this.dtpNgaySanXuat = new ReaLTaiizor.Controls.PoisonDateTime();
+			this.cboMaNhaCC = new ReaLTaiizor.Controls.SkyComboBox();
+			this.cboMaNhaSX = new ReaLTaiizor.Controls.SkyComboBox();
 			this.btnTimKiem = new ReaLTaiizor.Controls.CyberButton();
 			this.dgvSanPham = new ReaLTaiizor.Controls.PoisonDataGridView();
 			this.btnThoat = new ReaLTaiizor.Controls.CyberButton();
@@ -48,9 +51,6 @@
 			this.txtTenSanPham = new ReaLTaiizor.Controls.ForeverTextBox();
 			this.foreverLabel1 = new ReaLTaiizor.Controls.ForeverLabel();
 			this.txtMaSanPham = new ReaLTaiizor.Controls.ForeverTextBox();
-			this.cboMaLoaiHang = new ReaLTaiizor.Controls.SkyComboBox();
-			this.skyComboBox1 = new ReaLTaiizor.Controls.SkyComboBox();
-			this.dtpNgaySanXuat = new ReaLTaiizor.Controls.PoisonDateTime();
 			this.foreverForm1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
 			this.SuspendLayout();
@@ -61,8 +61,8 @@
 			this.foreverForm1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
 			this.foreverForm1.BorderColor = System.Drawing.Color.DodgerBlue;
 			this.foreverForm1.Controls.Add(this.dtpNgaySanXuat);
-			this.foreverForm1.Controls.Add(this.skyComboBox1);
-			this.foreverForm1.Controls.Add(this.cboMaLoaiHang);
+			this.foreverForm1.Controls.Add(this.cboMaNhaCC);
+			this.foreverForm1.Controls.Add(this.cboMaNhaSX);
 			this.foreverForm1.Controls.Add(this.btnTimKiem);
 			this.foreverForm1.Controls.Add(this.dgvSanPham);
 			this.foreverForm1.Controls.Add(this.btnThoat);
@@ -97,9 +97,92 @@
 			this.foreverForm1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
 			this.foreverForm1.TextLight = System.Drawing.Color.SeaGreen;
 			// 
+			// dtpNgaySanXuat
+			// 
+			this.dtpNgaySanXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.dtpNgaySanXuat.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
+			this.dtpNgaySanXuat.Location = new System.Drawing.Point(1287, 545);
+			this.dtpNgaySanXuat.MinimumSize = new System.Drawing.Size(4, 30);
+			this.dtpNgaySanXuat.Name = "dtpNgaySanXuat";
+			this.dtpNgaySanXuat.Size = new System.Drawing.Size(262, 30);
+			this.dtpNgaySanXuat.TabIndex = 55;
+			// 
+			// cboMaNhaCC
+			// 
+			this.cboMaNhaCC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.cboMaNhaCC.BackColor = System.Drawing.Color.Transparent;
+			this.cboMaNhaCC.BGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+			this.cboMaNhaCC.BGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+			this.cboMaNhaCC.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+			this.cboMaNhaCC.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+			this.cboMaNhaCC.BorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+			this.cboMaNhaCC.BorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
+			this.cboMaNhaCC.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.cboMaNhaCC.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cboMaNhaCC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cboMaNhaCC.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold);
+			this.cboMaNhaCC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
+			this.cboMaNhaCC.FormattingEnabled = true;
+			this.cboMaNhaCC.ItemHeight = 16;
+			this.cboMaNhaCC.ItemHighlightColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(176)))), ((int)(((byte)(214)))));
+			this.cboMaNhaCC.LineColorA = System.Drawing.Color.White;
+			this.cboMaNhaCC.LineColorB = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+			this.cboMaNhaCC.LineColorC = System.Drawing.Color.White;
+			this.cboMaNhaCC.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.cboMaNhaCC.ListBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.cboMaNhaCC.ListDashType = System.Drawing.Drawing2D.DashStyle.Dot;
+			this.cboMaNhaCC.ListForeColor = System.Drawing.Color.Black;
+			this.cboMaNhaCC.ListSelectedBackColorA = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.cboMaNhaCC.ListSelectedBackColorB = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.cboMaNhaCC.Location = new System.Drawing.Point(1287, 330);
+			this.cboMaNhaCC.Name = "cboMaNhaCC";
+			this.cboMaNhaCC.Size = new System.Drawing.Size(262, 22);
+			this.cboMaNhaCC.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+			this.cboMaNhaCC.StartIndex = 0;
+			this.cboMaNhaCC.TabIndex = 54;
+			this.cboMaNhaCC.TriangleColorA = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(176)))), ((int)(((byte)(214)))));
+			this.cboMaNhaCC.TriangleColorB = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
+			// 
+			// cboMaNhaSX
+			// 
+			this.cboMaNhaSX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.cboMaNhaSX.BackColor = System.Drawing.Color.Transparent;
+			this.cboMaNhaSX.BGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+			this.cboMaNhaSX.BGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+			this.cboMaNhaSX.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+			this.cboMaNhaSX.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+			this.cboMaNhaSX.BorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+			this.cboMaNhaSX.BorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
+			this.cboMaNhaSX.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.cboMaNhaSX.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cboMaNhaSX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cboMaNhaSX.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold);
+			this.cboMaNhaSX.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
+			this.cboMaNhaSX.FormattingEnabled = true;
+			this.cboMaNhaSX.ItemHeight = 16;
+			this.cboMaNhaSX.ItemHighlightColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(176)))), ((int)(((byte)(214)))));
+			this.cboMaNhaSX.LineColorA = System.Drawing.Color.White;
+			this.cboMaNhaSX.LineColorB = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+			this.cboMaNhaSX.LineColorC = System.Drawing.Color.White;
+			this.cboMaNhaSX.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.cboMaNhaSX.ListBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.cboMaNhaSX.ListDashType = System.Drawing.Drawing2D.DashStyle.Dot;
+			this.cboMaNhaSX.ListForeColor = System.Drawing.Color.Black;
+			this.cboMaNhaSX.ListSelectedBackColorA = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.cboMaNhaSX.ListSelectedBackColorB = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.cboMaNhaSX.Location = new System.Drawing.Point(1287, 267);
+			this.cboMaNhaSX.Name = "cboMaNhaSX";
+			this.cboMaNhaSX.Size = new System.Drawing.Size(262, 22);
+			this.cboMaNhaSX.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+			this.cboMaNhaSX.StartIndex = 0;
+			this.cboMaNhaSX.TabIndex = 53;
+			this.cboMaNhaSX.TriangleColorA = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(176)))), ((int)(((byte)(214)))));
+			this.cboMaNhaSX.TriangleColorB = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
+			// 
 			// btnTimKiem
 			// 
 			this.btnTimKiem.Alpha = 20;
+			this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
 			this.btnTimKiem.Background = true;
 			this.btnTimKiem.Background_WidthPen = 4F;
@@ -123,7 +206,7 @@
 			this.btnTimKiem.Lighting = false;
 			this.btnTimKiem.LinearGradient_Background = false;
 			this.btnTimKiem.LinearGradientPen = false;
-			this.btnTimKiem.Location = new System.Drawing.Point(1417, 262);
+			this.btnTimKiem.Location = new System.Drawing.Point(1443, 749);
 			this.btnTimKiem.Name = "btnTimKiem";
 			this.btnTimKiem.PenWidth = 15;
 			this.btnTimKiem.Rounding = true;
@@ -136,58 +219,60 @@
 			this.btnTimKiem.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
 			this.btnTimKiem.Timer_Effect_1 = 5;
 			this.btnTimKiem.Timer_RGB = 300;
-			this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
 			// 
 			// dgvSanPham
 			// 
 			this.dgvSanPham.AllowUserToResizeRows = false;
+			this.dgvSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.dgvSanPham.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
 			this.dgvSanPham.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dgvSanPham.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
 			this.dgvSanPham.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgvSanPham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvSanPham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
 			this.dgvSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvSanPham.DefaultCellStyle = dataGridViewCellStyle2;
-			this.dgvSanPham.Dock = System.Windows.Forms.DockStyle.Bottom;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvSanPham.DefaultCellStyle = dataGridViewCellStyle5;
 			this.dgvSanPham.EnableHeadersVisualStyles = false;
 			this.dgvSanPham.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.dgvSanPham.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.dgvSanPham.Location = new System.Drawing.Point(1, 352);
+			this.dgvSanPham.Location = new System.Drawing.Point(1, 54);
 			this.dgvSanPham.Name = "dgvSanPham";
 			this.dgvSanPham.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgvSanPham.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvSanPham.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
 			this.dgvSanPham.RowHeadersWidth = 51;
 			this.dgvSanPham.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 			this.dgvSanPham.RowTemplate.Height = 24;
 			this.dgvSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgvSanPham.Size = new System.Drawing.Size(1598, 447);
+			this.dgvSanPham.Size = new System.Drawing.Size(989, 745);
 			this.dgvSanPham.TabIndex = 17;
-			this.dgvSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.poisonDataGridView1_CellContentClick);
+			this.dgvSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPham_CellClick);
 			// 
 			// btnThoat
 			// 
 			this.btnThoat.Alpha = 20;
+			this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnThoat.BackColor = System.Drawing.Color.Transparent;
 			this.btnThoat.Background = true;
 			this.btnThoat.Background_WidthPen = 4F;
@@ -211,7 +296,7 @@
 			this.btnThoat.Lighting = false;
 			this.btnThoat.LinearGradient_Background = false;
 			this.btnThoat.LinearGradientPen = false;
-			this.btnThoat.Location = new System.Drawing.Point(1126, 262);
+			this.btnThoat.Location = new System.Drawing.Point(1174, 749);
 			this.btnThoat.Name = "btnThoat";
 			this.btnThoat.PenWidth = 15;
 			this.btnThoat.Rounding = true;
@@ -229,6 +314,7 @@
 			// btnSua
 			// 
 			this.btnSua.Alpha = 20;
+			this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnSua.BackColor = System.Drawing.Color.Transparent;
 			this.btnSua.Background = true;
 			this.btnSua.Background_WidthPen = 4F;
@@ -252,7 +338,7 @@
 			this.btnSua.Lighting = false;
 			this.btnSua.LinearGradient_Background = false;
 			this.btnSua.LinearGradientPen = false;
-			this.btnSua.Location = new System.Drawing.Point(819, 262);
+			this.btnSua.Location = new System.Drawing.Point(1443, 641);
 			this.btnSua.Name = "btnSua";
 			this.btnSua.PenWidth = 15;
 			this.btnSua.Rounding = true;
@@ -270,6 +356,7 @@
 			// btnThem
 			// 
 			this.btnThem.Alpha = 20;
+			this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnThem.BackColor = System.Drawing.Color.Transparent;
 			this.btnThem.Background = true;
 			this.btnThem.Background_WidthPen = 4F;
@@ -293,7 +380,7 @@
 			this.btnThem.Lighting = false;
 			this.btnThem.LinearGradient_Background = false;
 			this.btnThem.LinearGradientPen = false;
-			this.btnThem.Location = new System.Drawing.Point(513, 262);
+			this.btnThem.Location = new System.Drawing.Point(1174, 641);
 			this.btnThem.Name = "btnThem";
 			this.btnThem.PenWidth = 15;
 			this.btnThem.Rounding = true;
@@ -310,245 +397,166 @@
 			// 
 			// foreverLabel6
 			// 
+			this.foreverLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.foreverLabel6.AutoSize = true;
 			this.foreverLabel6.BackColor = System.Drawing.Color.Transparent;
 			this.foreverLabel6.Font = new System.Drawing.Font("Segoe UI", 8F);
 			this.foreverLabel6.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel6.Location = new System.Drawing.Point(1324, 172);
+			this.foreverLabel6.Location = new System.Drawing.Point(1126, 554);
 			this.foreverLabel6.Name = "foreverLabel6";
 			this.foreverLabel6.Size = new System.Drawing.Size(103, 19);
 			this.foreverLabel6.TabIndex = 13;
 			this.foreverLabel6.Text = "Ngày sản xuất :";
-			this.foreverLabel6.Click += new System.EventHandler(this.foreverLabel6_Click);
 			// 
 			// txtGiaTien
 			// 
+			this.txtGiaTien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtGiaTien.AutoSize = true;
 			this.txtGiaTien.BackColor = System.Drawing.Color.Transparent;
 			this.txtGiaTien.Font = new System.Drawing.Font("Segoe UI", 8F);
 			this.txtGiaTien.ForeColor = System.Drawing.Color.LightGray;
-			this.txtGiaTien.Location = new System.Drawing.Point(1324, 132);
+			this.txtGiaTien.Location = new System.Drawing.Point(1129, 483);
 			this.txtGiaTien.Name = "txtGiaTien";
 			this.txtGiaTien.Size = new System.Drawing.Size(58, 19);
 			this.txtGiaTien.TabIndex = 11;
 			this.txtGiaTien.Text = "Giá Tiền";
-			this.txtGiaTien.Click += new System.EventHandler(this.txtGiaTien_Click);
 			// 
 			// foreverTextBox5
 			// 
+			this.foreverTextBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.foreverTextBox5.BackColor = System.Drawing.Color.Transparent;
 			this.foreverTextBox5.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
 			this.foreverTextBox5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
 			this.foreverTextBox5.FocusOnHover = false;
 			this.foreverTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.foreverTextBox5.Location = new System.Drawing.Point(1463, 122);
+			this.foreverTextBox5.Location = new System.Drawing.Point(1287, 468);
 			this.foreverTextBox5.MaxLength = 32767;
 			this.foreverTextBox5.Multiline = false;
 			this.foreverTextBox5.Name = "foreverTextBox5";
 			this.foreverTextBox5.ReadOnly = false;
-			this.foreverTextBox5.Size = new System.Drawing.Size(200, 34);
+			this.foreverTextBox5.Size = new System.Drawing.Size(262, 34);
 			this.foreverTextBox5.TabIndex = 10;
 			this.foreverTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.foreverTextBox5.UseSystemPasswordChar = false;
-			this.foreverTextBox5.TextChanged += new System.EventHandler(this.foreverTextBox5_TextChanged);
 			// 
 			// foreverLabel8
 			// 
+			this.foreverLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.foreverLabel8.AutoSize = true;
 			this.foreverLabel8.BackColor = System.Drawing.Color.Transparent;
 			this.foreverLabel8.Font = new System.Drawing.Font("Segoe UI", 8F);
 			this.foreverLabel8.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel8.Location = new System.Drawing.Point(1324, 92);
+			this.foreverLabel8.Location = new System.Drawing.Point(1129, 408);
 			this.foreverLabel8.Name = "foreverLabel8";
 			this.foreverLabel8.Size = new System.Drawing.Size(75, 19);
 			this.foreverLabel8.TabIndex = 9;
 			this.foreverLabel8.Text = "Khối lượng";
-			this.foreverLabel8.Click += new System.EventHandler(this.foreverLabel8_Click);
 			// 
 			// txtKhoiLUong
 			// 
+			this.txtKhoiLUong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtKhoiLUong.BackColor = System.Drawing.Color.Transparent;
 			this.txtKhoiLUong.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
 			this.txtKhoiLUong.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
 			this.txtKhoiLUong.FocusOnHover = false;
 			this.txtKhoiLUong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.txtKhoiLUong.Location = new System.Drawing.Point(1463, 82);
+			this.txtKhoiLUong.Location = new System.Drawing.Point(1287, 393);
 			this.txtKhoiLUong.MaxLength = 32767;
 			this.txtKhoiLUong.Multiline = false;
 			this.txtKhoiLUong.Name = "txtKhoiLUong";
 			this.txtKhoiLUong.ReadOnly = false;
-			this.txtKhoiLUong.Size = new System.Drawing.Size(200, 34);
+			this.txtKhoiLUong.Size = new System.Drawing.Size(262, 34);
 			this.txtKhoiLUong.TabIndex = 8;
 			this.txtKhoiLUong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.txtKhoiLUong.UseSystemPasswordChar = false;
-			this.txtKhoiLUong.TextChanged += new System.EventHandler(this.txtKhoiLUong_TextChanged);
 			// 
 			// foreverLabel4
 			// 
+			this.foreverLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.foreverLabel4.AutoSize = true;
 			this.foreverLabel4.BackColor = System.Drawing.Color.Transparent;
 			this.foreverLabel4.Font = new System.Drawing.Font("Segoe UI", 8F);
 			this.foreverLabel4.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel4.Location = new System.Drawing.Point(881, 137);
+			this.foreverLabel4.Location = new System.Drawing.Point(1129, 333);
 			this.foreverLabel4.Name = "foreverLabel4";
 			this.foreverLabel4.Size = new System.Drawing.Size(122, 19);
 			this.foreverLabel4.TabIndex = 7;
 			this.foreverLabel4.Text = "Mã nhà cung cấp :";
-			this.foreverLabel4.Click += new System.EventHandler(this.foreverLabel4_Click);
 			// 
 			// foreverLabel3
 			// 
+			this.foreverLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.foreverLabel3.AutoSize = true;
 			this.foreverLabel3.BackColor = System.Drawing.Color.Transparent;
 			this.foreverLabel3.Font = new System.Drawing.Font("Segoe UI", 8F);
 			this.foreverLabel3.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel3.Location = new System.Drawing.Point(881, 97);
+			this.foreverLabel3.Location = new System.Drawing.Point(1129, 270);
 			this.foreverLabel3.Name = "foreverLabel3";
 			this.foreverLabel3.Size = new System.Drawing.Size(118, 19);
 			this.foreverLabel3.TabIndex = 5;
 			this.foreverLabel3.Text = "Mã nhà sản xuất :";
-			this.foreverLabel3.Click += new System.EventHandler(this.foreverLabel3_Click);
 			// 
 			// foreverLabel2
 			// 
+			this.foreverLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.foreverLabel2.AutoSize = true;
 			this.foreverLabel2.BackColor = System.Drawing.Color.Transparent;
 			this.foreverLabel2.Font = new System.Drawing.Font("Segoe UI", 8F);
 			this.foreverLabel2.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel2.Location = new System.Drawing.Point(427, 137);
+			this.foreverLabel2.Location = new System.Drawing.Point(1129, 192);
 			this.foreverLabel2.Name = "foreverLabel2";
 			this.foreverLabel2.Size = new System.Drawing.Size(101, 19);
 			this.foreverLabel2.TabIndex = 3;
 			this.foreverLabel2.Text = "Tên sản phẩm :";
-			this.foreverLabel2.Click += new System.EventHandler(this.foreverLabel2_Click);
 			// 
 			// txtTenSanPham
 			// 
+			this.txtTenSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtTenSanPham.BackColor = System.Drawing.Color.Transparent;
 			this.txtTenSanPham.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
 			this.txtTenSanPham.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
 			this.txtTenSanPham.FocusOnHover = false;
 			this.txtTenSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.txtTenSanPham.Location = new System.Drawing.Point(585, 137);
+			this.txtTenSanPham.Location = new System.Drawing.Point(1287, 192);
 			this.txtTenSanPham.MaxLength = 32767;
 			this.txtTenSanPham.Multiline = false;
 			this.txtTenSanPham.Name = "txtTenSanPham";
 			this.txtTenSanPham.ReadOnly = false;
-			this.txtTenSanPham.Size = new System.Drawing.Size(200, 34);
+			this.txtTenSanPham.Size = new System.Drawing.Size(262, 34);
 			this.txtTenSanPham.TabIndex = 2;
 			this.txtTenSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.txtTenSanPham.UseSystemPasswordChar = false;
-			this.txtTenSanPham.TextChanged += new System.EventHandler(this.txtTenSanPham_TextChanged);
 			// 
 			// foreverLabel1
 			// 
+			this.foreverLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.foreverLabel1.AutoSize = true;
 			this.foreverLabel1.BackColor = System.Drawing.Color.Transparent;
 			this.foreverLabel1.Font = new System.Drawing.Font("Segoe UI", 8F);
 			this.foreverLabel1.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel1.Location = new System.Drawing.Point(427, 97);
+			this.foreverLabel1.Location = new System.Drawing.Point(1129, 115);
 			this.foreverLabel1.Name = "foreverLabel1";
 			this.foreverLabel1.Size = new System.Drawing.Size(100, 19);
 			this.foreverLabel1.TabIndex = 1;
 			this.foreverLabel1.Text = "Mã sản phẩm :";
-			this.foreverLabel1.Click += new System.EventHandler(this.foreverLabel1_Click);
 			// 
 			// txtMaSanPham
 			// 
+			this.txtMaSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtMaSanPham.BackColor = System.Drawing.Color.Transparent;
 			this.txtMaSanPham.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
 			this.txtMaSanPham.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
 			this.txtMaSanPham.FocusOnHover = false;
 			this.txtMaSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.txtMaSanPham.Location = new System.Drawing.Point(585, 97);
+			this.txtMaSanPham.Location = new System.Drawing.Point(1287, 115);
 			this.txtMaSanPham.MaxLength = 32767;
 			this.txtMaSanPham.Multiline = false;
 			this.txtMaSanPham.Name = "txtMaSanPham";
 			this.txtMaSanPham.ReadOnly = false;
-			this.txtMaSanPham.Size = new System.Drawing.Size(200, 34);
+			this.txtMaSanPham.Size = new System.Drawing.Size(262, 34);
 			this.txtMaSanPham.TabIndex = 0;
 			this.txtMaSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.txtMaSanPham.UseSystemPasswordChar = false;
-			this.txtMaSanPham.TextChanged += new System.EventHandler(this.txtMaSanPham_TextChanged);
-			// 
-			// cboMaLoaiHang
-			// 
-			this.cboMaLoaiHang.BackColor = System.Drawing.Color.Transparent;
-			this.cboMaLoaiHang.BGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-			this.cboMaLoaiHang.BGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-			this.cboMaLoaiHang.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-			this.cboMaLoaiHang.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-			this.cboMaLoaiHang.BorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-			this.cboMaLoaiHang.BorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
-			this.cboMaLoaiHang.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.cboMaLoaiHang.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.cboMaLoaiHang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cboMaLoaiHang.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold);
-			this.cboMaLoaiHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
-			this.cboMaLoaiHang.FormattingEnabled = true;
-			this.cboMaLoaiHang.ItemHeight = 16;
-			this.cboMaLoaiHang.ItemHighlightColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(176)))), ((int)(((byte)(214)))));
-			this.cboMaLoaiHang.LineColorA = System.Drawing.Color.White;
-			this.cboMaLoaiHang.LineColorB = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-			this.cboMaLoaiHang.LineColorC = System.Drawing.Color.White;
-			this.cboMaLoaiHang.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.cboMaLoaiHang.ListBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.cboMaLoaiHang.ListDashType = System.Drawing.Drawing2D.DashStyle.Dot;
-			this.cboMaLoaiHang.ListForeColor = System.Drawing.Color.Black;
-			this.cboMaLoaiHang.ListSelectedBackColorA = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.cboMaLoaiHang.ListSelectedBackColorB = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.cboMaLoaiHang.Location = new System.Drawing.Point(1039, 94);
-			this.cboMaLoaiHang.Name = "cboMaLoaiHang";
-			this.cboMaLoaiHang.Size = new System.Drawing.Size(217, 22);
-			this.cboMaLoaiHang.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-			this.cboMaLoaiHang.StartIndex = 0;
-			this.cboMaLoaiHang.TabIndex = 53;
-			this.cboMaLoaiHang.TriangleColorA = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(176)))), ((int)(((byte)(214)))));
-			this.cboMaLoaiHang.TriangleColorB = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
-			// 
-			// skyComboBox1
-			// 
-			this.skyComboBox1.BackColor = System.Drawing.Color.Transparent;
-			this.skyComboBox1.BGColorA = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-			this.skyComboBox1.BGColorB = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-			this.skyComboBox1.BorderColorA = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-			this.skyComboBox1.BorderColorB = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-			this.skyComboBox1.BorderColorC = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-			this.skyComboBox1.BorderColorD = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(168)))));
-			this.skyComboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.skyComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.skyComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.skyComboBox1.Font = new System.Drawing.Font("Verdana", 6.75F, System.Drawing.FontStyle.Bold);
-			this.skyComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
-			this.skyComboBox1.FormattingEnabled = true;
-			this.skyComboBox1.ItemHeight = 16;
-			this.skyComboBox1.ItemHighlightColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(176)))), ((int)(((byte)(214)))));
-			this.skyComboBox1.LineColorA = System.Drawing.Color.White;
-			this.skyComboBox1.LineColorB = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-			this.skyComboBox1.LineColorC = System.Drawing.Color.White;
-			this.skyComboBox1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.skyComboBox1.ListBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.skyComboBox1.ListDashType = System.Drawing.Drawing2D.DashStyle.Dot;
-			this.skyComboBox1.ListForeColor = System.Drawing.Color.Black;
-			this.skyComboBox1.ListSelectedBackColorA = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.skyComboBox1.ListSelectedBackColorB = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.skyComboBox1.Location = new System.Drawing.Point(1039, 134);
-			this.skyComboBox1.Name = "skyComboBox1";
-			this.skyComboBox1.Size = new System.Drawing.Size(217, 22);
-			this.skyComboBox1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-			this.skyComboBox1.StartIndex = 0;
-			this.skyComboBox1.TabIndex = 54;
-			this.skyComboBox1.TriangleColorA = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(176)))), ((int)(((byte)(214)))));
-			this.skyComboBox1.TriangleColorB = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(137)))));
-			// 
-			// dtpNgaySanXuat
-			// 
-			this.dtpNgaySanXuat.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
-			this.dtpNgaySanXuat.Location = new System.Drawing.Point(1463, 172);
-			this.dtpNgaySanXuat.MinimumSize = new System.Drawing.Size(0, 30);
-			this.dtpNgaySanXuat.Name = "dtpNgaySanXuat";
-			this.dtpNgaySanXuat.Size = new System.Drawing.Size(200, 30);
-			this.dtpNgaySanXuat.TabIndex = 55;
 			// 
 			// frmSanPham
 			// 
@@ -562,6 +570,7 @@
 			this.Text = "SanPham";
 			this.TransparencyKey = System.Drawing.Color.Fuchsia;
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+			this.Load += new System.EventHandler(this.frmSanPham_Load);
 			this.foreverForm1.ResumeLayout(false);
 			this.foreverForm1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
@@ -588,8 +597,8 @@
 		private ReaLTaiizor.Controls.CyberButton btnSua;
 		private ReaLTaiizor.Controls.CyberButton btnTimKiem;
 		private ReaLTaiizor.Controls.PoisonDataGridView dgvSanPham;
-		private ReaLTaiizor.Controls.SkyComboBox cboMaLoaiHang;
-		private ReaLTaiizor.Controls.SkyComboBox skyComboBox1;
+		private ReaLTaiizor.Controls.SkyComboBox cboMaNhaSX;
+		private ReaLTaiizor.Controls.SkyComboBox cboMaNhaCC;
 		private ReaLTaiizor.Controls.PoisonDateTime dtpNgaySanXuat;
 	}
 }

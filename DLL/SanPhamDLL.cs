@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DLL
 {
-	internal class SanPhamDLL
+	public class SanPhamDLL
 	{
 		DBSTDMDataContext db = new DBSTDMDataContext();
 		public SanPhamDLL()
@@ -48,7 +48,7 @@ namespace DLL
 			return 0;
 		}
 
-		public int updateNhanVien(san_pham updateNew)
+		public int updateSanPham(san_pham updateNew)
 		{
 			var entityUpdate = db.san_phams.SingleOrDefault(n => n.ma_san_pham == updateNew.ma_san_pham);
 			if (entityUpdate != null)
@@ -65,6 +65,8 @@ namespace DLL
 			return 0;
 		}
 
+
+
 		public List<san_pham> searchByNameOrID(string name_id)
 		{
 			List<san_pham> list = new List<san_pham>();
@@ -77,5 +79,31 @@ namespace DLL
 			}
 			return list;
 		}
+		public string TaoMaSanPham()
+		{
+			// Lấy danh sách mã TacGia và kiểm tra có dữ liệu hay không
+			var listItem = db.san_phams.Select(p => p.ma_san_pham).ToList();
+
+			int maxId = 0;
+
+			if (listItem.Any()) // Kiểm tra nếu có dữ liệu
+			{
+				maxId = listItem
+							.Where(m => m.StartsWith("SP")) // Lọc các mã bắt đầu bằng "TG"
+							.Select(m => int.Parse(m.Substring(3))) // Lấy phần số sau "TG"
+							.Max(); // Lấy giá trị lớn nhất
+			}
+
+			// Tăng giá trị ID lớn nhất
+			maxId++;
+
+			// Tạo mã mới với tiền tố "NXB" và đảm bảo đúng định dạng
+			return "SP" + maxId.ToString("D3");
+		}
+		public bool check(string id)
+		{
+			return db.san_phams.Any(p => p.ma_san_pham == id);
+		}
+
 	}
 }

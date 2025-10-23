@@ -97,7 +97,7 @@
 			this.btnTimKiem.Lighting = false;
 			this.btnTimKiem.LinearGradient_Background = false;
 			this.btnTimKiem.LinearGradientPen = false;
-			this.btnTimKiem.Location = new System.Drawing.Point(1417, 262);
+			this.btnTimKiem.Location = new System.Drawing.Point(1363, 508);
 			this.btnTimKiem.Name = "btnTimKiem";
 			this.btnTimKiem.PenWidth = 15;
 			this.btnTimKiem.Rounding = true;
@@ -136,11 +136,11 @@
 			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
 			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.dgvNhaCungCap.DefaultCellStyle = dataGridViewCellStyle2;
-			this.dgvNhaCungCap.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.dgvNhaCungCap.Dock = System.Windows.Forms.DockStyle.Left;
 			this.dgvNhaCungCap.EnableHeadersVisualStyles = false;
 			this.dgvNhaCungCap.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.dgvNhaCungCap.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.dgvNhaCungCap.Location = new System.Drawing.Point(1, 399);
+			this.dgvNhaCungCap.Location = new System.Drawing.Point(1, 51);
 			this.dgvNhaCungCap.Name = "dgvNhaCungCap";
 			this.dgvNhaCungCap.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -155,7 +155,7 @@
 			this.dgvNhaCungCap.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 			this.dgvNhaCungCap.RowTemplate.Height = 24;
 			this.dgvNhaCungCap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgvNhaCungCap.Size = new System.Drawing.Size(1598, 400);
+			this.dgvNhaCungCap.Size = new System.Drawing.Size(73, 748);
 			this.dgvNhaCungCap.TabIndex = 17;
 			// 
 			// btnThoat
@@ -184,7 +184,7 @@
 			this.btnThoat.Lighting = false;
 			this.btnThoat.LinearGradient_Background = false;
 			this.btnThoat.LinearGradientPen = false;
-			this.btnThoat.Location = new System.Drawing.Point(1126, 262);
+			this.btnThoat.Location = new System.Drawing.Point(1072, 508);
 			this.btnThoat.Name = "btnThoat";
 			this.btnThoat.PenWidth = 15;
 			this.btnThoat.Rounding = true;
@@ -225,7 +225,7 @@
 			this.btnSua.Lighting = false;
 			this.btnSua.LinearGradient_Background = false;
 			this.btnSua.LinearGradientPen = false;
-			this.btnSua.Location = new System.Drawing.Point(819, 262);
+			this.btnSua.Location = new System.Drawing.Point(765, 508);
 			this.btnSua.Name = "btnSua";
 			this.btnSua.PenWidth = 15;
 			this.btnSua.Rounding = true;
@@ -266,7 +266,7 @@
 			this.btnThem.Lighting = false;
 			this.btnThem.LinearGradient_Background = false;
 			this.btnThem.LinearGradientPen = false;
-			this.btnThem.Location = new System.Drawing.Point(513, 262);
+			this.btnThem.Location = new System.Drawing.Point(459, 508);
 			this.btnThem.Name = "btnThem";
 			this.btnThem.PenWidth = 15;
 			this.btnThem.Rounding = true;
@@ -287,7 +287,7 @@
 			this.foreverLabel8.BackColor = System.Drawing.Color.Transparent;
 			this.foreverLabel8.Font = new System.Drawing.Font("Segoe UI", 8F);
 			this.foreverLabel8.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel8.Location = new System.Drawing.Point(1332, 107);
+			this.foreverLabel8.Location = new System.Drawing.Point(610, 356);
 			this.foreverLabel8.Name = "foreverLabel8";
 			this.foreverLabel8.Size = new System.Drawing.Size(143, 19);
 			this.foreverLabel8.TabIndex = 9;
@@ -301,12 +301,12 @@
 			this.txtDiaChiNCC.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
 			this.txtDiaChiNCC.FocusOnHover = false;
 			this.txtDiaChiNCC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.txtDiaChiNCC.Location = new System.Drawing.Point(1513, 97);
+			this.txtDiaChiNCC.Location = new System.Drawing.Point(791, 346);
 			this.txtDiaChiNCC.MaxLength = 32767;
 			this.txtDiaChiNCC.Multiline = false;
 			this.txtDiaChiNCC.Name = "txtDiaChiNCC";
 			this.txtDiaChiNCC.ReadOnly = false;
-			this.txtDiaChiNCC.Size = new System.Drawing.Size(200, 34);
+			this.txtDiaChiNCC.Size = new System.Drawing.Size(422, 34);
 			this.txtDiaChiNCC.TabIndex = 8;
 			this.txtDiaChiNCC.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.txtDiaChiNCC.UseSystemPasswordChar = false;
@@ -318,7 +318,7 @@
 			this.foreverLabel3.BackColor = System.Drawing.Color.Transparent;
 			this.foreverLabel3.Font = new System.Drawing.Font("Segoe UI", 8F);
 			this.foreverLabel3.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel3.Location = new System.Drawing.Point(888, 107);
+			this.foreverLabel3.Location = new System.Drawing.Point(640, 295);
 			this.foreverLabel3.Name = "foreverLabel3";
 			this.foreverLabel3.Size = new System.Drawing.Size(131, 19);
 			this.foreverLabel3.TabIndex = 5;
@@ -332,12 +332,12 @@
 			this.txtTenNCC.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
 			this.txtTenNCC.FocusOnHover = false;
 			this.txtTenNCC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.txtTenNCC.Location = new System.Drawing.Point(1039, 97);
+			this.txtTenNCC.Location = new System.Drawing.Point(791, 285);
 			this.txtTenNCC.MaxLength = 32767;
 			this.txtTenNCC.Multiline = false;
 			this.txtTenNCC.Name = "txtTenNCC";
 			this.txtTenNCC.ReadOnly = false;
-			this.txtTenNCC.Size = new System.Drawing.Size(200, 34);
+			this.txtTenNCC.Size = new System.Drawing.Size(422, 34);
 			this.txtTenNCC.TabIndex = 4;
 			this.txtTenNCC.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.txtTenNCC.UseSystemPasswordChar = false;
@@ -349,7 +349,7 @@
 			this.foreverLabel1.BackColor = System.Drawing.Color.Transparent;
 			this.foreverLabel1.Font = new System.Drawing.Font("Segoe UI", 8F);
 			this.foreverLabel1.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel1.Location = new System.Drawing.Point(434, 107);
+			this.foreverLabel1.Location = new System.Drawing.Point(640, 233);
 			this.foreverLabel1.Name = "foreverLabel1";
 			this.foreverLabel1.Size = new System.Drawing.Size(122, 19);
 			this.foreverLabel1.TabIndex = 1;
@@ -363,12 +363,12 @@
 			this.txtMaNCC.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
 			this.txtMaNCC.FocusOnHover = false;
 			this.txtMaNCC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.txtMaNCC.Location = new System.Drawing.Point(585, 97);
+			this.txtMaNCC.Location = new System.Drawing.Point(791, 223);
 			this.txtMaNCC.MaxLength = 32767;
 			this.txtMaNCC.Multiline = false;
 			this.txtMaNCC.Name = "txtMaNCC";
 			this.txtMaNCC.ReadOnly = false;
-			this.txtMaNCC.Size = new System.Drawing.Size(200, 34);
+			this.txtMaNCC.Size = new System.Drawing.Size(422, 34);
 			this.txtMaNCC.TabIndex = 0;
 			this.txtMaNCC.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.txtMaNCC.UseSystemPasswordChar = false;
@@ -376,6 +376,9 @@
 			// 
 			// foreverForm2
 			// 
+			this.foreverForm2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.foreverForm2.BackColor = System.Drawing.Color.White;
 			this.foreverForm2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
 			this.foreverForm2.BorderColor = System.Drawing.Color.DodgerBlue;
@@ -390,7 +393,6 @@
 			this.foreverForm2.Controls.Add(this.txtTenNCC);
 			this.foreverForm2.Controls.Add(this.foreverLabel1);
 			this.foreverForm2.Controls.Add(this.txtMaNCC);
-			this.foreverForm2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.foreverForm2.Font = new System.Drawing.Font("Segoe UI", 12F);
 			this.foreverForm2.ForeverColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
 			this.foreverForm2.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
