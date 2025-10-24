@@ -64,11 +64,14 @@ namespace DLL
             return listhoadon.ToList();
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         //public List<xep_hang> getAllXepHang()
         //{
         //    return db.xep_hangs.OrderBy(xh => xh.yeu_cau).ToList();
         //}
 =======
+=======
+>>>>>>> Stashed changes
         public int deleteRank(string mahang)
         {
             try
