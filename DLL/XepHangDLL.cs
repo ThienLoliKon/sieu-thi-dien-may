@@ -65,9 +65,9 @@ namespace DLL
                              select cthd;
             return listhoadon.ToList();
         }
-        public List<xep_hang> getAllXepHang()
-        {
-            return db.xep_hangs.OrderBy(xh => xh.yeu_cau).ToList();
-        }
+        //public List<xep_hang> getAllXepHang()
+        //{
+        //    return db.xep_hangs.OrderBy(xh => xh.yeu_cau).ToList();
+        //}
     }
 }

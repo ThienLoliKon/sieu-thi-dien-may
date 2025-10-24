@@ -113,14 +113,16 @@ namespace he_thong_dien_may
 		}
 		private void btnThem_Click(object sender, EventArgs e)
 		{
+			//MessageBox.Show($"{txtTenSanPham.Text}, {cboMaNhaSX.ValueMember}, {cboMaNhaCC.ValueMember}, {txtKhoiLUong.Text}, {txtGiaTien.Text}, {dtpNgaySanXuat.Value}");
+			//Console.WriteLine(txtTenSanPham.Text, cboMaNhaSX.ValueMember, cboMaNhaCC.ValueMember, txtKhoiLUong.Text, txtGiaTien.Text, dtpNgaySanXuat.Value);
 			SanPhamBUS bus = new SanPhamBUS();
-			bus.AddSanPham(txtTenSanPham.Text,cboMaNhaSX.ValueMember,cboMaNhaCC.ValueMember,txtKhoiLUong.Text,a.Text,dtpNgaySanXuat.Value);
+			bus.AddSanPham(txtTenSanPham.Text,cboMaNhaSX.SelectedValue.ToString(),cboMaNhaCC.SelectedValue.ToString(),txtKhoiLUong.Text,txtGiaTien.Text,dtpNgaySanXuat.Value);
 			loadData();
 		}
 
 		private void btnSua_Click(object sender, EventArgs e)
 		{
-			bus.UpdateSanPham(txtMaSanPham.Text,txtTenSanPham.Text, cboMaNhaSX.ValueMember, cboMaNhaCC.ValueMember, txtKhoiLUong.Text, a.Text, dtpNgaySanXuat.Value);
+			bus.UpdateSanPham(txtMaSanPham.Text,txtTenSanPham.Text, cboMaNhaSX.SelectedValue.ToString(), cboMaNhaCC.SelectedValue.ToString(), txtKhoiLUong.Text, txtGiaTien.Text, dtpNgaySanXuat.Value);
 			loadData();
 		}
 

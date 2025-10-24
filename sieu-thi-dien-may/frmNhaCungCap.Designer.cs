@@ -159,6 +159,7 @@
 			this.dgvNhaCungCap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvNhaCungCap.Size = new System.Drawing.Size(1599, 440);
 			this.dgvNhaCungCap.TabIndex = 17;
+			this.dgvNhaCungCap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhaCungCap_CellClick);
 			// 
 			// btnThoat
 			// 
@@ -358,6 +359,7 @@
 			this.txtMaNCC.BackColor = System.Drawing.Color.Transparent;
 			this.txtMaNCC.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
 			this.txtMaNCC.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+			this.txtMaNCC.Enabled = false;
 			this.txtMaNCC.FocusOnHover = false;
 			this.txtMaNCC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
 			this.txtMaNCC.Location = new System.Drawing.Point(211, 151);

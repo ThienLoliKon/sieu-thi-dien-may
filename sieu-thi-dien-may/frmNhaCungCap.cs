@@ -71,7 +71,26 @@ namespace he_thong_dien_may
 			NhaCCBUS bus = new NhaCCBUS();
 			bus.AddNhaCungCap(txtTenNCC.Text, txtDiaChiNCC.Text);
 			loadData();
+
 		}
 
+		private void dgvNhaCungCap_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			try
+			{
+				int line = dgvNhaCungCap.CurrentCell.RowIndex;
+
+				txtMaNCC.Text = dgvNhaCungCap.Rows[line].Cells[0].Value.ToString();
+				txtTenNCC.Text = dgvNhaCungCap.Rows[line].Cells[1].Value.ToString();
+				txtDiaChiNCC.Text = dgvNhaCungCap.Rows[line].Cells[2].Value.ToString();
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("loi" + ex);
+			}
+		}
+
+		
 	}
 }

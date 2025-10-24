@@ -72,10 +72,10 @@ namespace DLL
 			}
 			return list;
 		}
-		public string TaoMaSanPham()
+		public string TaoMaNCC()
 		{
 			// Lấy danh sách mã TacGia và kiểm tra có dữ liệu hay không
-			var listItem = db.san_phams.Select(p => p.ma_san_pham).ToList();
+			var listItem = db.nha_cung_caps.Select(p => p.ma_nha_cung_cap).ToList();
 
 			int maxId = 0;
 
@@ -95,7 +95,7 @@ namespace DLL
 		}
 		public bool check(string id)
 		{
-			return db.san_phams.Any(p => p.ma_san_pham == id);
+			return db.nha_cung_caps.Any(p => p.ma_nha_cung_cap == id);
 		}
 	}
 }

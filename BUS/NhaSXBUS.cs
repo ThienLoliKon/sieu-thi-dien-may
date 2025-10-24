@@ -26,7 +26,7 @@ namespace BUS
 		{
 			nha_san_xuat addVariable = new nha_san_xuat();
 
-			addVariable.ma_nha_san_xuat = dal.TaoMaSanPham();
+			addVariable.ma_nha_san_xuat = dal.TaoMaNSX();
 			addVariable.ten_nha_san_xuat = tenNhaSX;
 			addVariable.dia_chi_nha_san_xuat = diaChiNhaSX;
 			dal.addNhaSanXuat(addVariable);
@@ -47,6 +47,7 @@ namespace BUS
 			updateItem.ma_nha_san_xuat = maNSX;
 			updateItem.ten_nha_san_xuat = tenNhaSX;
 			updateItem.dia_chi_nha_san_xuat = diaChiNhaSX;
+			dal.updateNhaSanXuat(updateItem);
 			if (dal.check(updateItem.ma_nha_san_xuat) == true) { return false; }
 			return true;
 		}

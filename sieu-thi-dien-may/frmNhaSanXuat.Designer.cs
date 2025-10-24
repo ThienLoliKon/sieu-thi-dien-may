@@ -368,6 +368,7 @@
 			this.txtMaNSX.BackColor = System.Drawing.Color.Transparent;
 			this.txtMaNSX.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
 			this.txtMaNSX.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+			this.txtMaNSX.Enabled = false;
 			this.txtMaNSX.FocusOnHover = false;
 			this.txtMaNSX.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
 			this.txtMaNSX.Location = new System.Drawing.Point(522, 107);

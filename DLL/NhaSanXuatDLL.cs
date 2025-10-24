@@ -73,29 +73,30 @@ namespace DLL
 			}
 			return list;
 		}
-		public string TaoMaSanPham()
+		public string TaoMaNSX()
 		{
-			// Lấy danh sách mã TacGia và kiểm tra có dữ liệu hay không
-			var listItem = db.san_phams.Select(p => p.ma_san_pham).ToList();
+			var listItem = db.nha_san_xuats.Select(p => p.ma_nha_san_xuat).ToList();
 
 			int maxId = 0;
+			var nsxItems = listItem
+				.Where(m => m.StartsWith("NSX") && m.Length > 3)
+				.Select(m => {
+					int id;
+					return int.TryParse(m.Substring(3), out id) ? id : 0;
+				});
 
-			if (listItem.Any()) // Kiểm tra nếu có dữ liệu
+			if (nsxItems.Any())
 			{
-				maxId = listItem
-							.Where(m => m.StartsWith("NSX"))
-							.Select(m => int.Parse(m.Substring(3))) 
-							.Max(); // Lấy giá trị lớn nhất
+				maxId = nsxItems.Max();
 			}
 
-			// Tăng giá trị ID lớn nhất
 			maxId++;
 
 			return "NSX" + maxId.ToString("D3");
 		}
 		public bool check(string id)
 		{
-			return db.san_phams.Any(p => p.ma_san_pham == id);
+			return db.nha_san_xuats.Any(p => p.ma_nha_san_xuat == id);
 		}
 	}
 }

@@ -22,7 +22,7 @@ namespace BUS
 		//	return dal.GetAllTacGia();
 		//}
 
-		public bool AddSanPham(string tenSanPham, string maNXX, string maNCC, string khoiLuong , string giaTien,DateTime ngaySX)
+		public bool AddSanPham(string tenSanPham, string maNXX, string maNCC, string khoiLuong, string giaTien, DateTime ngaySX)
 		{
 			san_pham addVariable = new san_pham();
 
@@ -30,31 +30,24 @@ namespace BUS
 			addVariable.ten_san_pham = tenSanPham;
 			addVariable.ma_nha_san_xuat = maNXX;
 			addVariable.ma_nha_cung_cap = maNCC;
-			if (double.TryParse(khoiLuong, out double khoiLuongValue))
-				addVariable.khoi_luong = khoiLuongValue;
-			else
-				addVariable.khoi_luong = null; // hoặc xử lý lỗi nhập liệu
 
-			if (double.TryParse(giaTien, out double giaTienValue))
-				addVariable.gia_tien = giaTienValue;
-			else
-				addVariable.gia_tien = null; // hoặc xử lý lỗi nhập liệu
-
-			// Chuyển đổi ngày sản xuất
-				addVariable.ngay_san_xuat = ngaySX;
-
+			float khoiLuongFloat = float.Parse(khoiLuong);
+			addVariable.khoi_luong = khoiLuongFloat;
+			float giaTienFloat = float.Parse(giaTien);
+			addVariable.gia_tien = giaTienFloat;
+			addVariable.ngay_san_xuat = ngaySX;
 
 			dal.addSanPham(addVariable);
 			if (dal.check(addVariable.ma_san_pham) == true) { return false; }
 			return true;
 		}
 
-		public bool DeleteSanPham(string id)
-		{
-			dal.deleteSanPham(id);
-			if (dal.check(id) == true) { return false; }
-			return true;
-		}
+		//public bool DeleteSanPham(string id)
+		//{
+		//	dal.deleteSanPham(id);
+		//	if (dal.check(id) == true) { return false; }
+		//	return true;
+		//}
 
 		public bool UpdateSanPham(string maSanPham, string tenSanPham, string maNXX, string maNCC, string khoiLuong, string giaTien, DateTime ngaySX)
 		{
@@ -77,7 +70,9 @@ namespace BUS
 			updateItem.ngay_san_xuat = ngaySX;
 
 			dal.updateSanPham(updateItem);
-			 
+
+
+
 			if (dal.check(updateItem.ma_san_pham) == true) { return false; }
 			return true;
 		}
@@ -94,15 +89,15 @@ namespace BUS
 
 			dt.Columns.Add("ma_san_pham", typeof(string));
 			dt.Columns.Add("ten_san_pham", typeof(string));
-			dt.Columns.Add("ma_nha_san_xuat", typeof(string)); 
-			dt.Columns.Add("ma_nha_cung_cap", typeof(string)); 
+			dt.Columns.Add("ma_nha_san_xuat", typeof(string));
+			dt.Columns.Add("ma_nha_cung_cap", typeof(string));
 			dt.Columns.Add("khoi_luong", typeof(float));
 			dt.Columns.Add("gia_tien", typeof(float));
 			dt.Columns.Add("ngay_san_xuat", typeof(DateTime));
 
 			foreach (var indexData in listData)
 			{
-				dt.Rows.Add(indexData.ma_nha_cung_cap, indexData.ten_san_pham, indexData.ma_nha_cung_cap, indexData.khoi_luong, indexData.gia_tien,indexData.ngay_san_xuat);
+				dt.Rows.Add(indexData.ma_nha_cung_cap, indexData.ten_san_pham, indexData.ma_nha_cung_cap, indexData.khoi_luong, indexData.gia_tien, indexData.ngay_san_xuat);
 			}
 
 			return dt;
@@ -223,6 +218,6 @@ namespace BUS
 		//	}
 		//	return list;
 		//}
-		
+
 	}
 }

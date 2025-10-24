@@ -26,7 +26,7 @@ namespace BUS
 		{
 			nha_cung_cap addVariable = new nha_cung_cap();
 
-			addVariable.ma_nha_cung_cap = dal.TaoMaSanPham();
+			addVariable.ma_nha_cung_cap = dal.TaoMaNCC();
 			addVariable.ten_nha_cung_cap = tenNhaCungCap;
 			addVariable.dia_chi_nha_cung_cap = diaChiNhaCungCap;
 			
@@ -50,7 +50,7 @@ namespace BUS
 			updateItem.ma_nha_cung_cap = maNCC;
 			updateItem.ten_nha_cung_cap = tenNhaCungCap;
 			updateItem.dia_chi_nha_cung_cap = diaChiNhaCungCap;
-
+			dal.updateNhaCungCap(updateItem);
 			if (dal.check(updateItem.ma_nha_cung_cap) == true) { return false; }
 			return true;
 		}
