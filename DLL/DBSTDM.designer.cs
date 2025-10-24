@@ -117,7 +117,7 @@ namespace DLL
     #endregion
 		
 		public DBSTDMDataContext() : 
-				base(global::DLL.Properties.Settings.Default.dien_mayConnectionString, mappingSource)
+				base(global::DLL.Properties.Settings.Default.dien_may4ConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DLL
 {
-    internal class XepHangDLL
+    public class XepHangDLL
     {
         DBSTDMDataContext db = new DBSTDMDataContext();
         public XepHangDLL()
@@ -20,32 +20,30 @@ namespace DLL
         {
             return db.xep_hangs.ToList();
         }
-        public int AddKhachHang(khach_hang kh)
+        public int AddXepHang(xep_hang xh)
         {
             try
             {
-                db.khach_hangs.InsertOnSubmit(kh);
+                db.xep_hangs.InsertOnSubmit(xh);
                 db.SubmitChanges();
             }
             catch (Exception ex)
             {
-                throw new Exception(kh.xep_hang);
-                //throw new Exception("Loi khi them khach hang: "+ex.Message);
+                //throw new Exception(xh.xep_hang);
+                throw new Exception("Loi khi them khach hang: "+ex.Message);
             }
             return 1;
         }
-        public int updateKhachHang(khach_hang kh)
+        public int UpdateRank(xep_hang xh)
         {
             try
             {
-                var khach = db.khach_hangs.SingleOrDefault(n => n.ma_khach_hang == kh.ma_khach_hang);
-                if (khach != null)
+                var xephang = db.xep_hangs.SingleOrDefault(n => n.ma_hang == xh.ma_hang);
+                if (xephang != null)
                 {
-                    khach.ho_ten_khach_hang = kh.ho_ten_khach_hang;
-                    khach.sdt = kh.sdt;
-                    khach.diachi = kh.diachi;
-                    khach.xep_hang = kh.xep_hang;
-                    khach.diem = kh.diem;
+                    xephang.ten_hang = xh.ten_hang;
+                    xephang.yeu_cau = xh.yeu_cau;
+                    xephang.uu_dai = xh.uu_dai;
                     db.SubmitChanges();
                     return 1;
                 }
@@ -65,9 +63,24 @@ namespace DLL
                              select cthd;
             return listhoadon.ToList();
         }
+<<<<<<< Updated upstream
         //public List<xep_hang> getAllXepHang()
         //{
         //    return db.xep_hangs.OrderBy(xh => xh.yeu_cau).ToList();
         //}
+=======
+        public int deleteRank(string mahang)
+        {
+            try
+            {
+                db.xep_hangs.DeleteOnSubmit(db.xep_hangs.SingleOrDefault(n => n.ma_hang == mahang));
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                throw ex;   
+            }
+        }
+>>>>>>> Stashed changes
     }
 }

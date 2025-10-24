@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cyberButton3 = new ReaLTaiizor.Controls.CyberButton();
             this.cyberButton5 = new ReaLTaiizor.Controls.CyberButton();
             this.cyberButton6 = new ReaLTaiizor.Controls.CyberButton();
-            this.cyberButton4 = new ReaLTaiizor.Controls.CyberButton();
             this.cyberButton2 = new ReaLTaiizor.Controls.CyberButton();
             this.cyberButton1 = new ReaLTaiizor.Controls.CyberButton();
             this.thunderLabel6 = new ReaLTaiizor.Controls.ThunderLabel();
@@ -45,10 +44,11 @@
             this.cyberTextBox6 = new ReaLTaiizor.Controls.CyberTextBox();
             this.cyberTextBox2 = new ReaLTaiizor.Controls.CyberTextBox();
             this.cyberTextBox1 = new ReaLTaiizor.Controls.CyberTextBox();
-            this.poisonDataGridView1 = new ReaLTaiizor.Controls.PoisonDataGridView();
+            this.dgvRank = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.nightHeaderLabel1 = new ReaLTaiizor.Controls.NightHeaderLabel();
             this.RTKhachHangForm = new ReaLTaiizor.Forms.NightForm();
-            ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView1)).BeginInit();
+            this.btnReload = new ReaLTaiizor.Controls.CyberButton();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRank)).BeginInit();
             this.RTKhachHangForm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -168,50 +168,10 @@
             this.cyberButton6.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.cyberButton6.TabIndex = 30;
             this.cyberButton6.Tag = "Cyber";
-            this.cyberButton6.TextButton = "Xuất dữ liệu";
+            this.cyberButton6.TextButton = "Xóa";
             this.cyberButton6.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberButton6.Timer_Effect_1 = 5;
             this.cyberButton6.Timer_RGB = 300;
-            // 
-            // cyberButton4
-            // 
-            this.cyberButton4.Alpha = 20;
-            this.cyberButton4.BackColor = System.Drawing.Color.Transparent;
-            this.cyberButton4.Background = true;
-            this.cyberButton4.Background_WidthPen = 4F;
-            this.cyberButton4.BackgroundPen = true;
-            this.cyberButton4.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberButton4.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberButton4.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-            this.cyberButton4.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberButton4.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberButton4.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberButton4.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-            this.cyberButton4.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.cyberButton4.Effect_1 = true;
-            this.cyberButton4.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberButton4.Effect_1_Transparency = 25;
-            this.cyberButton4.Effect_2 = true;
-            this.cyberButton4.Effect_2_ColorBackground = System.Drawing.Color.White;
-            this.cyberButton4.Effect_2_Transparency = 20;
-            this.cyberButton4.Font = new System.Drawing.Font("Arial", 11F);
-            this.cyberButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.cyberButton4.Lighting = false;
-            this.cyberButton4.LinearGradient_Background = false;
-            this.cyberButton4.LinearGradientPen = false;
-            this.cyberButton4.Location = new System.Drawing.Point(1268, 199);
-            this.cyberButton4.Name = "cyberButton4";
-            this.cyberButton4.PenWidth = 15;
-            this.cyberButton4.Rounding = true;
-            this.cyberButton4.RoundingInt = 70;
-            this.cyberButton4.Size = new System.Drawing.Size(130, 50);
-            this.cyberButton4.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.cyberButton4.TabIndex = 28;
-            this.cyberButton4.Tag = "Cyber";
-            this.cyberButton4.TextButton = "Làm mới danh sách";
-            this.cyberButton4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.cyberButton4.Timer_Effect_1 = 5;
-            this.cyberButton4.Timer_RGB = 300;
             // 
             // cyberButton2
             // 
@@ -457,51 +417,52 @@
             this.cyberTextBox1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberTextBox1.Timer_RGB = 300;
             // 
-            // poisonDataGridView1
+            // dgvRank
             // 
-            this.poisonDataGridView1.AllowUserToResizeRows = false;
-            this.poisonDataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.poisonDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.poisonDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.poisonDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.poisonDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.poisonDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.poisonDataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.poisonDataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.poisonDataGridView1.EnableHeadersVisualStyles = false;
-            this.poisonDataGridView1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.poisonDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.poisonDataGridView1.Location = new System.Drawing.Point(0, 455);
-            this.poisonDataGridView1.Name = "poisonDataGridView1";
-            this.poisonDataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.poisonDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.poisonDataGridView1.RowHeadersWidth = 51;
-            this.poisonDataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.poisonDataGridView1.RowTemplate.Height = 24;
-            this.poisonDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.poisonDataGridView1.Size = new System.Drawing.Size(1582, 398);
-            this.poisonDataGridView1.TabIndex = 2;
+            this.dgvRank.AllowUserToResizeRows = false;
+            this.dgvRank.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRank.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvRank.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvRank.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvRank.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRank.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvRank.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRank.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvRank.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvRank.EnableHeadersVisualStyles = false;
+            this.dgvRank.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgvRank.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvRank.Location = new System.Drawing.Point(0, 455);
+            this.dgvRank.Name = "dgvRank";
+            this.dgvRank.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRank.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvRank.RowHeadersWidth = 51;
+            this.dgvRank.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvRank.RowTemplate.Height = 24;
+            this.dgvRank.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRank.Size = new System.Drawing.Size(1582, 398);
+            this.dgvRank.TabIndex = 2;
             // 
             // nightHeaderLabel1
             // 
@@ -526,10 +487,10 @@
             // RTKhachHangForm
             // 
             this.RTKhachHangForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.RTKhachHangForm.Controls.Add(this.btnReload);
             this.RTKhachHangForm.Controls.Add(this.cyberButton3);
             this.RTKhachHangForm.Controls.Add(this.cyberButton5);
             this.RTKhachHangForm.Controls.Add(this.cyberButton6);
-            this.RTKhachHangForm.Controls.Add(this.cyberButton4);
             this.RTKhachHangForm.Controls.Add(this.cyberButton2);
             this.RTKhachHangForm.Controls.Add(this.cyberButton1);
             this.RTKhachHangForm.Controls.Add(this.thunderLabel6);
@@ -540,7 +501,7 @@
             this.RTKhachHangForm.Controls.Add(this.cyberTextBox6);
             this.RTKhachHangForm.Controls.Add(this.cyberTextBox2);
             this.RTKhachHangForm.Controls.Add(this.cyberTextBox1);
-            this.RTKhachHangForm.Controls.Add(this.poisonDataGridView1);
+            this.RTKhachHangForm.Controls.Add(this.dgvRank);
             this.RTKhachHangForm.Controls.Add(this.nightHeaderLabel1);
             this.RTKhachHangForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RTKhachHangForm.DrawIcon = false;
@@ -552,9 +513,50 @@
             this.RTKhachHangForm.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
             this.RTKhachHangForm.Size = new System.Drawing.Size(1582, 853);
             this.RTKhachHangForm.TabIndex = 1;
-            this.RTKhachHangForm.Text = "KhachHang";
+            this.RTKhachHangForm.Text = "XepHang";
             this.RTKhachHangForm.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
             this.RTKhachHangForm.TitleBarTextColor = System.Drawing.Color.Gainsboro;
+            // 
+            // btnReload
+            // 
+            this.btnReload.Alpha = 20;
+            this.btnReload.BackColor = System.Drawing.Color.Transparent;
+            this.btnReload.Background = true;
+            this.btnReload.Background_WidthPen = 4F;
+            this.btnReload.BackgroundPen = true;
+            this.btnReload.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnReload.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnReload.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.btnReload.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnReload.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnReload.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnReload.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.btnReload.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.btnReload.Effect_1 = true;
+            this.btnReload.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnReload.Effect_1_Transparency = 25;
+            this.btnReload.Effect_2 = true;
+            this.btnReload.Effect_2_ColorBackground = System.Drawing.Color.White;
+            this.btnReload.Effect_2_Transparency = 20;
+            this.btnReload.Font = new System.Drawing.Font("Arial", 11F);
+            this.btnReload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.btnReload.Lighting = false;
+            this.btnReload.LinearGradient_Background = false;
+            this.btnReload.LinearGradientPen = false;
+            this.btnReload.Location = new System.Drawing.Point(1268, 199);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.PenWidth = 15;
+            this.btnReload.Rounding = true;
+            this.btnReload.RoundingInt = 70;
+            this.btnReload.Size = new System.Drawing.Size(130, 50);
+            this.btnReload.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.btnReload.TabIndex = 33;
+            this.btnReload.Tag = "Cyber";
+            this.btnReload.TextButton = "Làm mới danh sách";
+            this.btnReload.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btnReload.Timer_Effect_1 = 5;
+            this.btnReload.Timer_RGB = 300;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // XepHang
             // 
@@ -568,7 +570,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "XepHang";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
-            ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.XepHang_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRank)).EndInit();
             this.RTKhachHangForm.ResumeLayout(false);
             this.RTKhachHangForm.PerformLayout();
             this.ResumeLayout(false);
@@ -580,7 +583,6 @@
         private ReaLTaiizor.Controls.CyberButton cyberButton3;
         private ReaLTaiizor.Controls.CyberButton cyberButton5;
         private ReaLTaiizor.Controls.CyberButton cyberButton6;
-        private ReaLTaiizor.Controls.CyberButton cyberButton4;
         private ReaLTaiizor.Controls.CyberButton cyberButton2;
         private ReaLTaiizor.Controls.CyberButton cyberButton1;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel6;
@@ -591,8 +593,9 @@
         private ReaLTaiizor.Controls.CyberTextBox cyberTextBox6;
         private ReaLTaiizor.Controls.CyberTextBox cyberTextBox2;
         private ReaLTaiizor.Controls.CyberTextBox cyberTextBox1;
-        private ReaLTaiizor.Controls.PoisonDataGridView poisonDataGridView1;
+        private ReaLTaiizor.Controls.PoisonDataGridView dgvRank;
         private ReaLTaiizor.Controls.NightHeaderLabel nightHeaderLabel1;
         private ReaLTaiizor.Forms.NightForm RTKhachHangForm;
+        private ReaLTaiizor.Controls.CyberButton btnReload;
     }
 }
