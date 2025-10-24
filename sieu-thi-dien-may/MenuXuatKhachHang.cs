@@ -19,8 +19,7 @@ namespace stdm
 
         private void cyberButton1_Click(object sender, EventArgs e)
         {
-            Form f = new frmLichSuGiaoDichCuaKhachHang();
-            f.ShowDialog();
+            
         }
     }
 }

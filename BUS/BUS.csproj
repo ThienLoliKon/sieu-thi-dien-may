@@ -49,6 +49,14 @@
     <Compile Include="NhaCCBUS.cs" />
     <Compile Include="NhaSXBUS.cs" />
     <Compile Include="SanPhamBUS.cs" />
+    <Compile Include="CapBacNhanVienBUS.cs" />
+    <Compile Include="ChiNhanhBUS.cs" />
+    <Compile Include="DiemDanhBUS.cs" />
+    <Compile Include="NhanVienBUS.cs" />
+    <Compile Include="TaiKhoanBUS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DLL\DLL.csproj">

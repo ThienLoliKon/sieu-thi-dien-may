@@ -14,15 +14,6 @@
       <Association Name="san_pham_bao_hanh" Member="san_pham" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="san_pham" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.xep_hang" Member="xep_hangs">
-    <Type Name="xep_hang">
-      <Column Name="ma_hang" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ten_hang" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="yeu_cau" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="uu_dai" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="xep_hang_khach_hang" Member="khach_hangs" ThisKey="ma_hang" OtherKey="xep_hang" Type="khach_hang" />
-    </Type>
-  </Table>
   <Table Name="dbo.cap_bac_nhan_vien" Member="cap_bac_nhan_viens">
     <Type Name="cap_bac_nhan_vien">
       <Column Name="ma_cap_bac" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -256,6 +247,15 @@
       <Association Name="san_pham_san_pham_trong_kho_tong" Member="san_pham_trong_kho_tongs" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="san_pham_trong_kho_tong" />
       <Association Name="nha_cung_cap_san_pham" Member="nha_cung_cap" ThisKey="ma_nha_cung_cap" OtherKey="ma_nha_cung_cap" Type="nha_cung_cap" IsForeignKey="true" />
       <Association Name="nha_san_xuat_san_pham" Member="nha_san_xuat" ThisKey="ma_nha_san_xuat" OtherKey="ma_nha_san_xuat" Type="nha_san_xuat" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.xep_hang" Member="xep_hangs">
+    <Type Name="xep_hang">
+      <Column Name="ma_hang" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ten_hang" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="yeu_cau" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="uu_dai" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="xep_hang_khach_hang" Member="khach_hangs" ThisKey="ma_hang" OtherKey="xep_hang" Type="khach_hang" />
     </Type>
   </Table>
   <Table Name="dbo.san_pham_loai_hang" Member="san_pham_loai_hangs">

@@ -103,18 +103,6 @@
     <Compile Include="ChiNhanh.Designer.cs">
       <DependentUpon>ChiNhanh.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoanhThuTheoSanPham.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DoanhThuTheoSanPham.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DoanhThuTheoThoiGian.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DoanhThuTheoThoiGian.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="frmaLoaiViPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,12 +145,6 @@
     <Compile Include="frmKhuyenMai.Designer.cs">
       <DependentUpon>frmKhuyenMai.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLichSuGiaoDichCuaKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmLichSuGiaoDichCuaKhachHang.Designer.cs">
-      <DependentUpon>frmLichSuGiaoDichCuaKhachHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLoaiHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,30 +186,6 @@
     </Compile>
     <Compile Include="frmNhaSanXuat.Designer.cs">
       <DependentUpon>frmNhaSanXuat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmRPDoanhThuTheoSanPham.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRPDoanhThuTheoSanPham.Designer.cs">
-      <DependentUpon>frmRPDoanhThuTheoSanPham.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmRPDoanhThuTheoThoiGian.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRPDoanhThuTheoThoiGian.Designer.cs">
-      <DependentUpon>frmRPDoanhThuTheoThoiGian.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmRPKhuyenMai.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRPKhuyenMai.Designer.cs">
-      <DependentUpon>frmRPKhuyenMai.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmRPSanPhamTrongChiNhanh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRPSanPhamTrongChiNhanh.Designer.cs">
-      <DependentUpon>frmRPSanPhamTrongChiNhanh.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSanPham.cs">
       <SubType>Form</SubType>
@@ -277,12 +235,6 @@
     <Compile Include="KhuVuc.Designer.cs">
       <DependentUpon>KhuVuc.cs</DependentUpon>
     </Compile>
-    <Compile Include="LichSuGiaoDichCuaKhachHang.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LichSuGiaoDichCuaKhachHang.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,30 +267,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RptKhuyenMai.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RptKhuyenMai.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="SanPhamTrongKhoTong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SanPhamTrongKhoTong.Designer.cs">
-      <DependentUpon>SanPhamTrongKhoTong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SanPhamTrongKhoTrong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SanPhamTrongKhoTrong.Designer.cs">
-      <DependentUpon>SanPhamTrongKhoTrong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TongSPTrongChiNhanh.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TongSPTrongChiNhanh.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="XepHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -347,14 +275,6 @@
     </Compile>
     <EmbeddedResource Include="ChiNhanh.resx">
       <DependentUpon>ChiNhanh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DoanhThuTheoSanPham.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>DoanhThuTheoSanPham.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DoanhThuTheoThoiGian.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>DoanhThuTheoThoiGian.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="frmaLoaiViPham.resx">
       <DependentUpon>frmaLoaiViPham.cs</DependentUpon>
@@ -377,9 +297,6 @@
     <EmbeddedResource Include="frmKhuyenMai.resx">
       <DependentUpon>frmKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLichSuGiaoDichCuaKhachHang.resx">
-      <DependentUpon>frmLichSuGiaoDichCuaKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmLoaiHang.resx">
       <DependentUpon>frmLoaiHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -400,18 +317,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhaSanXuat.resx">
       <DependentUpon>frmNhaSanXuat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRPDoanhThuTheoSanPham.resx">
-      <DependentUpon>frmRPDoanhThuTheoSanPham.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRPDoanhThuTheoThoiGian.resx">
-      <DependentUpon>frmRPDoanhThuTheoThoiGian.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRPKhuyenMai.resx">
-      <DependentUpon>frmRPKhuyenMai.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRPSanPhamTrongChiNhanh.resx">
-      <DependentUpon>frmRPSanPhamTrongChiNhanh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSanPham.resx">
       <DependentUpon>frmSanPham.cs</DependentUpon>
@@ -437,10 +342,6 @@
     <EmbeddedResource Include="KhuVuc.resx">
       <DependentUpon>KhuVuc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LichSuGiaoDichCuaKhachHang.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>LichSuGiaoDichCuaKhachHang.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -465,20 +366,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RptKhuyenMai.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>RptKhuyenMai.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SanPhamTrongKhoTong.resx">
-      <DependentUpon>SanPhamTrongKhoTong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SanPhamTrongKhoTrong.resx">
-      <DependentUpon>SanPhamTrongKhoTrong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TongSPTrongChiNhanh.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>TongSPTrongChiNhanh.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="XepHang.resx">
       <DependentUpon>XepHang.cs</DependentUpon>
     </EmbeddedResource>

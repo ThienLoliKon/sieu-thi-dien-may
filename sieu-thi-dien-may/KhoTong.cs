@@ -24,8 +24,7 @@ namespace he_thong_dien_may
 
         private void cyberButton8_Click(object sender, EventArgs e)
         {
-            Form f = new SanPhamTrongKhoTrong();
-            f.ShowDialog();
+            
         }
     }
 }

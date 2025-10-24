@@ -188,15 +188,13 @@ namespace he_thong_dien_may
 
         private void sảnPhẩmTrongKhoTổngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new SanPhamTrongKhoTong();
-            f.ShowDialog();
+            
         }
 
         private void sảnPhẩmTrongChiNhánhToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            Form f = new SanPhamTrongKhoTrong();
-            f.ShowDialog();
+            
         }
 
         private void xếpHạngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -207,20 +205,17 @@ namespace he_thong_dien_may
 
         private void khuyếnMãiToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Form f = new frmRPKhuyenMai();
-            f.ShowDialog();
+            
         }
 
         private void doanhThuSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new frmRPDoanhThuTheoSanPham();
-            f.ShowDialog();
+            
         }
 
         private void doanhThuTheoThờiGianToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new frmRPDoanhThuTheoThoiGian();
-            f.ShowDialog();
+            
         }
     }
 }
