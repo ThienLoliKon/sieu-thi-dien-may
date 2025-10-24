@@ -37,13 +37,13 @@
             this.cyberButton2 = new ReaLTaiizor.Controls.CyberButton();
             this.cyberButton1 = new ReaLTaiizor.Controls.CyberButton();
             this.thunderLabel6 = new ReaLTaiizor.Controls.ThunderLabel();
-            this.cyberTextBox5 = new ReaLTaiizor.Controls.CyberTextBox();
+            this.txtUuDai = new ReaLTaiizor.Controls.CyberTextBox();
             this.thunderLabel3 = new ReaLTaiizor.Controls.ThunderLabel();
             this.thunderLabel2 = new ReaLTaiizor.Controls.ThunderLabel();
             this.thunderLabel1 = new ReaLTaiizor.Controls.ThunderLabel();
-            this.cyberTextBox6 = new ReaLTaiizor.Controls.CyberTextBox();
-            this.cyberTextBox2 = new ReaLTaiizor.Controls.CyberTextBox();
-            this.cyberTextBox1 = new ReaLTaiizor.Controls.CyberTextBox();
+            this.txtTenRank = new ReaLTaiizor.Controls.CyberTextBox();
+            this.txtYeuCau = new ReaLTaiizor.Controls.CyberTextBox();
+            this.txtMaRank = new ReaLTaiizor.Controls.CyberTextBox();
             this.dgvRank = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.nightHeaderLabel1 = new ReaLTaiizor.Controls.NightHeaderLabel();
             this.RTKhachHangForm = new ReaLTaiizor.Forms.NightForm();
@@ -212,6 +212,7 @@
             this.cyberButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberButton2.Timer_Effect_1 = 5;
             this.cyberButton2.Timer_RGB = 300;
+            this.cyberButton2.Click += new System.EventHandler(this.cyberButton2_Click);
             // 
             // cyberButton1
             // 
@@ -252,6 +253,7 @@
             this.cyberButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberButton1.Timer_Effect_1 = 5;
             this.cyberButton1.Timer_RGB = 300;
+            this.cyberButton1.Click += new System.EventHandler(this.cyberButton1_Click);
             // 
             // thunderLabel6
             // 
@@ -264,35 +266,35 @@
             this.thunderLabel6.TabIndex = 22;
             this.thunderLabel6.Text = "Phần trăm giảm";
             // 
-            // cyberTextBox5
+            // txtUuDai
             // 
-            this.cyberTextBox5.Alpha = 20;
-            this.cyberTextBox5.BackColor = System.Drawing.Color.Transparent;
-            this.cyberTextBox5.Background_WidthPen = 3F;
-            this.cyberTextBox5.BackgroundPen = true;
-            this.cyberTextBox5.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox5.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox5.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox5.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox5.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox5.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.cyberTextBox5.Font = new System.Drawing.Font("Arial", 10F);
-            this.cyberTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.cyberTextBox5.Lighting = false;
-            this.cyberTextBox5.LinearGradientPen = false;
-            this.cyberTextBox5.Location = new System.Drawing.Point(765, 90);
-            this.cyberTextBox5.Name = "cyberTextBox5";
-            this.cyberTextBox5.PenWidth = 15;
-            this.cyberTextBox5.RGB = false;
-            this.cyberTextBox5.Rounding = true;
-            this.cyberTextBox5.RoundingInt = 60;
-            this.cyberTextBox5.Size = new System.Drawing.Size(418, 40);
-            this.cyberTextBox5.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.cyberTextBox5.TabIndex = 19;
-            this.cyberTextBox5.Tag = "Cyber";
-            this.cyberTextBox5.TextButton = "";
-            this.cyberTextBox5.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.cyberTextBox5.Timer_RGB = 300;
+            this.txtUuDai.Alpha = 20;
+            this.txtUuDai.BackColor = System.Drawing.Color.Transparent;
+            this.txtUuDai.Background_WidthPen = 3F;
+            this.txtUuDai.BackgroundPen = true;
+            this.txtUuDai.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtUuDai.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtUuDai.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtUuDai.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtUuDai.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtUuDai.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txtUuDai.Font = new System.Drawing.Font("Arial", 10F);
+            this.txtUuDai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.txtUuDai.Lighting = false;
+            this.txtUuDai.LinearGradientPen = false;
+            this.txtUuDai.Location = new System.Drawing.Point(765, 90);
+            this.txtUuDai.Name = "txtUuDai";
+            this.txtUuDai.PenWidth = 15;
+            this.txtUuDai.RGB = false;
+            this.txtUuDai.Rounding = true;
+            this.txtUuDai.RoundingInt = 60;
+            this.txtUuDai.Size = new System.Drawing.Size(418, 40);
+            this.txtUuDai.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txtUuDai.TabIndex = 19;
+            this.txtUuDai.Tag = "Cyber";
+            this.txtUuDai.TextButton = "";
+            this.txtUuDai.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.txtUuDai.Timer_RGB = 300;
             // 
             // thunderLabel3
             // 
@@ -327,95 +329,95 @@
             this.thunderLabel1.TabIndex = 15;
             this.thunderLabel1.Text = "Mã hạng";
             // 
-            // cyberTextBox6
+            // txtTenRank
             // 
-            this.cyberTextBox6.Alpha = 20;
-            this.cyberTextBox6.BackColor = System.Drawing.Color.Transparent;
-            this.cyberTextBox6.Background_WidthPen = 3F;
-            this.cyberTextBox6.BackgroundPen = true;
-            this.cyberTextBox6.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox6.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox6.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox6.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox6.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox6.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.cyberTextBox6.Font = new System.Drawing.Font("Arial", 10F);
-            this.cyberTextBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.cyberTextBox6.Lighting = false;
-            this.cyberTextBox6.LinearGradientPen = false;
-            this.cyberTextBox6.Location = new System.Drawing.Point(176, 209);
-            this.cyberTextBox6.Name = "cyberTextBox6";
-            this.cyberTextBox6.PenWidth = 15;
-            this.cyberTextBox6.RGB = false;
-            this.cyberTextBox6.Rounding = true;
-            this.cyberTextBox6.RoundingInt = 60;
-            this.cyberTextBox6.Size = new System.Drawing.Size(418, 40);
-            this.cyberTextBox6.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.cyberTextBox6.TabIndex = 14;
-            this.cyberTextBox6.Tag = "Cyber";
-            this.cyberTextBox6.TextButton = "";
-            this.cyberTextBox6.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.cyberTextBox6.Timer_RGB = 300;
+            this.txtTenRank.Alpha = 20;
+            this.txtTenRank.BackColor = System.Drawing.Color.Transparent;
+            this.txtTenRank.Background_WidthPen = 3F;
+            this.txtTenRank.BackgroundPen = true;
+            this.txtTenRank.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtTenRank.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtTenRank.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtTenRank.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtTenRank.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtTenRank.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txtTenRank.Font = new System.Drawing.Font("Arial", 10F);
+            this.txtTenRank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.txtTenRank.Lighting = false;
+            this.txtTenRank.LinearGradientPen = false;
+            this.txtTenRank.Location = new System.Drawing.Point(176, 209);
+            this.txtTenRank.Name = "txtTenRank";
+            this.txtTenRank.PenWidth = 15;
+            this.txtTenRank.RGB = false;
+            this.txtTenRank.Rounding = true;
+            this.txtTenRank.RoundingInt = 60;
+            this.txtTenRank.Size = new System.Drawing.Size(418, 40);
+            this.txtTenRank.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txtTenRank.TabIndex = 14;
+            this.txtTenRank.Tag = "Cyber";
+            this.txtTenRank.TextButton = "";
+            this.txtTenRank.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.txtTenRank.Timer_RGB = 300;
             // 
-            // cyberTextBox2
+            // txtYeuCau
             // 
-            this.cyberTextBox2.Alpha = 20;
-            this.cyberTextBox2.BackColor = System.Drawing.Color.Transparent;
-            this.cyberTextBox2.Background_WidthPen = 3F;
-            this.cyberTextBox2.BackgroundPen = true;
-            this.cyberTextBox2.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox2.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox2.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox2.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox2.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox2.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.cyberTextBox2.Font = new System.Drawing.Font("Arial", 10F);
-            this.cyberTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.cyberTextBox2.Lighting = false;
-            this.cyberTextBox2.LinearGradientPen = false;
-            this.cyberTextBox2.Location = new System.Drawing.Point(176, 332);
-            this.cyberTextBox2.Name = "cyberTextBox2";
-            this.cyberTextBox2.PenWidth = 15;
-            this.cyberTextBox2.RGB = false;
-            this.cyberTextBox2.Rounding = true;
-            this.cyberTextBox2.RoundingInt = 60;
-            this.cyberTextBox2.Size = new System.Drawing.Size(418, 40);
-            this.cyberTextBox2.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.cyberTextBox2.TabIndex = 10;
-            this.cyberTextBox2.Tag = "Cyber";
-            this.cyberTextBox2.TextButton = "";
-            this.cyberTextBox2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.cyberTextBox2.Timer_RGB = 300;
+            this.txtYeuCau.Alpha = 20;
+            this.txtYeuCau.BackColor = System.Drawing.Color.Transparent;
+            this.txtYeuCau.Background_WidthPen = 3F;
+            this.txtYeuCau.BackgroundPen = true;
+            this.txtYeuCau.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtYeuCau.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtYeuCau.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtYeuCau.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtYeuCau.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtYeuCau.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txtYeuCau.Font = new System.Drawing.Font("Arial", 10F);
+            this.txtYeuCau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.txtYeuCau.Lighting = false;
+            this.txtYeuCau.LinearGradientPen = false;
+            this.txtYeuCau.Location = new System.Drawing.Point(176, 332);
+            this.txtYeuCau.Name = "txtYeuCau";
+            this.txtYeuCau.PenWidth = 15;
+            this.txtYeuCau.RGB = false;
+            this.txtYeuCau.Rounding = true;
+            this.txtYeuCau.RoundingInt = 60;
+            this.txtYeuCau.Size = new System.Drawing.Size(418, 40);
+            this.txtYeuCau.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txtYeuCau.TabIndex = 10;
+            this.txtYeuCau.Tag = "Cyber";
+            this.txtYeuCau.TextButton = "";
+            this.txtYeuCau.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.txtYeuCau.Timer_RGB = 300;
             // 
-            // cyberTextBox1
+            // txtMaRank
             // 
-            this.cyberTextBox1.Alpha = 20;
-            this.cyberTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.cyberTextBox1.Background_WidthPen = 3F;
-            this.cyberTextBox1.BackgroundPen = true;
-            this.cyberTextBox1.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox1.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox1.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox1.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox1.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox1.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.cyberTextBox1.Font = new System.Drawing.Font("Arial", 10F);
-            this.cyberTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.cyberTextBox1.Lighting = false;
-            this.cyberTextBox1.LinearGradientPen = false;
-            this.cyberTextBox1.Location = new System.Drawing.Point(176, 90);
-            this.cyberTextBox1.Name = "cyberTextBox1";
-            this.cyberTextBox1.PenWidth = 15;
-            this.cyberTextBox1.RGB = false;
-            this.cyberTextBox1.Rounding = true;
-            this.cyberTextBox1.RoundingInt = 60;
-            this.cyberTextBox1.Size = new System.Drawing.Size(418, 40);
-            this.cyberTextBox1.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.cyberTextBox1.TabIndex = 9;
-            this.cyberTextBox1.Tag = "Cyber";
-            this.cyberTextBox1.TextButton = "";
-            this.cyberTextBox1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.cyberTextBox1.Timer_RGB = 300;
+            this.txtMaRank.Alpha = 20;
+            this.txtMaRank.BackColor = System.Drawing.Color.Transparent;
+            this.txtMaRank.Background_WidthPen = 3F;
+            this.txtMaRank.BackgroundPen = true;
+            this.txtMaRank.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtMaRank.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtMaRank.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtMaRank.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtMaRank.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtMaRank.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txtMaRank.Font = new System.Drawing.Font("Arial", 10F);
+            this.txtMaRank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.txtMaRank.Lighting = false;
+            this.txtMaRank.LinearGradientPen = false;
+            this.txtMaRank.Location = new System.Drawing.Point(176, 90);
+            this.txtMaRank.Name = "txtMaRank";
+            this.txtMaRank.PenWidth = 15;
+            this.txtMaRank.RGB = false;
+            this.txtMaRank.Rounding = true;
+            this.txtMaRank.RoundingInt = 60;
+            this.txtMaRank.Size = new System.Drawing.Size(418, 40);
+            this.txtMaRank.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txtMaRank.TabIndex = 9;
+            this.txtMaRank.Tag = "Cyber";
+            this.txtMaRank.TextButton = "";
+            this.txtMaRank.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.txtMaRank.Timer_RGB = 300;
             // 
             // dgvRank
             // 
@@ -494,13 +496,13 @@
             this.RTKhachHangForm.Controls.Add(this.cyberButton2);
             this.RTKhachHangForm.Controls.Add(this.cyberButton1);
             this.RTKhachHangForm.Controls.Add(this.thunderLabel6);
-            this.RTKhachHangForm.Controls.Add(this.cyberTextBox5);
+            this.RTKhachHangForm.Controls.Add(this.txtUuDai);
             this.RTKhachHangForm.Controls.Add(this.thunderLabel3);
             this.RTKhachHangForm.Controls.Add(this.thunderLabel2);
             this.RTKhachHangForm.Controls.Add(this.thunderLabel1);
-            this.RTKhachHangForm.Controls.Add(this.cyberTextBox6);
-            this.RTKhachHangForm.Controls.Add(this.cyberTextBox2);
-            this.RTKhachHangForm.Controls.Add(this.cyberTextBox1);
+            this.RTKhachHangForm.Controls.Add(this.txtTenRank);
+            this.RTKhachHangForm.Controls.Add(this.txtYeuCau);
+            this.RTKhachHangForm.Controls.Add(this.txtMaRank);
             this.RTKhachHangForm.Controls.Add(this.dgvRank);
             this.RTKhachHangForm.Controls.Add(this.nightHeaderLabel1);
             this.RTKhachHangForm.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -586,13 +588,13 @@
         private ReaLTaiizor.Controls.CyberButton cyberButton2;
         private ReaLTaiizor.Controls.CyberButton cyberButton1;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel6;
-        private ReaLTaiizor.Controls.CyberTextBox cyberTextBox5;
+        private ReaLTaiizor.Controls.CyberTextBox txtUuDai;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel3;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel2;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel1;
-        private ReaLTaiizor.Controls.CyberTextBox cyberTextBox6;
-        private ReaLTaiizor.Controls.CyberTextBox cyberTextBox2;
-        private ReaLTaiizor.Controls.CyberTextBox cyberTextBox1;
+        private ReaLTaiizor.Controls.CyberTextBox txtTenRank;
+        private ReaLTaiizor.Controls.CyberTextBox txtYeuCau;
+        private ReaLTaiizor.Controls.CyberTextBox txtMaRank;
         private ReaLTaiizor.Controls.PoisonDataGridView dgvRank;
         private ReaLTaiizor.Controls.NightHeaderLabel nightHeaderLabel1;
         private ReaLTaiizor.Forms.NightForm RTKhachHangForm;

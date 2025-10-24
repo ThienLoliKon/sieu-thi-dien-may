@@ -33,5 +33,37 @@ namespace he_thong_dien_may
         {
             dgvRank.DataSource = xephangbus.getAllRank();
         }
+
+        private void cyberButton1_Click(object sender, EventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Are you sure to add new rank?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rs == DialogResult.No)
+            {
+                return;
+            }
+            try
+            {
+                XepHangBUS.XepHang addrank = new XepHangBUS.XepHang();
+                addrank.mahang = txtMaRank.TextButton;
+                addrank.tenhang = txtTenRank.TextButton;
+                addrank.yeucau = double.Parse(txtYeuCau.TextButton);
+                addrank.uudai = double.Parse(txtUuDai.TextButton);
+                if(xephangbus.addRank(addrank) == 1)
+                {
+                    MessageBox.Show("Add new rank successfully!");
+                    dgvRank.DataSource = xephangbus.getAllRank();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid input data. Please check again!\n" + ex.Message);
+                return;
+            }
+        }
+
+        private void cyberButton2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -42,26 +42,28 @@ namespace BUS
             }
             return list;
         }
-        //public int addKhachHang(KhachHang kh)
-        //{
-        //    DLL.khach_hang khach = new DLL.khach_hang()
-        //    {
-        //        ma_khach_hang = createMaKhachHang(),
-        //        ho_ten_khach_hang = kh.tenkhachhang,
-        //        sdt = kh.sdt,
-        //        diachi = kh.diachi,
-        //        xep_hang = "bronze",
-        //        diem = 0
-        //    };
-        //    try
-        //    {
-        //        return khachhangdll.AddKhachHang(khach);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(kh.xephang.ToString());
-        //    }
-        //}
+        public int addRank(XepHang xh)
+        {
+            if (checkTrungIDRank(xh.mahang) == true)
+            {
+                throw new Exception("Duplicated rank id!!!");
+            }
+            DLL.xep_hang xephang = new DLL.xep_hang()
+            {
+                ma_hang = xh.mahang,
+                ten_hang = xh.tenhang,
+                yeu_cau = xh.yeucau,
+                uu_dai = xh.uudai,
+            };
+            try
+            {
+                return xephangdll.AddXepHang(xephang);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         //public int updateKhachHang(KhachHang kh)
         //{
         //    DLL.khach_hang khach = new DLL.khach_hang()
@@ -73,20 +75,18 @@ namespace BUS
         //    };
         //    return khachhangdll.updateKhachHang(khach);
         //}
-        //public string createMaKhachHang()
-        //{
-        //    var khachhangcuoicung = khachhangdll.getAllKhachHang().LastOrDefault();
-        //    if (khachhangcuoicung != null)
-        //    {
-        //        string makhcuoicung = khachhangcuoicung.ma_khach_hang;
-        //        int so = int.Parse(makhcuoicung.Substring(2)) + 1;
-        //        return "KH" + so.ToString();
-        //    }
-        //    else
-        //    {
-        //        return "KH0001";
-        //    }
-        //}
+        public bool checkTrungIDRank(string id)
+        {
+            var listrank = xephangdll.getAllXepHang();
+            foreach (var r in listrank)
+            {
+                if (r.ma_hang == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         //public List<KhachHang> searchKhachHang(string ma, string ten, string sdt)
         //{
         //    List<KhachHang> list = new List<KhachHang>();
