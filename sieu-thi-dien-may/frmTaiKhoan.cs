@@ -56,10 +56,9 @@ namespace he_thong_dien_may
                     cbbMaNV.ValueMember = "MaNV";    // Gán MÃ NV
                     cbbMaNV.SelectedIndex = -1;
                 }
-                cbbMaNV.Tag = dtNhanVien;
 
                 // 2. LOAD QUYỀN VÀO cbbQuyen (Hardcode mẫu hoặc dùng bảng khác)
-                DataTable dtQuyen = new DataTable();
+                DataTable dtQuyen = tkBus.GetAllTaiKhoanAsTable();
                 //dtQuyen.Columns.Add("TenQuyen");
                 //dtQuyen.Rows.Add("Admin");
                 //dtQuyen.Rows.Add("QuanLyCN");
@@ -88,9 +87,9 @@ namespace he_thong_dien_may
 
             // Cài đặt DataGridView Columns (GIỮ NGUYÊN)
             dgvTK.AutoGenerateColumns = false;
-            dgvTK.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã NV", DataPropertyName = "MaNV", Width = 100 });
-            dgvTK.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mật Khẩu", DataPropertyName = "MatKhau", Width = 100 });
-            dgvTK.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Quyền Truy Cập", DataPropertyName = "Quyen", Width = 100 });
+            dgvTK.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã NV", DataPropertyName = "MaNV", Width = 200 });
+            dgvTK.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mật Khẩu", DataPropertyName = "MatKhau", Width = 200 });
+            dgvTK.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Quyền Truy Cập", DataPropertyName = "Quyen", Width = 200 });
 
             // Load Dữ liệu DataGridView sau
             LoadDL();
@@ -120,26 +119,30 @@ namespace he_thong_dien_may
             {
                 try
                 {
-                    // Lấy Mã từ SelectedValue
-                    string manv = cbbMaNV.SelectedValue?.ToString();
-                    string tennv = txtMK.Text;
+                    // LẤY DỮ LIỆU ĐÃ SỬA LỖI TÊN BIẾN
+                    string maNV = cbbMaNV.SelectedValue?.ToString();
+                    string matKhau = txtMK.Text; // Giả sử txtMK là Mật khẩu
                     string quyen = cbbQuyen.SelectedValue?.ToString();
 
+                    // Kiểm tra MaNV và MK
+                    if (string.IsNullOrEmpty(maNV) || string.IsNullOrEmpty(matKhau))
+                    {
+                        MessageBox.Show("Vui lòng chọn Mã NV và nhập Mật khẩu.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
 
                     TaiKhoanBUS bus = new TaiKhoanBUS();
 
-                    // THỨ TỰ ĐÚNG CỦA BUS: (tenNV, macapbac, sdt, diachi, machinhanh, trangthai)
-                    bool isAdd = bus.AddTaiKhoan(
-                        manv, tennv, quyen
-                    );
+                    // THỨ TỰ ĐÚNG CỦA BUS: (maNV, matKhau, quyen)
+                    bool isAdd = bus.AddTaiKhoan(maNV, matKhau, quyen);
 
                     if (isAdd)
                     {
-                        MessageBox.Show("Thêm thành công");
+                        MessageBox.Show("Thêm Tài khoản thành công");
                     }
                     else
                     {
-                        MessageBox.Show("Thêm không thành công");
+                        MessageBox.Show("Thêm Tài khoản không thành công. (Có thể Mã NV đã tồn tại TK)");
                     }
                     LoadDL();
                 }
@@ -162,17 +165,15 @@ namespace he_thong_dien_may
             {
                 try
                 {
-                    // LẤY MÃ TỪ SELECTEDVALUE (KHẮC PHỤC LỖI FK/TRUNCATION)
-                    string manv = cbbMaNV.SelectedValue?.ToString();
-                    string tennv = txtMK.Text;
-                    string quyen = cbbQuyen.SelectedValue?.ToString(); // Đảm bảo luôn là mã ngắn gọn (char(10))
-
+                    // LẤY DỮ LIỆU ĐÃ SỬA LỖI TÊN BIẾN
+                    string maNV = cbbMaNV.SelectedValue?.ToString();
+                    string matKhau = txtMK.Text; // Giả sử txtMK là Mật khẩu
+                    string quyen = cbbQuyen.SelectedValue?.ToString();
 
                     TaiKhoanBUS bus = new TaiKhoanBUS();
 
-                    bool isupdate = bus.AddTaiKhoan(
-                        manv, tennv, quyen
-                    );
+                    // THỨ TỰ ĐÚNG CỦA BUS: (maNV, matKhau, quyen)
+                    bool isupdate = bus.UpdateTaiKhoanstring(maNV, matKhau, quyen);
 
                     if (isupdate)
                     {
@@ -192,34 +193,29 @@ namespace he_thong_dien_may
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(cbbMaNV.Text))
+            if (cbbMaNV.SelectedValue == null)
             {
-                MessageBox.Show("Vui lòng chọn nhân viên cần xóa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn Tài khoản cần xóa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            // KHẮC PHỤC LỖI CÚ PHÁP MESSAGEBOX
-            DialogResult result = MessageBox.Show($"Bạn có muốn chuyển trạng thái nhân viên có mã: {cbbMaNV.Text} thành 'Đã Nghỉ' không ?", "Thông báo", MessageBoxButtons.YesNo);
+
+            // SỬA LỖI: Thông báo phải là Xóa Tài khoản
+            DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa Tài khoản của Mã NV: {cbbMaNV.SelectedValue} không?", "Xác nhận Xóa", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
                 try
                 {
+                    string maNV = cbbMaNV.SelectedValue.ToString();
                     TaiKhoanBUS bus = new TaiKhoanBUS();
-                    bool isDeleted = bus.DeleteTaiKhoan(cbbMaNV.Text);
+                    bool isDeleted = bus.DeleteTaiKhoan(maNV); // Xóa cứng
 
-                    if (isDeleted)
-                    {
-                        MessageBox.Show("Chuyển trạng thái thành công!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Chuyển trạng thái thất bại.");
-                    }
+                    MessageBox.Show(isDeleted ? "Xóa Tài khoản thành công!" : "Xóa thất bại.");
                     LoadDL();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Lỗi khi chuyển trạng thái: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Lỗi khi xóa: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
