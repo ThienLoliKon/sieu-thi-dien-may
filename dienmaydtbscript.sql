@@ -1,7 +1,7 @@
 ﻿--drop database dien_may
-create database dien_may;
+create database dien_may3;
 go
-use dien_may;
+use dien_may3;
 go
 
 -- Sản phẩm
@@ -109,7 +109,7 @@ create table chi_tiet_hoa_don (
     ma_san_pham char(10),
     ma_khuyen_mai char(10),
     so_luong int,
-    don_gia DEMICAL,
+    don_gia float,
     ngay_gio_in datetime,
     primary key (ma_hoa_don, ma_san_pham)
 );
@@ -159,10 +159,7 @@ create table tai_khoan(
     mat_khau char(10),
     quyen char(10)
 );
-go
-alter table tai_khoan
-add constraint FK_tai_khoan 
-    foreign key (quyen) references nha_san_xuat(ma_cap_bac);
+
 go
 
 -- Chi nhánh
@@ -466,3 +463,6 @@ add constraint FK_chi_tiet_hoa_don
     foreign key (ma_khuyen_mai) references khuyen_mai(ma_khuyen_mai);
 go
 
+alter table tai_khoan
+add constraint FK_tai_khoan 
+    foreign key (quyen) references cap_bac_nhan_vien(ma_cap_bac);
