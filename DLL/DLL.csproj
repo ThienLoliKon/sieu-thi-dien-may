@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaoHanhDLL.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="CapBacNhanVienDLL.cs" />
     <Compile Include="ChiNhanhDLL.cs" />
     <Compile Include="DBSTDM.designer.cs">

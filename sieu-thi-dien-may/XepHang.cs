@@ -63,7 +63,34 @@ namespace he_thong_dien_may
 
         private void cyberButton2_Click(object sender, EventArgs e)
         {
+            DialogResult rs = MessageBox.Show("Delete?", "Confirm!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rs == DialogResult.No)
+            {
+                return;
+            }
+            try
+            {
+                XepHangBUS.XepHang xephang = new XepHangBUS.XepHang();
+                xephang.mahang = txtMaRank.TextButton;
+                xephang.tenhang = txtTenRank.TextButton;
+                xephang.yeucau = double.Parse(txtYeuCau.TextButton);
+                xephang.uudai = double.Parse(txtYeuCau.TextButton);
+                if (xephangbus.updateRank(xephang) == 1)
+                {
+                    MessageBox.Show("Update rank successfully!");
+                    dgvRank.DataSource = xephangbus.getAllRank();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid input data. Please check again!\n" + ex.Message);
+                return;
+            }
+        }
 
+        private void cyberButton6_Click(object sender, EventArgs e)
+        {
+            xephangbus.deleteRank(txtMaRank.TextButton);
         }
     }
 }

@@ -41,6 +41,7 @@ namespace DLL
                 var xephang = db.xep_hangs.SingleOrDefault(n => n.ma_hang == xh.ma_hang);
                 if (xephang != null)
                 {
+                    xephang.ma_hang = xh.ma_hang;
                     xephang.ten_hang = xh.ten_hang;
                     xephang.yeu_cau = xh.yeu_cau;
                     xephang.uu_dai = xh.uu_dai;

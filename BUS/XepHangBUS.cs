@@ -64,17 +64,17 @@ namespace BUS
                 throw new Exception(ex.Message);
             }
         }
-        //public int updateKhachHang(KhachHang kh)
-        //{
-        //    DLL.khach_hang khach = new DLL.khach_hang()
-        //    {
-        //        ma_khach_hang = kh.makhachhang,
-        //        ho_ten_khach_hang = kh.tenkhachhang,
-        //        sdt = kh.sdt,
-        //        diachi = kh.diachi,
-        //    };
-        //    return khachhangdll.updateKhachHang(khach);
-        //}
+        public int updateRank(XepHang xh)
+        {
+            DLL.xep_hang xephang = new DLL.xep_hang()
+            {
+                ma_hang = xh.mahang,
+                ten_hang = xh.tenhang,
+                yeu_cau = xh.yeucau,
+                uu_dai = xh.uudai,
+            };
+            return xephangdll.UpdateRank(xephang);
+        }
         public bool checkTrungIDRank(string id)
         {
             var listrank = xephangdll.getAllXepHang();
@@ -86,6 +86,17 @@ namespace BUS
                 }
             }
             return false;
+        }
+        public int deleteRank(string id)
+        {
+            try
+            {
+                return xephangdll.deleteRank(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         //public List<KhachHang> searchKhachHang(string ma, string ten, string sdt)
         //{
