@@ -1,0 +1,99 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DLL
+{
+    public class NhanVienDLL
+    {
+        private DBSTDMDataContext db;
+
+        public NhanVienDLL()
+        {
+            db = new DBSTDMDataContext();
+            if (!db.DatabaseExists())
+            {
+                throw new Exception("Không thể kết nối đến cơ sở dữ liệu.");
+            }
+        }
+
+        public List<nhan_vien> GetAllNhanVien()
+        {
+            return db.nhan_viens.ToList();
+        }
+
+        public void AddNhanVien(nhan_vien NV)
+        {
+            db.nhan_viens.InsertOnSubmit(NV);
+            db.SubmitChanges();
+        }
+
+        public void DeleteNhanVien(string id)
+        {
+            var nhanvien = db.nhan_viens.SingleOrDefault(p => p.ma_nhan_vien == id);
+
+            if (nhanvien == null)
+            {
+                // Nếu không tìm thấy, có thể ném exception hoặc đơn giản là thoát
+                throw new Exception($"Không tìm thấy nhân viên với ID: {id}");
+            }
+
+            // Cập nhật trạng thái làm việc (Giả định 'false' là Đã Nghỉ)
+            // LƯU Ý: Trường trang_thai trong DB là bit. C# nhận giá trị bool hoặc int 0/1.
+            nhanvien.trang_thai = false;
+
+            db.SubmitChanges();
+        }
+
+
+
+        public void UpdateNhanVien(nhan_vien updateKhachHang)
+        {
+            var result = db.nhan_viens.SingleOrDefault(kh => kh.ma_nhan_vien == updateKhachHang.ma_nhan_vien);
+            if (result != null)
+            {
+                result.ho_va_ten = updateKhachHang.ho_va_ten;
+                result.ma_cap_bac = updateKhachHang.ma_cap_bac;
+                result.so_dien_thoai = updateKhachHang.so_dien_thoai;
+                result.dia_chi_thuong_tru = updateKhachHang.dia_chi_thuong_tru;
+                result.ma_chi_nhanh = updateKhachHang.ma_chi_nhanh;
+                result.trang_thai = updateKhachHang.trang_thai;
+                db.SubmitChanges();
+            }
+        }
+
+        public string TaoMaNhanVien()
+        {
+            // Lấy danh sách mã TacGia và kiểm tra có dữ liệu hay không
+            var maNhanViens = db.nhan_viens.Select(p => p.ma_nhan_vien).ToList();
+
+            int maxId = 0;
+
+            if (maNhanViens.Any()) // Kiểm tra nếu có dữ liệu
+            {
+                maxId = maNhanViens
+                            .Where(m => m.StartsWith("NV")) // Lọc các mã bắt đầu bằng "TG"
+                            .Select(m => int.Parse(m.Substring(2))) // Lấy phần số sau "TG"
+                            .Max(); // Lấy giá trị lớn nhất
+            }
+
+            // Tăng giá trị ID lớn nhất
+            maxId++;
+
+            // Tạo mã mới với tiền tố "TG" và đảm bảo đúng định dạng
+            return "NV" + maxId.ToString("D3");
+        }
+        public List<nhan_vien> SearchNhanVien(string keyword)
+        {
+            return db.nhan_viens
+                .Where(nhanvien => nhanvien.ma_nhan_vien.Contains(keyword) || nhanvien.ho_va_ten.Contains(keyword) || nhanvien.ma_cap_bac.Contains(keyword) || nhanvien.so_dien_thoai.Contains(keyword) || nhanvien.dia_chi_thuong_tru.Contains(keyword) || nhanvien.ma_chi_nhanh.Contains(keyword) )
+                .ToList();
+        }
+        public bool check(string id)
+        {
+            return db.nhan_viens.Any(p => p.ma_nhan_vien == id);
+        }
+    }
+}

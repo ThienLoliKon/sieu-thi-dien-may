@@ -31,13 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnLoc = new ReaLTaiizor.Controls.ForeverButton();
-            this.dtpTraCuu = new ReaLTaiizor.Controls.PoisonDateTime();
-            this.foreverButton3 = new ReaLTaiizor.Controls.ForeverButton();
+            this.btnTimKiem = new ReaLTaiizor.Controls.ForeverButton();
+            this.btnXoa = new ReaLTaiizor.Controls.ForeverButton();
             this.txtLuu = new ReaLTaiizor.Controls.ForeverButton();
             this.btnThem = new ReaLTaiizor.Controls.ForeverButton();
             this.dtpThoiGianVao = new ReaLTaiizor.Controls.PoisonDateTime();
-            this.txtMaNV = new ReaLTaiizor.Controls.ForeverTextBox();
             this.txtMaDiemDanh = new ReaLTaiizor.Controls.ForeverTextBox();
             this.foreverLabel6 = new ReaLTaiizor.Controls.ForeverLabel();
             this.foreverLabel5 = new ReaLTaiizor.Controls.ForeverLabel();
@@ -45,13 +43,14 @@
             this.foreverLabel3 = new ReaLTaiizor.Controls.ForeverLabel();
             this.foreverLabel1 = new ReaLTaiizor.Controls.ForeverLabel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnDong = new ReaLTaiizor.Controls.ForeverButton();
             this.dgvDiemDanh = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbbTraCuu = new ReaLTaiizor.Controls.ForeverComboBox();
             this.foreverForm1 = new ReaLTaiizor.Forms.ForeverForm();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbbMaNV = new ReaLTaiizor.Controls.ForeverComboBox();
             this.dtpThoiGianRa = new ReaLTaiizor.Controls.PoisonDateTime();
-            this.foreverButton1 = new ReaLTaiizor.Controls.ForeverButton();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiemDanh)).BeginInit();
             this.panel1.SuspendLayout();
@@ -59,60 +58,65 @@
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnLoc
+            // btnTimKiem
             // 
-            this.btnLoc.BackColor = System.Drawing.Color.Transparent;
-            this.btnLoc.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.btnLoc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoc.Location = new System.Drawing.Point(692, 15);
-            this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Rounded = false;
-            this.btnLoc.Size = new System.Drawing.Size(120, 25);
-            this.btnLoc.TabIndex = 6;
-            this.btnLoc.Text = "Lọc";
-            this.btnLoc.TextColor = System.Drawing.Color.Black;
+            this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
+            this.btnTimKiem.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.btnTimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem.Location = new System.Drawing.Point(1233, 4);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Rounded = false;
+            this.btnTimKiem.Size = new System.Drawing.Size(252, 57);
+            this.btnTimKiem.TabIndex = 6;
+            this.btnTimKiem.Text = "Lọc";
+            this.btnTimKiem.TextColor = System.Drawing.Color.Black;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
-            // dtpTraCuu
+            // btnXoa
             // 
-            this.dtpTraCuu.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
-            this.dtpTraCuu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTraCuu.Location = new System.Drawing.Point(326, 12);
-            this.dtpTraCuu.MinimumSize = new System.Drawing.Size(0, 30);
-            this.dtpTraCuu.Name = "dtpTraCuu";
-            this.dtpTraCuu.Size = new System.Drawing.Size(101, 34);
-            this.dtpTraCuu.TabIndex = 4;
-            // 
-            // foreverButton3
-            // 
-            this.foreverButton3.BackColor = System.Drawing.Color.Transparent;
-            this.foreverButton3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.foreverButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.foreverButton3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foreverButton3.Location = new System.Drawing.Point(436, 42);
-            this.foreverButton3.Name = "foreverButton3";
-            this.foreverButton3.Rounded = false;
-            this.foreverButton3.Size = new System.Drawing.Size(120, 40);
-            this.foreverButton3.TabIndex = 0;
-            this.foreverButton3.Text = "Xóa";
-            this.foreverButton3.TextColor = System.Drawing.Color.Black;
+            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoa.BackColor = System.Drawing.Color.Transparent;
+            this.btnXoa.BaseColor = System.Drawing.Color.Red;
+            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(24, 273);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Rounded = false;
+            this.btnXoa.Size = new System.Drawing.Size(100, 80);
+            this.btnXoa.TabIndex = 0;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextColor = System.Drawing.Color.Black;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // txtLuu
             // 
+            this.txtLuu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLuu.BackColor = System.Drawing.Color.Transparent;
             this.txtLuu.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.txtLuu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtLuu.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLuu.Location = new System.Drawing.Point(233, 42);
+            this.txtLuu.Location = new System.Drawing.Point(687, 42);
             this.txtLuu.Name = "txtLuu";
             this.txtLuu.Rounded = false;
-            this.txtLuu.Size = new System.Drawing.Size(120, 40);
+            this.txtLuu.Size = new System.Drawing.Size(100, 80);
             this.txtLuu.TabIndex = 0;
             this.txtLuu.Text = "Lưu";
             this.txtLuu.TextColor = System.Drawing.Color.Black;
+            this.txtLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnThem
             // 
+            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThem.BackColor = System.Drawing.Color.Transparent;
             this.btnThem.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -120,62 +124,56 @@
             this.btnThem.Location = new System.Drawing.Point(24, 42);
             this.btnThem.Name = "btnThem";
             this.btnThem.Rounded = false;
-            this.btnThem.Size = new System.Drawing.Size(120, 40);
+            this.btnThem.Size = new System.Drawing.Size(100, 80);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextColor = System.Drawing.Color.Black;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // dtpThoiGianVao
             // 
+            this.dtpThoiGianVao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpThoiGianVao.CalendarMonthBackground = System.Drawing.Color.Silver;
             this.dtpThoiGianVao.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
             this.dtpThoiGianVao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpThoiGianVao.Location = new System.Drawing.Point(233, 176);
+            this.dtpThoiGianVao.Location = new System.Drawing.Point(233, 226);
             this.dtpThoiGianVao.MinimumSize = new System.Drawing.Size(0, 30);
             this.dtpThoiGianVao.Name = "dtpThoiGianVao";
-            this.dtpThoiGianVao.Size = new System.Drawing.Size(101, 34);
+            this.dtpThoiGianVao.Size = new System.Drawing.Size(445, 34);
             this.dtpThoiGianVao.TabIndex = 4;
-            // 
-            // txtMaNV
-            // 
-            this.txtMaNV.BackColor = System.Drawing.Color.Transparent;
-            this.txtMaNV.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-            this.txtMaNV.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.txtMaNV.FocusOnHover = false;
-            this.txtMaNV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.txtMaNV.Location = new System.Drawing.Point(233, 122);
-            this.txtMaNV.MaxLength = 32767;
-            this.txtMaNV.Multiline = false;
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.ReadOnly = false;
-            this.txtMaNV.Size = new System.Drawing.Size(170, 34);
-            this.txtMaNV.TabIndex = 3;
-            this.txtMaNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtMaNV.UseSystemPasswordChar = false;
             // 
             // txtMaDiemDanh
             // 
+            this.txtMaDiemDanh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaDiemDanh.BackColor = System.Drawing.Color.Transparent;
-            this.txtMaDiemDanh.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+            this.txtMaDiemDanh.BaseColor = System.Drawing.Color.Silver;
             this.txtMaDiemDanh.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.txtMaDiemDanh.FocusOnHover = false;
-            this.txtMaDiemDanh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.txtMaDiemDanh.Location = new System.Drawing.Point(233, 72);
+            this.txtMaDiemDanh.ForeColor = System.Drawing.Color.Black;
+            this.txtMaDiemDanh.Location = new System.Drawing.Point(233, 66);
             this.txtMaDiemDanh.MaxLength = 32767;
             this.txtMaDiemDanh.Multiline = false;
             this.txtMaDiemDanh.Name = "txtMaDiemDanh";
             this.txtMaDiemDanh.ReadOnly = false;
-            this.txtMaDiemDanh.Size = new System.Drawing.Size(170, 34);
+            this.txtMaDiemDanh.Size = new System.Drawing.Size(445, 34);
             this.txtMaDiemDanh.TabIndex = 3;
             this.txtMaDiemDanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtMaDiemDanh.UseSystemPasswordChar = false;
             // 
             // foreverLabel6
             // 
+            this.foreverLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.foreverLabel6.AutoSize = true;
-            this.foreverLabel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.foreverLabel6.BackColor = System.Drawing.Color.White;
             this.foreverLabel6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foreverLabel6.ForeColor = System.Drawing.Color.Black;
-            this.foreverLabel6.Location = new System.Drawing.Point(49, 233);
+            this.foreverLabel6.Location = new System.Drawing.Point(49, 327);
             this.foreverLabel6.Name = "foreverLabel6";
             this.foreverLabel6.Size = new System.Drawing.Size(131, 23);
             this.foreverLabel6.TabIndex = 2;
@@ -183,11 +181,14 @@
             // 
             // foreverLabel5
             // 
+            this.foreverLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.foreverLabel5.AutoSize = true;
-            this.foreverLabel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.foreverLabel5.BackColor = System.Drawing.Color.White;
             this.foreverLabel5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foreverLabel5.ForeColor = System.Drawing.Color.Black;
-            this.foreverLabel5.Location = new System.Drawing.Point(49, 183);
+            this.foreverLabel5.Location = new System.Drawing.Point(49, 233);
             this.foreverLabel5.Name = "foreverLabel5";
             this.foreverLabel5.Size = new System.Drawing.Size(141, 23);
             this.foreverLabel5.TabIndex = 2;
@@ -195,11 +196,14 @@
             // 
             // foreverLabel4
             // 
+            this.foreverLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.foreverLabel4.AutoSize = true;
-            this.foreverLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.foreverLabel4.BackColor = System.Drawing.Color.White;
             this.foreverLabel4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foreverLabel4.ForeColor = System.Drawing.Color.Black;
-            this.foreverLabel4.Location = new System.Drawing.Point(49, 133);
+            this.foreverLabel4.Location = new System.Drawing.Point(49, 154);
             this.foreverLabel4.Name = "foreverLabel4";
             this.foreverLabel4.Size = new System.Drawing.Size(76, 23);
             this.foreverLabel4.TabIndex = 2;
@@ -207,8 +211,11 @@
             // 
             // foreverLabel3
             // 
+            this.foreverLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.foreverLabel3.AutoSize = true;
-            this.foreverLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.foreverLabel3.BackColor = System.Drawing.Color.White;
             this.foreverLabel3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foreverLabel3.ForeColor = System.Drawing.Color.Black;
             this.foreverLabel3.Location = new System.Drawing.Point(49, 83);
@@ -219,33 +226,54 @@
             // 
             // foreverLabel1
             // 
+            this.foreverLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.foreverLabel1.AutoSize = true;
-            this.foreverLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.foreverLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foreverLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.foreverLabel1.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foreverLabel1.ForeColor = System.Drawing.Color.Black;
-            this.foreverLabel1.Location = new System.Drawing.Point(219, 17);
+            this.foreverLabel1.Location = new System.Drawing.Point(38, 4);
             this.foreverLabel1.Name = "foreverLabel1";
-            this.foreverLabel1.Size = new System.Drawing.Size(88, 23);
+            this.foreverLabel1.Size = new System.Drawing.Size(212, 53);
             this.foreverLabel1.TabIndex = 2;
             this.foreverLabel1.Text = "Tra Cứu:";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel3.Controls.Add(this.foreverButton1);
-            this.panel3.Controls.Add(this.foreverButton3);
+            this.panel3.Controls.Add(this.btnDong);
+            this.panel3.Controls.Add(this.btnXoa);
             this.panel3.Controls.Add(this.txtLuu);
             this.panel3.Controls.Add(this.btnThem);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 393);
+            this.panel3.Location = new System.Drawing.Point(0, 466);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(621, 145);
+            this.panel3.Size = new System.Drawing.Size(832, 404);
             this.panel3.TabIndex = 1;
+            // 
+            // btnDong
+            // 
+            this.btnDong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDong.BackColor = System.Drawing.Color.Transparent;
+            this.btnDong.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.btnDong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDong.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDong.Location = new System.Drawing.Point(687, 273);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Rounded = false;
+            this.btnDong.Size = new System.Drawing.Size(100, 80);
+            this.btnDong.TabIndex = 1;
+            this.btnDong.Text = "Đóng";
+            this.btnDong.TextColor = System.Drawing.Color.Black;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // dgvDiemDanh
             // 
             this.dgvDiemDanh.AllowUserToResizeRows = false;
-            this.dgvDiemDanh.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.dgvDiemDanh.BackgroundColor = System.Drawing.Color.Gray;
             this.dgvDiemDanh.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDiemDanh.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvDiemDanh.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -270,7 +298,7 @@
             this.dgvDiemDanh.EnableHeadersVisualStyles = false;
             this.dgvDiemDanh.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvDiemDanh.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvDiemDanh.Location = new System.Drawing.Point(621, 0);
+            this.dgvDiemDanh.Location = new System.Drawing.Point(832, 0);
             this.dgvDiemDanh.Name = "dgvDiemDanh";
             this.dgvDiemDanh.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -285,25 +313,29 @@
             this.dgvDiemDanh.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvDiemDanh.RowTemplate.Height = 24;
             this.dgvDiemDanh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDiemDanh.Size = new System.Drawing.Size(458, 538);
+            this.dgvDiemDanh.Size = new System.Drawing.Size(766, 870);
             this.dgvDiemDanh.TabIndex = 0;
+            this.dgvDiemDanh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiemDanh_CellClick);
+            this.dgvDiemDanh.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvNhanVien_MouseDoubleClick);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel1.Controls.Add(this.btnLoc);
+            this.panel1.Controls.Add(this.btnTimKiem);
             this.panel1.Controls.Add(this.cbbTraCuu);
-            this.panel1.Controls.Add(this.dtpTraCuu);
             this.panel1.Controls.Add(this.foreverLabel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(1, 51);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1079, 48);
+            this.panel1.Size = new System.Drawing.Size(1598, 78);
             this.panel1.TabIndex = 0;
             // 
             // cbbTraCuu
             // 
-            this.cbbTraCuu.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(27)))), ((int)(((byte)(29)))));
+            this.cbbTraCuu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbTraCuu.BaseColor = System.Drawing.Color.Silver;
             this.cbbTraCuu.BGColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
             this.cbbTraCuu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbbTraCuu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -314,9 +346,9 @@
             this.cbbTraCuu.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.cbbTraCuu.HoverFontColor = System.Drawing.Color.White;
             this.cbbTraCuu.ItemHeight = 18;
-            this.cbbTraCuu.Location = new System.Drawing.Point(456, 17);
+            this.cbbTraCuu.Location = new System.Drawing.Point(320, 21);
             this.cbbTraCuu.Name = "cbbTraCuu";
-            this.cbbTraCuu.Size = new System.Drawing.Size(203, 24);
+            this.cbbTraCuu.Size = new System.Drawing.Size(440, 24);
             this.cbbTraCuu.TabIndex = 5;
             // 
             // foreverForm1
@@ -338,7 +370,7 @@
             this.foreverForm1.Name = "foreverForm1";
             this.foreverForm1.Padding = new System.Windows.Forms.Padding(1, 51, 1, 1);
             this.foreverForm1.Sizable = true;
-            this.foreverForm1.Size = new System.Drawing.Size(1081, 638);
+            this.foreverForm1.Size = new System.Drawing.Size(1600, 1000);
             this.foreverForm1.TabIndex = 1;
             this.foreverForm1.Text = "Điểm Danh";
             this.foreverForm1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
@@ -346,10 +378,10 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.cbbMaNV);
             this.panel2.Controls.Add(this.dtpThoiGianRa);
             this.panel2.Controls.Add(this.dtpThoiGianVao);
-            this.panel2.Controls.Add(this.txtMaNV);
             this.panel2.Controls.Add(this.txtMaDiemDanh);
             this.panel2.Controls.Add(this.foreverLabel6);
             this.panel2.Controls.Add(this.foreverLabel5);
@@ -358,47 +390,60 @@
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.dgvDiemDanh);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(1, 99);
+            this.panel2.Location = new System.Drawing.Point(1, 129);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1079, 538);
+            this.panel2.Size = new System.Drawing.Size(1598, 870);
             this.panel2.TabIndex = 1;
+            this.panel2.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // cbbMaNV
+            // 
+            this.cbbMaNV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbMaNV.BaseColor = System.Drawing.Color.Silver;
+            this.cbbMaNV.BGColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+            this.cbbMaNV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbbMaNV.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbMaNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbMaNV.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.cbbMaNV.ForeColor = System.Drawing.Color.White;
+            this.cbbMaNV.FormattingEnabled = true;
+            this.cbbMaNV.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.cbbMaNV.HoverFontColor = System.Drawing.Color.White;
+            this.cbbMaNV.ItemHeight = 18;
+            this.cbbMaNV.Location = new System.Drawing.Point(233, 153);
+            this.cbbMaNV.Name = "cbbMaNV";
+            this.cbbMaNV.Size = new System.Drawing.Size(445, 24);
+            this.cbbMaNV.TabIndex = 7;
             // 
             // dtpThoiGianRa
             // 
+            this.dtpThoiGianRa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpThoiGianRa.CalendarMonthBackground = System.Drawing.Color.Silver;
             this.dtpThoiGianRa.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
             this.dtpThoiGianRa.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpThoiGianRa.Location = new System.Drawing.Point(233, 222);
+            this.dtpThoiGianRa.Location = new System.Drawing.Point(233, 316);
             this.dtpThoiGianRa.MinimumSize = new System.Drawing.Size(0, 30);
             this.dtpThoiGianRa.Name = "dtpThoiGianRa";
-            this.dtpThoiGianRa.Size = new System.Drawing.Size(101, 34);
+            this.dtpThoiGianRa.Size = new System.Drawing.Size(445, 34);
             this.dtpThoiGianRa.TabIndex = 4;
-            // 
-            // foreverButton1
-            // 
-            this.foreverButton1.BackColor = System.Drawing.Color.Transparent;
-            this.foreverButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.foreverButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.foreverButton1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foreverButton1.Location = new System.Drawing.Point(436, 88);
-            this.foreverButton1.Name = "foreverButton1";
-            this.foreverButton1.Rounded = false;
-            this.foreverButton1.Size = new System.Drawing.Size(120, 40);
-            this.foreverButton1.TabIndex = 1;
-            this.foreverButton1.Text = "Đóng";
-            this.foreverButton1.TextColor = System.Drawing.Color.Black;
-            this.foreverButton1.Click += new System.EventHandler(this.foreverButton1_Click);
             // 
             // frmDiemDanh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1081, 638);
+            this.ClientSize = new System.Drawing.Size(1600, 1000);
             this.Controls.Add(this.foreverForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDiemDanh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDiemDanh";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmDiemDanh_Load);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiemDanh)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -412,13 +457,11 @@
 
         #endregion
 
-        private ReaLTaiizor.Controls.ForeverButton btnLoc;
-        private ReaLTaiizor.Controls.PoisonDateTime dtpTraCuu;
-        private ReaLTaiizor.Controls.ForeverButton foreverButton3;
+        private ReaLTaiizor.Controls.ForeverButton btnTimKiem;
+        private ReaLTaiizor.Controls.ForeverButton btnXoa;
         private ReaLTaiizor.Controls.ForeverButton txtLuu;
         private ReaLTaiizor.Controls.ForeverButton btnThem;
         private ReaLTaiizor.Controls.PoisonDateTime dtpThoiGianVao;
-        private ReaLTaiizor.Controls.ForeverTextBox txtMaNV;
         private ReaLTaiizor.Controls.ForeverTextBox txtMaDiemDanh;
         private ReaLTaiizor.Controls.ForeverLabel foreverLabel6;
         private ReaLTaiizor.Controls.ForeverLabel foreverLabel5;
@@ -432,6 +475,7 @@
         private ReaLTaiizor.Forms.ForeverForm foreverForm1;
         private System.Windows.Forms.Panel panel2;
         private ReaLTaiizor.Controls.PoisonDateTime dtpThoiGianRa;
-        private ReaLTaiizor.Controls.ForeverButton foreverButton1;
+        private ReaLTaiizor.Controls.ForeverButton btnDong;
+        private ReaLTaiizor.Controls.ForeverComboBox cbbMaNV;
     }
 }
