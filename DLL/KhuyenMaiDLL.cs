@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DLL
 {
-	internal class KhuyenMaiDLL
+	public class KhuyenMaiDLL
 	{
 		DBSTDMDataContext db = new DBSTDMDataContext();
 
@@ -73,6 +73,31 @@ namespace DLL
 				list.Add(item);
 			}
 			return list;
+		}
+		public string TaoMaSanPham()
+		{
+			// Lấy danh sách mã TacGia và kiểm tra có dữ liệu hay không
+			var listItem = db.san_phams.Select(p => p.ma_san_pham).ToList();
+
+			int maxId = 0;
+
+			if (listItem.Any()) // Kiểm tra nếu có dữ liệu
+			{
+				maxId = listItem
+							.Where(m => m.StartsWith("SP")) // Lọc các mã bắt đầu bằng "TG"
+							.Select(m => int.Parse(m.Substring(3))) // Lấy phần số sau "TG"
+							.Max(); // Lấy giá trị lớn nhất
+			}
+
+			// Tăng giá trị ID lớn nhất
+			maxId++;
+
+			// Tạo mã mới với tiền tố "NXB" và đảm bảo đúng định dạng
+			return "SP" + maxId.ToString("D3");
+		}
+		public bool check(string id)
+		{
+			return db.san_phams.Any(p => p.ma_san_pham == id);
 		}
 	}
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,11 +18,41 @@ namespace he_thong_dien_may
 			InitializeComponent();
 		}
 
-		
+		NhaCCBUS bus = new NhaCCBUS();
+		public void loadData()
+		{
+			dgvNhaCungCap.DataSource = bus.GetAllNhaCungCapAsTable();
+		}
+		private void frmNhaCungCap_Load(object sender, EventArgs e)
+		{
+			dgvNhaCungCap.AutoGenerateColumns = false;
 
+			dgvNhaCungCap.Columns.Add(new DataGridViewTextBoxColumn
+			{
+				HeaderText = "Mã nhà cung cấp",
+				DataPropertyName = "ma_nha_cung_cap",
+				Width = 300
+			});
+
+			dgvNhaCungCap.Columns.Add(new DataGridViewTextBoxColumn
+			{
+				HeaderText = "Tên nhà cung cấp",
+				DataPropertyName = "ten_nha_cung_cap",
+				Width = 400
+			});
+
+			dgvNhaCungCap.Columns.Add(new DataGridViewTextBoxColumn
+			{
+				HeaderText = "Mã nhà cung cấp",
+				DataPropertyName = "dia_chi_nha_cung_cap",
+				Width = 800
+			});
+
+			loadData();
+		}
 		private void btnTimKiem_Click(object sender, EventArgs e)
 		{
-
+			
 		}
 
 		private void btnThoat_Click(object sender, EventArgs e)
@@ -31,42 +62,16 @@ namespace he_thong_dien_may
 
 		private void btnSua_Click(object sender, EventArgs e)
 		{
-
+			bus.UpdateNhaCungCap(txtMaNCC.Text, txtTenNCC.Text, txtDiaChiNCC.Text);
+			loadData();
 		}
 
 		private void btnThem_Click(object sender, EventArgs e)
 		{
-
+			NhaCCBUS bus = new NhaCCBUS();
+			bus.AddNhaCungCap(txtTenNCC.Text, txtDiaChiNCC.Text);
+			loadData();
 		}
 
-		private void foreverLabel8_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void txtDiaChiNCC_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void foreverLabel3_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void txtTenNCC_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void foreverLabel1_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void txtMaNCC_TextChanged(object sender, EventArgs e)
-		{
-
-		}
 	}
 }

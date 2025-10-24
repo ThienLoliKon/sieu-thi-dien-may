@@ -6,66 +6,66 @@ using System.Threading.Tasks;
 
 namespace DLL
 {
-	public class LoaiHangDLL
+	public class NhaCungCapDLL
 	{
 		DBSTDMDataContext db = new DBSTDMDataContext();
 
-		public LoaiHangDLL()
+		public NhaCungCapDLL()
 		{
 			if (!db.DatabaseExists())
 			{
 				throw new Exception("Không thể kết nối đến cơ sở dữ liệu.");
 			}
 		}
-		public List<loai_hang> GetAllLoaiHang()
+		public List<nha_cung_cap> GetAllNhaCungCap()
 		{
-			return db.loai_hangs.ToList();
+			return db.nha_cung_caps.ToList();
 		}
 
-		public int addLoaiHang(loai_hang addItem)
+		public int addNhaCungCap(nha_cung_cap addItem)
 		{
 			try
 			{
-				db.loai_hangs.InsertOnSubmit(addItem);
+				db.nha_cung_caps.InsertOnSubmit(addItem);
 				db.SubmitChanges();
 			}
 			catch (Exception ex)
 			{
 				return 0;
-				throw new Exception("Lỗi khi thêm Loại Hàng: " + ex.Message);
+				throw new Exception("Lỗi khi thêm Nhà cung cấp: " + ex.Message);
 			}
 			return 1;
 		}
-		public int deleteLoaiHang(string id)
+		public int deleteNhaCungCap(string id)
 		{
-			var nv = db.loai_hangs.SingleOrDefault(p => p.ma_loai_hang == id);
+			var nv = db.nha_cung_caps.SingleOrDefault(p => p.ma_nha_cung_cap == id);
 			if (nv != null)
 			{
-				db.loai_hangs.DeleteOnSubmit(nv);
+				db.nha_cung_caps.DeleteOnSubmit(nv);
 				db.SubmitChanges();
 				return 1;
 			}
 			return 0;
 		}
-		public int updateLoaiHang(loai_hang updateNew)
+		public int updateNhaCungCap(nha_cung_cap updateNew)
 		{
-			var entityUpdate = db.loai_hangs.SingleOrDefault(n => n.ma_loai_hang == updateNew.ma_loai_hang);
+			var entityUpdate = db.nha_cung_caps.SingleOrDefault(n => n.ma_nha_cung_cap == updateNew.ma_nha_cung_cap);
 			if (entityUpdate != null)
 			{
-				entityUpdate.ten_loai_hang = updateNew.ten_loai_hang;
-				entityUpdate.mo_ta = updateNew.mo_ta;
+				entityUpdate.ten_nha_cung_cap = updateNew.ten_nha_cung_cap;
+				entityUpdate.dia_chi_nha_cung_cap = updateNew.dia_chi_nha_cung_cap;
 				db.SubmitChanges();
 				return 1;
 			}
 			return 0;
 		}
 
-		public List<loai_hang> searchByNameOrID(string name_id)
+		public List<nha_cung_cap> searchByNameOrID(string name_id)
 		{
-			List<loai_hang> list = new List<loai_hang>();
-			IEnumerable<loai_hang> query = from item in db.loai_hangs
-											where item.ma_loai_hang.Contains(name_id) || item.ten_loai_hang.Contains(name_id)
-										   select item;
+			List<nha_cung_cap> list = new List<nha_cung_cap>();
+			IEnumerable<nha_cung_cap> query = from item in db.nha_cung_caps
+											where item.ma_nha_cung_cap.Contains(name_id) || item.ten_nha_cung_cap.Contains(name_id)
+											  select item;
 			foreach (var item in query)
 			{
 				list.Add(item);
@@ -82,7 +82,7 @@ namespace DLL
 			if (listItem.Any()) // Kiểm tra nếu có dữ liệu
 			{
 				maxId = listItem
-							.Where(m => m.StartsWith("SP")) // Lọc các mã bắt đầu bằng "TG"
+							.Where(m => m.StartsWith("NCC")) // Lọc các mã bắt đầu bằng "TG"
 							.Select(m => int.Parse(m.Substring(3))) // Lấy phần số sau "TG"
 							.Max(); // Lấy giá trị lớn nhất
 			}
@@ -91,7 +91,7 @@ namespace DLL
 			maxId++;
 
 			// Tạo mã mới với tiền tố "NXB" và đảm bảo đúng định dạng
-			return "SP" + maxId.ToString("D3");
+			return "NCC" + maxId.ToString("D3");
 		}
 		public bool check(string id)
 		{

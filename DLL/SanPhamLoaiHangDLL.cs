@@ -6,66 +6,69 @@ using System.Threading.Tasks;
 
 namespace DLL
 {
-	public class LoaiHangDLL
+	public class SanPhamLoaiHangDLL
 	{
 		DBSTDMDataContext db = new DBSTDMDataContext();
-
-		public LoaiHangDLL()
+		public SanPhamLoaiHangDLL()
 		{
 			if (!db.DatabaseExists())
 			{
 				throw new Exception("Không thể kết nối đến cơ sở dữ liệu.");
 			}
 		}
-		public List<loai_hang> GetAllLoaiHang()
+
+		public List<san_pham_loai_hang> GetAllSanPhamLoaiHang()
 		{
-			return db.loai_hangs.ToList();
+			return db.san_pham_loai_hangs.ToList();
 		}
 
-		public int addLoaiHang(loai_hang addItem)
+		public int addSanPhamLoaiHang(san_pham_loai_hang addItem)
 		{
 			try
 			{
-				db.loai_hangs.InsertOnSubmit(addItem);
+				db.san_pham_loai_hangs.InsertOnSubmit(addItem);
 				db.SubmitChanges();
 			}
 			catch (Exception ex)
 			{
 				return 0;
-				throw new Exception("Lỗi khi thêm Loại Hàng: " + ex.Message);
+				throw new Exception("Lỗi khi thêm liên kết sản phẩm loại hàng: " + ex.Message);
 			}
 			return 1;
 		}
-		public int deleteLoaiHang(string id)
+
+		//fix sau
+		public int deleteSanPhamLoaiHang(string id)
 		{
-			var nv = db.loai_hangs.SingleOrDefault(p => p.ma_loai_hang == id);
-			if (nv != null)
+			var sp = db.san_pham_loai_hangs.SingleOrDefault(p => p.ma_san_pham == id);
+			if (sp != null)
 			{
-				db.loai_hangs.DeleteOnSubmit(nv);
-				db.SubmitChanges();
-				return 1;
-			}
-			return 0;
-		}
-		public int updateLoaiHang(loai_hang updateNew)
-		{
-			var entityUpdate = db.loai_hangs.SingleOrDefault(n => n.ma_loai_hang == updateNew.ma_loai_hang);
-			if (entityUpdate != null)
-			{
-				entityUpdate.ten_loai_hang = updateNew.ten_loai_hang;
-				entityUpdate.mo_ta = updateNew.mo_ta;
+				db.san_pham_loai_hangs.DeleteOnSubmit(sp);
 				db.SubmitChanges();
 				return 1;
 			}
 			return 0;
 		}
 
-		public List<loai_hang> searchByNameOrID(string name_id)
+		public int updateSanPhamLoaiHang(san_pham_loai_hang updateNew)
 		{
-			List<loai_hang> list = new List<loai_hang>();
-			IEnumerable<loai_hang> query = from item in db.loai_hangs
-											where item.ma_loai_hang.Contains(name_id) || item.ten_loai_hang.Contains(name_id)
-										   select item;
+			var entityUpdate = db.san_pham_loai_hangs.SingleOrDefault(n => n.ma_san_pham == updateNew.ma_san_pham);
+			if (entityUpdate != null)
+			{
+				entityUpdate.ma_san_pham = updateNew.ma_san_pham;
+				entityUpdate.ma_loai_hang = updateNew.ma_loai_hang;
+				db.SubmitChanges();
+				return 1;
+			}
+			return 0;
+		}
+
+		public List<san_pham_loai_hang> searchByNameOrID(string name_id)
+		{
+			List<san_pham_loai_hang> list = new List<san_pham_loai_hang>();
+			IEnumerable<san_pham_loai_hang> query = from item in db.san_pham_loai_hangs
+										  where item.ma_san_pham.Contains(name_id) || item.ma_loai_hang.Contains(name_id)
+										  select item;
 			foreach (var item in query)
 			{
 				list.Add(item);
@@ -99,3 +102,4 @@ namespace DLL
 		}
 	}
 }
+
