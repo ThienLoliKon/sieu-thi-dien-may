@@ -83,16 +83,15 @@ namespace DLL
 			if (listItem.Any()) // Kiểm tra nếu có dữ liệu
 			{
 				maxId = listItem
-							.Where(m => m.StartsWith("SP")) // Lọc các mã bắt đầu bằng "TG"
-							.Select(m => int.Parse(m.Substring(3))) // Lấy phần số sau "TG"
+							.Where(m => m.StartsWith("NSX"))
+							.Select(m => int.Parse(m.Substring(3))) 
 							.Max(); // Lấy giá trị lớn nhất
 			}
 
 			// Tăng giá trị ID lớn nhất
 			maxId++;
 
-			// Tạo mã mới với tiền tố "NXB" và đảm bảo đúng định dạng
-			return "SP" + maxId.ToString("D3");
+			return "NSX" + maxId.ToString("D3");
 		}
 		public bool check(string id)
 		{

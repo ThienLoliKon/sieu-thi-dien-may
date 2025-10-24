@@ -150,6 +150,9 @@ namespace he_thong_dien_may
 			}
 		}
 
+		private void btnTimKiem_Click(object sender, EventArgs e)
+		{
 
+		}
 	}
 }
