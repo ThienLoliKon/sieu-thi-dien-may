@@ -46,24 +46,17 @@ namespace he_thong_dien_may
                 TaiKhoanBUS tkBus = new TaiKhoanBUS();
                 NhanVienBUS nvbus = new NhanVienBUS();
 
-                // 1. LOAD DANH SÁCH NHÂN VIÊN VÀO cbbMaNV
                 DataTable dtNhanVien = nvbus.GetAllNhanVienAsTable();
 
                 if (dtNhanVien != null)
                 {
                     cbbMaNV.DataSource = dtNhanVien;
-                    cbbMaNV.DisplayMember = "MaNV"; // HIỂN THỊ MÃ NV
-                    cbbMaNV.ValueMember = "MaNV";    // Gán MÃ NV
+                    cbbMaNV.DisplayMember = "MaNV"; 
+                    cbbMaNV.ValueMember = "MaNV";   
                     cbbMaNV.SelectedIndex = -1;
                 }
 
-                // 2. LOAD QUYỀN VÀO cbbQuyen (Hardcode mẫu hoặc dùng bảng khác)
-                DataTable dtQuyen = tkBus.GetAllTaiKhoanAsTable();
-                //dtQuyen.Columns.Add("TenQuyen");
-                //dtQuyen.Rows.Add("Admin");
-                //dtQuyen.Rows.Add("QuanLyCN");
-                //dtQuyen.Rows.Add("TruongKho");
-                //dtQuyen.Rows.Add("NhanVien");
+                DataTable dtQuyen = tkBus.GetAllTaiKhoanAsTable(); 
 
                 cbbQuyen.DataSource = dtQuyen;
                 cbbQuyen.DisplayMember = "Quyen";
@@ -76,22 +69,15 @@ namespace he_thong_dien_may
             }
         }
 
-        private void foreverButton1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void frmTaiKhoan_Load(object sender, EventArgs e)
         {
             LoadComboBoxData();
 
-            // Cài đặt DataGridView Columns (GIỮ NGUYÊN)
             dgvTK.AutoGenerateColumns = false;
             dgvTK.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã NV", DataPropertyName = "MaNV", Width = 200 });
             dgvTK.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mật Khẩu", DataPropertyName = "MatKhau", Width = 200 });
             dgvTK.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Quyền Truy Cập", DataPropertyName = "Quyen", Width = 200 });
 
-            // Load Dữ liệu DataGridView sau
             LoadDL();
         }
 
@@ -102,10 +88,9 @@ namespace he_thong_dien_may
                 if (e.RowIndex < 0) return;
                 int line = e.RowIndex;
 
-                // GÁN MÃ ĐỂ COMBOBOX TỰ ĐỘNG CHỌN ĐÚNG MỤC
-                cbbMaNV.SelectedValue = dgvTK.Rows[line].Cells[0].Value; // MaCB
+                cbbMaNV.SelectedValue = dgvTK.Rows[line].Cells[0].Value; 
                 txtMK.Text = dgvTK.Rows[line].Cells[1].Value.ToString();
-                cbbQuyen.SelectedValue = dgvTK.Rows[line].Cells[2].Value; // MaChiNhanh
+                cbbQuyen.SelectedValue = dgvTK.Rows[line].Cells[2].Value; 
             }
             catch (Exception ex)
             {
@@ -114,26 +99,29 @@ namespace he_thong_dien_may
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            string maNV = cbbMaNV.SelectedValue?.ToString();
+            string matKhau = txtMK.Text.Trim();
+            string quyen = cbbQuyen.SelectedValue?.ToString();
+
+            if (string.IsNullOrEmpty(maNV) || string.IsNullOrEmpty(matKhau) || string.IsNullOrEmpty(quyen))
+            {
+                MessageBox.Show("Vui lòng chọn Mã NV, nhập Mật khẩu và Quyền.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (matKhau.Length > 7)
+            {
+                MessageBox.Show("Mật khẩu không được vượt quá 7 ký tự.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             DialogResult result = MessageBox.Show("Bạn có muốn thêm không ?", "Thông báo", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 try
                 {
-                    // LẤY DỮ LIỆU ĐÃ SỬA LỖI TÊN BIẾN
-                    string maNV = cbbMaNV.SelectedValue?.ToString();
-                    string matKhau = txtMK.Text; // Giả sử txtMK là Mật khẩu
-                    string quyen = cbbQuyen.SelectedValue?.ToString();
-
-                    // Kiểm tra MaNV và MK
-                    if (string.IsNullOrEmpty(maNV) || string.IsNullOrEmpty(matKhau))
-                    {
-                        MessageBox.Show("Vui lòng chọn Mã NV và nhập Mật khẩu.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-
                     TaiKhoanBUS bus = new TaiKhoanBUS();
 
-                    // THỨ TỰ ĐÚNG CỦA BUS: (maNV, matKhau, quyen)
                     bool isAdd = bus.AddTaiKhoan(maNV, matKhau, quyen);
 
                     if (isAdd)
@@ -142,7 +130,7 @@ namespace he_thong_dien_may
                     }
                     else
                     {
-                        MessageBox.Show("Thêm Tài khoản không thành công. (Có thể Mã NV đã tồn tại TK)");
+                        MessageBox.Show("Thêm Tài khoản không thành công. (Mã NV đã có tài khoản)");
                     }
                     LoadDL();
                 }
@@ -155,24 +143,29 @@ namespace he_thong_dien_may
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(cbbMaNV.Text))
+            string maNV = cbbMaNV.SelectedValue?.ToString();
+            string matKhau = txtMK.Text.Trim();
+            string quyen = cbbQuyen.SelectedValue?.ToString();
+
+            if (string.IsNullOrEmpty(maNV) || string.IsNullOrEmpty(matKhau) || string.IsNullOrEmpty(quyen))
             {
-                MessageBox.Show("Vui lòng chọn nhân viên cần sửa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn Tài khoản và điền đầy đủ Mật khẩu/Quyền.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            if (matKhau.Length > 7)
+            {
+                MessageBox.Show("Mật khẩu không được vượt quá 7 ký tự.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             DialogResult result = MessageBox.Show("Bạn có muốn sửa không ?", "Thông báo", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 try
                 {
-                    // LẤY DỮ LIỆU ĐÃ SỬA LỖI TÊN BIẾN
-                    string maNV = cbbMaNV.SelectedValue?.ToString();
-                    string matKhau = txtMK.Text; // Giả sử txtMK là Mật khẩu
-                    string quyen = cbbQuyen.SelectedValue?.ToString();
-
                     TaiKhoanBUS bus = new TaiKhoanBUS();
 
-                    // THỨ TỰ ĐÚNG CỦA BUS: (maNV, matKhau, quyen)
                     bool isupdate = bus.UpdateTaiKhoanstring(maNV, matKhau, quyen);
 
                     if (isupdate)
@@ -181,7 +174,7 @@ namespace he_thong_dien_may
                     }
                     else
                     {
-                        MessageBox.Show("Sửa thất bại");
+                        MessageBox.Show("Sửa thất bại (Mã NV không tồn tại TK).");
                     }
                     LoadDL();
                 }
@@ -199,7 +192,6 @@ namespace he_thong_dien_may
                 return;
             }
 
-            // SỬA LỖI: Thông báo phải là Xóa Tài khoản
             DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa Tài khoản của Mã NV: {cbbMaNV.SelectedValue} không?", "Xác nhận Xóa", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
@@ -208,7 +200,7 @@ namespace he_thong_dien_may
                 {
                     string maNV = cbbMaNV.SelectedValue.ToString();
                     TaiKhoanBUS bus = new TaiKhoanBUS();
-                    bool isDeleted = bus.DeleteTaiKhoan(maNV); // Xóa cứng
+                    bool isDeleted = bus.DeleteTaiKhoan(maNV); 
 
                     MessageBox.Show(isDeleted ? "Xóa Tài khoản thành công!" : "Xóa thất bại.");
                     LoadDL();

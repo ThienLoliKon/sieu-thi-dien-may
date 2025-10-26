@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnTimKiem = new ReaLTaiizor.Controls.ForeverButton();
             this.btnXoa = new ReaLTaiizor.Controls.ForeverButton();
             this.txtLuu = new ReaLTaiizor.Controls.ForeverButton();
             this.btnThem = new ReaLTaiizor.Controls.ForeverButton();
-            this.dtpThoiGianVao = new ReaLTaiizor.Controls.PoisonDateTime();
             this.txtMaDiemDanh = new ReaLTaiizor.Controls.ForeverTextBox();
             this.foreverLabel6 = new ReaLTaiizor.Controls.ForeverLabel();
             this.foreverLabel5 = new ReaLTaiizor.Controls.ForeverLabel();
@@ -50,7 +49,8 @@
             this.foreverForm1 = new ReaLTaiizor.Forms.ForeverForm();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbbMaNV = new ReaLTaiizor.Controls.ForeverComboBox();
-            this.dtpThoiGianRa = new ReaLTaiizor.Controls.PoisonDateTime();
+            this.dtpThoiGianVao = new System.Windows.Forms.DateTimePicker();
+            this.dtpThoiGianRa = new System.Windows.Forms.DateTimePicker();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiemDanh)).BeginInit();
             this.panel1.SuspendLayout();
@@ -129,20 +129,6 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.TextColor = System.Drawing.Color.Black;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // dtpThoiGianVao
-            // 
-            this.dtpThoiGianVao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpThoiGianVao.CalendarMonthBackground = System.Drawing.Color.Silver;
-            this.dtpThoiGianVao.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
-            this.dtpThoiGianVao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpThoiGianVao.Location = new System.Drawing.Point(233, 226);
-            this.dtpThoiGianVao.MinimumSize = new System.Drawing.Size(0, 30);
-            this.dtpThoiGianVao.Name = "dtpThoiGianVao";
-            this.dtpThoiGianVao.Size = new System.Drawing.Size(445, 34);
-            this.dtpThoiGianVao.TabIndex = 4;
             // 
             // txtMaDiemDanh
             // 
@@ -277,23 +263,23 @@
             this.dgvDiemDanh.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDiemDanh.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvDiemDanh.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDiemDanh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDiemDanh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvDiemDanh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDiemDanh.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDiemDanh.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvDiemDanh.Dock = System.Windows.Forms.DockStyle.Right;
             this.dgvDiemDanh.EnableHeadersVisualStyles = false;
             this.dgvDiemDanh.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -301,14 +287,14 @@
             this.dgvDiemDanh.Location = new System.Drawing.Point(832, 0);
             this.dgvDiemDanh.Name = "dgvDiemDanh";
             this.dgvDiemDanh.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDiemDanh.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDiemDanh.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvDiemDanh.RowHeadersWidth = 51;
             this.dgvDiemDanh.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvDiemDanh.RowTemplate.Height = 24;
@@ -379,9 +365,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.cbbMaNV);
             this.panel2.Controls.Add(this.dtpThoiGianRa);
             this.panel2.Controls.Add(this.dtpThoiGianVao);
+            this.panel2.Controls.Add(this.cbbMaNV);
             this.panel2.Controls.Add(this.txtMaDiemDanh);
             this.panel2.Controls.Add(this.foreverLabel6);
             this.panel2.Controls.Add(this.foreverLabel5);
@@ -417,19 +403,23 @@
             this.cbbMaNV.Size = new System.Drawing.Size(445, 24);
             this.cbbMaNV.TabIndex = 7;
             // 
+            // dtpThoiGianVao
+            // 
+            this.dtpThoiGianVao.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dtpThoiGianVao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpThoiGianVao.Location = new System.Drawing.Point(233, 233);
+            this.dtpThoiGianVao.Name = "dtpThoiGianVao";
+            this.dtpThoiGianVao.Size = new System.Drawing.Size(445, 34);
+            this.dtpThoiGianVao.TabIndex = 8;
+            // 
             // dtpThoiGianRa
             // 
-            this.dtpThoiGianRa.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpThoiGianRa.CalendarMonthBackground = System.Drawing.Color.Silver;
-            this.dtpThoiGianRa.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
-            this.dtpThoiGianRa.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpThoiGianRa.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dtpThoiGianRa.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpThoiGianRa.Location = new System.Drawing.Point(233, 316);
-            this.dtpThoiGianRa.MinimumSize = new System.Drawing.Size(0, 30);
             this.dtpThoiGianRa.Name = "dtpThoiGianRa";
             this.dtpThoiGianRa.Size = new System.Drawing.Size(445, 34);
-            this.dtpThoiGianRa.TabIndex = 4;
+            this.dtpThoiGianRa.TabIndex = 8;
             // 
             // frmDiemDanh
             // 
@@ -461,7 +451,6 @@
         private ReaLTaiizor.Controls.ForeverButton btnXoa;
         private ReaLTaiizor.Controls.ForeverButton txtLuu;
         private ReaLTaiizor.Controls.ForeverButton btnThem;
-        private ReaLTaiizor.Controls.PoisonDateTime dtpThoiGianVao;
         private ReaLTaiizor.Controls.ForeverTextBox txtMaDiemDanh;
         private ReaLTaiizor.Controls.ForeverLabel foreverLabel6;
         private ReaLTaiizor.Controls.ForeverLabel foreverLabel5;
@@ -474,8 +463,9 @@
         private ReaLTaiizor.Controls.ForeverComboBox cbbTraCuu;
         private ReaLTaiizor.Forms.ForeverForm foreverForm1;
         private System.Windows.Forms.Panel panel2;
-        private ReaLTaiizor.Controls.PoisonDateTime dtpThoiGianRa;
         private ReaLTaiizor.Controls.ForeverButton btnDong;
         private ReaLTaiizor.Controls.ForeverComboBox cbbMaNV;
+        private System.Windows.Forms.DateTimePicker dtpThoiGianRa;
+        private System.Windows.Forms.DateTimePicker dtpThoiGianVao;
     }
 }

@@ -34,7 +34,6 @@
             this.btnXoa = new ReaLTaiizor.Controls.ForeverButton();
             this.txtLuu = new ReaLTaiizor.Controls.ForeverButton();
             this.btnThem = new ReaLTaiizor.Controls.ForeverButton();
-            this.txtMK = new ReaLTaiizor.Controls.ForeverTextBox();
             this.foreverLabel7 = new ReaLTaiizor.Controls.ForeverLabel();
             this.foreverLabel5 = new ReaLTaiizor.Controls.ForeverLabel();
             this.foreverLabel3 = new ReaLTaiizor.Controls.ForeverLabel();
@@ -44,8 +43,9 @@
             this.dgvTK = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.foreverForm1 = new ReaLTaiizor.Forms.ForeverForm();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cbbQuyen = new ReaLTaiizor.Controls.ForeverComboBox();
             this.cbbMaNV = new ReaLTaiizor.Controls.ForeverComboBox();
+            this.cbbQuyen = new ReaLTaiizor.Controls.ForeverComboBox();
+            this.txtMK = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTK)).BeginInit();
             this.foreverForm1.SuspendLayout();
@@ -102,26 +102,6 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.TextColor = System.Drawing.Color.Black;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // txtMK
-            // 
-            this.txtMK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMK.BackColor = System.Drawing.Color.Transparent;
-            this.txtMK.BaseColor = System.Drawing.Color.Silver;
-            this.txtMK.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.txtMK.FocusOnHover = false;
-            this.txtMK.ForeColor = System.Drawing.Color.Black;
-            this.txtMK.Location = new System.Drawing.Point(295, 180);
-            this.txtMK.MaxLength = 32767;
-            this.txtMK.Multiline = false;
-            this.txtMK.Name = "txtMK";
-            this.txtMK.ReadOnly = false;
-            this.txtMK.Size = new System.Drawing.Size(583, 34);
-            this.txtMK.TabIndex = 3;
-            this.txtMK.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtMK.UseSystemPasswordChar = false;
             // 
             // foreverLabel7
             // 
@@ -291,9 +271,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.txtMK);
             this.panel2.Controls.Add(this.cbbMaNV);
             this.panel2.Controls.Add(this.cbbQuyen);
-            this.panel2.Controls.Add(this.txtMK);
             this.panel2.Controls.Add(this.foreverLabel7);
             this.panel2.Controls.Add(this.foreverLabel5);
             this.panel2.Controls.Add(this.foreverLabel3);
@@ -304,6 +284,27 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1798, 748);
             this.panel2.TabIndex = 1;
+            // 
+            // cbbMaNV
+            // 
+            this.cbbMaNV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbMaNV.BaseColor = System.Drawing.Color.Silver;
+            this.cbbMaNV.BGColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+            this.cbbMaNV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbbMaNV.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbMaNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbMaNV.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.cbbMaNV.ForeColor = System.Drawing.Color.White;
+            this.cbbMaNV.FormattingEnabled = true;
+            this.cbbMaNV.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.cbbMaNV.HoverFontColor = System.Drawing.Color.White;
+            this.cbbMaNV.ItemHeight = 18;
+            this.cbbMaNV.Location = new System.Drawing.Point(295, 39);
+            this.cbbMaNV.Name = "cbbMaNV";
+            this.cbbMaNV.Size = new System.Drawing.Size(583, 24);
+            this.cbbMaNV.TabIndex = 4;
             // 
             // cbbQuyen
             // 
@@ -326,26 +327,16 @@
             this.cbbQuyen.Size = new System.Drawing.Size(583, 24);
             this.cbbQuyen.TabIndex = 4;
             // 
-            // cbbMaNV
+            // txtMK
             // 
-            this.cbbMaNV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtMK.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbbMaNV.BaseColor = System.Drawing.Color.Silver;
-            this.cbbMaNV.BGColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-            this.cbbMaNV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbbMaNV.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbMaNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbMaNV.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.cbbMaNV.ForeColor = System.Drawing.Color.White;
-            this.cbbMaNV.FormattingEnabled = true;
-            this.cbbMaNV.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.cbbMaNV.HoverFontColor = System.Drawing.Color.White;
-            this.cbbMaNV.ItemHeight = 18;
-            this.cbbMaNV.Location = new System.Drawing.Point(295, 39);
-            this.cbbMaNV.Name = "cbbMaNV";
-            this.cbbMaNV.Size = new System.Drawing.Size(583, 24);
-            this.cbbMaNV.TabIndex = 4;
+            this.txtMK.BackColor = System.Drawing.Color.Silver;
+            this.txtMK.Location = new System.Drawing.Point(295, 191);
+            this.txtMK.Name = "txtMK";
+            this.txtMK.Size = new System.Drawing.Size(583, 34);
+            this.txtMK.TabIndex = 5;
             // 
             // frmTaiKhoan
             // 
@@ -374,7 +365,6 @@
         private ReaLTaiizor.Controls.ForeverButton btnXoa;
         private ReaLTaiizor.Controls.ForeverButton txtLuu;
         private ReaLTaiizor.Controls.ForeverButton btnThem;
-        private ReaLTaiizor.Controls.ForeverTextBox txtMK;
         private ReaLTaiizor.Controls.ForeverLabel foreverLabel7;
         private ReaLTaiizor.Controls.ForeverLabel foreverLabel5;
         private ReaLTaiizor.Controls.ForeverLabel foreverLabel3;
@@ -386,5 +376,6 @@
         private ReaLTaiizor.Controls.ForeverButton btnDoiMatKhau;
         private ReaLTaiizor.Controls.ForeverButton btnDong;
         private ReaLTaiizor.Controls.ForeverComboBox cbbMaNV;
+        private System.Windows.Forms.TextBox txtMK;
     }
 }

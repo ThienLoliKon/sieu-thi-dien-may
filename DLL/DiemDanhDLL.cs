@@ -36,14 +36,12 @@ namespace DLL
 
             if (diemdanh == null)
             {
-                // SỬA LỖI: Báo cáo đúng đối tượng không tìm thấy
                 throw new Exception($"Không tìm thấy điểm danh với ID: {id}");
             }
             db.diem_danhs.DeleteOnSubmit(diemdanh);
             db.SubmitChanges();
         }
 
-        // ĐÃ SỬA LẠI TÊN THAM SỐ và biến lambda
         public void UpdateDiemDanh(diem_danh updateDiemDanh)
         {
             var result = db.diem_danhs.SingleOrDefault(dd => dd.ma_diem_danh == updateDiemDanh.ma_diem_danh);
@@ -58,7 +56,6 @@ namespace DLL
 
         public string TaoMaDiemDanh()
         {
-            // SỬA LỖI: Chú thích đồng nhất
             var maDiemDanhs = db.diem_danhs.Select(p => p.ma_diem_danh).ToList();
 
             int maxId = 0;
@@ -94,10 +91,8 @@ namespace DLL
         {
             return db.diem_danhs.Any(p => p.ma_diem_danh == id);
         }
-        // Trong DiemDanhDLL.cs (Giả định)
         public List<diem_danh> SearchDiemDanhByCriteria(string maNV)
         {
-            // Logic DAL sẽ thực hiện truy vấn LINQ to SQL:
             var query = db.diem_danhs.AsQueryable();
 
             if (!string.IsNullOrEmpty(maNV))

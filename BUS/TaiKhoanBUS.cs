@@ -22,18 +22,16 @@ namespace BUS
             return dal.GetAllTaiKhoan();
         }
 
-        // ĐÃ SỬA: AddTaiKhoan phải nhận maNV từ GUI (ComboBox Nhân viên)
         public bool AddTaiKhoan(string maNV, string matKhau, string quyen)
         {
             tai_khoan taikhoan = new tai_khoan();
 
-            taikhoan.ma_nhan_vien = maNV; // Nhận mã NV từ tham số
+            taikhoan.ma_nhan_vien = maNV; 
             taikhoan.mat_khau = matKhau;
             taikhoan.quyen = quyen;
 
             dal.AddTaikhoan(taikhoan);
 
-            // SỬA LỖI LOGIC: Nếu tồn tại (check=true) sau khi thêm, nghĩa là thêm thành công.
             if (dal.check(taikhoan.ma_nhan_vien) == true) { return true; }
             return false;
         }
@@ -41,7 +39,6 @@ namespace BUS
         public bool DeleteTaiKhoan(string id)
         {
             dal.DeleteTaiKhoan(id);
-            // LOGIC NÀY ĐÚNG cho XÓA CỨNG: Nếu không tồn tại (check=false) sau khi gọi DAL, nghĩa là xóa thành công.
             if (dal.check(id) == false) { return true; }
             return false;
         }
@@ -56,7 +53,6 @@ namespace BUS
 
             dal.UpdateTaiKhoan(taikhoan);
 
-            // SỬA LỖI LOGIC: Nếu tồn tại (check=true) sau khi cập nhật, nghĩa là cập nhật thành công.
             if (dal.check(taikhoan.ma_nhan_vien) == true) { return true; }
             return false;
         }
@@ -80,7 +76,7 @@ namespace BUS
 
         public DataTable GetAllTaiKhoanAsTable()
         {
-            List<tai_khoan> taikhoans = dal.GetAllTaiKhoan(); // Kiểm tra danh sách từ DAL
+            List<tai_khoan> taikhoans = dal.GetAllTaiKhoan(); 
 
             if (taikhoans == null || taikhoans.Count == 0)
             {
