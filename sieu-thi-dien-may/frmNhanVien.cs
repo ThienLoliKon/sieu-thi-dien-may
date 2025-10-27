@@ -1,6 +1,8 @@
 ﻿using BUS;
 using System;
 using System.Data;
+using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace he_thong_dien_may
@@ -39,7 +41,6 @@ namespace he_thong_dien_may
         {
             try
             {
-                // 1. Load Cấp Bậc (Sử dụng tên BUS/DLL bạn cung cấp)
                 CapBacNhanVienBUS cbBus = new CapBacNhanVienBUS();
                 DataTable dtCapBac = cbBus.GetAllCapBacNVAsTable(); 
                 cbbCapBac.DataSource = dtCapBac;
@@ -47,7 +48,6 @@ namespace he_thong_dien_may
                 cbbCapBac.ValueMember = "MaCB";    
                 cbbCapBac.SelectedIndex = -1;      
 
-                // 2. Load Chi Nhánh
                 ChiNhanhBUS cnBus = new ChiNhanhBUS();
                 DataTable dtChiNhanh = cnBus.GetAllChiNhanhAsTable();
                 cbbChiNhanh.DataSource = dtChiNhanh;
@@ -63,10 +63,8 @@ namespace he_thong_dien_may
 
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
-            // KHẮC PHỤC: Load ComboBox trước để dữ liệu có sẵn cho các thao tác khác
             LoadComboBoxData();
 
-            // Cài đặt DataGridView Columns (GIỮ NGUYÊN)
             dgvNhanVien.AutoGenerateColumns = false;
             dgvNhanVien.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã NV", DataPropertyName = "MaNV", Width = 100 });
             dgvNhanVien.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tên NV", DataPropertyName = "TenNV", Width = 200 });
@@ -76,47 +74,87 @@ namespace he_thong_dien_may
             dgvNhanVien.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã CN", DataPropertyName = "MaChiNhanh", Width = 100 });
             dgvNhanVien.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Trạng Thái", DataPropertyName = "TrangThai", Width = 100 });
 
-            // Load Dữ liệu DataGridView sau
             LoadDL();
         }
 
+        private bool ContainsSpecialChars(string input)
+        {
+            return Regex.IsMatch(input, @"[^a-zA-Z0-9\s\p{L}]");
+        }
+        private void ClearInputControls()
+        {
+            txtMaNV.Clear();
+            txtHoTen.Clear();
+            txtSDT.Clear();
+            txtDiaChi.Clear();
+            txtTimKiem.Clear();
+            cbbCapBac.SelectedIndex = -1;
+            cbbChiNhanh.SelectedIndex = -1;
+
+            txtMaNV.ReadOnly = false;
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            string tenNV = txtHoTen.Text.Trim();
+            string sdt = txtSDT.Text.Trim();
+            string diachi = txtDiaChi.Text.Trim();
+
+            string maCapBac = cbbCapBac.SelectedValue?.ToString();
+            string maChiNhanh = cbbChiNhanh.SelectedValue?.ToString();
+            string trangthai = "true"; 
+
+            if (string.IsNullOrEmpty(tenNV) || string.IsNullOrEmpty(maCapBac) ||
+                string.IsNullOrEmpty(maChiNhanh) || string.IsNullOrEmpty(sdt) || string.IsNullOrEmpty(diachi))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ Họ và Tên, SĐT, Địa chỉ, Cấp bậc và Chi nhánh.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (ContainsSpecialChars(tenNV))
+            {
+                MessageBox.Show("Họ và Tên không được chứa ký tự đặc biệt.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (ContainsSpecialChars(diachi))
+            {
+                MessageBox.Show("Địa chỉ không được chứa ký tự đặc biệt.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!sdt.All(char.IsDigit) || sdt.Length != 10)
+            {
+                MessageBox.Show("Số điện thoại phải là chuỗi số có 10 số.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             DialogResult result = MessageBox.Show("Bạn có muốn thêm không ?", "Thông báo", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 try
                 {
-                    // Lấy Mã từ SelectedValue
-                    string tenNV = txtHoTen.Text;
-                    string maCapBac = cbbCapBac.SelectedValue?.ToString();
-                    string maChiNhanh = cbbChiNhanh.SelectedValue?.ToString();
-                    string sdt = txtSDT.Text;
-                    string diachi = txtDiaChi.Text;
-                    string trangthai = cbTrangThai.Text; // Lấy giá trị trạng thái
-
                     NhanVienBUS bus = new NhanVienBUS();
 
-                    // THỨ TỰ ĐÚNG CỦA BUS: (tenNV, macapbac, sdt, diachi, machinhanh, trangthai)
                     bool isAdd = bus.AddNhanVien(
                         tenNV, maCapBac, sdt, diachi, maChiNhanh, trangthai
                     );
 
                     if (isAdd)
                     {
-                        MessageBox.Show("Thêm thành công");
+                        MessageBox.Show("Thêm nhân viên thành công.");
+                        ClearInputControls();
                     }
                     else
                     {
-                        MessageBox.Show("Thêm không thành công");
+                        MessageBox.Show("Thêm nhân viên thất bại. (Có thể do lỗi database hoặc trùng khóa).");
                     }
                     LoadDL();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Lỗi khi thêm dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Lỗi nghiệp vụ khi thêm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -126,43 +164,67 @@ namespace he_thong_dien_may
                 MessageBox.Show("Vui lòng chọn nhân viên cần sửa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            DialogResult result = MessageBox.Show("Bạn có muốn sửa không ?", "Thông báo", MessageBoxButtons.YesNo);
+            string maNV = txtMaNV.Text.Trim();
+            string tenNV = txtHoTen.Text.Trim();
+            string sdt = txtSDT.Text.Trim();
+            string diachi = txtDiaChi.Text.Trim();
+
+            string maCapBac = cbbCapBac.SelectedValue?.ToString();
+            string maChiNhanh = cbbChiNhanh.SelectedValue?.ToString();
+            string trangthai = "true";
+
+            if (string.IsNullOrEmpty(tenNV) || string.IsNullOrEmpty(maCapBac) ||
+                string.IsNullOrEmpty(maChiNhanh) || string.IsNullOrEmpty(sdt) || string.IsNullOrEmpty(diachi))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ Họ và Tên, SĐT, Địa chỉ, Cấp bậc và Chi nhánh.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (ContainsSpecialChars(tenNV))
+            {
+                MessageBox.Show("Họ và Tên không được chứa ký tự đặc biệt.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (ContainsSpecialChars(diachi))
+            {
+                MessageBox.Show("Địa chỉ không được chứa ký tự đặc biệt.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!sdt.All(char.IsDigit) || sdt.Length != 10)
+            {
+                MessageBox.Show("Số điện thoại phải là chuỗi số có 10 số.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Bạn có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 try
                 {
-                    // LẤY MÃ TỪ SELECTEDVALUE (KHẮC PHỤC LỖI FK/TRUNCATION)
-                    string maNV = txtMaNV.Text;
-                    string tenNV = txtHoTen.Text;
-                    string maCapBac = cbbCapBac.SelectedValue?.ToString();
-                    string sdt = txtSDT.Text;
-                    string diachi = txtDiaChi.Text;
-                    string maChiNhanh = cbbChiNhanh.SelectedValue?.ToString(); // Đảm bảo luôn là mã ngắn gọn (char(10))
-                    string trangthai = cbTrangThai.Text;
-
                     NhanVienBUS bus = new NhanVienBUS();
 
-                    // GỌI PHƯƠNG THỨC CẬP NHẬT (GIẢ ĐỊNH ĐÃ SỬA BUS ĐỂ NHẬN MA NV VÀ CÁC THAM SỐ ĐÚNG)
-                    // THỨ TỰ: (maNV, tenNV, macapbac, sdt, diachi, machinhanh, trangthai)
-                    bool isupdate = bus.UpdateNhanVienstring(
-                        maNV, tenNV, maCapBac, sdt, diachi, maChiNhanh, trangthai
+                    bool isdelete = bus.UpdateNhanVienstring(
+                        maNV ,tenNV, maCapBac, sdt, diachi, maChiNhanh, trangthai
                     );
 
-                    if (isupdate)
+                    if (isdelete)
                     {
-                        MessageBox.Show("Sửa thành công");
+                        MessageBox.Show("Xóa nhân viên thành công.");
+                        ClearInputControls();
                     }
                     else
                     {
-                        MessageBox.Show("Sửa thất bại");
+                        MessageBox.Show("Xóa nhân viên thất bại. (Có thể do lỗi database hoặc trùng khóa).");
                     }
                     LoadDL();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Lỗi khi sửa dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Lỗi nghiệp vụ khi thêm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            
         }
 
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -175,9 +237,8 @@ namespace he_thong_dien_may
                 txtMaNV.Text = dgvNhanVien.Rows[line].Cells[0].Value.ToString();
                 txtHoTen.Text = dgvNhanVien.Rows[line].Cells[1].Value.ToString();
                 
-                // GÁN MÃ ĐỂ COMBOBOX TỰ ĐỘNG CHỌN ĐÚNG MỤC
-                cbbCapBac.SelectedValue = dgvNhanVien.Rows[line].Cells[2].Value; // MaCB
-                cbbChiNhanh.SelectedValue = dgvNhanVien.Rows[line].Cells[5].Value; // MaChiNhanh
+                cbbCapBac.SelectedValue = dgvNhanVien.Rows[line].Cells[2].Value; 
+                cbbChiNhanh.SelectedValue = dgvNhanVien.Rows[line].Cells[5].Value; 
 
                 txtSDT.Text = dgvNhanVien.Rows[line].Cells[3].Value.ToString();
                 txtDiaChi.Text = dgvNhanVien.Rows[line].Cells[4].Value.ToString();
@@ -198,8 +259,7 @@ namespace he_thong_dien_may
                 MessageBox.Show("Vui lòng chọn nhân viên cần xóa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            // KHẮC PHỤC LỖI CÚ PHÁP MESSAGEBOX
-            DialogResult result = MessageBox.Show($"Bạn có muốn chuyển trạng thái nhân viên có mã: {txtMaNV.Text} thành 'Đã Nghỉ' không ?", "Thông báo", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show($"Bạn có muốn cho nhân viên có mã: {txtMaNV.Text} Nghỉ việc không ?", "Thông báo", MessageBoxButtons.YesNo);
             
             if (result == DialogResult.Yes)
             {
@@ -234,13 +294,11 @@ namespace he_thong_dien_may
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            // 1. Lấy từ khóa tìm kiếm
             string keyword = txtTimKiem.Text.Trim();
 
-            // 2. Kiểm tra từ khóa: Nếu trống, tải lại toàn bộ danh sách
             if (string.IsNullOrEmpty(keyword))
             {
-                LoadDL(); // LoadDL() gọi GetAllNhanVienAsTable()
+                LoadDL(); 
                 return;
             }
 
@@ -248,10 +306,8 @@ namespace he_thong_dien_may
             {
                 NhanVienBUS bus = new NhanVienBUS();
 
-                // 3. Gọi phương thức tìm kiếm từ BUS
                 DataTable dtKetQua = bus.timNhanVien(keyword);
 
-                // 4. Hiển thị kết quả
                 if (dtKetQua != null && dtKetQua.Rows.Count > 0)
                 {
                     dgvNhanVien.DataSource = dtKetQua;
@@ -259,7 +315,7 @@ namespace he_thong_dien_may
                 }
                 else
                 {
-                    dgvNhanVien.DataSource = null; // Xóa dữ liệu cũ trên Grid
+                    dgvNhanVien.DataSource = null; 
                     MessageBox.Show("Không tìm thấy nhân viên nào phù hợp với từ khóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -274,6 +330,5 @@ namespace he_thong_dien_may
             LoadComboBoxData();
             LoadDL();
         }
-        // ... (Các hàm khác giữ nguyên)
     }
 }

@@ -26,7 +26,6 @@ namespace DLL
 
         public void AddTaikhoan(tai_khoan TK)
         {
-            // TK.ma_nhan_vien phải được cung cấp từ BUS/GUI
             db.tai_khoans.InsertOnSubmit(TK);
             db.SubmitChanges();
         }
@@ -37,7 +36,6 @@ namespace DLL
 
             if (taikhoan == null)
             {
-                // SỬA LỖI: Báo cáo đúng đối tượng không tìm thấy
                 throw new Exception($"Không tìm thấy tài khoản với ID: {id}");
             }
             db.tai_khoans.DeleteOnSubmit(taikhoan);
@@ -46,7 +44,6 @@ namespace DLL
 
         public void UpdateTaiKhoan(tai_khoan updateTaiKhoan)
         {
-            // SỬA LỖI: Đổi tên biến lambda thành 'tk'
             var result = db.tai_khoans.SingleOrDefault(tk => tk.ma_nhan_vien == updateTaiKhoan.ma_nhan_vien);
             if (result != null)
             {
@@ -55,8 +52,6 @@ namespace DLL
                 db.SubmitChanges();
             }
         }
-
-        // ĐÃ XÓA: Loại bỏ hàm TaoMaTaiKhoan() vì nó vi phạm ràng buộc FK (ma_nhan_vien)
 
         public List<tai_khoan> SearchTaiKhoan(string keyword)
         {

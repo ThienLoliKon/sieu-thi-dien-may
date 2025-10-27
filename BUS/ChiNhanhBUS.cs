@@ -33,7 +33,6 @@ namespace BUS
 
             dal.AddChiNhanh(chinhanh);
 
-            // SỬA LỖI LOGIC: Nếu tồn tại (check=true), nghĩa là thêm thành công.
             if (dal.check(chinhanh.ma_chi_nhanh) == true) { return true; }
             return false;
         }
@@ -41,17 +40,15 @@ namespace BUS
         public bool DeleteChiNhanh(string id)
         {
             dal.DeleteChiNhanh(id);
-            // Logic này ĐÚNG cho XÓA CỨNG: Nếu không tồn tại (check=false), nghĩa là xóa thành công.
             if (dal.check(id) == false) { return true; }
             return false;
         }
 
-        // ĐÃ THÊM THAM SỐ maCN VÀ SỬA LỖI LOGIC TRẢ VỀ
         public bool UpdateChiNhanhstring(string maCN, string tenchinhanh, string diachi, string khuvuc)
         {
             chi_nhanh chinhanh = new chi_nhanh();
 
-            chinhanh.ma_chi_nhanh = maCN; // Cần thiết để DAL tìm kiếm
+            chinhanh.ma_chi_nhanh = maCN; 
             chinhanh.ten_chi_nhanh = tenchinhanh;
             chinhanh.dia_chi = diachi;
             chinhanh.khu_vuc = khuvuc;
@@ -59,7 +56,6 @@ namespace BUS
             try
             {
                 dal.UpdateChiNhanh(chinhanh);
-                // Giả định nếu DAL không ném Exception, và bản ghi tồn tại, thì thành công.
                 if (dal.check(chinhanh.ma_chi_nhanh) == true) { return true; }
                 return false;
             }
@@ -77,7 +73,6 @@ namespace BUS
                 return null;
             }
             DataTable dt = new DataTable();
-            // KHẮC PHỤC: Đồng nhất tên cột cho phép tìm kiếm trong DGV
             dt.Columns.Add("MaChiNhanh", typeof(string));
             dt.Columns.Add("TenChiNhanh", typeof(string));
             dt.Columns.Add("DiaChi", typeof(string));
@@ -98,7 +93,6 @@ namespace BUS
                 return null;
             }
             DataTable dt = new DataTable();
-            // KHẮC PHỤC: Đồng nhất tên cột cho ComboBox GUI
             dt.Columns.Add("MaCN", typeof(string));
             dt.Columns.Add("TenCN", typeof(string));
             dt.Columns.Add("DiaChi", typeof(string));
