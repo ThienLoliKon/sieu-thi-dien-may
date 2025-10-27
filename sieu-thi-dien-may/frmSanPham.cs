@@ -143,7 +143,15 @@ namespace he_thong_dien_may
 				cboMaNhaSX.SelectedValue = dgvSanPham.Rows[line].Cells[2].Value.ToString();
 				cboMaNhaCC.SelectedValue = dgvSanPham.Rows[line].Cells[3].Value.ToString();
 				txtKhoiLUong.Text = dgvSanPham.Rows[line].Cells[4].Value.ToString();
-				txtGiaTien.Text = dgvSanPham.Rows[line].Cells[5].Value.ToString();
+				var giaTienValue = dgvSanPham.Rows[line].Cells[5].Value;
+				if (giaTienValue != null && decimal.TryParse(giaTienValue.ToString(), out decimal giaTien))
+				{
+					txtGiaTien.Text = giaTien.ToString("N0");
+				}
+				else
+				{
+					txtGiaTien.Text = giaTienValue?.ToString() ?? "";
+				}
 				dtpNgaySanXuat.Value = Convert.ToDateTime(dgvSanPham.Rows[line].Cells[6].Value);
 			}
 			catch (Exception ex)

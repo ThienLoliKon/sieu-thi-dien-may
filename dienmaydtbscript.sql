@@ -11,7 +11,7 @@ create table san_pham (
     ma_nha_san_xuat char(10),
     ma_nha_cung_cap char(10),
     khoi_luong float,
-    gia_tien float,
+    gia_tien demical,
     ngay_san_xuat date
 );
 go
@@ -109,7 +109,7 @@ create table chi_tiet_hoa_don (
     ma_san_pham char(10),
     ma_khuyen_mai char(10),
     so_luong int,
-    don_gia float,
+    don_gia demical,
     ngay_gio_in datetime,
     primary key (ma_hoa_don, ma_san_pham)
 );

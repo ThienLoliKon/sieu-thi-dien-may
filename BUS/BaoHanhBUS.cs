@@ -22,28 +22,18 @@ namespace BUSs
 		//	return dal.GetAllTacGia();
 		//}
 
-		public bool AddBaoHanh(string maSanPham, string maKhachHang, string nhanVienBaoHanh, string lyDo, string ngayGui, string ngayXong, bool HoanThanh)
+		public bool AddBaoHanh(string maSanPham, string maKhachHang, string nhanVienBaoHanh, string lyDo, DateTime ngayGui, DateTime ngayXong, bool HoanThanh)
 		{
 			bao_hanh addVariable = new bao_hanh();
-
 			addVariable.ma_bao_hanh = dal.TaoMaBaoHanh();
 			addVariable.ma_san_pham = maSanPham;
 			addVariable.ma_khach_hang = maKhachHang;
 			addVariable.nhan_vien_bao_hanh = nhanVienBaoHanh;
 			addVariable.ly_do = lyDo;
-			// Chuyển đổi ngày gửi
-			if (DateTime.TryParse(ngayGui, out DateTime ngayGuiValue))
-				addVariable.ngay_gui = ngayGuiValue;
-			else
-				addVariable.ngay_gui = null; // hoặc xử lý lỗi nhập liệu
-											 // Chuyển đổi ngày xong
-			if (DateTime.TryParse(ngayXong, out DateTime ngayXongValue))
-				addVariable.ngay_xong = ngayXongValue;
-			else
-				addVariable.ngay_xong = null; // hoặc xử lý lỗi nhập liệu
+			addVariable.ngay_gui = ngayGui;
+			addVariable.ngay_xong = ngayXong;
 			addVariable.hoan_thanh = HoanThanh;
 			dal.addBaoHanh(addVariable);
-
 			if (dal.check(addVariable.ma_bao_hanh) == true) { return false; }
 			return true;
 		}
@@ -68,7 +58,7 @@ namespace BUSs
 				updateItem.ngay_gui = ngayGuiValue;
 			else
 				updateItem.ngay_gui = null; // hoặc xử lý lỗi nhập liệu
-											 // Chuyển đổi ngày xong
+											// Chuyển đổi ngày xong
 			if (DateTime.TryParse(ngayXong, out DateTime ngayXongValue))
 				updateItem.ngay_xong = ngayXongValue;
 			else
@@ -88,18 +78,15 @@ namespace BUSs
 			{
 				return null;
 			}
-
 			DataTable dt = new DataTable();
-
 			dt.Columns.Add("ma_bao_hanh", typeof(string));
 			dt.Columns.Add("ma_san_pham", typeof(string));
 			dt.Columns.Add("ma_khach_hang", typeof(string));
-			dt.Columns.Add("nhan_vien_bao_hanh", typeof(string)); 
+			dt.Columns.Add("nhan_vien_bao_hanh", typeof(string));
 			dt.Columns.Add("ly_do", typeof(string));
 			dt.Columns.Add("ngay_gui", typeof(DateTime));
 			dt.Columns.Add("ngay_xong", typeof(DateTime));
 			dt.Columns.Add("hoan_thanh", typeof(bool));
-
 			foreach (var indexData in listData)
 			{
 				dt.Rows.Add(indexData.ma_bao_hanh, indexData.ma_san_pham, indexData.ma_khach_hang, indexData.nhan_vien_bao_hanh, indexData.ly_do, indexData.ngay_gui, indexData.ngay_xong, indexData.hoan_thanh);
@@ -111,14 +98,11 @@ namespace BUSs
 		public DataTable GetAllBaoHanhAsTable()
 		{
 			List<bao_hanh> listData = dal.GetAllBaoHanh(); // Kiểm tra danh sách từ DAL
-
 			if (listData == null || listData.Count == 0)
 			{
 				return null;
 			}
-
 			DataTable dt = new DataTable();
-
 			dt.Columns.Add("ma_bao_hanh", typeof(string));
 			dt.Columns.Add("ma_san_pham", typeof(string));
 			dt.Columns.Add("ma_khach_hang", typeof(string));
@@ -127,8 +111,6 @@ namespace BUSs
 			dt.Columns.Add("ngay_gui", typeof(DateTime));
 			dt.Columns.Add("ngay_xong", typeof(DateTime));
 			dt.Columns.Add("hoan_thanh", typeof(bool));
-
-
 			foreach (var indexData in listData)
 			{
 				dt.Rows.Add(indexData.ma_bao_hanh, indexData.ma_san_pham, indexData.ma_khach_hang, indexData.nhan_vien_bao_hanh, indexData.ly_do, indexData.ngay_gui, indexData.ngay_xong, indexData.hoan_thanh);

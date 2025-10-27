@@ -22,7 +22,7 @@ namespace DLL
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="dien_may4")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="dien_may")]
 	public partial class DBSTDMDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -117,7 +117,7 @@ namespace DLL
     #endregion
 		
 		public DBSTDMDataContext() : 
-				base(global::DLL.Properties.Settings.Default.dien_may4ConnectionString1, mappingSource)
+				base(global::DLL.Properties.Settings.Default.dien_mayConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
