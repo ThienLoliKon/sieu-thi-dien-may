@@ -36,18 +36,15 @@ namespace DLL
 
             if (chinhanh == null)
             {
-                // SỬA LỖI: Báo cáo đúng đối tượng không tìm thấy
                 throw new Exception($"Không tìm thấy chi nhánh với ID: {id}");
             }
 
-            // SỬA LỖI: THÊM LỆNH XÓA (DeleteOnSubmit)
             db.chi_nhanhs.DeleteOnSubmit(chinhanh);
             db.SubmitChanges();
         }
 
         public void UpdateChiNhanh(chi_nhanh updateChiNhanh)
         {
-            // SỬA LỖI: Đổi tên biến lambda thành 'cn'
             var result = db.chi_nhanhs.SingleOrDefault(cn => cn.ma_chi_nhanh == updateChiNhanh.ma_chi_nhanh);
             if (result != null)
             {
@@ -60,7 +57,6 @@ namespace DLL
 
         public string TaoMaChiNhanh()
         {
-            // SỬA LỖI: Chú thích đồng nhất
             var maChiNhanhs = db.chi_nhanhs.Select(p => p.ma_chi_nhanh).ToList();
 
             int maxId = 0;
@@ -80,7 +76,6 @@ namespace DLL
 
             maxId++;
 
-            // SỬA LỖI: Đảm bảo trả về mã CN chính xác
             return "CN" + maxId.ToString("D3");
         }
 
@@ -93,7 +88,6 @@ namespace DLL
 
         public bool check(string id)
         {
-            // SỬA LỖI: Kiểm tra trên bảng chi_nhanhs thay vì nhan_viens
             return db.chi_nhanhs.Any(p => p.ma_chi_nhanh == id);
         }
     }
