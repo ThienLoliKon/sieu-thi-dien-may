@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,7 +24,7 @@ namespace he_thong_dien_may
 		{
 			dgvSanPham.DataSource = bus.GetAllSanPhamAsTable();
 		}
-		
+
 		public void clearData()
 		{
 			txtMaSanPham.Text = "";
@@ -42,6 +43,7 @@ namespace he_thong_dien_may
 			cboMaNhaSX.DataSource = busNhaSX.GetAllNhaCungCapAsTable();
 			cboMaNhaSX.DisplayMember = "ten_nha_san_xuat";
 			cboMaNhaSX.ValueMember = "ma_nha_san_xuat";
+			cboMaNhaSX.SelectedIndex = -1;
 		}
 
 		public void loadNhaCC()
@@ -51,6 +53,7 @@ namespace he_thong_dien_may
 			cboMaNhaCC.DataSource = busNhaCC.GetAllNhaCungCapAsTable();
 			cboMaNhaCC.DisplayMember = "ten_nha_cung_cap";
 			cboMaNhaCC.ValueMember = "ma_nha_cung_cap";
+			cboMaNhaCC.SelectedIndex = -1;
 		}
 
 
@@ -113,16 +116,18 @@ namespace he_thong_dien_may
 		}
 		private void btnThem_Click(object sender, EventArgs e)
 		{
-			//MessageBox.Show($"{txtTenSanPham.Text}, {cboMaNhaSX.ValueMember}, {cboMaNhaCC.ValueMember}, {txtKhoiLUong.Text}, {txtGiaTien.Text}, {dtpNgaySanXuat.Value}");
-			//Console.WriteLine(txtTenSanPham.Text, cboMaNhaSX.ValueMember, cboMaNhaCC.ValueMember, txtKhoiLUong.Text, txtGiaTien.Text, dtpNgaySanXuat.Value);
 			SanPhamBUS bus = new SanPhamBUS();
-			bus.AddSanPham(txtTenSanPham.Text,cboMaNhaSX.SelectedValue.ToString(),cboMaNhaCC.SelectedValue.ToString(),txtKhoiLUong.Text,txtGiaTien.Text,dtpNgaySanXuat.Value);
+			if (txtGiaTien.Text.Length == 0 && txtTenSanPham.Text.Length == 0 && txtKhoiLUong.Text.Length == 0)
+			{
+				MessageBox.Show("Vui lòng nhập dữ liệu vào các ô trống");
+			}
+			bus.AddSanPham(txtTenSanPham.Text, cboMaNhaSX.SelectedValue.ToString(), cboMaNhaCC.SelectedValue.ToString(), txtKhoiLUong.Text, txtGiaTien.Text, dtpNgaySanXuat.Value);
 			loadData();
 		}
 
 		private void btnSua_Click(object sender, EventArgs e)
 		{
-			bus.UpdateSanPham(txtMaSanPham.Text,txtTenSanPham.Text, cboMaNhaSX.SelectedValue.ToString(), cboMaNhaCC.SelectedValue.ToString(), txtKhoiLUong.Text, txtGiaTien.Text, dtpNgaySanXuat.Value);
+			bus.UpdateSanPham(txtMaSanPham.Text, txtTenSanPham.Text, cboMaNhaSX.SelectedValue.ToString(), cboMaNhaCC.SelectedValue.ToString(), txtKhoiLUong.Text, txtGiaTien.Text, dtpNgaySanXuat.Value);
 			loadData();
 		}
 
@@ -143,15 +148,10 @@ namespace he_thong_dien_may
 				cboMaNhaSX.SelectedValue = dgvSanPham.Rows[line].Cells[2].Value.ToString();
 				cboMaNhaCC.SelectedValue = dgvSanPham.Rows[line].Cells[3].Value.ToString();
 				txtKhoiLUong.Text = dgvSanPham.Rows[line].Cells[4].Value.ToString();
-				var giaTienValue = dgvSanPham.Rows[line].Cells[5].Value;
-				if (giaTienValue != null && decimal.TryParse(giaTienValue.ToString(), out decimal giaTien))
-				{
-					txtGiaTien.Text = giaTien.ToString("N0");
-				}
-				else
-				{
-					txtGiaTien.Text = giaTienValue?.ToString() ?? "";
-				}
+				double giaTienValue = double.Parse( dgvSanPham.Rows[line].Cells[5].Value.ToString());
+				//lỗi xuất hiện e+0
+				txtGiaTien.Text = giaTienValue.ToString("F0");
+
 				dtpNgaySanXuat.Value = Convert.ToDateTime(dgvSanPham.Rows[line].Cells[6].Value);
 			}
 			catch (Exception ex)
@@ -163,6 +163,35 @@ namespace he_thong_dien_may
 		private void btnTimKiem_Click(object sender, EventArgs e)
 		{
 
+		}
+		public void checkGiaTien()
+		{
+
+			// Lưu lại vị trí con trỏ
+
+			// Lọc chỉ giữ lại ký tự số
+			string newText = new string(txtGiaTien.Text.Where(char.IsDigit).ToArray());
+
+			if (txtGiaTien.Text != newText)
+			{
+				txtGiaTien.Text = newText;
+
+
+			}
+		}
+
+		private void txtGiaTien_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (char.IsLetter(e.KeyChar))
+			{
+				MessageBox.Show("Chỉ được nhập số!");
+				e.Handled = true; // Không cho nhập ký tự này
+			}
+			// Cho phép phím điều khiển như Backspace
+			else if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+			{
+				e.Handled = true;
+			}
 		}
 	}
 }

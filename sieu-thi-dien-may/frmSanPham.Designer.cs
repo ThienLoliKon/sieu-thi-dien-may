@@ -439,6 +439,7 @@
 			this.txtGiaTien.TabIndex = 10;
 			this.txtGiaTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.txtGiaTien.UseSystemPasswordChar = false;
+			this.txtGiaTien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaTien_KeyPress);
 			// 
 			// foreverLabel8
 			// 

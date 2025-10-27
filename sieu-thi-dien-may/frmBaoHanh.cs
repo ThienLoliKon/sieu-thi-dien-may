@@ -28,18 +28,25 @@ namespace he_thong_dien_may
 		{
 			KhachHangBUS busNhaSX = new KhachHangBUS();
 			cboMaKhachHang.DataSource = busNhaSX.GetAllKhachHang();
-			cboMaKhachHang.DisplayMember = "ho_ten_khach_hang";
-			cboMaKhachHang.ValueMember = "ma_khach_hang";
+			cboMaKhachHang.DisplayMember = "hotenkhachhang";
+			cboMaKhachHang.ValueMember = "makhachhang";
 		}
 		
 		public void loadKNhanVien()
 		{
 			NhanVienBUS busKH = new NhanVienBUS();
 			cboMaNhanVien.DataSource = busKH.GetAllNhanVienAsTable();
-			cboMaNhanVien.DisplayMember = "ho_va_ten";
-			cboMaNhanVien.ValueMember = "ma_nhan_vien";
+			cboMaNhanVien.DisplayMember = "TenNV";
+			cboMaNhanVien.ValueMember = "MaNV";
 		}
-		
+		public void loadSanPham()
+		{
+			SanPhamBUS busKH = new SanPhamBUS();
+			cboMaSanPham.DataSource = busKH.GetAllSanPhamAsTable();
+			cboMaSanPham.DisplayMember = "ten_san_pham";
+			cboMaSanPham.ValueMember = "ma_san_pham";
+		}
+
 		public void loadData()
 		{
 			dgvBaoHanh.DataSource = bus.GetAllBaoHanhAsTable();
@@ -73,6 +80,7 @@ namespace he_thong_dien_may
 
 		private void frmBaoHanh_Load(object sender, EventArgs e)
 		{
+			
 			dgvBaoHanh.AutoGenerateColumns = false;
 
 			dgvBaoHanh.Columns.Add(new DataGridViewTextBoxColumn
@@ -107,7 +115,7 @@ namespace he_thong_dien_may
 			{
 				HeaderText = "lý do",
 				DataPropertyName = "ly_do",
-				Width = 100
+				Width = 250
 			});
 
 			dgvBaoHanh.Columns.Add(new DataGridViewTextBoxColumn
