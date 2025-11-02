@@ -20,31 +20,30 @@ namespace DLL
         {
             return db.khu_vucs.ToList();
         }
-        public int AddXepHang(xep_hang xh)
+        public int addKhuVuc(khu_vuc kv)
         {
             try
             {
-                db.xep_hangs.InsertOnSubmit(xh);
+                db.khu_vucs.InsertOnSubmit(kv);
                 db.SubmitChanges();
             }
             catch (Exception ex)
             {
                 //throw new Exception(xh.xep_hang);
-                throw new Exception("Loi khi them khach hang: " + ex.Message);
+                throw new Exception("Loi khi them khu vuc: " + ex.Message);
             }
             return 1;
         }
-        public int UpdateRank(xep_hang xh)
+        public int updateKhuVuc(khu_vuc kv)
         {
             try
             {
-                var xephang = db.xep_hangs.SingleOrDefault(n => n.ma_hang == xh.ma_hang);
-                if (xephang != null)
+                var khuvuc = db.khu_vucs.SingleOrDefault(n => n.ma_khu_vuc == kv.ma_khu_vuc);
+                if (khuvuc != null)
                 {
-                    xephang.ma_hang = xh.ma_hang;
-                    xephang.ten_hang = xh.ten_hang;
-                    xephang.yeu_cau = xh.yeu_cau;
-                    xephang.uu_dai = xh.uu_dai;
+                    khuvuc.ma_khu_vuc = kv.ma_khu_vuc;
+                    khuvuc.ten_khu_vuc = kv.ten_khu_vuc;
+                    khuvuc.nhan_vien_quan_ly = kv.nhan_vien_quan_ly;
                     db.SubmitChanges();
                     return 1;
                 }
@@ -55,21 +54,12 @@ namespace DLL
             }
             return 0;
         }
-        public List<chi_tiet_hoa_don> getAllHoaDonKhachHang(string makh)
-        {
-            //var danhsachhoadoncuakhachhang = ;
-            var listhoadon = from cthd in db.chi_tiet_hoa_dons
-                             join hd in db.hoa_dons on cthd.ma_hoa_don equals hd.ma_hoa_don
-                             where hd.ma_khach_hang == makh
-                             select cthd;
-            return listhoadon.ToList();
-        }
 
-        public int deleteRank(string mahang)
+        public int deleteKhuvuc(string makhu)
         {
             try
             {
-                db.xep_hangs.DeleteOnSubmit(db.xep_hangs.SingleOrDefault(n => n.ma_hang == mahang));
+                db.khu_vucs.DeleteOnSubmit(db.khu_vucs.SingleOrDefault(n => n.ma_khu_vuc == makhu));
                 return 1;
             }
             catch (Exception ex)

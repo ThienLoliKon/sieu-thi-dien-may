@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace he_thong_dien_may
 {
     public partial class ChiNhanh : Form
     {
+        ChiNhanhBUS chinhanhbus = new ChiNhanhBUS();
         public ChiNhanh()
         {
             InitializeComponent();
@@ -20,6 +22,25 @@ namespace he_thong_dien_may
         private void cyberButton5_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cyberButton1_Click(object sender, EventArgs e)
+        {
+            ChiNhanhBUS.ChiNhanh chinhanh = new ChiNhanhBUS.ChiNhanh();
+            //chinhanh.machinhanh = 
+            chinhanh.tenchinhanh = txtTenChiNhanh.TextButton;
+            chinhanh.diachi = txtDiaChi.TextButton;
+            chinhanh.khuvuc = cbxKhuVuc.SelectedValue.ToString();
+            
+        }
+
+        private void cyberButton4_Click(object sender, EventArgs e)
+        {
+            KhuVucBUS khuvucbus = new KhuVucBUS();
+            cbxKhuVuc.DataSource = khuvucbus.getAllKhuVuc();
+            cbxKhuVuc.DisplayMember = "tenkhu";
+            cbxKhuVuc.ValueMember = "makhu";
+            dgvChiNhanh.DataSource = chinhanhbus.GetAllChiNhanhAsTable();
         }
     }
 }

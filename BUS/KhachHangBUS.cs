@@ -91,7 +91,7 @@ namespace BUS
             }
             else
             {
-                return "KH0001";
+                return "KH10000001";
             }
         }
         public List<KhachHang> searchKhachHang(string ma, string ten, string sdt)
