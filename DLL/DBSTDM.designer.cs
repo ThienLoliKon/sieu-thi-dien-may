@@ -22,7 +22,7 @@ namespace DLL
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="dien_may4")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="dien_may")]
 	public partial class DBSTDMDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -33,6 +33,9 @@ namespace DLL
     partial void Insertbao_hanh(bao_hanh instance);
     partial void Updatebao_hanh(bao_hanh instance);
     partial void Deletebao_hanh(bao_hanh instance);
+    partial void Insertxep_hang(xep_hang instance);
+    partial void Updatexep_hang(xep_hang instance);
+    partial void Deletexep_hang(xep_hang instance);
     partial void Insertcap_bac_nhan_vien(cap_bac_nhan_vien instance);
     partial void Updatecap_bac_nhan_vien(cap_bac_nhan_vien instance);
     partial void Deletecap_bac_nhan_vien(cap_bac_nhan_vien instance);
@@ -93,9 +96,6 @@ namespace DLL
     partial void Insertsan_pham(san_pham instance);
     partial void Updatesan_pham(san_pham instance);
     partial void Deletesan_pham(san_pham instance);
-    partial void Insertxep_hang(xep_hang instance);
-    partial void Updatexep_hang(xep_hang instance);
-    partial void Deletexep_hang(xep_hang instance);
     partial void Insertsan_pham_loai_hang(san_pham_loai_hang instance);
     partial void Updatesan_pham_loai_hang(san_pham_loai_hang instance);
     partial void Deletesan_pham_loai_hang(san_pham_loai_hang instance);
@@ -117,7 +117,7 @@ namespace DLL
     #endregion
 		
 		public DBSTDMDataContext() : 
-				base(global::DLL.Properties.Settings.Default.dien_may4ConnectionString1, mappingSource)
+				base(global::DLL.Properties.Settings.Default.dien_mayConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -151,6 +151,14 @@ namespace DLL
 			get
 			{
 				return this.GetTable<bao_hanh>();
+			}
+		}
+		
+		public System.Data.Linq.Table<xep_hang> xep_hangs
+		{
+			get
+			{
+				return this.GetTable<xep_hang>();
 			}
 		}
 		
@@ -311,14 +319,6 @@ namespace DLL
 			get
 			{
 				return this.GetTable<san_pham>();
-			}
-		}
-		
-		public System.Data.Linq.Table<xep_hang> xep_hangs
-		{
-			get
-			{
-				return this.GetTable<xep_hang>();
 			}
 		}
 		
@@ -680,6 +680,168 @@ namespace DLL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.xep_hang")]
+	public partial class xep_hang : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _ma_hang;
+		
+		private string _ten_hang;
+		
+		private System.Nullable<double> _yeu_cau;
+		
+		private System.Nullable<double> _uu_dai;
+		
+		private EntitySet<khach_hang> _khach_hangs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onma_hangChanging(string value);
+    partial void Onma_hangChanged();
+    partial void Onten_hangChanging(string value);
+    partial void Onten_hangChanged();
+    partial void Onyeu_cauChanging(System.Nullable<double> value);
+    partial void Onyeu_cauChanged();
+    partial void Onuu_daiChanging(System.Nullable<double> value);
+    partial void Onuu_daiChanged();
+    #endregion
+		
+		public xep_hang()
+		{
+			this._khach_hangs = new EntitySet<khach_hang>(new Action<khach_hang>(this.attach_khach_hangs), new Action<khach_hang>(this.detach_khach_hangs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma_hang", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ma_hang
+		{
+			get
+			{
+				return this._ma_hang;
+			}
+			set
+			{
+				if ((this._ma_hang != value))
+				{
+					this.Onma_hangChanging(value);
+					this.SendPropertyChanging();
+					this._ma_hang = value;
+					this.SendPropertyChanged("ma_hang");
+					this.Onma_hangChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ten_hang", DbType="NVarChar(50)")]
+		public string ten_hang
+		{
+			get
+			{
+				return this._ten_hang;
+			}
+			set
+			{
+				if ((this._ten_hang != value))
+				{
+					this.Onten_hangChanging(value);
+					this.SendPropertyChanging();
+					this._ten_hang = value;
+					this.SendPropertyChanged("ten_hang");
+					this.Onten_hangChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_yeu_cau", DbType="Float")]
+		public System.Nullable<double> yeu_cau
+		{
+			get
+			{
+				return this._yeu_cau;
+			}
+			set
+			{
+				if ((this._yeu_cau != value))
+				{
+					this.Onyeu_cauChanging(value);
+					this.SendPropertyChanging();
+					this._yeu_cau = value;
+					this.SendPropertyChanged("yeu_cau");
+					this.Onyeu_cauChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_uu_dai", DbType="Float")]
+		public System.Nullable<double> uu_dai
+		{
+			get
+			{
+				return this._uu_dai;
+			}
+			set
+			{
+				if ((this._uu_dai != value))
+				{
+					this.Onuu_daiChanging(value);
+					this.SendPropertyChanging();
+					this._uu_dai = value;
+					this.SendPropertyChanged("uu_dai");
+					this.Onuu_daiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="xep_hang_khach_hang", Storage="_khach_hangs", ThisKey="ma_hang", OtherKey="xep_hang")]
+		public EntitySet<khach_hang> khach_hangs
+		{
+			get
+			{
+				return this._khach_hangs;
+			}
+			set
+			{
+				this._khach_hangs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_khach_hangs(khach_hang entity)
+		{
+			this.SendPropertyChanging();
+			entity.xep_hang1 = this;
+		}
+		
+		private void detach_khach_hangs(khach_hang entity)
+		{
+			this.SendPropertyChanging();
+			entity.xep_hang1 = null;
 		}
 	}
 	
@@ -1122,7 +1284,7 @@ namespace DLL
 		
 		private System.Nullable<int> _so_luong;
 		
-		private System.Nullable<double> _don_gia;
+		private System.Nullable<decimal> _don_gia;
 		
 		private System.Nullable<System.DateTime> _ngay_gio_in;
 		
@@ -1144,7 +1306,7 @@ namespace DLL
     partial void Onma_khuyen_maiChanged();
     partial void Onso_luongChanging(System.Nullable<int> value);
     partial void Onso_luongChanged();
-    partial void Ondon_giaChanging(System.Nullable<double> value);
+    partial void Ondon_giaChanging(System.Nullable<decimal> value);
     partial void Ondon_giaChanged();
     partial void Onngay_gio_inChanging(System.Nullable<System.DateTime> value);
     partial void Onngay_gio_inChanged();
@@ -1250,8 +1412,8 @@ namespace DLL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_don_gia", DbType="Float")]
-		public System.Nullable<double> don_gia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_don_gia", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> don_gia
 		{
 			get
 			{
@@ -2875,7 +3037,7 @@ namespace DLL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mo_ta", DbType="Char(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mo_ta", DbType="NVarChar(100)")]
 		public string mo_ta
 		{
 			get
@@ -4604,7 +4766,7 @@ namespace DLL
 		
 		private System.Nullable<int> _so_luong;
 		
-		private System.Nullable<int> _don_gia;
+		private System.Nullable<decimal> _don_gia;
 		
 		private EntityRef<kho_tong> _kho_tong;
 		
@@ -4626,7 +4788,7 @@ namespace DLL
     partial void Onma_nhan_vien_kiem_traChanged();
     partial void Onso_luongChanging(System.Nullable<int> value);
     partial void Onso_luongChanged();
-    partial void Ondon_giaChanging(System.Nullable<int> value);
+    partial void Ondon_giaChanging(System.Nullable<decimal> value);
     partial void Ondon_giaChanged();
     #endregion
 		
@@ -4750,8 +4912,8 @@ namespace DLL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_don_gia", DbType="Int")]
-		public System.Nullable<int> don_gia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_don_gia", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> don_gia
 		{
 			get
 			{
@@ -5255,7 +5417,7 @@ namespace DLL
 		
 		private System.Nullable<double> _khoi_luong;
 		
-		private System.Nullable<double> _gia_tien;
+		private System.Nullable<decimal> _gia_tien;
 		
 		private System.Nullable<System.DateTime> _ngay_san_xuat;
 		
@@ -5291,7 +5453,7 @@ namespace DLL
     partial void Onma_nha_cung_capChanged();
     partial void Onkhoi_luongChanging(System.Nullable<double> value);
     partial void Onkhoi_luongChanged();
-    partial void Ongia_tienChanging(System.Nullable<double> value);
+    partial void Ongia_tienChanging(System.Nullable<decimal> value);
     partial void Ongia_tienChanged();
     partial void Onngay_san_xuatChanging(System.Nullable<System.DateTime> value);
     partial void Onngay_san_xuatChanged();
@@ -5419,8 +5581,8 @@ namespace DLL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia_tien", DbType="Float")]
-		public System.Nullable<double> gia_tien
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia_tien", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> gia_tien
 		{
 			get
 			{
@@ -5720,168 +5882,6 @@ namespace DLL
 		{
 			this.SendPropertyChanging();
 			entity.san_pham = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.xep_hang")]
-	public partial class xep_hang : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _ma_hang;
-		
-		private string _ten_hang;
-		
-		private System.Nullable<double> _yeu_cau;
-		
-		private System.Nullable<double> _uu_dai;
-		
-		private EntitySet<khach_hang> _khach_hangs;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onma_hangChanging(string value);
-    partial void Onma_hangChanged();
-    partial void Onten_hangChanging(string value);
-    partial void Onten_hangChanged();
-    partial void Onyeu_cauChanging(System.Nullable<double> value);
-    partial void Onyeu_cauChanged();
-    partial void Onuu_daiChanging(System.Nullable<double> value);
-    partial void Onuu_daiChanged();
-    #endregion
-		
-		public xep_hang()
-		{
-			this._khach_hangs = new EntitySet<khach_hang>(new Action<khach_hang>(this.attach_khach_hangs), new Action<khach_hang>(this.detach_khach_hangs));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma_hang", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string ma_hang
-		{
-			get
-			{
-				return this._ma_hang;
-			}
-			set
-			{
-				if ((this._ma_hang != value))
-				{
-					this.Onma_hangChanging(value);
-					this.SendPropertyChanging();
-					this._ma_hang = value;
-					this.SendPropertyChanged("ma_hang");
-					this.Onma_hangChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ten_hang", DbType="NVarChar(50)")]
-		public string ten_hang
-		{
-			get
-			{
-				return this._ten_hang;
-			}
-			set
-			{
-				if ((this._ten_hang != value))
-				{
-					this.Onten_hangChanging(value);
-					this.SendPropertyChanging();
-					this._ten_hang = value;
-					this.SendPropertyChanged("ten_hang");
-					this.Onten_hangChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_yeu_cau", DbType="Float")]
-		public System.Nullable<double> yeu_cau
-		{
-			get
-			{
-				return this._yeu_cau;
-			}
-			set
-			{
-				if ((this._yeu_cau != value))
-				{
-					this.Onyeu_cauChanging(value);
-					this.SendPropertyChanging();
-					this._yeu_cau = value;
-					this.SendPropertyChanged("yeu_cau");
-					this.Onyeu_cauChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_uu_dai", DbType="Float")]
-		public System.Nullable<double> uu_dai
-		{
-			get
-			{
-				return this._uu_dai;
-			}
-			set
-			{
-				if ((this._uu_dai != value))
-				{
-					this.Onuu_daiChanging(value);
-					this.SendPropertyChanging();
-					this._uu_dai = value;
-					this.SendPropertyChanged("uu_dai");
-					this.Onuu_daiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="xep_hang_khach_hang", Storage="_khach_hangs", ThisKey="ma_hang", OtherKey="xep_hang")]
-		public EntitySet<khach_hang> khach_hangs
-		{
-			get
-			{
-				return this._khach_hangs;
-			}
-			set
-			{
-				this._khach_hangs.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_khach_hangs(khach_hang entity)
-		{
-			this.SendPropertyChanging();
-			entity.xep_hang1 = this;
-		}
-		
-		private void detach_khach_hangs(khach_hang entity)
-		{
-			this.SendPropertyChanging();
-			entity.xep_hang1 = null;
 		}
 	}
 	

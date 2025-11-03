@@ -66,25 +66,25 @@ namespace DLL
 		{
 			List<khuyen_mai> list = new List<khuyen_mai>();
 			IEnumerable<khuyen_mai> query = from item in db.khuyen_mais
-										  where item.ma_khuyen_mai.Contains(name_id)
-										  select item;
+										    where item.ma_khuyen_mai.Contains(name_id) || item.ma_loai_hang.Contains(name_id)
+											select item;
 			foreach (var item in query)
 			{
 				list.Add(item);
 			}
 			return list;
 		}
-		public string TaoMaSanPham()
+		public string TaoMaKhuyenMai()
 		{
 			// Lấy danh sách mã TacGia và kiểm tra có dữ liệu hay không
-			var listItem = db.san_phams.Select(p => p.ma_san_pham).ToList();
+			var listItem = db.khuyen_mais.Select(p => p.ma_khuyen_mai).ToList();
 
 			int maxId = 0;
 
 			if (listItem.Any()) // Kiểm tra nếu có dữ liệu
 			{
 				maxId = listItem
-							.Where(m => m.StartsWith("SP")) // Lọc các mã bắt đầu bằng "TG"
+							.Where(m => m.StartsWith("KM")) // Lọc các mã bắt đầu bằng "TG"
 							.Select(m => int.Parse(m.Substring(3))) // Lấy phần số sau "TG"
 							.Max(); // Lấy giá trị lớn nhất
 			}
@@ -93,11 +93,11 @@ namespace DLL
 			maxId++;
 
 			// Tạo mã mới với tiền tố "NXB" và đảm bảo đúng định dạng
-			return "SP" + maxId.ToString("D3");
+			return "KM" + maxId.ToString("D3");
 		}
 		public bool check(string id)
 		{
-			return db.san_phams.Any(p => p.ma_san_pham == id);
+			return db.khuyen_mais.Any(p => p.ma_khuyen_mai == id);
 		}
 	}
 }

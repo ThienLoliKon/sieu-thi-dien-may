@@ -26,5 +26,10 @@ namespace he_thong_dien_may
         {
 			this.Close();
         }
-    }
+
+		private void frmKhuyenMai_Load(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
