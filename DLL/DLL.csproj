@@ -50,6 +50,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBSTDM.dbml</DependentUpon>
     </Compile>
+    <Compile Include="HoaDonDLL.cs" />
     <Compile Include="KhachHangDLL.cs" />
     <Compile Include="KhuyenMaiDLL.cs" />
     <Compile Include="LoaiHangDLL.cs" />

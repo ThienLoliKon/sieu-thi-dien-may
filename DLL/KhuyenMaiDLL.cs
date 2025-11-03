@@ -66,8 +66,8 @@ namespace DLL
 		{
 			List<khuyen_mai> list = new List<khuyen_mai>();
 			IEnumerable<khuyen_mai> query = from item in db.khuyen_mais
-										  where item.ma_khuyen_mai.Contains(name_id)
-										  select item;
+										    where item.ma_khuyen_mai.Contains(name_id) || item.ma_loai_hang.Contains(name_id)
+											select item;
 			foreach (var item in query)
 			{
 				list.Add(item);
