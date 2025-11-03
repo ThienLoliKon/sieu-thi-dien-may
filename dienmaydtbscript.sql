@@ -1,7 +1,7 @@
 ﻿--drop database dien_may
-create database dien_may3;
+create database dien_may;
 go
-use dien_may3;
+use dien_may;
 go
 
 -- Sản phẩm
@@ -11,7 +11,7 @@ create table san_pham (
     ma_nha_san_xuat char(10),
     ma_nha_cung_cap char(10),
     khoi_luong float,
-    gia_tien float,
+    gia_tien DECIMAL(18, 0),
     ngay_san_xuat date
 );
 go
@@ -32,7 +32,7 @@ go
 create table nha_cung_cap (
     ma_nha_cung_cap char(10) primary key,
     ten_nha_cung_cap nvarchar(50),
-    dia_chi_nha_cung_cap varchar(100)
+    dia_chi_nha_cung_cap nvarchar(100)
 );
 go
 
@@ -40,7 +40,7 @@ go
 create table nha_san_xuat (
     ma_nha_san_xuat char(10) primary key,
     ten_nha_san_xuat nvarchar(50),
-    dia_chi_nha_san_xuat varchar(100)
+    dia_chi_nha_san_xuat nvarchar(100)
 );
 go
 
@@ -70,7 +70,7 @@ create table phieu_nhap_kho (
     ma_san_pham char(10),
     ma_nhan_vien_kiem_tra char(10),
     so_luong int,
-    don_gia int
+    don_gia DECIMAL(18, 0)
 );
 go
 
@@ -109,7 +109,7 @@ create table chi_tiet_hoa_don (
     ma_san_pham char(10),
     ma_khuyen_mai char(10),
     so_luong int,
-    don_gia float,
+    don_gia DECIMAL(18, 0),
     ngay_gio_in datetime,
     primary key (ma_hoa_don, ma_san_pham)
 );
@@ -129,7 +129,7 @@ go
 create table loai_hang (
     ma_loai_hang char(10) primary key,
     ten_loai_hang nvarchar (100),
-    mo_ta char(10)
+    mo_ta nvarchar (100)
 );
 go
 
@@ -223,7 +223,7 @@ create table khach_hang (
     ma_khach_hang char(10) primary key,
     ho_ten_khach_hang nvarchar(50),
     sdt varchar(20),
-    diachi varchar(50),
+    diachi nvarchar(100),
     xep_hang char(10),
     diem int
 );
@@ -448,10 +448,9 @@ add constraint FK_chi_nhanh_khu_vuc
     foreign key (khu_vuc) references khu_vuc(ma_khu_vuc);
 go  
 
-alter table khu_vuc
-add constraint FK_khu_vuc_nhan_vien 
-    foreign key (nhan_vien_quan_ly) references nhan_vien(ma_nhan_vien);
-go
+
+
+
 
 alter table kho_tong
 add constraint FK_kho_tong_nhan_vien 

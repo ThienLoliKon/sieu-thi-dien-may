@@ -41,8 +41,8 @@ namespace BUS
                 kh.tenkhachhang = item.ho_ten_khach_hang;
                 kh.sdt = item.sdt;
                 kh.diachi = item.diachi;
-                //kh.xephang = item.xep_hang;
-                kh.diem = tinhTongTienHoaDonThanhDiem(item.ma_khach_hang);
+				//kh.xephang = item.xep_hang;
+				kh.diem = item.diem.HasValue ? item.diem.Value : 0;
                 kh.xephang = xepHangKhachHang(kh.diem);
                 //kh.diem = item.diem.HasValue ? item.diem.Value : 0;
                 list.Add(kh);
@@ -117,7 +117,7 @@ namespace BUS
         {
             int tongtien = 0;
             var hoadons = khachhangdll.getAllHoaDonKhachHang(makh);
-            double sumtien = 0;
+            decimal sumtien = 0;
             foreach (var hd in hoadons)
             {
                 sumtien = hd.so_luong.Value * hd.don_gia.Value;
