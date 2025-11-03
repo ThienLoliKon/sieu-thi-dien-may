@@ -51,6 +51,7 @@
       <DependentUpon>DBSTDM.dbml</DependentUpon>
     </Compile>
     <Compile Include="KhachHangDLL.cs" />
+    <Compile Include="KhoTongDLL.cs" />
     <Compile Include="KhuVucDLL.cs" />
     <Compile Include="KhuyenMaiDLL.cs" />
     <Compile Include="LoaiHangDLL.cs" />

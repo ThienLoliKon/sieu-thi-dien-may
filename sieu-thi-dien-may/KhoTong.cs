@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace he_thong_dien_may
 {
     public partial class KhoTong : Form
     {
+        KhoTongBUS khotongbus = new KhoTongBUS();
         public KhoTong()
         {
             InitializeComponent();
@@ -25,6 +27,16 @@ namespace he_thong_dien_may
         private void cyberButton8_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void cyberButton1_Click(object sender, EventArgs e)
+        {
+            bool checkvalid = CheckTestCase.checkKhoangTrang()
+        }
+
+        private void cyberButton4_Click(object sender, EventArgs e)
+        {
+            dgvKhoTong.DataSource = khotongbus.getAllKhoTong();
         }
     }
 }
