@@ -102,7 +102,7 @@
 			this.dtpNgaySanXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.dtpNgaySanXuat.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
 			this.dtpNgaySanXuat.Location = new System.Drawing.Point(1237, 535);
-			this.dtpNgaySanXuat.MinimumSize = new System.Drawing.Size(4, 30);
+			this.dtpNgaySanXuat.MinimumSize = new System.Drawing.Size(0, 30);
 			this.dtpNgaySanXuat.Name = "dtpNgaySanXuat";
 			this.dtpNgaySanXuat.Size = new System.Drawing.Size(336, 30);
 			this.dtpNgaySanXuat.TabIndex = 55;
@@ -401,11 +401,11 @@
 			this.foreverLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.foreverLabel6.AutoSize = true;
 			this.foreverLabel6.BackColor = System.Drawing.Color.Transparent;
-			this.foreverLabel6.Font = new System.Drawing.Font("Segoe UI", 8F);
+			this.foreverLabel6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.foreverLabel6.ForeColor = System.Drawing.Color.LightGray;
 			this.foreverLabel6.Location = new System.Drawing.Point(1076, 546);
 			this.foreverLabel6.Name = "foreverLabel6";
-			this.foreverLabel6.Size = new System.Drawing.Size(103, 19);
+			this.foreverLabel6.Size = new System.Drawing.Size(128, 23);
 			this.foreverLabel6.TabIndex = 13;
 			this.foreverLabel6.Text = "Ngày sản xuất :";
 			// 

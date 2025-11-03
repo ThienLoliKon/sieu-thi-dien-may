@@ -75,30 +75,38 @@ namespace DLL
 			}
 			return list;
 		}
-		public string TaoMaSanPham()
-		{
-			// Lấy danh sách mã TacGia và kiểm tra có dữ liệu hay không
-			var listItem = db.san_phams.Select(p => p.ma_san_pham).ToList();
+		//public string TaoMaSanPham()
+		//{
+		//	// Lấy danh sách mã TacGia và kiểm tra có dữ liệu hay không
+		//	var listItem = db.san_phams.Select(p => p.ma_san_pham).ToList();
 
-			int maxId = 0;
+		//	int maxId = 0;
 
-			if (listItem.Any()) // Kiểm tra nếu có dữ liệu
-			{
-				maxId = listItem
-							.Where(m => m.StartsWith("SP")) // Lọc các mã bắt đầu bằng "TG"
-							.Select(m => int.Parse(m.Substring(3))) // Lấy phần số sau "TG"
-							.Max(); // Lấy giá trị lớn nhất
-			}
+		//	if (listItem.Any()) // Kiểm tra nếu có dữ liệu
+		//	{
+		//		maxId = listItem
+		//					.Where(m => m.StartsWith("SP")) // Lọc các mã bắt đầu bằng "TG"
+		//					.Select(m => int.Parse(m.Substring(3))) // Lấy phần số sau "TG"
+		//					.Max(); // Lấy giá trị lớn nhất
+		//	}
 
-			// Tăng giá trị ID lớn nhất
-			maxId++;
+		//	// Tăng giá trị ID lớn nhất
+		//	maxId++;
 
-			// Tạo mã mới với tiền tố "NXB" và đảm bảo đúng định dạng
-			return "SP" + maxId.ToString("D3");
-		}
+		//	// Tạo mã mới với tiền tố "NXB" và đảm bảo đúng định dạng
+		//	return "SP" + maxId.ToString("D3");
+		//}
 		public bool check(string id)
 		{
-			return db.san_phams.Any(p => p.ma_san_pham == id);
+			if (db.san_pham_loai_hangs.Any(p => p.ma_san_pham == id) == false)
+			{
+				return false;
+			}
+			if (db.san_pham_loai_hangs.Any(p => p.ma_loai_hang == id) == false)
+			{
+				return false;
+			}
+			return true;
 		}
 	}
 }
