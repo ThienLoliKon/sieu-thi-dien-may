@@ -32,7 +32,7 @@ go
 create table nha_cung_cap (
     ma_nha_cung_cap char(10) primary key,
     ten_nha_cung_cap nvarchar(50),
-    dia_chi_nha_cung_cap varchar(100)
+    dia_chi_nha_cung_cap nvarchar(100)
 );
 go
 
@@ -40,7 +40,7 @@ go
 create table nha_san_xuat (
     ma_nha_san_xuat char(10) primary key,
     ten_nha_san_xuat nvarchar(50),
-    dia_chi_nha_san_xuat varchar(100)
+    dia_chi_nha_san_xuat nvarchar(100)
 );
 go
 
@@ -223,7 +223,7 @@ create table khach_hang (
     ma_khach_hang char(10) primary key,
     ho_ten_khach_hang nvarchar(50),
     sdt varchar(20),
-    diachi varchar(50),
+    diachi nvarchar(100),
     xep_hang char(10),
     diem int
 );
