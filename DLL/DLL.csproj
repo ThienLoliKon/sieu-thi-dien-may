@@ -45,6 +45,7 @@
     <Compile Include="BaoHanhDLL.cs" />
     <Compile Include="CapBacNhanVienDLL.cs" />
     <Compile Include="ChiNhanhDLL.cs" />
+    <Compile Include="ChiTietHoaDonDLL.cs" />
     <Compile Include="DBSTDM.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
