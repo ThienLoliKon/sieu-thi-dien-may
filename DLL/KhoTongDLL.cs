@@ -55,5 +55,23 @@ namespace DLL
             }
             return 0;
         }
+        public int xoaKhoTong(string makho)
+        {
+            try
+            {
+                var khotong = db.kho_tongs.SingleOrDefault(n => n.ma_kho == makho);
+                if (khotong != null)
+                {
+                    khotong.suc_chua = 0;
+                    db.SubmitChanges();
+                    return 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return 0;
+        }
     }
 }

@@ -55,5 +55,16 @@ namespace DLL.Properties {
                 return ((string)(this["dien_may4ConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Ma\\SQLEXPRESS;Initial Catalog=dien_may;Integrated Security=True;Trust" +
+            "ServerCertificate=True")]
+        public string dien_mayConnectionString1 {
+            get {
+                return ((string)(this["dien_mayConnectionString1"]));
+            }
+        }
     }
 }

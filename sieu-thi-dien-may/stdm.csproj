@@ -267,6 +267,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SanPhamTrongKhoTong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SanPhamTrongKhoTong.Designer.cs">
+      <DependentUpon>SanPhamTrongKhoTong.cs</DependentUpon>
+    </Compile>
     <Compile Include="XepHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,6 +372,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SanPhamTrongKhoTong.resx">
+      <DependentUpon>SanPhamTrongKhoTong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XepHang.resx">
       <DependentUpon>XepHang.cs</DependentUpon>
     </EmbeddedResource>

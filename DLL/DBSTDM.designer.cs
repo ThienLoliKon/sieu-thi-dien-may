@@ -117,7 +117,7 @@ namespace DLL
     #endregion
 		
 		public DBSTDMDataContext() : 
-				base(global::DLL.Properties.Settings.Default.dien_mayConnectionString, mappingSource)
+				base(global::DLL.Properties.Settings.Default.dien_mayConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -2104,7 +2104,7 @@ namespace DLL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diachi", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diachi", DbType="NVarChar(100)")]
 		public string diachi
 		{
 			get
@@ -2570,8 +2570,6 @@ namespace DLL
 		
 		private EntitySet<chi_nhanh> _chi_nhanhs;
 		
-		private EntityRef<nhan_vien> _nhan_vien;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2587,7 +2585,6 @@ namespace DLL
 		public khu_vuc()
 		{
 			this._chi_nhanhs = new EntitySet<chi_nhanh>(new Action<chi_nhanh>(this.attach_chi_nhanhs), new Action<chi_nhanh>(this.detach_chi_nhanhs));
-			this._nhan_vien = default(EntityRef<nhan_vien>);
 			OnCreated();
 		}
 		
@@ -2642,10 +2639,6 @@ namespace DLL
 			{
 				if ((this._nhan_vien_quan_ly != value))
 				{
-					if (this._nhan_vien.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.Onnhan_vien_quan_lyChanging(value);
 					this.SendPropertyChanging();
 					this._nhan_vien_quan_ly = value;
@@ -2665,40 +2658,6 @@ namespace DLL
 			set
 			{
 				this._chi_nhanhs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nhan_vien_khu_vuc", Storage="_nhan_vien", ThisKey="nhan_vien_quan_ly", OtherKey="ma_nhan_vien", IsForeignKey=true)]
-		public nhan_vien nhan_vien
-		{
-			get
-			{
-				return this._nhan_vien.Entity;
-			}
-			set
-			{
-				nhan_vien previousValue = this._nhan_vien.Entity;
-				if (((previousValue != value) 
-							|| (this._nhan_vien.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._nhan_vien.Entity = null;
-						previousValue.khu_vucs.Remove(this);
-					}
-					this._nhan_vien.Entity = value;
-					if ((value != null))
-					{
-						value.khu_vucs.Add(this);
-						this._nhan_vien_quan_ly = value.ma_nhan_vien;
-					}
-					else
-					{
-						this._nhan_vien_quan_ly = default(string);
-					}
-					this.SendPropertyChanged("nhan_vien");
-				}
 			}
 		}
 		
@@ -3946,7 +3905,7 @@ namespace DLL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dia_chi_nha_cung_cap", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dia_chi_nha_cung_cap", DbType="NVarChar(100)")]
 		public string dia_chi_nha_cung_cap
 		{
 			get
@@ -4084,7 +4043,7 @@ namespace DLL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dia_chi_nha_san_xuat", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dia_chi_nha_san_xuat", DbType="NVarChar(100)")]
 		public string dia_chi_nha_san_xuat
 		{
 			get
@@ -4176,8 +4135,6 @@ namespace DLL
 		
 		private EntitySet<kho_tong> _kho_tongs;
 		
-		private EntitySet<khu_vuc> _khu_vucs;
-		
 		private EntitySet<luong> _luongs;
 		
 		private EntitySet<nghi_viec> _nghi_viecs;
@@ -4221,7 +4178,6 @@ namespace DLL
 			this._diem_danhs = new EntitySet<diem_danh>(new Action<diem_danh>(this.attach_diem_danhs), new Action<diem_danh>(this.detach_diem_danhs));
 			this._hoa_dons = new EntitySet<hoa_don>(new Action<hoa_don>(this.attach_hoa_dons), new Action<hoa_don>(this.detach_hoa_dons));
 			this._kho_tongs = new EntitySet<kho_tong>(new Action<kho_tong>(this.attach_kho_tongs), new Action<kho_tong>(this.detach_kho_tongs));
-			this._khu_vucs = new EntitySet<khu_vuc>(new Action<khu_vuc>(this.attach_khu_vucs), new Action<khu_vuc>(this.detach_khu_vucs));
 			this._luongs = new EntitySet<luong>(new Action<luong>(this.attach_luongs), new Action<luong>(this.detach_luongs));
 			this._nghi_viecs = new EntitySet<nghi_viec>(new Action<nghi_viec>(this.attach_nghi_viecs), new Action<nghi_viec>(this.detach_nghi_viecs));
 			this._phieu_nhap_khos = new EntitySet<phieu_nhap_kho>(new Action<phieu_nhap_kho>(this.attach_phieu_nhap_khos), new Action<phieu_nhap_kho>(this.detach_phieu_nhap_khos));
@@ -4418,19 +4374,6 @@ namespace DLL
 			set
 			{
 				this._kho_tongs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="nhan_vien_khu_vuc", Storage="_khu_vucs", ThisKey="ma_nhan_vien", OtherKey="nhan_vien_quan_ly")]
-		public EntitySet<khu_vuc> khu_vucs
-		{
-			get
-			{
-				return this._khu_vucs;
-			}
-			set
-			{
-				this._khu_vucs.Assign(value);
 			}
 		}
 		
@@ -4660,18 +4603,6 @@ namespace DLL
 		}
 		
 		private void detach_kho_tongs(kho_tong entity)
-		{
-			this.SendPropertyChanging();
-			entity.nhan_vien = null;
-		}
-		
-		private void attach_khu_vucs(khu_vuc entity)
-		{
-			this.SendPropertyChanging();
-			entity.nhan_vien = this;
-		}
-		
-		private void detach_khu_vucs(khu_vuc entity)
 		{
 			this.SendPropertyChanging();
 			entity.nhan_vien = null;

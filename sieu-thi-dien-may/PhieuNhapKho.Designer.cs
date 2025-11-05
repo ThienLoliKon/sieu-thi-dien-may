@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cyberButton3 = new ReaLTaiizor.Controls.CyberButton();
             this.cyberButton5 = new ReaLTaiizor.Controls.CyberButton();
             this.cyberButton6 = new ReaLTaiizor.Controls.CyberButton();
@@ -82,7 +82,7 @@
             this.cyberButton3.Lighting = false;
             this.cyberButton3.LinearGradient_Background = false;
             this.cyberButton3.LinearGradientPen = false;
-            this.cyberButton3.Location = new System.Drawing.Point(1440, 199);
+            this.cyberButton3.Location = new System.Drawing.Point(528, 354);
             this.cyberButton3.Name = "cyberButton3";
             this.cyberButton3.PenWidth = 15;
             this.cyberButton3.Rounding = true;
@@ -122,7 +122,7 @@
             this.cyberButton5.Lighting = false;
             this.cyberButton5.LinearGradient_Background = false;
             this.cyberButton5.LinearGradientPen = false;
-            this.cyberButton5.Location = new System.Drawing.Point(1440, 322);
+            this.cyberButton5.Location = new System.Drawing.Point(952, 354);
             this.cyberButton5.Name = "cyberButton5";
             this.cyberButton5.PenWidth = 15;
             this.cyberButton5.Rounding = true;
@@ -163,7 +163,7 @@
             this.cyberButton6.Lighting = false;
             this.cyberButton6.LinearGradient_Background = false;
             this.cyberButton6.LinearGradientPen = false;
-            this.cyberButton6.Location = new System.Drawing.Point(1268, 322);
+            this.cyberButton6.Location = new System.Drawing.Point(952, 281);
             this.cyberButton6.Name = "cyberButton6";
             this.cyberButton6.PenWidth = 15;
             this.cyberButton6.Rounding = true;
@@ -203,7 +203,7 @@
             this.cyberButton4.Lighting = false;
             this.cyberButton4.LinearGradient_Background = false;
             this.cyberButton4.LinearGradientPen = false;
-            this.cyberButton4.Location = new System.Drawing.Point(1268, 199);
+            this.cyberButton4.Location = new System.Drawing.Point(738, 354);
             this.cyberButton4.Name = "cyberButton4";
             this.cyberButton4.PenWidth = 15;
             this.cyberButton4.Rounding = true;
@@ -243,7 +243,7 @@
             this.cyberButton2.Lighting = false;
             this.cyberButton2.LinearGradient_Background = false;
             this.cyberButton2.LinearGradientPen = false;
-            this.cyberButton2.Location = new System.Drawing.Point(1440, 80);
+            this.cyberButton2.Location = new System.Drawing.Point(738, 281);
             this.cyberButton2.Name = "cyberButton2";
             this.cyberButton2.PenWidth = 15;
             this.cyberButton2.Rounding = true;
@@ -283,7 +283,7 @@
             this.cyberButton1.Lighting = false;
             this.cyberButton1.LinearGradient_Background = false;
             this.cyberButton1.LinearGradientPen = false;
-            this.cyberButton1.Location = new System.Drawing.Point(1268, 80);
+            this.cyberButton1.Location = new System.Drawing.Point(528, 281);
             this.cyberButton1.Name = "cyberButton1";
             this.cyberButton1.PenWidth = 15;
             this.cyberButton1.Rounding = true;
@@ -302,9 +302,9 @@
             this.thunderLabel4.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel4.Location = new System.Drawing.Point(632, 354);
+            this.thunderLabel4.Location = new System.Drawing.Point(1088, 227);
             this.thunderLabel4.Name = "thunderLabel4";
-            this.thunderLabel4.Size = new System.Drawing.Size(127, 18);
+            this.thunderLabel4.Size = new System.Drawing.Size(76, 18);
             this.thunderLabel4.TabIndex = 25;
             this.thunderLabel4.Text = "Đơn giá";
             // 
@@ -313,9 +313,9 @@
             this.thunderLabel5.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel5.Location = new System.Drawing.Point(632, 231);
+            this.thunderLabel5.Location = new System.Drawing.Point(15, 227);
             this.thunderLabel5.Name = "thunderLabel5";
-            this.thunderLabel5.Size = new System.Drawing.Size(127, 18);
+            this.thunderLabel5.Size = new System.Drawing.Size(78, 18);
             this.thunderLabel5.TabIndex = 24;
             this.thunderLabel5.Text = "Số lượng";
             // 
@@ -324,9 +324,9 @@
             this.thunderLabel6.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel6.Location = new System.Drawing.Point(632, 112);
+            this.thunderLabel6.Location = new System.Drawing.Point(572, 112);
             this.thunderLabel6.Name = "thunderLabel6";
-            this.thunderLabel6.Size = new System.Drawing.Size(127, 18);
+            this.thunderLabel6.Size = new System.Drawing.Size(86, 18);
             this.thunderLabel6.TabIndex = 22;
             this.thunderLabel6.Text = "Chi nhánh";
             // 
@@ -346,7 +346,7 @@
             this.cyberTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.cyberTextBox3.Lighting = false;
             this.cyberTextBox3.LinearGradientPen = false;
-            this.cyberTextBox3.Location = new System.Drawing.Point(765, 209);
+            this.cyberTextBox3.Location = new System.Drawing.Point(148, 205);
             this.cyberTextBox3.Name = "cyberTextBox3";
             this.cyberTextBox3.PenWidth = 15;
             this.cyberTextBox3.RGB = false;
@@ -376,13 +376,13 @@
             this.cyberTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.cyberTextBox4.Lighting = false;
             this.cyberTextBox4.LinearGradientPen = false;
-            this.cyberTextBox4.Location = new System.Drawing.Point(765, 332);
+            this.cyberTextBox4.Location = new System.Drawing.Point(1170, 205);
             this.cyberTextBox4.Name = "cyberTextBox4";
             this.cyberTextBox4.PenWidth = 15;
             this.cyberTextBox4.RGB = false;
             this.cyberTextBox4.Rounding = true;
             this.cyberTextBox4.RoundingInt = 60;
-            this.cyberTextBox4.Size = new System.Drawing.Size(418, 40);
+            this.cyberTextBox4.Size = new System.Drawing.Size(382, 40);
             this.cyberTextBox4.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.cyberTextBox4.TabIndex = 20;
             this.cyberTextBox4.Tag = "Cyber";
@@ -406,7 +406,7 @@
             this.cyberTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.cyberTextBox5.Lighting = false;
             this.cyberTextBox5.LinearGradientPen = false;
-            this.cyberTextBox5.Location = new System.Drawing.Point(765, 90);
+            this.cyberTextBox5.Location = new System.Drawing.Point(664, 90);
             this.cyberTextBox5.Name = "cyberTextBox5";
             this.cyberTextBox5.PenWidth = 15;
             this.cyberTextBox5.RGB = false;
@@ -425,9 +425,9 @@
             this.thunderLabel3.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel3.Location = new System.Drawing.Point(43, 354);
+            this.thunderLabel3.Location = new System.Drawing.Point(572, 227);
             this.thunderLabel3.Name = "thunderLabel3";
-            this.thunderLabel3.Size = new System.Drawing.Size(127, 18);
+            this.thunderLabel3.Size = new System.Drawing.Size(99, 18);
             this.thunderLabel3.TabIndex = 18;
             this.thunderLabel3.Text = "Sản phẩm";
             // 
@@ -436,9 +436,9 @@
             this.thunderLabel2.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel2.Location = new System.Drawing.Point(43, 231);
+            this.thunderLabel2.Location = new System.Drawing.Point(1088, 112);
             this.thunderLabel2.Name = "thunderLabel2";
-            this.thunderLabel2.Size = new System.Drawing.Size(127, 18);
+            this.thunderLabel2.Size = new System.Drawing.Size(40, 18);
             this.thunderLabel2.TabIndex = 17;
             this.thunderLabel2.Text = "Kho";
             // 
@@ -447,7 +447,7 @@
             this.thunderLabel1.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel1.Location = new System.Drawing.Point(43, 112);
+            this.thunderLabel1.Location = new System.Drawing.Point(15, 112);
             this.thunderLabel1.Name = "thunderLabel1";
             this.thunderLabel1.Size = new System.Drawing.Size(127, 18);
             this.thunderLabel1.TabIndex = 15;
@@ -469,7 +469,7 @@
             this.cyberTextBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.cyberTextBox6.Lighting = false;
             this.cyberTextBox6.LinearGradientPen = false;
-            this.cyberTextBox6.Location = new System.Drawing.Point(176, 209);
+            this.cyberTextBox6.Location = new System.Drawing.Point(1134, 90);
             this.cyberTextBox6.Name = "cyberTextBox6";
             this.cyberTextBox6.PenWidth = 15;
             this.cyberTextBox6.RGB = false;
@@ -499,13 +499,13 @@
             this.cyberTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.cyberTextBox2.Lighting = false;
             this.cyberTextBox2.LinearGradientPen = false;
-            this.cyberTextBox2.Location = new System.Drawing.Point(176, 332);
+            this.cyberTextBox2.Location = new System.Drawing.Point(677, 205);
             this.cyberTextBox2.Name = "cyberTextBox2";
             this.cyberTextBox2.PenWidth = 15;
             this.cyberTextBox2.RGB = false;
             this.cyberTextBox2.Rounding = true;
             this.cyberTextBox2.RoundingInt = 60;
-            this.cyberTextBox2.Size = new System.Drawing.Size(418, 40);
+            this.cyberTextBox2.Size = new System.Drawing.Size(405, 40);
             this.cyberTextBox2.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.cyberTextBox2.TabIndex = 10;
             this.cyberTextBox2.Tag = "Cyber";
@@ -529,7 +529,7 @@
             this.cyberTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.cyberTextBox1.Lighting = false;
             this.cyberTextBox1.LinearGradientPen = false;
-            this.cyberTextBox1.Location = new System.Drawing.Point(176, 90);
+            this.cyberTextBox1.Location = new System.Drawing.Point(148, 90);
             this.cyberTextBox1.Name = "cyberTextBox1";
             this.cyberTextBox1.PenWidth = 15;
             this.cyberTextBox1.RGB = false;
@@ -550,23 +550,23 @@
             this.poisonDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.poisonDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.poisonDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.poisonDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.poisonDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.poisonDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.poisonDataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.poisonDataGridView1.DefaultCellStyle = dataGridViewCellStyle11;
             this.poisonDataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.poisonDataGridView1.EnableHeadersVisualStyles = false;
             this.poisonDataGridView1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -574,14 +574,14 @@
             this.poisonDataGridView1.Location = new System.Drawing.Point(0, 455);
             this.poisonDataGridView1.Name = "poisonDataGridView1";
             this.poisonDataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.poisonDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.poisonDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.poisonDataGridView1.RowHeadersWidth = 51;
             this.poisonDataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.poisonDataGridView1.RowTemplate.Height = 24;

@@ -87,43 +87,31 @@ namespace BUS
                 return "KT10000001";
             }
         }
-        public bool ngungHoatDongKhoTong(string makho)
+        public void xoaKhoTong(string makho)
         {
-            try
-            {
-                var khotong = khotongdll.getAllKhoTong().SingleOrDefault(n => n.ma_kho == makho);
-                if (khotong != null)
-                {
-                    //khotong.trang_thai = false;
-                    khotongdll.updateKhoTong(khotong);
-                    return true;
-                }
-                return false;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+            khotongdll.xoaKhoTong(makho);
         }
-        //public List<KhachHang> searchKhachHang(string ma, string ten, string sdt)
-        //{
-        //    List<KhachHang> list = new List<KhachHang>();
-        //    foreach (var item in khotongdll.getAllKhachHang())
-        //    {
-        //        if (item.ma_khach_hang.Contains(ma) || item.ho_ten_khach_hang.Contains(ten) || item.sdt.Contains(sdt))
-        //        {
-        //            KhachHang kh = new KhachHang();
-        //            kh.makhachhang = item.ma_khach_hang;
-        //            kh.tenkhachhang = item.ho_ten_khach_hang;
-        //            kh.sdt = item.sdt;
-        //            kh.diachi = item.diachi;
-        //            kh.diem = tinhTongTienHoaDonThanhDiem(item.ma_khach_hang);
-        //            kh.xephang = xepHangKhachHang(kh.diem);
-        //            list.Add(kh);
-        //        }
-        //    }
-        //    return list;
-        //}
+        public KhoTong searchKhoTong(string ten_kho_ma_kho)
+        {
+            var khotong = getAllKhoTong().FirstOrDefault();
+            if (khotong != null)
+            {
+                return khotong;
+            }
+            return null;
+        }
+        public List<KhoTong> searchAllKhoTong(string makho, string tenkho)
+        {
+            List<KhoTong> listkhotong = new List<KhoTong>();
+            foreach (var item in getAllKhoTong())
+            {
+                if (item.makho == makho || item.tenkho == tenkho)
+                {
+                    listkhotong.Add(item);
+                }
+            }
+            return listkhotong;
+        }
         //public int tinhTongTienHoaDonThanhDiem(string makh)
         //{
         //    int tongtien = 0;
