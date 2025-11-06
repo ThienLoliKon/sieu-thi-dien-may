@@ -24,7 +24,12 @@ namespace he_thong_dien_may
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
+			DialogResult rs = MessageBox.Show("Are you sure to exit?", "Confirm?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (rs == DialogResult.No)
+			{
+				return;
+			}
 			this.Close();
-        }
+		}
     }
 }

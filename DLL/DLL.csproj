@@ -50,6 +50,7 @@
     <Compile Include="BaoHanhDLL.cs" />
     <Compile Include="CapBacNhanVienDLL.cs" />
     <Compile Include="ChiNhanhDLL.cs" />
+    <Compile Include="ChiTietHoaDonDLL.cs" />
     <Compile Include="DBSTDM.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -57,6 +58,8 @@
     </Compile>
     <Compile Include="HoaDonDLL.cs" />
     <Compile Include="KhachHangDLL.cs" />
+    <Compile Include="KhoTongDLL.cs" />
+    <Compile Include="KhuVucDLL.cs" />
     <Compile Include="KhuyenMaiDLL.cs" />
     <Compile Include="LoaiHangDLL.cs" />
     <Compile Include="LoaiThuongDLL.cs" />

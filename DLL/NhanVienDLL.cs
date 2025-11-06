@@ -39,12 +39,9 @@ namespace DLL
 
             if (nhanvien == null)
             {
-                // Nếu không tìm thấy, có thể ném exception hoặc đơn giản là thoát
                 throw new Exception($"Không tìm thấy nhân viên với ID: {id}");
             }
 
-            // Cập nhật trạng thái làm việc (Giả định 'false' là Đã Nghỉ)
-            // LƯU Ý: Trường trang_thai trong DB là bit. C# nhận giá trị bool hoặc int 0/1.
             nhanvien.trang_thai = false;
 
             db.SubmitChanges();
@@ -69,7 +66,6 @@ namespace DLL
 
         public string TaoMaNhanVien()
         {
-            // Lấy danh sách mã TacGia và kiểm tra có dữ liệu hay không
             var maNhanViens = db.nhan_viens.Select(p => p.ma_nhan_vien).ToList();
 
             int maxId = 0;

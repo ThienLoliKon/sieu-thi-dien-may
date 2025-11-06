@@ -49,7 +49,6 @@ namespace he_thong_dien_may
         {
             try
             {
-                // 1. Load Cấp Bậc (Sử dụng tên BUS/DLL bạn cung cấp)
                 NhanVienBUS cbBus = new NhanVienBUS();
                 DataTable dtCapBac = cbBus.GetAllNhanVienAsTable();
                 cbbMaNV.DataSource = dtCapBac;
@@ -71,40 +70,45 @@ namespace he_thong_dien_may
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            DateTime tgVaoValue = dtpThoiGianVao.Value;
+            DateTime tgRaValue = dtpThoiGianRa.Value;
+
+            if (tgRaValue < tgVaoValue)
+            {
+                MessageBox.Show("Thời gian RA không được sớm hơn thời gian VÀO.", "Lỗi nghiệp vụ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            string maNV = cbbMaNV.SelectedValue?.ToString();
+            if (string.IsNullOrEmpty(maNV))
+            {
+                MessageBox.Show("Vui lòng chọn Mã Nhân viên.", "Lỗi nghiệp vụ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             DialogResult result = MessageBox.Show("Bạn có muốn thêm không ?", "Thông báo", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 try
                 {
-                    string maNV = cbbMaNV.SelectedValue?.ToString();
-
-                    string tgVao = dtpThoiGianVao.Value.ToString();
-                    string tgRa = dtpThoiGianRa.Value.ToString();
+                    string tgVao = tgVaoValue.ToString();
+                    string tgRa = tgRaValue.ToString();
 
                     DiemDanhBUS ddBus = new DiemDanhBUS();
 
-                    bool isAdd = ddBus.AddDiemDanh(
-                        maNV,
-                        tgVao,
-                        tgRa
-                    );
+                    bool isAdd = ddBus.AddDiemDanh(maNV, tgVao, tgRa);
 
-                    // --- 3. XỬ LÝ KẾT QUẢ ---
                     if (isAdd)
                     {
                         MessageBox.Show("Thêm Điểm danh thành công");
                     }
                     else
                     {
-                        MessageBox.Show("Thêm Điểm danh không thành công. Vui lòng kiểm tra ràng buộc FK (Mã NV).");
+                        MessageBox.Show("Thêm Điểm danh không thành công.");
                     }
-
-                    // Tải lại dữ liệu sau khi thêm
                     LoadDL();
                 }
                 catch (Exception ex)
                 {
-                    // Lỗi Parse ngày tháng hoặc lỗi DAL khác
                     MessageBox.Show($"Lỗi khi thêm dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -112,9 +116,18 @@ namespace he_thong_dien_may
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            DateTime tgVaoValue = dtpThoiGianVao.Value;
+            DateTime tgRaValue = dtpThoiGianRa.Value;
+
             if (string.IsNullOrEmpty(txtMaDiemDanh.Text))
             {
                 MessageBox.Show("Vui lòng chọn bản ghi điểm danh cần sửa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (tgRaValue < tgVaoValue)
+            {
+                MessageBox.Show("Thời gian RA không được sớm hơn thời gian VÀO.", "Lỗi nghiệp vụ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -124,19 +137,13 @@ namespace he_thong_dien_may
                 try
                 {
                     string maDiemDanh = txtMaDiemDanh.Text;
-
                     string maNV = cbbMaNV.SelectedValue?.ToString();
-                    string tgVao = dtpThoiGianVao.Value.ToString();
-                    string tgRa = dtpThoiGianRa.Value.ToString();
+                    string tgVao = tgVaoValue.ToString();
+                    string tgRa = tgRaValue.ToString();
 
                     DiemDanhBUS ddBus = new DiemDanhBUS();
 
-                    bool isupdate = ddBus.UpdateDiemDanhstring(
-                        maDiemDanh,
-                        maNV,
-                        tgVao,
-                        tgRa
-                    );
+                    bool isupdate = ddBus.UpdateDiemDanhstring(maDiemDanh, maNV, tgVao, tgRa);
 
                     if (isupdate)
                     {
@@ -187,8 +194,7 @@ namespace he_thong_dien_may
                 MessageBox.Show("Vui lòng chọn ngày điểm danh cần xóa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            // KHẮC PHỤC LỖI CÚ PHÁP MESSAGEBOX
-            DialogResult result = MessageBox.Show($"Bạn có muốn xóa ngày điểm danh có mã: {txtMaDiemDanh.Text} thành 'Đã Nghỉ' không ?", "Thông báo", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show($"Bạn có muốn xóa ngày điểm danh có mã: {txtMaDiemDanh.Text} không?", "Thông báo", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
@@ -223,27 +229,27 @@ namespace he_thong_dien_may
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            string maNVTimKiem = cbbMaNV.SelectedValue?.ToString(); 
-            if (string.IsNullOrEmpty(maNVTimKiem) )
+            string maNVTimKiem = cbbTraCuu.SelectedValue?.ToString();
+
+            if (string.IsNullOrEmpty(maNVTimKiem))
             {
-                LoadDL(); 
+                LoadDL();
                 return;
             }
+
             try
             {
                 DiemDanhBUS bus = new DiemDanhBUS();
 
                 DataTable dtKetQua = bus.TimDiemDanhTheoTieuChi(maNVTimKiem);
-
-                // 4. Hiển thị kết quả
                 if (dtKetQua != null && dtKetQua.Rows.Count > 0)
                 {
-                    dgvDiemDanh.DataSource = dtKetQua; 
+                    dgvDiemDanh.DataSource = dtKetQua;
                     MessageBox.Show($"Tìm thấy {dtKetQua.Rows.Count} kết quả phù hợp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    dgvDiemDanh.DataSource = null; 
+                    dgvDiemDanh.DataSource = null;
                     MessageBox.Show("Không tìm thấy bản ghi điểm danh nào phù hợp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -263,14 +269,12 @@ namespace he_thong_dien_may
         {
             LoadComboBoxData();
 
-            // Cài đặt DataGridView Columns (GIỮ NGUYÊN)
             dgvDiemDanh.AutoGenerateColumns = false;
             dgvDiemDanh.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã Điểm Danh", DataPropertyName = "MaDiemDanh", Width = 200 });
             dgvDiemDanh.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã NV", DataPropertyName = "MaNV", Width = 200 });
             dgvDiemDanh.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Thời Gian Vào", DataPropertyName = "ThoiGianVao", Width = 200 });
             dgvDiemDanh.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Thời Gian Ra", DataPropertyName = "ThoiGianRa", Width = 200 });
 
-            // Load Dữ liệu DataGridView sau
             LoadDL();
         }
 

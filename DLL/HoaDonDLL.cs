@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DLL
 {
-	internal class HoaDonDLL
+	public class HoaDonDLL
 	{
 			DBSTDMDataContext db = new DBSTDMDataContext();
 			public HoaDonDLL()

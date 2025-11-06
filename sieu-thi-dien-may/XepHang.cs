@@ -36,6 +36,11 @@ namespace he_thong_dien_may
 
         private void cyberButton1_Click(object sender, EventArgs e)
         {
+            string checkvar = checkValidFields();
+            if (checkvar != "")
+            {
+                MessageBox.Show(checkvar);return;
+            }
             DialogResult rs = MessageBox.Show("Are you sure to add new rank?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.No)
             {
@@ -48,7 +53,7 @@ namespace he_thong_dien_may
                 addrank.tenhang = txtTenRank.TextButton;
                 addrank.yeucau = double.Parse(txtYeuCau.TextButton);
                 addrank.uudai = double.Parse(txtUuDai.TextButton);
-                if(xephangbus.addRank(addrank) == 1)
+                if (xephangbus.addRank(addrank) == 1)
                 {
                     MessageBox.Show("Add new rank successfully!");
                     dgvRank.DataSource = xephangbus.getAllRank();
@@ -63,6 +68,11 @@ namespace he_thong_dien_may
 
         private void cyberButton2_Click(object sender, EventArgs e)
         {
+            string checkvar = checkValidFields();
+            if (checkvar != "")
+            {
+                MessageBox.Show(checkvar); return;
+            }
             DialogResult rs = MessageBox.Show("Delete?", "Confirm!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.No)
             {
@@ -91,6 +101,40 @@ namespace he_thong_dien_may
         private void cyberButton6_Click(object sender, EventArgs e)
         {
             xephangbus.deleteRank(txtMaRank.TextButton);
+        }
+
+        private void cyberButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+        private string checkValidFields()
+        {
+            string noti = "";
+            if (txtMaRank.TextButton == "" || txtMaRank.TextButton.Length != 10)
+            {
+                noti += "Ma hang khong hop le!";
+            }
+            if (txtTenRank.TextButton == "" || txtTenRank.TextButton.Length > 50)
+            {
+                noti += "\nTen hang khong hop le";
+            }
+            try
+            {
+                double x = double.Parse(txtYeuCau.TextButton) + 1;
+            }
+            catch (Exception ex)
+            {
+                noti += "\nSo tien yeu cau khong hop le!";
+            }
+            try
+            {
+                double x = double.Parse(txtUuDai.TextButton) + 1;
+            }
+            catch (Exception ex)
+            {
+                noti += "\nSo phan tram uu dai khong hop le!";
+            }
+            return noti;
         }
     }
 }
