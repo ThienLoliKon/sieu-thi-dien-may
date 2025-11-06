@@ -97,7 +97,7 @@ go
 
 -- Hóa đơn
 create table hoa_don (
-    ma_hoa_Don char(10)
+    ma_hoa_don char(10),
     ma_nhan_vien_lap char(10),
     ma_khach_hang char(10),
     ngay_lap datetime,

@@ -155,19 +155,19 @@ VALUES
 ('KH010', N'Mai Anh Thư', '0908000111', N'Vũng Tàu', 'XH005', 51000);
 GO
 
--- Bảng: san_pham
-INSERT INTO san_pham (ma_san_pham, ten_san_pham, ma_nha_san_xuat, ma_nha_cung_cap, khoi_luong, gia_tien, ngay_san_xuat)
+-- Thêm dữ liệu cho Sản phẩm (Đã bao gồm thoi_gian_bao_hanh)
+INSERT INTO san_pham (ma_san_pham, ten_san_pham, ma_nha_san_xuat, ma_nha_cung_cap, khoi_luong, thoi_gian_bao_hanh, gia_tien, ngay_san_xuat)
 VALUES
-('SP001', N'Tivi Samsung QLED 4K 55 inch', 'NSX001', 'NCC001', 20.5, 25000000, '2024-01-15'),
-('SP002', N'Tủ lạnh LG Inverter 315L', 'NSX002', 'NCC002', 65.0, 14000000, '2024-02-10'),
-('SP003', N'Máy ảnh Sony A7M4', 'NSX003', 'NCC003', 0.65, 58000000, '2023-11-20'),
-('SP004', N'iPhone 16 Pro Max 256GB', 'NSX004', 'NCC004', 0.22, 35000000, '2024-09-30'),
-('SP005', N'Điều hòa Panasonic 12000BTU', 'NSX005', 'NCC001', 30.0, 11500000, '2024-03-05'),
-('SP006', N'Laptop Dell XPS 15', 'NSX007', 'NCC002', 1.8, 45000000, '2024-05-01'),
-('SP007', N'Máy giặt Samsung AI 10kg', 'NSX001', 'NCC005', 70.0, 16000000, '2024-04-12'),
-('SP008', N'Loa Bose SoundLink Revolve+', 'NSX010', 'NCC008', 0.9, 7500000, '2023-12-25'),
-('SP009', N'Nồi cơm điện Xiaomi', 'NSX006', 'NCC006', 3.5, 1800000, '2024-01-30'),
-('SP010', N'Tai nghe Sony WH-1000XM5', 'NSX003', 'NCC003', 0.25, 8500000, '2024-06-10');
+('SP001', N'Tivi Samsung QLED 4K 55 inch', 'NSX001', 'NCC001', 20.5, 24, 25000000, '2024-01-15'),
+('SP002', N'Tủ lạnh LG Inverter 315L', 'NSX002', 'NCC002', 65.0, 24, 14000000, '2024-02-10'),
+('SP003', N'Máy ảnh Sony A7M4', 'NSX003', 'NCC003', 0.65, 12, 58000000, '2023-11-20'),
+('SP004', N'iPhone 16 Pro Max 256GB', 'NSX004', 'NCC004', 0.22, 12, 35000000, '2024-09-30'),
+('SP005', N'Điều hòa Panasonic 12000BTU', 'NSX005', 'NCC001', 30.0, 24, 11500000, '2024-03-05'),
+('SP006', N'Laptop Dell XPS 15', 'NSX007', 'NCC002', 1.8, 12, 45000000, '2024-05-01'),
+('SP007', N'Máy giặt Samsung AI 10kg', 'NSX001', 'NCC005', 70.0, 24, 16000000, '2024-04-12'),
+('SP008', N'Loa Bose SoundLink Revolve+', 'NSX010', 'NCC008', 0.9, 12, 7500000, '2023-12-25'),
+('SP009', N'Nồi cơm điện Xiaomi', 'NSX006', 'NCC006', 3.5, 6, 1800000, '2024-01-30'),
+('SP010', N'Tai nghe Sony WH-1000XM5', 'NSX003', 'NCC003', 0.25, 12, 8500000, '2024-06-10');
 GO
 
 -- Bảng: khuyen_mai

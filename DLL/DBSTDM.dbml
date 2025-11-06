@@ -82,7 +82,7 @@
       <Column Name="ma_khach_hang" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ho_ten_khach_hang" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="sdt" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="diachi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="diachi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="xep_hang" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="diem" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="khach_hang_bao_hanh" Member="bao_hanhs" ThisKey="ma_khach_hang" OtherKey="ma_khach_hang" Type="bao_hanh" />
@@ -109,7 +109,6 @@
       <Column Name="ten_khu_vuc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="nhan_vien_quan_ly" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Association Name="khu_vuc_chi_nhanh" Member="chi_nhanhs" ThisKey="ma_khu_vuc" OtherKey="khu_vuc" Type="chi_nhanh" />
-      <Association Name="nhan_vien_khu_vuc" Member="nhan_vien" ThisKey="nhan_vien_quan_ly" OtherKey="ma_nhan_vien" Type="nhan_vien" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.khuyen_mai" Member="khuyen_mais">
@@ -175,7 +174,7 @@
     <Type Name="nha_cung_cap">
       <Column Name="ma_nha_cung_cap" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ten_nha_cung_cap" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="dia_chi_nha_cung_cap" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="dia_chi_nha_cung_cap" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Association Name="nha_cung_cap_san_pham" Member="san_phams" ThisKey="ma_nha_cung_cap" OtherKey="ma_nha_cung_cap" Type="san_pham" />
     </Type>
   </Table>
@@ -183,7 +182,7 @@
     <Type Name="nha_san_xuat">
       <Column Name="ma_nha_san_xuat" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ten_nha_san_xuat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="dia_chi_nha_san_xuat" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="dia_chi_nha_san_xuat" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Association Name="nha_san_xuat_san_pham" Member="san_phams" ThisKey="ma_nha_san_xuat" OtherKey="ma_nha_san_xuat" Type="san_pham" />
     </Type>
   </Table>
@@ -199,7 +198,6 @@
       <Association Name="nhan_vien_diem_danh" Member="diem_danhs" ThisKey="ma_nhan_vien" OtherKey="ma_nhan_vien" Type="diem_danh" />
       <Association Name="nhan_vien_hoa_don" Member="hoa_dons" ThisKey="ma_nhan_vien" OtherKey="ma_nhan_vien_lap" Type="hoa_don" />
       <Association Name="nhan_vien_kho_tong" Member="kho_tongs" ThisKey="ma_nhan_vien" OtherKey="nhan_vien_quan_ly" Type="kho_tong" />
-      <Association Name="nhan_vien_khu_vuc" Member="khu_vucs" ThisKey="ma_nhan_vien" OtherKey="nhan_vien_quan_ly" Type="khu_vuc" />
       <Association Name="nhan_vien_luong" Member="luongs" ThisKey="ma_nhan_vien" OtherKey="ma_nhan_vien" Type="luong" />
       <Association Name="nhan_vien_nghi_viec" Member="nghi_viecs" ThisKey="ma_nhan_vien" OtherKey="nhan_vien_nghi_viec" Type="nghi_viec" />
       <Association Name="nhan_vien_phieu_nhap_kho" Member="phieu_nhap_khos" ThisKey="ma_nhan_vien" OtherKey="ma_nhan_vien_kiem_tra" Type="phieu_nhap_kho" />
@@ -245,6 +243,7 @@
       <Column Name="ma_nha_san_xuat" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="ma_nha_cung_cap" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="khoi_luong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="thoi_gian_bao_hanh" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="gia_tien" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="ngay_san_xuat" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Association Name="san_pham_bao_hanh" Member="bao_hanhs" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="bao_hanh" />

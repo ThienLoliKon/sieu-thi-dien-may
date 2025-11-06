@@ -22,7 +22,7 @@ namespace BUS
 		//	return dal.GetAllTacGia();
 		//}
 
-		public bool AddSanPham(string tenSanPham, string maNXX, string maNCC, string khoiLuong, string giaTien, DateTime ngaySX)
+		public bool AddSanPham(string tenSanPham, string maNXX, string maNCC, string khoiLuong, string thoiGianBH, string giaTien, DateTime ngaySX)
 		{
 			san_pham addVariable = new san_pham();
 
@@ -32,7 +32,9 @@ namespace BUS
 			addVariable.ma_nha_cung_cap = maNCC;
 
 			float khoiLuongFloat = float.Parse(khoiLuong);
-			addVariable.khoi_luong = khoiLuongFloat;
+			addVariable.khoi_luong = khoiLuongFloat; 
+			int thoiGianInt = int.Parse(thoiGianBH);
+			addVariable.thoi_gian_bao_hanh = thoiGianInt;
 			decimal giaTienFloat = decimal.Parse(giaTien);
 			addVariable.gia_tien = giaTienFloat;
 			addVariable.ngay_san_xuat = ngaySX;
@@ -49,7 +51,7 @@ namespace BUS
 		//	return true;
 		//}
 
-		public bool UpdateSanPham(string maSanPham, string tenSanPham, string maNXX, string maNCC, string khoiLuong, string giaTien, DateTime ngaySX)
+		public bool UpdateSanPham(string maSanPham, string tenSanPham, string maNXX, string maNCC, string khoiLuong,string thoiGianBH, string giaTien, DateTime ngaySX)
 		{
 			san_pham updateItem = new san_pham();
 
@@ -57,11 +59,15 @@ namespace BUS
 			updateItem.ten_san_pham = tenSanPham;
 			updateItem.ma_nha_san_xuat = maNXX;
 			updateItem.ma_nha_cung_cap = maNCC;
-			if (double.TryParse(khoiLuong, out double khoiLuongValue))
+			if (float.TryParse(khoiLuong, out float khoiLuongValue))
 				updateItem.khoi_luong = khoiLuongValue;
 			else
 				updateItem.khoi_luong = null; // hoặc xử lý lỗi nhập liệu
 
+			if (int.TryParse(thoiGianBH, out int thoiGianBHValue))
+				updateItem.thoi_gian_bao_hanh = thoiGianBHValue;
+			else
+				updateItem.khoi_luong = null; // hoặc xử lý lỗi nhập liệu
 			if (decimal.TryParse(giaTien, out decimal giaTienValue))
 				updateItem.gia_tien = giaTienValue;
 			else
@@ -117,107 +123,20 @@ namespace BUS
 			dt.Columns.Add("ten_san_pham", typeof(string));
 			dt.Columns.Add("ma_nha_san_xuat", typeof(string));
 			dt.Columns.Add("ma_nha_cung_cap", typeof(string));
-			dt.Columns.Add("khoi_luong", typeof(float));
-			dt.Columns.Add("gia_tien", typeof(float));
+			dt.Columns.Add("khoi_luong", typeof(float)); 
+			dt.Columns.Add("thoi_gian_bao_hanh", typeof(int));
+			dt.Columns.Add("gia_tien", typeof(decimal));
 			dt.Columns.Add("ngay_san_xuat", typeof(DateTime));
 
 			foreach (var indexData in listData)
 			{
-				dt.Rows.Add(indexData.ma_san_pham, indexData.ten_san_pham, indexData.ma_nha_san_xuat, indexData.ma_nha_cung_cap, indexData.khoi_luong, indexData.gia_tien, indexData.ngay_san_xuat);
+				dt.Rows.Add(indexData.ma_san_pham, indexData.ten_san_pham, indexData.ma_nha_san_xuat, indexData.ma_nha_cung_cap, indexData.khoi_luong, indexData.thoi_gian_bao_hanh, indexData.gia_tien, indexData.ngay_san_xuat);
 			}
 			return dt;
 		}
 
 
 
-
-		//public class SanPham
-		//{
-		//	public san_pham(string manv, string hotennv, string diachi, string email, string sdt, string chucvu, string ngaynhanviec)
-		//	{
-		//		this.manv = manv;
-		//		this.hotennv = hotennv;
-		//		this.diachi = diachi;
-		//		this.email = email;
-		//		this.sdt = sdt;
-		//		this.chucvu = chucvu;
-		//		this.ngaynhanviec = ngaynhanviec;
-		//	}
-
-		//	public string manv { get; set; }
-		//	public string hotennv { get; set; }
-		//	public string diachi { get; set; }
-		//	public string email { get; set; }
-		//	public string sdt { get; set; }
-		//	public string chucvu { get; set; }
-		//	public string ngaynhanviec { get; set; }
-		//}
-
-		//private SanPhamDLL sanphamdll;
-
-		//public List<san_pham> getAllSanPham()
-		//{
-		//	sanphamdll = new SanPhamDLL();
-		//	List<san_pham> list = new List<san_pham>();
-		//	foreach (var item in sanphamdll.GetAllSanPham())
-		//	{
-		//		san_pham newIndex = new san_pham(item.ma_san_pham, item.ten_san_pham, item.ma_nha_san_xuat, item.ma_nha_cung_cap, item.khoi_luong, item.gia_tien, item.ngay_san_xuat.Value.ToShortDateString());
-		//		list.Add(newIndex);
-		//	}
-		//	return list;
-		//}
-
-		//public int addNhanVien(san_pham nhanVien)
-		//{
-		//	DLL.san_pham nv = new DLL.san_pham()
-		//	{
-		//		MaNhanVien = createMaNhanVien(),
-		//		TenNhanVien = nhanVien.hotennv,
-		//		DiaChi = nhanVien.diachi,
-		//		Email = nhanVien.email,
-		//		SoDienThoai = nhanVien.sdt,
-		//		ChucVu = nhanVien.chucvu,
-		//		NgayTao = DateTime.Now,
-		//		NgayCapNhat = DateTime.Now
-		//	};
-		//	return nhanviendll.addNhanVien(nv);
-		//}
-		//public string createMaNhanVien()
-		//{
-		//	return $"S{int.Parse(nhanviendll.GetAllNhanVien().Last().MaNhanVien.Substring(2)) + 1}";
-		//}
-		//public int deleteNhanVien(string id)
-		//{
-		//	int rs = nhanviendll.deleteNhanVien(id);
-		//	return rs;
-		//}
-		//public int updateNhanVien(NhanVien nhanVien)
-		//{
-		//	DAODLL.NhanVien nv = new DAODLL.NhanVien()
-		//	{
-		//		MaNhanVien = nhanVien.manv,
-		//		TenNhanVien = nhanVien.hotennv,
-		//		DiaChi = nhanVien.diachi,
-		//		Email = nhanVien.email,
-		//		SoDienThoai = nhanVien.sdt,
-		//		ChucVu = nhanVien.chucvu,
-		//		NgayTao = DateTime.Parse(nhanVien.ngaynhanviec),
-		//		NgayCapNhat = DateTime.Now
-		//	};
-		//	return nhanviendll.updateNhanVien(nv);
-		//}
-
-		//public List<NhanVien> searchByNameOrID(string name_id)
-		//{
-		//	List<NhanVien> list = new List<NhanVien>();
-		//	foreach (var item in nhanviendll.searchByNameOrID(name_id))
-		//	{
-		//		NhanVien nhanvien = new NhanVien(item.MaNhanVien, item.TenNhanVien, item.DiaChi, item.Email, item.SoDienThoai, item.ChucVu, item.NgayCapNhat.Value.ToShortTimeString());
-
-		//		list.Add(nhanvien);
-		//	}
-		//	return list;
-		//}
 
 	}
 }
