@@ -45,24 +45,22 @@ namespace BUSs
 			return true;
 		}
 
-		public bool UpdateBaoHanh(string maBaoHanh, string maSanPham, string maKhachHang, string nhanVienBaoHanh, string lyDo, string ngayGui, string ngayXong, bool HoanThanh)
+		public bool UpdateBaoHanh(string maBaoHanh, string maSanPham, string maKhachHang, string nhanVienBaoHanh, string lyDo, DateTime ngayGui, DateTime ngayXong, bool HoanThanh)
 		{
 			bao_hanh updateItem = new bao_hanh();
 
-			updateItem.ma_bao_hanh = dal.TaoMaBaoHanh();
+			updateItem.ma_bao_hanh = maBaoHanh;
 			updateItem.ma_san_pham = maSanPham;
 			updateItem.ma_khach_hang = maKhachHang;
 			updateItem.nhan_vien_bao_hanh = nhanVienBaoHanh;
 			updateItem.ly_do = lyDo;
-			if (DateTime.TryParse(ngayGui, out DateTime ngayGuiValue))
-				updateItem.ngay_gui = ngayGuiValue;
-			else
-				updateItem.ngay_gui = null; // hoặc xử lý lỗi nhập liệu
-											// Chuyển đổi ngày xong
-			if (DateTime.TryParse(ngayXong, out DateTime ngayXongValue))
-				updateItem.ngay_xong = ngayXongValue;
+			updateItem.ngay_gui = ngayGui;
+			
+			if (HoanThanh == true)
+				updateItem.ngay_xong = ngayXong;
 			else
 				updateItem.ngay_xong = null; // hoặc xử lý lỗi nhập liệu
+
 			updateItem.hoan_thanh = HoanThanh;
 
 			dal.updateBaoHanh(updateItem);

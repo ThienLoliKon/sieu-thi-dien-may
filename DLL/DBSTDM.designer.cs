@@ -5348,6 +5348,8 @@ namespace DLL
 		
 		private System.Nullable<double> _khoi_luong;
 		
+		private System.Nullable<int> _thoi_gian_bao_hanh;
+		
 		private System.Nullable<decimal> _gia_tien;
 		
 		private System.Nullable<System.DateTime> _ngay_san_xuat;
@@ -5384,6 +5386,8 @@ namespace DLL
     partial void Onma_nha_cung_capChanged();
     partial void Onkhoi_luongChanging(System.Nullable<double> value);
     partial void Onkhoi_luongChanged();
+    partial void Onthoi_gian_bao_hanhChanging(System.Nullable<int> value);
+    partial void Onthoi_gian_bao_hanhChanged();
     partial void Ongia_tienChanging(System.Nullable<decimal> value);
     partial void Ongia_tienChanged();
     partial void Onngay_san_xuatChanging(System.Nullable<System.DateTime> value);
@@ -5508,6 +5512,26 @@ namespace DLL
 					this._khoi_luong = value;
 					this.SendPropertyChanged("khoi_luong");
 					this.Onkhoi_luongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thoi_gian_bao_hanh", DbType="Int")]
+		public System.Nullable<int> thoi_gian_bao_hanh
+		{
+			get
+			{
+				return this._thoi_gian_bao_hanh;
+			}
+			set
+			{
+				if ((this._thoi_gian_bao_hanh != value))
+				{
+					this.Onthoi_gian_bao_hanhChanging(value);
+					this.SendPropertyChanging();
+					this._thoi_gian_bao_hanh = value;
+					this.SendPropertyChanged("thoi_gian_bao_hanh");
+					this.Onthoi_gian_bao_hanhChanged();
 				}
 			}
 		}

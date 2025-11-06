@@ -146,7 +146,7 @@ namespace he_thong_dien_may
 
         private void viPhạmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new frmViPhamm();
+            Form f = new frmViPham();
             f.ShowDialog();
         }
 

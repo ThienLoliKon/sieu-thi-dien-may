@@ -21,7 +21,10 @@ namespace DLL
 
         public List<cap_bac_nhan_vien> GetAllCapBacNhanVien()
         {
-            return db.cap_bac_nhan_viens.ToList();
+            using (DBSTDMDataContext freshDb = new DBSTDMDataContext())
+            {
+                return freshDb.cap_bac_nhan_viens.ToList();
+            }
         }
 
         public void AddCapBacNhanVien(cap_bac_nhan_vien CBNV)

@@ -21,7 +21,10 @@ namespace DLL
 
         public List<tai_khoan> GetAllTaiKhoan()
         {
-            return db.tai_khoans.ToList();
+            using (DBSTDMDataContext freshDb = new DBSTDMDataContext())
+            {
+                return freshDb.tai_khoans.ToList();
+            }
         }
 
         public void AddTaikhoan(tai_khoan TK)

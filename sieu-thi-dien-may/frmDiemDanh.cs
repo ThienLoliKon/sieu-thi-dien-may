@@ -277,5 +277,10 @@ namespace he_thong_dien_may
 
             LoadDL();
         }
+
+        private void foreverForm1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

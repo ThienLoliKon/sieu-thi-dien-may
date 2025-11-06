@@ -243,6 +243,7 @@
       <Column Name="ma_nha_san_xuat" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="ma_nha_cung_cap" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="khoi_luong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="thoi_gian_bao_hanh" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="gia_tien" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="ngay_san_xuat" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Association Name="san_pham_bao_hanh" Member="bao_hanhs" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="bao_hanh" />

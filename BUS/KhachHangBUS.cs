@@ -120,7 +120,7 @@ namespace BUS
             decimal sumtien = 0;
             foreach (var hd in hoadons)
             {
-                sumtien = hd.so_luong.Value * hd.don_gia.Value;
+                sumtien = hd.so_luong.Value ;
                 tongtien += (int)sumtien;
             }
             return tongtien/1000;

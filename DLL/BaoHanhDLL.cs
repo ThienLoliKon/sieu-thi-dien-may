@@ -88,7 +88,7 @@ namespace DLL
 			if (listItem.Any()) // Kiểm tra nếu có dữ liệu
 			{
 				maxId = listItem
-							.Where(m => m.StartsWith("SP")) // Lọc các mã bắt đầu bằng "TG"
+							.Where(m => m.StartsWith("BH")) // Lọc các mã bắt đầu bằng "TG"
 							.Select(m => int.Parse(m.Substring(3))) // Lấy phần số sau "TG"
 							.Max(); // Lấy giá trị lớn nhất
 			}
@@ -97,7 +97,7 @@ namespace DLL
 			maxId++;
 
 			// Tạo mã mới với tiền tố "NXB" và đảm bảo đúng định dạng
-			return "SP" + maxId.ToString("D3");
+			return "BH" + maxId.ToString("D3");
 		}
 		public bool check(string id)
 		{
