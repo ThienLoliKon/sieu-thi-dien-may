@@ -14,22 +14,15 @@ namespace he_thong_dien_may
         private NhanVienBUS nvBus = new NhanVienBUS();
         private LoaiThuongBUS ltBus = new LoaiThuongBUS();
 
-        // GIẢ ĐỊNH CONTROLS
-        // txtMaThuong, cbbMaNV, cbbLoaiThuong, dtpThoiGianThuong, 
-        // chkTrangThai (Đã trao/Chưa trao), txtMucThuong (Read-only), dgvThuong
 
         public frmThuong()
         {
             InitializeComponent();
-            // Liên kết sự kiện để hiển thị Mức thưởng
             cbbLoaiThuong.SelectedValueChanged += cbbLoaiThuong_SelectedValueChanged;
             if (txtMucThuong != null) txtMucThuong.ReadOnly = true;
             this.Load += frmThuong_Load;
         }
 
-        // =========================================================
-        // HÀM PHỤ TRỢ
-        // =========================================================
         private void ClearInputControls()
         {
             txtMaThuong.Text = "";
@@ -52,11 +45,9 @@ namespace he_thong_dien_may
                 MessageBox.Show("Vui lòng chọn Nhân viên và Loại thưởng.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            // Có thể thêm kiểm tra thời gian thưởng không được > hiện tại quá xa nếu cần
             return true;
         }
 
-        // Logic hiển thị Mức thưởng tự động
         private void cbbLoaiThuong_SelectedValueChanged(object sender, EventArgs e)
         {
             if (cbbLoaiThuong.SelectedValue != null && cbbLoaiThuong.Tag is DataTable dtLoaiThuong && txtMucThuong != null)
@@ -73,9 +64,6 @@ namespace he_thong_dien_may
             if (txtMucThuong != null) txtMucThuong.Text = "0";
         }
 
-        // =========================================================
-        // TẢI DỮ LIỆU
-        // =========================================================
         public void LoadDL()
         {
             try
@@ -131,16 +119,17 @@ namespace he_thong_dien_may
 
         private void frmThuong_Load(object sender, EventArgs e)
         {
-            LoadComboBoxData();
             dgvThuong.AutoGenerateColumns = false;
-            // Cột phải khớp với ThuongBUS.GetAllThuongAsTable()
-            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã Thưởng", DataPropertyName = "MaThuong", Width = 80 });
-            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã NV", DataPropertyName = "MaNV", Width = 80 });
-            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Loại Thưởng", DataPropertyName = "MaLoaiThuong", Width = 100 });
-            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Thời Gian", DataPropertyName = "ThoiGianThuong", Width = 100 });
-            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Trạng Thái", DataPropertyName = "TrangThai", Width = 100 });
-            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mức Thưởng", DataPropertyName = "MucThuong", Width = 100 });
 
+            dgvThuong.Columns.Clear();
+            
+            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã Thưởng", DataPropertyName = "MaThuong", Width = 150 });
+            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã NV", DataPropertyName = "MaNV", Width = 150 });
+            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Loại Thưởng", DataPropertyName = "MaLoaiThuong", Width = 150 });
+            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Thời Gian", DataPropertyName = "ThoiGianThuong", Width = 150 });
+            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Trạng Thái", DataPropertyName = "TrangThai", Width = 150 });
+            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mức Thưởng", DataPropertyName = "MucThuong", Width = 150 });
+            LoadComboBoxData();
             LoadDL();
         }
 
@@ -252,10 +241,10 @@ namespace he_thong_dien_may
         }
         private void btnLoc_Click(object sender, EventArgs e)
         {
-            string maNVLoc = cbbMaNV.SelectedValue?.ToString();
+            string maNVLoc = cbbTraCuu.SelectedValue?.ToString();
             if (string.IsNullOrEmpty(maNVLoc))
             {
-                LoadDL(); // Nếu không chọn Mã NV, tải lại toàn bộ
+                LoadDL(); 
                 return;
             }
 

@@ -19,6 +19,16 @@ namespace DLL
                 throw new Exception("Không thể kết nối đến cơ sở dữ liệu.");
             }
         }
+        public double LayMucThuong(string maLT)
+        {
+            using (var db = new DBSTDMDataContext())
+            {
+                return db.loai_thuongs
+                    .Where(lt => lt.ma_loai_thuong == maLT)
+                    .Select(lt => lt.muc_thuong)
+                    .FirstOrDefault() ?? 0;
+            }
+        }
 
         public List<thuong> GetAllThuong()
         {
