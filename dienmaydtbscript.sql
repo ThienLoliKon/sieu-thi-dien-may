@@ -11,6 +11,7 @@ create table san_pham (
     ma_nha_san_xuat char(10),
     ma_nha_cung_cap char(10),
     khoi_luong float,
+    thoi_gian_bao_hanh int,
     gia_tien DECIMAL(18, 0),
     ngay_san_xuat date
 );
@@ -32,7 +33,7 @@ go
 create table nha_cung_cap (
     ma_nha_cung_cap char(10) primary key,
     ten_nha_cung_cap nvarchar(50),
-    dia_chi_nha_cung_cap varchar(100)
+    dia_chi_nha_cung_cap nvarchar(100)
 );
 go
 
@@ -40,7 +41,7 @@ go
 create table nha_san_xuat (
     ma_nha_san_xuat char(10) primary key,
     ten_nha_san_xuat nvarchar(50),
-    dia_chi_nha_san_xuat varchar(100)
+    dia_chi_nha_san_xuat nvarchar(100)
 );
 go
 
@@ -96,10 +97,11 @@ go
 
 -- Hóa đơn
 create table hoa_don (
-    ma_hoa_don char(10) primary key,
+    ma_hoa_don char(10),
     ma_nhan_vien_lap char(10),
     ma_khach_hang char(10),
-    ngay_lap datetime
+    ngay_lap datetime,
+    primary key (ma_hoa_don)
 );
 go
 
@@ -144,6 +146,7 @@ ngay_xong datetime,
 hoan_thanh bit
 );
 go
+
 create table san_pham_loai_hang(
     ma_san_pham char(10),
     ma_loai_hang char(10),
@@ -223,7 +226,7 @@ create table khach_hang (
     ma_khach_hang char(10) primary key,
     ho_ten_khach_hang nvarchar(50),
     sdt varchar(20),
-    diachi varchar(50),
+    diachi nvarchar(100),
     xep_hang char(10),
     diem int
 );

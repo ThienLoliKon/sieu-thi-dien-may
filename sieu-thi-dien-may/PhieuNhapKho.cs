@@ -21,5 +21,10 @@ namespace he_thong_dien_may
         {
             this.Close();
         }
-    }
+
+		private void RTKhachHangForm_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

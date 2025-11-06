@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -48,22 +49,43 @@ namespace he_thong_dien_may
 
             LoadDL();
         }
+        private bool ContainsSpecialChars(string input)
+        {
+            return Regex.IsMatch(input, @"[^a-zA-Z0-9\s\p{L}]");
+        }
+
+        private void ClearInputControls()
+        {
+            txtMaCB.Clear();
+            txtCapBac.Clear();
+            txtMoTa.Clear();
+
+            txtMaCB.ReadOnly = false;
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            string tencb = txtCapBac.Text.Trim();
+            string mota = txtMoTa.Text.Trim();
+            if (string.IsNullOrEmpty(tencb) || string.IsNullOrEmpty(mota))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ Tên Cấp bậc và Mô tả.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (ContainsSpecialChars(tencb) || ContainsSpecialChars(mota))
+            {
+                MessageBox.Show("Tên Cấp bậc và Mô tả không được chứa ký tự đặc biệt.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             DialogResult result = MessageBox.Show("Bạn có muốn thêm không ?", "Thông báo", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 try
                 {
-                    // Lấy Mã từ SelectedValue
-                    string tencb = txtCapBac.Text;
-                    string mota =txtMoTa.Text;
-
                     CapBacNhanVienBUS bus = new CapBacNhanVienBUS();
 
-                    bool isAdd = bus.AddCapBacNV(
-                        tencb, mota
-                    );
+                    bool isAdd = bus.AddCapBacNV(tencb, mota);
 
                     if (isAdd)
                     {
@@ -71,40 +93,50 @@ namespace he_thong_dien_may
                     }
                     else
                     {
-                        MessageBox.Show("Thêm không thành công");
+                        MessageBox.Show("Thêm không thành công (Mã cấp bậc đã tồn tại).");
                     }
                     LoadDL();
+                    ClearInputControls(); 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Lỗi khi thêm dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Lỗi nghiệp vụ khi thêm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtMaCB.Text))
+            string macb = txtMaCB.Text.Trim();
+            string tencb = txtCapBac.Text.Trim();
+            string mota = txtMoTa.Text.Trim();
+
+            if (txtMaCB.ReadOnly == false)
             {
-                MessageBox.Show("Vui lòng chọn nhân viên cần sửa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nút Lưu chỉ dùng để cập nhật. Vui lòng nhấn Thêm để thực hiện thao tác Thêm mới.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            if (string.IsNullOrEmpty(macb) || string.IsNullOrEmpty(tencb) || string.IsNullOrEmpty(mota))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ Mã, Tên Cấp bậc và Mô tả.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (ContainsSpecialChars(tencb) || ContainsSpecialChars(mota))
+            {
+                MessageBox.Show("Tên Cấp bậc và Mô tả không được chứa ký tự đặc biệt.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             DialogResult result = MessageBox.Show("Bạn có muốn sửa không ?", "Thông báo", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 try
                 {
-                    string macb = txtMaCB.Text;
-                    string tencb = txtCapBac.Text;
-                    string mota = txtMoTa.Text;
-
                     CapBacNhanVienBUS bus = new CapBacNhanVienBUS();
 
-                    // GỌI PHƯƠNG THỨC CẬP NHẬT (GIẢ ĐỊNH ĐÃ SỬA BUS ĐỂ NHẬN MA NV VÀ CÁC THAM SỐ ĐÚNG)
-                    // THỨ TỰ: (maNV, tenNV, macapbac, sdt, diachi, machinhanh, trangthai)
-                    bool isupdate = bus.UpdateCapBacNVstring(
-                        macb, tencb, mota
-                    );
+                    bool isupdate = bus.UpdateCapBacNVstring(macb, tencb, mota);
 
                     if (isupdate)
                     {
@@ -112,7 +144,7 @@ namespace he_thong_dien_may
                     }
                     else
                     {
-                        MessageBox.Show("Sửa thất bại");
+                        MessageBox.Show("Sửa thất bại (Mã cấp bậc không tồn tại).");
                     }
                     LoadDL();
                 }
@@ -146,11 +178,10 @@ namespace he_thong_dien_may
         {
             if (string.IsNullOrEmpty(txtMaCB.Text))
             {
-                MessageBox.Show("Vui lòng chọn nhân viên cần xóa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn cấp bậc cần xóa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            // KHẮC PHỤC LỖI CÚ PHÁP MESSAGEBOX
-            DialogResult result = MessageBox.Show($"Bạn có muốn xóa nhân viên có mã: {txtMaCB.Text} thành 'Đã Nghỉ' không ?", "Thông báo", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show($"Bạn có muốn xóa cấp bậc có mã: {txtMaCB.Text} không ?", "Thông báo", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
@@ -171,7 +202,7 @@ namespace he_thong_dien_may
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Lỗi khi chuyển trạng thái: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Lỗi khi xóa: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -187,6 +218,11 @@ namespace he_thong_dien_may
         private void dgvCapBac_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             LoadDL();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

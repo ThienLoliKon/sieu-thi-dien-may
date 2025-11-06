@@ -1,0 +1,59 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DLL
+{
+    public class KhoTongDLL
+    {
+        DBSTDMDataContext db = new DBSTDMDataContext();
+        public KhoTongDLL()
+        {
+            if (!db.DatabaseExists())
+            {
+                //db.CreateDatabase();
+            }
+        }
+        public List<kho_tong> getAllKhoTong()
+        {
+            return db.kho_tongs.ToList();
+        }
+        public int addKhoTong(kho_tong kt)
+        {
+            try
+            {
+                db.kho_tongs.InsertOnSubmit(kt);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Loi khi them khach hang: " + ex.Message);
+            }
+            return 1;
+        }
+        public int updateKhoTong(kho_tong kt)
+        {
+            try
+            {
+                var khotong = db.kho_tongs.SingleOrDefault(n => n.ma_kho == kt.ma_kho);
+                if (khotong != null)
+                {
+                    khotong.ma_kho = kt.ma_kho;
+                    khotong.ten_kho = kt.ten_kho;
+                    khotong.dia_chi = kt.dia_chi;
+                    khotong.nhan_vien_quan_ly = kt.nhan_vien_quan_ly;
+                    khotong.suc_chua = kt.suc_chua;
+                    db.SubmitChanges();
+                    return 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return 0;
+        }
+    }
+}

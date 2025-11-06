@@ -38,9 +38,9 @@ namespace DLL
 		}
 
 		//fix sau
-		public int deleteSanPhamLoaiHang(string id)
+		public int deleteSanPhamLoaiHang(string maSanPham,string maLoaiHang)
 		{
-			var sp = db.san_pham_loai_hangs.SingleOrDefault(p => p.ma_san_pham == id);
+			var sp = db.san_pham_loai_hangs.SingleOrDefault(p => p.ma_san_pham == maSanPham && p.ma_loai_hang == maLoaiHang);
 			if (sp != null)
 			{
 				db.san_pham_loai_hangs.DeleteOnSubmit(sp);
@@ -63,12 +63,24 @@ namespace DLL
 			return 0;
 		}
 
-		public List<san_pham_loai_hang> searchByNameOrID(string name_id)
+		public List<san_pham_loai_hang> searchByNameOrIDSanPham(string name_id)
 		{
 			List<san_pham_loai_hang> list = new List<san_pham_loai_hang>();
 			IEnumerable<san_pham_loai_hang> query = from item in db.san_pham_loai_hangs
-										  where item.ma_san_pham.Contains(name_id) || item.ma_loai_hang.Contains(name_id)
+										  where item.ma_san_pham.Contains(name_id)
 										  select item;
+			foreach (var item in query)
+			{
+				list.Add(item);
+			}
+			return list;
+		}
+		public List<san_pham_loai_hang> searchByNameOrIDLoaiHang(string name_id)
+		{
+			List<san_pham_loai_hang> list = new List<san_pham_loai_hang>();
+			IEnumerable<san_pham_loai_hang> query = from item in db.san_pham_loai_hangs
+													where item.ma_loai_hang.Contains(name_id)
+													select item;
 			foreach (var item in query)
 			{
 				list.Add(item);
@@ -96,13 +108,13 @@ namespace DLL
 		//	// Tạo mã mới với tiền tố "NXB" và đảm bảo đúng định dạng
 		//	return "SP" + maxId.ToString("D3");
 		//}
-		public bool check(string id)
+		public bool check(string maSanPham, string maLoaiHang)
 		{
-			if (db.san_pham_loai_hangs.Any(p => p.ma_san_pham == id) == false)
+			if (db.san_pham_loai_hangs.Any(p => p.ma_san_pham == maSanPham) == false)
 			{
 				return false;
 			}
-			if (db.san_pham_loai_hangs.Any(p => p.ma_loai_hang == id) == false)
+			if (db.san_pham_loai_hangs.Any(p => p.ma_loai_hang == maLoaiHang) == false)
 			{
 				return false;
 			}

@@ -35,13 +35,11 @@ namespace BUS
 
                 dal.AddDiemDanh(diemdanh);
 
-                // SỬA LỖI LOGIC: Nếu tồn tại (check=true) sau khi thêm, nghĩa là thêm thành công.
                 if (dal.check(diemdanh.ma_diem_danh) == true) { return true; }
                 return false;
             }
             catch (Exception)
             {
-                // Xử lý lỗi Parse hoặc lỗi DAL
                 return false;
             }
         }
@@ -51,7 +49,6 @@ namespace BUS
             try
             {
                 dal.DeleteDiemDanh(id);
-                // LOGIC NÀY ĐÚNG cho XÓA CỨNG: Nếu không tồn tại (check=false) sau khi gọi DAL, nghĩa là xóa thành công.
                 if (dal.check(id) == false) { return true; }
                 return false;
             }
@@ -74,8 +71,7 @@ namespace BUS
 
                 dal.UpdateDiemDanh(diemdanh);
 
-                // SỬA LỖI LOGIC: Nếu tồn tại (check=true) sau khi cập nhật, nghĩa là cập nhật thành công.
-                if (dal.check(diemdanh.ma_diem_danh) == true) { return true; } // Giả định ma_diem_anh là ma_diem_danh
+                if (dal.check(diemdanh.ma_diem_danh) == true) { return true; } 
                 return false;
             }
             catch (Exception)
@@ -99,7 +95,6 @@ namespace BUS
 
             foreach (var dd in diemdanhs)
             {
-                // SỬA LỖI: Sử dụng nv.ma_chi_nhanh thay vì nv.chi_nhanh
                 dt.Rows.Add(dd.ma_diem_danh, dd.ma_nhan_vien, dd.thoi_gian_vao, dd.thoi_gian_ra);
             }
             return dt;
@@ -122,7 +117,6 @@ namespace BUS
 
             foreach (var dd in diemdanhs)
             {
-                // SỬA LỖI: Sử dụng nv.ma_chi_nhanh thay vì nv.chi_nhanh
                 dt.Rows.Add(dd.ma_diem_danh, dd.ma_nhan_vien, dd.thoi_gian_vao, dd.thoi_gian_ra);
             }
             return dt;

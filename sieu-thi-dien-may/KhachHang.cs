@@ -43,6 +43,10 @@ namespace he_thong_dien_may
 
         private void cyberButton1_Click(object sender, EventArgs e)
         {
+            if (CheckTestCase.checkKiTuDacBiet(txtTenKH.TextButton) == false)
+            {
+                MessageBox.Show("Ten khach hang khong duoc chua ki tu dac biet!"); return;
+            }
             DialogResult rs = MessageBox.Show("Are you sure to add?", "Confirm?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.No)
             {
@@ -68,7 +72,7 @@ namespace he_thong_dien_may
 
         private void KhachHang_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void cyberButton4_Click(object sender, EventArgs e)
@@ -117,7 +121,7 @@ namespace he_thong_dien_may
 
         private void DGVKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.DGVKhachHang.Rows[e.RowIndex];
                 txtMaKH.TextButton = row.Cells[0].Value.ToString();
@@ -130,7 +134,15 @@ namespace he_thong_dien_may
 
         private void txtSDT_Load(object sender, EventArgs e)
         {
+            try
+            {
+                int x = int.Parse(txtSDT.TextButton) + 1;
 
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         private void txtSDT_Leave(object sender, EventArgs e)

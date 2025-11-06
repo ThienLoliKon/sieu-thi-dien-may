@@ -47,7 +47,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaoHanhBUS.cs" />
+    <Compile Include="CheckTestCase.cs" />
+    <Compile Include="ChiTietHoaDonBUS.cs" />
+    <Compile Include="DiemDanhBUS.cs" />
+    <Compile Include="HoaDonBUS.cs" />
     <Compile Include="KhachHangBUS.cs" />
+    <Compile Include="KhoTongBUS.cs" />
+    <Compile Include="KhuVucBUS.cs" />
+    <Compile Include="KhuyenMaiBUS.cs" />
+    <Compile Include="LoaiHangBUS.cs" />
+    <Compile Include="SanPhamLoaiHangBUS.cs" />
     <Compile Include="LoaiThuongBUS.cs" />
     <Compile Include="LoaiViPhamBUS.cs" />
     <Compile Include="LuongBUS.cs" />
@@ -60,7 +69,6 @@
     <Compile Include="SanPhamBUS.cs" />
     <Compile Include="CapBacNhanVienBUS.cs" />
     <Compile Include="ChiNhanhBUS.cs" />
-    <Compile Include="DiemDanhBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />
     <Compile Include="TaiKhoanBUS.cs" />
   </ItemGroup>

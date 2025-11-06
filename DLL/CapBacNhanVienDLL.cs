@@ -39,17 +39,14 @@ namespace DLL
 
             if (capbacnv == null)
             {
-                // Giữ nguyên thông báo lỗi, nhưng nên sửa "tác giả" thành "cấp bậc nhân viên"
                 throw new Exception($"Không tìm thấy cấp bậc nhân viên với ID: {id}");
             }
             db.cap_bac_nhan_viens.DeleteOnSubmit(capbacnv);
             db.SubmitChanges();
         }
 
-        // ĐÃ SỬA LẠI TÊN THAM SỐ
         public void UpdateCapBacNhanVien(cap_bac_nhan_vien updateCapBac)
         {
-            // ĐÃ SỬA TÊN BIẾN LAMBDA
             var result = db.cap_bac_nhan_viens.SingleOrDefault(cb => cb.ma_cap_bac == updateCapBac.ma_cap_bac);
             if (result != null)
             {
@@ -61,7 +58,6 @@ namespace DLL
 
         public string TaoMaCapBacNhanVien()
         {
-            // Lấy danh sách mã cấp bậc nhân viên
             var maCapBanNVs = db.cap_bac_nhan_viens.Select(p => p.ma_cap_bac).ToList();
 
             int maxId = 0;
