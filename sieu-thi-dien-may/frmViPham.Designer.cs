@@ -1,6 +1,6 @@
 ﻿namespace he_thong_dien_may
 {
-    partial class frmLuong
+    partial class frmViPham
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.cbbTraCuu = new ReaLTaiizor.Controls.HopeComboBox();
             this.cbbMaNV = new ReaLTaiizor.Controls.HopeComboBox();
-            this.dtpThangLuong = new ReaLTaiizor.Controls.PoisonDateTime();
+            this.cbbLoaiViPham = new ReaLTaiizor.Controls.HopeComboBox();
+            this.cbTrangThai = new ReaLTaiizor.Controls.CyberCheckBox();
+            this.dtpThoiGianViPham = new ReaLTaiizor.Controls.PoisonDateTime();
             this.btnLoc = new ReaLTaiizor.Controls.CyberButton();
-            this.dgvLuong = new ReaLTaiizor.Controls.PoisonDataGridView();
+            this.dgvViPham = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.btnDong = new ReaLTaiizor.Controls.CyberButton();
-            this.btnXoa = new ReaLTaiizor.Controls.CyberButton();
             this.btnLuu = new ReaLTaiizor.Controls.CyberButton();
             this.btnThem = new ReaLTaiizor.Controls.CyberButton();
             this.txtGiaTien = new ReaLTaiizor.Controls.ForeverLabel();
@@ -46,29 +46,14 @@
             this.foreverLabel3 = new ReaLTaiizor.Controls.ForeverLabel();
             this.foreverLabel2 = new ReaLTaiizor.Controls.ForeverLabel();
             this.foreverLabel1 = new ReaLTaiizor.Controls.ForeverLabel();
-            this.txtThuong = new ReaLTaiizor.Controls.ForeverTextBox();
+            this.txtMaViPham = new ReaLTaiizor.Controls.ForeverTextBox();
             this.foreverForm1 = new ReaLTaiizor.Forms.ForeverForm();
-            this.foreverLabel5 = new ReaLTaiizor.Controls.ForeverLabel();
-            this.txtPhat = new ReaLTaiizor.Controls.ForeverTextBox();
-            this.txtTongLuongNhan = new ReaLTaiizor.Controls.ForeverTextBox();
-            this.txtMaPhieuLuong = new ReaLTaiizor.Controls.ForeverTextBox();
-            this.txtLuongCoBan = new ReaLTaiizor.Controls.ForeverTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLuong)).BeginInit();
+            this.cbbTraCuu = new ReaLTaiizor.Controls.HopeComboBox();
+            this.btnXoa = new ReaLTaiizor.Controls.CyberButton();
+            this.txtMucPhat = new ReaLTaiizor.Controls.ForeverTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViPham)).BeginInit();
             this.foreverForm1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // cbbTraCuu
-            // 
-            this.cbbTraCuu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbbTraCuu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbTraCuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbbTraCuu.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbbTraCuu.FormattingEnabled = true;
-            this.cbbTraCuu.ItemHeight = 30;
-            this.cbbTraCuu.Location = new System.Drawing.Point(1327, 171);
-            this.cbbTraCuu.Name = "cbbTraCuu";
-            this.cbbTraCuu.Size = new System.Drawing.Size(261, 36);
-            this.cbbTraCuu.TabIndex = 47;
             // 
             // cbbMaNV
             // 
@@ -78,19 +63,70 @@
             this.cbbMaNV.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbbMaNV.FormattingEnabled = true;
             this.cbbMaNV.ItemHeight = 30;
-            this.cbbMaNV.Location = new System.Drawing.Point(247, 126);
+            this.cbbMaNV.Location = new System.Drawing.Point(311, 132);
             this.cbbMaNV.Name = "cbbMaNV";
             this.cbbMaNV.Size = new System.Drawing.Size(261, 36);
             this.cbbMaNV.TabIndex = 47;
             // 
-            // dtpThangLuong
+            // cbbLoaiViPham
             // 
-            this.dtpThangLuong.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
-            this.dtpThangLuong.Location = new System.Drawing.Point(247, 189);
-            this.dtpThangLuong.MinimumSize = new System.Drawing.Size(0, 30);
-            this.dtpThangLuong.Name = "dtpThangLuong";
-            this.dtpThangLuong.Size = new System.Drawing.Size(261, 30);
-            this.dtpThangLuong.TabIndex = 38;
+            this.cbbLoaiViPham.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbbLoaiViPham.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbLoaiViPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbbLoaiViPham.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbbLoaiViPham.FormattingEnabled = true;
+            this.cbbLoaiViPham.ItemHeight = 30;
+            this.cbbLoaiViPham.Location = new System.Drawing.Point(311, 185);
+            this.cbbLoaiViPham.Name = "cbbLoaiViPham";
+            this.cbbLoaiViPham.Size = new System.Drawing.Size(261, 36);
+            this.cbbLoaiViPham.TabIndex = 46;
+            // 
+            // cbTrangThai
+            // 
+            this.cbTrangThai.BackColor = System.Drawing.Color.Transparent;
+            this.cbTrangThai.Background = true;
+            this.cbTrangThai.Background_WidthPen = 2F;
+            this.cbTrangThai.BackgroundPen = true;
+            this.cbTrangThai.Checked = false;
+            this.cbTrangThai.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.cbTrangThai.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.cbTrangThai.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.cbTrangThai.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.cbTrangThai.ColorChecked = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.cbTrangThai.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.cbTrangThai.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.cbTrangThai.CyberCheckBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.cbTrangThai.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.cbTrangThai.Effect_1_Transparency = 25;
+            this.cbTrangThai.Effect_2 = true;
+            this.cbTrangThai.Effect_2_ColorBackground = System.Drawing.Color.White;
+            this.cbTrangThai.Effect_2_Transparency = 15;
+            this.cbTrangThai.Font = new System.Drawing.Font("Arial", 11F);
+            this.cbTrangThai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.cbTrangThai.LinearGradient_Background = false;
+            this.cbTrangThai.LinearGradientPen = false;
+            this.cbTrangThai.Location = new System.Drawing.Point(976, 176);
+            this.cbTrangThai.Name = "cbTrangThai";
+            this.cbTrangThai.RGB = false;
+            this.cbTrangThai.Rounding = true;
+            this.cbTrangThai.RoundingInt = 100;
+            this.cbTrangThai.Size = new System.Drawing.Size(170, 45);
+            this.cbTrangThai.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.cbTrangThai.TabIndex = 43;
+            this.cbTrangThai.Tag = "Cyber";
+            this.cbTrangThai.TextButton = "Hoàn thành";
+            this.cbTrangThai.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.cbTrangThai.Timer_Effect_1 = 1;
+            this.cbTrangThai.Timer_RGB = 300;
+            // 
+            // dtpThoiGianViPham
+            // 
+            this.dtpThoiGianViPham.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
+            this.dtpThoiGianViPham.Location = new System.Drawing.Point(976, 129);
+            this.dtpThoiGianViPham.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dtpThoiGianViPham.Name = "dtpThoiGianViPham";
+            this.dtpThoiGianViPham.Size = new System.Drawing.Size(261, 30);
+            this.dtpThoiGianViPham.TabIndex = 38;
             // 
             // btnLoc
             // 
@@ -133,16 +169,16 @@
             this.btnLoc.Timer_RGB = 300;
             this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
-            // dgvLuong
+            // dgvViPham
             // 
-            this.dgvLuong.AllowUserToResizeRows = false;
-            this.dgvLuong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvViPham.AllowUserToResizeRows = false;
+            this.dgvViPham.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLuong.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvLuong.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvLuong.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvLuong.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvViPham.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvViPham.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvViPham.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvViPham.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -150,8 +186,8 @@
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLuong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvLuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvViPham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvViPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -159,13 +195,13 @@
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLuong.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvLuong.EnableHeadersVisualStyles = false;
-            this.dgvLuong.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.dgvLuong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvLuong.Location = new System.Drawing.Point(1, 352);
-            this.dgvLuong.Name = "dgvLuong";
-            this.dgvLuong.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvViPham.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvViPham.EnableHeadersVisualStyles = false;
+            this.dgvViPham.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgvViPham.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvViPham.Location = new System.Drawing.Point(1, 352);
+            this.dgvViPham.Name = "dgvViPham";
+            this.dgvViPham.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -173,14 +209,14 @@
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLuong.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvLuong.RowHeadersWidth = 51;
-            this.dgvLuong.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvLuong.RowTemplate.Height = 24;
-            this.dgvLuong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLuong.Size = new System.Drawing.Size(1598, 447);
-            this.dgvLuong.TabIndex = 36;
-            this.dgvLuong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLuong_CellClick);
+            this.dgvViPham.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvViPham.RowHeadersWidth = 51;
+            this.dgvViPham.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvViPham.RowTemplate.Height = 24;
+            this.dgvViPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvViPham.Size = new System.Drawing.Size(1598, 447);
+            this.dgvViPham.TabIndex = 36;
+            this.dgvViPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViPham_CellClick);
             // 
             // btnDong
             // 
@@ -222,47 +258,6 @@
             this.btnDong.Timer_Effect_1 = 5;
             this.btnDong.Timer_RGB = 300;
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Alpha = 20;
-            this.btnXoa.BackColor = System.Drawing.Color.Transparent;
-            this.btnXoa.Background = true;
-            this.btnXoa.Background_WidthPen = 4F;
-            this.btnXoa.BackgroundPen = true;
-            this.btnXoa.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.btnXoa.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.btnXoa.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-            this.btnXoa.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.btnXoa.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.btnXoa.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.btnXoa.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-            this.btnXoa.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.btnXoa.Effect_1 = true;
-            this.btnXoa.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.btnXoa.Effect_1_Transparency = 25;
-            this.btnXoa.Effect_2 = true;
-            this.btnXoa.Effect_2_ColorBackground = System.Drawing.Color.White;
-            this.btnXoa.Effect_2_Transparency = 20;
-            this.btnXoa.Font = new System.Drawing.Font("Arial", 11F);
-            this.btnXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.btnXoa.Lighting = false;
-            this.btnXoa.LinearGradient_Background = false;
-            this.btnXoa.LinearGradientPen = false;
-            this.btnXoa.Location = new System.Drawing.Point(824, 262);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.PenWidth = 15;
-            this.btnXoa.Rounding = true;
-            this.btnXoa.RoundingInt = 70;
-            this.btnXoa.Size = new System.Drawing.Size(130, 50);
-            this.btnXoa.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.btnXoa.TabIndex = 34;
-            this.btnXoa.Tag = "Cyber";
-            this.btnXoa.TextButton = "Xóa";
-            this.btnXoa.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.btnXoa.Timer_Effect_1 = 5;
-            this.btnXoa.Timer_RGB = 300;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
@@ -352,11 +347,11 @@
             this.txtGiaTien.BackColor = System.Drawing.Color.Transparent;
             this.txtGiaTien.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGiaTien.ForeColor = System.Drawing.Color.LightGray;
-            this.txtGiaTien.Location = new System.Drawing.Point(1095, 87);
+            this.txtGiaTien.Location = new System.Drawing.Point(753, 182);
             this.txtGiaTien.Name = "txtGiaTien";
-            this.txtGiaTien.Size = new System.Drawing.Size(212, 25);
+            this.txtGiaTien.Size = new System.Drawing.Size(137, 25);
             this.txtGiaTien.TabIndex = 30;
-            this.txtGiaTien.Text = "Tổng Lương Nhận: ";
+            this.txtGiaTien.Text = "Trạng Thái: ";
             // 
             // foreverLabel8
             // 
@@ -364,11 +359,11 @@
             this.foreverLabel8.BackColor = System.Drawing.Color.Transparent;
             this.foreverLabel8.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foreverLabel8.ForeColor = System.Drawing.Color.LightGray;
-            this.foreverLabel8.Location = new System.Drawing.Point(592, 192);
+            this.foreverLabel8.Location = new System.Drawing.Point(753, 138);
             this.foreverLabel8.Name = "foreverLabel8";
-            this.foreverLabel8.Size = new System.Drawing.Size(74, 25);
+            this.foreverLabel8.Size = new System.Drawing.Size(217, 25);
             this.foreverLabel8.TabIndex = 28;
-            this.foreverLabel8.Text = "Phạt: ";
+            this.foreverLabel8.Text = "Thời Gian Vi Phạm: ";
             // 
             // foreverLabel4
             // 
@@ -376,11 +371,11 @@
             this.foreverLabel4.BackColor = System.Drawing.Color.Transparent;
             this.foreverLabel4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foreverLabel4.ForeColor = System.Drawing.Color.LightGray;
-            this.foreverLabel4.Location = new System.Drawing.Point(592, 140);
+            this.foreverLabel4.Location = new System.Drawing.Point(753, 80);
             this.foreverLabel4.Name = "foreverLabel4";
-            this.foreverLabel4.Size = new System.Drawing.Size(106, 25);
+            this.foreverLabel4.Size = new System.Drawing.Size(128, 25);
             this.foreverLabel4.TabIndex = 26;
-            this.foreverLabel4.Text = "Thưởng: ";
+            this.foreverLabel4.Text = "Mức Phạt: ";
             // 
             // foreverLabel3
             // 
@@ -388,11 +383,11 @@
             this.foreverLabel3.BackColor = System.Drawing.Color.Transparent;
             this.foreverLabel3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foreverLabel3.ForeColor = System.Drawing.Color.LightGray;
-            this.foreverLabel3.Location = new System.Drawing.Point(592, 85);
+            this.foreverLabel3.Location = new System.Drawing.Point(141, 194);
             this.foreverLabel3.Name = "foreverLabel3";
-            this.foreverLabel3.Size = new System.Drawing.Size(176, 25);
+            this.foreverLabel3.Size = new System.Drawing.Size(161, 25);
             this.foreverLabel3.TabIndex = 24;
-            this.foreverLabel3.Text = "Lương Cơ Bản: ";
+            this.foreverLabel3.Text = "Loại Vi Phạm: ";
             // 
             // foreverLabel2
             // 
@@ -400,11 +395,11 @@
             this.foreverLabel2.BackColor = System.Drawing.Color.Transparent;
             this.foreverLabel2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foreverLabel2.ForeColor = System.Drawing.Color.LightGray;
-            this.foreverLabel2.Location = new System.Drawing.Point(39, 192);
+            this.foreverLabel2.Location = new System.Drawing.Point(141, 141);
             this.foreverLabel2.Name = "foreverLabel2";
-            this.foreverLabel2.Size = new System.Drawing.Size(164, 25);
+            this.foreverLabel2.Size = new System.Drawing.Size(98, 25);
             this.foreverLabel2.TabIndex = 22;
-            this.foreverLabel2.Text = "Tháng Lương: ";
+            this.foreverLabel2.Text = "Mã NV: ";
             // 
             // foreverLabel1
             // 
@@ -412,29 +407,29 @@
             this.foreverLabel1.BackColor = System.Drawing.Color.Transparent;
             this.foreverLabel1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foreverLabel1.ForeColor = System.Drawing.Color.LightGray;
-            this.foreverLabel1.Location = new System.Drawing.Point(39, 140);
+            this.foreverLabel1.Location = new System.Drawing.Point(141, 89);
             this.foreverLabel1.Name = "foreverLabel1";
-            this.foreverLabel1.Size = new System.Drawing.Size(98, 25);
+            this.foreverLabel1.Size = new System.Drawing.Size(152, 25);
             this.foreverLabel1.TabIndex = 20;
-            this.foreverLabel1.Text = "Mã NV: ";
+            this.foreverLabel1.Text = "Mã Vi Phạm: ";
             // 
-            // txtThuong
+            // txtMaViPham
             // 
-            this.txtThuong.BackColor = System.Drawing.Color.Transparent;
-            this.txtThuong.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-            this.txtThuong.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.txtThuong.Enabled = false;
-            this.txtThuong.FocusOnHover = false;
-            this.txtThuong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.txtThuong.Location = new System.Drawing.Point(783, 131);
-            this.txtThuong.MaxLength = 32767;
-            this.txtThuong.Multiline = false;
-            this.txtThuong.Name = "txtThuong";
-            this.txtThuong.ReadOnly = false;
-            this.txtThuong.Size = new System.Drawing.Size(261, 34);
-            this.txtThuong.TabIndex = 19;
-            this.txtThuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtThuong.UseSystemPasswordChar = false;
+            this.txtMaViPham.BackColor = System.Drawing.Color.Transparent;
+            this.txtMaViPham.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+            this.txtMaViPham.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.txtMaViPham.Enabled = false;
+            this.txtMaViPham.FocusOnHover = false;
+            this.txtMaViPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.txtMaViPham.Location = new System.Drawing.Point(311, 77);
+            this.txtMaViPham.MaxLength = 32767;
+            this.txtMaViPham.Multiline = false;
+            this.txtMaViPham.Name = "txtMaViPham";
+            this.txtMaViPham.ReadOnly = false;
+            this.txtMaViPham.Size = new System.Drawing.Size(261, 34);
+            this.txtMaViPham.TabIndex = 19;
+            this.txtMaViPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMaViPham.UseSystemPasswordChar = false;
             // 
             // foreverForm1
             // 
@@ -443,9 +438,11 @@
             this.foreverForm1.BorderColor = System.Drawing.Color.DodgerBlue;
             this.foreverForm1.Controls.Add(this.cbbTraCuu);
             this.foreverForm1.Controls.Add(this.cbbMaNV);
-            this.foreverForm1.Controls.Add(this.dtpThangLuong);
+            this.foreverForm1.Controls.Add(this.cbbLoaiViPham);
+            this.foreverForm1.Controls.Add(this.cbTrangThai);
+            this.foreverForm1.Controls.Add(this.dtpThoiGianViPham);
             this.foreverForm1.Controls.Add(this.btnLoc);
-            this.foreverForm1.Controls.Add(this.dgvLuong);
+            this.foreverForm1.Controls.Add(this.dgvViPham);
             this.foreverForm1.Controls.Add(this.btnDong);
             this.foreverForm1.Controls.Add(this.btnXoa);
             this.foreverForm1.Controls.Add(this.btnLuu);
@@ -453,15 +450,11 @@
             this.foreverForm1.Controls.Add(this.txtGiaTien);
             this.foreverForm1.Controls.Add(this.foreverLabel8);
             this.foreverForm1.Controls.Add(this.foreverLabel4);
-            this.foreverForm1.Controls.Add(this.foreverLabel5);
             this.foreverForm1.Controls.Add(this.foreverLabel3);
             this.foreverForm1.Controls.Add(this.foreverLabel2);
             this.foreverForm1.Controls.Add(this.foreverLabel1);
-            this.foreverForm1.Controls.Add(this.txtPhat);
-            this.foreverForm1.Controls.Add(this.txtTongLuongNhan);
-            this.foreverForm1.Controls.Add(this.txtThuong);
-            this.foreverForm1.Controls.Add(this.txtMaPhieuLuong);
-            this.foreverForm1.Controls.Add(this.txtLuongCoBan);
+            this.foreverForm1.Controls.Add(this.txtMucPhat);
+            this.foreverForm1.Controls.Add(this.txtMaViPham);
             this.foreverForm1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.foreverForm1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.foreverForm1.ForeverColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
@@ -475,107 +468,97 @@
             this.foreverForm1.Padding = new System.Windows.Forms.Padding(1, 51, 1, 1);
             this.foreverForm1.Sizable = true;
             this.foreverForm1.Size = new System.Drawing.Size(1600, 800);
-            this.foreverForm1.TabIndex = 2;
-            this.foreverForm1.Text = "Quản Lý Lương";
+            this.foreverForm1.TabIndex = 1;
+            this.foreverForm1.Text = "Quản Lý Vi Phạm";
             this.foreverForm1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
             this.foreverForm1.TextLight = System.Drawing.Color.SeaGreen;
             // 
-            // foreverLabel5
+            // cbbTraCuu
             // 
-            this.foreverLabel5.AutoSize = true;
-            this.foreverLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.foreverLabel5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foreverLabel5.ForeColor = System.Drawing.Color.LightGray;
-            this.foreverLabel5.Location = new System.Drawing.Point(39, 80);
-            this.foreverLabel5.Name = "foreverLabel5";
-            this.foreverLabel5.Size = new System.Drawing.Size(191, 25);
-            this.foreverLabel5.TabIndex = 24;
-            this.foreverLabel5.Text = "Mã Phiếu Lương:";
+            this.cbbTraCuu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbbTraCuu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbTraCuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbbTraCuu.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbbTraCuu.FormattingEnabled = true;
+            this.cbbTraCuu.ItemHeight = 30;
+            this.cbbTraCuu.Location = new System.Drawing.Point(1327, 171);
+            this.cbbTraCuu.Name = "cbbTraCuu";
+            this.cbbTraCuu.Size = new System.Drawing.Size(261, 36);
+            this.cbbTraCuu.TabIndex = 47;
             // 
-            // txtPhat
+            // btnXoa
             // 
-            this.txtPhat.BackColor = System.Drawing.Color.Transparent;
-            this.txtPhat.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-            this.txtPhat.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.txtPhat.Enabled = false;
-            this.txtPhat.FocusOnHover = false;
-            this.txtPhat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.txtPhat.Location = new System.Drawing.Point(783, 183);
-            this.txtPhat.MaxLength = 32767;
-            this.txtPhat.Multiline = false;
-            this.txtPhat.Name = "txtPhat";
-            this.txtPhat.ReadOnly = false;
-            this.txtPhat.Size = new System.Drawing.Size(261, 34);
-            this.txtPhat.TabIndex = 19;
-            this.txtPhat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtPhat.UseSystemPasswordChar = false;
+            this.btnXoa.Alpha = 20;
+            this.btnXoa.BackColor = System.Drawing.Color.Transparent;
+            this.btnXoa.Background = true;
+            this.btnXoa.Background_WidthPen = 4F;
+            this.btnXoa.BackgroundPen = true;
+            this.btnXoa.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnXoa.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnXoa.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.btnXoa.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnXoa.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnXoa.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnXoa.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.btnXoa.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.btnXoa.Effect_1 = true;
+            this.btnXoa.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnXoa.Effect_1_Transparency = 25;
+            this.btnXoa.Effect_2 = true;
+            this.btnXoa.Effect_2_ColorBackground = System.Drawing.Color.White;
+            this.btnXoa.Effect_2_Transparency = 20;
+            this.btnXoa.Font = new System.Drawing.Font("Arial", 11F);
+            this.btnXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.btnXoa.Lighting = false;
+            this.btnXoa.LinearGradient_Background = false;
+            this.btnXoa.LinearGradientPen = false;
+            this.btnXoa.Location = new System.Drawing.Point(824, 262);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.PenWidth = 15;
+            this.btnXoa.Rounding = true;
+            this.btnXoa.RoundingInt = 70;
+            this.btnXoa.Size = new System.Drawing.Size(130, 50);
+            this.btnXoa.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.btnXoa.TabIndex = 34;
+            this.btnXoa.Tag = "Cyber";
+            this.btnXoa.TextButton = "Xóa";
+            this.btnXoa.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btnXoa.Timer_Effect_1 = 5;
+            this.btnXoa.Timer_RGB = 300;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // txtTongLuongNhan
+            // txtMucPhat
             // 
-            this.txtTongLuongNhan.BackColor = System.Drawing.Color.Transparent;
-            this.txtTongLuongNhan.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-            this.txtTongLuongNhan.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.txtTongLuongNhan.Enabled = false;
-            this.txtTongLuongNhan.FocusOnHover = false;
-            this.txtTongLuongNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.txtTongLuongNhan.Location = new System.Drawing.Point(1327, 78);
-            this.txtTongLuongNhan.MaxLength = 32767;
-            this.txtTongLuongNhan.Multiline = false;
-            this.txtTongLuongNhan.Name = "txtTongLuongNhan";
-            this.txtTongLuongNhan.ReadOnly = false;
-            this.txtTongLuongNhan.Size = new System.Drawing.Size(261, 34);
-            this.txtTongLuongNhan.TabIndex = 19;
-            this.txtTongLuongNhan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtTongLuongNhan.UseSystemPasswordChar = false;
+            this.txtMucPhat.BackColor = System.Drawing.Color.Transparent;
+            this.txtMucPhat.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+            this.txtMucPhat.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.txtMucPhat.Enabled = false;
+            this.txtMucPhat.FocusOnHover = false;
+            this.txtMucPhat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.txtMucPhat.Location = new System.Drawing.Point(976, 71);
+            this.txtMucPhat.MaxLength = 32767;
+            this.txtMucPhat.Multiline = false;
+            this.txtMucPhat.Name = "txtMucPhat";
+            this.txtMucPhat.ReadOnly = false;
+            this.txtMucPhat.Size = new System.Drawing.Size(261, 34);
+            this.txtMucPhat.TabIndex = 19;
+            this.txtMucPhat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMucPhat.UseSystemPasswordChar = false;
             // 
-            // txtMaPhieuLuong
-            // 
-            this.txtMaPhieuLuong.BackColor = System.Drawing.Color.Transparent;
-            this.txtMaPhieuLuong.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-            this.txtMaPhieuLuong.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.txtMaPhieuLuong.FocusOnHover = false;
-            this.txtMaPhieuLuong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.txtMaPhieuLuong.Location = new System.Drawing.Point(247, 68);
-            this.txtMaPhieuLuong.MaxLength = 32767;
-            this.txtMaPhieuLuong.Multiline = false;
-            this.txtMaPhieuLuong.Name = "txtMaPhieuLuong";
-            this.txtMaPhieuLuong.ReadOnly = false;
-            this.txtMaPhieuLuong.Size = new System.Drawing.Size(261, 34);
-            this.txtMaPhieuLuong.TabIndex = 19;
-            this.txtMaPhieuLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtMaPhieuLuong.UseSystemPasswordChar = false;
-            // 
-            // txtLuongCoBan
-            // 
-            this.txtLuongCoBan.BackColor = System.Drawing.Color.Transparent;
-            this.txtLuongCoBan.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-            this.txtLuongCoBan.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.txtLuongCoBan.FocusOnHover = false;
-            this.txtLuongCoBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.txtLuongCoBan.Location = new System.Drawing.Point(783, 76);
-            this.txtLuongCoBan.MaxLength = 32767;
-            this.txtLuongCoBan.Multiline = false;
-            this.txtLuongCoBan.Name = "txtLuongCoBan";
-            this.txtLuongCoBan.ReadOnly = false;
-            this.txtLuongCoBan.Size = new System.Drawing.Size(261, 34);
-            this.txtLuongCoBan.TabIndex = 19;
-            this.txtLuongCoBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtLuongCoBan.UseSystemPasswordChar = false;
-            // 
-            // frmLuong
+            // frmViPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 800);
             this.Controls.Add(this.foreverForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmLuong";
+            this.Name = "frmViPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmLuong";
+            this.Text = "frmViPhamm";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmLuong_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLuong)).EndInit();
+            this.Load += new System.EventHandler(this.frmViPham_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViPham)).EndInit();
             this.foreverForm1.ResumeLayout(false);
             this.foreverForm1.PerformLayout();
             this.ResumeLayout(false);
@@ -584,13 +567,13 @@
 
         #endregion
 
-        private ReaLTaiizor.Controls.HopeComboBox cbbTraCuu;
         private ReaLTaiizor.Controls.HopeComboBox cbbMaNV;
-        private ReaLTaiizor.Controls.PoisonDateTime dtpThangLuong;
+        private ReaLTaiizor.Controls.HopeComboBox cbbLoaiViPham;
+        private ReaLTaiizor.Controls.CyberCheckBox cbTrangThai;
+        private ReaLTaiizor.Controls.PoisonDateTime dtpThoiGianViPham;
         private ReaLTaiizor.Controls.CyberButton btnLoc;
-        private ReaLTaiizor.Controls.PoisonDataGridView dgvLuong;
+        private ReaLTaiizor.Controls.PoisonDataGridView dgvViPham;
         private ReaLTaiizor.Controls.CyberButton btnDong;
-        private ReaLTaiizor.Controls.CyberButton btnXoa;
         private ReaLTaiizor.Controls.CyberButton btnLuu;
         private ReaLTaiizor.Controls.CyberButton btnThem;
         private ReaLTaiizor.Controls.ForeverLabel txtGiaTien;
@@ -599,12 +582,10 @@
         private ReaLTaiizor.Controls.ForeverLabel foreverLabel3;
         private ReaLTaiizor.Controls.ForeverLabel foreverLabel2;
         private ReaLTaiizor.Controls.ForeverLabel foreverLabel1;
-        private ReaLTaiizor.Controls.ForeverTextBox txtThuong;
+        private ReaLTaiizor.Controls.ForeverTextBox txtMaViPham;
         private ReaLTaiizor.Forms.ForeverForm foreverForm1;
-        private ReaLTaiizor.Controls.ForeverTextBox txtTongLuongNhan;
-        private ReaLTaiizor.Controls.ForeverTextBox txtLuongCoBan;
-        private ReaLTaiizor.Controls.ForeverTextBox txtPhat;
-        private ReaLTaiizor.Controls.ForeverLabel foreverLabel5;
-        private ReaLTaiizor.Controls.ForeverTextBox txtMaPhieuLuong;
+        private ReaLTaiizor.Controls.ForeverTextBox txtMucPhat;
+        private ReaLTaiizor.Controls.HopeComboBox cbbTraCuu;
+        private ReaLTaiizor.Controls.CyberButton btnXoa;
     }
 }

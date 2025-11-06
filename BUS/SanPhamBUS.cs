@@ -36,7 +36,7 @@ namespace BUS
 			int thoiGianInt = int.Parse(thoiGianBH);
 			addVariable.thoi_gian_bao_hanh = thoiGianInt;
 			decimal giaTienFloat = decimal.Parse(giaTien);
-			addVariable.gia_tien = giaTienFloat;
+			//addVariable.gia_tien = giaTienFloat;
 			addVariable.ngay_san_xuat = ngaySX;
 
 			dal.addSanPham(addVariable);
@@ -72,8 +72,12 @@ namespace BUS
 				updateItem.gia_tien = giaTienValue;
 			else
 				updateItem.gia_tien = null; // hoặc xử lý lỗi nhập liệu
+			//if (decimal.TryParse(giaTien, out decimal giaTienValue))
+				//updateItem.gia_tien = giaTienValue;
+			//else
+			//	updateItem.gia_tien = null; // hoặc xử lý lỗi nhập liệu
 
-			updateItem.ngay_san_xuat = ngaySX;
+			//updateItem.ngay_san_xuat = ngaySX;
 
 			dal.updateSanPham(updateItem);
 

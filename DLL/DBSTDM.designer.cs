@@ -117,7 +117,7 @@ namespace DLL
     #endregion
 		
 		public DBSTDMDataContext() : 
-				base(global::DLL.Properties.Settings.Default.dien_mayConnectionString, mappingSource)
+				base(global::DLL.Properties.Settings.Default.dien_mayConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -859,8 +859,6 @@ namespace DLL
 		
 		private EntitySet<nhan_vien> _nhan_viens;
 		
-		private EntitySet<tai_khoan> _tai_khoans;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -876,7 +874,6 @@ namespace DLL
 		public cap_bac_nhan_vien()
 		{
 			this._nhan_viens = new EntitySet<nhan_vien>(new Action<nhan_vien>(this.attach_nhan_viens), new Action<nhan_vien>(this.detach_nhan_viens));
-			this._tai_khoans = new EntitySet<tai_khoan>(new Action<tai_khoan>(this.attach_tai_khoans), new Action<tai_khoan>(this.detach_tai_khoans));
 			OnCreated();
 		}
 		
@@ -953,19 +950,6 @@ namespace DLL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="cap_bac_nhan_vien_tai_khoan", Storage="_tai_khoans", ThisKey="ma_cap_bac", OtherKey="quyen")]
-		public EntitySet<tai_khoan> tai_khoans
-		{
-			get
-			{
-				return this._tai_khoans;
-			}
-			set
-			{
-				this._tai_khoans.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -993,18 +977,6 @@ namespace DLL
 		}
 		
 		private void detach_nhan_viens(nhan_vien entity)
-		{
-			this.SendPropertyChanging();
-			entity.cap_bac_nhan_vien = null;
-		}
-		
-		private void attach_tai_khoans(tai_khoan entity)
-		{
-			this.SendPropertyChanging();
-			entity.cap_bac_nhan_vien = this;
-		}
-		
-		private void detach_tai_khoans(tai_khoan entity)
 		{
 			this.SendPropertyChanging();
 			entity.cap_bac_nhan_vien = null;
@@ -1284,8 +1256,6 @@ namespace DLL
 		
 		private System.Nullable<int> _so_luong;
 		
-		private System.Nullable<decimal> _don_gia;
-		
 		private System.Nullable<System.DateTime> _ngay_gio_in;
 		
 		private EntityRef<hoa_don> _hoa_don;
@@ -1306,8 +1276,6 @@ namespace DLL
     partial void Onma_khuyen_maiChanged();
     partial void Onso_luongChanging(System.Nullable<int> value);
     partial void Onso_luongChanged();
-    partial void Ondon_giaChanging(System.Nullable<decimal> value);
-    partial void Ondon_giaChanged();
     partial void Onngay_gio_inChanging(System.Nullable<System.DateTime> value);
     partial void Onngay_gio_inChanged();
     #endregion
@@ -1408,26 +1376,6 @@ namespace DLL
 					this._so_luong = value;
 					this.SendPropertyChanged("so_luong");
 					this.Onso_luongChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_don_gia", DbType="Decimal(18,0)")]
-		public System.Nullable<decimal> don_gia
-		{
-			get
-			{
-				return this._don_gia;
-			}
-			set
-			{
-				if ((this._don_gia != value))
-				{
-					this.Ondon_giaChanging(value);
-					this.SendPropertyChanging();
-					this._don_gia = value;
-					this.SendPropertyChanged("don_gia");
-					this.Ondon_giaChanged();
 				}
 			}
 		}
@@ -2996,7 +2944,7 @@ namespace DLL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mo_ta", DbType="NVarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mo_ta", DbType="Char(10)")]
 		public string mo_ta
 		{
 			get
@@ -4697,7 +4645,7 @@ namespace DLL
 		
 		private System.Nullable<int> _so_luong;
 		
-		private System.Nullable<decimal> _don_gia;
+		private System.Nullable<int> _don_gia;
 		
 		private EntityRef<kho_tong> _kho_tong;
 		
@@ -4719,7 +4667,7 @@ namespace DLL
     partial void Onma_nhan_vien_kiem_traChanged();
     partial void Onso_luongChanging(System.Nullable<int> value);
     partial void Onso_luongChanged();
-    partial void Ondon_giaChanging(System.Nullable<decimal> value);
+    partial void Ondon_giaChanging(System.Nullable<int> value);
     partial void Ondon_giaChanged();
     #endregion
 		
@@ -4843,8 +4791,8 @@ namespace DLL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_don_gia", DbType="Decimal(18,0)")]
-		public System.Nullable<decimal> don_gia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_don_gia", DbType="Int")]
+		public System.Nullable<int> don_gia
 		{
 			get
 			{
@@ -6404,8 +6352,6 @@ namespace DLL
 		
 		private string _quyen;
 		
-		private EntityRef<cap_bac_nhan_vien> _cap_bac_nhan_vien;
-		
 		private EntityRef<nhan_vien> _nhan_vien;
 		
     #region Extensibility Method Definitions
@@ -6422,7 +6368,6 @@ namespace DLL
 		
 		public tai_khoan()
 		{
-			this._cap_bac_nhan_vien = default(EntityRef<cap_bac_nhan_vien>);
 			this._nhan_vien = default(EntityRef<nhan_vien>);
 			OnCreated();
 		}
@@ -6471,7 +6416,7 @@ namespace DLL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_quyen", DbType="Char(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_quyen", DbType="VarChar(50)")]
 		public string quyen
 		{
 			get
@@ -6482,49 +6427,11 @@ namespace DLL
 			{
 				if ((this._quyen != value))
 				{
-					if (this._cap_bac_nhan_vien.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnquyenChanging(value);
 					this.SendPropertyChanging();
 					this._quyen = value;
 					this.SendPropertyChanged("quyen");
 					this.OnquyenChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="cap_bac_nhan_vien_tai_khoan", Storage="_cap_bac_nhan_vien", ThisKey="quyen", OtherKey="ma_cap_bac", IsForeignKey=true)]
-		public cap_bac_nhan_vien cap_bac_nhan_vien
-		{
-			get
-			{
-				return this._cap_bac_nhan_vien.Entity;
-			}
-			set
-			{
-				cap_bac_nhan_vien previousValue = this._cap_bac_nhan_vien.Entity;
-				if (((previousValue != value) 
-							|| (this._cap_bac_nhan_vien.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._cap_bac_nhan_vien.Entity = null;
-						previousValue.tai_khoans.Remove(this);
-					}
-					this._cap_bac_nhan_vien.Entity = value;
-					if ((value != null))
-					{
-						value.tai_khoans.Add(this);
-						this._quyen = value.ma_cap_bac;
-					}
-					else
-					{
-						this._quyen = default(string);
-					}
-					this.SendPropertyChanged("cap_bac_nhan_vien");
 				}
 			}
 		}
