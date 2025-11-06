@@ -130,13 +130,11 @@ namespace BUS
             {
                 return null;
             }
-
             DataTable dt = new DataTable();
             dt.Columns.Add("MaDiemDanh", typeof(string));
             dt.Columns.Add("MaNV", typeof(string));
             dt.Columns.Add("ThoiGianVao", typeof(DateTime));
             dt.Columns.Add("ThoiGianRa", typeof(DateTime));
-
             foreach (var dd in diemdanhs)
             {
                 dt.Rows.Add(dd.ma_diem_danh, dd.ma_nhan_vien, dd.thoi_gian_vao, dd.thoi_gian_ra);
