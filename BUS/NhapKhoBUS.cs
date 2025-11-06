@@ -45,36 +45,38 @@ namespace BUS
             }
             return list;
         }
-        public int addKhoTong(KhoTong kt)
+        public int addKhoTong(NhapKho nk)
         {
-            DLL.kho_tong khotong = new DLL.kho_tong()
+            DLL.phieu_nhap_kho nhapkho = new DLL.phieu_nhap_kho()
             {
-                ma_kho = createMaKhoTong(),
-                ten_kho = kt.tenkho,
-                dia_chi = kt.diachi,
-                nhan_vien_quan_ly = kt.quanly,
-                suc_chua = kt.succhua,
+                ma_phieu_nhap = createMaKhoTong(),
+                ma_kho = nk.makho,
+                ma_san_pham = nk.masanpham,
+                ma_nhan_vien_kiem_tra = nk.manhanviennhapkho,
+                so_luong = nk.soluong,
+                don_gia = nk.dongia
             };
             try
             {
-                return khotongdll.addKhoTong(khotong);
+                return nhapkhodll.addPhieuNhap(nhapkho);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
-        public int updateKhoTong(KhoTong kt)
+        public int updateNhapKho(NhapKho nk)
         {
-            DLL.kho_tong khotong = new DLL.kho_tong()
+            DLL.phieu_nhap_kho nhapkho = new DLL.phieu_nhap_kho()
             {
-                ma_kho = kt.makho,
-                ten_kho = kt.tenkho,
-                dia_chi = kt.diachi,
-                nhan_vien_quan_ly = kt.quanly,
-                suc_chua = kt.succhua
+                ma_phieu_nhap = nk.maphieu,
+                ma_kho = nk.makho,
+                ma_san_pham = nk.masanpham,
+                ma_nhan_vien_kiem_tra = nk.manhanviennhapkho,
+                so_luong = nk.soluong,
+                don_gia = nk.dongia
             };
-            return khotongdll.updateKhoTong(khotong);
+            return nhapkhodll.updateKhoTong(nhapkho);
         }
         public string createMaKhoTong()
         {

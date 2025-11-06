@@ -20,11 +20,11 @@ namespace DLL
         {
             return db.phieu_nhap_khos.ToList();
         }
-        public int addKhoTong(kho_tong kt)
+        public int addPhieuNhap(phieu_nhap_kho nk)
         {
             try
             {
-                db.kho_tongs.InsertOnSubmit(kt);
+                db.phieu_nhap_khos.InsertOnSubmit(nk);
                 db.SubmitChanges();
             }
             catch (Exception ex)
@@ -33,11 +33,11 @@ namespace DLL
             }
             return 1;
         }
-        public int updateKhoTong(kho_tong kt)
+        public int updateKhoTong(phieu_nhap_kho kt)
         {
             try
             {
-                var khotong = db.kho_tongs.SingleOrDefault(n => n.ma_kho == kt.ma_kho);
+                var khotong = db.phieu_nhap_khos.SingleOrDefault(n => n.ma_kho == kt.ma_kho);
                 if (khotong != null)
                 {
                     khotong.ma_kho = kt.ma_kho;

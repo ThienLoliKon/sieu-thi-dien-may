@@ -162,7 +162,7 @@ namespace he_thong_dien_may
 
         private void cyberButton3_Click(object sender, EventArgs e)
         {
-            DGVKhachHang.DataSource = khbus.searchKhachHang(txtMaKH.TextButton, txtTenKH.TextButton, txtSDT.TextButton);
+            DGVKhachHang.DataSource = khbus.searchKhachHang(txtMaKH.TextButton, txtMaKH.TextButton, txtSDT.TextButton);
         }
 
         private void DGVKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
