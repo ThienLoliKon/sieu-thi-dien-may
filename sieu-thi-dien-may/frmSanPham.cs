@@ -19,10 +19,12 @@ namespace he_thong_dien_may
 			InitializeComponent();
 		}
 		SanPhamBUS bus = new SanPhamBUS();
+		BindingSource bs = new BindingSource(); // <-- THÊM DÒNG NÀY
 
 		public void loadData()
 		{
-			dgvSanPham.DataSource = bus.GetAllSanPhamAsTable();
+			bs.DataSource = bus.GetAllSanPhamAsTable();
+			dgvSanPham.DataSource = bs;
 		}
 
 		public void clearData()
@@ -32,7 +34,7 @@ namespace he_thong_dien_may
 			cboMaNhaSX.Text = "";
 			cboMaNhaCC.Text = "";
 			txtKhoiLUong.Text = "";
-			a.Text = "";
+			txtGiaTien.Text = "";
 			dtpNgaySanXuat.Value = DateTime.Now;
 		}
 
@@ -43,7 +45,7 @@ namespace he_thong_dien_may
 			cboMaNhaSX.DataSource = busNhaSX.GetAllNhaCungCapAsTable();
 			cboMaNhaSX.DisplayMember = "ten_nha_san_xuat";
 			cboMaNhaSX.ValueMember = "ma_nha_san_xuat";
-			cboMaNhaSX.SelectedIndex = -1;
+			cboMaNhaSX.SelectedIndex = 0;
 		}
 
 		public void loadNhaCC()
@@ -53,7 +55,7 @@ namespace he_thong_dien_may
 			cboMaNhaCC.DataSource = busNhaCC.GetAllNhaCungCapAsTable();
 			cboMaNhaCC.DisplayMember = "ten_nha_cung_cap";
 			cboMaNhaCC.ValueMember = "ma_nha_cung_cap";
-			cboMaNhaCC.SelectedIndex = -1;
+			cboMaNhaCC.SelectedIndex = 0;
 		}
 
 
@@ -117,7 +119,7 @@ namespace he_thong_dien_may
 		private void btnThem_Click(object sender, EventArgs e)
 		{
 			SanPhamBUS bus = new SanPhamBUS();
-			if (txtGiaTien.Text.Length == 0 && txtTenSanPham.Text.Length == 0 && txtKhoiLUong.Text.Length == 0)
+			if (CheckTestCase.checkKhoangTrang(txtGiaTien.Text, txtTenSanPham.Text,txtKhoiLUong.Text) == false)
 			{
 				MessageBox.Show("Vui lòng nhập dữ liệu vào các ô trống");
 			}
@@ -191,6 +193,29 @@ namespace he_thong_dien_may
 			else if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
 			{
 				e.Handled = true;
+			}
+		}
+
+		private void txtTimKiem_TextChanged(object sender, EventArgs e)
+		{
+			string keyword = txtTimKiem.Text;
+
+			if (string.IsNullOrEmpty(keyword))
+			{
+				// Nếu ô tìm kiếm trống, xóa bộ lọc và hiển thị tất cả
+				bs.Filter = null;
+			}
+			else
+			{
+				// 2. "Làm sạch" từ khóa để tránh lỗi
+				string safeKeyword = keyword.Replace("'", "''");
+
+				// 3. Áp dụng bộ lọc cho BindingSource
+				// DataGridView sẽ tự động cập nhật
+				bs.Filter = string.Format(
+					" ten_nha_cung_cap LIKE '%{0}%' OR dia_chi_nha_cung_cap LIKE '%{0}%' ",
+					safeKeyword
+				);
 			}
 		}
 	}

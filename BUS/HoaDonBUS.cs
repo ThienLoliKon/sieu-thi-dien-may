@@ -53,7 +53,7 @@ namespace BUS
 			}
 			DataTable dt = new DataTable();
 			dt.Columns.Add("ma_hoa_don", typeof(string));
-			dt.Columns.Add("ma_nhan_vien_lap", typeof(float));
+			dt.Columns.Add("ma_nhan_vien_lap", typeof(string));
 			dt.Columns.Add("ma_khach_hang", typeof(string));
 			dt.Columns.Add("ngay_lap", typeof(DateTime));
 			foreach (var indexData in listData)
@@ -73,7 +73,7 @@ namespace BUS
 			}
 			DataTable dt = new DataTable();
 			dt.Columns.Add("ma_hoa_don", typeof(string));
-			dt.Columns.Add("ma_nhan_vien_lap", typeof(float));
+			dt.Columns.Add("ma_nhan_vien_lap", typeof(string));
 			dt.Columns.Add("ma_khach_hang", typeof(string));
 			dt.Columns.Add("ngay_lap", typeof(DateTime));
 			foreach (var indexData in listData)

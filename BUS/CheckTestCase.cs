@@ -40,6 +40,7 @@ namespace BUS
             }
             return true;
         }
+
         public static bool checkLenghtChuoi(string str, int maxleng, int minleng = 0)
         {
             if (str.Length >= minleng && str.Length <= maxleng)
@@ -78,6 +79,6 @@ namespace BUS
             }
             return true;
         }
-        //public 
+        
     }
 }

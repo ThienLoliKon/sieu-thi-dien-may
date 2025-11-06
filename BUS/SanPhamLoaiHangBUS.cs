@@ -78,7 +78,7 @@ namespace BUS
 
 			return dt;
 		}
-		public DataTable GetAllLoaiHang()
+		public DataTable GetAllSanPhamLoaiHang()
 		{
 			List<san_pham_loai_hang> listData = dal.GetAllSanPhamLoaiHang(); // Kiểm tra danh sách từ DAL
 			if (listData == null || listData.Count == 0)

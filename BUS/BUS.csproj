@@ -44,6 +44,7 @@
     <Compile Include="BaoHanhBUS.cs" />
     <Compile Include="CheckTestCase.cs" />
     <Compile Include="ChiTietHoaDonBUS.cs" />
+    <Compile Include="DiemDanhBUS.cs" />
     <Compile Include="HoaDonBUS.cs" />
     <Compile Include="KhachHangBUS.cs" />
     <Compile Include="KhoTongBUS.cs" />
@@ -58,7 +59,6 @@
     <Compile Include="SanPhamBUS.cs" />
     <Compile Include="CapBacNhanVienBUS.cs" />
     <Compile Include="ChiNhanhBUS.cs" />
-    <Compile Include="DiemDanhBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />
     <Compile Include="TaiKhoanBUS.cs" />
   </ItemGroup>

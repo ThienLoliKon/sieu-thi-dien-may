@@ -19,9 +19,11 @@ namespace he_thong_dien_may
 		}
 
 		NhaCCBUS bus = new NhaCCBUS();
+		BindingSource bsNhaCungCap = new BindingSource(); // <-- THÊM DÒNG NÀY
 		public void loadData()
 		{
-			dgvNhaCungCap.DataSource = bus.GetAllNhaCungCapAsTable();
+			bsNhaCungCap.DataSource = bus.GetAllNhaCungCapAsTable();
+			dgvNhaCungCap.DataSource = bsNhaCungCap; // <-- SỬA DÒNG NÀY
 		}
 		private void frmNhaCungCap_Load(object sender, EventArgs e)
 		{
@@ -57,6 +59,11 @@ namespace he_thong_dien_may
 
 		private void btnThoat_Click(object sender, EventArgs e)
 		{
+			DialogResult rs = MessageBox.Show("Are you sure to exit?", "Confirm?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (rs == DialogResult.No)
+			{
+				return;
+			}
 			this.Close();
 		}
 
@@ -69,6 +76,11 @@ namespace he_thong_dien_may
 		private void btnThem_Click(object sender, EventArgs e)
 		{
 			NhaCCBUS bus = new NhaCCBUS();
+			if(CheckTestCase.checkKhoangTrang( txtTenNCC.Text, txtDiaChiNCC.Text) == false)
+			{
+				MessageBox.Show("Vui lòng nhập đầy đủ thông tin vào các ô trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
 			bus.AddNhaCungCap(txtTenNCC.Text, txtDiaChiNCC.Text);
 			loadData();
 
@@ -91,6 +103,27 @@ namespace he_thong_dien_may
 			}
 		}
 
-		
+		private void txtTimKiem_TextChanged(object sender, EventArgs e)
+		{
+			string keyword = txtTimKiem.Text;
+
+			if (string.IsNullOrEmpty(keyword))
+			{
+				// Nếu ô tìm kiếm trống, xóa bộ lọc và hiển thị tất cả
+				bsNhaCungCap.Filter = null;
+			}
+			else
+			{
+				// 2. "Làm sạch" từ khóa để tránh lỗi
+				string safeKeyword = keyword.Replace("'", "''");
+
+				// 3. Áp dụng bộ lọc cho BindingSource
+				// DataGridView sẽ tự động cập nhật
+				bsNhaCungCap.Filter = string.Format(
+					"ten_nha_cung_cap LIKE '%{0}%' OR dia_chi_nha_cung_cap LIKE '%{0}%'",
+					safeKeyword
+				);
+			}
+		}
 	}
 }

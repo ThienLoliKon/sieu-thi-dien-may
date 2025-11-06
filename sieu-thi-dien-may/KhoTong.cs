@@ -31,7 +31,7 @@ namespace he_thong_dien_may
 
         private void cyberButton1_Click(object sender, EventArgs e)
         {
-            bool checkvalid = CheckTestCase.checkKhoangTrang()
+            bool checkvalid = CheckTestCase.checkKhoangTrang();
         }
 
         private void cyberButton4_Click(object sender, EventArgs e)
