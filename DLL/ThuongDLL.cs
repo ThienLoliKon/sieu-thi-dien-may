@@ -22,8 +22,10 @@ namespace DLL
 
         public List<thuong> GetAllThuong()
         {
-            // Thay thế db.nhan_viens bằng db.thuongs
-            return db.thuongs.ToList();
+            using (DBSTDMDataContext freshDb = new DBSTDMDataContext())
+            {
+                return freshDb.thuongs.ToList();
+            }
         }
 
         public void AddThuong(thuong T)

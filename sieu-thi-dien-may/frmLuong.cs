@@ -127,11 +127,6 @@ namespace he_thong_dien_may
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtMaPhieuLuong.ReadOnly == true)
-            {
-                MessageBox.Show("Vui lòng làm sạch các ô nhập liệu (hoặc nhấn Thêm) để chuẩn bị bản ghi mới.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
             double luongCB, thuong, phat;
             if (!ValidateInput(out luongCB, out thuong, out phat)) return;
@@ -190,18 +185,18 @@ namespace he_thong_dien_may
                 if (e.RowIndex < 0) return;
                 int line = e.RowIndex;
 
-                txtMaPhieuLuong.Text = dgvLuong.Rows[line].Cells["0"].Value.ToString();
-                cbbMaNV.SelectedValue = dgvLuong.Rows[line].Cells["1"].Value;
-                txtLuongCoBan.Text = dgvLuong.Rows[line].Cells["2"].Value.ToString();
-                txtThuong.Text = dgvLuong.Rows[line].Cells["3"].Value.ToString();
-                txtPhat.Text = dgvLuong.Rows[line].Cells["4"].Value.ToString();
+                txtMaPhieuLuong.Text = dgvLuong.Rows[line].Cells[0].Value.ToString();
+                cbbMaNV.SelectedValue = dgvLuong.Rows[line].Cells[1].Value;
+                txtLuongCoBan.Text = dgvLuong.Rows[line].Cells[2].Value.ToString();
+                txtThuong.Text = dgvLuong.Rows[line].Cells[3].Value.ToString();
+                txtPhat.Text = dgvLuong.Rows[line].Cells[4].Value.ToString();
 
-                if (dgvLuong.Rows[line].Cells["5"].Value != DBNull.Value)
+                if (dgvLuong.Rows[line].Cells[5].Value != DBNull.Value)
                 {
-                    dtpThangLuong.Value = Convert.ToDateTime(dgvLuong.Rows[line].Cells["5"].Value);
+                    dtpThangLuong.Value = Convert.ToDateTime(dgvLuong.Rows[line].Cells[5].Value);
                 }
 
-                txtTongLuongNhan.Text = dgvLuong.Rows[line].Cells["6"].Value.ToString();
+                txtTongLuongNhan.Text = dgvLuong.Rows[line].Cells[6].Value.ToString();
 
                 txtMaPhieuLuong.ReadOnly = true;
             }

@@ -106,5 +106,30 @@ namespace BUS
             }
             return dt;
         }
+        // Trong ThuongBUS.cs
+        public DataTable TimThuongTheoMaNV(string maNV)
+        {
+            // Giả định DLL có phương thức SearchThuong(keyword) tìm theo MaNV
+            List<thuong> thuongs = dal.SearchThuong(maNV);
+
+            if (thuongs == null || thuongs.Count == 0) return null;
+
+            DataTable dt = new DataTable();
+            // ... (Định nghĩa cột giống GetAllThuongAsTable)
+            dt.Columns.Add("MaThuong", typeof(string));
+            dt.Columns.Add("MaNV", typeof(string));
+            dt.Columns.Add("LoaiThưởng", typeof(string));
+            dt.Columns.Add("ThoiGianThuong", typeof(DateTime));
+            dt.Columns.Add("TrangThai", typeof(string));
+            dt.Columns.Add("MucThuong", typeof(double));
+
+            foreach (var t in thuongs)
+            {
+                // ... (Logic lấy Mức thưởng giống GetAllThuongAsTable)
+                double mucThuong = GetMucThuongByLoaiThuong(t.ma_loai_thuong);
+                dt.Rows.Add(t.ma_thuong, t.ma_nhan_vien, t.ma_loai_thuong, t.thoi_gian_thuong, t.trang_thai, mucThuong);
+            }
+            return dt;
+        }
     }
 }
