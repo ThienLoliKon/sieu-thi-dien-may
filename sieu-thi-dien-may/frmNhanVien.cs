@@ -274,6 +274,5 @@ namespace he_thong_dien_may
             LoadComboBoxData();
             LoadDL();
         }
-        // ... (Các hàm khác giữ nguyên)
     }
 }

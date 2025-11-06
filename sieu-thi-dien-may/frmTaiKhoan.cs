@@ -77,11 +77,6 @@ namespace he_thong_dien_may
             }
         }
 
-        private void foreverButton1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void frmTaiKhoan_Load(object sender, EventArgs e)
         {
             LoadComboBoxData();

@@ -34,7 +34,7 @@ namespace BUS
 			float khoiLuongFloat = float.Parse(khoiLuong);
 			addVariable.khoi_luong = khoiLuongFloat;
 			decimal giaTienFloat = decimal.Parse(giaTien);
-			addVariable.gia_tien = giaTienFloat;
+			//addVariable.gia_tien = giaTienFloat;
 			addVariable.ngay_san_xuat = ngaySX;
 
 			dal.addSanPham(addVariable);
@@ -62,12 +62,12 @@ namespace BUS
 			else
 				updateItem.khoi_luong = null; // hoặc xử lý lỗi nhập liệu
 
-			if (decimal.TryParse(giaTien, out decimal giaTienValue))
-				updateItem.gia_tien = giaTienValue;
-			else
-				updateItem.gia_tien = null; // hoặc xử lý lỗi nhập liệu
+			//if (decimal.TryParse(giaTien, out decimal giaTienValue))
+				//updateItem.gia_tien = giaTienValue;
+			//else
+			//	updateItem.gia_tien = null; // hoặc xử lý lỗi nhập liệu
 
-			updateItem.ngay_san_xuat = ngaySX;
+			//updateItem.ngay_san_xuat = ngaySX;
 
 			dal.updateSanPham(updateItem);
 

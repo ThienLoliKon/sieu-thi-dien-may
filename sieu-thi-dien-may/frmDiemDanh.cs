@@ -273,5 +273,10 @@ namespace he_thong_dien_may
             // Load Dữ liệu DataGridView sau
             LoadDL();
         }
+
+        private void foreverForm1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dien_may" Class="DBSTDMDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-T2PFFCGC\SQLEXPRESS;Initial Catalog=dien_may;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="DLL.Properties.Settings" SettingsPropertyName="dien_mayConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=teedeedayne\SQLEXPRESS;Initial Catalog=dien_may;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="DLL.Properties.Settings" SettingsPropertyName="dien_mayConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.bao_hanh" Member="bao_hanhs">
     <Type Name="bao_hanh">
       <Column Name="ma_bao_hanh" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -29,7 +29,6 @@
       <Column Name="ten_cap_bac" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="mo_ta_cap_bac" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Association Name="cap_bac_nhan_vien_nhan_vien" Member="nhan_viens" ThisKey="ma_cap_bac" OtherKey="ma_cap_bac" Type="nhan_vien" />
-      <Association Name="cap_bac_nhan_vien_tai_khoan" Member="tai_khoans" ThisKey="ma_cap_bac" OtherKey="quyen" Type="tai_khoan" />
     </Type>
   </Table>
   <Table Name="dbo.chi_nhanh" Member="chi_nhanhs">
@@ -50,7 +49,6 @@
       <Column Name="ma_san_pham" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ma_khuyen_mai" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="so_luong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="don_gia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="ngay_gio_in" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="hoa_don_chi_tiet_hoa_don" Member="hoa_don" ThisKey="ma_hoa_don" OtherKey="ma_hoa_don" Type="hoa_don" IsForeignKey="true" />
       <Association Name="khuyen_mai_chi_tiet_hoa_don" Member="khuyen_mai" ThisKey="ma_khuyen_mai" OtherKey="ma_khuyen_mai" Type="khuyen_mai" IsForeignKey="true" />
@@ -127,7 +125,7 @@
     <Type Name="loai_hang">
       <Column Name="ma_loai_hang" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ten_loai_hang" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="mo_ta" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="mo_ta" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Association Name="loai_hang_khuyen_mai" Member="khuyen_mais" ThisKey="ma_loai_hang" OtherKey="ma_loai_hang" Type="khuyen_mai" />
       <Association Name="loai_hang_san_pham_loai_hang" Member="san_pham_loai_hangs" ThisKey="ma_loai_hang" OtherKey="ma_loai_hang" Type="san_pham_loai_hang" />
     </Type>
@@ -218,7 +216,7 @@
       <Column Name="ma_san_pham" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="ma_nhan_vien_kiem_tra" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="so_luong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="don_gia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="don_gia" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="kho_tong_phieu_nhap_kho" Member="kho_tong" ThisKey="ma_kho" OtherKey="ma_kho" Type="kho_tong" IsForeignKey="true" />
       <Association Name="nhan_vien_phieu_nhap_kho" Member="nhan_vien" ThisKey="ma_nhan_vien_kiem_tra" OtherKey="ma_nhan_vien" Type="nhan_vien" IsForeignKey="true" />
       <Association Name="san_pham_phieu_nhap_kho" Member="san_pham" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="san_pham" IsForeignKey="true" />
@@ -245,7 +243,7 @@
       <Column Name="ma_nha_san_xuat" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="ma_nha_cung_cap" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="khoi_luong" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="gia_tien" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="gia_tien" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="ngay_san_xuat" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Association Name="san_pham_bao_hanh" Member="bao_hanhs" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="bao_hanh" />
       <Association Name="san_pham_chi_tiet_hoa_don" Member="chi_tiet_hoa_dons" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="chi_tiet_hoa_don" />
@@ -288,8 +286,7 @@
     <Type Name="tai_khoan">
       <Column Name="ma_nhan_vien" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="mat_khau" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Column Name="quyen" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Association Name="cap_bac_nhan_vien_tai_khoan" Member="cap_bac_nhan_vien" ThisKey="quyen" OtherKey="ma_cap_bac" Type="cap_bac_nhan_vien" IsForeignKey="true" />
+      <Column Name="quyen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="nhan_vien_tai_khoan" Member="nhan_vien" ThisKey="ma_nhan_vien" OtherKey="ma_nhan_vien" Type="nhan_vien" IsForeignKey="true" />
     </Type>
   </Table>

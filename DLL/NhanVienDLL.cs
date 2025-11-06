@@ -21,7 +21,10 @@ namespace DLL
 
         public List<nhan_vien> GetAllNhanVien()
         {
-            return db.nhan_viens.ToList();
+            using (DBSTDMDataContext freshDb = new DBSTDMDataContext())
+            {
+                return freshDb.nhan_viens.ToList();
+            }
         }
 
         public void AddNhanVien(nhan_vien NV)
