@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cyberButton3 = new ReaLTaiizor.Controls.CyberButton();
             this.cyberButton5 = new ReaLTaiizor.Controls.CyberButton();
             this.cyberButton6 = new ReaLTaiizor.Controls.CyberButton();
@@ -40,19 +40,19 @@
             this.thunderLabel4 = new ReaLTaiizor.Controls.ThunderLabel();
             this.thunderLabel5 = new ReaLTaiizor.Controls.ThunderLabel();
             this.thunderLabel6 = new ReaLTaiizor.Controls.ThunderLabel();
-            this.cyberTextBox3 = new ReaLTaiizor.Controls.CyberTextBox();
-            this.cyberTextBox4 = new ReaLTaiizor.Controls.CyberTextBox();
-            this.cyberTextBox5 = new ReaLTaiizor.Controls.CyberTextBox();
+            this.txtSoLuong = new ReaLTaiizor.Controls.CyberTextBox();
+            this.txtDonGia = new ReaLTaiizor.Controls.CyberTextBox();
+            this.txtNhanVien = new ReaLTaiizor.Controls.CyberTextBox();
             this.thunderLabel3 = new ReaLTaiizor.Controls.ThunderLabel();
             this.thunderLabel2 = new ReaLTaiizor.Controls.ThunderLabel();
             this.thunderLabel1 = new ReaLTaiizor.Controls.ThunderLabel();
-            this.cyberTextBox6 = new ReaLTaiizor.Controls.CyberTextBox();
-            this.cyberTextBox2 = new ReaLTaiizor.Controls.CyberTextBox();
-            this.cyberTextBox1 = new ReaLTaiizor.Controls.CyberTextBox();
-            this.poisonDataGridView1 = new ReaLTaiizor.Controls.PoisonDataGridView();
+            this.txtKho = new ReaLTaiizor.Controls.CyberTextBox();
+            this.txtSanPham = new ReaLTaiizor.Controls.CyberTextBox();
+            this.txtMaPhieu = new ReaLTaiizor.Controls.CyberTextBox();
+            this.dgvPhieuNhapKho = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.nightHeaderLabel1 = new ReaLTaiizor.Controls.NightHeaderLabel();
             this.RTKhachHangForm = new ReaLTaiizor.Forms.NightForm();
-            ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuNhapKho)).BeginInit();
             this.RTKhachHangForm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,6 +95,7 @@
             this.cyberButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberButton3.Timer_Effect_1 = 5;
             this.cyberButton3.Timer_RGB = 300;
+            this.cyberButton3.Click += new System.EventHandler(this.cyberButton3_Click);
             // 
             // cyberButton5
             // 
@@ -176,6 +177,7 @@
             this.cyberButton6.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberButton6.Timer_Effect_1 = 5;
             this.cyberButton6.Timer_RGB = 300;
+            this.cyberButton6.Click += new System.EventHandler(this.cyberButton6_Click);
             // 
             // cyberButton4
             // 
@@ -256,6 +258,7 @@
             this.cyberButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberButton2.Timer_Effect_1 = 5;
             this.cyberButton2.Timer_RGB = 300;
+            this.cyberButton2.Click += new System.EventHandler(this.cyberButton2_Click);
             // 
             // cyberButton1
             // 
@@ -296,6 +299,7 @@
             this.cyberButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberButton1.Timer_Effect_1 = 5;
             this.cyberButton1.Timer_RGB = 300;
+            this.cyberButton1.Click += new System.EventHandler(this.cyberButton1_Click);
             // 
             // thunderLabel4
             // 
@@ -328,97 +332,98 @@
             this.thunderLabel6.Name = "thunderLabel6";
             this.thunderLabel6.Size = new System.Drawing.Size(86, 18);
             this.thunderLabel6.TabIndex = 22;
-            this.thunderLabel6.Text = "Chi nhánh";
+            this.thunderLabel6.Text = "Nhân viên";
             // 
-            // cyberTextBox3
+            // txtSoLuong
             // 
-            this.cyberTextBox3.Alpha = 20;
-            this.cyberTextBox3.BackColor = System.Drawing.Color.Transparent;
-            this.cyberTextBox3.Background_WidthPen = 3F;
-            this.cyberTextBox3.BackgroundPen = true;
-            this.cyberTextBox3.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox3.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox3.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox3.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox3.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox3.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.cyberTextBox3.Font = new System.Drawing.Font("Arial", 10F);
-            this.cyberTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.cyberTextBox3.Lighting = false;
-            this.cyberTextBox3.LinearGradientPen = false;
-            this.cyberTextBox3.Location = new System.Drawing.Point(148, 205);
-            this.cyberTextBox3.Name = "cyberTextBox3";
-            this.cyberTextBox3.PenWidth = 15;
-            this.cyberTextBox3.RGB = false;
-            this.cyberTextBox3.Rounding = true;
-            this.cyberTextBox3.RoundingInt = 60;
-            this.cyberTextBox3.Size = new System.Drawing.Size(418, 40);
-            this.cyberTextBox3.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.cyberTextBox3.TabIndex = 21;
-            this.cyberTextBox3.Tag = "Cyber";
-            this.cyberTextBox3.TextButton = "";
-            this.cyberTextBox3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.cyberTextBox3.Timer_RGB = 300;
+            this.txtSoLuong.Alpha = 20;
+            this.txtSoLuong.BackColor = System.Drawing.Color.Transparent;
+            this.txtSoLuong.Background_WidthPen = 3F;
+            this.txtSoLuong.BackgroundPen = true;
+            this.txtSoLuong.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtSoLuong.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtSoLuong.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtSoLuong.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtSoLuong.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtSoLuong.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txtSoLuong.Font = new System.Drawing.Font("Arial", 10F);
+            this.txtSoLuong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.txtSoLuong.Lighting = false;
+            this.txtSoLuong.LinearGradientPen = false;
+            this.txtSoLuong.Location = new System.Drawing.Point(148, 205);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.PenWidth = 15;
+            this.txtSoLuong.RGB = false;
+            this.txtSoLuong.Rounding = true;
+            this.txtSoLuong.RoundingInt = 60;
+            this.txtSoLuong.Size = new System.Drawing.Size(418, 40);
+            this.txtSoLuong.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txtSoLuong.TabIndex = 21;
+            this.txtSoLuong.Tag = "Cyber";
+            this.txtSoLuong.TextButton = "";
+            this.txtSoLuong.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.txtSoLuong.Timer_RGB = 300;
             // 
-            // cyberTextBox4
+            // txtDonGia
             // 
-            this.cyberTextBox4.Alpha = 20;
-            this.cyberTextBox4.BackColor = System.Drawing.Color.Transparent;
-            this.cyberTextBox4.Background_WidthPen = 3F;
-            this.cyberTextBox4.BackgroundPen = true;
-            this.cyberTextBox4.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox4.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox4.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox4.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox4.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox4.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.cyberTextBox4.Font = new System.Drawing.Font("Arial", 10F);
-            this.cyberTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.cyberTextBox4.Lighting = false;
-            this.cyberTextBox4.LinearGradientPen = false;
-            this.cyberTextBox4.Location = new System.Drawing.Point(1170, 205);
-            this.cyberTextBox4.Name = "cyberTextBox4";
-            this.cyberTextBox4.PenWidth = 15;
-            this.cyberTextBox4.RGB = false;
-            this.cyberTextBox4.Rounding = true;
-            this.cyberTextBox4.RoundingInt = 60;
-            this.cyberTextBox4.Size = new System.Drawing.Size(382, 40);
-            this.cyberTextBox4.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.cyberTextBox4.TabIndex = 20;
-            this.cyberTextBox4.Tag = "Cyber";
-            this.cyberTextBox4.TextButton = "";
-            this.cyberTextBox4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.cyberTextBox4.Timer_RGB = 300;
+            this.txtDonGia.Alpha = 20;
+            this.txtDonGia.BackColor = System.Drawing.Color.Transparent;
+            this.txtDonGia.Background_WidthPen = 3F;
+            this.txtDonGia.BackgroundPen = true;
+            this.txtDonGia.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtDonGia.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtDonGia.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtDonGia.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtDonGia.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtDonGia.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txtDonGia.Font = new System.Drawing.Font("Arial", 10F);
+            this.txtDonGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.txtDonGia.Lighting = false;
+            this.txtDonGia.LinearGradientPen = false;
+            this.txtDonGia.Location = new System.Drawing.Point(1170, 205);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.PenWidth = 15;
+            this.txtDonGia.RGB = false;
+            this.txtDonGia.Rounding = true;
+            this.txtDonGia.RoundingInt = 60;
+            this.txtDonGia.Size = new System.Drawing.Size(382, 40);
+            this.txtDonGia.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txtDonGia.TabIndex = 20;
+            this.txtDonGia.Tag = "Cyber";
+            this.txtDonGia.TextButton = "";
+            this.txtDonGia.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.txtDonGia.Timer_RGB = 300;
             // 
-            // cyberTextBox5
+            // txtNhanVien
             // 
-            this.cyberTextBox5.Alpha = 20;
-            this.cyberTextBox5.BackColor = System.Drawing.Color.Transparent;
-            this.cyberTextBox5.Background_WidthPen = 3F;
-            this.cyberTextBox5.BackgroundPen = true;
-            this.cyberTextBox5.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox5.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox5.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox5.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox5.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox5.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.cyberTextBox5.Font = new System.Drawing.Font("Arial", 10F);
-            this.cyberTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.cyberTextBox5.Lighting = false;
-            this.cyberTextBox5.LinearGradientPen = false;
-            this.cyberTextBox5.Location = new System.Drawing.Point(664, 90);
-            this.cyberTextBox5.Name = "cyberTextBox5";
-            this.cyberTextBox5.PenWidth = 15;
-            this.cyberTextBox5.RGB = false;
-            this.cyberTextBox5.Rounding = true;
-            this.cyberTextBox5.RoundingInt = 60;
-            this.cyberTextBox5.Size = new System.Drawing.Size(418, 40);
-            this.cyberTextBox5.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.cyberTextBox5.TabIndex = 19;
-            this.cyberTextBox5.Tag = "Cyber";
-            this.cyberTextBox5.TextButton = "";
-            this.cyberTextBox5.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.cyberTextBox5.Timer_RGB = 300;
+            this.txtNhanVien.Alpha = 20;
+            this.txtNhanVien.BackColor = System.Drawing.Color.Transparent;
+            this.txtNhanVien.Background_WidthPen = 3F;
+            this.txtNhanVien.BackgroundPen = true;
+            this.txtNhanVien.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtNhanVien.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtNhanVien.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtNhanVien.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtNhanVien.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtNhanVien.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txtNhanVien.Font = new System.Drawing.Font("Arial", 10F);
+            this.txtNhanVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.txtNhanVien.Lighting = false;
+            this.txtNhanVien.LinearGradientPen = false;
+            this.txtNhanVien.Location = new System.Drawing.Point(664, 90);
+            this.txtNhanVien.Name = "txtNhanVien";
+            this.txtNhanVien.PenWidth = 15;
+            this.txtNhanVien.RGB = false;
+            this.txtNhanVien.Rounding = true;
+            this.txtNhanVien.RoundingInt = 60;
+            this.txtNhanVien.Size = new System.Drawing.Size(418, 40);
+            this.txtNhanVien.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txtNhanVien.TabIndex = 19;
+            this.txtNhanVien.Tag = "Cyber";
+            this.txtNhanVien.TextButton = "";
+            this.txtNhanVien.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.txtNhanVien.Timer_RGB = 300;
+            this.txtNhanVien.Leave += new System.EventHandler(this.txtNhanVien_Leave);
             // 
             // thunderLabel3
             // 
@@ -453,141 +458,142 @@
             this.thunderLabel1.TabIndex = 15;
             this.thunderLabel1.Text = "Mã phiếu nhập";
             // 
-            // cyberTextBox6
+            // txtKho
             // 
-            this.cyberTextBox6.Alpha = 20;
-            this.cyberTextBox6.BackColor = System.Drawing.Color.Transparent;
-            this.cyberTextBox6.Background_WidthPen = 3F;
-            this.cyberTextBox6.BackgroundPen = true;
-            this.cyberTextBox6.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox6.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox6.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox6.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox6.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox6.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.cyberTextBox6.Font = new System.Drawing.Font("Arial", 10F);
-            this.cyberTextBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.cyberTextBox6.Lighting = false;
-            this.cyberTextBox6.LinearGradientPen = false;
-            this.cyberTextBox6.Location = new System.Drawing.Point(1134, 90);
-            this.cyberTextBox6.Name = "cyberTextBox6";
-            this.cyberTextBox6.PenWidth = 15;
-            this.cyberTextBox6.RGB = false;
-            this.cyberTextBox6.Rounding = true;
-            this.cyberTextBox6.RoundingInt = 60;
-            this.cyberTextBox6.Size = new System.Drawing.Size(418, 40);
-            this.cyberTextBox6.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.cyberTextBox6.TabIndex = 14;
-            this.cyberTextBox6.Tag = "Cyber";
-            this.cyberTextBox6.TextButton = "";
-            this.cyberTextBox6.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.cyberTextBox6.Timer_RGB = 300;
+            this.txtKho.Alpha = 20;
+            this.txtKho.BackColor = System.Drawing.Color.Transparent;
+            this.txtKho.Background_WidthPen = 3F;
+            this.txtKho.BackgroundPen = true;
+            this.txtKho.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtKho.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtKho.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtKho.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtKho.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtKho.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txtKho.Font = new System.Drawing.Font("Arial", 10F);
+            this.txtKho.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.txtKho.Lighting = false;
+            this.txtKho.LinearGradientPen = false;
+            this.txtKho.Location = new System.Drawing.Point(1134, 90);
+            this.txtKho.Name = "txtKho";
+            this.txtKho.PenWidth = 15;
+            this.txtKho.RGB = false;
+            this.txtKho.Rounding = true;
+            this.txtKho.RoundingInt = 60;
+            this.txtKho.Size = new System.Drawing.Size(418, 40);
+            this.txtKho.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txtKho.TabIndex = 14;
+            this.txtKho.Tag = "Cyber";
+            this.txtKho.TextButton = "";
+            this.txtKho.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.txtKho.Timer_RGB = 300;
             // 
-            // cyberTextBox2
+            // txtSanPham
             // 
-            this.cyberTextBox2.Alpha = 20;
-            this.cyberTextBox2.BackColor = System.Drawing.Color.Transparent;
-            this.cyberTextBox2.Background_WidthPen = 3F;
-            this.cyberTextBox2.BackgroundPen = true;
-            this.cyberTextBox2.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox2.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox2.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox2.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox2.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox2.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.cyberTextBox2.Font = new System.Drawing.Font("Arial", 10F);
-            this.cyberTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.cyberTextBox2.Lighting = false;
-            this.cyberTextBox2.LinearGradientPen = false;
-            this.cyberTextBox2.Location = new System.Drawing.Point(677, 205);
-            this.cyberTextBox2.Name = "cyberTextBox2";
-            this.cyberTextBox2.PenWidth = 15;
-            this.cyberTextBox2.RGB = false;
-            this.cyberTextBox2.Rounding = true;
-            this.cyberTextBox2.RoundingInt = 60;
-            this.cyberTextBox2.Size = new System.Drawing.Size(405, 40);
-            this.cyberTextBox2.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.cyberTextBox2.TabIndex = 10;
-            this.cyberTextBox2.Tag = "Cyber";
-            this.cyberTextBox2.TextButton = "";
-            this.cyberTextBox2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.cyberTextBox2.Timer_RGB = 300;
+            this.txtSanPham.Alpha = 20;
+            this.txtSanPham.BackColor = System.Drawing.Color.Transparent;
+            this.txtSanPham.Background_WidthPen = 3F;
+            this.txtSanPham.BackgroundPen = true;
+            this.txtSanPham.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtSanPham.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtSanPham.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtSanPham.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtSanPham.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtSanPham.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txtSanPham.Font = new System.Drawing.Font("Arial", 10F);
+            this.txtSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.txtSanPham.Lighting = false;
+            this.txtSanPham.LinearGradientPen = false;
+            this.txtSanPham.Location = new System.Drawing.Point(677, 205);
+            this.txtSanPham.Name = "txtSanPham";
+            this.txtSanPham.PenWidth = 15;
+            this.txtSanPham.RGB = false;
+            this.txtSanPham.Rounding = true;
+            this.txtSanPham.RoundingInt = 60;
+            this.txtSanPham.Size = new System.Drawing.Size(405, 40);
+            this.txtSanPham.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txtSanPham.TabIndex = 10;
+            this.txtSanPham.Tag = "Cyber";
+            this.txtSanPham.TextButton = "";
+            this.txtSanPham.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.txtSanPham.Timer_RGB = 300;
             // 
-            // cyberTextBox1
+            // txtMaPhieu
             // 
-            this.cyberTextBox1.Alpha = 20;
-            this.cyberTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.cyberTextBox1.Background_WidthPen = 3F;
-            this.cyberTextBox1.BackgroundPen = true;
-            this.cyberTextBox1.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox1.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox1.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox1.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox1.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox1.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.cyberTextBox1.Font = new System.Drawing.Font("Arial", 10F);
-            this.cyberTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.cyberTextBox1.Lighting = false;
-            this.cyberTextBox1.LinearGradientPen = false;
-            this.cyberTextBox1.Location = new System.Drawing.Point(148, 90);
-            this.cyberTextBox1.Name = "cyberTextBox1";
-            this.cyberTextBox1.PenWidth = 15;
-            this.cyberTextBox1.RGB = false;
-            this.cyberTextBox1.Rounding = true;
-            this.cyberTextBox1.RoundingInt = 60;
-            this.cyberTextBox1.Size = new System.Drawing.Size(418, 40);
-            this.cyberTextBox1.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.cyberTextBox1.TabIndex = 9;
-            this.cyberTextBox1.Tag = "Cyber";
-            this.cyberTextBox1.TextButton = "";
-            this.cyberTextBox1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.cyberTextBox1.Timer_RGB = 300;
+            this.txtMaPhieu.Alpha = 20;
+            this.txtMaPhieu.BackColor = System.Drawing.Color.Transparent;
+            this.txtMaPhieu.Background_WidthPen = 3F;
+            this.txtMaPhieu.BackgroundPen = true;
+            this.txtMaPhieu.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtMaPhieu.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtMaPhieu.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtMaPhieu.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.txtMaPhieu.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.txtMaPhieu.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txtMaPhieu.Font = new System.Drawing.Font("Arial", 10F);
+            this.txtMaPhieu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.txtMaPhieu.Lighting = false;
+            this.txtMaPhieu.LinearGradientPen = false;
+            this.txtMaPhieu.Location = new System.Drawing.Point(148, 90);
+            this.txtMaPhieu.Name = "txtMaPhieu";
+            this.txtMaPhieu.PenWidth = 15;
+            this.txtMaPhieu.RGB = false;
+            this.txtMaPhieu.Rounding = true;
+            this.txtMaPhieu.RoundingInt = 60;
+            this.txtMaPhieu.Size = new System.Drawing.Size(418, 40);
+            this.txtMaPhieu.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.txtMaPhieu.TabIndex = 9;
+            this.txtMaPhieu.Tag = "Cyber";
+            this.txtMaPhieu.TextButton = "";
+            this.txtMaPhieu.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.txtMaPhieu.Timer_RGB = 300;
             // 
-            // poisonDataGridView1
+            // dgvPhieuNhapKho
             // 
-            this.poisonDataGridView1.AllowUserToResizeRows = false;
-            this.poisonDataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.poisonDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.poisonDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.poisonDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.poisonDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.poisonDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.poisonDataGridView1.DefaultCellStyle = dataGridViewCellStyle11;
-            this.poisonDataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.poisonDataGridView1.EnableHeadersVisualStyles = false;
-            this.poisonDataGridView1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.poisonDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.poisonDataGridView1.Location = new System.Drawing.Point(0, 455);
-            this.poisonDataGridView1.Name = "poisonDataGridView1";
-            this.poisonDataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.poisonDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.poisonDataGridView1.RowHeadersWidth = 51;
-            this.poisonDataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.poisonDataGridView1.RowTemplate.Height = 24;
-            this.poisonDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.poisonDataGridView1.Size = new System.Drawing.Size(1582, 398);
-            this.poisonDataGridView1.TabIndex = 2;
+            this.dgvPhieuNhapKho.AllowUserToResizeRows = false;
+            this.dgvPhieuNhapKho.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPhieuNhapKho.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvPhieuNhapKho.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPhieuNhapKho.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvPhieuNhapKho.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhieuNhapKho.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvPhieuNhapKho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPhieuNhapKho.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvPhieuNhapKho.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvPhieuNhapKho.EnableHeadersVisualStyles = false;
+            this.dgvPhieuNhapKho.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgvPhieuNhapKho.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvPhieuNhapKho.Location = new System.Drawing.Point(0, 455);
+            this.dgvPhieuNhapKho.Name = "dgvPhieuNhapKho";
+            this.dgvPhieuNhapKho.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhieuNhapKho.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvPhieuNhapKho.RowHeadersWidth = 51;
+            this.dgvPhieuNhapKho.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvPhieuNhapKho.RowTemplate.Height = 24;
+            this.dgvPhieuNhapKho.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPhieuNhapKho.Size = new System.Drawing.Size(1582, 398);
+            this.dgvPhieuNhapKho.TabIndex = 2;
             // 
             // nightHeaderLabel1
             // 
@@ -621,16 +627,16 @@
             this.RTKhachHangForm.Controls.Add(this.thunderLabel4);
             this.RTKhachHangForm.Controls.Add(this.thunderLabel5);
             this.RTKhachHangForm.Controls.Add(this.thunderLabel6);
-            this.RTKhachHangForm.Controls.Add(this.cyberTextBox3);
-            this.RTKhachHangForm.Controls.Add(this.cyberTextBox4);
-            this.RTKhachHangForm.Controls.Add(this.cyberTextBox5);
+            this.RTKhachHangForm.Controls.Add(this.txtSoLuong);
+            this.RTKhachHangForm.Controls.Add(this.txtDonGia);
+            this.RTKhachHangForm.Controls.Add(this.txtNhanVien);
             this.RTKhachHangForm.Controls.Add(this.thunderLabel3);
             this.RTKhachHangForm.Controls.Add(this.thunderLabel2);
             this.RTKhachHangForm.Controls.Add(this.thunderLabel1);
-            this.RTKhachHangForm.Controls.Add(this.cyberTextBox6);
-            this.RTKhachHangForm.Controls.Add(this.cyberTextBox2);
-            this.RTKhachHangForm.Controls.Add(this.cyberTextBox1);
-            this.RTKhachHangForm.Controls.Add(this.poisonDataGridView1);
+            this.RTKhachHangForm.Controls.Add(this.txtKho);
+            this.RTKhachHangForm.Controls.Add(this.txtSanPham);
+            this.RTKhachHangForm.Controls.Add(this.txtMaPhieu);
+            this.RTKhachHangForm.Controls.Add(this.dgvPhieuNhapKho);
             this.RTKhachHangForm.Controls.Add(this.nightHeaderLabel1);
             this.RTKhachHangForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RTKhachHangForm.DrawIcon = false;
@@ -658,7 +664,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PhieuNhapKho";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
-            ((System.ComponentModel.ISupportInitialize)(this.poisonDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuNhapKho)).EndInit();
             this.RTKhachHangForm.ResumeLayout(false);
             this.RTKhachHangForm.PerformLayout();
             this.ResumeLayout(false);
@@ -676,16 +682,16 @@
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel4;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel5;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel6;
-        private ReaLTaiizor.Controls.CyberTextBox cyberTextBox3;
-        private ReaLTaiizor.Controls.CyberTextBox cyberTextBox4;
-        private ReaLTaiizor.Controls.CyberTextBox cyberTextBox5;
+        private ReaLTaiizor.Controls.CyberTextBox txtSoLuong;
+        private ReaLTaiizor.Controls.CyberTextBox txtDonGia;
+        private ReaLTaiizor.Controls.CyberTextBox txtNhanVien;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel3;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel2;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel1;
-        private ReaLTaiizor.Controls.CyberTextBox cyberTextBox6;
-        private ReaLTaiizor.Controls.CyberTextBox cyberTextBox2;
-        private ReaLTaiizor.Controls.CyberTextBox cyberTextBox1;
-        private ReaLTaiizor.Controls.PoisonDataGridView poisonDataGridView1;
+        private ReaLTaiizor.Controls.CyberTextBox txtKho;
+        private ReaLTaiizor.Controls.CyberTextBox txtSanPham;
+        private ReaLTaiizor.Controls.CyberTextBox txtMaPhieu;
+        private ReaLTaiizor.Controls.PoisonDataGridView dgvPhieuNhapKho;
         private ReaLTaiizor.Controls.NightHeaderLabel nightHeaderLabel1;
         private ReaLTaiizor.Forms.NightForm RTKhachHangForm;
     }

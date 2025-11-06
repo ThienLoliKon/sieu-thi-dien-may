@@ -37,14 +37,14 @@ namespace DLL
         {
             try
             {
-                var khotong = db.phieu_nhap_khos.SingleOrDefault(n => n.ma_kho == kt.ma_kho);
+                var khotong = db.phieu_nhap_khos.SingleOrDefault(n => n.ma_phieu_nhap == kt.ma_phieu_nhap);
                 if (khotong != null)
                 {
                     khotong.ma_kho = kt.ma_kho;
-                    khotong.ten_kho = kt.ten_kho;
-                    khotong.dia_chi = kt.dia_chi;
-                    khotong.nhan_vien_quan_ly = kt.nhan_vien_quan_ly;
-                    khotong.suc_chua = kt.suc_chua;
+                    khotong.ma_san_pham = kt.ma_san_pham;
+                    khotong.ma_nhan_vien_kiem_tra = kt.ma_nhan_vien_kiem_tra;
+                    khotong.so_luong = kt.so_luong;
+                    khotong.don_gia = kt.don_gia;
                     db.SubmitChanges();
                     return 1;
                 }

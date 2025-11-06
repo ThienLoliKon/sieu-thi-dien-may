@@ -80,42 +80,30 @@ namespace BUS
         }
         public string createMaKhoTong()
         {
-            var khotongcuoicung = khotongdll.getAllKhoTong().LastOrDefault();
+            var khotongcuoicung = nhapkhodll.getAllPhieuNhap().LastOrDefault();
             if (khotongcuoicung != null)
             {
                 string makhotongcuoi = khotongcuoicung.ma_kho;
                 int so = int.Parse(makhotongcuoi.Substring(2)) + 1;
-                return "KT" + so.ToString();
+                return "NK" + so.ToString();
             }
             else
             {
-                return "KT10000001";
+                return "NK10000001";
             }
         }
-        public void xoaKhoTong(string makho)
+        
+        public List<NhapKho> searchNhapKho(string maphieunhap)
         {
-            khotongdll.xoaKhoTong(makho);
-        }
-        public KhoTong searchKhoTong(string ten_kho_ma_kho)
-        {
-            var khotong = getAllKhoTong().FirstOrDefault();
-            if (khotong != null)
+            List<NhapKho> list = new List<NhapKho>();
+            foreach (var item in getAllNhapKho())
             {
-                return khotong;
-            }
-            return null;
-        }
-        public List<KhoTong> searchAllKhoTong(string makho, string tenkho)
-        {
-            List<KhoTong> listkhotong = new List<KhoTong>();
-            foreach (var item in getAllKhoTong())
-            {
-                if (item.makho == makho || item.tenkho == tenkho)
+                if (item.maphieu == maphieunhap)
                 {
-                    listkhotong.Add(item);
+                    list.Add(item);
                 }
             }
-            return listkhotong;
+            return list;
         }
         //public int tinhTongTienHoaDonThanhDiem(string makh)
         //{

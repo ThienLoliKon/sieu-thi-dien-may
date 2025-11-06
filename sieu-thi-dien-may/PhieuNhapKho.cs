@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace he_thong_dien_may
 {
     public partial class PhieuNhapKho : Form
     {
+        NhapKhoBUS nhapkhobus = new NhapKhoBUS();
         public PhieuNhapKho()
         {
             InitializeComponent();
@@ -20,6 +22,41 @@ namespace he_thong_dien_may
         private void cyberButton5_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cyberButton3_Click(object sender, EventArgs e)
+        {
+            dgvPhieuNhapKho.DataSource = nhapkhobus.searchNhapKho(txtMaPhieu.TextButton);
+        }
+
+        private void cyberButton1_Click(object sender, EventArgs e)
+        {
+            nhapkhobus.addKhoTong(createPhieuNhapItem());
+        }
+        private NhapKhoBUS.NhapKho createPhieuNhapItem()
+        {
+            NhapKhoBUS.NhapKho nhapkho = new NhapKhoBUS.NhapKho();
+            nhapkho.manhanviennhapkho = txtNhanVien.TextButton;
+            nhapkho.masanpham = txtSanPham.TextButton;
+            nhapkho.makho = txtKho.TextButton;
+            nhapkho.soluong = int.Parse(txtSoLuong.Text);
+            nhapkho.dongia = decimal.Parse(txtDonGia.Text);
+            return nhapkho;
+        }
+
+        private void cyberButton2_Click(object sender, EventArgs e)
+        {
+            var nhapkho = createPhieuNhapItem();
+            nhapkhobus.updateNhapKho(nhapkho);
+        }
+
+        private void txtNhanVien_Leave(object sender, EventArgs e)
+        {
+        }
+
+        private void cyberButton6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
