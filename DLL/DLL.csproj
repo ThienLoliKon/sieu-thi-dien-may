@@ -57,6 +57,7 @@
     <Compile Include="KhuyenMaiDLL.cs" />
     <Compile Include="LoaiHangDLL.cs" />
     <Compile Include="NhaCungCapDLL.cs" />
+    <Compile Include="NhapKhoDLL.cs" />
     <Compile Include="NhaSanXuatDLL.cs" />
     <Compile Include="DiemDanhDLL.cs" />
     <Compile Include="NhanVienDLL.cs" />

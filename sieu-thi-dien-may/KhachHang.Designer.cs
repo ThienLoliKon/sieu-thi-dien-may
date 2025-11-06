@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.RTKhachHangForm = new ReaLTaiizor.Forms.NightForm();
             this.cyberButton3 = new ReaLTaiizor.Controls.CyberButton();
             this.cyberButton5 = new ReaLTaiizor.Controls.CyberButton();
@@ -38,20 +38,16 @@
             this.cyberButton4 = new ReaLTaiizor.Controls.CyberButton();
             this.cyberButton2 = new ReaLTaiizor.Controls.CyberButton();
             this.cyberButton1 = new ReaLTaiizor.Controls.CyberButton();
-            this.thunderLabel4 = new ReaLTaiizor.Controls.ThunderLabel();
-            this.thunderLabel5 = new ReaLTaiizor.Controls.ThunderLabel();
             this.thunderLabel6 = new ReaLTaiizor.Controls.ThunderLabel();
-            this.txtDiem = new ReaLTaiizor.Controls.CyberTextBox();
-            this.txtRank = new ReaLTaiizor.Controls.CyberTextBox();
             this.txtDiaChi = new ReaLTaiizor.Controls.CyberTextBox();
             this.thunderLabel3 = new ReaLTaiizor.Controls.ThunderLabel();
             this.thunderLabel2 = new ReaLTaiizor.Controls.ThunderLabel();
-            this.thunderLabel1 = new ReaLTaiizor.Controls.ThunderLabel();
             this.txtTenKH = new ReaLTaiizor.Controls.CyberTextBox();
             this.txtSDT = new ReaLTaiizor.Controls.CyberTextBox();
             this.txtMaKH = new ReaLTaiizor.Controls.CyberTextBox();
             this.DGVKhachHang = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.nightHeaderLabel1 = new ReaLTaiizor.Controls.NightHeaderLabel();
+            this.thunderLabel1 = new ReaLTaiizor.Controls.ThunderLabel();
             this.RTKhachHangForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVKhachHang)).BeginInit();
             this.SuspendLayout();
@@ -59,21 +55,17 @@
             // RTKhachHangForm
             // 
             this.RTKhachHangForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.RTKhachHangForm.Controls.Add(this.thunderLabel1);
             this.RTKhachHangForm.Controls.Add(this.cyberButton3);
             this.RTKhachHangForm.Controls.Add(this.cyberButton5);
             this.RTKhachHangForm.Controls.Add(this.cyberButton6);
             this.RTKhachHangForm.Controls.Add(this.cyberButton4);
             this.RTKhachHangForm.Controls.Add(this.cyberButton2);
             this.RTKhachHangForm.Controls.Add(this.cyberButton1);
-            this.RTKhachHangForm.Controls.Add(this.thunderLabel4);
-            this.RTKhachHangForm.Controls.Add(this.thunderLabel5);
             this.RTKhachHangForm.Controls.Add(this.thunderLabel6);
-            this.RTKhachHangForm.Controls.Add(this.txtDiem);
-            this.RTKhachHangForm.Controls.Add(this.txtRank);
             this.RTKhachHangForm.Controls.Add(this.txtDiaChi);
             this.RTKhachHangForm.Controls.Add(this.thunderLabel3);
             this.RTKhachHangForm.Controls.Add(this.thunderLabel2);
-            this.RTKhachHangForm.Controls.Add(this.thunderLabel1);
             this.RTKhachHangForm.Controls.Add(this.txtTenKH);
             this.RTKhachHangForm.Controls.Add(this.txtSDT);
             this.RTKhachHangForm.Controls.Add(this.txtMaKH);
@@ -120,7 +112,7 @@
             this.cyberButton3.Lighting = false;
             this.cyberButton3.LinearGradient_Background = false;
             this.cyberButton3.LinearGradientPen = false;
-            this.cyberButton3.Location = new System.Drawing.Point(1440, 199);
+            this.cyberButton3.Location = new System.Drawing.Point(433, 354);
             this.cyberButton3.Name = "cyberButton3";
             this.cyberButton3.PenWidth = 15;
             this.cyberButton3.Rounding = true;
@@ -161,7 +153,7 @@
             this.cyberButton5.Lighting = false;
             this.cyberButton5.LinearGradient_Background = false;
             this.cyberButton5.LinearGradientPen = false;
-            this.cyberButton5.Location = new System.Drawing.Point(1440, 322);
+            this.cyberButton5.Location = new System.Drawing.Point(1024, 354);
             this.cyberButton5.Name = "cyberButton5";
             this.cyberButton5.PenWidth = 15;
             this.cyberButton5.Rounding = true;
@@ -202,7 +194,7 @@
             this.cyberButton6.Lighting = false;
             this.cyberButton6.LinearGradient_Background = false;
             this.cyberButton6.LinearGradientPen = false;
-            this.cyberButton6.Location = new System.Drawing.Point(1268, 322);
+            this.cyberButton6.Location = new System.Drawing.Point(823, 354);
             this.cyberButton6.Name = "cyberButton6";
             this.cyberButton6.PenWidth = 15;
             this.cyberButton6.Rounding = true;
@@ -243,7 +235,7 @@
             this.cyberButton4.Lighting = false;
             this.cyberButton4.LinearGradient_Background = false;
             this.cyberButton4.LinearGradientPen = false;
-            this.cyberButton4.Location = new System.Drawing.Point(1268, 199);
+            this.cyberButton4.Location = new System.Drawing.Point(608, 354);
             this.cyberButton4.Name = "cyberButton4";
             this.cyberButton4.PenWidth = 15;
             this.cyberButton4.Rounding = true;
@@ -284,7 +276,7 @@
             this.cyberButton2.Lighting = false;
             this.cyberButton2.LinearGradient_Background = false;
             this.cyberButton2.LinearGradientPen = false;
-            this.cyberButton2.Location = new System.Drawing.Point(1440, 80);
+            this.cyberButton2.Location = new System.Drawing.Point(751, 266);
             this.cyberButton2.Name = "cyberButton2";
             this.cyberButton2.PenWidth = 15;
             this.cyberButton2.Rounding = true;
@@ -325,7 +317,7 @@
             this.cyberButton1.Lighting = false;
             this.cyberButton1.LinearGradient_Background = false;
             this.cyberButton1.LinearGradientPen = false;
-            this.cyberButton1.Location = new System.Drawing.Point(1268, 80);
+            this.cyberButton1.Location = new System.Drawing.Point(512, 266);
             this.cyberButton1.Name = "cyberButton1";
             this.cyberButton1.PenWidth = 15;
             this.cyberButton1.Rounding = true;
@@ -340,100 +332,16 @@
             this.cyberButton1.Timer_RGB = 300;
             this.cyberButton1.Click += new System.EventHandler(this.cyberButton1_Click);
             // 
-            // thunderLabel4
-            // 
-            this.thunderLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.thunderLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thunderLabel4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel4.Location = new System.Drawing.Point(632, 354);
-            this.thunderLabel4.Name = "thunderLabel4";
-            this.thunderLabel4.Size = new System.Drawing.Size(127, 18);
-            this.thunderLabel4.TabIndex = 25;
-            this.thunderLabel4.Text = "Xếp hạng";
-            // 
-            // thunderLabel5
-            // 
-            this.thunderLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.thunderLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thunderLabel5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel5.Location = new System.Drawing.Point(632, 231);
-            this.thunderLabel5.Name = "thunderLabel5";
-            this.thunderLabel5.Size = new System.Drawing.Size(127, 18);
-            this.thunderLabel5.TabIndex = 24;
-            this.thunderLabel5.Text = "Điểm";
-            // 
             // thunderLabel6
             // 
             this.thunderLabel6.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel6.Location = new System.Drawing.Point(632, 112);
+            this.thunderLabel6.Location = new System.Drawing.Point(524, 114);
             this.thunderLabel6.Name = "thunderLabel6";
-            this.thunderLabel6.Size = new System.Drawing.Size(127, 18);
+            this.thunderLabel6.Size = new System.Drawing.Size(64, 18);
             this.thunderLabel6.TabIndex = 22;
             this.thunderLabel6.Text = "Địa chỉ";
-            // 
-            // txtDiem
-            // 
-            this.txtDiem.Alpha = 20;
-            this.txtDiem.BackColor = System.Drawing.Color.Transparent;
-            this.txtDiem.Background_WidthPen = 3F;
-            this.txtDiem.BackgroundPen = true;
-            this.txtDiem.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.txtDiem.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txtDiem.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txtDiem.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txtDiem.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.txtDiem.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.txtDiem.Enabled = false;
-            this.txtDiem.Font = new System.Drawing.Font("Arial", 10F);
-            this.txtDiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.txtDiem.Lighting = false;
-            this.txtDiem.LinearGradientPen = false;
-            this.txtDiem.Location = new System.Drawing.Point(765, 209);
-            this.txtDiem.Name = "txtDiem";
-            this.txtDiem.PenWidth = 15;
-            this.txtDiem.RGB = false;
-            this.txtDiem.Rounding = true;
-            this.txtDiem.RoundingInt = 60;
-            this.txtDiem.Size = new System.Drawing.Size(418, 40);
-            this.txtDiem.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.txtDiem.TabIndex = 21;
-            this.txtDiem.Tag = "Cyber";
-            this.txtDiem.TextButton = "";
-            this.txtDiem.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.txtDiem.Timer_RGB = 300;
-            // 
-            // txtRank
-            // 
-            this.txtRank.Alpha = 20;
-            this.txtRank.BackColor = System.Drawing.Color.Transparent;
-            this.txtRank.Background_WidthPen = 3F;
-            this.txtRank.BackgroundPen = true;
-            this.txtRank.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.txtRank.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txtRank.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txtRank.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txtRank.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.txtRank.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.txtRank.Enabled = false;
-            this.txtRank.Font = new System.Drawing.Font("Arial", 10F);
-            this.txtRank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.txtRank.Lighting = false;
-            this.txtRank.LinearGradientPen = false;
-            this.txtRank.Location = new System.Drawing.Point(765, 332);
-            this.txtRank.Name = "txtRank";
-            this.txtRank.PenWidth = 15;
-            this.txtRank.RGB = false;
-            this.txtRank.Rounding = true;
-            this.txtRank.RoundingInt = 60;
-            this.txtRank.Size = new System.Drawing.Size(418, 40);
-            this.txtRank.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.txtRank.TabIndex = 20;
-            this.txtRank.Tag = "Cyber";
-            this.txtRank.TextButton = "";
-            this.txtRank.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.txtRank.Timer_RGB = 300;
             // 
             // txtDiaChi
             // 
@@ -451,7 +359,7 @@
             this.txtDiaChi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.txtDiaChi.Lighting = false;
             this.txtDiaChi.LinearGradientPen = false;
-            this.txtDiaChi.Location = new System.Drawing.Point(765, 90);
+            this.txtDiaChi.Location = new System.Drawing.Point(603, 92);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.PenWidth = 15;
             this.txtDiaChi.RGB = false;
@@ -470,33 +378,22 @@
             this.thunderLabel3.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel3.Location = new System.Drawing.Point(43, 354);
+            this.thunderLabel3.Location = new System.Drawing.Point(1027, 114);
             this.thunderLabel3.Name = "thunderLabel3";
-            this.thunderLabel3.Size = new System.Drawing.Size(127, 18);
+            this.thunderLabel3.Size = new System.Drawing.Size(58, 18);
             this.thunderLabel3.TabIndex = 18;
-            this.thunderLabel3.Text = "Số điện thoại";
+            this.thunderLabel3.Text = "SDT";
             // 
             // thunderLabel2
             // 
             this.thunderLabel2.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel2.Location = new System.Drawing.Point(43, 231);
+            this.thunderLabel2.Location = new System.Drawing.Point(12, 114);
             this.thunderLabel2.Name = "thunderLabel2";
-            this.thunderLabel2.Size = new System.Drawing.Size(127, 18);
+            this.thunderLabel2.Size = new System.Drawing.Size(82, 18);
             this.thunderLabel2.TabIndex = 17;
             this.thunderLabel2.Text = "Họ và tên";
-            // 
-            // thunderLabel1
-            // 
-            this.thunderLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.thunderLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thunderLabel1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel1.Location = new System.Drawing.Point(43, 112);
-            this.thunderLabel1.Name = "thunderLabel1";
-            this.thunderLabel1.Size = new System.Drawing.Size(127, 18);
-            this.thunderLabel1.TabIndex = 15;
-            this.thunderLabel1.Text = "Mã khách hàng";
             // 
             // txtTenKH
             // 
@@ -514,7 +411,7 @@
             this.txtTenKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.txtTenKH.Lighting = false;
             this.txtTenKH.LinearGradientPen = false;
-            this.txtTenKH.Location = new System.Drawing.Point(176, 209);
+            this.txtTenKH.Location = new System.Drawing.Point(100, 92);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.PenWidth = 15;
             this.txtTenKH.RGB = false;
@@ -544,7 +441,7 @@
             this.txtSDT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.txtSDT.Lighting = false;
             this.txtSDT.LinearGradientPen = false;
-            this.txtSDT.Location = new System.Drawing.Point(176, 332);
+            this.txtSDT.Location = new System.Drawing.Point(1138, 92);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.PenWidth = 15;
             this.txtSDT.RGB = false;
@@ -576,7 +473,7 @@
             this.txtMaKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.txtMaKH.Lighting = false;
             this.txtMaKH.LinearGradientPen = false;
-            this.txtMaKH.Location = new System.Drawing.Point(176, 90);
+            this.txtMaKH.Location = new System.Drawing.Point(100, 186);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.PenWidth = 15;
             this.txtMaKH.RGB = false;
@@ -601,37 +498,37 @@
             this.DGVKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGVKhachHang.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DGVKhachHang.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.DGVKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVKhachHang.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVKhachHang.DefaultCellStyle = dataGridViewCellStyle29;
             this.DGVKhachHang.EnableHeadersVisualStyles = false;
             this.DGVKhachHang.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.DGVKhachHang.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.DGVKhachHang.Location = new System.Drawing.Point(0, 455);
             this.DGVKhachHang.Name = "DGVKhachHang";
             this.DGVKhachHang.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVKhachHang.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVKhachHang.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
             this.DGVKhachHang.RowHeadersWidth = 51;
             this.DGVKhachHang.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DGVKhachHang.RowTemplate.Height = 24;
@@ -659,6 +556,17 @@
             this.nightHeaderLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.nightHeaderLabel1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
             this.nightHeaderLabel1.UseCompatibleTextRendering = true;
+            // 
+            // thunderLabel1
+            // 
+            this.thunderLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.thunderLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thunderLabel1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.thunderLabel1.Location = new System.Drawing.Point(12, 208);
+            this.thunderLabel1.Name = "thunderLabel1";
+            this.thunderLabel1.Size = new System.Drawing.Size(82, 18);
+            this.thunderLabel1.TabIndex = 33;
+            this.thunderLabel1.Text = "Tìm kiếm";
             // 
             // KhachHang
             // 
@@ -688,14 +596,9 @@
         private ReaLTaiizor.Controls.NightHeaderLabel nightHeaderLabel1;
         private ReaLTaiizor.Controls.PoisonDataGridView DGVKhachHang;
         private ReaLTaiizor.Controls.CyberTextBox txtMaKH;
-        private ReaLTaiizor.Controls.ThunderLabel thunderLabel1;
         private ReaLTaiizor.Controls.CyberTextBox txtTenKH;
         private ReaLTaiizor.Controls.CyberTextBox txtSDT;
-        private ReaLTaiizor.Controls.ThunderLabel thunderLabel4;
-        private ReaLTaiizor.Controls.ThunderLabel thunderLabel5;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel6;
-        private ReaLTaiizor.Controls.CyberTextBox txtDiem;
-        private ReaLTaiizor.Controls.CyberTextBox txtRank;
         private ReaLTaiizor.Controls.CyberTextBox txtDiaChi;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel3;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel2;
@@ -705,5 +608,6 @@
         private ReaLTaiizor.Controls.CyberButton cyberButton2;
         private ReaLTaiizor.Controls.CyberButton cyberButton1;
         private ReaLTaiizor.Controls.CyberButton cyberButton3;
+        private ReaLTaiizor.Controls.ThunderLabel thunderLabel1;
     }
 }

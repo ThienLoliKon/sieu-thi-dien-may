@@ -40,12 +40,50 @@ namespace he_thong_dien_may
             Form f = new MenuXuatKhachHang();
             f.ShowDialog();
         }
-
+        //private bool checkInput()
+        //{
+        //    if(CheckTestCase.checkKhoangTrang(txtTenKH.TextButton, txtSDT.TextButton, txtDiaChi.TextButton) == false)
+        //    {
+        //        MessageBox.Show("Vui long khong de trong cac truong bat buoc!"); return false;
+        //    }
+        //}
+        private bool checkRange()
+        {
+            if (CheckTestCase.checkLenghtChuoi(txtTenKH.TextButton, 50) == false)
+            {
+                MessageBox.Show("Input length of Customer Name is out of range!"); return false;
+            }
+            if (CheckTestCase.checkLenghtChuoi(txtDiaChi.TextButton, 100) ==  false)
+            {
+                MessageBox.Show("Input length of Address is out of range!"); return false;
+            }
+            if (CheckTestCase.checkLenghtChuoi(txtSDT.TextButton, 20, 10))
+            {
+                MessageBox.Show("Input length of Phone Number is out of range!");return false;
+            }
+            return true;
+        }
+        private bool checkKhoangTrang()
+        {
+            if(CheckTestCase.checkKhoangTrang(txtTenKH.TextButton, txtSDT.TextButton, txtDiaChi.TextButton) == false)
+            {
+                MessageBox.Show("Please fill in all required fields!"); return false;
+            }
+            return true;
+        }
         private void cyberButton1_Click(object sender, EventArgs e)
         {
-            if (CheckTestCase.checkKiTuDacBiet(txtTenKH.TextButton) == false)
+            if(checkRange() == false)
             {
-                MessageBox.Show("Ten khach hang khong duoc chua ki tu dac biet!"); return;
+                return;
+            }
+            if (CheckTestCase.checkChuoiSo(txtSDT.TextButton) == false)
+            {
+                MessageBox.Show("Phone Number must be numeric!"); return;
+            }
+            if(checkKhoangTrang() == false)
+            {
+                return;
             }
             DialogResult rs = MessageBox.Show("Are you sure to add?", "Confirm?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.No)
@@ -56,8 +94,6 @@ namespace he_thong_dien_may
             addkh.tenkhachhang = txtTenKH.TextButton;
             addkh.sdt = txtSDT.TextButton;
             addkh.diachi = txtDiaChi.TextButton;
-            addkh.xephang = txtRank.TextButton;
-            addkh.diem = 0;
             //MessageBox.Show($"{addkh.makhachhang}\n{addkh.tenkhachhang}\n{addkh.sdt}\n{addkh.diachi}\n{addkh.diem}\n{addkh.xephang}");
             if (khbus.addKhachHang(addkh) == 1)
             {
@@ -86,19 +122,29 @@ namespace he_thong_dien_may
             txtTenKH.TextButton = "";
             txtSDT.TextButton = "";
             txtDiaChi.TextButton = "";
-            txtRank.TextButton = "";
-            txtDiem.TextButton = "";
         }
 
         private void cyberButton2_Click(object sender, EventArgs e)
         {
+            if (checkRange() ==  false)
+            {
+                return;
+            }
+            if(CheckTestCase.checkChuoiSo(txtSDT.TextButton) == false)
+            {
+                MessageBox.Show("Phone Number must be numeric!"); return;
+            }
+            if(checkKhoangTrang() == false)
+            {
+                return;
+            }
             DialogResult submit = MessageBox.Show("Are you sure to update?", "Confirm?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (submit == DialogResult.No)
             {
                 return;
             }
             KhachHangBUS.KhachHang updkh = new KhachHangBUS.KhachHang();
-            updkh.makhachhang = txtMaKH.TextButton;
+            updkh.makhachhang = DGVKhachHang.SelectedRows[0].Cells[0].Value.ToString();
             updkh.tenkhachhang = txtTenKH.TextButton;
             updkh.sdt = txtSDT.TextButton;
             updkh.diachi = txtDiaChi.TextButton;
@@ -128,7 +174,6 @@ namespace he_thong_dien_may
                 txtTenKH.TextButton = row.Cells[1].Value.ToString();
                 txtSDT.TextButton = row.Cells[2].Value.ToString();
                 txtDiaChi.TextButton = row.Cells[3].Value.ToString();
-                txtRank.TextButton = row.Cells[4].Value.ToString();
             }
         }
 
