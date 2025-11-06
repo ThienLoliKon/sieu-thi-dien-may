@@ -28,11 +28,19 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.foreverForm1 = new ReaLTaiizor.Forms.ForeverForm();
+			this.cboMaNhaCC = new ReaLTaiizor.Controls.HopeComboBox();
+			this.cboMaNhaSX = new ReaLTaiizor.Controls.HopeComboBox();
+			this.btnClear = new ReaLTaiizor.Controls.CyberButton();
+			this.foreverLabel7 = new ReaLTaiizor.Controls.ForeverLabel();
+			this.txtThoiGianBH = new ReaLTaiizor.Controls.ForeverTextBox();
+			this.foreverLabel5 = new ReaLTaiizor.Controls.ForeverLabel();
 			this.dtpNgaySanXuat = new ReaLTaiizor.Controls.PoisonDateTime();
+			this.txtTimKiem = new ReaLTaiizor.Controls.DungeonTextBox();
 			this.dgvSanPham = new ReaLTaiizor.Controls.PoisonDataGridView();
 			this.btnThoat = new ReaLTaiizor.Controls.CyberButton();
 			this.btnSua = new ReaLTaiizor.Controls.CyberButton();
@@ -48,15 +56,10 @@
 			this.txtTenSanPham = new ReaLTaiizor.Controls.ForeverTextBox();
 			this.foreverLabel1 = new ReaLTaiizor.Controls.ForeverLabel();
 			this.txtMaSanPham = new ReaLTaiizor.Controls.ForeverTextBox();
-			this.foreverLabel5 = new ReaLTaiizor.Controls.ForeverLabel();
-			this.txtTimKiem = new ReaLTaiizor.Controls.DungeonTextBox();
-			this.foreverLabel7 = new ReaLTaiizor.Controls.ForeverLabel();
-			this.txtThoiGianBH = new ReaLTaiizor.Controls.ForeverTextBox();
-			this.btnClear = new ReaLTaiizor.Controls.CyberButton();
-			this.cboMaNhaSX = new ReaLTaiizor.Controls.HopeComboBox();
-			this.cboMaNhaCC = new ReaLTaiizor.Controls.HopeComboBox();
+			this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
 			this.foreverForm1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// foreverForm1
@@ -105,6 +108,121 @@
 			this.foreverForm1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
 			this.foreverForm1.TextLight = System.Drawing.Color.SeaGreen;
 			// 
+			// cboMaNhaCC
+			// 
+			this.cboMaNhaCC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.cboMaNhaCC.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.cboMaNhaCC.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cboMaNhaCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cboMaNhaCC.Font = new System.Drawing.Font("Segoe UI", 10F);
+			this.cboMaNhaCC.FormattingEnabled = true;
+			this.cboMaNhaCC.ItemHeight = 30;
+			this.cboMaNhaCC.Location = new System.Drawing.Point(1237, 319);
+			this.cboMaNhaCC.Name = "cboMaNhaCC";
+			this.cboMaNhaCC.Size = new System.Drawing.Size(336, 36);
+			this.cboMaNhaCC.TabIndex = 61;
+			// 
+			// cboMaNhaSX
+			// 
+			this.cboMaNhaSX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.cboMaNhaSX.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.cboMaNhaSX.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cboMaNhaSX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cboMaNhaSX.Font = new System.Drawing.Font("Segoe UI", 10F);
+			this.cboMaNhaSX.FormattingEnabled = true;
+			this.cboMaNhaSX.ItemHeight = 30;
+			this.cboMaNhaSX.Location = new System.Drawing.Point(1237, 250);
+			this.cboMaNhaSX.Name = "cboMaNhaSX";
+			this.cboMaNhaSX.Size = new System.Drawing.Size(336, 36);
+			this.cboMaNhaSX.TabIndex = 60;
+			// 
+			// btnClear
+			// 
+			this.btnClear.Alpha = 20;
+			this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnClear.BackColor = System.Drawing.Color.Transparent;
+			this.btnClear.Background = true;
+			this.btnClear.Background_WidthPen = 4F;
+			this.btnClear.BackgroundPen = true;
+			this.btnClear.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+			this.btnClear.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+			this.btnClear.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+			this.btnClear.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+			this.btnClear.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+			this.btnClear.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+			this.btnClear.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+			this.btnClear.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+			this.btnClear.Effect_1 = true;
+			this.btnClear.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+			this.btnClear.Effect_1_Transparency = 25;
+			this.btnClear.Effect_2 = true;
+			this.btnClear.Effect_2_ColorBackground = System.Drawing.Color.White;
+			this.btnClear.Effect_2_Transparency = 20;
+			this.btnClear.Font = new System.Drawing.Font("Arial", 11F);
+			this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+			this.btnClear.Lighting = false;
+			this.btnClear.LinearGradient_Background = false;
+			this.btnClear.LinearGradientPen = false;
+			this.btnClear.Location = new System.Drawing.Point(1152, 729);
+			this.btnClear.Name = "btnClear";
+			this.btnClear.PenWidth = 15;
+			this.btnClear.Rounding = true;
+			this.btnClear.RoundingInt = 70;
+			this.btnClear.Size = new System.Drawing.Size(130, 50);
+			this.btnClear.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+			this.btnClear.TabIndex = 58;
+			this.btnClear.Tag = "Cyber";
+			this.btnClear.TextButton = "Làm mới";
+			this.btnClear.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+			this.btnClear.Timer_Effect_1 = 5;
+			this.btnClear.Timer_RGB = 300;
+			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+			// 
+			// foreverLabel7
+			// 
+			this.foreverLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.foreverLabel7.AutoSize = true;
+			this.foreverLabel7.BackColor = System.Drawing.Color.Transparent;
+			this.foreverLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.foreverLabel7.ForeColor = System.Drawing.Color.LightGray;
+			this.foreverLabel7.Location = new System.Drawing.Point(1035, 459);
+			this.foreverLabel7.Name = "foreverLabel7";
+			this.foreverLabel7.Size = new System.Drawing.Size(191, 25);
+			this.foreverLabel7.TabIndex = 57;
+			this.foreverLabel7.Text = "Thời gian bảo hành :";
+			// 
+			// txtThoiGianBH
+			// 
+			this.txtThoiGianBH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtThoiGianBH.BackColor = System.Drawing.Color.Transparent;
+			this.txtThoiGianBH.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+			this.txtThoiGianBH.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+			this.txtThoiGianBH.FocusOnHover = false;
+			this.txtThoiGianBH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+			this.txtThoiGianBH.Location = new System.Drawing.Point(1237, 450);
+			this.txtThoiGianBH.MaxLength = 32767;
+			this.txtThoiGianBH.Multiline = false;
+			this.txtThoiGianBH.Name = "txtThoiGianBH";
+			this.txtThoiGianBH.ReadOnly = false;
+			this.txtThoiGianBH.Size = new System.Drawing.Size(336, 34);
+			this.txtThoiGianBH.TabIndex = 56;
+			this.txtThoiGianBH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+			this.txtThoiGianBH.UseSystemPasswordChar = false;
+			this.txtThoiGianBH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtThoiGianBH_KeyPress);
+			// 
+			// foreverLabel5
+			// 
+			this.foreverLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.foreverLabel5.AutoSize = true;
+			this.foreverLabel5.BackColor = System.Drawing.Color.Transparent;
+			this.foreverLabel5.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.foreverLabel5.ForeColor = System.Drawing.Color.LightGray;
+			this.foreverLabel5.Location = new System.Drawing.Point(1062, 17);
+			this.foreverLabel5.Name = "foreverLabel5";
+			this.foreverLabel5.Size = new System.Drawing.Size(240, 28);
+			this.foreverLabel5.TabIndex = 40;
+			this.foreverLabel5.Text = "Nhập dữ liệu cần tìm vào :";
+			// 
 			// dtpNgaySanXuat
 			// 
 			this.dtpNgaySanXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -114,6 +232,25 @@
 			this.dtpNgaySanXuat.Name = "dtpNgaySanXuat";
 			this.dtpNgaySanXuat.Size = new System.Drawing.Size(336, 30);
 			this.dtpNgaySanXuat.TabIndex = 55;
+			// 
+			// txtTimKiem
+			// 
+			this.txtTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtTimKiem.BackColor = System.Drawing.Color.Transparent;
+			this.txtTimKiem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+			this.txtTimKiem.EdgeColor = System.Drawing.Color.White;
+			this.txtTimKiem.Font = new System.Drawing.Font("Tahoma", 11F);
+			this.txtTimKiem.ForeColor = System.Drawing.Color.DimGray;
+			this.txtTimKiem.Location = new System.Drawing.Point(1320, 12);
+			this.txtTimKiem.MaxLength = 32767;
+			this.txtTimKiem.Multiline = false;
+			this.txtTimKiem.Name = "txtTimKiem";
+			this.txtTimKiem.ReadOnly = false;
+			this.txtTimKiem.Size = new System.Drawing.Size(276, 33);
+			this.txtTimKiem.TabIndex = 39;
+			this.txtTimKiem.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+			this.txtTimKiem.UseSystemPasswordChar = false;
+			this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
 			// 
 			// dgvSanPham
 			// 
@@ -456,139 +593,9 @@
 			this.txtMaSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.txtMaSanPham.UseSystemPasswordChar = false;
 			// 
-			// foreverLabel5
+			// errorProvider1
 			// 
-			this.foreverLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.foreverLabel5.AutoSize = true;
-			this.foreverLabel5.BackColor = System.Drawing.Color.Transparent;
-			this.foreverLabel5.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.foreverLabel5.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel5.Location = new System.Drawing.Point(1062, 17);
-			this.foreverLabel5.Name = "foreverLabel5";
-			this.foreverLabel5.Size = new System.Drawing.Size(240, 28);
-			this.foreverLabel5.TabIndex = 40;
-			this.foreverLabel5.Text = "Nhập dữ liệu cần tìm vào :";
-			// 
-			// txtTimKiem
-			// 
-			this.txtTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtTimKiem.BackColor = System.Drawing.Color.Transparent;
-			this.txtTimKiem.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-			this.txtTimKiem.EdgeColor = System.Drawing.Color.White;
-			this.txtTimKiem.Font = new System.Drawing.Font("Tahoma", 11F);
-			this.txtTimKiem.ForeColor = System.Drawing.Color.DimGray;
-			this.txtTimKiem.Location = new System.Drawing.Point(1320, 12);
-			this.txtTimKiem.MaxLength = 32767;
-			this.txtTimKiem.Multiline = false;
-			this.txtTimKiem.Name = "txtTimKiem";
-			this.txtTimKiem.ReadOnly = false;
-			this.txtTimKiem.Size = new System.Drawing.Size(276, 33);
-			this.txtTimKiem.TabIndex = 39;
-			this.txtTimKiem.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-			this.txtTimKiem.UseSystemPasswordChar = false;
-			this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
-			// 
-			// foreverLabel7
-			// 
-			this.foreverLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.foreverLabel7.AutoSize = true;
-			this.foreverLabel7.BackColor = System.Drawing.Color.Transparent;
-			this.foreverLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.foreverLabel7.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel7.Location = new System.Drawing.Point(1035, 459);
-			this.foreverLabel7.Name = "foreverLabel7";
-			this.foreverLabel7.Size = new System.Drawing.Size(191, 25);
-			this.foreverLabel7.TabIndex = 57;
-			this.foreverLabel7.Text = "Thời gian bảo hành :";
-			// 
-			// txtThoiGianBH
-			// 
-			this.txtThoiGianBH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtThoiGianBH.BackColor = System.Drawing.Color.Transparent;
-			this.txtThoiGianBH.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-			this.txtThoiGianBH.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-			this.txtThoiGianBH.FocusOnHover = false;
-			this.txtThoiGianBH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.txtThoiGianBH.Location = new System.Drawing.Point(1237, 450);
-			this.txtThoiGianBH.MaxLength = 32767;
-			this.txtThoiGianBH.Multiline = false;
-			this.txtThoiGianBH.Name = "txtThoiGianBH";
-			this.txtThoiGianBH.ReadOnly = false;
-			this.txtThoiGianBH.Size = new System.Drawing.Size(336, 34);
-			this.txtThoiGianBH.TabIndex = 56;
-			this.txtThoiGianBH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-			this.txtThoiGianBH.UseSystemPasswordChar = false;
-			this.txtThoiGianBH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtThoiGianBH_KeyPress);
-			// 
-			// btnClear
-			// 
-			this.btnClear.Alpha = 20;
-			this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnClear.BackColor = System.Drawing.Color.Transparent;
-			this.btnClear.Background = true;
-			this.btnClear.Background_WidthPen = 4F;
-			this.btnClear.BackgroundPen = true;
-			this.btnClear.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-			this.btnClear.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-			this.btnClear.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-			this.btnClear.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-			this.btnClear.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-			this.btnClear.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-			this.btnClear.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-			this.btnClear.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-			this.btnClear.Effect_1 = true;
-			this.btnClear.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-			this.btnClear.Effect_1_Transparency = 25;
-			this.btnClear.Effect_2 = true;
-			this.btnClear.Effect_2_ColorBackground = System.Drawing.Color.White;
-			this.btnClear.Effect_2_Transparency = 20;
-			this.btnClear.Font = new System.Drawing.Font("Arial", 11F);
-			this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-			this.btnClear.Lighting = false;
-			this.btnClear.LinearGradient_Background = false;
-			this.btnClear.LinearGradientPen = false;
-			this.btnClear.Location = new System.Drawing.Point(1152, 729);
-			this.btnClear.Name = "btnClear";
-			this.btnClear.PenWidth = 15;
-			this.btnClear.Rounding = true;
-			this.btnClear.RoundingInt = 70;
-			this.btnClear.Size = new System.Drawing.Size(130, 50);
-			this.btnClear.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-			this.btnClear.TabIndex = 58;
-			this.btnClear.Tag = "Cyber";
-			this.btnClear.TextButton = "Làm mới";
-			this.btnClear.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-			this.btnClear.Timer_Effect_1 = 5;
-			this.btnClear.Timer_RGB = 300;
-			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-			// 
-			// cboMaNhaSX
-			// 
-			this.cboMaNhaSX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.cboMaNhaSX.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.cboMaNhaSX.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.cboMaNhaSX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.cboMaNhaSX.Font = new System.Drawing.Font("Segoe UI", 10F);
-			this.cboMaNhaSX.FormattingEnabled = true;
-			this.cboMaNhaSX.ItemHeight = 30;
-			this.cboMaNhaSX.Location = new System.Drawing.Point(1237, 250);
-			this.cboMaNhaSX.Name = "cboMaNhaSX";
-			this.cboMaNhaSX.Size = new System.Drawing.Size(336, 36);
-			this.cboMaNhaSX.TabIndex = 60;
-			// 
-			// cboMaNhaCC
-			// 
-			this.cboMaNhaCC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.cboMaNhaCC.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.cboMaNhaCC.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.cboMaNhaCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.cboMaNhaCC.Font = new System.Drawing.Font("Segoe UI", 10F);
-			this.cboMaNhaCC.FormattingEnabled = true;
-			this.cboMaNhaCC.ItemHeight = 30;
-			this.cboMaNhaCC.Location = new System.Drawing.Point(1237, 319);
-			this.cboMaNhaCC.Name = "cboMaNhaCC";
-			this.cboMaNhaCC.Size = new System.Drawing.Size(336, 36);
-			this.cboMaNhaCC.TabIndex = 61;
+			this.errorProvider1.ContainerControl = this;
 			// 
 			// frmSanPham
 			// 
@@ -606,6 +613,7 @@
 			this.foreverForm1.ResumeLayout(false);
 			this.foreverForm1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -636,5 +644,6 @@
 		private ReaLTaiizor.Controls.ForeverTextBox txtThoiGianBH;
 		private ReaLTaiizor.Controls.HopeComboBox cboMaNhaSX;
 		private ReaLTaiizor.Controls.HopeComboBox cboMaNhaCC;
+		private System.Windows.Forms.ErrorProvider errorProvider1;
 	}
 }

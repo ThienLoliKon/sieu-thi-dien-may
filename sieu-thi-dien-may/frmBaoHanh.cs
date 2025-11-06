@@ -19,6 +19,8 @@ namespace he_thong_dien_may
 			InitializeComponent();
 		}
 		BaoHanhBUS bus = new BaoHanhBUS();
+		BindingSource bs = new BindingSource(); // <-- THÊM DÒNG NÀY
+
 		private void btnThoat_Click(object sender, EventArgs e)
 		{
 			DialogResult rs = MessageBox.Show("Are you sure to exit?", "Confirm?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -29,12 +31,14 @@ namespace he_thong_dien_may
 			this.Close();
 		}
 
+
+
 		public void loadKhachHang()
 		{
 			KhachHangBUS busNhaSX = new KhachHangBUS();
 			cboMaKhachHang.DataSource = busNhaSX.GetAllKhachHang();
 			cboMaKhachHang.DisplayMember = "hotenkhachhang";
-			cboMaKhachHang.ValueMember = "makhachhang"; 
+			cboMaKhachHang.ValueMember = "makhachhang";
 			cboMaKhachHang.SelectedIndex = 0;
 		}
 		public void loadSanPham()
@@ -58,18 +62,51 @@ namespace he_thong_dien_may
 
 		public void loadData()
 		{
-			dgvBaoHanh.DataSource = bus.GetAllBaoHanhAsTable();
+			bs.DataSource = bus.GetAllBaoHanhAsTable();
+			dgvBaoHanh.DataSource = bs;
 		}
-
-		private void btnTimKiem_Click(object sender, EventArgs e)
+		private bool checkDuLieuNhap()
 		{
+			// Xóa hết lỗi ❗ cũ trước khi kiểm tra
+			errorProvider1.Clear();
+			bool coLoi = false;
+
+			// 1. Kiểm tra rỗng
+			if (CheckTestCase.checkKhoangTrang(rtxtLyDo.Text) == false)
+			{
+				errorProvider1.SetError(rtxtLyDo, "Lý do không được trống!");
+				coLoi = true;
+			}
+
+			// 2. Kiểm tra độ dài
+			if (CheckTestCase.checkLenghtChuoi(rtxtLyDo.Text, 100) == false)
+			{
+				errorProvider1.SetError(rtxtLyDo, "Tên sản phẩm không được quá 100 kí tự!");
+				coLoi = true;
+			}
+
+
+
+			return !coLoi;
+
 
 		}
-
 		private void btnSua_Click(object sender, EventArgs e)
 		{
-			bus.UpdateBaoHanh(txtMaBaoHanh.Text,cboMaSanPham.SelectedValue.ToString(), cboMaKhachHang.SelectedValue.ToString(), cboMaNhanVien.SelectedValue.ToString(),rtxtLyDo.Text, dtpNgayGui.Value, dtpNgayXong.Value,chkHoanThanh.Checked);
-			loadData();
+			if (CheckTestCase.checkKhoangTrang(txtMaBaoHanh.Text) == false)
+			{
+				MessageBox.Show("Vui lòng chọn dữ liệu muốn sửa");
+				return;
+			}
+			else if (checkDuLieuNhap() == false)
+			{
+
+			}
+			else
+			{
+				bus.UpdateBaoHanh(txtMaBaoHanh.Text, cboMaSanPham.SelectedValue.ToString(), cboMaKhachHang.SelectedValue.ToString(), cboMaNhanVien.SelectedValue.ToString(), rtxtLyDo.Text, dtpNgayGui.Value, dtpNgayXong.Value, chkHoanThanh.Checked);
+				loadData();
+			}
 		}
 
 		private void btnThem_Click(object sender, EventArgs e)
@@ -84,7 +121,12 @@ namespace he_thong_dien_may
 			{
 				hoanThanh = false;
 			}
-			bus.AddBaoHanh(cboMaKhachHang.SelectedValue.ToString(), cboMaNhanVien.SelectedValue.ToString(), rtxtLyDo.Text, txtGiaTien.Text, dtpNgayGui.Value, dtpNgayXong.Value, hoanThanh);
+			if (checkDuLieuNhap() == false)
+			{
+				return;
+			}
+
+			bus.AddBaoHanh(cboMaSanPham.SelectedValue.ToString(),cboMaKhachHang.SelectedValue.ToString(), cboMaNhanVien.SelectedValue.ToString(), rtxtLyDo.Text, dtpNgayGui.Value, dtpNgayXong.Value, hoanThanh);
 			loadData();
 		}
 
@@ -158,22 +200,57 @@ namespace he_thong_dien_may
 			try
 			{
 				int line = dgvBaoHanh.CurrentCell.RowIndex;
-
-				txtMaBaoHanh.Text = dgvBaoHanh.Rows[line].Cells[0].Value.ToString();
-				cboMaSanPham.SelectedValue = dgvBaoHanh.Rows[line].Cells[1].Value.ToString();
-				cboMaNhanVien.SelectedValue = dgvBaoHanh.Rows[line].Cells[2].Value.ToString();
-				cboMaNhanVien.SelectedValue = dgvBaoHanh.Rows[line].Cells[3].Value.ToString();
-				rtxtLyDo.Text = dgvBaoHanh.Rows[line].Cells[4].Value.ToString();
-				dtpNgayGui.Value = Convert.ToDateTime(dgvBaoHanh.Rows[line].Cells[5].Value);
-				if (Convert.ToBoolean(dgvBaoHanh.Rows[line].Cells[7].Value))
+				if (dgvBaoHanh.Rows[line].Cells[0].Value != DBNull.Value)
 				{
-					dtpNgayXong.Value = Convert.ToDateTime(dgvBaoHanh.Rows[line].Cells[6].Value);
+					txtMaBaoHanh.Text = dgvBaoHanh.Rows[line].Cells[0].Value.ToString();
+					cboMaSanPham.SelectedValue = dgvBaoHanh.Rows[line].Cells[1].Value.ToString();
+					cboMaNhanVien.SelectedValue = dgvBaoHanh.Rows[line].Cells[2].Value.ToString();
+					cboMaNhanVien.SelectedValue = dgvBaoHanh.Rows[line].Cells[3].Value.ToString();
+					rtxtLyDo.Text = dgvBaoHanh.Rows[line].Cells[4].Value.ToString();
+					dtpNgayGui.Value = Convert.ToDateTime(dgvBaoHanh.Rows[line].Cells[5].Value);
+					if (Convert.ToBoolean(dgvBaoHanh.Rows[line].Cells[7].Value))
+					{
+						dtpNgayXong.Value = Convert.ToDateTime(dgvBaoHanh.Rows[line].Cells[6].Value);
+					}
+					chkHoanThanh.Checked = Convert.ToBoolean(dgvBaoHanh.Rows[line].Cells[7].Value);
 				}
-				chkHoanThanh.Checked = Convert.ToBoolean(dgvBaoHanh.Rows[line].Cells[7].Value);
+
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show("loi" + ex);
+			}
+		}
+
+		private void btnClear_Click(object sender, EventArgs e)
+		{
+			txtMaBaoHanh.Text = "";
+			txtTimKiem.Text = "";
+			rtxtLyDo.Text = "";
+			txtTimKiem.Text = "";
+			dtpNgayGui.Value = DateTime.Now;
+			dtpNgayXong.Value = DateTime.Now;
+
+		}
+
+		private void txtTimKiem_TextChanged(object sender, EventArgs e)
+		{
+			string keyword = txtTimKiem.Text;
+			if (string.IsNullOrEmpty(keyword))
+			{
+				// Nếu ô tìm kiếm trống, xóa bộ lọc và hiển thị tất cả
+				bs.Filter = null;
+			}
+			else
+			{
+				string safeKeyword = keyword.Replace("'", "''");
+				bs.Filter = string.Format(
+				" ma_san_pham LIKE '%{0}%' OR " +
+				" ma_khach_hang LIKE '%{0}%' OR " +
+				" nhan_vien_bao_hanh LIKE '%{0}%' OR " +
+				" ly_do LIKE '%{0}%' OR " +
+				" CONVERT(hoan_thanh, 'System.String') LIKE '%{0}%' ", // <-- Sửa ở đây
+				safeKeyword);
 			}
 		}
 	}

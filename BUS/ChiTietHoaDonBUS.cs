@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BUS
 {
-	internal class ChiTietHoaDonBUS
+	public class ChiTietHoaDonBUS
 	{
 		private ChiTietHoaDonDLL dal;
 
@@ -101,11 +101,11 @@ namespace BUS
 			}
 			DataTable dt = new DataTable();
 			dt.Columns.Add("ma_hoa_don", typeof(string));
-			dt.Columns.Add("ma_san_pham", typeof(float));
+			dt.Columns.Add("ma_san_pham", typeof(string));
 			dt.Columns.Add("ma_khuyen_mai", typeof(string));
 			dt.Columns.Add("so_luong", typeof(int));
 			dt.Columns.Add("don_gia", typeof(decimal));
-			dt.Columns.Add("ngay_gio", typeof(DateTime));
+			dt.Columns.Add("ngay_gio_in", typeof(DateTime));
 			foreach (var indexData in listData)
 			{
 				dt.Rows.Add(indexData.ma_hoa_don, indexData.ma_san_pham, indexData.ma_khuyen_mai, indexData.so_luong, indexData.don_gia, indexData.ngay_gio_in);

@@ -49,7 +49,7 @@ namespace BUSs
 		{
 			bao_hanh updateItem = new bao_hanh();
 
-			updateItem.ma_bao_hanh = dal.TaoMaBaoHanh();
+			updateItem.ma_bao_hanh = maBaoHanh;
 			updateItem.ma_san_pham = maSanPham;
 			updateItem.ma_khach_hang = maKhachHang;
 			updateItem.nhan_vien_bao_hanh = nhanVienBaoHanh;

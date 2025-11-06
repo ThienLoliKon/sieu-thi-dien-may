@@ -33,10 +33,13 @@ namespace BUS
 
 			float khoiLuongFloat = float.Parse(khoiLuong);
 			addVariable.khoi_luong = khoiLuongFloat; 
+
 			int thoiGianInt = int.Parse(thoiGianBH);
 			addVariable.thoi_gian_bao_hanh = thoiGianInt;
+
 			decimal giaTienFloat = decimal.Parse(giaTien);
-			//addVariable.gia_tien = giaTienFloat;
+			addVariable.gia_tien = giaTienFloat;
+
 			addVariable.ngay_san_xuat = ngaySX;
 
 			dal.addSanPham(addVariable);
@@ -59,6 +62,7 @@ namespace BUS
 			updateItem.ten_san_pham = tenSanPham;
 			updateItem.ma_nha_san_xuat = maNXX;
 			updateItem.ma_nha_cung_cap = maNCC;
+
 			if (float.TryParse(khoiLuong, out float khoiLuongValue))
 				updateItem.khoi_luong = khoiLuongValue;
 			else
@@ -68,6 +72,7 @@ namespace BUS
 				updateItem.thoi_gian_bao_hanh = thoiGianBHValue;
 			else
 				updateItem.khoi_luong = null; // hoặc xử lý lỗi nhập liệu
+
 			if (decimal.TryParse(giaTien, out decimal giaTienValue))
 				updateItem.gia_tien = giaTienValue;
 			else
@@ -77,11 +82,9 @@ namespace BUS
 			//else
 			//	updateItem.gia_tien = null; // hoặc xử lý lỗi nhập liệu
 
-			//updateItem.ngay_san_xuat = ngaySX;
+			updateItem.ngay_san_xuat = ngaySX;
 
 			dal.updateSanPham(updateItem);
-
-
 
 			if (dal.check(updateItem.ma_san_pham) == true) { return false; }
 			return true;

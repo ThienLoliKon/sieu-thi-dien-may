@@ -87,7 +87,7 @@ namespace BUS
 			}
 			DataTable dt = new DataTable();
 			dt.Columns.Add("ma_san_pham", typeof(string));
-			dt.Columns.Add("ma_loai_hang", typeof(float));
+			dt.Columns.Add("ma_loai_hang", typeof(string));
 			foreach (var indexData in listData)
 			{
 				dt.Rows.Add(indexData.ma_san_pham, indexData.ma_loai_hang);

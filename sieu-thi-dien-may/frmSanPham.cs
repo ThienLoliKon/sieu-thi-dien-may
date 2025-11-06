@@ -15,6 +15,7 @@ namespace he_thong_dien_may
 {
 	public partial class frmSanPham : Form
 	{
+
 		public frmSanPham()
 		{
 			InitializeComponent();
@@ -64,7 +65,6 @@ namespace he_thong_dien_may
 		private void frmSanPham_Load(object sender, EventArgs e)
 		{
 			dgvSanPham.AutoGenerateColumns = false;
-
 			dgvSanPham.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Mã sản phẩm",
@@ -123,6 +123,75 @@ namespace he_thong_dien_may
 			loadNhaCC();
 			loadNhaSX();
 		}
+		private bool checkDuLieuNhap()
+		{
+			// Xóa hết lỗi ❗ cũ trước khi kiểm tra
+			errorProvider1.Clear();
+			bool coLoi = false;
+
+			// 1. Kiểm tra rỗng
+			if (CheckTestCase.checkKhoangTrang(txtTenSanPham.Text) == false)
+			{
+				errorProvider1.SetError(txtTenSanPham, "Tên sản phẩm không được trống!");
+				coLoi = true;
+			}
+			if (CheckTestCase.checkKhoangTrang(txtKhoiLUong.Text) == false)
+			{
+				errorProvider1.SetError(txtKhoiLUong, "Khối lượng không được trống!");
+				coLoi = true;
+			}
+			if (CheckTestCase.checkKhoangTrang(txtThoiGianBH.Text) == false)
+			{
+				errorProvider1.SetError(txtThoiGianBH, "Bảo hành không được trống!");
+				coLoi = true;
+			}
+			if (CheckTestCase.checkKhoangTrang(txtGiaTien.Text) == false)
+			{
+				errorProvider1.SetError(txtGiaTien, "Giá tiền không được trống!");
+				coLoi = true;
+			}
+
+			// 2. Kiểm tra độ dài
+			if (CheckTestCase.checkLenghtChuoi(txtTenSanPham.Text, 100) == false)
+			{
+				errorProvider1.SetError(txtTenSanPham, "Tên sản phẩm không được quá 100 kí tự!");
+				coLoi = true;
+			}
+
+			// 3. Kiểm tra kiểu dữ liệu (chỉ check nếu không bị rỗng)
+			if (coLoi == false) // Nếu đã qua được hết check rỗng
+			{
+				if (CheckTestCase.checkKieuInt(txtThoiGianBH.Text) == false)
+				{
+					errorProvider1.SetError(txtThoiGianBH, "Bảo hành phải là số nguyên!");
+					coLoi = true;
+				}
+				if (CheckTestCase.checkKieuDouble(txtKhoiLUong.Text) == false)
+				{
+					errorProvider1.SetError(txtKhoiLUong, "Khối lượng phải là số (ví dụ: 0.5)!");
+					coLoi = true;
+				}
+				if (CheckTestCase.checkKieuDecimal(txtGiaTien.Text) == false)
+				{
+					errorProvider1.SetError(txtGiaTien, "Giá tiền phải là số nguyên!");
+					coLoi = true;
+				}
+			}
+			//4. Kiểm tra ComboBox
+			if (cboMaNhaSX.SelectedIndex == -1 || cboMaNhaSX.SelectedValue == null)
+			{
+				errorProvider1.SetError(cboMaNhaSX, "Vui lòng chọn nhà sản xuất!");
+				coLoi = true;
+			}
+			if (cboMaNhaCC.SelectedIndex == -1 || cboMaNhaCC.SelectedValue == null)
+			{
+				errorProvider1.SetError(cboMaNhaCC, "Vui lòng chọn nhà cung cấp!");
+				coLoi = true;
+			}
+
+			return !coLoi; // Trả về true (Không có lỗi) nếu coLoi = false
+		}
+
 		private void btnThem_Click(object sender, EventArgs e)
 		{
 			SanPhamBUS bus = new SanPhamBUS();
@@ -131,7 +200,14 @@ namespace he_thong_dien_may
 			}
 			else
 			{
-				bus.AddSanPham(txtTenSanPham.Text, cboMaNhaSX.SelectedValue.ToString(), cboMaNhaCC.SelectedValue.ToString(), txtKhoiLUong.Text, txtThoiGianBH.Text, txtGiaTien.Text, dtpNgaySanXuat.Value);
+				if (bus.AddSanPham(txtTenSanPham.Text, cboMaNhaSX.SelectedValue.ToString(), cboMaNhaCC.SelectedValue.ToString(), txtKhoiLUong.Text, txtThoiGianBH.Text, txtGiaTien.Text, dtpNgaySanXuat.Value) == false)
+				{
+					MessageBox.Show("Thêm sản phẩm thành công!");
+				}
+				else
+				{
+					MessageBox.Show("Thêm sản phẩm thất bại!");
+				}
 			}
 			loadData();
 		}
@@ -142,18 +218,31 @@ namespace he_thong_dien_may
 			{
 				MessageBox.Show("Vui lòng chọn dữ liệu muốn sửa");
 				return;
-			}else if(checkDuLieuNhap() == false)
+			}
+			else if (checkDuLieuNhap() == false)
 			{
 			}
 			else
 			{
-				bus.UpdateSanPham(txtMaSanPham.Text, txtTenSanPham.Text, cboMaNhaSX.SelectedValue.ToString(), cboMaNhaCC.SelectedValue.ToString(), txtKhoiLUong.Text, txtThoiGianBH.Text, txtGiaTien.Text, dtpNgaySanXuat.Value);
+				if(bus.UpdateSanPham(txtMaSanPham.Text, txtTenSanPham.Text, cboMaNhaSX.SelectedValue.ToString(), cboMaNhaCC.SelectedValue.ToString(), txtKhoiLUong.Text, txtThoiGianBH.Text, txtGiaTien.Text, dtpNgaySanXuat.Value) == false)
+					{
+					MessageBox.Show("Sửa sản phẩm thành công!");
+				}
+				else
+				{
+					MessageBox.Show("Sửa sản phẩm thất bại!");
+				}
 			}
 			loadData();
 		}
 
 		private void btnThoat_Click(object sender, EventArgs e)
 		{
+			DialogResult rs = MessageBox.Show("Are you sure to exit?", "Confirm?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (rs == DialogResult.No)
+			{
+				return;
+			}
 			this.Close();
 		}
 
@@ -176,7 +265,6 @@ namespace he_thong_dien_may
 					//lỗi xuất hiện e+0
 					dtpNgaySanXuat.Value = Convert.ToDateTime(dgvSanPham.Rows[line].Cells[7].Value);
 				}
-
 			}
 			catch (Exception ex)
 			{
@@ -198,58 +286,19 @@ namespace he_thong_dien_may
 			{
 				string safeKeyword = keyword.Replace("'", "''");
 				bs.Filter = string.Format(
-					" ma_san_pham LIKE '%{0}%' OR ten_san_pham LIKE '%{0}%' OR ma_nha_cung_cap LIKE '%{0}%' OR gia_tien LIKE '%{0}%' OR thoi_gian_bao_hanh LIKE '%{0}%' OR ma_nha_san_xuat LIKE '%{0}%' ",
-					safeKeyword
-				);
+				" ma_san_pham LIKE '%{0}%' OR " +
+				" ten_san_pham LIKE '%{0}%' OR " +
+				" ma_nha_cung_cap LIKE '%{0}%' OR " +
+				" ma_nha_san_xuat LIKE '%{0}%' OR " +
+				" CONVERT(gia_tien, 'System.String') LIKE '%{0}%' OR " + // <-- Sửa ở đây
+				" CONVERT(thoi_gian_bao_hanh, 'System.String') LIKE '%{0}%'", // <-- Sửa ở đây																			  
+				safeKeyword);
 			}
 		}
 
 		private void btnClear_Click(object sender, EventArgs e)
 		{
 			clearData();
-		}
-		private bool checkDuLieuNhap()
-		{
-
-			if (CheckTestCase.checkKhoangTrang(txtGiaTien.Text, txtTenSanPham.Text, txtKhoiLUong.Text, txtThoiGianBH.Text) == false)
-			{
-				MessageBox.Show("Vui lòng nhập dữ liệu vào các ô trống");
-				return false;
-			}
-
-			if (CheckTestCase.checkChiChuaSo( txtThoiGianBH.Text))
-			{
-				MessageBox.Show("Vui lòng không nhâp chữ cái vào ô dữ liệu số");
-				return false;
-			}
-			if (CheckTestCase.checkChiChuaSoVaDauCham( txtThoiGianBH.Text))
-			{
-				MessageBox.Show("Vui lòng không nhâp chữ cái vào ô dữ liệu số");
-				return false;
-			}
-			if (CheckTestCase.checkChiChuaSoVaDauCham(txtGiaTien.Text))
-			{
-				MessageBox.Show("Vui lòng không nhâp chữ cái vào ô dữ liệu số");
-				return false;
-			}
-			if (CheckTestCase.checkKieuInt(txtThoiGianBH.Text) == false)
-			{
-				MessageBox.Show("thời gian bảo hành phải là kiểu int");
-				return false;
-			}
-
-			if (CheckTestCase.checkKieuDouble(txtKhoiLUong.Text) == false)
-			{
-				MessageBox.Show("khối lượng phải là kiểu double");
-				return false;
-			}
-
-			if (CheckTestCase.checkKieuDecimal(txtGiaTien.Text) == false)
-			{
-				MessageBox.Show("giá tiền phải là kiểu demical");
-				return false;
-			}
-			return true;
 		}
 
 		private void txtKhoiLUong_KeyPress(object sender, KeyPressEventArgs e)
@@ -298,43 +347,15 @@ namespace he_thong_dien_may
 				e.Handled = true; // "Nuốt" ký tự đó, không cho nó hiển thị
 			}
 		}
-		
+
 		private void txtGiaTien_KeyPress(object sender, KeyPressEventArgs e)
 		{
-			// 1. Cho phép phím điều khiển (như Backspace)
-			if (char.IsControl(e.KeyChar))
+			// Chỉ cho phép nhập số (IsDigit) hoặc các phím điều khiển (IsControl) như Backspace
+			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
 			{
-				e.Handled = false;
-				return;
+				e.Handled = true; // "Nuốt" ký tự đó, không cho nó hiển thị
 			}
-
-			// 2. Cho phép nhập số (0-9)
-			if (char.IsDigit(e.KeyChar))
-			{
-				e.Handled = false;
-				return;
-			}
-
-			// 3. Cho phép nhập MỘT dấu chấm (.)
-			if (e.KeyChar == '.')
-			{
-				// Kiểm tra xem trong ô "txtKhoiLuong" đã có dấu '.' chưa
-				// Dùng thẳng tên control, không dùng "sender"
-				if (txtGiaTien.Text.Contains("."))
-				{
-					// Nếu ĐÃ CÓ, chặn không cho nhập thêm
-					e.Handled = true;
-				}
-				else
-				{
-					// Nếu CHƯA CÓ, cho phép nhập
-					e.Handled = false;
-				}
-				return;
-			}
-
-			// 4. Chặn tất cả các ký tự còn lại (như 'a', 'b', ',', '@')
-			e.Handled = true;
 		}
+
 	}
 }

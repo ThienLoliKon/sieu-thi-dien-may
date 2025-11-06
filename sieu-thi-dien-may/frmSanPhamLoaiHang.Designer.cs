@@ -36,9 +36,8 @@
 			this.cboLoaiHang = new ReaLTaiizor.Controls.HopeComboBox();
 			this.btnXoa = new ReaLTaiizor.Controls.CyberButton();
 			this.dgvSanPhamLoaiHang = new ReaLTaiizor.Controls.PoisonDataGridView();
-			this.btnTimKiem = new ReaLTaiizor.Controls.CyberButton();
 			this.btnThoat = new ReaLTaiizor.Controls.CyberButton();
-			this.btnSua = new ReaLTaiizor.Controls.CyberButton();
+			this.btnClear = new ReaLTaiizor.Controls.CyberButton();
 			this.btnThem = new ReaLTaiizor.Controls.CyberButton();
 			this.foreverLabel3 = new ReaLTaiizor.Controls.ForeverLabel();
 			this.foreverLabel1 = new ReaLTaiizor.Controls.ForeverLabel();
@@ -55,9 +54,8 @@
 			this.foreverForm1.Controls.Add(this.cboLoaiHang);
 			this.foreverForm1.Controls.Add(this.btnXoa);
 			this.foreverForm1.Controls.Add(this.dgvSanPhamLoaiHang);
-			this.foreverForm1.Controls.Add(this.btnTimKiem);
 			this.foreverForm1.Controls.Add(this.btnThoat);
-			this.foreverForm1.Controls.Add(this.btnSua);
+			this.foreverForm1.Controls.Add(this.btnClear);
 			this.foreverForm1.Controls.Add(this.btnThem);
 			this.foreverForm1.Controls.Add(this.foreverLabel3);
 			this.foreverForm1.Controls.Add(this.foreverLabel1);
@@ -87,7 +85,7 @@
 			this.cboSanPham.Font = new System.Drawing.Font("Segoe UI", 12F);
 			this.cboSanPham.FormattingEnabled = true;
 			this.cboSanPham.ItemHeight = 30;
-			this.cboSanPham.Location = new System.Drawing.Point(1252, 86);
+			this.cboSanPham.Location = new System.Drawing.Point(1227, 86);
 			this.cboSanPham.Name = "cboSanPham";
 			this.cboSanPham.Size = new System.Drawing.Size(271, 36);
 			this.cboSanPham.TabIndex = 60;
@@ -131,7 +129,7 @@
 			this.btnXoa.Lighting = false;
 			this.btnXoa.LinearGradient_Background = false;
 			this.btnXoa.LinearGradientPen = false;
-			this.btnXoa.Location = new System.Drawing.Point(685, 201);
+			this.btnXoa.Location = new System.Drawing.Point(851, 145);
 			this.btnXoa.Name = "btnXoa";
 			this.btnXoa.PenWidth = 15;
 			this.btnXoa.Rounding = true;
@@ -190,47 +188,8 @@
 			this.dgvSanPhamLoaiHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvSanPhamLoaiHang.Size = new System.Drawing.Size(1598, 498);
 			this.dgvSanPhamLoaiHang.TabIndex = 50;
+			this.dgvSanPhamLoaiHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPhamLoaiHang_CellClick);
 			this.dgvSanPhamLoaiHang.Click += new System.EventHandler(this.dgvSanPham_Click);
-			// 
-			// btnTimKiem
-			// 
-			this.btnTimKiem.Alpha = 20;
-			this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
-			this.btnTimKiem.Background = true;
-			this.btnTimKiem.Background_WidthPen = 4F;
-			this.btnTimKiem.BackgroundPen = true;
-			this.btnTimKiem.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-			this.btnTimKiem.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-			this.btnTimKiem.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-			this.btnTimKiem.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-			this.btnTimKiem.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-			this.btnTimKiem.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-			this.btnTimKiem.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-			this.btnTimKiem.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-			this.btnTimKiem.Effect_1 = true;
-			this.btnTimKiem.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-			this.btnTimKiem.Effect_1_Transparency = 25;
-			this.btnTimKiem.Effect_2 = true;
-			this.btnTimKiem.Effect_2_ColorBackground = System.Drawing.Color.White;
-			this.btnTimKiem.Effect_2_Transparency = 20;
-			this.btnTimKiem.Font = new System.Drawing.Font("Arial", 11F);
-			this.btnTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-			this.btnTimKiem.Lighting = false;
-			this.btnTimKiem.LinearGradient_Background = false;
-			this.btnTimKiem.LinearGradientPen = false;
-			this.btnTimKiem.Location = new System.Drawing.Point(1195, 201);
-			this.btnTimKiem.Name = "btnTimKiem";
-			this.btnTimKiem.PenWidth = 15;
-			this.btnTimKiem.Rounding = true;
-			this.btnTimKiem.RoundingInt = 70;
-			this.btnTimKiem.Size = new System.Drawing.Size(130, 50);
-			this.btnTimKiem.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-			this.btnTimKiem.TabIndex = 49;
-			this.btnTimKiem.Tag = "Cyber";
-			this.btnTimKiem.TextButton = "Tìm Kiếm";
-			this.btnTimKiem.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-			this.btnTimKiem.Timer_Effect_1 = 5;
-			this.btnTimKiem.Timer_RGB = 300;
 			// 
 			// btnThoat
 			// 
@@ -258,7 +217,7 @@
 			this.btnThoat.Lighting = false;
 			this.btnThoat.LinearGradient_Background = false;
 			this.btnThoat.LinearGradientPen = false;
-			this.btnThoat.Location = new System.Drawing.Point(1431, 201);
+			this.btnThoat.Location = new System.Drawing.Point(851, 210);
 			this.btnThoat.Name = "btnThoat";
 			this.btnThoat.PenWidth = 15;
 			this.btnThoat.Rounding = true;
@@ -273,45 +232,46 @@
 			this.btnThoat.Timer_RGB = 300;
 			this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
 			// 
-			// btnSua
+			// btnClear
 			// 
-			this.btnSua.Alpha = 20;
-			this.btnSua.BackColor = System.Drawing.Color.Transparent;
-			this.btnSua.Background = true;
-			this.btnSua.Background_WidthPen = 4F;
-			this.btnSua.BackgroundPen = true;
-			this.btnSua.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-			this.btnSua.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-			this.btnSua.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-			this.btnSua.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-			this.btnSua.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-			this.btnSua.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-			this.btnSua.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-			this.btnSua.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-			this.btnSua.Effect_1 = true;
-			this.btnSua.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-			this.btnSua.Effect_1_Transparency = 25;
-			this.btnSua.Effect_2 = true;
-			this.btnSua.Effect_2_ColorBackground = System.Drawing.Color.White;
-			this.btnSua.Effect_2_Transparency = 20;
-			this.btnSua.Font = new System.Drawing.Font("Arial", 11F);
-			this.btnSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-			this.btnSua.Lighting = false;
-			this.btnSua.LinearGradient_Background = false;
-			this.btnSua.LinearGradientPen = false;
-			this.btnSua.Location = new System.Drawing.Point(940, 201);
-			this.btnSua.Name = "btnSua";
-			this.btnSua.PenWidth = 15;
-			this.btnSua.Rounding = true;
-			this.btnSua.RoundingInt = 70;
-			this.btnSua.Size = new System.Drawing.Size(130, 50);
-			this.btnSua.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-			this.btnSua.TabIndex = 47;
-			this.btnSua.Tag = "Cyber";
-			this.btnSua.TextButton = "Sửa";
-			this.btnSua.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-			this.btnSua.Timer_Effect_1 = 5;
-			this.btnSua.Timer_RGB = 300;
+			this.btnClear.Alpha = 20;
+			this.btnClear.BackColor = System.Drawing.Color.Transparent;
+			this.btnClear.Background = true;
+			this.btnClear.Background_WidthPen = 4F;
+			this.btnClear.BackgroundPen = true;
+			this.btnClear.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+			this.btnClear.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+			this.btnClear.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+			this.btnClear.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+			this.btnClear.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+			this.btnClear.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+			this.btnClear.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+			this.btnClear.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+			this.btnClear.Effect_1 = true;
+			this.btnClear.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+			this.btnClear.Effect_1_Transparency = 25;
+			this.btnClear.Effect_2 = true;
+			this.btnClear.Effect_2_ColorBackground = System.Drawing.Color.White;
+			this.btnClear.Effect_2_Transparency = 20;
+			this.btnClear.Font = new System.Drawing.Font("Arial", 11F);
+			this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+			this.btnClear.Lighting = false;
+			this.btnClear.LinearGradient_Background = false;
+			this.btnClear.LinearGradientPen = false;
+			this.btnClear.Location = new System.Drawing.Point(649, 210);
+			this.btnClear.Name = "btnClear";
+			this.btnClear.PenWidth = 15;
+			this.btnClear.Rounding = true;
+			this.btnClear.RoundingInt = 70;
+			this.btnClear.Size = new System.Drawing.Size(130, 50);
+			this.btnClear.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+			this.btnClear.TabIndex = 47;
+			this.btnClear.Tag = "Cyber";
+			this.btnClear.TextButton = "Làm mới";
+			this.btnClear.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+			this.btnClear.Timer_Effect_1 = 5;
+			this.btnClear.Timer_RGB = 300;
+			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
 			// 
 			// btnThem
 			// 
@@ -339,7 +299,7 @@
 			this.btnThem.Lighting = false;
 			this.btnThem.LinearGradient_Background = false;
 			this.btnThem.LinearGradientPen = false;
-			this.btnThem.Location = new System.Drawing.Point(442, 201);
+			this.btnThem.Location = new System.Drawing.Point(649, 145);
 			this.btnThem.Name = "btnThem";
 			this.btnThem.PenWidth = 15;
 			this.btnThem.Rounding = true;
@@ -358,11 +318,11 @@
 			// 
 			this.foreverLabel3.AutoSize = true;
 			this.foreverLabel3.BackColor = System.Drawing.Color.Transparent;
-			this.foreverLabel3.Font = new System.Drawing.Font("Segoe UI", 8F);
+			this.foreverLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.foreverLabel3.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel3.Location = new System.Drawing.Point(1152, 98);
+			this.foreverLabel3.Location = new System.Drawing.Point(1096, 94);
 			this.foreverLabel3.Name = "foreverLabel3";
-			this.foreverLabel3.Size = new System.Drawing.Size(77, 19);
+			this.foreverLabel3.Size = new System.Drawing.Size(108, 28);
 			this.foreverLabel3.TabIndex = 44;
 			this.foreverLabel3.Text = "Sản phẩm :";
 			// 
@@ -370,11 +330,11 @@
 			// 
 			this.foreverLabel1.AutoSize = true;
 			this.foreverLabel1.BackColor = System.Drawing.Color.Transparent;
-			this.foreverLabel1.Font = new System.Drawing.Font("Segoe UI", 8F);
+			this.foreverLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.foreverLabel1.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel1.Location = new System.Drawing.Point(408, 98);
+			this.foreverLabel1.Location = new System.Drawing.Point(378, 89);
 			this.foreverLabel1.Name = "foreverLabel1";
-			this.foreverLabel1.Size = new System.Drawing.Size(72, 19);
+			this.foreverLabel1.Size = new System.Drawing.Size(102, 28);
 			this.foreverLabel1.TabIndex = 42;
 			this.foreverLabel1.Text = "loại hàng :";
 			// 
@@ -389,6 +349,7 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "frmSanPhamLoaiHang";
 			this.TransparencyKey = System.Drawing.Color.Fuchsia;
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.frmSanPhamLoaiHang_Load);
 			this.foreverForm1.ResumeLayout(false);
 			this.foreverForm1.PerformLayout();
@@ -402,9 +363,8 @@
 		private ReaLTaiizor.Forms.ForeverForm foreverForm1;
 		private ReaLTaiizor.Controls.CyberButton btnXoa;
 		private ReaLTaiizor.Controls.PoisonDataGridView dgvSanPhamLoaiHang;
-		private ReaLTaiizor.Controls.CyberButton btnTimKiem;
 		private ReaLTaiizor.Controls.CyberButton btnThoat;
-		private ReaLTaiizor.Controls.CyberButton btnSua;
+		private ReaLTaiizor.Controls.CyberButton btnClear;
 		private ReaLTaiizor.Controls.CyberButton btnThem;
 		private ReaLTaiizor.Controls.ForeverLabel foreverLabel3;
 		private ReaLTaiizor.Controls.ForeverLabel foreverLabel1;

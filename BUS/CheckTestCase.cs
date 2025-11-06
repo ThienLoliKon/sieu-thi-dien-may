@@ -58,8 +58,8 @@ namespace BUS
             }
             return true;
         }
-        //kiểm tra null
-        public static bool checkKhoangTrang(params string[] str)
+		//kiểm tra null // false : nếu có chuỗi rỗng || true nếu tất cả hợp lệ
+		public static bool checkKhoangTrang(params string[] str)
         {
             foreach (string s in str)
             {
@@ -102,18 +102,15 @@ namespace BUS
 		/// Kiểm tra xem chuỗi có phải là một số NGUYÊN (int) hợp lệ hay không.
 		public static bool checkKieuInt(string input, int maxValue = int.MaxValue)
 		{
-			// 1. Kiểm tra kiểu
-			// Xóa dấu phẩy (ví dụ: "1,000" -> "1000")
-			string cleanInput = (input ?? "").Replace(",", "");
-
-			if (!int.TryParse(cleanInput, out int value))
+			// 1. int.TryParse mặc định sẽ thất bại nếu có chữ, dấu phẩy, hoặc dấu chấm.
+			// Đây chính là điều bạn muốn.
+			if (!int.TryParse(input, out int value))
 			{
-				// Sai kiểu (không phải là số int)
+				// Sai kiểu (rỗng, có chữ, có dấu...)
 				return false;
 			}
 
 			// 2. Kiểm tra max
-			// Nếu vượt quá max, trả về false
 			if (value > maxValue)
 			{
 				return false;
@@ -125,16 +122,14 @@ namespace BUS
 		/// Kiểm tra xem chuỗi có phải là một số DOUBLE hợp lệ hay không.
 		public static bool checkKieuDouble(string input, double maxValue = double.MaxValue)
 		{
-			// 1. Kiểm tra kiểu
-			string cleanInput = (input ?? "").Replace(",", "");
+			NumberStyles style = NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands;
+			CultureInfo culture = CultureInfo.InvariantCulture;
 
-			if (!double.TryParse(cleanInput, NumberStyles.Any, CultureInfo.InvariantCulture, out double value))
+			if (!double.TryParse(input, style, culture, out double value))
 			{
-				// Sai kiểu (không phải là số double)
 				return false;
 			}
 
-			// 2. Kiểm tra max
 			if (value > maxValue)
 			{
 				return false;
@@ -147,37 +142,39 @@ namespace BUS
 		/// (Dùng cho tiền tệ)
 		public static bool checkKieuDecimal(string input, decimal maxValue = decimal.MaxValue)
 		{
-			// 1. Kiểm tra kiểu
-			string cleanInput = (input ?? "").Replace(",", "");
+			// Quy tắc: Cho phép dấu phẩy hàng ngàn và 1 dấu chấm thập phân
+			NumberStyles style = NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands;
+			CultureInfo culture = CultureInfo.InvariantCulture; // Dùng '.' làm thập phân
 
-			if (!decimal.TryParse(cleanInput, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal value))
+			// 2. TryParse sẽ TỰ ĐỘNG THẤT BẠI nếu:
+			//    - Rỗng, có chữ ("abc")
+			//    - Có nhiều hơn 1 dấu chấm ("1.2.3")
+			//    - Dấu phẩy sai chỗ ("1,,000")
+			if (!decimal.TryParse(input, style, culture, out decimal value))
 			{
-				// Sai kiểu (không phải là số decimal)
 				return false;
 			}
 
-			// 2. Kiểm tra max
+			// 3. Kiểm tra max
 			if (value > maxValue)
 			{
 				return false;
 			}
 
-			return true;
+			return true; // Hợp lệ
 		}
 
 		/// Kiểm tra xem chuỗi có phải là một số FLOAT hợp lệ hay không.
 		public static bool checkKieuFloat(string input, float maxValue = float.MaxValue)
 		{
-			// 1. Kiểm tra kiểu
-			string cleanInput = (input ?? "").Replace(",", "");
+			NumberStyles style = NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands;
+			CultureInfo culture = CultureInfo.InvariantCulture;
 
-			if (!float.TryParse(cleanInput, NumberStyles.Any, CultureInfo.InvariantCulture, out float value))
+			if (!float.TryParse(input, style, culture, out float value))
 			{
-				// Sai kiểu (không phải là số float)
 				return false;
 			}
 
-			// 2. Kiểm tra max
 			if (value > maxValue)
 			{
 				return false;

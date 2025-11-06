@@ -37,14 +37,51 @@ namespace he_thong_dien_may
 			}
 			this.Close();
 		}
+		private bool checkDuLieuNhap()
+		{
+			errorProvider1.Clear();
+			bool coLoi = false;
+			// 1. Kiểm tra rỗng
+			if (CheckTestCase.checkKhoangTrang(txtTenLoaiHang.Text) == false)
+			{
+				errorProvider1.SetError(txtTenLoaiHang, "tên loại hàng không được trống!");
+				coLoi = true;
+			}
+			if (CheckTestCase.checkKhoangTrang(rtxtMoTa.Text) == false)
+			{
+				errorProvider1.SetError(rtxtMoTa, "Mô tả không được trống!");
+				coLoi = true;
+			}
 
+			if (CheckTestCase.checkLenghtChuoi(txtTenLoaiHang.Text, 100) == false)
+			{
+				errorProvider1.SetError(txtTenLoaiHang, "Tên loại hàng không được quá 100 kí tự!");
+				coLoi = true;
+			}
+			if (CheckTestCase.checkLenghtChuoi(rtxtMoTa.Text, 100) == false)
+			{
+				errorProvider1.SetError(rtxtMoTa, "Mô tả không được quá 100 kí tự!");
+				coLoi = true;
+			}
+			return !coLoi; // Trả về true (Không có lỗi) nếu coLoi = false
+		}
 		private void btnThem_Click(object sender, EventArgs e)
 		{
-			if(CheckTestCase.checkKhoangTrang(txtTenLoaiHang.Text, rtxtMoTa.Text) == false)
+			if (checkDuLieuNhap() == false)
 			{
-				MessageBox.Show("Vui lòng nhập đầy đủ thông tin vào các ô trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-				return;
 			}
+			else
+			{
+				if (bus.AddLoaiHang(txtMaLoaiHang.Text,  txtTenLoaiHang.Text, rtxtMoTa.Text) == false)
+				{
+					MessageBox.Show("Thêm loại hàng thành công!");
+				}
+				else
+				{
+					MessageBox.Show("Thêm loại hàng thất bại!");
+				}
+			}
+			loadData();
 		}
 
 		private void frmLoaiHang_Load(object sender, EventArgs e)
@@ -90,6 +127,30 @@ namespace he_thong_dien_may
 			{
 				MessageBox.Show("loi" + ex);
 			}
+		}
+
+		private void btnSua_Click(object sender, EventArgs e)
+		{
+			if (CheckTestCase.checkKhoangTrang(txtMaLoaiHang.Text) == false)
+			{
+				MessageBox.Show("Vui lòng chọn dữ liệu muốn sửa");
+				return;
+			}
+			else if (checkDuLieuNhap() == false)
+			{
+			}
+			else
+			{
+				if (bus.AddLoaiHang(txtMaLoaiHang.Text, txtTenLoaiHang.Text, rtxtMoTa.Text) == false)
+				{
+					MessageBox.Show("Sửa loại hàng thành công!");
+				}
+				else
+				{
+					MessageBox.Show("Sửa loại hàng thất bại!");
+				}
+			}
+			loadData();
 		}
 	}
 }

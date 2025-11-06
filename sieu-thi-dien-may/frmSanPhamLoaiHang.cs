@@ -28,8 +28,8 @@ namespace he_thong_dien_may
 			//load nha san xuat
 			LoaiHangBUS busNhaSX = new LoaiHangBUS();
 			cboLoaiHang.DataSource = busNhaSX.GetAllLoaiHang();
-			cboLoaiHang.DisplayMember = "ten_nha_san_xuat";
-			cboLoaiHang.ValueMember = "ma_nha_san_xuat";
+			cboLoaiHang.DisplayMember = "ten_loai_hang";
+			cboLoaiHang.ValueMember = "ma_loai_hang";
 			cboLoaiHang.SelectedIndex = 0;
 		}
 		public void loadSanPham()
@@ -37,14 +37,19 @@ namespace he_thong_dien_may
 			//load nha san xuat
 			SanPhamBUS busNhaSX = new SanPhamBUS();
 			cboSanPham.DataSource = busNhaSX.GetAllSanPhamAsTable();
-			cboSanPham.DisplayMember = "ten_nha_san_xuat";
-			cboSanPham.ValueMember = "ma_nha_san_xuat";
+			cboSanPham.DisplayMember = "ten_san_pham";
+			cboSanPham.ValueMember = "ma_san_pham";
 			cboSanPham.SelectedIndex = 0;
 		}
 		private void btnThoat_Click(object sender, EventArgs e)
         {
+			DialogResult rs = MessageBox.Show("Are you sure to exit?", "Confirm?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (rs == DialogResult.No)
+			{
+				return;
+			}
 			this.Close();
-        }
+		}
 
 		private void frmSanPhamLoaiHang_Load(object sender, EventArgs e)
 		{
@@ -91,6 +96,30 @@ namespace he_thong_dien_may
 			MessageBox.Show("Vui lòng nhập dữ liệu vào các ô trống");			
 			bus.AddSanPhamLoaiHang(cboLoaiHang.SelectedValue.ToString(), cboSanPham.SelectedValue.ToString());
 			loadData();
+		}
+
+		private void btnClear_Click(object sender, EventArgs e)
+		{
+			cboSanPham.SelectedIndex = 0;
+			cboLoaiHang.SelectedIndex = 0;
+		}
+
+		private void dgvSanPhamLoaiHang_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			try
+			{
+				int line = dgvSanPhamLoaiHang.CurrentCell.RowIndex;
+				if (dgvSanPhamLoaiHang.Rows[line].Cells[0].Value != DBNull.Value)
+				{
+					cboLoaiHang.SelectedValue = dgvSanPhamLoaiHang.Rows[line].Cells[0].Value.ToString();
+					cboSanPham.SelectedValue = dgvSanPhamLoaiHang.Rows[line].Cells[1].Value.ToString();
+					
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("loi" + ex);
+			}
 		}
 	}
 }
