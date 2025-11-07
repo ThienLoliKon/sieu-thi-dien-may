@@ -56,9 +56,9 @@ namespace he_thong_dien_may
 
         private void ClearInputControls()
         {
-            txtMaCB.Clear();
-            txtCapBac.Clear();
-            txtMoTa.Clear();
+            txtMaCB.Text = "";
+            txtCapBac.Text = "";
+            txtMoTa.Text = "";
 
             txtMaCB.ReadOnly = false;
         }

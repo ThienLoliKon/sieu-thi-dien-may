@@ -83,11 +83,11 @@ namespace he_thong_dien_may
         }
         private void ClearInputControls()
         {
-            txtMaNV.Clear();
-            txtHoTen.Clear();
-            txtSDT.Clear();
-            txtDiaChi.Clear();
-            txtTimKiem.Clear();
+            txtMaNV.Text = "";
+            txtHoTen.Text = "";
+            txtSDT.Text = "";
+            txtDiaChi.Text = "";
+            txtTimKiem.Text = "";
             cbbCapBac.SelectedIndex = -1;
             cbbChiNhanh.SelectedIndex = -1;
 
@@ -329,6 +329,21 @@ namespace he_thong_dien_may
         {
             LoadComboBoxData();
             LoadDL();
+        }
+        private string GetSelectedMaNV()
+        {
+            if (dgvNhanVien.CurrentRow != null && dgvNhanVien.CurrentRow.Index >= 0)
+            {
+                return dgvNhanVien.CurrentRow.Cells[0].Value.ToString();
+            }
+            return null;
+        }
+
+        private void btnLuong_Click(object sender, EventArgs e)
+        {
+            string maNV = GetSelectedMaNV();
+            frmLuong f = new frmLuong(maNV);
+            f.ShowDialog();
         }
     }
 }

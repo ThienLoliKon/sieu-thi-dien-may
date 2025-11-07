@@ -22,13 +22,9 @@ namespace BUS
             return dal.GetAllViPham();
         }
 
-        // GIẢ ĐỊNH: ViPhamDLL có thể truy cập bảng LoaiViPham để lấy Mức phạt.
-        // Cần tạo hàm này nếu chưa có trong DLL.
         public double GetMucPhatByLoaiVP(string maLoaiVP)
         {
-            // GIẢ ĐỊNH LOGIC: Gọi DLL để tìm kiếm MucPhat dựa trên maLoaiVP
-            // Ví dụ: return new LoaiViPhamDLL().GetMucPhat(maLoaiVP);
-            return 0.0; // Trả về 0.0 nếu logic phức tạp hoặc không có DLL tương ứng
+            return 0.0; 
         }
 
         public bool AddViPham(string maNV, string maLoaiVP, DateTime thoiGianVP)
@@ -43,7 +39,6 @@ namespace BUS
 
             dal.AddViPham(viPham);
 
-            // Logic kiểm tra: Nếu tồn tại sau khi thêm, nghĩa là thành công.
             if (dal.check(viPham.ma_vi_pham) == true) { return true; }
             return false;
         }
@@ -61,7 +56,6 @@ namespace BUS
             try
             {
                 dal.UpdateViPham(viPham);
-                // Kiểm tra sự tồn tại (thành công)
                 if (dal.check(viPham.ma_vi_pham) == true) { return true; }
                 return false;
             }
@@ -76,7 +70,6 @@ namespace BUS
             try
             {
                 dal.DeleteViPham(id);
-                // Xóa cứng: Nếu không tồn tại sau khi gọi DAL, nghĩa là xóa thành công.
                 if (dal.check(id) == false) { return true; }
                 return false;
             }
@@ -84,6 +77,14 @@ namespace BUS
             {
                 return false;
             }
+        }
+        private double GetMucPhatByLoaiPhat(string maLoaiThuong)
+        {
+            var db = new DBSTDMDataContext();
+            return db.loai_vi_phams
+                .Where(lt => lt.ma_loai_vi_pham == maLoaiThuong)
+                .Select(lt => lt.muc_phat)
+                .FirstOrDefault() ?? 0.0;
         }
 
         public DataTable GetAllViPhamAsTable()
@@ -101,20 +102,18 @@ namespace BUS
             dt.Columns.Add("MaLoaiVP", typeof(string));
             dt.Columns.Add("ThoiGianVP", typeof(DateTime));
             dt.Columns.Add("TrangThai", typeof(string));
-            // Cột Mức Phạt cần được thêm vào từ bảng LoaiViPham (yêu cầu logic phức tạp hơn)
             dt.Columns.Add("MucPhat", typeof(double));
 
             foreach (var vp in viPhams)
             {
-                // Thao tác phức tạp hơn để lấy Mức phạt
-                dt.Rows.Add(vp.ma_vi_pham, vp.ma_nhan_vien, vp.ma_loai_vi_pham, vp.thoi_gian_vi_pham, vp.trang_thai, GetMucPhatByLoaiVP(vp.ma_loai_vi_pham));
+                double mucPhat = GetMucPhatByLoaiPhat(vp.ma_loai_vi_pham);
+
+                dt.Rows.Add(vp.ma_vi_pham, vp.ma_nhan_vien, vp.ma_loai_vi_pham, vp.thoi_gian_vi_pham, vp.trang_thai, mucPhat);
             }
             return dt;
         }
-        // Trong ViPhamBUS.cs (BẮT BUỘC PHẢI CÓ)
         public DataTable timViPham(string keyword)
         {
-            // Giả định dal.SearchViPham(keyword) tìm kiếm trong cột ma_nhan_vien
             List<vi_pham> viPhams = dal.SearchViPham(keyword);
 
             if (viPhams == null || viPhams.Count == 0)
@@ -132,7 +131,8 @@ namespace BUS
 
             foreach (var vp in viPhams)
             {
-                dt.Rows.Add(vp.ma_vi_pham, vp.ma_nhan_vien, vp.ma_loai_vi_pham, vp.thoi_gian_vi_pham, vp.trang_thai, GetMucPhatByLoaiVP(vp.ma_loai_vi_pham));
+                double mucPhat = GetMucPhatByLoaiPhat(vp.ma_loai_vi_pham);
+                dt.Rows.Add(vp.ma_vi_pham, vp.ma_nhan_vien, vp.ma_loai_vi_pham, vp.thoi_gian_vi_pham, vp.trang_thai, mucPhat);
             }
             return dt;
         }

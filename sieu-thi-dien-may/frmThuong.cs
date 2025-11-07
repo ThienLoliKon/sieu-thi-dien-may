@@ -9,7 +9,6 @@ namespace he_thong_dien_may
 {
     public partial class frmThuong : Form
     {
-        // KHAI BÁO BUS
         private ThuongBUS tBus = new ThuongBUS();
         private NhanVienBUS nvBus = new NhanVienBUS();
         private LoaiThuongBUS ltBus = new LoaiThuongBUS();
@@ -30,7 +29,7 @@ namespace he_thong_dien_may
             cbbLoaiThuong.SelectedIndex = -1;
             if (txtMucThuong != null) txtMucThuong.Text = "0";
             dtpThoiGianThuong.Value = DateTime.Now;
-            cbTrangThai.Checked = false; // Mặc định là chưa trao
+            cbTrangThai.Checked = false; 
 
             txtMaThuong.ReadOnly = false;
         }
@@ -56,7 +55,6 @@ namespace he_thong_dien_may
                 DataRow[] rows = dtLoaiThuong.Select($"MaLT = '{maLT}'");
                 if (rows.Length > 0)
                 {
-                    // Giả định cột Mức thưởng là MucThuong
                     txtMucThuong.Text = rows[0]["MucThuong"].ToString();
                     return;
                 }
@@ -86,7 +84,6 @@ namespace he_thong_dien_may
         {
             try
             {
-                // 1. Load Nhân viên
                 DataTable dtNV = nvBus.GetAllNhanVienAsTable();
                 if (dtNV != null)
                 {
@@ -103,14 +100,13 @@ namespace he_thong_dien_may
                     cbbTraCuu.ValueMember = "MaNV";
                     cbbTraCuu.SelectedIndex = -1;
                 }
-                // 2. Load Loại Thưởng
                 DataTable dtLT = ltBus.GetAllLoaiThuongAsTable();
                 if (dtLT != null)
                 {
                     cbbLoaiThuong.DataSource = dtLT;
-                    cbbLoaiThuong.DisplayMember = "LoaiYC"; // Hiển thị tên loại yêu cầu cho dễ hiểu
+                    cbbLoaiThuong.DisplayMember = "LoaiYC"; 
                     cbbLoaiThuong.ValueMember = "MaLT";
-                    cbbLoaiThuong.Tag = dtLT; // Lưu để lấy Mức thưởng
+                    cbbLoaiThuong.Tag = dtLT; 
                     cbbLoaiThuong.SelectedIndex = -1;
                 }
             }
@@ -123,12 +119,12 @@ namespace he_thong_dien_may
 
             dgvThuong.Columns.Clear();
             
-            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã Thưởng", DataPropertyName = "MaThuong", Width = 150 });
-            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã NV", DataPropertyName = "MaNV", Width = 150 });
-            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Loại Thưởng", DataPropertyName = "MaLoaiThuong", Width = 150 });
-            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Thời Gian", DataPropertyName = "ThoiGianThuong", Width = 150 });
-            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Trạng Thái", DataPropertyName = "TrangThai", Width = 150 });
-            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mức Thưởng", DataPropertyName = "MucThuong", Width = 150 });
+            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã Thưởng", DataPropertyName = "MaThuong", Width = 250 });
+            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã NV", DataPropertyName = "MaNV", Width = 250 });
+            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Loại Thưởng", DataPropertyName = "MaLoaiThuong", Width = 250 });
+            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Thời Gian", DataPropertyName = "ThoiGianThuong", Width = 250 });
+            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Trạng Thái", DataPropertyName = "TrangThai", Width = 250 });
+            dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mức Thưởng", DataPropertyName = "MucThuong", Width = 250 });
             LoadComboBoxData();
             LoadDL();
         }

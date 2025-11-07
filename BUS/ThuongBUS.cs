@@ -20,7 +20,6 @@ namespace BUS
 
         private double GetMucThuongByLoaiThuong(string maLoaiThuong)
         {
-            // Remove 'using' statement since DBSTDMDataContext does not implement IDisposable
             var db = new DBSTDMDataContext();
             return db.loai_thuongs
                 .Where(lt => lt.ma_loai_thuong == maLoaiThuong)

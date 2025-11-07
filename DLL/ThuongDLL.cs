@@ -10,7 +10,6 @@ namespace DLL
     {
         private DBSTDMDataContext db;
 
-        // KHẮC PHỤC LỖI: Sửa tên constructor từ NhanVienDLL() thành ThuongDLL()
         public ThuongDLL()
         {
             db = new DBSTDMDataContext();
@@ -46,28 +45,23 @@ namespace DLL
 
         public void DeleteThuong(string id)
         {
-            // Tìm kiếm theo ma_thuong
             var thuong = db.thuongs.SingleOrDefault(p => p.ma_thuong == id);
 
             if (thuong == null)
             {
-                // Sửa thông báo lỗi
                 throw new Exception($"Không tìm thấy phiếu thưởng với Mã: {id}");
             }
 
-            // Xóa cứng (Hard Delete)
             db.thuongs.DeleteOnSubmit(thuong);
             db.SubmitChanges();
         }
 
         public void UpdateThuong(thuong updateThuong) // Đổi tên tham số
         {
-            // Tìm kiếm theo ma_thuong
             var result = db.thuongs.SingleOrDefault(t => t.ma_thuong == updateThuong.ma_thuong);
 
             if (result != null)
             {
-                // Cập nhật các trường của bảng thuong
                 result.ma_nhan_vien = updateThuong.ma_nhan_vien;
                 result.ma_loai_thuong = updateThuong.ma_loai_thuong;
                 result.trang_thai = updateThuong.trang_thai;
@@ -78,7 +72,6 @@ namespace DLL
 
         public string TaoMaThuong()
         {
-            // Logic tạo mã Txxx
             var maThuongs = db.thuongs.Select(p => p.ma_thuong).ToList();
 
             int maxId = 0;
@@ -101,7 +94,6 @@ namespace DLL
 
         public List<thuong> SearchThuong(string keyword)
         {
-            // Tìm kiếm theo các cột chính của bảng thuong
             return db.thuongs
                 .Where(t => t.ma_thuong.Contains(keyword) ||
                             t.ma_nhan_vien.Contains(keyword) ||
@@ -111,7 +103,6 @@ namespace DLL
 
         public bool check(string id)
         {
-            // Kiểm tra sự tồn tại trên bảng thuong
             return db.thuongs.Any(p => p.ma_thuong == id);
         }
     }
