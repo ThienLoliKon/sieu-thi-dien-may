@@ -40,6 +40,7 @@
             this.dgvKhoTong = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.lblSPTrongChiNhanh = new ReaLTaiizor.Controls.NightHeaderLabel();
             this.RTKhachHangForm = new ReaLTaiizor.Forms.NightForm();
+            this.cyberButton2 = new ReaLTaiizor.Controls.CyberButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhoTong)).BeginInit();
             this.RTKhachHangForm.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +82,7 @@
             this.cyberButton6.Lighting = false;
             this.cyberButton6.LinearGradient_Background = false;
             this.cyberButton6.LinearGradientPen = false;
-            this.cyberButton6.Location = new System.Drawing.Point(647, 342);
+            this.cyberButton6.Location = new System.Drawing.Point(599, 342);
             this.cyberButton6.Name = "cyberButton6";
             this.cyberButton6.PenWidth = 15;
             this.cyberButton6.Rounding = true;
@@ -121,7 +122,7 @@
             this.cyberButton4.Lighting = false;
             this.cyberButton4.LinearGradient_Background = false;
             this.cyberButton4.LinearGradientPen = false;
-            this.cyberButton4.Location = new System.Drawing.Point(935, 342);
+            this.cyberButton4.Location = new System.Drawing.Point(842, 342);
             this.cyberButton4.Name = "cyberButton4";
             this.cyberButton4.PenWidth = 15;
             this.cyberButton4.Rounding = true;
@@ -182,9 +183,9 @@
             this.thunderLabel1.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel1.Location = new System.Drawing.Point(558, 116);
+            this.thunderLabel1.Location = new System.Drawing.Point(533, 116);
             this.thunderLabel1.Name = "thunderLabel1";
-            this.thunderLabel1.Size = new System.Drawing.Size(83, 18);
+            this.thunderLabel1.Size = new System.Drawing.Size(108, 18);
             this.thunderLabel1.TabIndex = 15;
             this.thunderLabel1.Text = "Tìm kiếm";
             // 
@@ -288,6 +289,7 @@
             // RTKhachHangForm
             // 
             this.RTKhachHangForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.RTKhachHangForm.Controls.Add(this.cyberButton2);
             this.RTKhachHangForm.Controls.Add(this.lblDanhSachTrong);
             this.RTKhachHangForm.Controls.Add(this.cyberButton6);
             this.RTKhachHangForm.Controls.Add(this.cyberButton4);
@@ -309,6 +311,47 @@
             this.RTKhachHangForm.Text = "KhachHang";
             this.RTKhachHangForm.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
             this.RTKhachHangForm.TitleBarTextColor = System.Drawing.Color.Gainsboro;
+            // 
+            // cyberButton2
+            // 
+            this.cyberButton2.Alpha = 20;
+            this.cyberButton2.BackColor = System.Drawing.Color.Transparent;
+            this.cyberButton2.Background = true;
+            this.cyberButton2.Background_WidthPen = 4F;
+            this.cyberButton2.BackgroundPen = true;
+            this.cyberButton2.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.cyberButton2.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.cyberButton2.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.cyberButton2.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.cyberButton2.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.cyberButton2.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.cyberButton2.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.cyberButton2.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.cyberButton2.Effect_1 = true;
+            this.cyberButton2.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.cyberButton2.Effect_1_Transparency = 25;
+            this.cyberButton2.Effect_2 = true;
+            this.cyberButton2.Effect_2_ColorBackground = System.Drawing.Color.White;
+            this.cyberButton2.Effect_2_Transparency = 20;
+            this.cyberButton2.Font = new System.Drawing.Font("Arial", 11F);
+            this.cyberButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.cyberButton2.Lighting = false;
+            this.cyberButton2.LinearGradient_Background = false;
+            this.cyberButton2.LinearGradientPen = false;
+            this.cyberButton2.Location = new System.Drawing.Point(1073, 342);
+            this.cyberButton2.Name = "cyberButton2";
+            this.cyberButton2.PenWidth = 15;
+            this.cyberButton2.Rounding = true;
+            this.cyberButton2.RoundingInt = 70;
+            this.cyberButton2.Size = new System.Drawing.Size(130, 50);
+            this.cyberButton2.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.cyberButton2.TabIndex = 37;
+            this.cyberButton2.Tag = "Cyber";
+            this.cyberButton2.TextButton = "Đóng";
+            this.cyberButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.cyberButton2.Timer_Effect_1 = 5;
+            this.cyberButton2.Timer_RGB = 300;
+            this.cyberButton2.Click += new System.EventHandler(this.cyberButton2_Click);
             // 
             // SanPhamTrongKhoTong
             // 
@@ -341,5 +384,6 @@
         private ReaLTaiizor.Controls.PoisonDataGridView dgvKhoTong;
         private ReaLTaiizor.Controls.NightHeaderLabel lblSPTrongChiNhanh;
         private ReaLTaiizor.Forms.NightForm RTKhachHangForm;
+        private ReaLTaiizor.Controls.CyberButton cyberButton2;
     }
 }

@@ -15,7 +15,7 @@ namespace he_thong_dien_may
     {
         NhapKhoBUS nhapkhobus = new NhapKhoBUS();
         string makho;
-        public PhieuNhapKho(string makho)
+        public PhieuNhapKho(string makho = "")
         {
             InitializeComponent();
             this.makho = makho;
@@ -39,7 +39,8 @@ namespace he_thong_dien_may
         {
             NhapKhoBUS.NhapKho nhapkho = new NhapKhoBUS.NhapKho();
             nhapkho.manhanviennhapkho = txtNhanVien.TextButton;
-            nhapkho.masanpham = txtSanPham.TextButton;
+            //nhapkho.masanpham = txtSanPham.TextButton;
+            nhapkho.masanpham = cbxSanPham.SelectedValue.ToString();
             nhapkho.makho = txtKho.TextButton;
             nhapkho.soluong = int.Parse(txtSoLuong.Text);
             nhapkho.dongia = decimal.Parse(txtDonGia.Text);
@@ -65,8 +66,12 @@ namespace he_thong_dien_may
         {
             //lblHeader.Text = "Phiếu Nhập Kho - " + makho;
             KhoTongBUS khotongbus = new KhoTongBUS();
-            txtKho.TextButton = khotongbus.searchKhoTong(makho).tenkho;
+            txtKho.TextButton = khotongbus.searchKhoTong(this.makho).tenkho;
             txtNhanVien.TextButton = TaiKhoanBUS.currentUserMaNV;
+            SanPhamBUS sanphambus = new SanPhamBUS();
+            cbxSanPham.DataSource = sanphambus.GetAllSanPhamAsTable();
+            cbxSanPham.DisplayMember = "ten_san_pham";
+            cbxSanPham.ValueMember = "ma_san_pham";
         }
     }
 }

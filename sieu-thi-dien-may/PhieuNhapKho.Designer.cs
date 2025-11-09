@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cyberButton3 = new ReaLTaiizor.Controls.CyberButton();
             this.cyberButton5 = new ReaLTaiizor.Controls.CyberButton();
             this.cyberButton6 = new ReaLTaiizor.Controls.CyberButton();
@@ -45,13 +45,13 @@
             this.thunderLabel2 = new ReaLTaiizor.Controls.ThunderLabel();
             this.thunderLabel1 = new ReaLTaiizor.Controls.ThunderLabel();
             this.txtKho = new ReaLTaiizor.Controls.CyberTextBox();
-            this.txtSanPham = new ReaLTaiizor.Controls.CyberTextBox();
             this.txtMaPhieu = new ReaLTaiizor.Controls.CyberTextBox();
             this.dgvPhieuNhapKho = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.lblHeader = new ReaLTaiizor.Controls.NightHeaderLabel();
             this.RTKhachHangForm = new ReaLTaiizor.Forms.NightForm();
-            this.txtNhanVien = new ReaLTaiizor.Controls.CyberTextBox();
             this.thunderLabel6 = new ReaLTaiizor.Controls.ThunderLabel();
+            this.txtNhanVien = new ReaLTaiizor.Controls.CyberTextBox();
+            this.cbxSanPham = new ReaLTaiizor.Controls.HopeComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuNhapKho)).BeginInit();
             this.RTKhachHangForm.SuspendLayout();
             this.SuspendLayout();
@@ -447,36 +447,6 @@
             this.txtKho.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.txtKho.Timer_RGB = 300;
             // 
-            // txtSanPham
-            // 
-            this.txtSanPham.Alpha = 20;
-            this.txtSanPham.BackColor = System.Drawing.Color.Transparent;
-            this.txtSanPham.Background_WidthPen = 3F;
-            this.txtSanPham.BackgroundPen = true;
-            this.txtSanPham.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.txtSanPham.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txtSanPham.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txtSanPham.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.txtSanPham.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.txtSanPham.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.txtSanPham.Font = new System.Drawing.Font("Arial", 10F);
-            this.txtSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.txtSanPham.Lighting = false;
-            this.txtSanPham.LinearGradientPen = false;
-            this.txtSanPham.Location = new System.Drawing.Point(677, 205);
-            this.txtSanPham.Name = "txtSanPham";
-            this.txtSanPham.PenWidth = 15;
-            this.txtSanPham.RGB = false;
-            this.txtSanPham.Rounding = true;
-            this.txtSanPham.RoundingInt = 60;
-            this.txtSanPham.Size = new System.Drawing.Size(405, 40);
-            this.txtSanPham.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.txtSanPham.TabIndex = 10;
-            this.txtSanPham.Tag = "Cyber";
-            this.txtSanPham.TextButton = "";
-            this.txtSanPham.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.txtSanPham.Timer_RGB = 300;
-            // 
             // txtMaPhieu
             // 
             this.txtMaPhieu.Alpha = 20;
@@ -515,23 +485,23 @@
             this.dgvPhieuNhapKho.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPhieuNhapKho.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvPhieuNhapKho.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhieuNhapKho.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhieuNhapKho.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPhieuNhapKho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPhieuNhapKho.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPhieuNhapKho.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPhieuNhapKho.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvPhieuNhapKho.EnableHeadersVisualStyles = false;
             this.dgvPhieuNhapKho.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -539,14 +509,14 @@
             this.dgvPhieuNhapKho.Location = new System.Drawing.Point(0, 455);
             this.dgvPhieuNhapKho.Name = "dgvPhieuNhapKho";
             this.dgvPhieuNhapKho.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhieuNhapKho.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPhieuNhapKho.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPhieuNhapKho.RowHeadersWidth = 51;
             this.dgvPhieuNhapKho.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPhieuNhapKho.RowTemplate.Height = 24;
@@ -577,6 +547,7 @@
             // RTKhachHangForm
             // 
             this.RTKhachHangForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.RTKhachHangForm.Controls.Add(this.cbxSanPham);
             this.RTKhachHangForm.Controls.Add(this.cyberButton3);
             this.RTKhachHangForm.Controls.Add(this.cyberButton5);
             this.RTKhachHangForm.Controls.Add(this.cyberButton6);
@@ -593,7 +564,6 @@
             this.RTKhachHangForm.Controls.Add(this.thunderLabel2);
             this.RTKhachHangForm.Controls.Add(this.thunderLabel1);
             this.RTKhachHangForm.Controls.Add(this.txtKho);
-            this.RTKhachHangForm.Controls.Add(this.txtSanPham);
             this.RTKhachHangForm.Controls.Add(this.txtMaPhieu);
             this.RTKhachHangForm.Controls.Add(this.dgvPhieuNhapKho);
             this.RTKhachHangForm.Controls.Add(this.lblHeader);
@@ -610,6 +580,17 @@
             this.RTKhachHangForm.Text = "KhachHang";
             this.RTKhachHangForm.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
             this.RTKhachHangForm.TitleBarTextColor = System.Drawing.Color.Gainsboro;
+            // 
+            // thunderLabel6
+            // 
+            this.thunderLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.thunderLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thunderLabel6.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.thunderLabel6.Location = new System.Drawing.Point(572, 112);
+            this.thunderLabel6.Name = "thunderLabel6";
+            this.thunderLabel6.Size = new System.Drawing.Size(99, 18);
+            this.thunderLabel6.TabIndex = 22;
+            this.thunderLabel6.Text = "Nhân viên";
             // 
             // txtNhanVien
             // 
@@ -628,13 +609,13 @@
             this.txtNhanVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.txtNhanVien.Lighting = false;
             this.txtNhanVien.LinearGradientPen = false;
-            this.txtNhanVien.Location = new System.Drawing.Point(664, 90);
+            this.txtNhanVien.Location = new System.Drawing.Point(677, 90);
             this.txtNhanVien.Name = "txtNhanVien";
             this.txtNhanVien.PenWidth = 15;
             this.txtNhanVien.RGB = false;
             this.txtNhanVien.Rounding = true;
             this.txtNhanVien.RoundingInt = 60;
-            this.txtNhanVien.Size = new System.Drawing.Size(418, 40);
+            this.txtNhanVien.Size = new System.Drawing.Size(405, 40);
             this.txtNhanVien.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.txtNhanVien.TabIndex = 19;
             this.txtNhanVien.Tag = "Cyber";
@@ -643,16 +624,20 @@
             this.txtNhanVien.Timer_RGB = 300;
             this.txtNhanVien.Leave += new System.EventHandler(this.txtNhanVien_Leave);
             // 
-            // thunderLabel6
+            // cbxSanPham
             // 
-            this.thunderLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.thunderLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thunderLabel6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel6.Location = new System.Drawing.Point(572, 112);
-            this.thunderLabel6.Name = "thunderLabel6";
-            this.thunderLabel6.Size = new System.Drawing.Size(86, 18);
-            this.thunderLabel6.TabIndex = 22;
-            this.thunderLabel6.Text = "Nhân viên";
+            this.cbxSanPham.BackColor = System.Drawing.Color.OldLace;
+            this.cbxSanPham.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxSanPham.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxSanPham.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbxSanPham.FormattingEnabled = true;
+            this.cbxSanPham.ItemHeight = 30;
+            this.cbxSanPham.Location = new System.Drawing.Point(677, 209);
+            this.cbxSanPham.MaxDropDownItems = 5;
+            this.cbxSanPham.Name = "cbxSanPham";
+            this.cbxSanPham.Size = new System.Drawing.Size(405, 36);
+            this.cbxSanPham.TabIndex = 34;
             // 
             // PhieuNhapKho
             // 
@@ -690,12 +675,12 @@
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel2;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel1;
         private ReaLTaiizor.Controls.CyberTextBox txtKho;
-        private ReaLTaiizor.Controls.CyberTextBox txtSanPham;
         private ReaLTaiizor.Controls.CyberTextBox txtMaPhieu;
         private ReaLTaiizor.Controls.PoisonDataGridView dgvPhieuNhapKho;
         private ReaLTaiizor.Controls.NightHeaderLabel lblHeader;
         private ReaLTaiizor.Forms.NightForm RTKhachHangForm;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel6;
         private ReaLTaiizor.Controls.CyberTextBox txtNhanVien;
+        private ReaLTaiizor.Controls.HopeComboBox cbxSanPham;
     }
 }
