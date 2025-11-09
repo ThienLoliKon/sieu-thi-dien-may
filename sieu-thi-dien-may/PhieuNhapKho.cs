@@ -33,7 +33,10 @@ namespace he_thong_dien_may
 
         private void cyberButton1_Click(object sender, EventArgs e)
         {
-            nhapkhobus.addKhoTong(createPhieuNhapItem());
+            var item = createPhieuNhapItem();
+            nhapkhobus.addKhoTong(item);
+            SanPhamTrongKhoTongBUS spktbus = new SanPhamTrongKhoTongBUS();
+            spktbus.updateSoLuongNhapKho(item.makho, item.masanpham, item.soluong);
         }
         private NhapKhoBUS.NhapKho createPhieuNhapItem()
         {
@@ -50,6 +53,11 @@ namespace he_thong_dien_may
         private void cyberButton2_Click(object sender, EventArgs e)
         {
             var nhapkho = createPhieuNhapItem();
+            if(nhapkho.soluong < int.Parse(dgvPhieuNhapKho.SelectedRows[0].Cells[3].Value.ToString()))
+            {
+                MessageBox.Show("Số lượng nhập không thể nhỏ hơn số lượng đã nhập trước đó.");
+                return;
+            }
             nhapkhobus.updateNhapKho(nhapkho);
         }
 
@@ -72,6 +80,11 @@ namespace he_thong_dien_may
             cbxSanPham.DataSource = sanphambus.GetAllSanPhamAsTable();
             cbxSanPham.DisplayMember = "ten_san_pham";
             cbxSanPham.ValueMember = "ma_san_pham";
+        }
+
+        private void cyberButton4_Click(object sender, EventArgs e)
+        {
+            dgvPhieuNhapKho.DataSource = nhapkhobus.getAllNhapKho();
         }
     }
 }

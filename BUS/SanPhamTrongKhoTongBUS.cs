@@ -55,6 +55,10 @@ namespace BUS
             }
             return list;
         }
+        public void updateSoLuongNhapKho(string makho, string masanpham, int soluong)
+        {
+            sanphamtrongkhotongdll.updateSoLuongNhapKho(makho, masanpham, soluong);
+        }
     }
     //public int addKhachHang(KhachHang kh)
     //{

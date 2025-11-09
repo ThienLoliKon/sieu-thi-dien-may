@@ -49,9 +49,9 @@
             this.dgvPhieuNhapKho = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.lblHeader = new ReaLTaiizor.Controls.NightHeaderLabel();
             this.RTKhachHangForm = new ReaLTaiizor.Forms.NightForm();
+            this.cbxSanPham = new ReaLTaiizor.Controls.HopeComboBox();
             this.thunderLabel6 = new ReaLTaiizor.Controls.ThunderLabel();
             this.txtNhanVien = new ReaLTaiizor.Controls.CyberTextBox();
-            this.cbxSanPham = new ReaLTaiizor.Controls.HopeComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuNhapKho)).BeginInit();
             this.RTKhachHangForm.SuspendLayout();
             this.SuspendLayout();
@@ -218,6 +218,7 @@
             this.cyberButton4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberButton4.Timer_Effect_1 = 5;
             this.cyberButton4.Timer_RGB = 300;
+            this.cyberButton4.Click += new System.EventHandler(this.cyberButton4_Click);
             // 
             // cyberButton2
             // 
@@ -459,6 +460,7 @@
             this.txtMaPhieu.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
             this.txtMaPhieu.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
             this.txtMaPhieu.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.txtMaPhieu.Enabled = false;
             this.txtMaPhieu.Font = new System.Drawing.Font("Arial", 10F);
             this.txtMaPhieu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.txtMaPhieu.Lighting = false;
@@ -581,6 +583,21 @@
             this.RTKhachHangForm.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
             this.RTKhachHangForm.TitleBarTextColor = System.Drawing.Color.Gainsboro;
             // 
+            // cbxSanPham
+            // 
+            this.cbxSanPham.BackColor = System.Drawing.Color.OldLace;
+            this.cbxSanPham.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxSanPham.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxSanPham.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbxSanPham.FormattingEnabled = true;
+            this.cbxSanPham.ItemHeight = 30;
+            this.cbxSanPham.Location = new System.Drawing.Point(677, 209);
+            this.cbxSanPham.MaxDropDownItems = 5;
+            this.cbxSanPham.Name = "cbxSanPham";
+            this.cbxSanPham.Size = new System.Drawing.Size(405, 36);
+            this.cbxSanPham.TabIndex = 34;
+            // 
             // thunderLabel6
             // 
             this.thunderLabel6.BackColor = System.Drawing.Color.Transparent;
@@ -623,21 +640,6 @@
             this.txtNhanVien.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.txtNhanVien.Timer_RGB = 300;
             this.txtNhanVien.Leave += new System.EventHandler(this.txtNhanVien_Leave);
-            // 
-            // cbxSanPham
-            // 
-            this.cbxSanPham.BackColor = System.Drawing.Color.OldLace;
-            this.cbxSanPham.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbxSanPham.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbxSanPham.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbxSanPham.FormattingEnabled = true;
-            this.cbxSanPham.ItemHeight = 30;
-            this.cbxSanPham.Location = new System.Drawing.Point(677, 209);
-            this.cbxSanPham.MaxDropDownItems = 5;
-            this.cbxSanPham.Name = "cbxSanPham";
-            this.cbxSanPham.Size = new System.Drawing.Size(405, 36);
-            this.cbxSanPham.TabIndex = 34;
             // 
             // PhieuNhapKho
             // 
