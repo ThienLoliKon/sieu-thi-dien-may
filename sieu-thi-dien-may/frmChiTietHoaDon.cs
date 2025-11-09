@@ -19,7 +19,9 @@ namespace he_thong_dien_may
 			InitializeComponent();
 		}
 		ChiTietHoaDonBUS bus = new ChiTietHoaDonBUS();
-		BindingSource bs = new BindingSource(); // <-- THÊM DÒNG NÀY
+		BindingSource bs = new BindingSource(); // <-- THÊM DÒNG NÀY		
+		private decimal giaGocSanPham = 0; // <-- THÊM DÒNG NÀY
+
 		public void loadData()
 		{
 			bs.DataSource = bus.GetAllChiTietHoaDonAsTable();
@@ -278,23 +280,73 @@ namespace he_thong_dien_may
 			{
 				return; // Dừng lại nếu chưa nạp xong
 			}
-			// lấy giá tiền lúc mua
-			SanPhamBUS busSP = new SanPhamBUS();
-			decimal giaTienValue =  busSP.layGiaTienSanPhamBangMa(cboSanPham.SelectedIndex.ToString());
-			txtDonGia.Text = giaTienValue.ToString("F0");
-
-			KhuyenMaiBUS busNhaSX = new KhuyenMaiBUS();
-			DataTable dt = busNhaSX.GetAllKhuyenMaiByMaSPAsTable(cboSanPham.SelectedValue.ToString());
-			cboKhuyenMai.DataSource = dt;
-			cboKhuyenMai.DisplayMember = "giam_gia";
-			cboKhuyenMai.ValueMember = "ma_khuyen_mai";
-			if (dt == null || dt.Rows.Count == 0)
+			try
 			{
-				cboKhuyenMai.DataSource = null;
-				cboKhuyenMai.Items.Clear();
-				cboKhuyenMai.Text = "Không tìm thấy khuyến mãi";
+				// lấy giá tiền lúc mua
+				// 2. LẤY MÃ SẢN PHẨM (đã sửa)
+				string maSP = cboSanPham.SelectedValue.ToString();
+
+				// 3. Lấy giá tiền và LƯU VÀO BIẾN GIÁ GỐC
+				SanPhamBUS busSP = new SanPhamBUS();
+				// (Giả sử bạn đã có hàm layGiaTienSanPhamBangMa(maSP) trong BUS)
+				this.giaGocSanPham = busSP.layGiaTienSanPhamBangMa(maSP);
+
+				// 4. Hiển thị giá gốc ban đầu
+				txtDonGia.Text = this.giaGocSanPham.ToString("F0");
+
+				KhuyenMaiBUS busNhaSX = new KhuyenMaiBUS();
+				DataTable dt = busNhaSX.GetAllKhuyenMaiByMaSPAsTable(cboSanPham.SelectedValue.ToString());
+				cboKhuyenMai.DataSource = dt;
+				cboKhuyenMai.DisplayMember = "giam_gia";
+				cboKhuyenMai.ValueMember = "ma_khuyen_mai";
+				if (dt == null || dt.Rows.Count == 0)
+				{
+					cboKhuyenMai.DataSource = null;
+					cboKhuyenMai.Items.Clear();
+					cboKhuyenMai.Text = "Không tìm thấy khuyến mãi";
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Lỗi khi tải sản phẩm: " + ex.Message);
+				this.giaGocSanPham = 0;
+				txtDonGia.Text = "0";
+			}
+		}
+
+		private void cboKhuyenMai_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			// 1. Kiểm tra nếu ComboBox chưa sẵn sàng
+			if (cboKhuyenMai.SelectedItem == null || cboKhuyenMai.DataSource == null || this.giaGocSanPham == 0)
+			{
+				// Nếu không chọn khuyến mãi, hoặc chưa có sản phẩm,
+				// đảm bảo giá tiền được trả về giá gốc.
+				txtDonGia.Text = this.giaGocSanPham.ToString("F0");
+				return;
 			}
 
+			try
+			{
+				// 2. Lấy dòng dữ liệu (DataRowView) của khuyến mãi đang chọn
+				DataRowView selectedRow = (DataRowView)cboKhuyenMai.SelectedItem;
+
+				// 3. Lấy giá trị khuyến mãi (ví dụ: 0.05, 0.1, 0.2)
+				// Chúng ta nên dùng Convert.ToDecimal để an toàn
+				decimal phanTramGiam = Convert.ToDecimal(selectedRow["giam_gia"]);
+
+				// 4. Tính giá đã giảm
+				// Ví dụ: 1000 * (1 - 0.05) = 950
+				decimal giaDaGiam = this.giaGocSanPham * (1 - phanTramGiam);
+
+				// 5. Cập nhật giá tiền mới vào TextBox
+				// (Làm tròn đến 0 số lẻ)
+				txtDonGia.Text = giaDaGiam.ToString("F0");
+			}
+			catch (Exception ex)
+			{
+				// Có lỗi xảy ra, trả về giá gốc cho an toàn
+				txtDonGia.Text = this.giaGocSanPham.ToString("F0");
+			}
 		}
 	}
 }

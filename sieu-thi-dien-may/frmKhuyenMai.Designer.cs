@@ -28,9 +28,10 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			this.components = new System.ComponentModel.Container();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.foreverForm1 = new ReaLTaiizor.Forms.ForeverForm();
 			this.cboLoaiHang = new ReaLTaiizor.Controls.HopeComboBox();
 			this.dtpNgayKetThuc = new ReaLTaiizor.Controls.PoisonDateTime();
@@ -47,8 +48,10 @@
 			this.txtGiamGia = new ReaLTaiizor.Controls.ForeverTextBox();
 			this.foreverLabel1 = new ReaLTaiizor.Controls.ForeverLabel();
 			this.txtMaKhuyenMai = new ReaLTaiizor.Controls.ForeverTextBox();
+			this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
 			this.foreverForm1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvKhuyenMai)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// foreverForm1
@@ -107,7 +110,7 @@
 			// 
 			this.dtpNgayKetThuc.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
 			this.dtpNgayKetThuc.Location = new System.Drawing.Point(1428, 149);
-			this.dtpNgayKetThuc.MinimumSize = new System.Drawing.Size(0, 30);
+			this.dtpNgayKetThuc.MinimumSize = new System.Drawing.Size(4, 30);
 			this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
 			this.dtpNgayKetThuc.Size = new System.Drawing.Size(200, 30);
 			this.dtpNgayKetThuc.TabIndex = 39;
@@ -116,7 +119,7 @@
 			// 
 			this.dtpNgayBatDau.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
 			this.dtpNgayBatDau.Location = new System.Drawing.Point(1428, 105);
-			this.dtpNgayBatDau.MinimumSize = new System.Drawing.Size(0, 30);
+			this.dtpNgayBatDau.MinimumSize = new System.Drawing.Size(4, 30);
 			this.dtpNgayBatDau.Name = "dtpNgayBatDau";
 			this.dtpNgayBatDau.Size = new System.Drawing.Size(200, 30);
 			this.dtpNgayBatDau.TabIndex = 38;
@@ -147,7 +150,7 @@
 			this.btnLamMoi.Lighting = false;
 			this.btnLamMoi.LinearGradient_Background = false;
 			this.btnLamMoi.LinearGradientPen = false;
-			this.btnLamMoi.Location = new System.Drawing.Point(870, 264);
+			this.btnLamMoi.Location = new System.Drawing.Point(901, 267);
 			this.btnLamMoi.Name = "btnLamMoi";
 			this.btnLamMoi.PenWidth = 15;
 			this.btnLamMoi.Rounding = true;
@@ -169,23 +172,23 @@
 			this.dgvKhuyenMai.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dgvKhuyenMai.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
 			this.dgvKhuyenMai.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgvKhuyenMai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+			dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+			dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+			dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvKhuyenMai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
 			this.dgvKhuyenMai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvKhuyenMai.DefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+			dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+			dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+			dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvKhuyenMai.DefaultCellStyle = dataGridViewCellStyle8;
 			this.dgvKhuyenMai.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.dgvKhuyenMai.EnableHeadersVisualStyles = false;
 			this.dgvKhuyenMai.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -193,14 +196,14 @@
 			this.dgvKhuyenMai.Location = new System.Drawing.Point(1, 352);
 			this.dgvKhuyenMai.Name = "dgvKhuyenMai";
 			this.dgvKhuyenMai.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-			dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-			dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgvKhuyenMai.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+			dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+			dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+			dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvKhuyenMai.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
 			this.dgvKhuyenMai.RowHeadersWidth = 51;
 			this.dgvKhuyenMai.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 			this.dgvKhuyenMai.RowTemplate.Height = 24;
@@ -235,7 +238,7 @@
 			this.btnThoat.Lighting = false;
 			this.btnThoat.LinearGradient_Background = false;
 			this.btnThoat.LinearGradientPen = false;
-			this.btnThoat.Location = new System.Drawing.Point(1054, 264);
+			this.btnThoat.Location = new System.Drawing.Point(1085, 267);
 			this.btnThoat.Name = "btnThoat";
 			this.btnThoat.PenWidth = 15;
 			this.btnThoat.Rounding = true;
@@ -276,7 +279,7 @@
 			this.btnSua.Lighting = false;
 			this.btnSua.LinearGradient_Background = false;
 			this.btnSua.LinearGradientPen = false;
-			this.btnSua.Location = new System.Drawing.Point(1054, 196);
+			this.btnSua.Location = new System.Drawing.Point(1085, 199);
 			this.btnSua.Name = "btnSua";
 			this.btnSua.PenWidth = 15;
 			this.btnSua.Rounding = true;
@@ -317,7 +320,7 @@
 			this.btnThem.Lighting = false;
 			this.btnThem.LinearGradient_Background = false;
 			this.btnThem.LinearGradientPen = false;
-			this.btnThem.Location = new System.Drawing.Point(870, 196);
+			this.btnThem.Location = new System.Drawing.Point(901, 199);
 			this.btnThem.Name = "btnThem";
 			this.btnThem.PenWidth = 15;
 			this.btnThem.Rounding = true;
@@ -426,6 +429,10 @@
 			this.txtMaKhuyenMai.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.txtMaKhuyenMai.UseSystemPasswordChar = false;
 			// 
+			// errorProvider1
+			// 
+			this.errorProvider1.ContainerControl = this;
+			// 
 			// frmKhuyenMai
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -437,10 +444,12 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "frmKhuyenMai";
 			this.TransparencyKey = System.Drawing.Color.Fuchsia;
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.frmKhuyenMai_Load);
 			this.foreverForm1.ResumeLayout(false);
 			this.foreverForm1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvKhuyenMai)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -463,5 +472,6 @@
 		private ReaLTaiizor.Controls.PoisonDateTime dtpNgayKetThuc;
 		private ReaLTaiizor.Controls.PoisonDateTime dtpNgayBatDau;
 		private ReaLTaiizor.Controls.HopeComboBox cboLoaiHang;
+		private System.Windows.Forms.ErrorProvider errorProvider1;
 	}
 }

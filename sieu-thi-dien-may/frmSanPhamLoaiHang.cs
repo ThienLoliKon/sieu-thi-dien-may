@@ -53,20 +53,27 @@ namespace he_thong_dien_may
 
 		private void frmSanPhamLoaiHang_Load(object sender, EventArgs e)
 		{
+			// Đặt font cho tiêu đề (ví dụ: Tahoma, 12, In đậm)
+			dgvSanPhamLoaiHang.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12f, FontStyle.Bold);
+			// Đặt font cho nội dung (ví dụ: Tahoma, 11, Thường)
+			dgvSanPhamLoaiHang.DefaultCellStyle.Font = new Font("Tahoma", 11f, FontStyle.Regular);
+
+
+			// (Code cũ của bạn: tạo cột, load data...)
 			dgvSanPhamLoaiHang.AutoGenerateColumns = false;
 
 			dgvSanPhamLoaiHang.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Mã sản phẩm",
 				DataPropertyName = "ma_san_pham",
-				Width = 100
+				Width = 500
 			});
 
 			dgvSanPhamLoaiHang.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Mã loại hàng",
 				DataPropertyName = "ma_loai_hang",
-				Width = 200
+				Width = 500
 			});
 
 			loadData();
@@ -111,8 +118,8 @@ namespace he_thong_dien_may
 				int line = dgvSanPhamLoaiHang.CurrentCell.RowIndex;
 				if (dgvSanPhamLoaiHang.Rows[line].Cells[0].Value != DBNull.Value)
 				{
-					cboLoaiHang.SelectedValue = dgvSanPhamLoaiHang.Rows[line].Cells[0].Value.ToString();
-					cboSanPham.SelectedValue = dgvSanPhamLoaiHang.Rows[line].Cells[1].Value.ToString();
+					cboLoaiHang.SelectedValue = dgvSanPhamLoaiHang.Rows[line].Cells[1].Value.ToString();
+					cboSanPham.SelectedValue = dgvSanPhamLoaiHang.Rows[line].Cells[0].Value.ToString();
 					
 				}
 			}

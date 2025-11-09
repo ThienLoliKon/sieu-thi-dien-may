@@ -11,7 +11,6 @@ namespace BUS
 	public class ChiTietHoaDonBUS
 	{
 		private ChiTietHoaDonDLL dal;
-
 		public ChiTietHoaDonBUS()
 		{
 			dal = new ChiTietHoaDonDLL();
@@ -31,7 +30,10 @@ namespace BUS
 			else
 				addVariable.so_luong = null; // hoặc xử lý lỗi nhập liệu
 
-			addVariable.don_gia = busSP.layGiaTienSanPhamBangMa(maSanPham);
+			if (Decimal.TryParse(donGia, out decimal donGiaDemical))
+				addVariable.don_gia = donGiaDemical;
+			else
+				addVariable.don_gia = null; // hoặc xử lý lỗi nhập liệu			
 			addVariable.ngay_gio_in = ngayGioIn;
 			dal.addChiTietHoaDon(addVariable);
 

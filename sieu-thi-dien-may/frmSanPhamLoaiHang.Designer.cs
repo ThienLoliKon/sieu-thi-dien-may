@@ -85,7 +85,7 @@
 			this.cboSanPham.Font = new System.Drawing.Font("Segoe UI", 12F);
 			this.cboSanPham.FormattingEnabled = true;
 			this.cboSanPham.ItemHeight = 30;
-			this.cboSanPham.Location = new System.Drawing.Point(1227, 86);
+			this.cboSanPham.Location = new System.Drawing.Point(426, 86);
 			this.cboSanPham.Name = "cboSanPham";
 			this.cboSanPham.Size = new System.Drawing.Size(271, 36);
 			this.cboSanPham.TabIndex = 60;
@@ -98,7 +98,7 @@
 			this.cboLoaiHang.Font = new System.Drawing.Font("Segoe UI", 12F);
 			this.cboLoaiHang.FormattingEnabled = true;
 			this.cboLoaiHang.ItemHeight = 30;
-			this.cboLoaiHang.Location = new System.Drawing.Point(508, 86);
+			this.cboLoaiHang.Location = new System.Drawing.Point(1086, 91);
 			this.cboLoaiHang.Name = "cboLoaiHang";
 			this.cboLoaiHang.Size = new System.Drawing.Size(271, 36);
 			this.cboLoaiHang.TabIndex = 59;
@@ -146,6 +146,9 @@
 			// dgvSanPhamLoaiHang
 			// 
 			this.dgvSanPhamLoaiHang.AllowUserToResizeRows = false;
+			this.dgvSanPhamLoaiHang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.dgvSanPhamLoaiHang.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
 			this.dgvSanPhamLoaiHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dgvSanPhamLoaiHang.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -167,7 +170,6 @@
 			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
 			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
 			this.dgvSanPhamLoaiHang.DefaultCellStyle = dataGridViewCellStyle2;
-			this.dgvSanPhamLoaiHang.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.dgvSanPhamLoaiHang.EnableHeadersVisualStyles = false;
 			this.dgvSanPhamLoaiHang.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.dgvSanPhamLoaiHang.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -258,7 +260,7 @@
 			this.btnClear.Lighting = false;
 			this.btnClear.LinearGradient_Background = false;
 			this.btnClear.LinearGradientPen = false;
-			this.btnClear.Location = new System.Drawing.Point(649, 210);
+			this.btnClear.Location = new System.Drawing.Point(679, 210);
 			this.btnClear.Name = "btnClear";
 			this.btnClear.PenWidth = 15;
 			this.btnClear.Rounding = true;
@@ -299,7 +301,7 @@
 			this.btnThem.Lighting = false;
 			this.btnThem.LinearGradient_Background = false;
 			this.btnThem.LinearGradientPen = false;
-			this.btnThem.Location = new System.Drawing.Point(649, 145);
+			this.btnThem.Location = new System.Drawing.Point(679, 145);
 			this.btnThem.Name = "btnThem";
 			this.btnThem.PenWidth = 15;
 			this.btnThem.Rounding = true;
@@ -320,7 +322,7 @@
 			this.foreverLabel3.BackColor = System.Drawing.Color.Transparent;
 			this.foreverLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.foreverLabel3.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel3.Location = new System.Drawing.Point(1096, 94);
+			this.foreverLabel3.Location = new System.Drawing.Point(299, 94);
 			this.foreverLabel3.Name = "foreverLabel3";
 			this.foreverLabel3.Size = new System.Drawing.Size(108, 28);
 			this.foreverLabel3.TabIndex = 44;
@@ -332,7 +334,7 @@
 			this.foreverLabel1.BackColor = System.Drawing.Color.Transparent;
 			this.foreverLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.foreverLabel1.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel1.Location = new System.Drawing.Point(378, 89);
+			this.foreverLabel1.Location = new System.Drawing.Point(960, 99);
 			this.foreverLabel1.Name = "foreverLabel1";
 			this.foreverLabel1.Size = new System.Drawing.Size(102, 28);
 			this.foreverLabel1.TabIndex = 42;
