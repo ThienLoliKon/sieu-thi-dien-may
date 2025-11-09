@@ -50,13 +50,16 @@ namespace he_thong_dien_may
 			cboLoaiHang.SelectedIndex = 0;
 		}
 		private void frmKhuyenMai_Load(object sender, EventArgs e)
-		{
+		{// Đặt font cho tiêu đề (ví dụ: Tahoma, 12, In đậm)
+			dgvKhuyenMai.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12f, FontStyle.Bold);
+			// Đặt font cho nội dung (ví dụ: Tahoma, 11, Thường)
+			dgvKhuyenMai.DefaultCellStyle.Font = new Font("Tahoma", 11f, FontStyle.Regular);
 			dgvKhuyenMai.AutoGenerateColumns = false;
 			dgvKhuyenMai.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Mã khuyến mãi",
 				DataPropertyName = "ma_khuyen_mai",
-				Width = 100
+				Width = 150
 			});
 
 			dgvKhuyenMai.Columns.Add(new DataGridViewTextBoxColumn
@@ -70,21 +73,21 @@ namespace he_thong_dien_may
 			{
 				HeaderText = "Mã loại hàng",
 				DataPropertyName = "ma_loai_hang",
-				Width = 100
+				Width = 150
 			});
 
 			dgvKhuyenMai.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Ngày bắt đầu",
 				DataPropertyName = "ngay_bat_dau",
-				Width = 100
+				Width = 250
 			});
 
 			dgvKhuyenMai.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Ngày kết thúc",
 				DataPropertyName = "ngay_ket_thuc",
-				Width = 100
+				Width = 250
 			});
 			loadData();
 			loadLoaiHang();

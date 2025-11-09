@@ -30,7 +30,10 @@ namespace he_thong_dien_may
 		}
 
 		private void frmNhaSanXuat_Load(object sender, EventArgs e)
-		{
+		{// Đặt font cho tiêu đề (ví dụ: Tahoma, 12, In đậm)
+			dgvNhaSanXuat.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12f, FontStyle.Bold);
+			// Đặt font cho nội dung (ví dụ: Tahoma, 11, Thường)
+			dgvNhaSanXuat.DefaultCellStyle.Font = new Font("Tahoma", 11f, FontStyle.Regular);
 			dgvNhaSanXuat.AutoGenerateColumns = false;
 
 			dgvNhaSanXuat.Columns.Add(new DataGridViewTextBoxColumn
@@ -49,7 +52,7 @@ namespace he_thong_dien_may
 
 			dgvNhaSanXuat.Columns.Add(new DataGridViewTextBoxColumn
 			{
-				HeaderText = "Mã nhà sản xuất",
+				HeaderText = "địa chỉ nhà sản xuất",
 				DataPropertyName = "dia_chi_nha_san_xuat",
 				Width = 800
 			});

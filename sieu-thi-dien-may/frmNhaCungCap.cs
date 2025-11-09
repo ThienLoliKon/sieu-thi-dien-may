@@ -27,6 +27,10 @@ namespace he_thong_dien_may
 		}
 		private void frmNhaCungCap_Load(object sender, EventArgs e)
 		{
+			// Đặt font cho tiêu đề (ví dụ: Tahoma, 12, In đậm)
+			dgvNhaCungCap.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12f, FontStyle.Bold);
+			// Đặt font cho nội dung (ví dụ: Tahoma, 11, Thường)
+			dgvNhaCungCap.DefaultCellStyle.Font = new Font("Tahoma", 11f, FontStyle.Regular);
 			dgvNhaCungCap.AutoGenerateColumns = false;
 
 			dgvNhaCungCap.Columns.Add(new DataGridViewTextBoxColumn
@@ -45,7 +49,7 @@ namespace he_thong_dien_may
 
 			dgvNhaCungCap.Columns.Add(new DataGridViewTextBoxColumn
 			{
-				HeaderText = "Mã nhà cung cấp",
+				HeaderText = "địa chỉ nhà cung cấp",
 				DataPropertyName = "dia_chi_nha_cung_cap",
 				Width = 800
 			});

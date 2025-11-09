@@ -68,34 +68,38 @@ namespace he_thong_dien_may
 
 		private void frmHoaDon_Load(object sender, EventArgs e)
 		{
+			// Đặt font cho tiêu đề (ví dụ: Tahoma, 12, In đậm)
+			dgvHoaDon.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12f, FontStyle.Bold);
+			// Đặt font cho nội dung (ví dụ: Tahoma, 11, Thường)
+			dgvHoaDon.DefaultCellStyle.Font = new Font("Tahoma", 11f, FontStyle.Regular);
 			dgvHoaDon.AutoGenerateColumns = false;
 
 			dgvHoaDon.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Mã hóa đơn",
 				DataPropertyName = "ma_hoa_don",
-				Width = 150
+				Width = 250
 			});
 
 			dgvHoaDon.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Nhân viên lập",
 				DataPropertyName = "ma_nhan_vien_lap",
-				Width = 300
+				Width = 350
 			});
 
 			dgvHoaDon.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Mã khách hàng",
 				DataPropertyName = "ma_khach_hang",
-				Width = 300
+				Width = 350
 			});
 
 			dgvHoaDon.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Ngày lập",
 				DataPropertyName = "ngay_lap",
-				Width = 200
+				Width = 300
 			});
 			loadData();
 			loadKhachHang();

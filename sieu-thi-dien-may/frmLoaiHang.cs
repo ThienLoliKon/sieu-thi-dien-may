@@ -85,27 +85,30 @@ namespace he_thong_dien_may
 		}
 
 		private void frmLoaiHang_Load(object sender, EventArgs e)
-		{
+		{// Đặt font cho tiêu đề (ví dụ: Tahoma, 12, In đậm)
+			dgvLoaiHang.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12f, FontStyle.Bold);
+			// Đặt font cho nội dung (ví dụ: Tahoma, 11, Thường)
+			dgvLoaiHang.DefaultCellStyle.Font = new Font("Tahoma", 11f, FontStyle.Regular);
 
 			dgvLoaiHang.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Mã loại hàng",
 				DataPropertyName = "ma_loai_hang",
-				Width = 100
+				Width = 200
 			});
 
 			dgvLoaiHang.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Tên loại hàng",
 				DataPropertyName = "ten_loai_hang",
-				Width = 200
+				Width = 400
 			});
 
 			dgvLoaiHang.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Mô tả",
 				DataPropertyName = "mo_ta",
-				Width = 100
+				Width = 700
 			});
 
 			
