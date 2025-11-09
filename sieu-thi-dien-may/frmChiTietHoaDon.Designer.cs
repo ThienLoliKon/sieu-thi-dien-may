@@ -29,10 +29,15 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.foreverForm1 = new ReaLTaiizor.Forms.ForeverForm();
+			this.txtDonGia = new ReaLTaiizor.Controls.ForeverTextBox();
+			this.foreverLabel6 = new ReaLTaiizor.Controls.ForeverLabel();
+			this.cboKhuyenMai = new ReaLTaiizor.Controls.HopeComboBox();
+			this.foreverLabel4 = new ReaLTaiizor.Controls.ForeverLabel();
+			this.cboMaHoaDon = new ReaLTaiizor.Controls.HopeComboBox();
 			this.foreverLabel5 = new ReaLTaiizor.Controls.ForeverLabel();
 			this.txtTimKiem = new ReaLTaiizor.Controls.DungeonTextBox();
 			this.btnLamMoi = new ReaLTaiizor.Controls.CyberButton();
@@ -47,11 +52,6 @@
 			this.foreverLabel3 = new ReaLTaiizor.Controls.ForeverLabel();
 			this.foreverLabel2 = new ReaLTaiizor.Controls.ForeverLabel();
 			this.foreverLabel1 = new ReaLTaiizor.Controls.ForeverLabel();
-			this.cboMaHoaDon = new ReaLTaiizor.Controls.HopeComboBox();
-			this.cboKhuyenMai = new ReaLTaiizor.Controls.HopeComboBox();
-			this.foreverLabel4 = new ReaLTaiizor.Controls.ForeverLabel();
-			this.txtDonGia = new ReaLTaiizor.Controls.ForeverTextBox();
-			this.foreverLabel6 = new ReaLTaiizor.Controls.ForeverLabel();
 			this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
 			this.foreverForm1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvChiTietDonHang)).BeginInit();
@@ -99,6 +99,74 @@
 			this.foreverForm1.Text = "Chi Tiết Đơn Hàng";
 			this.foreverForm1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
 			this.foreverForm1.TextLight = System.Drawing.Color.SeaGreen;
+			// 
+			// txtDonGia
+			// 
+			this.txtDonGia.BackColor = System.Drawing.Color.Transparent;
+			this.txtDonGia.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+			this.txtDonGia.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+			this.txtDonGia.FocusOnHover = false;
+			this.txtDonGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+			this.txtDonGia.Location = new System.Drawing.Point(1012, 132);
+			this.txtDonGia.MaxLength = 32767;
+			this.txtDonGia.Multiline = false;
+			this.txtDonGia.Name = "txtDonGia";
+			this.txtDonGia.ReadOnly = false;
+			this.txtDonGia.Size = new System.Drawing.Size(270, 34);
+			this.txtDonGia.TabIndex = 67;
+			this.txtDonGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+			this.txtDonGia.UseSystemPasswordChar = false;
+			this.txtDonGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGia_KeyPress);
+			// 
+			// foreverLabel6
+			// 
+			this.foreverLabel6.AutoSize = true;
+			this.foreverLabel6.BackColor = System.Drawing.Color.Transparent;
+			this.foreverLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.foreverLabel6.ForeColor = System.Drawing.Color.LightGray;
+			this.foreverLabel6.Location = new System.Drawing.Point(867, 136);
+			this.foreverLabel6.Name = "foreverLabel6";
+			this.foreverLabel6.Size = new System.Drawing.Size(81, 28);
+			this.foreverLabel6.TabIndex = 66;
+			this.foreverLabel6.Text = "Đơn giá";
+			// 
+			// cboKhuyenMai
+			// 
+			this.cboKhuyenMai.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.cboKhuyenMai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cboKhuyenMai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cboKhuyenMai.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.cboKhuyenMai.FormattingEnabled = true;
+			this.cboKhuyenMai.ItemHeight = 30;
+			this.cboKhuyenMai.Location = new System.Drawing.Point(1508, 69);
+			this.cboKhuyenMai.Name = "cboKhuyenMai";
+			this.cboKhuyenMai.Size = new System.Drawing.Size(270, 36);
+			this.cboKhuyenMai.TabIndex = 65;
+			// 
+			// foreverLabel4
+			// 
+			this.foreverLabel4.AutoSize = true;
+			this.foreverLabel4.BackColor = System.Drawing.Color.Transparent;
+			this.foreverLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.foreverLabel4.ForeColor = System.Drawing.Color.LightGray;
+			this.foreverLabel4.Location = new System.Drawing.Point(1363, 77);
+			this.foreverLabel4.Name = "foreverLabel4";
+			this.foreverLabel4.Size = new System.Drawing.Size(124, 28);
+			this.foreverLabel4.TabIndex = 64;
+			this.foreverLabel4.Text = "Khuyến Mãi :";
+			// 
+			// cboMaHoaDon
+			// 
+			this.cboMaHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.cboMaHoaDon.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.cboMaHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cboMaHoaDon.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.cboMaHoaDon.FormattingEnabled = true;
+			this.cboMaHoaDon.ItemHeight = 30;
+			this.cboMaHoaDon.Location = new System.Drawing.Point(521, 74);
+			this.cboMaHoaDon.Name = "cboMaHoaDon";
+			this.cboMaHoaDon.Size = new System.Drawing.Size(270, 36);
+			this.cboMaHoaDon.TabIndex = 63;
 			// 
 			// foreverLabel5
 			// 
@@ -358,37 +426,37 @@
 			this.dgvChiTietDonHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dgvChiTietDonHang.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
 			this.dgvChiTietDonHang.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgvChiTietDonHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvChiTietDonHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this.dgvChiTietDonHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvChiTietDonHang.DefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvChiTietDonHang.DefaultCellStyle = dataGridViewCellStyle2;
 			this.dgvChiTietDonHang.EnableHeadersVisualStyles = false;
 			this.dgvChiTietDonHang.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.dgvChiTietDonHang.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
 			this.dgvChiTietDonHang.Location = new System.Drawing.Point(1, 352);
 			this.dgvChiTietDonHang.Name = "dgvChiTietDonHang";
 			this.dgvChiTietDonHang.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-			dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-			dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgvChiTietDonHang.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvChiTietDonHang.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
 			this.dgvChiTietDonHang.RowHeadersWidth = 51;
 			this.dgvChiTietDonHang.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 			this.dgvChiTietDonHang.RowTemplate.Height = 24;
@@ -432,74 +500,6 @@
 			this.foreverLabel1.Size = new System.Drawing.Size(127, 28);
 			this.foreverLabel1.TabIndex = 42;
 			this.foreverLabel1.Text = "Mã hóa đơn :";
-			// 
-			// cboMaHoaDon
-			// 
-			this.cboMaHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.cboMaHoaDon.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.cboMaHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.cboMaHoaDon.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.cboMaHoaDon.FormattingEnabled = true;
-			this.cboMaHoaDon.ItemHeight = 30;
-			this.cboMaHoaDon.Location = new System.Drawing.Point(521, 74);
-			this.cboMaHoaDon.Name = "cboMaHoaDon";
-			this.cboMaHoaDon.Size = new System.Drawing.Size(270, 36);
-			this.cboMaHoaDon.TabIndex = 63;
-			// 
-			// cboKhuyenMai
-			// 
-			this.cboKhuyenMai.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.cboKhuyenMai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.cboKhuyenMai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.cboKhuyenMai.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.cboKhuyenMai.FormattingEnabled = true;
-			this.cboKhuyenMai.ItemHeight = 30;
-			this.cboKhuyenMai.Location = new System.Drawing.Point(1508, 69);
-			this.cboKhuyenMai.Name = "cboKhuyenMai";
-			this.cboKhuyenMai.Size = new System.Drawing.Size(270, 36);
-			this.cboKhuyenMai.TabIndex = 65;
-			// 
-			// foreverLabel4
-			// 
-			this.foreverLabel4.AutoSize = true;
-			this.foreverLabel4.BackColor = System.Drawing.Color.Transparent;
-			this.foreverLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.foreverLabel4.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel4.Location = new System.Drawing.Point(1363, 77);
-			this.foreverLabel4.Name = "foreverLabel4";
-			this.foreverLabel4.Size = new System.Drawing.Size(124, 28);
-			this.foreverLabel4.TabIndex = 64;
-			this.foreverLabel4.Text = "Khuyến Mãi :";
-			// 
-			// txtDonGia
-			// 
-			this.txtDonGia.BackColor = System.Drawing.Color.Transparent;
-			this.txtDonGia.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-			this.txtDonGia.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-			this.txtDonGia.FocusOnHover = false;
-			this.txtDonGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.txtDonGia.Location = new System.Drawing.Point(1012, 132);
-			this.txtDonGia.MaxLength = 32767;
-			this.txtDonGia.Multiline = false;
-			this.txtDonGia.Name = "txtDonGia";
-			this.txtDonGia.ReadOnly = false;
-			this.txtDonGia.Size = new System.Drawing.Size(270, 34);
-			this.txtDonGia.TabIndex = 67;
-			this.txtDonGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-			this.txtDonGia.UseSystemPasswordChar = false;
-			this.txtDonGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGia_KeyPress);
-			// 
-			// foreverLabel6
-			// 
-			this.foreverLabel6.AutoSize = true;
-			this.foreverLabel6.BackColor = System.Drawing.Color.Transparent;
-			this.foreverLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.foreverLabel6.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel6.Location = new System.Drawing.Point(867, 136);
-			this.foreverLabel6.Name = "foreverLabel6";
-			this.foreverLabel6.Size = new System.Drawing.Size(101, 28);
-			this.foreverLabel6.TabIndex = 66;
-			this.foreverLabel6.Text = "Số lượng :";
 			// 
 			// errorProvider1
 			// 

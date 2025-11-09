@@ -31,23 +31,13 @@ namespace he_thong_dien_may
 			this.Close();
 		}
 
-
-
 		public void loadKhachHang()
 		{
 			KhachHangBUS busNhaSX = new KhachHangBUS();
 			cboMaKhachHang.DataSource = busNhaSX.GetAllKhachHang();
-			cboMaKhachHang.DisplayMember = "hotenkhachhang";
+			cboMaKhachHang.DisplayMember = "tenkhachhang";
 			cboMaKhachHang.ValueMember = "makhachhang";
 			cboMaKhachHang.SelectedIndex = 0;
-		}
-		public void loadSanPham()
-		{
-			SanPhamBUS busNhaSX = new SanPhamBUS();
-			cboMaSanPham.DataSource = busNhaSX.GetAllSanPhamAsTable();
-			cboMaSanPham.DisplayMember = "ten_san_pham";
-			cboMaSanPham.ValueMember = "ma_san_pham";
-			cboMaSanPham.SelectedIndex = 0;
 		}
 
 		public void loadKNhanVien()
@@ -56,7 +46,6 @@ namespace he_thong_dien_may
 			cboMaNhanVien.DataSource = busKH.GetAllNhanVienAsTable();
 			cboMaNhanVien.DisplayMember = "TenNV";
 			cboMaNhanVien.ValueMember = "MaNV";
-			cboMaNhanVien.SelectedIndex = 0;
 		}
 
 
@@ -85,11 +74,23 @@ namespace he_thong_dien_may
 				coLoi = true;
 			}
 
-
-
+			//4. Kiểm tra ComboBox
+			if (cboMaKhachHang.SelectedIndex == -1 || cboMaKhachHang.SelectedValue == null)
+			{
+				errorProvider1.SetError(cboMaKhachHang, "Vui lòng chọn khách hàng!");
+				coLoi = true;
+			}
+			if (cboMaNhanVien.SelectedIndex == -1 || cboMaNhanVien.SelectedValue == null)
+			{
+				errorProvider1.SetError(cboMaNhanVien, "Vui lòng chọn nhân viên!");
+				coLoi = true;
+			}
+			if (cboMaSanPham.SelectedIndex == -1 || cboMaSanPham.SelectedValue == null)
+			{
+				errorProvider1.SetError(cboMaSanPham, "Vui lòng chọn sản phẩm!");
+				coLoi = true;
+			}
 			return !coLoi;
-
-
 		}
 		private void btnSua_Click(object sender, EventArgs e)
 		{
@@ -116,7 +117,7 @@ namespace he_thong_dien_may
 			if (chkHoanThanh.Checked == true)
 			{
 				hoanThanh = true;
-			}
+			} 
 			else
 			{
 				hoanThanh = false;
@@ -125,8 +126,18 @@ namespace he_thong_dien_may
 			{
 				return;
 			}
+			BaoHanhBUS baoHanhBus = new BaoHanhBUS();
+			string maHD = cboNgayMua.SelectedValue.ToString();
+			string maSP = cboMaSanPham.SelectedValue.ToString();
 
-			bus.AddBaoHanh(cboMaSanPham.SelectedValue.ToString(),cboMaKhachHang.SelectedValue.ToString(), cboMaNhanVien.SelectedValue.ToString(), rtxtLyDo.Text, dtpNgayGui.Value, dtpNgayXong.Value, hoanThanh);
+			bool conHan = baoHanhBus.KiemTraHanBaoHanh(maHD, maSP);
+
+			if (!conHan)
+			{				
+				MessageBox.Show("Sản phẩm này ĐÃ HẾT HẠN bảo hành.");
+				return;
+			}
+			bus.AddBaoHanh(cboMaSanPham.SelectedValue.ToString(), cboMaKhachHang.SelectedValue.ToString(), cboMaNhanVien.SelectedValue.ToString(), rtxtLyDo.Text, dtpNgayGui.Value, dtpNgayXong.Value, hoanThanh);
 			loadData();
 		}
 
@@ -192,7 +203,11 @@ namespace he_thong_dien_may
 			loadData();
 			loadKhachHang();
 			loadKNhanVien();
-			loadSanPham();
+			
+			cboMaNhanVien.SelectedIndex = 0; 
+			//cboMaSanPham.SelectedIndex = 0; 
+			//cboMaSanPham.SelectedIndex = 0;
+
 		}
 
 		private void dgvBaoHanh_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -204,7 +219,7 @@ namespace he_thong_dien_may
 				{
 					txtMaBaoHanh.Text = dgvBaoHanh.Rows[line].Cells[0].Value.ToString();
 					cboMaSanPham.SelectedValue = dgvBaoHanh.Rows[line].Cells[1].Value.ToString();
-					cboMaNhanVien.SelectedValue = dgvBaoHanh.Rows[line].Cells[2].Value.ToString();
+					cboMaKhachHang.SelectedValue = dgvBaoHanh.Rows[line].Cells[2].Value.ToString();
 					cboMaNhanVien.SelectedValue = dgvBaoHanh.Rows[line].Cells[3].Value.ToString();
 					rtxtLyDo.Text = dgvBaoHanh.Rows[line].Cells[4].Value.ToString();
 					dtpNgayGui.Value = Convert.ToDateTime(dgvBaoHanh.Rows[line].Cells[5].Value);
@@ -252,6 +267,77 @@ namespace he_thong_dien_may
 				" CONVERT(hoan_thanh, 'System.String') LIKE '%{0}%' ", // <-- Sửa ở đây
 				safeKeyword);
 			}
+		}
+
+		private void cboMaKhachHang_SelectedIndexChanged(object sender, EventArgs e)
+		{           // THÊM DÒNG NÀY ĐỂ TRÁNH LỖI KHI LOAD FORM
+
+			if (cboMaKhachHang.SelectedValue == null)
+			{
+				return; // Dừng lại nếu chưa nạp xong
+			}
+			HoaDonBUS busNhaSX = new HoaDonBUS();
+			DataTable dtHoaDon = busNhaSX.timHoaDon(cboMaKhachHang.SelectedValue.ToString());
+			cboNgayMua.DataSource = dtHoaDon;
+			cboNgayMua.DisplayMember = "ngay_lap";
+			cboNgayMua.ValueMember = "ma_hoa_don";
+			if (dtHoaDon == null || dtHoaDon.Rows.Count == 0)
+			{
+				cboNgayMua.DataSource = null;
+				cboNgayMua.Items.Clear();
+				cboNgayMua.Text = "Không tìm thấy ngày mua ";
+			}
+			//if (cboMaSanPham.SelectedValue != null && cboMaSanPham.DataSource != null)
+			//{
+			//	try
+			//	{
+			//		HoaDonBUS busNhaSX = new HoaDonBUS();
+			//		DataTable dtHoaDon = busNhaSX.timHoaDon(cboMaKhachHang.SelectedValue.ToString());
+			//		cboNgayMua.DataSource = dtHoaDon;
+			//		cboNgayMua.DisplayMember = "ngay_lap";
+			//		cboNgayMua.ValueMember = "ma_hoa_don";
+			//		cboNgayMua.SelectedIndex = 0;
+
+
+			//		// 3. Xử lý trường hợp khách hàng này không mua gì
+			//		if (dtHoaDon == null || dtHoaDon.Rows.Count == 0)
+			//		{
+			//			cboNgayMua.DataSource = null;
+			//			cboNgayMua.Items.Clear();
+			//			cboNgayMua.Text = "Không tìm thấy ngày mua ";
+			//		}
+			//	}
+			//	catch (Exception ex)
+			//	{
+			//		MessageBox.Show("Lỗi khi tải danh sách hóa ngày mua: " + ex.Message);
+			//		cboNgayMua.DataSource = null;
+			//		cboNgayMua.Items.Clear();
+			//	}
+			//}
+		}
+
+		private void cboNgayMua_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (cboNgayMua.SelectedValue == null)
+			{
+				return; // Dừng lại nếu chưa nạp xong
+			}
+			SanPhamBUS busNhaSX = new SanPhamBUS();
+			DataTable dt = busNhaSX.getSanPhamByMaHDAsTable(cboNgayMua.SelectedValue.ToString());
+			cboMaSanPham.DataSource = dt;
+			cboMaSanPham.DisplayMember = "ten_san_pham";
+			cboMaSanPham.ValueMember = "ma_san_pham"; 
+			if (dt == null || dt.Rows.Count == 0)
+			{
+				cboMaSanPham.DataSource = null;
+				cboMaSanPham.Items.Clear();
+				cboMaSanPham.Text = "Không tìm thấy sản phẩm ";
+			}
+		}
+
+		private void foreverForm1_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

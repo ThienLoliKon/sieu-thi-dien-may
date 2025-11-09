@@ -66,5 +66,16 @@ namespace DLL.Properties {
                 return ((string)(this["dien_mayConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-T2PFFCGC\\SQLEXPRESS;Initial Catalog=dien_may;Integrated Securi" +
+            "ty=True;Encrypt=True;TrustServerCertificate=True")]
+        public string dien_mayConnectionString2 {
+            get {
+                return ((string)(this["dien_mayConnectionString2"]));
+            }
+        }
     }
 }
