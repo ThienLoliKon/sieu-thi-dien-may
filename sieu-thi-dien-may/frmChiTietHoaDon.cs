@@ -271,5 +271,30 @@ namespace he_thong_dien_may
 				e.Handled = true; // "Nuốt" ký tự đó, không cho nó hiển thị
 			}
 		}
+
+		private void cboSanPham_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (cboSanPham.SelectedValue == null)
+			{
+				return; // Dừng lại nếu chưa nạp xong
+			}
+			// lấy giá tiền lúc mua
+			SanPhamBUS busSP = new SanPhamBUS();
+			decimal giaTienValue =  busSP.layGiaTienSanPhamBangMa(cboSanPham.SelectedIndex.ToString());
+			txtDonGia.Text = giaTienValue.ToString("F0");
+
+			KhuyenMaiBUS busNhaSX = new KhuyenMaiBUS();
+			DataTable dt = busNhaSX.GetAllKhuyenMaiByMaSPAsTable(cboSanPham.SelectedValue.ToString());
+			cboKhuyenMai.DataSource = dt;
+			cboKhuyenMai.DisplayMember = "giam_gia";
+			cboKhuyenMai.ValueMember = "ma_khuyen_mai";
+			if (dt == null || dt.Rows.Count == 0)
+			{
+				cboKhuyenMai.DataSource = null;
+				cboKhuyenMai.Items.Clear();
+				cboKhuyenMai.Text = "Không tìm thấy khuyến mãi";
+			}
+
+		}
 	}
 }
