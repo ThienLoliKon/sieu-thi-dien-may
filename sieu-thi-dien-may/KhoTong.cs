@@ -27,7 +27,7 @@ namespace he_thong_dien_may
 
         private void cyberButton8_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void cyberButton1_Click(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace he_thong_dien_may
             {
                 MessageBox.Show("Khong duoc nhap khoang trang"); return;
             }
-            if(CheckTestCase.checkChuoiSo(txtSucChua.TextButton) == false)
+            if (CheckTestCase.checkChuoiSo(txtSucChua.TextButton) == false)
             {
                 MessageBox.Show("Suc chua phai la chuoi so"); return;
             }
@@ -55,7 +55,7 @@ namespace he_thong_dien_may
             }
             if (CheckTestCase.checkLenghtChuoi(txtDiaChi.TextButton, 50))
             {
-                MessageBox.Show("Dia chi kho khong vuot qua 50 ki tu!");return false;
+                MessageBox.Show("Dia chi kho khong vuot qua 50 ki tu!"); return false;
             }
             if (CheckTestCase.checkLenghtChuoi(txtQuanLy.TextButton, 10, 10))
             {
@@ -66,7 +66,7 @@ namespace he_thong_dien_may
         private void cyberButton4_Click(object sender, EventArgs e)
         {
             dgvKhoTong.DataSource = khotongbus.getAllKhoTong();
-            if(dgvKhoTong.RowCount == 0)
+            if (dgvKhoTong.RowCount == 0)
             {
                 lblDanhSachTrong.Visible = true;
             }
@@ -125,6 +125,41 @@ namespace he_thong_dien_may
         private void cyberButton3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cyberButton8_Click_1(object sender, EventArgs e)
+        {
+            PhieuXuatKho pxk = new PhieuXuatKho();
+            pxk.ShowDialog();
+        }
+        private void selectGridXuatNhap()
+        {
+            if (dgvKhoTong.SelectedRows.Count != 0)
+            {
+                btnXuat.Enabled = true;
+                btnNhap.Enabled = true;
+            }
+            else
+            {
+                btnXuat.Enabled = false;
+                btnNhap.Enabled = false;
+            }
+        }
+
+        private void dgvKhoTong_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvKhoTong_SelectionChanged(object sender, EventArgs e)
+        {
+            selectGridXuatNhap();
+        }
+
+        private void btnNhap_Click(object sender, EventArgs e)
+        {
+            PhieuNhapKho pnk = new PhieuNhapKho(dgvKhoTong.SelectedRows[0].Cells[1].Value.ToString());
+            pnk.ShowDialog();
         }
     }
 }

@@ -50,10 +50,12 @@
             this.dgvKhoTong = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.nightHeaderLabel1 = new ReaLTaiizor.Controls.NightHeaderLabel();
             this.RTKhachHangForm = new ReaLTaiizor.Forms.NightForm();
-            this.lblDanhSachTrong = new ReaLTaiizor.Controls.ThunderLabel();
-            this.cyberButton7 = new ReaLTaiizor.Controls.CyberButton();
             this.thunderLabel4 = new ReaLTaiizor.Controls.ThunderLabel();
             this.cyberTextBox1 = new ReaLTaiizor.Controls.CyberTextBox();
+            this.lblDanhSachTrong = new ReaLTaiizor.Controls.ThunderLabel();
+            this.cyberButton7 = new ReaLTaiizor.Controls.CyberButton();
+            this.btnXuat = new ReaLTaiizor.Controls.CyberButton();
+            this.btnNhap = new ReaLTaiizor.Controls.CyberButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhoTong)).BeginInit();
             this.RTKhachHangForm.SuspendLayout();
             this.SuspendLayout();
@@ -125,7 +127,7 @@
             this.cyberButton5.Lighting = false;
             this.cyberButton5.LinearGradient_Background = false;
             this.cyberButton5.LinearGradientPen = false;
-            this.cyberButton5.Location = new System.Drawing.Point(840, 342);
+            this.cyberButton5.Location = new System.Drawing.Point(1199, 342);
             this.cyberButton5.Name = "cyberButton5";
             this.cyberButton5.PenWidth = 15;
             this.cyberButton5.Rounding = true;
@@ -554,7 +556,9 @@
             this.dgvKhoTong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKhoTong.Size = new System.Drawing.Size(1582, 398);
             this.dgvKhoTong.TabIndex = 2;
+            this.dgvKhoTong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhoTong_CellContentClick);
             this.dgvKhoTong.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhoTong_CellDoubleClick);
+            this.dgvKhoTong.SelectionChanged += new System.EventHandler(this.dgvKhoTong_SelectionChanged);
             // 
             // nightHeaderLabel1
             // 
@@ -579,6 +583,8 @@
             // RTKhachHangForm
             // 
             this.RTKhachHangForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+            this.RTKhachHangForm.Controls.Add(this.btnNhap);
+            this.RTKhachHangForm.Controls.Add(this.btnXuat);
             this.RTKhachHangForm.Controls.Add(this.thunderLabel4);
             this.RTKhachHangForm.Controls.Add(this.cyberTextBox1);
             this.RTKhachHangForm.Controls.Add(this.lblDanhSachTrong);
@@ -614,6 +620,48 @@
             this.RTKhachHangForm.Text = "KhachHang";
             this.RTKhachHangForm.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
             this.RTKhachHangForm.TitleBarTextColor = System.Drawing.Color.Gainsboro;
+            // 
+            // thunderLabel4
+            // 
+            this.thunderLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.thunderLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thunderLabel4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.thunderLabel4.Location = new System.Drawing.Point(1024, 185);
+            this.thunderLabel4.Name = "thunderLabel4";
+            this.thunderLabel4.Size = new System.Drawing.Size(98, 18);
+            this.thunderLabel4.TabIndex = 38;
+            this.thunderLabel4.Text = "Tên quản lý";
+            // 
+            // cyberTextBox1
+            // 
+            this.cyberTextBox1.Alpha = 20;
+            this.cyberTextBox1.BackColor = System.Drawing.Color.Transparent;
+            this.cyberTextBox1.Background_WidthPen = 3F;
+            this.cyberTextBox1.BackgroundPen = true;
+            this.cyberTextBox1.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.cyberTextBox1.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.cyberTextBox1.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.cyberTextBox1.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.cyberTextBox1.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.cyberTextBox1.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.cyberTextBox1.Enabled = false;
+            this.cyberTextBox1.Font = new System.Drawing.Font("Arial", 10F);
+            this.cyberTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.cyberTextBox1.Lighting = false;
+            this.cyberTextBox1.LinearGradientPen = false;
+            this.cyberTextBox1.Location = new System.Drawing.Point(1128, 163);
+            this.cyberTextBox1.Name = "cyberTextBox1";
+            this.cyberTextBox1.PenWidth = 15;
+            this.cyberTextBox1.RGB = false;
+            this.cyberTextBox1.Rounding = true;
+            this.cyberTextBox1.RoundingInt = 60;
+            this.cyberTextBox1.Size = new System.Drawing.Size(388, 40);
+            this.cyberTextBox1.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.cyberTextBox1.TabIndex = 37;
+            this.cyberTextBox1.Tag = "Cyber";
+            this.cyberTextBox1.TextButton = "";
+            this.cyberTextBox1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.cyberTextBox1.Timer_RGB = 300;
             // 
             // lblDanhSachTrong
             // 
@@ -668,47 +716,87 @@
             this.cyberButton7.Timer_RGB = 300;
             this.cyberButton7.Click += new System.EventHandler(this.cyberButton7_Click);
             // 
-            // thunderLabel4
+            // btnXuat
             // 
-            this.thunderLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.thunderLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thunderLabel4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel4.Location = new System.Drawing.Point(1024, 185);
-            this.thunderLabel4.Name = "thunderLabel4";
-            this.thunderLabel4.Size = new System.Drawing.Size(98, 18);
-            this.thunderLabel4.TabIndex = 38;
-            this.thunderLabel4.Text = "Tên quản lý";
+            this.btnXuat.Alpha = 20;
+            this.btnXuat.BackColor = System.Drawing.Color.Transparent;
+            this.btnXuat.Background = true;
+            this.btnXuat.Background_WidthPen = 4F;
+            this.btnXuat.BackgroundPen = true;
+            this.btnXuat.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnXuat.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnXuat.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.btnXuat.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnXuat.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnXuat.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnXuat.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.btnXuat.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.btnXuat.Effect_1 = true;
+            this.btnXuat.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnXuat.Effect_1_Transparency = 25;
+            this.btnXuat.Effect_2 = true;
+            this.btnXuat.Effect_2_ColorBackground = System.Drawing.Color.White;
+            this.btnXuat.Effect_2_Transparency = 20;
+            this.btnXuat.Font = new System.Drawing.Font("Arial", 11F);
+            this.btnXuat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.btnXuat.Lighting = false;
+            this.btnXuat.LinearGradient_Background = false;
+            this.btnXuat.LinearGradientPen = false;
+            this.btnXuat.Location = new System.Drawing.Point(840, 342);
+            this.btnXuat.Name = "btnXuat";
+            this.btnXuat.PenWidth = 15;
+            this.btnXuat.Rounding = true;
+            this.btnXuat.RoundingInt = 70;
+            this.btnXuat.Size = new System.Drawing.Size(130, 50);
+            this.btnXuat.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.btnXuat.TabIndex = 39;
+            this.btnXuat.Tag = "Cyber";
+            this.btnXuat.TextButton = "Xuất";
+            this.btnXuat.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btnXuat.Timer_Effect_1 = 5;
+            this.btnXuat.Timer_RGB = 300;
+            this.btnXuat.Click += new System.EventHandler(this.cyberButton8_Click_1);
             // 
-            // cyberTextBox1
+            // btnNhap
             // 
-            this.cyberTextBox1.Alpha = 20;
-            this.cyberTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.cyberTextBox1.Background_WidthPen = 3F;
-            this.cyberTextBox1.BackgroundPen = true;
-            this.cyberTextBox1.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox1.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox1.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox1.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.cyberTextBox1.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.cyberTextBox1.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.cyberTextBox1.Enabled = false;
-            this.cyberTextBox1.Font = new System.Drawing.Font("Arial", 10F);
-            this.cyberTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.cyberTextBox1.Lighting = false;
-            this.cyberTextBox1.LinearGradientPen = false;
-            this.cyberTextBox1.Location = new System.Drawing.Point(1128, 163);
-            this.cyberTextBox1.Name = "cyberTextBox1";
-            this.cyberTextBox1.PenWidth = 15;
-            this.cyberTextBox1.RGB = false;
-            this.cyberTextBox1.Rounding = true;
-            this.cyberTextBox1.RoundingInt = 60;
-            this.cyberTextBox1.Size = new System.Drawing.Size(388, 40);
-            this.cyberTextBox1.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.cyberTextBox1.TabIndex = 37;
-            this.cyberTextBox1.Tag = "Cyber";
-            this.cyberTextBox1.TextButton = "";
-            this.cyberTextBox1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.cyberTextBox1.Timer_RGB = 300;
+            this.btnNhap.Alpha = 20;
+            this.btnNhap.BackColor = System.Drawing.Color.Transparent;
+            this.btnNhap.Background = true;
+            this.btnNhap.Background_WidthPen = 4F;
+            this.btnNhap.BackgroundPen = true;
+            this.btnNhap.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnNhap.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnNhap.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.btnNhap.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnNhap.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnNhap.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnNhap.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.btnNhap.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.btnNhap.Effect_1 = true;
+            this.btnNhap.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnNhap.Effect_1_Transparency = 25;
+            this.btnNhap.Effect_2 = true;
+            this.btnNhap.Effect_2_ColorBackground = System.Drawing.Color.White;
+            this.btnNhap.Effect_2_Transparency = 20;
+            this.btnNhap.Font = new System.Drawing.Font("Arial", 11F);
+            this.btnNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.btnNhap.Lighting = false;
+            this.btnNhap.LinearGradient_Background = false;
+            this.btnNhap.LinearGradientPen = false;
+            this.btnNhap.Location = new System.Drawing.Point(1024, 342);
+            this.btnNhap.Name = "btnNhap";
+            this.btnNhap.PenWidth = 15;
+            this.btnNhap.Rounding = true;
+            this.btnNhap.RoundingInt = 70;
+            this.btnNhap.Size = new System.Drawing.Size(130, 50);
+            this.btnNhap.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.btnNhap.TabIndex = 40;
+            this.btnNhap.Tag = "Cyber";
+            this.btnNhap.TextButton = "Nhập";
+            this.btnNhap.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btnNhap.Timer_Effect_1 = 5;
+            this.btnNhap.Timer_RGB = 300;
+            this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
             // 
             // KhoTong
             // 
@@ -754,5 +842,7 @@
         private ReaLTaiizor.Controls.ThunderLabel lblDanhSachTrong;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel4;
         private ReaLTaiizor.Controls.CyberTextBox cyberTextBox1;
+        private ReaLTaiizor.Controls.CyberButton btnNhap;
+        private ReaLTaiizor.Controls.CyberButton btnXuat;
     }
 }
