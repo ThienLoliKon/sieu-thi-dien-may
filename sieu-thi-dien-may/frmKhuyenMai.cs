@@ -31,5 +31,25 @@ namespace he_thong_dien_may
 		{
 
 		}
+
+		private void btnThem_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnSua_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnLamMoi_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void dgvKhuyenMai_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
 	}
 }

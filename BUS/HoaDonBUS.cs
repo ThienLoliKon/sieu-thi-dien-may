@@ -29,12 +29,11 @@ namespace BUS
 			return true;
 		}
 
-	
-
 		public bool UpdateHoaDon(string maHoaDon, string maNhanVienLap, string maKhachHang)
 		{
 			hoa_don updateItem = new hoa_don();
 
+			updateItem.ma_hoa_don = maHoaDon;
 			updateItem.ma_nhan_vien_lap = maNhanVienLap;
 
 			updateItem.ma_khach_hang = maKhachHang;

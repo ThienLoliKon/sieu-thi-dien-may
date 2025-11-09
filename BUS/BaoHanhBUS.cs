@@ -115,5 +115,49 @@ namespace BUSs
 			}
 			return dt;
 		}
+
+		public bool KiemTraHanBaoHanh(string maHoaDon, string maSanPham)
+		{
+			try
+			{
+				HoaDonDLL hoaDonDAL = new HoaDonDLL();
+				SanPhamDLL sanPhamDAL = new SanPhamDLL();
+				// 1. Lấy ngày mua từ hóa đơn
+				hoa_don hd = hoaDonDAL.GetHoaDonByMaHD(maHoaDon);
+				if (hd == null || hd.ngay_lap == null)
+				{
+					throw new Exception("Không tìm thấy hóa đơn hoặc ngày lập.");
+				}
+				DateTime ngayMua = (DateTime)hd.ngay_lap;
+
+				// 2. Lấy thời gian bảo hành (số tháng) từ sản phẩm
+				san_pham sp = sanPhamDAL.GetSanPhamByMaSP(maSanPham);
+				if (sp == null || sp.thoi_gian_bao_hanh == null)
+				{
+					throw new Exception("Không tìm thấy sản phẩm hoặc thời hạn bảo hành.");
+				}
+				int soThangBaoHanh = (int)sp.thoi_gian_bao_hanh;
+
+				// 3. Tính ngày hết hạn
+				DateTime ngayHetHan = ngayMua.AddMonths(soThangBaoHanh);
+
+				// 4. So sánh với ngày hiện tại
+				DateTime ngayHienTai = DateTime.Now;
+
+				if (ngayHienTai > ngayHetHan)
+				{
+					return false; // Đã hết hạn
+				}
+				else
+				{
+					return true; // Còn hạn
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("Lỗi KiemTraHanBaoHanh: " + ex.Message);
+				return false; // Mặc định là hết hạn nếu có lỗi
+			}
+		}
 	}
 }

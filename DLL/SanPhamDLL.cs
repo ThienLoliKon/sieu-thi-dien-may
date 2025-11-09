@@ -106,5 +106,28 @@ namespace DLL
 			return db.san_phams.Any(p => p.ma_san_pham == id);
 		}
 
+
+		public List<san_pham> GetSanPhamByMaHD(string maHoaDon)
+		{
+			try
+			{
+				var query = from cthd in db.chi_tiet_hoa_dons
+							join sp in db.san_phams on cthd.ma_san_pham equals sp.ma_san_pham
+							where cthd.ma_hoa_don == maHoaDon
+							select sp; // Chọn toàn bộ đối tượng sản phẩm
+
+				return query.ToList();
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("Lỗi khi lấy SP theo mã Hóa Đơn: " + ex.Message);
+				return new List<san_pham>(); // Trả về danh sách rỗng
+			}
+		}
+
+		public san_pham GetSanPhamByMaSP(string maSP)
+		{
+			return db.san_phams.SingleOrDefault(sp => sp.ma_san_pham == maSP);
+		}
 	}
 }

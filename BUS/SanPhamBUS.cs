@@ -116,6 +116,31 @@ namespace BUS
 			return dt;
 		}
 
+		public DataTable getSanPhamByMaHDAsTable(string keyword)
+		{
+			List<san_pham> listData = dal.GetSanPhamByMaHD(keyword);
+			if (listData == null || listData.Count == 0)
+			{
+				return null;
+			}
+
+			DataTable dt = new DataTable();
+			dt.Columns.Add("ma_san_pham", typeof(string));
+			dt.Columns.Add("ten_san_pham", typeof(string));
+			dt.Columns.Add("ma_nha_san_xuat", typeof(string));
+			dt.Columns.Add("ma_nha_cung_cap", typeof(string));
+			dt.Columns.Add("khoi_luong", typeof(float));
+			dt.Columns.Add("thoi_gian_bao_hanh", typeof(int));
+			dt.Columns.Add("gia_tien", typeof(decimal));
+			dt.Columns.Add("ngay_san_xuat", typeof(DateTime));
+
+			foreach (var indexData in listData)
+			{
+				dt.Rows.Add(indexData.ma_san_pham, indexData.ten_san_pham, indexData.ma_nha_san_xuat, indexData.ma_nha_cung_cap, indexData.khoi_luong, indexData.thoi_gian_bao_hanh, indexData.gia_tien, indexData.ngay_san_xuat);
+			}
+			return dt;
+		}
+
 		public DataTable GetAllSanPhamAsTable()
 		{
 			List<san_pham> listData = dal.GetAllSanPham(); // Kiểm tra danh sách từ DAL
