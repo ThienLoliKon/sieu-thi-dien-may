@@ -1,4 +1,5 @@
-﻿using he_thong_dien_may;
+﻿using BUS;
+using he_thong_dien_may;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,7 @@ namespace stdm
         private void cyberButton1_Click(object sender, EventArgs e)
         {
             Form f = new frmMainMenu();
+            TaiKhoanBUS.currentUserMaNV = txtMaNV.TextButton;
             f.Show();
             this.Hide();
         }

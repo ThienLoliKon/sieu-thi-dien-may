@@ -14,9 +14,11 @@ namespace he_thong_dien_may
     public partial class PhieuNhapKho : Form
     {
         NhapKhoBUS nhapkhobus = new NhapKhoBUS();
-        public PhieuNhapKho()
+        string makho;
+        public PhieuNhapKho(string makho)
         {
             InitializeComponent();
+            this.makho = makho;
         }
 
         private void cyberButton5_Click(object sender, EventArgs e)
@@ -56,7 +58,15 @@ namespace he_thong_dien_may
 
         private void cyberButton6_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(TaiKhoanBUS.currentUserMaNV);
+        }
 
+        private void PhieuNhapKho_Load(object sender, EventArgs e)
+        {
+            //lblHeader.Text = "Phiếu Nhập Kho - " + makho;
+            KhoTongBUS khotongbus = new KhoTongBUS();
+            txtKho.TextButton = khotongbus.searchKhoTong(makho).tenkho;
+            txtNhanVien.TextButton = TaiKhoanBUS.currentUserMaNV;
         }
     }
 }
