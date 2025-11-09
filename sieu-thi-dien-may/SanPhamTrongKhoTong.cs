@@ -14,6 +14,7 @@ namespace stdm
     public partial class SanPhamTrongKhoTong : Form
     {
         string mk = "";
+        SanPhamTrongKhoTongBUS sanphamtrongkhotongbus = new SanPhamTrongKhoTongBUS();
         public SanPhamTrongKhoTong(string makho = "")
         {
             InitializeComponent();
@@ -22,16 +23,7 @@ namespace stdm
 
         private void cyberButton1_Click(object sender, EventArgs e)
         {
-            KhoTongBUS khotongbus = new KhoTongBUS();
-            var search = khotongbus.searchKhoTong(txtTimKiem.TextButton);
-            if (search != null)
-            {
-                lblSPTrongChiNhanh.Text = "Sản phẩm trong kho tổng - " + search.tenkho;
-            }
-            else
-            {
-                lblSPTrongChiNhanh.Text = "Sản phẩm trong kho tổng - ";
-            }
+            dgvKhoTong.DataSource = sanphamtrongkhotongbus.searchSPTrongKhoTong(txtTimKiem.TextButton);
         }
 
         private void cyberButton4_Click(object sender, EventArgs e)
@@ -43,12 +35,19 @@ namespace stdm
             else
             {
                 lblDanhSachTrong.Visible = false;
+                dgvKhoTong.DataSource = sanphamtrongkhotongbus.getAllSanPhamTrongKhoTong(this.mk);
             }
         }
 
         private void SanPhamTrongKhoTong_Load(object sender, EventArgs e)
         {
             lblSPTrongChiNhanh.Text = "Sản phẩm trong kho tổng - " + mk;
+            dgvKhoTong.DataSource = sanphamtrongkhotongbus.getAllSanPhamTrongKhoTong(this.mk);
+        }
+
+        private void cyberButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

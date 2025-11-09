@@ -46,6 +46,16 @@ namespace BUS
 			if (dal.check(addVariable.ma_san_pham) == true) { return false; }
 			return true;
 		}
+		public string getTenSanPham(string masp)
+		{
+			var x = dal.GetAllSanPham();
+			foreach (var item in x)
+			{
+				if (item.ma_san_pham == masp)
+					return item.ten_san_pham;
+            }
+			return null;
+        }
 
 		//public bool DeleteSanPham(string id)
 		//{

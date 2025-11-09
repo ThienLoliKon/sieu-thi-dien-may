@@ -158,6 +158,7 @@ namespace he_thong_dien_may
 
         private void btnNhap_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show(dgvKhoTong.SelectedRows[0].Cells[0].Value.ToString());return;
             PhieuNhapKho pnk = new PhieuNhapKho(dgvKhoTong.SelectedRows[0].Cells[1].Value.ToString());
             pnk.ShowDialog();
         }

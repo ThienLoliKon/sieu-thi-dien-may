@@ -77,6 +77,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="SanPhamDLL.cs" />
+    <Compile Include="SanPhamTrongKhoTongDLL.cs" />
     <Compile Include="ThuongDLL.cs" />
     <Compile Include="ViPhamDLL.cs" />
     <Compile Include="XepHangDLL.cs" />
