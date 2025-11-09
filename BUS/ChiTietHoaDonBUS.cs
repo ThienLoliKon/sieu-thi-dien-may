@@ -15,10 +15,12 @@ namespace BUS
 		public ChiTietHoaDonBUS()
 		{
 			dal = new ChiTietHoaDonDLL();
+			san_pham a = new san_pham();
 		}
 
 		public bool AddChiTietHoaDon(string maHoaDon, string maSanPham, string maKhuyenMai, string soLuong, string donGia, DateTime ngayGioIn)
 		{
+			SanPhamBUS busSP = new SanPhamBUS();
 			chi_tiet_hoa_don addVariable = new chi_tiet_hoa_don();
 
 			addVariable.ma_hoa_don = maHoaDon;
@@ -28,10 +30,8 @@ namespace BUS
 				addVariable.so_luong = soLuongInt;
 			else
 				addVariable.so_luong = null; // hoặc xử lý lỗi nhập liệu
-			if (Decimal.TryParse(donGia, out decimal donGiaDemical))
-				addVariable.don_gia = donGiaDemical;
-			else
-				addVariable.don_gia = null; // hoặc xử lý lỗi nhập liệu
+
+			addVariable.don_gia = busSP.layGiaTienSanPhamBangMa(maSanPham);
 			addVariable.ngay_gio_in = ngayGioIn;
 			dal.addChiTietHoaDon(addVariable);
 
@@ -39,11 +39,11 @@ namespace BUS
 			return true;
 		}
 
-		
+
 		public bool DeleteChiTietHoaDon(string maHoaDon, string maSanPham)
 		{
-			dal.deleteChiTietHoaDon(maHoaDon,maSanPham);
-			if (dal.check(maHoaDon,maSanPham) == true) { return false; }
+			dal.deleteChiTietHoaDon(maHoaDon, maSanPham);
+			if (dal.check(maHoaDon, maSanPham) == true) { return false; }
 			return true;
 		}
 
@@ -81,12 +81,12 @@ namespace BUS
 			dt.Columns.Add("ma_san_pham", typeof(float));
 			dt.Columns.Add("ma_khuyen_mai", typeof(string));
 			dt.Columns.Add("so_luong", typeof(int));
-			dt.Columns.Add("don_gia", typeof(decimal)); 
+			dt.Columns.Add("don_gia", typeof(decimal));
 			dt.Columns.Add("ngay_gio", typeof(DateTime));
 
 			foreach (var indexData in listData)
 			{
-				dt.Rows.Add(indexData.ma_hoa_don, indexData.ma_san_pham, indexData.ma_khuyen_mai, indexData.so_luong, indexData.don_gia,indexData.ngay_gio_in);
+				dt.Rows.Add(indexData.ma_hoa_don, indexData.ma_san_pham, indexData.ma_khuyen_mai, indexData.so_luong, indexData.don_gia, indexData.ngay_gio_in);
 			}
 
 			return dt;

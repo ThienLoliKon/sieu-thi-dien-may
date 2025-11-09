@@ -1,4 +1,5 @@
 ﻿using DLL;
+using Microsoft.VisualBasic.Devices;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -88,6 +89,21 @@ namespace BUS
 
 			if (dal.check(updateItem.ma_san_pham) == true) { return false; }
 			return true;
+		}
+
+		public decimal layGiaTienSanPhamBangMa(string maSanPham)
+		{
+			List<san_pham> listData = dal.searchByNameOrID(maSanPham);
+			if (listData == null || listData.Count == 0)
+			{
+				return 0;
+			}
+			foreach (var indexData in listData)
+			{
+				return (decimal)indexData.gia_tien;
+			}
+
+			return 0;
 		}
 
 		public DataTable timSanPham(string keyword)

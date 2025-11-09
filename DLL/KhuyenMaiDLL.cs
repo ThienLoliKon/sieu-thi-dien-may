@@ -95,6 +95,33 @@ namespace DLL
 			// Tạo mã mới với tiền tố "NXB" và đảm bảo đúng định dạng
 			return "KM" + maxId.ToString("D3");
 		}
+		/// Lấy danh sách khuyến mãi ĐANG CÒN HẠN của một sản phẩm cụ thể
+		public List<khuyen_mai> GetActiveKhuyenMaiByMaSP(string maSanPham)
+		{
+			DateTime ngayHienTai = DateTime.Now;
+
+			try
+			{
+				// Truy vấn JOIN 2 bảng:
+				// 1. Từ khuyen_mai JOIN san_pham_loai_hang
+				// 2. Lọc theo ma_san_pham
+				// 3. Lọc theo ngày (còn hạn)
+				var query = from km in db.khuyen_mais
+							join splh in db.san_pham_loai_hangs on km.ma_loai_hang equals splh.ma_loai_hang
+							where splh.ma_san_pham == maSanPham &&
+								  ngayHienTai >= km.ngay_bat_dau &&
+								  ngayHienTai <= km.ngay_ket_thuc
+							select km;
+
+				return query.ToList();
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("Lỗi khi lấy KM theo Mã SP: " + ex.Message);
+				return new List<khuyen_mai>(); // Trả về danh sách rỗng
+			}
+		}
+
 		public bool check(string id)
 		{
 			return db.khuyen_mais.Any(p => p.ma_khuyen_mai == id);

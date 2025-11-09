@@ -103,5 +103,24 @@ namespace BUS
 			return dt;
 		}
 
+		public DataTable GetAllKhuyenMaiByMaSPAsTable(string maSp)
+		{
+			List<khuyen_mai> listData = dal.GetActiveKhuyenMaiByMaSP(maSp); // Kiểm tra danh sách từ DAL
+			if (listData == null || listData.Count == 0)
+			{
+				return null;
+			}
+			DataTable dt = new DataTable();
+			dt.Columns.Add("ma_khuyen_mai", typeof(string));
+			dt.Columns.Add("giam_gia", typeof(float));
+			dt.Columns.Add("ma_loai_hang", typeof(string));
+			dt.Columns.Add("ngay_bat_dau", typeof(DateTime));
+			dt.Columns.Add("ngay_ket_thuc", typeof(DateTime));
+			foreach (var indexData in listData)
+			{
+				dt.Rows.Add(indexData.ma_khuyen_mai, indexData.giam_gia, indexData.ma_loai_hang, indexData.ngay_bat_dau, indexData.ngay_ket_thuc);
+			}
+			return dt;
+		}
 	}
 }
