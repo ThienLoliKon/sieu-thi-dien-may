@@ -55,8 +55,7 @@ namespace he_thong_dien_may
             var nhapkho = createPhieuNhapItem();
             if(nhapkho.soluong < int.Parse(dgvPhieuNhapKho.SelectedRows[0].Cells[3].Value.ToString()))
             {
-                MessageBox.Show("Số lượng nhập không thể nhỏ hơn số lượng đã nhập trước đó.");
-                return;
+                nhapkho.soluong = nhapkho.soluong - int.Parse(dgvPhieuNhapKho.SelectedRows[0].Cells[3].Value.ToString());
             }
             nhapkhobus.updateNhapKho(nhapkho);
         }

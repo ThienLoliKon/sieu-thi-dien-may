@@ -474,6 +474,7 @@
             this.dgvChiNhanh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvChiNhanh.Size = new System.Drawing.Size(1582, 398);
             this.dgvChiNhanh.TabIndex = 2;
+            this.dgvChiNhanh.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiNhanh_CellContentDoubleClick);
             // 
             // nightHeaderLabel1
             // 

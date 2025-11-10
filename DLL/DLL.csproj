@@ -77,12 +77,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="SanPhamDLL.cs" />
+    <Compile Include="SanPhamTrongChiNhanhDLL.cs" />
     <Compile Include="SanPhamTrongKhoTongDLL.cs" />
     <Compile Include="ThuongDLL.cs" />
     <Compile Include="ViPhamDLL.cs" />
     <Compile Include="XepHangDLL.cs" />
     <Compile Include="SanPhamLoaiHangDLL.cs" />
     <Compile Include="TaiKhoanDLL.cs" />
+    <Compile Include="XuatKhoDLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

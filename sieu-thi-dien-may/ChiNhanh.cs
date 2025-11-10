@@ -1,4 +1,5 @@
 ﻿using BUS;
+using stdm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,6 +42,12 @@ namespace he_thong_dien_may
             cbxKhuVuc.DisplayMember = "tenkhu";
             cbxKhuVuc.ValueMember = "makhu";
             dgvChiNhanh.DataSource = chinhanhbus.GetAllChiNhanhAsTable();
+        }
+
+        private void dgvChiNhanh_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SanPhamTrongChiNhanh sptcnform = new SanPhamTrongChiNhanh(dgvChiNhanh.SelectedRows[0].Cells[0].Value.ToString());
+            sptcnform.ShowDialog();
         }
     }
 }
