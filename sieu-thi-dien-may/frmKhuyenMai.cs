@@ -176,15 +176,15 @@ namespace he_thong_dien_may
 		{
 			try
 			{
-				int line = dgvKhuyenMai.CurrentCell.RowIndex;
-				if (dgvKhuyenMai.Rows[line].Cells[0].Value != DBNull.Value)
-				{
-					txtMaKhuyenMai.Text = dgvKhuyenMai.Rows[line].Cells[0].Value.ToString();
-					txtGiamGia.Text = dgvKhuyenMai.Rows[line].Cells[1].Value.ToString();
-					cboLoaiHang.SelectedValue = dgvKhuyenMai.Rows[line].Cells[2].Value.ToString();
-					dtpNgayBatDau.Value = Convert.ToDateTime(dgvKhuyenMai.Rows[line].Cells[3].Value); 
-					dtpNgayKetThuc.Value = Convert.ToDateTime(dgvKhuyenMai.Rows[line].Cells[4].Value);
-				}
+				//int line = dgvKhuyenMai.CurrentCell.RowIndex;
+				//if (dgvKhuyenMai.Rows[line].Cells[0].Value != DBNull.Value)
+				//{
+				//	txtMaKhuyenMai.Text = dgvKhuyenMai.Rows[line].Cells[0].Value.ToString();
+				//	txtGiamGia.Text = dgvKhuyenMai.Rows[line].Cells[1].Value.ToString();
+				//	cboLoaiHang.SelectedValue = dgvKhuyenMai.Rows[line].Cells[2].Value.ToString();
+				//	dtpNgayBatDau.Value = Convert.ToDateTime(dgvKhuyenMai.Rows[line].Cells[3].Value); 
+				//	dtpNgayKetThuc.Value = Convert.ToDateTime(dgvKhuyenMai.Rows[line].Cells[4].Value);
+				//}
 			}
 			catch (Exception ex)
 			{
@@ -194,7 +194,11 @@ namespace he_thong_dien_may
 
 		private void txtGiamGia_KeyPress(object sender, KeyPressEventArgs e)
 		{
-
+			// Chỉ cho phép nhập số (IsDigit) hoặc các phím điều khiển (IsControl) như Backspace
+			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+			{
+				e.Handled = true; // "Nuốt" ký tự đó, không cho nó hiển thị
+			}
 		}
 	}
 }
