@@ -100,33 +100,33 @@ namespace he_thong_dien_may
 			{
 				HeaderText = "Mã sản phẩm",
 				DataPropertyName = "ma_san_pham",
-				Width = 300
+				Width = 200
 			});
 
 			dgvChiTietDonHang.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Mã khuyến mãi",
 				DataPropertyName = "ma_khuyen_mai",
-				Width = 100
+				Width = 200
 			});
 
 			dgvChiTietDonHang.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Số lượng",
 				DataPropertyName = "so_luong",
-				Width = 100
+				Width = 200
 			});
 			dgvChiTietDonHang.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Đơn giá",
 				DataPropertyName = "don_gia",
-				Width = 200
+				Width = 300
 			});
 			dgvChiTietDonHang.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Ngày giờ in",
 				DataPropertyName = "ngay_gio_in",
-				Width = 200
+				Width = 300
 			});
 
 			loadData();

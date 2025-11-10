@@ -110,7 +110,7 @@
 			// 
 			this.dtpNgayKetThuc.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
 			this.dtpNgayKetThuc.Location = new System.Drawing.Point(1428, 149);
-			this.dtpNgayKetThuc.MinimumSize = new System.Drawing.Size(0, 30);
+			this.dtpNgayKetThuc.MinimumSize = new System.Drawing.Size(4, 30);
 			this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
 			this.dtpNgayKetThuc.Size = new System.Drawing.Size(200, 30);
 			this.dtpNgayKetThuc.TabIndex = 39;
@@ -119,7 +119,7 @@
 			// 
 			this.dtpNgayBatDau.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
 			this.dtpNgayBatDau.Location = new System.Drawing.Point(1428, 105);
-			this.dtpNgayBatDau.MinimumSize = new System.Drawing.Size(0, 30);
+			this.dtpNgayBatDau.MinimumSize = new System.Drawing.Size(4, 30);
 			this.dtpNgayBatDau.Name = "dtpNgayBatDau";
 			this.dtpNgayBatDau.Size = new System.Drawing.Size(200, 30);
 			this.dtpNgayBatDau.TabIndex = 38;
@@ -401,6 +401,7 @@
 			this.txtGiamGia.TabIndex = 21;
 			this.txtGiamGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.txtGiamGia.UseSystemPasswordChar = false;
+			this.txtGiamGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiamGia_KeyPress);
 			// 
 			// foreverLabel1
 			// 

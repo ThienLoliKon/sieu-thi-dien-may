@@ -59,35 +59,35 @@ namespace he_thong_dien_may
 			{
 				HeaderText = "Mã khuyến mãi",
 				DataPropertyName = "ma_khuyen_mai",
-				Width = 150
+				Width = 2000
 			});
 
 			dgvKhuyenMai.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Giảm giá",
 				DataPropertyName = "giam_gia",
-				Width = 200
+				Width = 250
 			});
 
 			dgvKhuyenMai.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Mã loại hàng",
 				DataPropertyName = "ma_loai_hang",
-				Width = 150
+				Width = 200
 			});
 
 			dgvKhuyenMai.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Ngày bắt đầu",
 				DataPropertyName = "ngay_bat_dau",
-				Width = 250
+				Width = 350
 			});
 
 			dgvKhuyenMai.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Ngày kết thúc",
 				DataPropertyName = "ngay_ket_thuc",
-				Width = 250
+				Width = 350
 			});
 			loadData();
 			loadLoaiHang();
@@ -190,6 +190,11 @@ namespace he_thong_dien_may
 			{
 				MessageBox.Show("loi" + ex);
 			}
+		}
+
+		private void txtGiamGia_KeyPress(object sender, KeyPressEventArgs e)
+		{
+
 		}
 	}
 }

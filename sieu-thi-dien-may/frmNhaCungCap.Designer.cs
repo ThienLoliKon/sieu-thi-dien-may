@@ -28,9 +28,9 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.foreverForm1 = new ReaLTaiizor.Forms.ForeverForm();
 			this.dgvNhaCungCap = new ReaLTaiizor.Controls.PoisonDataGridView();
 			this.btnThoat = new ReaLTaiizor.Controls.CyberButton();
@@ -43,8 +43,8 @@
 			this.foreverLabel1 = new ReaLTaiizor.Controls.ForeverLabel();
 			this.txtMaNCC = new ReaLTaiizor.Controls.ForeverTextBox();
 			this.foreverForm2 = new ReaLTaiizor.Forms.ForeverForm();
-			this.txtTimKiem = new ReaLTaiizor.Controls.DungeonTextBox();
 			this.foreverLabel2 = new ReaLTaiizor.Controls.ForeverLabel();
+			this.txtTimKiem = new ReaLTaiizor.Controls.DungeonTextBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvNhaCungCap)).BeginInit();
 			this.foreverForm2.SuspendLayout();
 			this.SuspendLayout();
@@ -66,7 +66,7 @@
 			this.foreverForm1.Name = "foreverForm1";
 			this.foreverForm1.Padding = new System.Windows.Forms.Padding(1, 51, 1, 1);
 			this.foreverForm1.Sizable = true;
-			this.foreverForm1.Size = new System.Drawing.Size(1600, 800);
+			this.foreverForm1.Size = new System.Drawing.Size(1800, 800);
 			this.foreverForm1.TabIndex = 0;
 			this.foreverForm1.Text = "foreverForm1";
 			this.foreverForm1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
@@ -82,42 +82,42 @@
 			this.dgvNhaCungCap.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dgvNhaCungCap.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
 			this.dgvNhaCungCap.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-			dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-			dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-			dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-			dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgvNhaCungCap.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvNhaCungCap.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this.dgvNhaCungCap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-			dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-			dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-			dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-			dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvNhaCungCap.DefaultCellStyle = dataGridViewCellStyle17;
+			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgvNhaCungCap.DefaultCellStyle = dataGridViewCellStyle2;
 			this.dgvNhaCungCap.EnableHeadersVisualStyles = false;
 			this.dgvNhaCungCap.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.dgvNhaCungCap.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
 			this.dgvNhaCungCap.Location = new System.Drawing.Point(-3, 287);
 			this.dgvNhaCungCap.Name = "dgvNhaCungCap";
 			this.dgvNhaCungCap.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-			dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-			dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-			dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-			dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-			dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgvNhaCungCap.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+			dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvNhaCungCap.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
 			this.dgvNhaCungCap.RowHeadersWidth = 51;
 			this.dgvNhaCungCap.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
 			this.dgvNhaCungCap.RowTemplate.Height = 24;
 			this.dgvNhaCungCap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgvNhaCungCap.Size = new System.Drawing.Size(1599, 513);
+			this.dgvNhaCungCap.Size = new System.Drawing.Size(1799, 513);
 			this.dgvNhaCungCap.TabIndex = 17;
 			this.dgvNhaCungCap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhaCungCap_CellClick);
 			// 
@@ -250,7 +250,7 @@
 			this.foreverLabel8.BackColor = System.Drawing.Color.Transparent;
 			this.foreverLabel8.Font = new System.Drawing.Font("Segoe UI", 12F);
 			this.foreverLabel8.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel8.Location = new System.Drawing.Point(1201, 78);
+			this.foreverLabel8.Location = new System.Drawing.Point(1309, 78);
 			this.foreverLabel8.Name = "foreverLabel8";
 			this.foreverLabel8.Size = new System.Drawing.Size(201, 28);
 			this.foreverLabel8.TabIndex = 9;
@@ -263,7 +263,7 @@
 			this.txtDiaChiNCC.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
 			this.txtDiaChiNCC.FocusOnHover = false;
 			this.txtDiaChiNCC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.txtDiaChiNCC.Location = new System.Drawing.Point(1408, 72);
+			this.txtDiaChiNCC.Location = new System.Drawing.Point(1526, 72);
 			this.txtDiaChiNCC.MaxLength = 32767;
 			this.txtDiaChiNCC.Multiline = false;
 			this.txtDiaChiNCC.Name = "txtDiaChiNCC";
@@ -279,7 +279,7 @@
 			this.foreverLabel3.BackColor = System.Drawing.Color.Transparent;
 			this.foreverLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
 			this.foreverLabel3.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel3.Location = new System.Drawing.Point(704, 78);
+			this.foreverLabel3.Location = new System.Drawing.Point(741, 78);
 			this.foreverLabel3.Name = "foreverLabel3";
 			this.foreverLabel3.Size = new System.Drawing.Size(181, 28);
 			this.foreverLabel3.TabIndex = 5;
@@ -292,7 +292,7 @@
 			this.txtTenNCC.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
 			this.txtTenNCC.FocusOnHover = false;
 			this.txtTenNCC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.txtTenNCC.Location = new System.Drawing.Point(891, 72);
+			this.txtTenNCC.Location = new System.Drawing.Point(944, 72);
 			this.txtTenNCC.MaxLength = 32767;
 			this.txtTenNCC.Multiline = false;
 			this.txtTenNCC.Name = "txtTenNCC";
@@ -308,7 +308,7 @@
 			this.foreverLabel1.BackColor = System.Drawing.Color.Transparent;
 			this.foreverLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
 			this.foreverLabel1.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel1.Location = new System.Drawing.Point(223, 78);
+			this.foreverLabel1.Location = new System.Drawing.Point(193, 78);
 			this.foreverLabel1.Name = "foreverLabel1";
 			this.foreverLabel1.Size = new System.Drawing.Size(170, 28);
 			this.foreverLabel1.TabIndex = 1;
@@ -322,7 +322,7 @@
 			this.txtMaNCC.Enabled = false;
 			this.txtMaNCC.FocusOnHover = false;
 			this.txtMaNCC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.txtMaNCC.Location = new System.Drawing.Point(399, 72);
+			this.txtMaNCC.Location = new System.Drawing.Point(369, 72);
 			this.txtMaNCC.MaxLength = 32767;
 			this.txtMaNCC.Multiline = false;
 			this.txtMaNCC.Name = "txtMaNCC";
@@ -361,11 +361,24 @@
 			this.foreverForm2.Name = "foreverForm2";
 			this.foreverForm2.Padding = new System.Windows.Forms.Padding(1, 51, 1, 1);
 			this.foreverForm2.Sizable = true;
-			this.foreverForm2.Size = new System.Drawing.Size(1600, 800);
+			this.foreverForm2.Size = new System.Drawing.Size(1800, 800);
 			this.foreverForm2.TabIndex = 1;
 			this.foreverForm2.Text = "Nhà Cung Cấp";
 			this.foreverForm2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
 			this.foreverForm2.TextLight = System.Drawing.Color.SeaGreen;
+			// 
+			// foreverLabel2
+			// 
+			this.foreverLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.foreverLabel2.AutoSize = true;
+			this.foreverLabel2.BackColor = System.Drawing.Color.Transparent;
+			this.foreverLabel2.Font = new System.Drawing.Font("Segoe UI", 12F);
+			this.foreverLabel2.ForeColor = System.Drawing.Color.LightGray;
+			this.foreverLabel2.Location = new System.Drawing.Point(1244, 17);
+			this.foreverLabel2.Name = "foreverLabel2";
+			this.foreverLabel2.Size = new System.Drawing.Size(240, 28);
+			this.foreverLabel2.TabIndex = 38;
+			this.foreverLabel2.Text = "Nhập dữ liệu cần tìm vào :";
 			// 
 			// txtTimKiem
 			// 
@@ -375,7 +388,7 @@
 			this.txtTimKiem.EdgeColor = System.Drawing.Color.White;
 			this.txtTimKiem.Font = new System.Drawing.Font("Tahoma", 11F);
 			this.txtTimKiem.ForeColor = System.Drawing.Color.DimGray;
-			this.txtTimKiem.Location = new System.Drawing.Point(1320, 12);
+			this.txtTimKiem.Location = new System.Drawing.Point(1520, 12);
 			this.txtTimKiem.MaxLength = 32767;
 			this.txtTimKiem.Multiline = false;
 			this.txtTimKiem.Name = "txtTimKiem";
@@ -386,24 +399,11 @@
 			this.txtTimKiem.UseSystemPasswordChar = false;
 			this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
 			// 
-			// foreverLabel2
-			// 
-			this.foreverLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.foreverLabel2.AutoSize = true;
-			this.foreverLabel2.BackColor = System.Drawing.Color.Transparent;
-			this.foreverLabel2.Font = new System.Drawing.Font("Segoe UI", 12F);
-			this.foreverLabel2.ForeColor = System.Drawing.Color.LightGray;
-			this.foreverLabel2.Location = new System.Drawing.Point(1044, 17);
-			this.foreverLabel2.Name = "foreverLabel2";
-			this.foreverLabel2.Size = new System.Drawing.Size(240, 28);
-			this.foreverLabel2.TabIndex = 38;
-			this.foreverLabel2.Text = "Nhập dữ liệu cần tìm vào :";
-			// 
 			// frmNhaCungCap
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1600, 800);
+			this.ClientSize = new System.Drawing.Size(1800, 800);
 			this.Controls.Add(this.foreverForm2);
 			this.Controls.Add(this.foreverForm1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
