@@ -26,8 +26,8 @@ namespace DLL
 		{
 			try
 			{
-				var entityUpdate = db.chi_tiet_hoa_dons.SingleOrDefault(n => n.ma_hoa_don == addItem.ma_hoa_don && n.ma_san_pham == addItem.ma_san_pham);
-				if (addItem != null)
+				var entityUpdate = db.chi_tiet_hoa_dons.SingleOrDefault(n => n.ma_hoa_don == addItem.ma_hoa_don && n.ma_san_pham == addItem.ma_san_pham); 
+				if (entityUpdate != null)
 				{
 					entityUpdate.so_luong = entityUpdate.so_luong + addItem.so_luong;
 				}
@@ -119,6 +119,77 @@ namespace DLL
 				return false;
 			}
 			return true;
+		}
+
+		// (Trong ChiTietHoaDonDLL.cs)
+		public bool AddChiTietHoaDonVaTruKho(chi_tiet_hoa_don addItem, string maChiNhanh)
+		{
+			try
+			{
+				// BƯỚC 1: MỞ KẾT NỐI BẰNG TAY
+				db.Connection.Open();
+
+				// BƯỚC 2: BẮT ĐẦU TRANSACTION
+				using (var transaction = db.Connection.BeginTransaction())
+				{
+					db.Transaction = transaction; // Gán transaction cho DataContext
+
+					try
+					{
+						// BƯỚC 3: KIỂM TRA VÀ TRỪ KHO CHI NHÁNH
+						var khoChiNhanh = db.san_pham_trong_chi_nhanhs.SingleOrDefault(k =>
+							k.ma_san_pham == addItem.ma_san_pham &&
+							k.ma_chi_nhanh == maChiNhanh);
+
+						if (khoChiNhanh == null || khoChiNhanh.so_luong < addItem.so_luong)
+						{
+							transaction.Rollback();
+							return false; // Không đủ hàng
+						}
+
+						khoChiNhanh.so_luong = khoChiNhanh.so_luong - addItem.so_luong;
+						db.SubmitChanges();
+
+						// BƯỚC 4: THÊM (HOẶC CỘNG DỒN) CHI TIẾT HÓA ĐƠN
+						var entityUpdate = db.chi_tiet_hoa_dons.SingleOrDefault(n =>
+							n.ma_hoa_don == addItem.ma_hoa_don &&
+							n.ma_san_pham == addItem.ma_san_pham);
+
+						if (entityUpdate != null)
+						{
+							entityUpdate.so_luong = entityUpdate.so_luong + addItem.so_luong;
+						}
+						else
+						{
+							db.chi_tiet_hoa_dons.InsertOnSubmit(addItem);
+						}
+						db.SubmitChanges();
+
+						// BƯỚC 5: HOÀN TẤT
+						transaction.Commit();
+						return true;
+					}
+					catch (Exception ex)
+					{
+						transaction.Rollback(); // Hủy bỏ nếu có lỗi ở Bước 3 hoặc 4
+						Console.WriteLine("Lỗi (Rollback): " + ex.Message);
+						return false;
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("Lỗi Transaction/Connection: " + ex.Message);
+				return false; // Lỗi từ lúc mở kết nối
+			}
+			finally
+			{
+				// BƯỚC 6: LUÔN LUÔN ĐÓNG KẾT NỐI
+				if (db.Connection.State == System.Data.ConnectionState.Open)
+				{
+					db.Connection.Close();
+				}
+			}
 		}
 	}
 }

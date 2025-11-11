@@ -14,14 +14,16 @@ namespace he_thong_dien_may
 {
 	public partial class frmChiTietHoaDon : Form
 	{
-		public frmChiTietHoaDon()
-		{
-			InitializeComponent();
-		}
+		private string maHoaDon = "";
 		ChiTietHoaDonBUS bus = new ChiTietHoaDonBUS();
 		BindingSource bs = new BindingSource(); // <-- THÊM DÒNG NÀY		
 		private decimal giaGocSanPham = 0; // <-- THÊM DÒNG NÀY
-
+		public frmChiTietHoaDon(string maHD)
+		{
+			InitializeComponent();
+			maHoaDon = HamXuLy.XoaKhoangTrangThua(maHD);
+		}
+		
 		public void loadData()
 		{
 			bs.DataSource = bus.GetAllChiTietHoaDonAsTable();
@@ -30,6 +32,10 @@ namespace he_thong_dien_may
 		public void clearData()
 		{
 			txtSoLuong.Text = "";
+			cboKhuyenMai.SelectedIndex = -1;
+			cboSanPham.SelectedIndex = -1;
+			cboMaHoaDon.SelectedIndex = -1;
+			txtDonGia.Text = "0";
 			dtpNgayGioIn.Value = DateTime.Now;
 
 		}
@@ -74,7 +80,8 @@ namespace he_thong_dien_may
 			}
 			else
 			{
-				if (bus.AddChiTietHoaDon(cboMaHoaDon.SelectedValue.ToString(), cboSanPham.SelectedValue.ToString(), cboKhuyenMai.SelectedValue.ToString(), txtSoLuong.Text, txtDonGia.Text, dtpNgayGioIn.Value) == false)
+				string khuyenMaiValue = cboKhuyenMai.SelectedValue != null ? cboKhuyenMai.SelectedValue.ToString() : null;
+				if (bus.AddChiTietHoaDon(cboMaHoaDon.SelectedValue.ToString(),TaiKhoanBUS.currentUserMaNV, cboSanPham.SelectedValue.ToString(), khuyenMaiValue, txtSoLuong.Text, txtDonGia.Text, dtpNgayGioIn.Value) == false)
 				{
 					MessageBox.Show("Thêm chi tiết hóa đơn thành công!");
 				}
@@ -87,7 +94,10 @@ namespace he_thong_dien_may
 		}
 
 		private void frmChiTietHoaDon_Load(object sender, EventArgs e)
-		{
+		{// Đặt font cho tiêu đề (ví dụ: Tahoma, 12, In đậm)
+			dgvChiTietDonHang.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12f, FontStyle.Bold);
+			// Đặt font cho nội dung (ví dụ: Tahoma, 11, Thường)
+			dgvChiTietDonHang.DefaultCellStyle.Font = new Font("Tahoma", 10f, FontStyle.Regular);
 			dgvChiTietDonHang.AutoGenerateColumns = false;
 			dgvChiTietDonHang.Columns.Add(new DataGridViewTextBoxColumn
 			{
@@ -128,11 +138,11 @@ namespace he_thong_dien_may
 				DataPropertyName = "ngay_gio_in",
 				Width = 300
 			});
-
 			loadData();
 			loadKhuyenMai();
 			loadSanPham();
 			loadHoaDon();
+			txtTimKiem.Text = maHoaDon;
 		}
 		private bool checkDuLieuNhap()
 		{
@@ -336,7 +346,7 @@ namespace he_thong_dien_may
 
 				// 4. Tính giá đã giảm
 				// Ví dụ: 1000 * (1 - 0.05) = 950
-				decimal giaDaGiam = this.giaGocSanPham * (1 - phanTramGiam);
+				decimal giaDaGiam = this.giaGocSanPham - (this.giaGocSanPham * phanTramGiam / 100);
 
 				// 5. Cập nhật giá tiền mới vào TextBox
 				// (Làm tròn đến 0 số lẻ)

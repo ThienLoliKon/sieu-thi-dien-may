@@ -228,7 +228,7 @@
 			this.dtpNgaySanXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.dtpNgaySanXuat.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
 			this.dtpNgaySanXuat.Location = new System.Drawing.Point(1237, 576);
-			this.dtpNgaySanXuat.MinimumSize = new System.Drawing.Size(0, 30);
+			this.dtpNgaySanXuat.MinimumSize = new System.Drawing.Size(4, 30);
 			this.dtpNgaySanXuat.Name = "dtpNgaySanXuat";
 			this.dtpNgaySanXuat.Size = new System.Drawing.Size(336, 30);
 			this.dtpNgaySanXuat.TabIndex = 55;
@@ -284,6 +284,7 @@
 			this.dgvSanPham.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
 			this.dgvSanPham.Location = new System.Drawing.Point(1, 54);
 			this.dgvSanPham.Name = "dgvSanPham";
+			this.dgvSanPham.ReadOnly = true;
 			this.dgvSanPham.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -587,7 +588,7 @@
 			this.txtMaSanPham.MaxLength = 32767;
 			this.txtMaSanPham.Multiline = false;
 			this.txtMaSanPham.Name = "txtMaSanPham";
-			this.txtMaSanPham.ReadOnly = false;
+			this.txtMaSanPham.ReadOnly = true;
 			this.txtMaSanPham.Size = new System.Drawing.Size(336, 34);
 			this.txtMaSanPham.TabIndex = 0;
 			this.txtMaSanPham.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;

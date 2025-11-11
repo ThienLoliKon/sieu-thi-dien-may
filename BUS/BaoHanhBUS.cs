@@ -87,7 +87,7 @@ namespace BUSs
 			dt.Columns.Add("hoan_thanh", typeof(bool));
 			foreach (var indexData in listData)
 			{
-				dt.Rows.Add(indexData.ma_bao_hanh, indexData.ma_san_pham, indexData.ma_khach_hang, indexData.nhan_vien_bao_hanh, indexData.ly_do, indexData.ngay_gui, indexData.ngay_xong, indexData.hoan_thanh);
+				dt.Rows.Add(indexData.ma_bao_hanh , indexData.ma_san_pham , indexData.ma_khach_hang , indexData.nhan_vien_bao_hanh , indexData.ly_do, indexData.ngay_gui, indexData.ngay_xong, indexData.hoan_thanh);
 			}
 
 			return dt;
@@ -111,7 +111,7 @@ namespace BUSs
 			dt.Columns.Add("hoan_thanh", typeof(bool));
 			foreach (var indexData in listData)
 			{
-				dt.Rows.Add(indexData.ma_bao_hanh, indexData.ma_san_pham, indexData.ma_khach_hang, indexData.nhan_vien_bao_hanh, indexData.ly_do, indexData.ngay_gui, indexData.ngay_xong, indexData.hoan_thanh);
+				dt.Rows.Add(indexData.ma_bao_hanh , indexData.ma_san_pham , indexData.ma_khach_hang , indexData.nhan_vien_bao_hanh , indexData.ly_do, indexData.ngay_gui, indexData.ngay_xong, indexData.hoan_thanh);
 			}
 			return dt;
 		}

@@ -77,7 +77,7 @@ namespace BUS
 			dt.Columns.Add("ngay_ket_thuc", typeof(DateTime));
 			foreach (var indexData in listData)
 			{
-				dt.Rows.Add(indexData.ma_khuyen_mai, indexData.giam_gia, indexData.ma_loai_hang, indexData.ngay_bat_dau, indexData.ngay_ket_thuc);
+				dt.Rows.Add(indexData.ma_khuyen_mai , indexData.giam_gia, indexData.ma_loai_hang , indexData.ngay_bat_dau, indexData.ngay_ket_thuc);
 			}
 
 			return dt;
@@ -98,7 +98,7 @@ namespace BUS
 			dt.Columns.Add("ngay_ket_thuc", typeof(DateTime));
 			foreach (var indexData in listData)
 			{
-				dt.Rows.Add(indexData.ma_khuyen_mai, indexData.giam_gia, indexData.ma_loai_hang, indexData.ngay_bat_dau, indexData.ngay_ket_thuc);
+				dt.Rows.Add(indexData.ma_khuyen_mai , indexData.giam_gia, indexData.ma_loai_hang , indexData.ngay_bat_dau, indexData.ngay_ket_thuc);
 			}
 			return dt;
 		}

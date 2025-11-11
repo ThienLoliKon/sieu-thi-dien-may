@@ -77,7 +77,7 @@ namespace BUS
 			dt.Columns.Add("ngay_lap", typeof(DateTime));
 			foreach (var indexData in listData)
 			{
-				dt.Rows.Add(indexData.ma_hoa_don, indexData.ma_nhan_vien_lap, indexData.ma_khach_hang, indexData.ngay_lap);
+				dt.Rows.Add(indexData.ma_hoa_don, indexData.ma_nhan_vien_lap , indexData.ma_khach_hang , indexData.ngay_lap);
 			}
 			return dt;
 		}

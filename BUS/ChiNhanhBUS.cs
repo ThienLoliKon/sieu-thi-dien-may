@@ -108,7 +108,7 @@ namespace BUS
             dt.Columns.Add("KhuVuc", typeof(string));
             foreach (var nv in chinhanhs)
             {
-                dt.Rows.Add(nv.ma_chi_nhanh, nv.ten_chi_nhanh, nv.dia_chi, nv.khu_vuc);
+                dt.Rows.Add(nv.ma_chi_nhanh , nv.ten_chi_nhanh, nv.dia_chi, nv.khu_vuc);
             }
             return dt;
         }
@@ -128,7 +128,7 @@ namespace BUS
             dt.Columns.Add("KhuVuc", typeof(string));
             foreach (var nv in chinhanhs)
             {
-                dt.Rows.Add(nv.ma_chi_nhanh, nv.ten_chi_nhanh, nv.dia_chi, nv.khu_vuc);
+                dt.Rows.Add(nv.ma_chi_nhanh , nv.ten_chi_nhanh, nv.dia_chi, nv.khu_vuc);
             }
             return dt;
         }

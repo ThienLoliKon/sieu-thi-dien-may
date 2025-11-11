@@ -20,7 +20,7 @@ namespace he_thong_dien_may
 		}
 		BaoHanhBUS bus = new BaoHanhBUS();
 		BindingSource bs = new BindingSource(); // <-- THÊM DÒNG NÀY
-
+		private string maBHHT = "";
 		private void btnThoat_Click(object sender, EventArgs e)
 		{
 			DialogResult rs = MessageBox.Show("Are you sure to exit?", "Confirm?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -117,7 +117,7 @@ namespace he_thong_dien_may
 			if (chkHoanThanh.Checked == true)
 			{
 				hoanThanh = true;
-			} 
+			}
 			else
 			{
 				hoanThanh = false;
@@ -133,7 +133,7 @@ namespace he_thong_dien_may
 			bool conHan = baoHanhBus.KiemTraHanBaoHanh(maHD, maSP);
 
 			if (!conHan)
-			{				
+			{
 				MessageBox.Show("Sản phẩm này ĐÃ HẾT HẠN bảo hành.");
 				return;
 			}
@@ -143,7 +143,10 @@ namespace he_thong_dien_may
 
 		private void frmBaoHanh_Load(object sender, EventArgs e)
 		{
-
+			// Đặt font cho tiêu đề (ví dụ: Tahoma, 12, In đậm)
+			dgvBaoHanh.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12f, FontStyle.Bold);
+			// Đặt font cho nội dung (ví dụ: Tahoma, 11, Thường)
+			dgvBaoHanh.DefaultCellStyle.Font = new Font("Tahoma", 10f, FontStyle.Regular);
 			dgvBaoHanh.AutoGenerateColumns = false;
 
 			dgvBaoHanh.Columns.Add(new DataGridViewTextBoxColumn
@@ -203,8 +206,8 @@ namespace he_thong_dien_may
 			loadData();
 			loadKhachHang();
 			loadKNhanVien();
-			
-			cboMaNhanVien.SelectedIndex = 0; 
+
+			cboMaNhanVien.SelectedIndex = 0;
 			//cboMaSanPham.SelectedIndex = 0; 
 			//cboMaSanPham.SelectedIndex = 0;
 
@@ -214,12 +217,14 @@ namespace he_thong_dien_may
 		{
 			try
 			{
+				clear();
 				int line = dgvBaoHanh.CurrentCell.RowIndex;
 				if (dgvBaoHanh.Rows[line].Cells[0].Value != DBNull.Value)
 				{
 					txtMaBaoHanh.Text = dgvBaoHanh.Rows[line].Cells[0].Value.ToString();
 					cboMaSanPham.SelectedValue = dgvBaoHanh.Rows[line].Cells[1].Value.ToString();
 					cboMaKhachHang.SelectedValue = dgvBaoHanh.Rows[line].Cells[2].Value.ToString();
+
 					cboMaNhanVien.SelectedValue = dgvBaoHanh.Rows[line].Cells[3].Value.ToString();
 					rtxtLyDo.Text = dgvBaoHanh.Rows[line].Cells[4].Value.ToString();
 					dtpNgayGui.Value = Convert.ToDateTime(dgvBaoHanh.Rows[line].Cells[5].Value);
@@ -229,6 +234,7 @@ namespace he_thong_dien_may
 					}
 					chkHoanThanh.Checked = Convert.ToBoolean(dgvBaoHanh.Rows[line].Cells[7].Value);
 				}
+				maBHHT = txtMaBaoHanh.Text;
 
 			}
 			catch (Exception ex)
@@ -239,13 +245,20 @@ namespace he_thong_dien_may
 
 		private void btnClear_Click(object sender, EventArgs e)
 		{
+			clear();
+
+		}
+		private void clear()
+		{
 			txtMaBaoHanh.Text = "";
 			txtTimKiem.Text = "";
 			rtxtLyDo.Text = "";
-			txtTimKiem.Text = "";
+			cboMaKhachHang.SelectedIndex = -1;
+			cboMaSanPham.SelectedIndex = -1;
+			cboNgayMua.SelectedIndex = -1;
+			cboMaNhanVien.SelectedIndex = -1;
 			dtpNgayGui.Value = DateTime.Now;
 			dtpNgayXong.Value = DateTime.Now;
-
 		}
 
 		private void txtTimKiem_TextChanged(object sender, EventArgs e)
@@ -270,8 +283,7 @@ namespace he_thong_dien_may
 		}
 
 		private void cboMaKhachHang_SelectedIndexChanged(object sender, EventArgs e)
-		{           // THÊM DÒNG NÀY ĐỂ TRÁNH LỖI KHI LOAD FORM
-
+		{
 			if (cboMaKhachHang.SelectedValue == null)
 			{
 				return; // Dừng lại nếu chưa nạp xong
@@ -318,6 +330,12 @@ namespace he_thong_dien_may
 
 		private void cboNgayMua_SelectedIndexChanged(object sender, EventArgs e)
 		{
+
+			loadSanPhamKhiCellClick();
+		}
+
+		private void loadSanPhamKhiCellClick()
+		{
 			if (cboNgayMua.SelectedValue == null)
 			{
 				return; // Dừng lại nếu chưa nạp xong
@@ -326,7 +344,7 @@ namespace he_thong_dien_may
 			DataTable dt = busNhaSX.getSanPhamByMaHDAsTable(cboNgayMua.SelectedValue.ToString());
 			cboMaSanPham.DataSource = dt;
 			cboMaSanPham.DisplayMember = "ten_san_pham";
-			cboMaSanPham.ValueMember = "ma_san_pham"; 
+			cboMaSanPham.ValueMember = "ma_san_pham";
 			if (dt == null || dt.Rows.Count == 0)
 			{
 				cboMaSanPham.DataSource = null;
@@ -335,9 +353,5 @@ namespace he_thong_dien_may
 			}
 		}
 
-		private void foreverForm1_Click(object sender, EventArgs e)
-		{
-
-		}
 	}
 }

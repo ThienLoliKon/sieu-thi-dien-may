@@ -95,13 +95,41 @@ namespace he_thong_dien_may
 				MessageBox.Show("loi" + ex);
 			}
 		}
-
-		private void btnThem_Click(object sender, EventArgs e)
+		private bool checkDuLieuNhap()
 		{
+			errorProvider1.Clear();
+			bool coLoi = false; 
+			//4. Kiểm tra ComboBox
+			if (cboLoaiHang.SelectedIndex == -1 || cboLoaiHang.SelectedValue == null)
+			{
+				errorProvider1.SetError(cboLoaiHang, "Vui lòng chọn loại hàng!");
+				coLoi = true;
+			}
+			if (cboSanPham.SelectedIndex == -1 || cboSanPham.SelectedValue == null)
+			{
+				errorProvider1.SetError(cboSanPham, "Vui lòng chọn sản phẩm!");
+				coLoi = true;
+			}
+			return !coLoi; // Trả về true (Không có lỗi) nếu coLoi = false
+
+		}
+		private void btnThem_Click(object sender, EventArgs e)
+		{			
 			SanPhamLoaiHangBUS bus = new SanPhamLoaiHangBUS();
-			
-			MessageBox.Show("Vui lòng nhập dữ liệu vào các ô trống");			
-			bus.AddSanPhamLoaiHang(cboLoaiHang.SelectedValue.ToString(), cboSanPham.SelectedValue.ToString());
+			if (checkDuLieuNhap() == false)
+			{
+			}
+			else
+			{
+				if (bus.AddSanPhamLoaiHang(cboLoaiHang.SelectedValue.ToString(), cboSanPham.SelectedValue.ToString()) == false)
+				{
+					MessageBox.Show("Thêm sản phẩm loại hàng thành công!");
+				}
+				else
+				{
+					MessageBox.Show("Thêm sản phẩmloại hàng thất bại!");
+				}
+			}
 			loadData();
 		}
 

@@ -23,10 +23,6 @@ namespace he_thong_dien_may
 		{
 			dgvLoaiHang.DataSource = bus.GetAllLoaiHang();
 		}
-		private void aloneTextBox1_TextChanged(object sender, EventArgs e)
-		{
-
-		}
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -88,7 +84,7 @@ namespace he_thong_dien_may
 		{// Đặt font cho tiêu đề (ví dụ: Tahoma, 12, In đậm)
 			dgvLoaiHang.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12f, FontStyle.Bold);
 			// Đặt font cho nội dung (ví dụ: Tahoma, 11, Thường)
-			dgvLoaiHang.DefaultCellStyle.Font = new Font("Tahoma", 11f, FontStyle.Regular);
+			dgvLoaiHang.DefaultCellStyle.Font = new Font("Tahoma", 10f, FontStyle.Regular);
 
 			dgvLoaiHang.Columns.Add(new DataGridViewTextBoxColumn
 			{
@@ -154,6 +150,13 @@ namespace he_thong_dien_may
 				}
 			}
 			loadData();
+		}
+
+		private void btnLamMoi_Click(object sender, EventArgs e)
+		{
+			rtxtMoTa.Text = "";
+			txtTenLoaiHang.Text = "";
+			txtMaLoaiHang.Text = "";
 		}
 	}
 }

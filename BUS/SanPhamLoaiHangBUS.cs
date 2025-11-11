@@ -56,7 +56,7 @@ namespace BUS
 			dt.Columns.Add("ma_loai_hang", typeof(float));
 			foreach (var indexData in listData)
 			{
-				dt.Rows.Add(indexData.ma_san_pham, indexData.ma_loai_hang);
+				dt.Rows.Add(indexData.ma_san_pham , indexData.ma_loai_hang );
 			}
 
 			return dt;
@@ -73,7 +73,7 @@ namespace BUS
 			dt.Columns.Add("ma_loai_hang", typeof(float));
 			foreach (var indexData in listData)
 			{
-				dt.Rows.Add(indexData.ma_san_pham, indexData.ma_loai_hang);
+				dt.Rows.Add(indexData.ma_san_pham , indexData.ma_loai_hang );
 			}
 
 			return dt;
@@ -90,7 +90,7 @@ namespace BUS
 			dt.Columns.Add("ma_loai_hang", typeof(string));
 			foreach (var indexData in listData)
 			{
-				dt.Rows.Add(indexData.ma_san_pham, indexData.ma_loai_hang);
+				dt.Rows.Add(indexData.ma_san_pham , indexData.ma_loai_hang );
 			}
 			return dt;
 		}

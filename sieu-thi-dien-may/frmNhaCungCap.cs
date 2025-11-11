@@ -30,7 +30,7 @@ namespace he_thong_dien_may
 			// Đặt font cho tiêu đề (ví dụ: Tahoma, 12, In đậm)
 			dgvNhaCungCap.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12f, FontStyle.Bold);
 			// Đặt font cho nội dung (ví dụ: Tahoma, 11, Thường)
-			dgvNhaCungCap.DefaultCellStyle.Font = new Font("Tahoma", 11f, FontStyle.Regular);
+			dgvNhaCungCap.DefaultCellStyle.Font = new Font("Tahoma", 10f, FontStyle.Regular);
 			dgvNhaCungCap.AutoGenerateColumns = false;
 
 			dgvNhaCungCap.Columns.Add(new DataGridViewTextBoxColumn
@@ -76,16 +76,52 @@ namespace he_thong_dien_may
 			bus.UpdateNhaCungCap(txtMaNCC.Text, txtTenNCC.Text, txtDiaChiNCC.Text);
 			loadData();
 		}
+		private bool checkDuLieuNhap()
+		{
+			errorProvider1.Clear();
+			bool coLoi = false;
+			// 1. Kiểm tra rỗng
+			if (CheckTestCase.checkKhoangTrang(txtTenNCC.Text) == false)
+			{
+				errorProvider1.SetError(txtTenNCC, "Tên nhà cung cấp hông được trống!");
+				coLoi = true;
+			}
+			if (CheckTestCase.checkKhoangTrang(txtDiaChiNCC.Text) == false)
+			{
+				errorProvider1.SetError(txtDiaChiNCC, "Địa chỉ nhà cung cấp không được trống!");
+				coLoi = true;
+			}
+			// 2. Kiểm tra độ dài
+			if (CheckTestCase.checkLenghtChuoi(txtTenNCC.Text, 50) == false)
+			{
+				errorProvider1.SetError(txtTenNCC, "Tên nhà cung cấp không được quá 50 kí tự!");
+				coLoi = true;
+			}
+			if (CheckTestCase.checkLenghtChuoi(txtDiaChiNCC.Text, 100) == false)
+			{
+				errorProvider1.SetError(txtDiaChiNCC, "Địa chỉ nhà cung cấp không được quá 100 kí tự!");
+				coLoi = true;
+			}
 
+			return !coLoi; // Trả về true (Không có lỗi) nếu coLoi = false
+		}
 		private void btnThem_Click(object sender, EventArgs e)
 		{
 			NhaCCBUS bus = new NhaCCBUS();
-			if(CheckTestCase.checkKhoangTrang( txtTenNCC.Text, txtDiaChiNCC.Text) == false)
+			if (checkDuLieuNhap() == false)
 			{
-				MessageBox.Show("Vui lòng nhập đầy đủ thông tin vào các ô trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-				return;
 			}
-			bus.AddNhaCungCap(txtTenNCC.Text, txtDiaChiNCC.Text);
+			else
+			{
+				if (bus.AddNhaCungCap(txtTenNCC.Text, txtDiaChiNCC.Text) == false)
+				{
+					MessageBox.Show("Thêm nhà cung cấp thành công!");
+				}
+				else
+				{
+					MessageBox.Show("Thêm nhà cung cấp thất bại!");
+				}
+			}
 			loadData();
 
 		}
@@ -128,6 +164,13 @@ namespace he_thong_dien_may
 					safeKeyword
 				);
 			}
+		}
+
+		private void btnLamMoi_Click(object sender, EventArgs e)
+		{
+			txtDiaChiNCC.Text = "";
+			txtMaNCC.Text = "";
+			txtTenNCC.Text = "";
 		}
 	}
 }

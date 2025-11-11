@@ -90,7 +90,12 @@ namespace DLL
                 .Where(nhanvien => nhanvien.ma_nhan_vien.Contains(keyword) || nhanvien.ho_va_ten.Contains(keyword) || nhanvien.ma_cap_bac.Contains(keyword) || nhanvien.so_dien_thoai.Contains(keyword) || nhanvien.dia_chi_thuong_tru.Contains(keyword) || nhanvien.ma_chi_nhanh.Contains(keyword) )
                 .ToList();
         }
-        public bool check(string id)
+		public nhan_vien GetNhanVienByMaNV(string maNV)
+		{
+			// Dùng Trim() để xóa dấu cách của kiểu CHAR
+			return db.nhan_viens.SingleOrDefault(nv => nv.ma_nhan_vien.Trim() == maNV.Trim());
+		}
+		public bool check(string id)
         {
             return db.nhan_viens.Any(p => p.ma_nhan_vien == id);
         }

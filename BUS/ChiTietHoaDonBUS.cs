@@ -11,13 +11,14 @@ namespace BUS
 	public class ChiTietHoaDonBUS
 	{
 		private ChiTietHoaDonDLL dal;
+		private NhanVienDLL dalNhanVien;
 		public ChiTietHoaDonBUS()
 		{
 			dal = new ChiTietHoaDonDLL();
-			san_pham a = new san_pham();
+			dalNhanVien = new NhanVienDLL(); // <-- Khởi tạo
 		}
 
-		public bool AddChiTietHoaDon(string maHoaDon, string maSanPham, string maKhuyenMai, string soLuong, string donGia, DateTime ngayGioIn)
+		public bool AddChiTietHoaDon(string maHoaDon,string maNhanVien ,string maSanPham, string maKhuyenMai, string soLuong, string donGia, DateTime ngayGioIn)
 		{
 			SanPhamBUS busSP = new SanPhamBUS();
 			chi_tiet_hoa_don addVariable = new chi_tiet_hoa_don();
@@ -25,6 +26,10 @@ namespace BUS
 			addVariable.ma_hoa_don = maHoaDon;
 			addVariable.ma_san_pham = maSanPham;
 			addVariable.ma_khuyen_mai = maKhuyenMai;
+			if (maKhuyenMai == null)
+			{
+				maKhuyenMai = "";
+			}
 			if (int.TryParse(soLuong, out int soLuongInt))
 				addVariable.so_luong = soLuongInt;
 			else
@@ -38,9 +43,46 @@ namespace BUS
 			dal.addChiTietHoaDon(addVariable);
 
 			if (dal.check(addVariable.ma_hoa_don, addVariable.ma_san_pham) == true) { return false; }
+
 			return true;
 		}
 
+		// SỬA LẠI HÀM NÀY
+		//public bool AddChiTietHoaDon(string maHoaDon, string maNhanVienLap, string maSanPham, string maKhuyenMai, string soLuong, string donGia, DateTime ngayGioIn)
+		//{
+		//	// BƯỚC 1: LẤY MÃ CHI NHÁNH TỪ MÃ NHÂN VIÊN
+		//	var nhanVien = dalNhanVien.GetNhanVienByMaNV(maNhanVienLap);
+
+		//	// Kiểm tra xem có tìm thấy nhân viên và chi nhánh không
+		//	if (nhanVien == null || string.IsNullOrEmpty(nhanVien.ma_chi_nhanh))
+		//	{
+		//		// Nếu nhân viên không thuộc chi nhánh nào, không cho bán
+		//		return false;
+		//	}
+		//	string maChiNhanh = nhanVien.ma_chi_nhanh.Trim();
+
+		//	// BƯỚC 2: TẠO ĐỐI TƯỢNG CTHD
+		//	chi_tiet_hoa_don addVariable = new chi_tiet_hoa_don();
+		//	addVariable.ma_hoa_don = maHoaDon.Trim();
+		//	addVariable.ma_san_pham = maSanPham.Trim();
+		//	addVariable.ma_khuyen_mai = maKhuyenMai; // (Cho phép null)
+
+		//	if (int.TryParse(soLuong, out int soLuongInt))
+		//		addVariable.so_luong = soLuongInt;
+		//	else
+		//		return false; // Lỗi số lượng
+
+		//	if (Decimal.TryParse(donGia, out decimal donGiaDemical))
+		//		addVariable.don_gia = donGiaDemical;
+		//	else
+		//		return false; // Lỗi đơn giá
+
+		//	addVariable.ngay_gio_in = ngayGioIn;
+
+		//	// BƯỚC 3: GỌI HÀM MỚI TRONG DLL
+		//	// Hàm này sẽ tự động trừ kho VÀ thêm CTHD
+		//	return dal.AddChiTietHoaDonVaTruKho(addVariable, maChiNhanh);
+		//}
 
 		public bool DeleteChiTietHoaDon(string maHoaDon, string maSanPham)
 		{

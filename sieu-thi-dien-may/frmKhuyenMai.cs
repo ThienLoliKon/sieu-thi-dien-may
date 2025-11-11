@@ -18,7 +18,7 @@ namespace he_thong_dien_may
 			InitializeComponent();
 		}
 		KhuyenMaiBUS bus = new KhuyenMaiBUS();
-		BindingSource bs = new BindingSource(); // <-- THÊM DÒNG NÀY
+		BindingSource bs = new BindingSource();
 
 		public void loadData()
 		{
@@ -50,16 +50,17 @@ namespace he_thong_dien_may
 			cboLoaiHang.SelectedIndex = 0;
 		}
 		private void frmKhuyenMai_Load(object sender, EventArgs e)
-		{// Đặt font cho tiêu đề (ví dụ: Tahoma, 12, In đậm)
+		{
+			// Đặt font cho tiêu đề (ví dụ: Tahoma, 12, In đậm)
 			dgvKhuyenMai.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12f, FontStyle.Bold);
 			// Đặt font cho nội dung (ví dụ: Tahoma, 11, Thường)
-			dgvKhuyenMai.DefaultCellStyle.Font = new Font("Tahoma", 11f, FontStyle.Regular);
+			dgvKhuyenMai.DefaultCellStyle.Font = new Font("Tahoma", 10f, FontStyle.Regular);
 			dgvKhuyenMai.AutoGenerateColumns = false;
 			dgvKhuyenMai.Columns.Add(new DataGridViewTextBoxColumn
 			{
 				HeaderText = "Mã khuyến mãi",
 				DataPropertyName = "ma_khuyen_mai",
-				Width = 2000
+				Width = 200
 			});
 
 			dgvKhuyenMai.Columns.Add(new DataGridViewTextBoxColumn
@@ -170,21 +171,24 @@ namespace he_thong_dien_may
 		{
 			txtGiamGia.Text = "";
 			txtMaKhuyenMai.Text = "";
+			cboLoaiHang.SelectedIndex = 0;
+			dtpNgayBatDau.Value = DateTime.Now;
+			dtpNgayKetThuc.Value = DateTime.Now;
 		}
 
 		private void dgvKhuyenMai_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			try
 			{
-				//int line = dgvKhuyenMai.CurrentCell.RowIndex;
-				//if (dgvKhuyenMai.Rows[line].Cells[0].Value != DBNull.Value)
-				//{
-				//	txtMaKhuyenMai.Text = dgvKhuyenMai.Rows[line].Cells[0].Value.ToString();
-				//	txtGiamGia.Text = dgvKhuyenMai.Rows[line].Cells[1].Value.ToString();
-				//	cboLoaiHang.SelectedValue = dgvKhuyenMai.Rows[line].Cells[2].Value.ToString();
-				//	dtpNgayBatDau.Value = Convert.ToDateTime(dgvKhuyenMai.Rows[line].Cells[3].Value); 
-				//	dtpNgayKetThuc.Value = Convert.ToDateTime(dgvKhuyenMai.Rows[line].Cells[4].Value);
-				//}
+				int line = dgvKhuyenMai.CurrentCell.RowIndex;
+				if (dgvKhuyenMai.Rows[line].Cells[0].Value != DBNull.Value)
+				{
+					txtMaKhuyenMai.Text = dgvKhuyenMai.Rows[line].Cells[0].Value.ToString();
+					txtGiamGia.Text = dgvKhuyenMai.Rows[line].Cells[1].Value.ToString();
+					cboLoaiHang.SelectedValue = dgvKhuyenMai.Rows[line].Cells[2].Value.ToString();
+					dtpNgayBatDau.Value = Convert.ToDateTime(dgvKhuyenMai.Rows[line].Cells[3].Value);
+					dtpNgayKetThuc.Value = Convert.ToDateTime(dgvKhuyenMai.Rows[line].Cells[4].Value);
+				}
 			}
 			catch (Exception ex)
 			{

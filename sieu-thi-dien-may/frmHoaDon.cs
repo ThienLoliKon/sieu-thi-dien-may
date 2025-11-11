@@ -47,7 +47,7 @@ namespace he_thong_dien_may
 		}
 		private void btnSuaChiTietHD_Click(object sender, EventArgs e)
 		{
-			Form f = new frmChiTietHoaDon();
+			Form f = new frmChiTietHoaDon(txtMaHoaDon.Text);
 			f.ShowDialog();
 		}
 
@@ -71,7 +71,7 @@ namespace he_thong_dien_may
 			// Đặt font cho tiêu đề (ví dụ: Tahoma, 12, In đậm)
 			dgvHoaDon.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12f, FontStyle.Bold);
 			// Đặt font cho nội dung (ví dụ: Tahoma, 11, Thường)
-			dgvHoaDon.DefaultCellStyle.Font = new Font("Tahoma", 11f, FontStyle.Regular);
+			dgvHoaDon.DefaultCellStyle.Font = new Font("Tahoma", 10f, FontStyle.Regular);
 			dgvHoaDon.AutoGenerateColumns = false;
 			dgvHoaDon.Columns.Add(new DataGridViewTextBoxColumn
 			{

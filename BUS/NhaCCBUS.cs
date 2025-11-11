@@ -71,7 +71,7 @@ namespace BUS
 
 			foreach (var indexData in listData)
 			{
-				dt.Rows.Add(indexData.ma_nha_cung_cap, indexData.ten_nha_cung_cap, indexData.dia_chi_nha_cung_cap);
+				dt.Rows.Add(indexData.ma_nha_cung_cap.Trim(), indexData.ten_nha_cung_cap, indexData.dia_chi_nha_cung_cap);
 			}
 
 			return dt;
@@ -94,7 +94,7 @@ namespace BUS
 
 			foreach (var indexData in listData)
 			{
-				dt.Rows.Add(indexData.ma_nha_cung_cap, indexData.ten_nha_cung_cap, indexData.dia_chi_nha_cung_cap);
+				dt.Rows.Add(indexData.ma_nha_cung_cap.Trim(), indexData.ten_nha_cung_cap, indexData.dia_chi_nha_cung_cap);
 			}
 
 			return dt;

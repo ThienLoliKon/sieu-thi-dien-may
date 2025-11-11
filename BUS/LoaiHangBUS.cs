@@ -59,7 +59,7 @@ namespace BUS
 			dt.Columns.Add("mo_ta", typeof(string));
 			foreach (var indexData in listData)
 			{
-				dt.Rows.Add(indexData.ma_loai_hang, indexData.ten_loai_hang, indexData.mo_ta);
+				dt.Rows.Add(indexData.ma_loai_hang.Trim(), indexData.ten_loai_hang, indexData.mo_ta);
 			}
 
 			return dt;
@@ -78,7 +78,7 @@ namespace BUS
 			dt.Columns.Add("mo_ta", typeof(string));
 			foreach (var indexData in listData)
 			{
-				dt.Rows.Add(indexData.ma_loai_hang, indexData.ten_loai_hang, indexData.mo_ta);
+				dt.Rows.Add(indexData.ma_loai_hang.Trim(), indexData.ten_loai_hang, indexData.mo_ta);
 			}
 			return dt;
 		}

@@ -197,6 +197,7 @@
 			this.dgvKhuyenMai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
 			this.dgvKhuyenMai.Location = new System.Drawing.Point(1, 352);
 			this.dgvKhuyenMai.Name = "dgvKhuyenMai";
+			this.dgvKhuyenMai.ReadOnly = true;
 			this.dgvKhuyenMai.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -381,9 +382,9 @@
 			this.foreverLabel2.ForeColor = System.Drawing.Color.LightGray;
 			this.foreverLabel2.Location = new System.Drawing.Point(380, 155);
 			this.foreverLabel2.Name = "foreverLabel2";
-			this.foreverLabel2.Size = new System.Drawing.Size(97, 28);
+			this.foreverLabel2.Size = new System.Drawing.Size(99, 28);
 			this.foreverLabel2.TabIndex = 22;
-			this.foreverLabel2.Text = "giảm giá :";
+			this.foreverLabel2.Text = "Giảm giá :";
 			// 
 			// txtGiamGia
 			// 
@@ -426,7 +427,7 @@
 			this.txtMaKhuyenMai.MaxLength = 32767;
 			this.txtMaKhuyenMai.Multiline = false;
 			this.txtMaKhuyenMai.Name = "txtMaKhuyenMai";
-			this.txtMaKhuyenMai.ReadOnly = false;
+			this.txtMaKhuyenMai.ReadOnly = true;
 			this.txtMaKhuyenMai.Size = new System.Drawing.Size(227, 34);
 			this.txtMaKhuyenMai.TabIndex = 19;
 			this.txtMaKhuyenMai.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
