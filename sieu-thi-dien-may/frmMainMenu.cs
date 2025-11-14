@@ -176,13 +176,13 @@ namespace he_thong_dien_may
 
         private void xuấtKhoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new PhieuXuatKho();
+            Form f = new PhieuXuatKho("");
             f.ShowDialog();
         }
 
         private void nhậpKhoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new PhieuNhapKho();
+            Form f = new PhieuNhapKho("0");
             f.ShowDialog();
         }
 

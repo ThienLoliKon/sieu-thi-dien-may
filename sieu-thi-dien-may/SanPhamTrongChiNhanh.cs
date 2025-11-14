@@ -24,6 +24,14 @@ namespace stdm
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             dgvSPTrongChiNhanh.DataSource = sptcnbus.getAllSanPhamTrongChiNhanh(macn);
+            if (dgvSPTrongChiNhanh.Rows.Count == 0)
+            {
+                lblDanhSachTrong.Visible = true;
+            }
+            else
+            {
+                lblDanhSachTrong.Visible = false;
+            }
         }
 
         private void SanPhamTrongChiNhanh_Load(object sender, EventArgs e)

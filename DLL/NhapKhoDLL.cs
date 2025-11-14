@@ -33,7 +33,7 @@ namespace DLL
             }
             return 1;
         }
-        public int updateKhoTong(phieu_nhap_kho kt)
+        public int updatePN(phieu_nhap_kho kt)
         {
             try
             {

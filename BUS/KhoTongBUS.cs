@@ -93,10 +93,13 @@ namespace BUS
         }
         public KhoTong searchKhoTong(string ten_kho_ma_kho)
         {
-            var khotong = getAllKhoTong().FirstOrDefault();
-            if (khotong != null)
+            var khotong = getAllKhoTong();
+            foreach (var item in khotong)
             {
-                return khotong;
+                if (item.makho == ten_kho_ma_kho || item.tenkho == ten_kho_ma_kho)
+                {
+                    return item;
+                }
             }
             return null;
         }

@@ -14,9 +14,11 @@ namespace he_thong_dien_may
     public partial class PhieuXuatKho : Form
     {
         XuatKhoBUS xuatkhobus = new XuatKhoBUS();
-        public PhieuXuatKho()
+        public string mkho;
+        public PhieuXuatKho(string makho)
         {
             InitializeComponent();
+            this.mkho = makho;
         }
 
         private void RTKhachHangForm_Click(object sender, EventArgs e)
@@ -41,7 +43,7 @@ namespace he_thong_dien_may
 
         private void cyberButton4_Click_1(object sender, EventArgs e)
         {
-            dgvPhieuXuatKho.DataSource =  xuatkhobus.getAllXuatKho();
+            dgvPhieuXuatKho.DataSource =  xuatkhobus.searchXuatKhoTheoKho(this.mkho);
         }
 
         private void cyberButton1_Click_1(object sender, EventArgs e)
@@ -58,7 +60,7 @@ namespace he_thong_dien_may
             xk.makho = txtKho.TextButton;
             xk.masanpham = cbxSanPham.SelectedValue.ToString();
             xk.manhanviennhapkho = txtNhanVien.ToString();
-            xk.soluong = int.Parse(txtSoLuong.Text);
+            xk.soluong = int.Parse(txtSoLuong.TextButton);
             xk.machinhanh = txtChiNhanh.TextButton;
             xk.maphieu = txtMaPhieu.TextButton;
             return xk;
@@ -71,12 +73,29 @@ namespace he_thong_dien_may
 
         private void cyberButton3_Click(object sender, EventArgs e)
         {
-            dgvPhieuXuatKho.DataSource = xuatkhobus.searchXuatKho(txtMaPhieu.Text);
+            if (txtMaPhieu.TextButton == "")
+            {
+                dgvPhieuXuatKho.DataSource = xuatkhobus.searchXuatKhoTheoKho(txtKho.TextButton);
+            }else
+            {
+                dgvPhieuXuatKho.DataSource = xuatkhobus.searchXuatKho(txtMaPhieu.TextButton, txtKho.TextButton);
+            }
         }
 
         private void cyberButton2_Click(object sender, EventArgs e)
         {
             xuatkhobus.updateXuatKho(createXuatKhoItem());
+        }
+
+        private void PhieuXuatKho_Load(object sender, EventArgs e)
+        {
+            KhoTongBUS khotongbus = new KhoTongBUS();
+            txtKho.TextButton = khotongbus.searchKhoTong(this.mkho).tenkho;
+            txtNhanVien.TextButton = TaiKhoanBUS.currentUserMaNV;
+            SanPhamBUS sanphambus = new SanPhamBUS();
+            cbxSanPham.DataSource = sanphambus.GetAllSanPhamAsTable();
+            cbxSanPham.DisplayMember = "ten_san_pham";
+            cbxSanPham.ValueMember = "ma_san_pham";
         }
     }
 }

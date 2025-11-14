@@ -45,11 +45,11 @@ namespace BUS
             }
             return list;
         }
-        public int addKhoTong(NhapKho nk)
+        public int addPhieuNhap(NhapKho nk)
         {
             DLL.phieu_nhap_kho nhapkho = new DLL.phieu_nhap_kho()
             {
-                ma_phieu_nhap = createMaKhoTong(),
+                ma_phieu_nhap = createMaPN(),
                 ma_kho = nk.makho,
                 ma_san_pham = nk.masanpham,
                 ma_nhan_vien_kiem_tra = nk.manhanviennhapkho,
@@ -76,29 +76,41 @@ namespace BUS
                 so_luong = nk.soluong,
                 don_gia = nk.dongia
             };
-            return nhapkhodll.updateKhoTong(nhapkho);
+            return nhapkhodll.updatePN(nhapkho);
         }
-        public string createMaKhoTong()
+        public string createMaPN()
         {
-            var khotongcuoicung = nhapkhodll.getAllPhieuNhap().LastOrDefault();
-            if (khotongcuoicung != null)
+            var itemcuoi = nhapkhodll.getAllPhieuNhap().LastOrDefault();
+            if (itemcuoi != null)
             {
-                string makhotongcuoi = khotongcuoicung.ma_kho;
+                string makhotongcuoi = itemcuoi.ma_phieu_nhap;
                 int so = int.Parse(makhotongcuoi.Substring(2)) + 1;
-                return "NK" + so.ToString();
+                return "PN" + so.ToString();
             }
             else
             {
-                return "NK10000001";
+                return "PN10000001";
             }
         }
         
-        public List<NhapKho> searchNhapKho(string maphieunhap)
+        public List<NhapKho> searchNhapKho(string maphieunhap, string makho)
         {
             List<NhapKho> list = new List<NhapKho>();
             foreach (var item in getAllNhapKho())
             {
-                if (item.maphieu == maphieunhap)
+                if (item.maphieu == maphieunhap && item.makho == makho)
+                {
+                    list.Add(item);
+                }
+            }
+            return list;
+        }
+        public List<NhapKho> searchNhapKhoTheoKho(string makho)
+        {
+            List<NhapKho> list = new List<NhapKho>();
+            foreach (var item in getAllNhapKho())
+            {
+                if (item.makho == makho)
                 {
                     list.Add(item);
                 }

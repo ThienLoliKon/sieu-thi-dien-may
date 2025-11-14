@@ -50,12 +50,12 @@
             this.dgvKhoTong = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.nightHeaderLabel1 = new ReaLTaiizor.Controls.NightHeaderLabel();
             this.RTKhachHangForm = new ReaLTaiizor.Forms.NightForm();
+            this.btnNhap = new ReaLTaiizor.Controls.CyberButton();
+            this.btnXuat = new ReaLTaiizor.Controls.CyberButton();
             this.thunderLabel4 = new ReaLTaiizor.Controls.ThunderLabel();
             this.cyberTextBox1 = new ReaLTaiizor.Controls.CyberTextBox();
             this.lblDanhSachTrong = new ReaLTaiizor.Controls.ThunderLabel();
             this.cyberButton7 = new ReaLTaiizor.Controls.CyberButton();
-            this.btnXuat = new ReaLTaiizor.Controls.CyberButton();
-            this.btnNhap = new ReaLTaiizor.Controls.CyberButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhoTong)).BeginInit();
             this.RTKhachHangForm.SuspendLayout();
             this.SuspendLayout();
@@ -621,6 +621,88 @@
             this.RTKhachHangForm.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
             this.RTKhachHangForm.TitleBarTextColor = System.Drawing.Color.Gainsboro;
             // 
+            // btnNhap
+            // 
+            this.btnNhap.Alpha = 20;
+            this.btnNhap.BackColor = System.Drawing.Color.Transparent;
+            this.btnNhap.Background = true;
+            this.btnNhap.Background_WidthPen = 4F;
+            this.btnNhap.BackgroundPen = true;
+            this.btnNhap.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnNhap.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnNhap.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.btnNhap.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnNhap.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnNhap.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnNhap.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.btnNhap.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.btnNhap.Effect_1 = true;
+            this.btnNhap.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnNhap.Effect_1_Transparency = 25;
+            this.btnNhap.Effect_2 = true;
+            this.btnNhap.Effect_2_ColorBackground = System.Drawing.Color.White;
+            this.btnNhap.Effect_2_Transparency = 20;
+            this.btnNhap.Font = new System.Drawing.Font("Arial", 11F);
+            this.btnNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.btnNhap.Lighting = false;
+            this.btnNhap.LinearGradient_Background = false;
+            this.btnNhap.LinearGradientPen = false;
+            this.btnNhap.Location = new System.Drawing.Point(1024, 342);
+            this.btnNhap.Name = "btnNhap";
+            this.btnNhap.PenWidth = 15;
+            this.btnNhap.Rounding = true;
+            this.btnNhap.RoundingInt = 70;
+            this.btnNhap.Size = new System.Drawing.Size(130, 50);
+            this.btnNhap.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.btnNhap.TabIndex = 40;
+            this.btnNhap.Tag = "Cyber";
+            this.btnNhap.TextButton = "Nhập";
+            this.btnNhap.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btnNhap.Timer_Effect_1 = 5;
+            this.btnNhap.Timer_RGB = 300;
+            this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
+            // 
+            // btnXuat
+            // 
+            this.btnXuat.Alpha = 20;
+            this.btnXuat.BackColor = System.Drawing.Color.Transparent;
+            this.btnXuat.Background = true;
+            this.btnXuat.Background_WidthPen = 4F;
+            this.btnXuat.BackgroundPen = true;
+            this.btnXuat.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnXuat.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnXuat.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.btnXuat.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnXuat.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnXuat.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnXuat.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.btnXuat.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.btnXuat.Effect_1 = true;
+            this.btnXuat.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnXuat.Effect_1_Transparency = 25;
+            this.btnXuat.Effect_2 = true;
+            this.btnXuat.Effect_2_ColorBackground = System.Drawing.Color.White;
+            this.btnXuat.Effect_2_Transparency = 20;
+            this.btnXuat.Font = new System.Drawing.Font("Arial", 11F);
+            this.btnXuat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.btnXuat.Lighting = false;
+            this.btnXuat.LinearGradient_Background = false;
+            this.btnXuat.LinearGradientPen = false;
+            this.btnXuat.Location = new System.Drawing.Point(840, 342);
+            this.btnXuat.Name = "btnXuat";
+            this.btnXuat.PenWidth = 15;
+            this.btnXuat.Rounding = true;
+            this.btnXuat.RoundingInt = 70;
+            this.btnXuat.Size = new System.Drawing.Size(130, 50);
+            this.btnXuat.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.btnXuat.TabIndex = 39;
+            this.btnXuat.Tag = "Cyber";
+            this.btnXuat.TextButton = "Xuất";
+            this.btnXuat.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btnXuat.Timer_Effect_1 = 5;
+            this.btnXuat.Timer_RGB = 300;
+            this.btnXuat.Click += new System.EventHandler(this.cyberButton8_Click_1);
+            // 
             // thunderLabel4
             // 
             this.thunderLabel4.BackColor = System.Drawing.Color.Transparent;
@@ -715,88 +797,6 @@
             this.cyberButton7.Timer_Effect_1 = 5;
             this.cyberButton7.Timer_RGB = 300;
             this.cyberButton7.Click += new System.EventHandler(this.cyberButton7_Click);
-            // 
-            // btnXuat
-            // 
-            this.btnXuat.Alpha = 20;
-            this.btnXuat.BackColor = System.Drawing.Color.Transparent;
-            this.btnXuat.Background = true;
-            this.btnXuat.Background_WidthPen = 4F;
-            this.btnXuat.BackgroundPen = true;
-            this.btnXuat.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.btnXuat.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.btnXuat.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-            this.btnXuat.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.btnXuat.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.btnXuat.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.btnXuat.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-            this.btnXuat.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.btnXuat.Effect_1 = true;
-            this.btnXuat.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.btnXuat.Effect_1_Transparency = 25;
-            this.btnXuat.Effect_2 = true;
-            this.btnXuat.Effect_2_ColorBackground = System.Drawing.Color.White;
-            this.btnXuat.Effect_2_Transparency = 20;
-            this.btnXuat.Font = new System.Drawing.Font("Arial", 11F);
-            this.btnXuat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.btnXuat.Lighting = false;
-            this.btnXuat.LinearGradient_Background = false;
-            this.btnXuat.LinearGradientPen = false;
-            this.btnXuat.Location = new System.Drawing.Point(840, 342);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.PenWidth = 15;
-            this.btnXuat.Rounding = true;
-            this.btnXuat.RoundingInt = 70;
-            this.btnXuat.Size = new System.Drawing.Size(130, 50);
-            this.btnXuat.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.btnXuat.TabIndex = 39;
-            this.btnXuat.Tag = "Cyber";
-            this.btnXuat.TextButton = "Xuất";
-            this.btnXuat.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.btnXuat.Timer_Effect_1 = 5;
-            this.btnXuat.Timer_RGB = 300;
-            this.btnXuat.Click += new System.EventHandler(this.cyberButton8_Click_1);
-            // 
-            // btnNhap
-            // 
-            this.btnNhap.Alpha = 20;
-            this.btnNhap.BackColor = System.Drawing.Color.Transparent;
-            this.btnNhap.Background = true;
-            this.btnNhap.Background_WidthPen = 4F;
-            this.btnNhap.BackgroundPen = true;
-            this.btnNhap.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.btnNhap.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.btnNhap.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-            this.btnNhap.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.btnNhap.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.btnNhap.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-            this.btnNhap.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-            this.btnNhap.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.btnNhap.Effect_1 = true;
-            this.btnNhap.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-            this.btnNhap.Effect_1_Transparency = 25;
-            this.btnNhap.Effect_2 = true;
-            this.btnNhap.Effect_2_ColorBackground = System.Drawing.Color.White;
-            this.btnNhap.Effect_2_Transparency = 20;
-            this.btnNhap.Font = new System.Drawing.Font("Arial", 11F);
-            this.btnNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.btnNhap.Lighting = false;
-            this.btnNhap.LinearGradient_Background = false;
-            this.btnNhap.LinearGradientPen = false;
-            this.btnNhap.Location = new System.Drawing.Point(1024, 342);
-            this.btnNhap.Name = "btnNhap";
-            this.btnNhap.PenWidth = 15;
-            this.btnNhap.Rounding = true;
-            this.btnNhap.RoundingInt = 70;
-            this.btnNhap.Size = new System.Drawing.Size(130, 50);
-            this.btnNhap.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.btnNhap.TabIndex = 40;
-            this.btnNhap.Tag = "Cyber";
-            this.btnNhap.TextButton = "Nhập";
-            this.btnNhap.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.btnNhap.Timer_Effect_1 = 5;
-            this.btnNhap.Timer_RGB = 300;
-            this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
             // 
             // KhoTong
             // 

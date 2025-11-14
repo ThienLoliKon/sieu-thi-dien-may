@@ -129,7 +129,7 @@ namespace he_thong_dien_may
 
         private void cyberButton8_Click_1(object sender, EventArgs e)
         {
-            PhieuXuatKho pxk = new PhieuXuatKho();
+            PhieuXuatKho pxk = new PhieuXuatKho(dgvKhoTong.SelectedRows[0].Cells[1].Value.ToString());
             pxk.ShowDialog();
         }
         private void selectGridXuatNhap()
@@ -159,7 +159,8 @@ namespace he_thong_dien_may
         private void btnNhap_Click(object sender, EventArgs e)
         {
             //MessageBox.Show(dgvKhoTong.SelectedRows[0].Cells[0].Value.ToString());return;
-            PhieuNhapKho pnk = new PhieuNhapKho(dgvKhoTong.SelectedRows[0].Cells[1].Value.ToString());
+            string makhonhap = dgvKhoTong.SelectedRows[0].Cells[0].Value.ToString();
+            PhieuNhapKho pnk = new PhieuNhapKho(makhonhap);
             pnk.ShowDialog();
         }
     }

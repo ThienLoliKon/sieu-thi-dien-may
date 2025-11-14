@@ -93,12 +93,24 @@ namespace BUS
             }
         }
 
-        public List<XuatKho> searchXuatKho(string maphieuxuat)
+        public List<XuatKho> searchXuatKho(string maphieuxuat, string makho)
         {
             List<XuatKho> list = new List<XuatKho>();
             foreach (var item in getAllXuatKho())
             {
-                if (item.maphieu == maphieuxuat)
+                if (item.maphieu == maphieuxuat && item.makho == makho)
+                {
+                    list.Add(item);
+                }
+            }
+            return list;
+        }
+        public List<XuatKho> searchXuatKhoTheoKho(string makho)
+        {
+            List<XuatKho> list = new List<XuatKho>();
+            foreach (var item in getAllXuatKho())
+            {
+                if (item.makho == makho)
                 {
                     list.Add(item);
                 }
