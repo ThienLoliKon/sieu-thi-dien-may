@@ -1,4 +1,5 @@
-﻿using stdm;
+﻿using BUS;
+using stdm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -217,5 +218,17 @@ namespace he_thong_dien_may
         {
             
         }
-    }
+
+		private void crownMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+		{
+
+		}
+
+		private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Form f = new Login();
+			f.Show();
+			this.Hide();
+		}
+	}
 }
