@@ -98,7 +98,7 @@ namespace BUS
             List<NhapKho> list = new List<NhapKho>();
             foreach (var item in getAllNhapKho())
             {
-                if (item.maphieu == maphieunhap && item.makho == makho)
+                if (item.maphieu.Contains(maphieunhap) && item.makho == makho)
                 {
                     list.Add(item);
                 }

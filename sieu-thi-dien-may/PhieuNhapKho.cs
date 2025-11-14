@@ -28,7 +28,7 @@ namespace he_thong_dien_may
 
         private void cyberButton3_Click(object sender, EventArgs e)
         {
-            if (txtMaPhieu.TextButton == "")
+            if (txtMaPhieu.TextButton.Length <= 0)
             {
                 dgvPhieuNhapKho.DataSource = nhapkhobus.searchNhapKhoTheoKho(this.mkho);
             }
@@ -61,7 +61,8 @@ namespace he_thong_dien_may
         private void cyberButton2_Click(object sender, EventArgs e)
         {
             var nhapkho = createPhieuNhapItem();
-            if(nhapkho.soluong < int.Parse(dgvPhieuNhapKho.SelectedRows[0].Cells[4].Value.ToString()))
+            nhapkho.maphieu = dgvPhieuNhapKho.SelectedRows[0].Cells[0].Value.ToString();
+            if (nhapkho.soluong < int.Parse(dgvPhieuNhapKho.SelectedRows[0].Cells[4].Value.ToString()))
             {
                 nhapkho.soluong = nhapkho.soluong - int.Parse(dgvPhieuNhapKho.SelectedRows[0].Cells[4].Value.ToString());
             }
@@ -99,6 +100,11 @@ namespace he_thong_dien_may
             {
                 dgvPhieuNhapKho.DataSource = nhapkhobus.searchNhapKho(txtMaPhieu.TextButton, this.mkho);
             }
+        }
+
+        private void dgvPhieuNhapKho_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtMaPhieu.TextButton = dgvPhieuNhapKho.SelectedRows[0].Cells[0].Value.ToString();
         }
     }
 }

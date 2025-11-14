@@ -524,6 +524,7 @@
             this.dgvPhieuNhapKho.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPhieuNhapKho.Size = new System.Drawing.Size(1582, 398);
             this.dgvPhieuNhapKho.TabIndex = 2;
+            this.dgvPhieuNhapKho.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhieuNhapKho_CellClick);
             // 
             // lblHeader
             // 
