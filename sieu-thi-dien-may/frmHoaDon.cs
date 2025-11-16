@@ -127,7 +127,7 @@ namespace he_thong_dien_may
 				return;
 			}
 
-			if (!bus.AddHoaDon(cboNhanVienLap.SelectedValue.ToString(), cboKhachHang.SelectedValue.ToString()))
+			if (!bus.AddHoaDon(TaiKhoanBUS.currentUserMaNV, cboKhachHang.SelectedValue.ToString()))
 			{
 				MessageBox.Show("Thêm hóa đơn thành công");
 			}
@@ -144,7 +144,10 @@ namespace he_thong_dien_may
 			try
 			{
 				int line = dgvHoaDon.CurrentCell.RowIndex;
-
+				if (line < 0)
+				{
+					return;
+				}
 				if (dgvHoaDon.Rows[line].Cells[0].Value != DBNull.Value)
 				{
 					txtMaHoaDon.Text = dgvHoaDon.Rows[line].Cells[0].Value.ToString();
@@ -152,7 +155,6 @@ namespace he_thong_dien_may
 					cboKhachHang.SelectedValue = dgvHoaDon.Rows[line].Cells[2].Value.ToString();
 					dtpNgayLap.Value = Convert.ToDateTime(dgvHoaDon.Rows[line].Cells[3].Value);
 				}
-
 			}
 			catch (Exception ex)
 			{

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dien_may" Class="DBSTDMDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=Ma\SQLEXPRESS;Initial Catalog=dien_may;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="DLL.Properties.Settings" SettingsPropertyName="dien_mayConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-T2PFFCGC\SQLEXPRESS;Initial Catalog=dien_may;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="DLL.Properties.Settings" SettingsPropertyName="dien_mayConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.bao_hanh" Member="bao_hanhs">
     <Type Name="bao_hanh">
       <Column Name="ma_bao_hanh" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -12,15 +12,6 @@
       <Column Name="hoan_thanh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="khach_hang_bao_hanh" Member="khach_hang" ThisKey="ma_khach_hang" OtherKey="ma_khach_hang" Type="khach_hang" IsForeignKey="true" />
       <Association Name="san_pham_bao_hanh" Member="san_pham" ThisKey="ma_san_pham" OtherKey="ma_san_pham" Type="san_pham" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.xep_hang" Member="xep_hangs">
-    <Type Name="xep_hang">
-      <Column Name="ma_hang" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ten_hang" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="yeu_cau" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="uu_dai" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="xep_hang_khach_hang" Member="khach_hangs" ThisKey="ma_hang" OtherKey="xep_hang" Type="khach_hang" />
     </Type>
   </Table>
   <Table Name="dbo.cap_bac_nhan_vien" Member="cap_bac_nhan_viens">
@@ -312,6 +303,15 @@
       <Column Name="trang_thai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="loai_vi_pham_vi_pham" Member="loai_vi_pham" ThisKey="ma_loai_vi_pham" OtherKey="ma_loai_vi_pham" Type="loai_vi_pham" IsForeignKey="true" />
       <Association Name="nhan_vien_vi_pham" Member="nhan_vien" ThisKey="ma_nhan_vien" OtherKey="ma_nhan_vien" Type="nhan_vien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.xep_hang" Member="xep_hangs">
+    <Type Name="xep_hang">
+      <Column Name="ma_hang" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ten_hang" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="yeu_cau" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="uu_dai" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="xep_hang_khach_hang" Member="khach_hangs" ThisKey="ma_hang" OtherKey="xep_hang" Type="khach_hang" />
     </Type>
   </Table>
 </Database>

@@ -209,7 +209,7 @@
 			// 
 			this.dtpNgayLap.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
 			this.dtpNgayLap.Location = new System.Drawing.Point(1512, 85);
-			this.dtpNgayLap.MinimumSize = new System.Drawing.Size(4, 30);
+			this.dtpNgayLap.MinimumSize = new System.Drawing.Size(0, 30);
 			this.dtpNgayLap.Name = "dtpNgayLap";
 			this.dtpNgayLap.Size = new System.Drawing.Size(270, 30);
 			this.dtpNgayLap.TabIndex = 40;
@@ -297,7 +297,7 @@
 			this.dgvHoaDon.EnableHeadersVisualStyles = false;
 			this.dgvHoaDon.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.dgvHoaDon.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.dgvHoaDon.Location = new System.Drawing.Point(1, 393);
+			this.dgvHoaDon.Location = new System.Drawing.Point(4, 394);
 			this.dgvHoaDon.Name = "dgvHoaDon";
 			this.dgvHoaDon.ReadOnly = true;
 			this.dgvHoaDon.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;

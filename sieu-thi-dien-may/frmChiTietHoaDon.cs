@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BUS.ChiTietHoaDonBUS;
 
 namespace he_thong_dien_may
 {
@@ -75,20 +76,42 @@ namespace he_thong_dien_may
 
 		private void btnThem_Click(object sender, EventArgs e)
 		{
+			//MessageBox.Show("Chi Nhanh = "+ TaiKhoanBUS.currentChiNhanh+" || MaNV ="+TaiKhoanBUS.currentUserMaNV+"|", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 			if (checkDuLieuNhap() == false)
 			{
 			}
 			else
 			{
 				string khuyenMaiValue = cboKhuyenMai.SelectedValue != null ? cboKhuyenMai.SelectedValue.ToString() : null;
-				if (bus.AddChiTietHoaDon(cboMaHoaDon.SelectedValue.ToString(),TaiKhoanBUS.currentUserMaNV, cboSanPham.SelectedValue.ToString(), khuyenMaiValue, txtSoLuong.Text, txtDonGia.Text, dtpNgayGioIn.Value) == false)
+
+				ThemChiTietStatus ketQua = bus.AddChiTietHoaDon(cboMaHoaDon.SelectedValue.ToString(), TaiKhoanBUS.currentUserMaNV, cboSanPham.SelectedValue.ToString(), khuyenMaiValue, txtSoLuong.Text, txtDonGia.Text, dtpNgayGioIn.Value);
+				// Dùng switch để kiểm tra kết quả
+				switch (ketQua)
 				{
-					MessageBox.Show("Thêm chi tiết hóa đơn thành công!");
-				}
-				else
-				{
-					MessageBox.Show("Thêm chi tiết hóa đơn thất bại!");
-				}
+					case ThemChiTietStatus.ThanhCong:
+						MessageBox.Show("Thêm sản phẩm và trừ kho thành công!");
+						loadData(); // Chỉ load lại dữ liệu nếu thành công
+						break;
+
+					case ThemChiTietStatus.Loi_KhongDuSoLuong:
+						errorProvider1.SetError(txtSoLuong, "Không đủ hàng trong kho chi nhánh!");
+						MessageBox.Show("Lỗi: Không đủ hàng trong kho.");
+						break;
+
+					case ThemChiTietStatus.Loi_KhongTimThayKho:
+						errorProvider1.SetError(cboSanPham, "Sản phẩm này không có trong kho chi nhánh!");
+						MessageBox.Show("Lỗi: Sản phẩm không có trong kho.");
+						break;
+
+					case ThemChiTietStatus.Loi_NhanVienKhongCoChiNhanh:
+						MessageBox.Show("Lỗi: Không thể xác định chi nhánh của nhân viên.");
+						break;
+
+					case ThemChiTietStatus.Loi_Database:
+						MessageBox.Show("Lỗi CSDL, vui lòng thử lại!");
+						break;
+				} 
+
 			}
 			loadData();
 		}

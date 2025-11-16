@@ -11,8 +11,8 @@ namespace BUS
     public class TaiKhoanBUS
     {
         public static string currentUserMaNV;
-
-        private TaiKhoanDLL dal;
+        public static string currentChiNhanh;
+		private TaiKhoanDLL dal;
 
         public TaiKhoanBUS()
         {

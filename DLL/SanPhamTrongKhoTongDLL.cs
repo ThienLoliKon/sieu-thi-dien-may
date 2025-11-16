@@ -8,7 +8,8 @@ namespace DLL
 {
     public class SanPhamTrongKhoTongDLL
     {
-        DBSTDMDataContext db = new DBSTDMDataContext();
+		public enum TruKhoStatus { ThanhCong, KhoNotFound, KhongDuHang, Loi }
+		DBSTDMDataContext db = new DBSTDMDataContext();
         public SanPhamTrongKhoTongDLL()
         {
             if (!db.DatabaseExists())
@@ -29,5 +30,42 @@ namespace DLL
             }
             db.SubmitChanges();
         }
-    }
+		//public bool TruSoLuongKhoChiNhanh(string maSP, string maCN, int soLuongCanTru)
+		//{
+		//	try
+		//	{
+		//		// 1. Tìm kho của chi nhánh
+		//		var khoChiNhanh = db.san_pham_trong_chi_nhanhs.SingleOrDefault(k =>
+		//			k.ma_san_pham.Trim() == maSP.Trim() &&
+		//			k.ma_chi_nhanh.Trim() == maCN.Trim());
+
+		//		// 2. Kiểm tra xem kho có tồn tại và đủ hàng không
+		//		if (khoChiNhanh == null)
+		//		{
+		//			// Lỗi: Sản phẩm này không tồn tại trong kho chi nhánh
+		//			return false;
+		//		}
+
+		//		if (khoChiNhanh.so_luong < soLuongCanTru)
+		//		{
+		//			// Lỗi: Không đủ hàng trong kho
+		//			return false;
+		//		}
+
+		//		// 3. Đủ hàng -> Trừ kho
+		//		khoChiNhanh.so_luong = khoChiNhanh.so_luong - soLuongCanTru;
+
+		//		// 4. Lưu thay đổi
+		//		// (Lưu ý: Nếu hàm này được gọi từ TransactionScope, 
+		//		// SubmitChanges() sẽ chỉ ghi tạm, chưa Commit)
+		//		db.SubmitChanges();
+
+		//		return true; // Báo thành công
+		//	}
+		//	catch (Exception)
+		//	{
+		//		return false; // Báo thất bại nếu có lỗi
+		//	}
+		//}
+	}
 }

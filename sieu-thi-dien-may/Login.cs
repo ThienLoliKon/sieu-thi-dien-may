@@ -21,9 +21,12 @@ namespace stdm
 
         private void cyberButton1_Click(object sender, EventArgs e)
         {
-            Form f = new frmMainMenu();
-            TaiKhoanBUS.currentUserMaNV = txtMaNV.TextButton;
-            f.Show();
+            NhanVienBUS bus = new NhanVienBUS();
+			Form f = new frmMainMenu();
+            TaiKhoanBUS.currentUserMaNV = txtMaNV.TextButton+"     ";
+            TaiKhoanBUS.currentChiNhanh = bus.timChiNhanhByMaNhanVien(txtMaNV.TextButton);
+
+			f.Show();
             this.Hide();
         }
     }

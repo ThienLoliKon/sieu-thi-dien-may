@@ -5,11 +5,21 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
+using static DLL.SanPhamTrongKhoTongDLL;
 
 namespace BUS
 {
 	public class ChiTietHoaDonBUS
 	{
+		public enum ThemChiTietStatus
+		{
+			ThanhCong,            // 0 (Tương đương với 0 của bạn)
+			Loi_NhanVienKhongCoChiNhanh, // 1
+			Loi_KhongTimThayKho,  // 2 (Tương đương với 1 của bạn)
+			Loi_KhongDuSoLuong,   // 3 (Tương đương với 2 của bạn)
+			Loi_Database         // 4 (Lỗi chung)
+		}
 		private ChiTietHoaDonDLL dal;
 		private NhanVienDLL dalNhanVien;
 		public ChiTietHoaDonBUS()
@@ -18,33 +28,81 @@ namespace BUS
 			dalNhanVien = new NhanVienDLL(); // <-- Khởi tạo
 		}
 
-		public bool AddChiTietHoaDon(string maHoaDon,string maNhanVien ,string maSanPham, string maKhuyenMai, string soLuong, string donGia, DateTime ngayGioIn)
+		public ThemChiTietStatus AddChiTietHoaDon(string maHoaDon,string maNhanVien ,string maSanPham, string maKhuyenMai, string soLuong, string donGia, DateTime ngayGioIn)
 		{
 			SanPhamBUS busSP = new SanPhamBUS();
 			chi_tiet_hoa_don addVariable = new chi_tiet_hoa_don();
-
-			addVariable.ma_hoa_don = maHoaDon;
-			addVariable.ma_san_pham = maSanPham;
-			addVariable.ma_khuyen_mai = maKhuyenMai;
-			if (maKhuyenMai == null)
-			{
-				maKhuyenMai = "";
-			}
 			if (int.TryParse(soLuong, out int soLuongInt))
 				addVariable.so_luong = soLuongInt;
 			else
 				addVariable.so_luong = null; // hoặc xử lý lỗi nhập liệu
 
-			if (Decimal.TryParse(donGia, out decimal donGiaDemical))
-				addVariable.don_gia = donGiaDemical;
-			else
-				addVariable.don_gia = null; // hoặc xử lý lỗi nhập liệu			
-			addVariable.ngay_gio_in = ngayGioIn;
-			dal.addChiTietHoaDon(addVariable);
+			string maChiNhanh = TaiKhoanBUS.currentChiNhanh;
+			if (string.IsNullOrEmpty(maChiNhanh))
+			{
+				return ThemChiTietStatus.Loi_NhanVienKhongCoChiNhanh; // Lỗi 1
+			}
 
-			if (dal.check(addVariable.ma_hoa_don, addVariable.ma_san_pham) == true) { return false; }
+			try
+			{
+				using (var scope = new TransactionScope())
+				{
+					// BƯỚC 2a: TRỪ KHO
+					// (Giả sử bạn đã sửa KhoBUS để nó trả về TruKhoStatus)
+					SanPhamTrongChiNhanhDLL sanPhamTrongChiNhanhDLL = new SanPhamTrongChiNhanhDLL();
+					TruKhoStatus truKhoResult = sanPhamTrongChiNhanhDLL.TruSoLuongKhoChiNhanh(maSanPham, maChiNhanh, soLuongInt);
 
-			return true;
+					if (truKhoResult != TruKhoStatus.ThanhCong)
+					{
+						// Chuyển lỗi từ KhoBUS sang lỗi của ChiTietBUS
+						if (truKhoResult == TruKhoStatus.KhoNotFound)
+						{
+							return ThemChiTietStatus.Loi_KhongTimThayKho; // Lỗi 2
+						}
+						if (truKhoResult == TruKhoStatus.KhongDuHang)
+						{
+							return ThemChiTietStatus.Loi_KhongDuSoLuong; // Lỗi 3
+						}
+					}
+
+					// BƯỚC 2b: THÊM CHI TIẾT HÓA ĐƠN
+					{
+						// ... (gán giá trị) ...
+						addVariable.ma_hoa_don = maHoaDon;
+						addVariable.ma_san_pham = maSanPham;
+						addVariable.ma_khuyen_mai = maKhuyenMai;
+						//if (maKhuyenMai == null)
+						//{
+						//	maKhuyenMai = "";
+						//}
+
+						if (Decimal.TryParse(donGia, out decimal donGiaDemical))
+							addVariable.don_gia = donGiaDemical;
+						else
+							addVariable.don_gia = null; // hoặc xử lý lỗi nhập liệu			
+						addVariable.ngay_gio_in = DateTime.Now;
+
+					}
+					;
+
+					// (Sửa lại hàm addChiTietHoaDon trong DLL để nó chỉ thêm/cộng dồn
+					// và không trả về bool, để SubmitChanges xử lý)
+					dal.addChiTietHoaDon(addVariable); // Hàm này chỉ nên là void hoặc int
+
+					// BƯỚC 2c: HOÀN TẤT
+					scope.Complete();
+					return ThemChiTietStatus.ThanhCong; // Thành công!
+				}
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("Lỗi TransactionScope: " + ex.Message);
+				return ThemChiTietStatus.Loi_Database; // Lỗi 4
+			}
+
+
+
+			
 		}
 
 		// SỬA LẠI HÀM NÀY
