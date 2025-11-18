@@ -13,6 +13,12 @@ namespace he_thong_dien_may
 {
     public partial class frmDiemDanh : Form
     {
+        private string _maNVCanLoc = null;
+        DiemDanhBUS ddBus = new DiemDanhBUS();
+        public frmDiemDanh(string maNV) : this()
+        {
+            _maNVCanLoc = maNV;
+        }
         public frmDiemDanh()
         {
             InitializeComponent();
@@ -264,21 +270,52 @@ namespace he_thong_dien_may
             LoadComboBoxData();
             LoadDL();
         }
+        private void FilterByMaNV(string maNV)
+        {
+            try
+            {
+                DataTable dtKetQua = ddBus.timDiemDanh(maNV);
+                if (dtKetQua != null && dtKetQua.Rows.Count > 0)
+                {
+                    dgvDiemDanh.DataSource = dtKetQua;
+                }
+                else
+                {
+                    dgvDiemDanh.DataSource = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi trong quá trình lọc dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void frmDiemDanh_Load(object sender, EventArgs e)
         {
             LoadComboBoxData();
 
             dgvDiemDanh.AutoGenerateColumns = false;
-            dgvDiemDanh.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã Điểm Danh", DataPropertyName = "MaDiemDanh", Width = 200 });
-            dgvDiemDanh.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã NV", DataPropertyName = "MaNV", Width = 200 });
-            dgvDiemDanh.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Thời Gian Vào", DataPropertyName = "ThoiGianVao", Width = 200 });
-            dgvDiemDanh.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Thời Gian Ra", DataPropertyName = "ThoiGianRa", Width = 200 });
-
-            LoadDL();
+            dgvDiemDanh.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã Điểm Danh", DataPropertyName = "MaDiemDanh", Width = 250 });
+            dgvDiemDanh.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã NV", DataPropertyName = "MaNV", Width = 250 });
+            dgvDiemDanh.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Thời Gian Vào", DataPropertyName = "ThoiGianVao", Width = 265 });
+            dgvDiemDanh.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Thời Gian Ra", DataPropertyName = "ThoiGianRa", Width = 265 });
+            if (!string.IsNullOrEmpty(_maNVCanLoc))
+            {
+                cbbMaNV.SelectedValue = _maNVCanLoc;
+                FilterByMaNV(_maNVCanLoc);
+            }
+            else
+            {
+                LoadDL();
+            }
         }
 
         private void foreverForm1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpThoiGianRa_ValueChanged(object sender, EventArgs e)
         {
 
         }

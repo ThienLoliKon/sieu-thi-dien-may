@@ -13,6 +13,12 @@ namespace he_thong_dien_may
 {
     public partial class frmTaiKhoan : Form
     {
+        private string _maNVCanLoc = null;
+        TaiKhoanBUS tkBus = new TaiKhoanBUS();
+        public frmTaiKhoan(string maNV) : this() 
+        {
+            _maNVCanLoc = maNV;
+        }
         public frmTaiKhoan()
         {
             InitializeComponent();
@@ -68,17 +74,43 @@ namespace he_thong_dien_may
                 MessageBox.Show("Lỗi khi tải ComboBox: " + ex.Message, "Lỗi Load Dữ Liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void FilterByMaNV(string maNV)
+        {
+            try
+            {
+                DataTable dtKetQua = tkBus.timTaiKhoan(maNV);
+                if (dtKetQua != null && dtKetQua.Rows.Count > 0)
+                {
+                    dgvTK.DataSource = dtKetQua;
+                }
+                else
+                {
+                    dgvTK.DataSource = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi trong quá trình lọc dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void frmTaiKhoan_Load(object sender, EventArgs e)
         {
             LoadComboBoxData();
 
             dgvTK.AutoGenerateColumns = false;
-            dgvTK.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã NV", DataPropertyName = "MaNV", Width = 200 });
-            dgvTK.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mật Khẩu", DataPropertyName = "MatKhau", Width = 200 });
-            dgvTK.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Quyền Truy Cập", DataPropertyName = "Quyen", Width = 200 });
-
-            LoadDL();
+            dgvTK.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã NV", DataPropertyName = "MaNV", Width = 300 });
+            dgvTK.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mật Khẩu", DataPropertyName = "MatKhau", Width = 300 });
+            dgvTK.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Quyền Truy Cập", DataPropertyName = "Quyen", Width = 430 });
+            if (!string.IsNullOrEmpty(_maNVCanLoc))
+            {
+                cbbMaNV.SelectedValue = _maNVCanLoc;
+                FilterByMaNV(_maNVCanLoc);
+            }
+            else
+            {
+                LoadDL();
+            }
         }
 
         private void dgvTK_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -9,7 +9,12 @@ namespace he_thong_dien_may
 {
     public partial class frmViPham : Form
     {
-
+        private string _maNVCanLoc = null;
+        private ViPhamBUS vpBus = new ViPhamBUS();
+        public frmViPham(string maNV) : this() 
+        {
+            _maNVCanLoc = maNV;
+        }
         public frmViPham()
         {
             InitializeComponent();
@@ -133,6 +138,25 @@ namespace he_thong_dien_may
             }
             if (txtMucPhat != null) txtMucPhat.Text = "0.0";
         }
+            private void FilterByMaNV(string maNV)
+            {
+                try
+                {
+                    DataTable dtKetQua = vpBus.timViPham(maNV);
+                    if (dtKetQua != null && dtKetQua.Rows.Count > 0)
+                    {
+                        dgvViPham.DataSource = dtKetQua;
+                    }
+                    else
+                    {
+                        dgvViPham.DataSource = null;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi trong quá trình lọc dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
 
         private void frmViPham_Load(object sender, EventArgs e) 
         {
@@ -146,8 +170,15 @@ namespace he_thong_dien_may
             dgvViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Thời Gian", DataPropertyName = "ThoiGianVP", Width = 250 });
             dgvViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Trạng Thái", DataPropertyName = "TrangThai", Width = 250 });
             dgvViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mức Phạt", DataPropertyName = "MucPhat", Width = 250 });
-
-            LoadDL();
+            if (!string.IsNullOrEmpty(_maNVCanLoc))
+            {
+                cbbMaNV.SelectedValue = _maNVCanLoc;
+                FilterByMaNV(_maNVCanLoc);
+            }
+            else
+            {
+                LoadDL();
+            }
         }
 
 

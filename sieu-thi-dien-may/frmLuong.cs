@@ -12,6 +12,8 @@ namespace he_thong_dien_may
         private string _maNVCanLoc = null;
         private LuongBUS luongBus = new LuongBUS();
         private NhanVienBUS nvBus = new NhanVienBUS();
+        private ViPhamBUS vpBus = new ViPhamBUS();
+        private ThuongBUS tBus = new ThuongBUS();
         public frmLuong(string maNV) : this() 
         {
             _maNVCanLoc = maNV;
@@ -20,8 +22,32 @@ namespace he_thong_dien_may
         {
             InitializeComponent();
             txtTongLuongNhan.ReadOnly = true;
+            cbbMaNV.SelectedValueChanged += new EventHandler(CapNhatThuongPhat_KhiChon);
+            dtpThangLuong.ValueChanged += new EventHandler(CapNhatThuongPhat_KhiChon);
         }
+        private void CapNhatThuongPhat_KhiChon(object sender, EventArgs e)
+        {
+            string maNV = cbbMaNV.SelectedValue?.ToString();
+            DateTime thang = dtpThangLuong.Value;
+            if (string.IsNullOrEmpty(maNV))
+            {
+                txtThuong.Text = "0";
+                txtPhat.Text = "0";
+                return;
+            }
 
+            try
+            {
+                double tongThuong = tBus.TinhTongThuong(maNV, thang);
+                txtThuong.Text = tongThuong.ToString();
+                double tongPhat = vpBus.TinhTongPhat(maNV, thang);
+                txtPhat.Text = tongPhat.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tự động cập nhật Thưởng/Phạt: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void ClearInputControls()
         {
@@ -162,6 +188,8 @@ namespace he_thong_dien_may
             {
                 LoadDL(); 
             }
+            ThuongBUS.OnThuongUpdated += (s, ev) => CapNhatThuongPhat_KhiChon(null, null);
+            ViPhamBUS.OnViPhamUpdated += (s, ev) => CapNhatThuongPhat_KhiChon(null, null);
         }
 
         private void btnThem_Click(object sender, EventArgs e)

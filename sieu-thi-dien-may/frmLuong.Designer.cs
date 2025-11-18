@@ -85,7 +85,9 @@
             // 
             // dtpThangLuong
             // 
+            this.dtpThangLuong.CustomFormat = "MM/yyyy";
             this.dtpThangLuong.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
+            this.dtpThangLuong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpThangLuong.Location = new System.Drawing.Point(247, 189);
             this.dtpThangLuong.MinimumSize = new System.Drawing.Size(0, 30);
             this.dtpThangLuong.Name = "dtpThangLuong";

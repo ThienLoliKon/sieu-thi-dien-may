@@ -12,7 +12,11 @@ namespace he_thong_dien_may
         private ThuongBUS tBus = new ThuongBUS();
         private NhanVienBUS nvBus = new NhanVienBUS();
         private LoaiThuongBUS ltBus = new LoaiThuongBUS();
-
+        private string _maNVCanLoc = null;
+        public frmThuong(string maNV) : this() 
+        {
+            _maNVCanLoc = maNV;
+        }
 
         public frmThuong()
         {
@@ -112,6 +116,25 @@ namespace he_thong_dien_may
             }
             catch (Exception ex) { MessageBox.Show($"Lỗi tải ComboBox: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
+        private void FilterByMaNV(string maNV)
+        {
+            try
+            {
+                DataTable dtKetQua = tBus.TimThuongTheoMaNV(maNV);
+                if (dtKetQua != null && dtKetQua.Rows.Count > 0)
+                {
+                    dgvThuong.DataSource = dtKetQua;
+                }
+                else
+                {
+                    dgvThuong.DataSource = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi trong quá trình lọc dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void frmThuong_Load(object sender, EventArgs e)
         {
@@ -126,7 +149,15 @@ namespace he_thong_dien_may
             dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Trạng Thái", DataPropertyName = "TrangThai", Width = 250 });
             dgvThuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mức Thưởng", DataPropertyName = "MucThuong", Width = 250 });
             LoadComboBoxData();
-            LoadDL();
+            if (!string.IsNullOrEmpty(_maNVCanLoc))
+            {
+                cbbMaNV.SelectedValue = _maNVCanLoc;
+                FilterByMaNV(_maNVCanLoc);
+            }
+            else
+            {
+                LoadDL();
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)

@@ -35,11 +35,15 @@ namespace BUS
             viPham.ma_nhan_vien = maNV;
             viPham.ma_loai_vi_pham = maLoaiVP;
             viPham.thoi_gian_vi_pham = thoiGianVP;
-            viPham.trang_thai = false; // Mặc định là chưa hoàn thành (chưa xử lý)
+            viPham.trang_thai = false; 
 
             dal.AddViPham(viPham);
 
-            if (dal.check(viPham.ma_vi_pham) == true) { return true; }
+            if (dal.check(viPham.ma_vi_pham) == true) 
+            {
+                OnViPhamUpdated?.Invoke(this, EventArgs.Empty);
+                return true; 
+            }
             return false;
         }
 
@@ -61,6 +65,7 @@ namespace BUS
             }
             catch (Exception)
             {
+                OnViPhamUpdated?.Invoke(this, EventArgs.Empty);
                 return false;
             }
         }
@@ -70,7 +75,11 @@ namespace BUS
             try
             {
                 dal.DeleteViPham(id);
-                if (dal.check(id) == false) { return true; }
+                if (dal.check(id) == false) 
+                {
+                    OnViPhamUpdated?.Invoke(this, EventArgs.Empty);
+                    return true; 
+                }
                 return false;
             }
             catch (Exception)
@@ -135,6 +144,24 @@ namespace BUS
                 dt.Rows.Add(vp.ma_vi_pham, vp.ma_nhan_vien, vp.ma_loai_vi_pham, vp.thoi_gian_vi_pham, vp.trang_thai, mucPhat);
             }
             return dt;
+        }
+        public static event EventHandler OnViPhamUpdated;
+        public double TinhTongPhat(string maNV, DateTime thang)
+        {
+            using (var db = new DBSTDMDataContext())
+            {
+                int month = thang.Month;
+                int year = thang.Year;
+
+                var query = from vp in db.vi_phams
+                            join lvp in db.loai_vi_phams on vp.ma_loai_vi_pham equals lvp.ma_loai_vi_pham
+                            where vp.ma_nhan_vien == maNV
+                                  && vp.thoi_gian_vi_pham.Value.Month == month
+                                  && vp.thoi_gian_vi_pham.Value.Year == year
+                            select lvp.muc_phat;
+
+                return (double)(query.Sum() ?? 0.0);
+            }
         }
     }
 }

@@ -33,8 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.foreverForm1 = new ReaLTaiizor.Forms.ForeverForm();
             this.btnTimKiem = new ReaLTaiizor.Controls.CyberButton();
-            this.dtpThoiGianRa = new ReaLTaiizor.Controls.PoisonDateTime();
-            this.dtpThoiGianVao = new ReaLTaiizor.Controls.PoisonDateTime();
             this.cbbTraCuu = new ReaLTaiizor.Controls.SkyComboBox();
             this.cbbMaNV = new ReaLTaiizor.Controls.SkyComboBox();
             this.btnDong = new ReaLTaiizor.Controls.CyberButton();
@@ -47,6 +45,8 @@
             this.foreverLabel2 = new ReaLTaiizor.Controls.ForeverLabel();
             this.foreverLabel1 = new ReaLTaiizor.Controls.ForeverLabel();
             this.txtMaDiemDanh = new ReaLTaiizor.Controls.ForeverTextBox();
+            this.dtpThoiGianVao = new System.Windows.Forms.DateTimePicker();
+            this.dtpThoiGianRa = new System.Windows.Forms.DateTimePicker();
             this.foreverForm1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiemDanh)).BeginInit();
             this.SuspendLayout();
@@ -56,9 +56,9 @@
             this.foreverForm1.BackColor = System.Drawing.Color.White;
             this.foreverForm1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
             this.foreverForm1.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.foreverForm1.Controls.Add(this.btnTimKiem);
             this.foreverForm1.Controls.Add(this.dtpThoiGianRa);
             this.foreverForm1.Controls.Add(this.dtpThoiGianVao);
+            this.foreverForm1.Controls.Add(this.btnTimKiem);
             this.foreverForm1.Controls.Add(this.cbbTraCuu);
             this.foreverForm1.Controls.Add(this.cbbMaNV);
             this.foreverForm1.Controls.Add(this.btnDong);
@@ -131,26 +131,6 @@
             this.btnTimKiem.Timer_Effect_1 = 5;
             this.btnTimKiem.Timer_RGB = 300;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
-            // 
-            // dtpThoiGianRa
-            // 
-            this.dtpThoiGianRa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpThoiGianRa.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
-            this.dtpThoiGianRa.Location = new System.Drawing.Point(1252, 358);
-            this.dtpThoiGianRa.MinimumSize = new System.Drawing.Size(0, 30);
-            this.dtpThoiGianRa.Name = "dtpThoiGianRa";
-            this.dtpThoiGianRa.Size = new System.Drawing.Size(336, 30);
-            this.dtpThoiGianRa.TabIndex = 57;
-            // 
-            // dtpThoiGianVao
-            // 
-            this.dtpThoiGianVao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpThoiGianVao.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
-            this.dtpThoiGianVao.Location = new System.Drawing.Point(1252, 266);
-            this.dtpThoiGianVao.MinimumSize = new System.Drawing.Size(0, 30);
-            this.dtpThoiGianVao.Name = "dtpThoiGianVao";
-            this.dtpThoiGianVao.Size = new System.Drawing.Size(336, 30);
-            this.dtpThoiGianVao.TabIndex = 56;
             // 
             // cbbTraCuu
             // 
@@ -513,6 +493,26 @@
             this.txtMaDiemDanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtMaDiemDanh.UseSystemPasswordChar = false;
             // 
+            // dtpThoiGianVao
+            // 
+            this.dtpThoiGianVao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpThoiGianVao.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpThoiGianVao.Location = new System.Drawing.Point(1252, 260);
+            this.dtpThoiGianVao.Name = "dtpThoiGianVao";
+            this.dtpThoiGianVao.ShowUpDown = true;
+            this.dtpThoiGianVao.Size = new System.Drawing.Size(336, 34);
+            this.dtpThoiGianVao.TabIndex = 59;
+            // 
+            // dtpThoiGianRa
+            // 
+            this.dtpThoiGianRa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpThoiGianRa.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpThoiGianRa.Location = new System.Drawing.Point(1252, 354);
+            this.dtpThoiGianRa.Name = "dtpThoiGianRa";
+            this.dtpThoiGianRa.ShowUpDown = true;
+            this.dtpThoiGianRa.Size = new System.Drawing.Size(336, 34);
+            this.dtpThoiGianRa.TabIndex = 59;
+            // 
             // frmDiemDanh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -548,8 +548,8 @@
         private ReaLTaiizor.Controls.ForeverTextBox txtMaDiemDanh;
         private ReaLTaiizor.Controls.SkyComboBox cbbTraCuu;
         private ReaLTaiizor.Controls.SkyComboBox cbbMaNV;
-        private ReaLTaiizor.Controls.PoisonDateTime dtpThoiGianRa;
-        private ReaLTaiizor.Controls.PoisonDateTime dtpThoiGianVao;
         private ReaLTaiizor.Controls.CyberButton btnTimKiem;
+        private System.Windows.Forms.DateTimePicker dtpThoiGianVao;
+        private System.Windows.Forms.DateTimePicker dtpThoiGianRa;
     }
 }
