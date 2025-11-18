@@ -2,8 +2,10 @@
 using System;
 using System.Data;
 using System.Linq;
-using System.Windows.Forms;
 using System.Text.RegularExpressions; 
+using System.Windows.Forms;
+using CrystalDecisions.CrystalReports.Engine;
+using stdm;
 
 namespace he_thong_dien_may
 {
@@ -336,5 +338,6 @@ namespace he_thong_dien_may
                 this.Close();
             }
         }
+        
     }
 }
