@@ -22,12 +22,29 @@ namespace DLL
         }
         public void updateSoLuongNhapKho(string makho, string masanpham, int soluong)
         {
-            var sptrongkhotong = db.san_pham_trong_kho_tongs.Where(x => x.ma_kho == makho && x.ma_san_pham == masanpham).FirstOrDefault();
+            var sptrongkhotong = db.san_pham_trong_kho_tongs.Where(x => x.ma_kho.Trim() == makho.Trim() && x.ma_san_pham.Trim() == masanpham.Trim()).FirstOrDefault();
             if (sptrongkhotong != null)
             {
                 sptrongkhotong.so_luong += soluong;
             }
             db.SubmitChanges();
+        }
+        public bool addSanPhamVaoKhoTong(string makho, string masanpham, int soluong)
+        {
+            try
+            {
+                san_pham_trong_kho_tong sptrongkhotong = new san_pham_trong_kho_tong();
+                sptrongkhotong.ma_kho = makho;
+                sptrongkhotong.ma_san_pham = masanpham;
+                sptrongkhotong.so_luong = soluong;
+                db.san_pham_trong_kho_tongs.InsertOnSubmit(sptrongkhotong);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

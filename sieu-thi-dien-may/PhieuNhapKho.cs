@@ -60,13 +60,24 @@ namespace he_thong_dien_may
 
         private void cyberButton2_Click(object sender, EventArgs e)
         {
+            if(dgvPhieuNhapKho.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Vui lòng chọn phiếu nhập kho cần sửa!");
+                return;
+            }
             var nhapkho = createPhieuNhapItem();
             nhapkho.maphieu = dgvPhieuNhapKho.SelectedRows[0].Cells[0].Value.ToString();
+            int chenhlechsoluong = 0;
+            //nhapkho.soluong = int.Parse(dgvPhieuNhapKho.SelectedRows[0].Cells[4].Value.ToString());
             if (nhapkho.soluong < int.Parse(dgvPhieuNhapKho.SelectedRows[0].Cells[4].Value.ToString()))
             {
-                nhapkho.soluong = nhapkho.soluong - int.Parse(dgvPhieuNhapKho.SelectedRows[0].Cells[4].Value.ToString());
+                //MessageBox.Show("Số lượng nhập kho không được nhỏ hơn số lượng hiện có!");
+                chenhlechsoluong = nhapkho.soluong - int.Parse(dgvPhieuNhapKho.SelectedRows[0].Cells[4].Value.ToString());
+                //MessageBox.Show(nhapkho.soluong.ToString());return;
             }
             nhapkhobus.updateNhapKho(nhapkho);
+            SanPhamTrongKhoTongBUS spktbus = new SanPhamTrongKhoTongBUS();
+            spktbus.updateSoLuongNhapKho(nhapkho.makho, nhapkho.masanpham, chenhlechsoluong);
         }
 
         private void txtNhanVien_Leave(object sender, EventArgs e)
@@ -105,6 +116,8 @@ namespace he_thong_dien_may
         private void dgvPhieuNhapKho_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtMaPhieu.TextButton = dgvPhieuNhapKho.SelectedRows[0].Cells[0].Value.ToString();
+            txtSoLuong.TextButton = dgvPhieuNhapKho.SelectedRows[0].Cells[4].Value.ToString();
+            txtDonGia.TextButton = dgvPhieuNhapKho.SelectedRows[0].Cells[5].Value.ToString();
         }
     }
 }

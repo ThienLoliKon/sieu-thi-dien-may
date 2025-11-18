@@ -43,6 +43,10 @@ namespace BUS
             }
             return list;
         }
+        public bool addSanPhamVaoKhoTong(string makho, string masanpham, int soluong)
+        {
+            return sanphamtrongkhotongdll.addSanPhamVaoKhoTong(makho, masanpham, soluong);
+        }
         public List<SanPhamTrongKhoTong> searchSPTrongKhoTong(string input)
         {
             List<SanPhamTrongKhoTong> list = new List<SanPhamTrongKhoTong>();
@@ -57,6 +61,11 @@ namespace BUS
         }
         public void updateSoLuongNhapKho(string makho, string masanpham, int soluong)
         {
+            if(searchSPTrongKhoTong(masanpham).Count == 0)
+            {
+                addSanPhamVaoKhoTong(makho, masanpham, soluong);
+                return;
+            }
             sanphamtrongkhotongdll.updateSoLuongNhapKho(makho, masanpham, soluong);
         }
     }

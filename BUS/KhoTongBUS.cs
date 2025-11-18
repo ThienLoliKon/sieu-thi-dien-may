@@ -37,7 +37,7 @@ namespace BUS
                 kt.tenkho = item.ten_kho;
                 kt.quanly = item.nhan_vien_quan_ly;
                 kt.diachi = item.dia_chi;
-
+                kt.succhua = item.suc_chua ?? 0;
                 list.Add(kt);
             }
             return list;
@@ -79,12 +79,12 @@ namespace BUS
             if (khotongcuoicung != null)
             {
                 string makhotongcuoi = khotongcuoicung.ma_kho;
-                int so = int.Parse(makhotongcuoi.Substring(2)) + 1;
-                return "KT" + so.ToString();
+                int so = int.Parse(makhotongcuoi.Substring(3)) + 1;
+                return "KHO" + so.ToString();
             }
             else
             {
-                return "KT10000001";
+                return "KHO1000001";
             }
         }
         public void xoaKhoTong(string makho)
@@ -108,7 +108,7 @@ namespace BUS
             List<KhoTong> listkhotong = new List<KhoTong>();
             foreach (var item in getAllKhoTong())
             {
-                if (item.makho == makho || item.tenkho == tenkho)
+                if (item.makho == makho || item.tenkho.Contains(tenkho))
                 {
                     listkhotong.Add(item);
                 }

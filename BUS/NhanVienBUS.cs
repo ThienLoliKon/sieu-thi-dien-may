@@ -125,5 +125,17 @@ namespace BUS
             }
             return dt;
         }
+        public string getNameNV(string manv)
+        {
+            var nhanviens = dal.GetAllNhanVien();
+            foreach (var nv in nhanviens)
+            {
+                if(nv.ma_nhan_vien.Trim() == manv.Trim())
+                {
+                    return nv.ho_va_ten;
+                }
+            }
+            return null;
+        }
     }
 }

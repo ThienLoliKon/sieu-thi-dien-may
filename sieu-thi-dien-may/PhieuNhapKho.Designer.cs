@@ -59,6 +59,7 @@
             // cyberButton3
             // 
             this.cyberButton3.Alpha = 20;
+            this.cyberButton3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cyberButton3.BackColor = System.Drawing.Color.Transparent;
             this.cyberButton3.Background = true;
             this.cyberButton3.Background_WidthPen = 4F;
@@ -100,6 +101,7 @@
             // cyberButton5
             // 
             this.cyberButton5.Alpha = 20;
+            this.cyberButton5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cyberButton5.BackColor = System.Drawing.Color.Transparent;
             this.cyberButton5.Background = true;
             this.cyberButton5.Background_WidthPen = 4F;
@@ -141,6 +143,7 @@
             // cyberButton6
             // 
             this.cyberButton6.Alpha = 20;
+            this.cyberButton6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cyberButton6.BackColor = System.Drawing.Color.Transparent;
             this.cyberButton6.Background = true;
             this.cyberButton6.Background_WidthPen = 4F;
@@ -182,6 +185,7 @@
             // cyberButton4
             // 
             this.cyberButton4.Alpha = 20;
+            this.cyberButton4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cyberButton4.BackColor = System.Drawing.Color.Transparent;
             this.cyberButton4.Background = true;
             this.cyberButton4.Background_WidthPen = 4F;
@@ -223,6 +227,7 @@
             // cyberButton2
             // 
             this.cyberButton2.Alpha = 20;
+            this.cyberButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cyberButton2.BackColor = System.Drawing.Color.Transparent;
             this.cyberButton2.Background = true;
             this.cyberButton2.Background_WidthPen = 4F;
@@ -264,6 +269,7 @@
             // cyberButton1
             // 
             this.cyberButton1.Alpha = 20;
+            this.cyberButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cyberButton1.BackColor = System.Drawing.Color.Transparent;
             this.cyberButton1.Background = true;
             this.cyberButton1.Background_WidthPen = 4F;
@@ -304,6 +310,7 @@
             // 
             // thunderLabel4
             // 
+            this.thunderLabel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.thunderLabel4.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel4.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -315,6 +322,7 @@
             // 
             // thunderLabel5
             // 
+            this.thunderLabel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.thunderLabel5.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel5.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -327,6 +335,7 @@
             // txtSoLuong
             // 
             this.txtSoLuong.Alpha = 20;
+            this.txtSoLuong.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtSoLuong.BackColor = System.Drawing.Color.Transparent;
             this.txtSoLuong.Background_WidthPen = 3F;
             this.txtSoLuong.BackgroundPen = true;
@@ -357,6 +366,7 @@
             // txtDonGia
             // 
             this.txtDonGia.Alpha = 20;
+            this.txtDonGia.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtDonGia.BackColor = System.Drawing.Color.Transparent;
             this.txtDonGia.Background_WidthPen = 3F;
             this.txtDonGia.BackgroundPen = true;
@@ -386,6 +396,7 @@
             // 
             // thunderLabel3
             // 
+            this.thunderLabel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.thunderLabel3.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel3.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -397,6 +408,7 @@
             // 
             // thunderLabel2
             // 
+            this.thunderLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.thunderLabel2.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel2.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -408,6 +420,7 @@
             // 
             // thunderLabel1
             // 
+            this.thunderLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.thunderLabel1.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel1.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -420,6 +433,7 @@
             // txtKho
             // 
             this.txtKho.Alpha = 20;
+            this.txtKho.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtKho.BackColor = System.Drawing.Color.Transparent;
             this.txtKho.Background_WidthPen = 3F;
             this.txtKho.BackgroundPen = true;
@@ -451,6 +465,7 @@
             // txtMaPhieu
             // 
             this.txtMaPhieu.Alpha = 20;
+            this.txtMaPhieu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtMaPhieu.BackColor = System.Drawing.Color.Transparent;
             this.txtMaPhieu.Background_WidthPen = 3F;
             this.txtMaPhieu.BackgroundPen = true;
@@ -528,8 +543,7 @@
             // 
             // lblHeader
             // 
-            this.lblHeader.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHeader.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblHeader.AutoSize = true;
             this.lblHeader.BackColor = System.Drawing.Color.Transparent;
             this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
@@ -585,6 +599,7 @@
             // 
             // cbxSanPham
             // 
+            this.cbxSanPham.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbxSanPham.BackColor = System.Drawing.Color.OldLace;
             this.cbxSanPham.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxSanPham.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -600,6 +615,7 @@
             // 
             // thunderLabel6
             // 
+            this.thunderLabel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.thunderLabel6.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel6.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -612,6 +628,7 @@
             // txtNhanVien
             // 
             this.txtNhanVien.Alpha = 20;
+            this.txtNhanVien.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtNhanVien.BackColor = System.Drawing.Color.Transparent;
             this.txtNhanVien.Background_WidthPen = 3F;
             this.txtNhanVien.BackgroundPen = true;

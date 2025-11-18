@@ -41,7 +41,8 @@ namespace stdm
 
         private void SanPhamTrongKhoTong_Load(object sender, EventArgs e)
         {
-            lblSPTrongChiNhanh.Text = "Sản phẩm trong kho tổng - " + mk;
+            KhoTongBUS khotongbus = new KhoTongBUS();
+            lblSPTrongChiNhanh.Text = "Sản phẩm trong kho tổng - " + khotongbus.searchKhoTong(this.mk).tenkho;
             dgvKhoTong.DataSource = sanphamtrongkhotongbus.getAllSanPhamTrongKhoTong(this.mk);
         }
 
