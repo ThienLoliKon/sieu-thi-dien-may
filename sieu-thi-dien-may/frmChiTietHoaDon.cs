@@ -17,14 +17,18 @@ namespace he_thong_dien_may
 	{
 		private string maHoaDon = "";
 		ChiTietHoaDonBUS bus = new ChiTietHoaDonBUS();
-		BindingSource bs = new BindingSource(); // <-- THÊM DÒNG NÀY		
+		BindingSource bs = new BindingSource(); // <-- THÊM DÒNG NÀY	
+		ChiTietHoaDonBUS busCTHD = new ChiTietHoaDonBUS();
+		KhuyenMaiBUS busNhaSX = new KhuyenMaiBUS();
+		SanPhamBUS busSP = new SanPhamBUS();
+
 		private decimal giaGocSanPham = 0; // <-- THÊM DÒNG NÀY
 		public frmChiTietHoaDon(string maHD)
 		{
 			InitializeComponent();
 			maHoaDon = HamXuLy.XoaKhoangTrangThua(maHD);
 		}
-		
+
 		public void loadData()
 		{
 			bs.DataSource = bus.GetAllChiTietHoaDonAsTable();
@@ -84,7 +88,7 @@ namespace he_thong_dien_may
 			{
 				string khuyenMaiValue = cboKhuyenMai.SelectedValue != null ? cboKhuyenMai.SelectedValue.ToString() : null;
 
-				ThemChiTietStatus ketQua = bus.AddChiTietHoaDon(cboMaHoaDon.SelectedValue.ToString(), TaiKhoanBUS.currentUserMaNV, cboSanPham.SelectedValue.ToString(), khuyenMaiValue, txtSoLuong.Text, txtDonGia.Text, dtpNgayGioIn.Value);
+				ThemChiTietStatus ketQua = bus.AddChiTietHoaDon(cboMaHoaDon.SelectedValue.ToString(), TaiKhoanBUS.currentUserMaNV, cboSanPham.SelectedValue.ToString(), khuyenMaiValue, txtSoLuong.Text, txtDonGia.Text,this.giaGocSanPham, dtpNgayGioIn.Value);
 				// Dùng switch để kiểm tra kết quả
 				switch (ketQua)
 				{
@@ -110,7 +114,7 @@ namespace he_thong_dien_may
 					case ThemChiTietStatus.Loi_Database:
 						MessageBox.Show("Lỗi CSDL, vui lòng thử lại!");
 						break;
-				} 
+				}
 
 			}
 			loadData();
@@ -161,10 +165,10 @@ namespace he_thong_dien_may
 				DataPropertyName = "ngay_gio_in",
 				Width = 300
 			});
+			loadHoaDon();
 			loadData();
 			loadKhuyenMai();
 			loadSanPham();
-			loadHoaDon();
 			txtTimKiem.Text = maHoaDon;
 		}
 		private bool checkDuLieuNhap()
@@ -307,37 +311,58 @@ namespace he_thong_dien_may
 			}
 		}
 
+		public void loadKhuyenMaiBySanPham(string maSP)
+		{
+			DataTable dt = busNhaSX.GetAllKhuyenMaiByMaSPAsTable(maSP);
+			cboKhuyenMai.DataSource = dt;
+			cboKhuyenMai.DisplayMember = "giam_gia";
+			cboKhuyenMai.ValueMember = "ma_khuyen_mai";
+			if (dt == null || dt.Rows.Count == 0)
+			{
+				cboKhuyenMai.DataSource = null;
+				cboKhuyenMai.Items.Clear();
+				cboKhuyenMai.Text = "Không tìm thấy khuyến mãi";
+			}
+		}
+
+		public float getUuDaiCuaKhachHang()
+		{
+			float uuDai = busCTHD.LayUuDaiCuaKhachBangMaHD(cboMaHoaDon.SelectedValue.ToString());
+			MessageBox.Show("Ưu đãi của khách hàng là: " + uuDai.ToString("F0") + "%", "Thông tin ưu đãi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			return uuDai;
+		}
+
+		public decimal giaSauUuDaiHam()
+		{
+			float uuDai = getUuDaiCuaKhachHang();
+			decimal giaSauUuDai = this.giaGocSanPham - (this.giaGocSanPham * (decimal)uuDai / 100);
+			return giaSauUuDai;
+		}
+
 		private void cboSanPham_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if (cboSanPham.SelectedValue == null)
+			if (cboSanPham.SelectedIndex == -1 || cboSanPham.SelectedValue == null)
 			{
 				return; // Dừng lại nếu chưa nạp xong
 			}
+			if (cboMaHoaDon.SelectedIndex == -1 || cboMaHoaDon.SelectedValue == null)
+			{
+				return; // Dừng lại nếu chưa nạp xong
+			}
+
 			try
 			{
-				// lấy giá tiền lúc mua
-				// 2. LẤY MÃ SẢN PHẨM (đã sửa)
 				string maSP = cboSanPham.SelectedValue.ToString();
 
 				// 3. Lấy giá tiền và LƯU VÀO BIẾN GIÁ GỐC
-				SanPhamBUS busSP = new SanPhamBUS();
-				// (Giả sử bạn đã có hàm layGiaTienSanPhamBangMa(maSP) trong BUS)
 				this.giaGocSanPham = busSP.layGiaTienSanPhamBangMa(maSP);
 
 				// 4. Hiển thị giá gốc ban đầu
-				txtDonGia.Text = this.giaGocSanPham.ToString("F0");
+				decimal giaSauUuDai = giaSauUuDaiHam();
+				txtDonGia.Text = giaSauUuDai.ToString("F0");
 
-				KhuyenMaiBUS busNhaSX = new KhuyenMaiBUS();
-				DataTable dt = busNhaSX.GetAllKhuyenMaiByMaSPAsTable(cboSanPham.SelectedValue.ToString());
-				cboKhuyenMai.DataSource = dt;
-				cboKhuyenMai.DisplayMember = "giam_gia";
-				cboKhuyenMai.ValueMember = "ma_khuyen_mai";
-				if (dt == null || dt.Rows.Count == 0)
-				{
-					cboKhuyenMai.DataSource = null;
-					cboKhuyenMai.Items.Clear();
-					cboKhuyenMai.Text = "Không tìm thấy khuyến mãi";
-				}
+				// 5. Tải khuyến mãi khi chọn sản phẩm
+				loadKhuyenMaiBySanPham(cboSanPham.SelectedValue.ToString());
 			}
 			catch (Exception ex)
 			{
@@ -347,6 +372,7 @@ namespace he_thong_dien_may
 			}
 		}
 
+
 		private void cboKhuyenMai_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			// 1. Kiểm tra nếu ComboBox chưa sẵn sàng
@@ -354,7 +380,7 @@ namespace he_thong_dien_may
 			{
 				// Nếu không chọn khuyến mãi, hoặc chưa có sản phẩm,
 				// đảm bảo giá tiền được trả về giá gốc.
-				txtDonGia.Text = this.giaGocSanPham.ToString("F0");
+				txtDonGia.Text = giaSauUuDaiHam().ToString("F0");
 				return;
 			}
 
@@ -366,10 +392,9 @@ namespace he_thong_dien_may
 				// 3. Lấy giá trị khuyến mãi (ví dụ: 0.05, 0.1, 0.2)
 				// Chúng ta nên dùng Convert.ToDecimal để an toàn
 				decimal phanTramGiam = Convert.ToDecimal(selectedRow["giam_gia"]);
+				decimal giaSauUuDai = giaSauUuDaiHam();
 
-				// 4. Tính giá đã giảm
-				// Ví dụ: 1000 * (1 - 0.05) = 950
-				decimal giaDaGiam = this.giaGocSanPham - (this.giaGocSanPham * phanTramGiam / 100);
+				decimal giaDaGiam = giaSauUuDai - (giaSauUuDai * phanTramGiam / 100);
 
 				// 5. Cập nhật giá tiền mới vào TextBox
 				// (Làm tròn đến 0 số lẻ)
@@ -378,8 +403,15 @@ namespace he_thong_dien_may
 			catch (Exception ex)
 			{
 				// Có lỗi xảy ra, trả về giá gốc cho an toàn
+				MessageBox.Show("Lỗi khi tính toán khuyến mãi: " + ex.Message);
 				txtDonGia.Text = this.giaGocSanPham.ToString("F0");
 			}
+		}
+
+		private void cboMaHoaDon_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			// Gọi lại hàm tính toán của sản phẩm để cập nhật giá theo hóa đơn mới
+			cboSanPham_SelectedIndexChanged(sender, e);
 		}
 	}
 }

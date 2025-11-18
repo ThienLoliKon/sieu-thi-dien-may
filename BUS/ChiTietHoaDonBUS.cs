@@ -28,7 +28,7 @@ namespace BUS
 			dalNhanVien = new NhanVienDLL(); // <-- Khởi tạo
 		}
 
-		public ThemChiTietStatus AddChiTietHoaDon(string maHoaDon,string maNhanVien ,string maSanPham, string maKhuyenMai, string soLuong, string donGia, DateTime ngayGioIn)
+		public ThemChiTietStatus AddChiTietHoaDon(string maHoaDon,string maNhanVien ,string maSanPham, string maKhuyenMai, string soLuong, string donGia,decimal giaGoc, DateTime ngayGioIn)
 		{
 			SanPhamBUS busSP = new SanPhamBUS();
 			chi_tiet_hoa_don addVariable = new chi_tiet_hoa_don();
@@ -71,6 +71,7 @@ namespace BUS
 						addVariable.ma_hoa_don = maHoaDon;
 						addVariable.ma_san_pham = maSanPham;
 						addVariable.ma_khuyen_mai = maKhuyenMai;
+						addVariable.gia_goc = giaGoc;
 						//if (maKhuyenMai == null)
 						//{
 						//	maKhuyenMai = "";
@@ -215,5 +216,13 @@ namespace BUS
 			return dt;
 		}
 
+		// Trong KhachHangBUS.cs
+
+		public float LayUuDaiCuaKhachBangMaHD(string maHD)
+		{
+			XepHangDLL xepHangBUS = new XepHangDLL();
+			// Gọi xuống DLL
+			return xepHangBUS.GetUuDaiByMaHoaDon(maHD);
+		}
 	}
 }

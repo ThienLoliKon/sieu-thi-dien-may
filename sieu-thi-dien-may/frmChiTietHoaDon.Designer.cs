@@ -168,6 +168,7 @@
 			this.cboMaHoaDon.Name = "cboMaHoaDon";
 			this.cboMaHoaDon.Size = new System.Drawing.Size(270, 36);
 			this.cboMaHoaDon.TabIndex = 63;
+			this.cboMaHoaDon.SelectedIndexChanged += new System.EventHandler(this.cboMaHoaDon_SelectedIndexChanged);
 			// 
 			// foreverLabel5
 			// 

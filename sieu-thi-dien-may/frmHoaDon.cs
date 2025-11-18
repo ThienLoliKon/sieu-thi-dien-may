@@ -1,4 +1,6 @@
 ﻿using BUS;
+using CrystalDecisions.CrystalReports.Engine;
+using stdm;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -203,6 +205,15 @@ namespace he_thong_dien_may
 				" ma_khach_hang LIKE '%{0}%'", // <-- Sửa ở đây																			  
 				safeKeyword);
 			}
+		}
+
+		private void btnXuatHoaDon_Click(object sender, EventArgs e)
+		{
+			// 2. Tạo Form báo cáo mới VÀ TRUYỀN MÃ VÀO CONSTRUCTOR
+			frmReportInHD formBaoCao = new frmReportInHD(txtMaHoaDon.Text);
+
+			// 3. Hiển thị form báo cáo đó lên
+			formBaoCao.ShowDialog(); // Dùng .Show() hoặc .ShowDialog() tùy bạn
 		}
 	}
 }

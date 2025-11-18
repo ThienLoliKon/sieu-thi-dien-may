@@ -95,12 +95,32 @@ namespace BUS
 
 			foreach (var nv in nhanviens)
 			{
-				string chiNhanh = nv.chi_nhanh.ma_chi_nhanh;
+				string chiNhanh = nv.ma_chi_nhanh;
 
 				return chiNhanh;
 			}
 			return null;
 		}
+
+		public string timQuyenByMaNhanVien(string keyword)
+		{
+			List<nhan_vien> nhanviens = dal.SearchNhanVien(keyword);
+			if (nhanviens == null || nhanviens.Count == 0)
+			{
+				return null;
+			}
+
+			foreach (var nv in nhanviens)
+			{
+				string chiNhanh = nv.ma_cap_bac;
+
+				return chiNhanh;
+			}
+			return null;
+		}
+
+
+
 		public DataTable timNhanVien(string keyword)
         {
             List<nhan_vien> nhanviens = dal.SearchNhanVien(keyword);

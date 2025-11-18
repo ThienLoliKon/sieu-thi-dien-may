@@ -90,6 +90,16 @@ namespace he_thong_dien_may
 				errorProvider1.SetError(cboMaSanPham, "Vui lòng chọn sản phẩm!");
 				coLoi = true;
 			}
+
+			// 5. Kiểm tra ngày tháng
+			if (CheckTestCase.ngayBatDauKetThuc(dtpNgayGui.Value, dtpNgayXong.Value) == false)
+			{
+				errorProvider1.SetError(dtpNgayXong, "Ngày xong phải sau ngày gửi!");
+				coLoi = true;
+			}
+
+
+
 			return !coLoi;
 		}
 		private void btnSua_Click(object sender, EventArgs e)
