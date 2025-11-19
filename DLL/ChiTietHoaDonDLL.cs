@@ -110,15 +110,11 @@ namespace DLL
 
 		public bool check(string maHoaDon, string maSanPham)
 		{
-			if (db.chi_tiet_hoa_dons.Any(p => p.ma_san_pham == maSanPham) == false)
-			{
-				return false;
-			}
-			if (db.chi_tiet_hoa_dons.Any(p => p.ma_hoa_don == maHoaDon) == false)
-			{
-				return false;
-			}
-			return true;
+			bool ketQua = db.chi_tiet_hoa_dons.Any(p =>
+						p.ma_hoa_don == maHoaDon
+						&& p.ma_san_pham == maSanPham); // Dùng && mới đúng
+
+			return ketQua;
 		}
 
 		// (Trong ChiTietHoaDonDLL.cs)
