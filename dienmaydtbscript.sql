@@ -112,6 +112,7 @@ create table chi_tiet_hoa_don (
     ma_khuyen_mai char(10),
     so_luong int,
     don_gia DECIMAL(18, 0),
+    gia_goc DECIMAL(18, 0),
     ngay_gio_in datetime,
     primary key (ma_hoa_don, ma_san_pham)
 );
@@ -450,9 +451,6 @@ alter table chi_nhanh
 add constraint FK_chi_nhanh_khu_vuc 
     foreign key (khu_vuc) references khu_vuc(ma_khu_vuc);
 go  
-
-
-
 
 
 alter table kho_tong

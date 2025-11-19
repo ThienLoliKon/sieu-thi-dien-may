@@ -139,9 +139,15 @@ namespace he_thong_dien_may
 			{
 				errorProvider1.SetError(cboLoaiHang, "Vui lòng chọn loại hàng được giảm giá!");
 				coLoi = true;
+			}			
+			// 5. Kiểm tra ngày bắt đầu và ngày kết thúc
+			if (CheckTestCase.ngayBatDauKetThuc(dtpNgayBatDau.Value, dtpNgayKetThuc.Value) == false)
+			{
+				errorProvider1.SetError(dtpNgayKetThuc, "Ngày kết thúc phải sau ngày bắt đầu!");
+				coLoi = true;
 			}
-			return !coLoi; // Trả về true (Không có lỗi) nếu coLoi = false
 
+			return !coLoi; // Trả về true (Không có lỗi) nếu coLoi = false
 		}
 		private void btnSua_Click(object sender, EventArgs e)
 		{

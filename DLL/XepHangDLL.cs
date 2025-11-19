@@ -77,5 +77,41 @@ namespace DLL
                 throw ex;   
             }
         }
-    }
+
+		// Trong KhachHangDLL.cs
+
+		// Trong file HoaDonDLL.cs
+
+		public float GetUuDaiByMaHoaDon(string maHD)
+		{
+			using (DBSTDMDataContext db = new DBSTDMDataContext())
+			{
+				var query = from hd in db.hoa_dons
+								// 1. Nối Hóa Đơn với Khách Hàng qua ma_khach_hang
+							join kh in db.khach_hangs on hd.ma_khach_hang equals kh.ma_khach_hang
+
+							// 2. Nối Khách Hàng với Xếp Hạng
+							// Cột 'xep_hang' trong bảng Khách Hàng nối với 'ma_hang' trong bảng Xếp Hạng
+							join xh in db.xep_hangs on kh.xep_hang equals xh.ma_hang
+
+							// 3. Điều kiện lọc
+							where hd.ma_hoa_don == maHD
+
+							// 4. Lấy kết quả
+							select xh.uu_dai;
+
+				// Lấy giá trị đầu tiên tìm thấy
+				double? result = query.FirstOrDefault();
+
+				if (result != null)
+				{
+					return Convert.ToSingle(result);
+				}
+				else
+				{
+					return 0f;
+				}
+			}
+		}
+	}
 }

@@ -20,7 +20,6 @@ namespace BUS
 
         private double GetMucThuongByLoaiThuong(string maLoaiThuong)
         {
-            // Remove 'using' statement since DBSTDMDataContext does not implement IDisposable
             var db = new DBSTDMDataContext();
             return db.loai_thuongs
                 .Where(lt => lt.ma_loai_thuong == maLoaiThuong)
@@ -119,6 +118,25 @@ namespace BUS
                 dt.Rows.Add(t.ma_thuong, t.ma_nhan_vien, t.ma_loai_thuong, t.thoi_gian_thuong, t.trang_thai, mucThuong);
             }
             return dt;
+        }
+        public static event EventHandler OnThuongUpdated;
+        public double TinhTongThuong(string maNV, DateTime thang)
+        {
+            using (var db = new DBSTDMDataContext())
+            {
+                int month = thang.Month;
+                int year = thang.Year;
+
+                var query = from t in db.thuongs
+                            join lt in db.loai_thuongs on t.ma_loai_thuong equals lt.ma_loai_thuong
+                            where t.ma_nhan_vien == maNV
+                                  && t.thoi_gian_thuong.Value.Month == month
+                                  && t.thoi_gian_thuong.Value.Year == year
+                                  && t.trang_thai == true
+                            select lt.muc_thuong;
+
+                return (double)(query.Sum() ?? 0.0);
+            }
         }
     }
 }

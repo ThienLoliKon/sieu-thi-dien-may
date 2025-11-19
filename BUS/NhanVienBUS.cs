@@ -76,8 +76,52 @@ namespace BUS
                 return false;
             }
         }
+		public string timChiNhanhByMaNhanVien(string keyword)
+		{
+			List<nhan_vien> nhanviens = dal.SearchNhanVien(keyword);
+			if (nhanviens == null || nhanviens.Count == 0)
+			{
+				return null;
+			}
 
-        public DataTable timNhanVien(string keyword)
+			DataTable dt = new DataTable();
+			dt.Columns.Add("MaNV", typeof(string));
+			dt.Columns.Add("TenNV", typeof(string));
+			dt.Columns.Add("MaCB", typeof(string));
+			dt.Columns.Add("SDT", typeof(string));
+			dt.Columns.Add("DiaChi", typeof(string));
+			dt.Columns.Add("MaChiNhanh", typeof(string));
+			dt.Columns.Add("TrangThai", typeof(string));
+
+			foreach (var nv in nhanviens)
+			{
+				string chiNhanh = nv.ma_chi_nhanh;
+
+				return chiNhanh;
+			}
+			return null;
+		}
+
+		public string timQuyenByMaNhanVien(string keyword)
+		{
+			List<nhan_vien> nhanviens = dal.SearchNhanVien(keyword);
+			if (nhanviens == null || nhanviens.Count == 0)
+			{
+				return null;
+			}
+
+			foreach (var nv in nhanviens)
+			{
+				string chiNhanh = nv.ma_cap_bac;
+
+				return chiNhanh;
+			}
+			return null;
+		}
+
+
+
+		public DataTable timNhanVien(string keyword)
         {
             List<nhan_vien> nhanviens = dal.SearchNhanVien(keyword);
             if (nhanviens == null || nhanviens.Count == 0)

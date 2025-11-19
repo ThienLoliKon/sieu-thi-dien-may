@@ -1,28 +1,29 @@
 ﻿using BUS;
 using System;
 using System.Data;
-using System.Linq; // Cần cho char.IsDigit
+using System.Linq; 
 using System.Windows.Forms;
-using System.Text.RegularExpressions; // Cần cho ký tự đặc biệt
+using System.Text.RegularExpressions; 
 
 namespace he_thong_dien_may
 {
-    // ĐÃ SỬA TÊN LỚP ĐỂ PHÙ HỢP VỚI FORM VIPHAM
     public partial class frmViPham : Form
     {
-
+        private string _maNVCanLoc = null;
+        private ViPhamBUS vpBus = new ViPhamBUS();
+        public frmViPham(string maNV) : this() 
+        {
+            _maNVCanLoc = maNV;
+        }
         public frmViPham()
         {
             InitializeComponent();
-            // Liên kết sự kiện khi chọn Loại Vi Phạm để hiển thị Mức Phạt
             cbbLoaiViPham.SelectedValueChanged += cbbLoaiViPham_SelectedValueChanged;
             if (txtMucPhat != null)
             {
                 txtMucPhat.ReadOnly = true;
             }
         }
-
-        // Hàm kiểm tra ký tự đặc biệt (Giữ nguyên)
         private bool ContainsSpecialChars(string input)
         {
             return Regex.IsMatch(input, @"[^a-zA-Z0-9\s\p{L}]");
@@ -30,39 +31,28 @@ namespace he_thong_dien_may
 
         private void ClearInputControls()
         {
-            // SỬA: Dựa trên controls Vi Phạm
             txtMaViPham.Text = "";
             cbbMaNV.SelectedIndex = -1;
             cbbLoaiViPham.SelectedIndex = -1;
 
             if (txtMucPhat != null) txtMucPhat.Text = "";
             dtpThoiGianViPham.Value = DateTime.Now;
-            cbTrangThai.Checked = false; // Trạng thái mặc định
-
-            // Đặt ReadOnly = false để KÍCH HOẠT chế độ THÊM MỚI
+            cbTrangThai.Checked = false; 
             txtMaViPham.ReadOnly = false;
         }
-
-        // Hàm xác thực dữ liệu đầu vào (SỬA DỮ LIỆU ĐẦU VÀO)
         private bool ValidateInput(out DateTime thoiGianVP, out bool trangThai)
         {
-            // Lấy và làm sạch dữ liệu
             string maNV = cbbMaNV.SelectedValue?.ToString();
             string maLoaiVP = cbbLoaiViPham.SelectedValue?.ToString();
 
             thoiGianVP = dtpThoiGianViPham.Value;
             trangThai = cbTrangThai.Checked;
 
-            // Quy tắc 1: Kiểm tra trống
             if (string.IsNullOrEmpty(maNV) || string.IsNullOrEmpty(maLoaiVP))
             {
                 MessageBox.Show("Vui lòng chọn Mã NV và Loại Vi phạm.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
-            // Quy tắc 2: Kiểm tra ký tự đặc biệt (Không cần cho form này)
-
-            // 3. Kiểm tra kiểu dữ liệu (Thời gian không được trong tương lai)
             if (thoiGianVP > DateTime.Now)
             {
                 MessageBox.Show("Thời gian vi phạm không được xảy ra trong tương lai.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -76,7 +66,6 @@ namespace he_thong_dien_may
         {
             try
             {
-                // SỬA: Gọi ViPhamBUS
                 ViPhamBUS vpBus = new ViPhamBUS();
                 DataTable dtViPham = vpBus.GetAllViPhamAsTable();
 
@@ -101,7 +90,6 @@ namespace he_thong_dien_may
         {
             try
             {
-                // 1. Load Mã Nhân Viên
                 NhanVienBUS nvBus = new NhanVienBUS();
                 DataTable dtNhanVien = nvBus.GetAllNhanVienAsTable();
                 if (dtNhanVien != null)
@@ -119,9 +107,6 @@ namespace he_thong_dien_may
                     cbbTraCuu.ValueMember = "MaNV";
                     cbbTraCuu.SelectedIndex = -1;
                 }
-
-
-                // 2. Load Loại Vi Phạm
                 LoaiViPhamBUS lvpBus = new LoaiViPhamBUS();
                 DataTable dtLoaiVP = lvpBus.GetAllLoaiViPhamAsTable();
                 if (dtLoaiVP != null)
@@ -129,7 +114,7 @@ namespace he_thong_dien_may
                     cbbLoaiViPham.DataSource = dtLoaiVP;
                     cbbLoaiViPham.DisplayMember = "MoTa";
                     cbbLoaiViPham.ValueMember = "MaLVP";
-                    cbbLoaiViPham.Tag = dtLoaiVP; // Lưu DT để tìm kiếm Mức phạt
+                    cbbLoaiViPham.Tag = dtLoaiVP; 
                     cbbLoaiViPham.SelectedIndex = -1;
                 }
             }
@@ -153,22 +138,47 @@ namespace he_thong_dien_may
             }
             if (txtMucPhat != null) txtMucPhat.Text = "0.0";
         }
+            private void FilterByMaNV(string maNV)
+            {
+                try
+                {
+                    DataTable dtKetQua = vpBus.timViPham(maNV);
+                    if (dtKetQua != null && dtKetQua.Rows.Count > 0)
+                    {
+                        dgvViPham.DataSource = dtKetQua;
+                    }
+                    else
+                    {
+                        dgvViPham.DataSource = null;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi trong quá trình lọc dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
 
-        private void frmViPham_Load(object sender, EventArgs e) // SỬA TÊN SỰ KIỆN
+        private void frmViPham_Load(object sender, EventArgs e) 
         {
-            LoadComboBoxData(); // Thêm hàm load ComboBox
+            LoadComboBoxData(); 
 
             dgvViPham.AutoGenerateColumns = false;
 
-            // SỬA CỘT
-            dgvViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã VP", DataPropertyName = "MaVP", Width = 80 });
-            dgvViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã NV", DataPropertyName = "MaNV", Width = 80 });
-            dgvViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Loại VP", DataPropertyName = "MaLoaiVP", Width = 100 });
-            dgvViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Thời Gian", DataPropertyName = "ThoiGianVP", Width = 150 });
-            dgvViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Trạng Thái", DataPropertyName = "TrangThai", Width = 80 });
-            dgvViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mức Phạt", DataPropertyName = "MucPhat", Width = 100 });
-
-            LoadDL();
+            dgvViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã VP", DataPropertyName = "MaVP", Width = 250 });
+            dgvViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã NV", DataPropertyName = "MaNV", Width = 250 });
+            dgvViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Loại VP", DataPropertyName = "MaLoaiVP", Width = 250 });
+            dgvViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Thời Gian", DataPropertyName = "ThoiGianVP", Width = 250 });
+            dgvViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Trạng Thái", DataPropertyName = "TrangThai", Width = 250 });
+            dgvViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mức Phạt", DataPropertyName = "MucPhat", Width = 250 });
+            if (!string.IsNullOrEmpty(_maNVCanLoc))
+            {
+                cbbMaNV.SelectedValue = _maNVCanLoc;
+                FilterByMaNV(_maNVCanLoc);
+            }
+            else
+            {
+                LoadDL();
+            }
         }
 
 
@@ -219,8 +229,6 @@ namespace he_thong_dien_may
                 MessageBox.Show("Nút Lưu chỉ dùng để cập nhật. Vui lòng chọn một bản ghi từ danh sách.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            // Thực hiện validation
             if (!ValidateInput(out thoiGianVP, out trangThai)) return;
 
             DialogResult result = MessageBox.Show("Bạn có muốn cập nhật Vi phạm này không?", "Xác nhận Sửa", MessageBoxButtons.YesNo);
@@ -256,26 +264,17 @@ namespace he_thong_dien_may
             {
                 if (e.RowIndex < 0) return;
                 int line = e.RowIndex;
-
-                // Gán dữ liệu lên controls
                 txtMaViPham.Text = dgvViPham.Rows[line].Cells[0].Value.ToString();
                 cbbMaNV.SelectedValue = dgvViPham.Rows[line].Cells[1].Value;
                 cbbLoaiViPham.SelectedValue = dgvViPham.Rows[line].Cells[2].Value;
-
-                // Gán DateTimePicker
                 if (dgvViPham.Rows[line].Cells[3].Value != DBNull.Value)
                 {
                     dtpThoiGianViPham.Value = Convert.ToDateTime(dgvViPham.Rows[line].Cells[3].Value);
                 }
-
-                // KHẮC PHỤC LỖI ÉP KIỂU: Sử dụng Convert.ToBoolean()
                 if (dgvViPham.Rows[line].Cells[4].Value != DBNull.Value)
                 {
-                    // Dùng Convert.ToBoolean() để chuyển đổi chuỗi "True" hoặc "False"
                     cbTrangThai.Checked = Convert.ToBoolean(dgvViPham.Rows[line].Cells[4].Value);
                 }
-
-                // Gán Mức phạt
                 if (dgvViPham.Rows[line].Cells[5].Value != DBNull.Value && txtMucPhat != null)
                 {
                     txtMucPhat.Text = dgvViPham.Rows[line].Cells[5].Value.ToString();
@@ -328,13 +327,10 @@ namespace he_thong_dien_may
         }
         private void btnLoc_Click(object sender, EventArgs e)
         {
-            // 1. Lấy Mã NV từ ComboBox (Giả định ComboBox dùng để lọc là cbbMaNV)
             string maNV = cbbTraCuu.SelectedValue?.ToString();
-
-            // 2. Kiểm tra: Nếu không chọn Mã NV, tải lại toàn bộ danh sách
             if (string.IsNullOrEmpty(maNV))
             {
-                LoadDL(); // Tải lại toàn bộ
+                LoadDL(); 
                 return;
             }
 
@@ -342,8 +338,6 @@ namespace he_thong_dien_may
             {
                 ViPhamBUS vpBus = new ViPhamBUS();
                 DataTable dtKetQua = vpBus.timViPham(maNV);
-
-                // 4. Hiển thị kết quả
                 if (dtKetQua != null && dtKetQua.Rows.Count > 0)
                 {
                     dgvViPham.DataSource = dtKetQua;

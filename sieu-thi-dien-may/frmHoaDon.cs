@@ -1,4 +1,6 @@
 ﻿using BUS;
+using CrystalDecisions.CrystalReports.Engine;
+using stdm;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -127,7 +129,7 @@ namespace he_thong_dien_may
 				return;
 			}
 
-			if (!bus.AddHoaDon(cboNhanVienLap.SelectedValue.ToString(), cboKhachHang.SelectedValue.ToString()))
+			if (!bus.AddHoaDon(TaiKhoanBUS.currentUserMaNV, cboKhachHang.SelectedValue.ToString()))
 			{
 				MessageBox.Show("Thêm hóa đơn thành công");
 			}
@@ -144,7 +146,10 @@ namespace he_thong_dien_may
 			try
 			{
 				int line = dgvHoaDon.CurrentCell.RowIndex;
-
+				if (line < 0)
+				{
+					return;
+				}
 				if (dgvHoaDon.Rows[line].Cells[0].Value != DBNull.Value)
 				{
 					txtMaHoaDon.Text = dgvHoaDon.Rows[line].Cells[0].Value.ToString();
@@ -152,7 +157,6 @@ namespace he_thong_dien_may
 					cboKhachHang.SelectedValue = dgvHoaDon.Rows[line].Cells[2].Value.ToString();
 					dtpNgayLap.Value = Convert.ToDateTime(dgvHoaDon.Rows[line].Cells[3].Value);
 				}
-
 			}
 			catch (Exception ex)
 			{
@@ -201,6 +205,20 @@ namespace he_thong_dien_may
 				" ma_khach_hang LIKE '%{0}%'", // <-- Sửa ở đây																			  
 				safeKeyword);
 			}
+		}
+
+		private void btnXuatHoaDon_Click(object sender, EventArgs e)
+		{
+			if(CheckTestCase.checkKhoangTrang(txtMaHoaDon.Text) == false)
+			{
+				MessageBox.Show("Vui lòng chọn hóa đơn cần xuất");
+				return;
+			}
+			// 2. Tạo Form báo cáo mới VÀ TRUYỀN MÃ VÀO CONSTRUCTOR
+			frmReportInHD formBaoCao = new frmReportInHD(txtMaHoaDon.Text);
+
+			// 3. Hiển thị form báo cáo đó lên
+			formBaoCao.ShowDialog(); // Dùng .Show() hoặc .ShowDialog() tùy bạn
 		}
 	}
 }

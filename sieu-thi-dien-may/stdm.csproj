@@ -96,12 +96,25 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
+	
   <ItemGroup>
     <Compile Include="ChiNhanh.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChiNhanh.Designer.cs">
       <DependentUpon>ChiNhanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSachNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhSachNhanVien.Designer.cs">
+      <DependentUpon>DanhSachNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSachViPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhSachViPham.Designer.cs">
+      <DependentUpon>DanhSachViPham.cs</DependentUpon>
     </Compile>
     <Compile Include="frmaLoaiViPham.cs">
       <SubType>Form</SubType>
@@ -187,6 +200,24 @@
     <Compile Include="frmNhaSanXuat.Designer.cs">
       <DependentUpon>frmNhaSanXuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportDoanhThuChiNhanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportDoanhThuChiNhanh.Designer.cs">
+      <DependentUpon>frmReportDoanhThuChiNhanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportInHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportInHD.Designer.cs">
+      <DependentUpon>frmReportInHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportSanPhamBanChay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportSanPhamBanChay.Designer.cs">
+      <DependentUpon>frmReportSanPhamBanChay.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +247,18 @@
     </Compile>
     <Compile Include="frmViPham.Designer.cs">
       <DependentUpon>frmViPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptDoanhThuChiNhanh.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDoanhThuChiNhanh.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptInHoaDon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptInHoaDon.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="KhachHang.cs">
       <SubType>Form</SubType>
@@ -253,6 +296,12 @@
     <Compile Include="MenuXuatKhachHang.Designer.cs">
       <DependentUpon>MenuXuatKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhieuLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhieuLuong.Designer.cs">
+      <DependentUpon>PhieuLuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="PhieuNhapKho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +320,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RPSanPhamTrongKhoTong.rpt</DependentUpon>
+    <Compile Include="rptPhieuTiepNhanBaoHanh.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPhieuTiepNhanBaoHanh.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptTopSanPhamBanChay.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTopSanPhamBanChay.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="SanPhamTrongChiNhanh.cs">
@@ -284,6 +343,24 @@
     </Compile>
     <Compile Include="SanPhamTrongKhoTong.Designer.cs">
       <DependentUpon>SanPhamTrongKhoTong.cs</DependentUpon>
+	</Compile>
+	<Compile Include="rptNhanVien.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptNhanVien.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptPhieuLuong.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPhieuLuong.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptViPham.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptViPham.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="XepHang.cs">
       <SubType>Form</SubType>
@@ -293,6 +370,12 @@
     </Compile>
     <EmbeddedResource Include="ChiNhanh.resx">
       <DependentUpon>ChiNhanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhSachNhanVien.resx">
+      <DependentUpon>DanhSachNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhSachViPham.resx">
+      <DependentUpon>DanhSachViPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmaLoaiViPham.resx">
       <DependentUpon>frmaLoaiViPham.cs</DependentUpon>
@@ -336,6 +419,15 @@
     <EmbeddedResource Include="frmNhaSanXuat.resx">
       <DependentUpon>frmNhaSanXuat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportDoanhThuChiNhanh.resx">
+      <DependentUpon>frmReportDoanhThuChiNhanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportInHD.resx">
+      <DependentUpon>frmReportInHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportSanPhamBanChay.resx">
+      <DependentUpon>frmReportSanPhamBanChay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSanPham.resx">
       <DependentUpon>frmSanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -350,6 +442,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmViPham.resx">
       <DependentUpon>frmViPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDoanhThuChiNhanh.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDoanhThuChiNhanh.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptInHoaDon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInHoaDon.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="KhachHang.resx">
       <DependentUpon>KhachHang.cs</DependentUpon>
@@ -369,6 +469,9 @@
     <EmbeddedResource Include="MenuXuatKhachHang.resx">
       <DependentUpon>MenuXuatKhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PhieuLuong.resx">
+      <DependentUpon>PhieuLuong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PhieuNhapKho.resx">
       <DependentUpon>PhieuNhapKho.cs</DependentUpon>
     </EmbeddedResource>
@@ -387,12 +490,32 @@
     <EmbeddedResource Include="RPSanPhamTrongKhoTong.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RPSanPhamTrongKhoTong.cs</LastGenOutput>
+    <EmbeddedResource Include="rptPhieuTiepNhanBaoHanh.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPhieuTiepNhanBaoHanh.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptTopSanPhamBanChay.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTopSanPhamBanChay.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SanPhamTrongChiNhanh.resx">
       <DependentUpon>SanPhamTrongChiNhanh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SanPhamTrongKhoTong.resx">
       <DependentUpon>SanPhamTrongKhoTong.cs</DependentUpon>
+	</EmbeddedResource>
+
+	<EmbeddedResource Include="rptNhanVien.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptNhanVien.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptPhieuLuong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPhieuLuong.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptViPham.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptViPham.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="XepHang.resx">
       <DependentUpon>XepHang.cs</DependentUpon>
@@ -408,9 +531,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+	
+	
+	
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+	
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>

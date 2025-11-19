@@ -52,9 +52,9 @@
     <Compile Include="ChiNhanhDLL.cs" />
     <Compile Include="ChiTietHoaDonDLL.cs" />
     <Compile Include="DBSTDM.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>DBSTDM.dbml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="HoaDonDLL.cs" />
     <Compile Include="KhachHangDLL.cs" />
