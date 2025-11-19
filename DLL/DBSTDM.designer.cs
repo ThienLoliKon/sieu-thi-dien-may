@@ -117,7 +117,7 @@ namespace DLL
     #endregion
 		
 		public DBSTDMDataContext() : 
-				base(global::DLL.Properties.Settings.Default.dien_mayConnectionString1, mappingSource)
+				base(global::DLL.Properties.Settings.Default.dien_mayConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -1286,6 +1286,8 @@ namespace DLL
 		
 		private System.Nullable<decimal> _don_gia;
 		
+		private System.Nullable<decimal> _gia_goc;
+		
 		private System.Nullable<System.DateTime> _ngay_gio_in;
 		
 		private EntityRef<hoa_don> _hoa_don;
@@ -1308,6 +1310,8 @@ namespace DLL
     partial void Onso_luongChanged();
     partial void Ondon_giaChanging(System.Nullable<decimal> value);
     partial void Ondon_giaChanged();
+    partial void Ongia_gocChanging(System.Nullable<decimal> value);
+    partial void Ongia_gocChanged();
     partial void Onngay_gio_inChanging(System.Nullable<System.DateTime> value);
     partial void Onngay_gio_inChanged();
     #endregion
@@ -1428,6 +1432,26 @@ namespace DLL
 					this._don_gia = value;
 					this.SendPropertyChanged("don_gia");
 					this.Ondon_giaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia_goc", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> gia_goc
+		{
+			get
+			{
+				return this._gia_goc;
+			}
+			set
+			{
+				if ((this._gia_goc != value))
+				{
+					this.Ongia_gocChanging(value);
+					this.SendPropertyChanging();
+					this._gia_goc = value;
+					this.SendPropertyChanged("gia_goc");
+					this.Ongia_gocChanged();
 				}
 			}
 		}

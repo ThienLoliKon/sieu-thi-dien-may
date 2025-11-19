@@ -90,6 +90,16 @@ namespace he_thong_dien_may
 				errorProvider1.SetError(cboMaSanPham, "Vui lòng chọn sản phẩm!");
 				coLoi = true;
 			}
+
+			// 5. Kiểm tra ngày tháng
+			if (CheckTestCase.ngayBatDauKetThuc(dtpNgayGui.Value, dtpNgayXong.Value) == false)
+			{
+				errorProvider1.SetError(dtpNgayXong, "Ngày xong phải sau ngày gửi!");
+				coLoi = true;
+			}
+
+
+
 			return !coLoi;
 		}
 		private void btnSua_Click(object sender, EventArgs e)
@@ -137,10 +147,28 @@ namespace he_thong_dien_may
 				MessageBox.Show("Sản phẩm này ĐÃ HẾT HẠN bảo hành.");
 				return;
 			}
-			bus.AddBaoHanh(cboMaSanPham.SelectedValue.ToString(), cboMaKhachHang.SelectedValue.ToString(), cboMaNhanVien.SelectedValue.ToString(), rtxtLyDo.Text, dtpNgayGui.Value, dtpNgayXong.Value, hoanThanh);
-			loadData();
-		}
 
+			if (!bus.AddBaoHanh(cboMaSanPham.SelectedValue.ToString(), cboMaKhachHang.SelectedValue.ToString(), cboMaNhanVien.SelectedValue.ToString(), rtxtLyDo.Text, dtpNgayGui.Value, dtpNgayXong.Value, hoanThanh))
+			{
+				MessageBox.Show("Thêm bảo hành thành công!");
+			}
+			else
+			{
+				MessageBox.Show("Thêm bảo hành thất bại!");
+			}
+			loadData();
+
+
+			//if (bus.AddBaoHanh(cboMaSanPham.SelectedValue.ToString(), cboMaKhachHang.SelectedValue.ToString(), TaiKhoanBUS.currentUserMaNV, rtxtLyDo.Text, dtpNgayGui.Value, dtpNgayXong.Value, hoanThanh);
+			//{
+			//	MessageBox.Show("Thêm bảo hành thành công!");
+			//}
+			//else
+			//{
+			//	MessageBox.Show("Thêm bảo hành thất bại!");
+			//	loadData();
+			//}
+		}
 		private void frmBaoHanh_Load(object sender, EventArgs e)
 		{
 			// Đặt font cho tiêu đề (ví dụ: Tahoma, 12, In đậm)

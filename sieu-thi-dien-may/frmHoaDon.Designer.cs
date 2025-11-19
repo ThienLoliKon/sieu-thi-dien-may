@@ -50,6 +50,7 @@
 			this.foreverLabel1 = new ReaLTaiizor.Controls.ForeverLabel();
 			this.txtMaHoaDon = new ReaLTaiizor.Controls.ForeverTextBox();
 			this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+			this.btnXuatHoaDon = new ReaLTaiizor.Controls.CyberButton();
 			this.foreverForm1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -60,6 +61,7 @@
 			this.foreverForm1.BackColor = System.Drawing.Color.White;
 			this.foreverForm1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
 			this.foreverForm1.BorderColor = System.Drawing.Color.DodgerBlue;
+			this.foreverForm1.Controls.Add(this.btnXuatHoaDon);
 			this.foreverForm1.Controls.Add(this.foreverLabel5);
 			this.foreverForm1.Controls.Add(this.txtTimKiem);
 			this.foreverForm1.Controls.Add(this.btnSuaChiTietHD);
@@ -152,7 +154,7 @@
 			this.btnSuaChiTietHD.Lighting = false;
 			this.btnSuaChiTietHD.LinearGradient_Background = false;
 			this.btnSuaChiTietHD.LinearGradientPen = false;
-			this.btnSuaChiTietHD.Location = new System.Drawing.Point(1073, 277);
+			this.btnSuaChiTietHD.Location = new System.Drawing.Point(1196, 288);
 			this.btnSuaChiTietHD.Name = "btnSuaChiTietHD";
 			this.btnSuaChiTietHD.PenWidth = 15;
 			this.btnSuaChiTietHD.Rounding = true;
@@ -209,7 +211,7 @@
 			// 
 			this.dtpNgayLap.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
 			this.dtpNgayLap.Location = new System.Drawing.Point(1512, 85);
-			this.dtpNgayLap.MinimumSize = new System.Drawing.Size(4, 30);
+			this.dtpNgayLap.MinimumSize = new System.Drawing.Size(0, 30);
 			this.dtpNgayLap.Name = "dtpNgayLap";
 			this.dtpNgayLap.Size = new System.Drawing.Size(270, 30);
 			this.dtpNgayLap.TabIndex = 40;
@@ -252,7 +254,7 @@
 			this.btnLamMoi.Lighting = false;
 			this.btnLamMoi.LinearGradient_Background = false;
 			this.btnLamMoi.LinearGradientPen = false;
-			this.btnLamMoi.Location = new System.Drawing.Point(811, 277);
+			this.btnLamMoi.Location = new System.Drawing.Point(938, 288);
 			this.btnLamMoi.Name = "btnLamMoi";
 			this.btnLamMoi.PenWidth = 15;
 			this.btnLamMoi.Rounding = true;
@@ -297,7 +299,7 @@
 			this.dgvHoaDon.EnableHeadersVisualStyles = false;
 			this.dgvHoaDon.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.dgvHoaDon.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.dgvHoaDon.Location = new System.Drawing.Point(1, 393);
+			this.dgvHoaDon.Location = new System.Drawing.Point(4, 394);
 			this.dgvHoaDon.Name = "dgvHoaDon";
 			this.dgvHoaDon.ReadOnly = true;
 			this.dgvHoaDon.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -343,7 +345,7 @@
 			this.btnThoat.Lighting = false;
 			this.btnThoat.LinearGradient_Background = false;
 			this.btnThoat.LinearGradientPen = false;
-			this.btnThoat.Location = new System.Drawing.Point(1316, 277);
+			this.btnThoat.Location = new System.Drawing.Point(1439, 288);
 			this.btnThoat.Name = "btnThoat";
 			this.btnThoat.PenWidth = 15;
 			this.btnThoat.Rounding = true;
@@ -485,6 +487,47 @@
 			// 
 			this.errorProvider1.ContainerControl = this;
 			// 
+			// btnXuatHoaDon
+			// 
+			this.btnXuatHoaDon.Alpha = 20;
+			this.btnXuatHoaDon.BackColor = System.Drawing.Color.Transparent;
+			this.btnXuatHoaDon.Background = true;
+			this.btnXuatHoaDon.Background_WidthPen = 4F;
+			this.btnXuatHoaDon.BackgroundPen = true;
+			this.btnXuatHoaDon.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+			this.btnXuatHoaDon.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+			this.btnXuatHoaDon.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+			this.btnXuatHoaDon.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+			this.btnXuatHoaDon.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+			this.btnXuatHoaDon.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+			this.btnXuatHoaDon.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+			this.btnXuatHoaDon.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+			this.btnXuatHoaDon.Effect_1 = true;
+			this.btnXuatHoaDon.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+			this.btnXuatHoaDon.Effect_1_Transparency = 25;
+			this.btnXuatHoaDon.Effect_2 = true;
+			this.btnXuatHoaDon.Effect_2_ColorBackground = System.Drawing.Color.White;
+			this.btnXuatHoaDon.Effect_2_Transparency = 20;
+			this.btnXuatHoaDon.Font = new System.Drawing.Font("Arial", 12F);
+			this.btnXuatHoaDon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+			this.btnXuatHoaDon.Lighting = false;
+			this.btnXuatHoaDon.LinearGradient_Background = false;
+			this.btnXuatHoaDon.LinearGradientPen = false;
+			this.btnXuatHoaDon.Location = new System.Drawing.Point(680, 288);
+			this.btnXuatHoaDon.Name = "btnXuatHoaDon";
+			this.btnXuatHoaDon.PenWidth = 15;
+			this.btnXuatHoaDon.Rounding = true;
+			this.btnXuatHoaDon.RoundingInt = 70;
+			this.btnXuatHoaDon.Size = new System.Drawing.Size(150, 60);
+			this.btnXuatHoaDon.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+			this.btnXuatHoaDon.TabIndex = 63;
+			this.btnXuatHoaDon.Tag = "Cyber";
+			this.btnXuatHoaDon.TextButton = "Xuất Hóa Đơn";
+			this.btnXuatHoaDon.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+			this.btnXuatHoaDon.Timer_Effect_1 = 5;
+			this.btnXuatHoaDon.Timer_RGB = 300;
+			this.btnXuatHoaDon.Click += new System.EventHandler(this.btnXuatHoaDon_Click);
+			// 
 			// frmHoaDon
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -526,5 +569,6 @@
 		private ReaLTaiizor.Controls.ForeverLabel foreverLabel5;
 		private ReaLTaiizor.Controls.DungeonTextBox txtTimKiem;
 		private System.Windows.Forms.ErrorProvider errorProvider1;
+		private ReaLTaiizor.Controls.CyberButton btnXuatHoaDon;
 	}
 }

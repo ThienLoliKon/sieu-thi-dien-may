@@ -6,90 +6,90 @@ using System.Threading.Tasks;
 using System.Globalization; // Cần thêm thư viện này
 namespace BUS
 {
-    public class CheckTestCase
-    {
-        public static bool checkKiTuDacBiet(params string[] str)
-        {
-            //char[] charlist = str.ToCharArray();
-            foreach (string s in str)
-            {
-                char[] charlist = s.ToCharArray();
-                foreach (int i in charlist)
-                {
-                    //int i = (int)ii;
-                    if (!(i >= 48 && i <= 57) || (i >= 65 && i <= 90) || (i >= 97 && i <= 122))
-                    {
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
-        //
-        public static bool checkChuoiSo(params string[] str)
-        {
-            foreach (string s in str)
-            {
-                char[] charlist = s.ToCharArray();
-                foreach (int i in charlist)
-                {
-                    if (!(i >= 48 && i <= 57))
-                    {
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
+	public class CheckTestCase
+	{
+		public static bool checkKiTuDacBiet(params string[] str)
+		{
+			//char[] charlist = str.ToCharArray();
+			foreach (string s in str)
+			{
+				char[] charlist = s.ToCharArray();
+				foreach (int i in charlist)
+				{
+					//int i = (int)ii;
+					if (!(i >= 48 && i <= 57) || (i >= 65 && i <= 90) || (i >= 97 && i <= 122))
+					{
+						return false;
+					}
+				}
+			}
+			return true;
+		}
+		//
+		public static bool checkChuoiSo(params string[] str)
+		{
+			foreach (string s in str)
+			{
+				char[] charlist = s.ToCharArray();
+				foreach (int i in charlist)
+				{
+					if (!(i >= 48 && i <= 57))
+					{
+						return false;
+					}
+				}
+			}
+			return true;
+		}
 		//check min max lenght of string
 		public static bool checkLenghtChuoi(string str, int maxleng, int minleng = 0)
-        {
-            if (str.Length >= minleng && str.Length <= maxleng)
-            {
-                return true;
-            }
-            return false;
-        }
-        public static bool checkValidDateInOut(DateTime time1, DateTime time2)
-        {
-            if (time1 > time2)
-            {
-                return false;
-            }
-            return true;
-        }
+		{
+			if (str.Length >= minleng && str.Length <= maxleng)
+			{
+				return true;
+			}
+			return false;
+		}
+		public static bool checkValidDateInOut(DateTime time1, DateTime time2)
+		{
+			if (time1 > time2)
+			{
+				return false;
+			}
+			return true;
+		}
 		//kiểm tra null // false : nếu có chuỗi rỗng || true nếu tất cả hợp lệ
 		public static bool checkKhoangTrang(params string[] str)
-        {
-            foreach (string s in str)
-            {
-                if (s.Trim() == "")
-                {
-                    return false;
-                }
-            }
-            
-            return true;
-        }
+		{
+			foreach (string s in str)
+			{
+				if (s.Trim() == "")
+				{
+					return false;
+				}
+			}
 
-        public static bool checkNumberRange(int max, int min, params double[] nums)
-        {
-            foreach (double d in nums)
-            {
-                if (d < min || d > max)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
+			return true;
+		}
+
+		public static bool checkNumberRange(int max, int min, params double[] nums)
+		{
+			foreach (double d in nums)
+			{
+				if (d < min || d > max)
+				{
+					return false;
+				}
+			}
+			return true;
+		}
 
 		//Kiểm tra chuỗi chỉ chứa số
 		public static bool checkChiChuaSo(params string[] str)
 		{
 			foreach (string s in str)
-			{			
-                // Dùng LINQ để kiểm tra TẤT CẢ các ký tự có phải là số (digit) hay không
+			{
+				// Dùng LINQ để kiểm tra TẤT CẢ các ký tự có phải là số (digit) hay không
 				if (s.All(char.IsDigit) == false)
 				{
 					return false;
@@ -203,6 +203,14 @@ namespace BUS
 
 			// Nếu qua được vòng lặp, nghĩa là tất cả ký tự đều hợp lệ
 			return true;
+		}
+
+		public static bool ngayBatDauKetThuc(DateTime ngayBatDau, DateTime ngayKetThuc)
+		{
+			// Chúng ta dùng thuộc tính .Date để chỉ so sánh Năm/Tháng/Ngày.
+			// Điều này đảm bảo việc chọn cùng một ngày (ví dụ: 16/11 - 16/11) là hợp lệ,
+			// bất kể phần thời gian (giờ, phút) như thế nào.
+			return ngayBatDau.Date <= ngayKetThuc.Date;
 		}
 	}
 }

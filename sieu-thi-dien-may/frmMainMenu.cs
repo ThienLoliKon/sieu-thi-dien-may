@@ -1,10 +1,12 @@
 ﻿using BUS;
+using CrystalDecisions.CrystalReports.Engine;
 using stdm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -226,9 +228,32 @@ namespace he_thong_dien_may
 
 		private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			Form f = new Login();
-			f.Show();
-			this.Hide();
+            Form f = new Login();
+            f.Show();
+            this.Hide();
+		}
+
+		private void khuyếnMãiToolStripMenuItem2_Click(object sender, EventArgs e)
+		{
+			Form f = new frmKhuyenMai();
+			f.ShowDialog();
+		}
+
+		private void tsmiSPThinhHanhTheoKhuVic_Click(object sender, EventArgs e)
+		{
+			frmReportSanPhamBanChay f = new frmReportSanPhamBanChay();
+			f.ShowDialog();
+		}
+
+		private void TaiKhoanTS_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void tsmiDoanhThuCacChiNhanh_Click(object sender, EventArgs e)
+		{
+			frmReportDoanhThuChiNhanh f = new frmReportDoanhThuChiNhanh();
+			f.ShowDialog();
 		}
 	}
 }
