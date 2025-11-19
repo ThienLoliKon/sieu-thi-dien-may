@@ -67,7 +67,7 @@ namespace he_thong_dien_may
             }
             var nhapkho = createPhieuNhapItem();
             nhapkho.maphieu = dgvPhieuNhapKho.SelectedRows[0].Cells[0].Value.ToString();
-            int chenhlechsoluong = 0;
+            int chenhlechsoluong = nhapkho.soluong - int.Parse(dgvPhieuNhapKho.SelectedRows[0].Cells[4].Value.ToString());
             //nhapkho.soluong = int.Parse(dgvPhieuNhapKho.SelectedRows[0].Cells[4].Value.ToString());
             if (nhapkho.soluong < int.Parse(dgvPhieuNhapKho.SelectedRows[0].Cells[4].Value.ToString()))
             {
@@ -77,7 +77,8 @@ namespace he_thong_dien_may
             }
             nhapkhobus.updateNhapKho(nhapkho);
             SanPhamTrongKhoTongBUS spktbus = new SanPhamTrongKhoTongBUS();
-            spktbus.updateSoLuongNhapKho(nhapkho.makho, nhapkho.masanpham, chenhlechsoluong);
+            //MessageBox.Show(chenhlechsoluong.ToString()+this.mkho+cbxSanPham.SelectedValue.ToString());return;
+            spktbus.updateSoLuongNhapKho(this.mkho.Trim(), cbxSanPham.SelectedValue.ToString().Trim(), chenhlechsoluong);
         }
 
         private void txtNhanVien_Leave(object sender, EventArgs e)

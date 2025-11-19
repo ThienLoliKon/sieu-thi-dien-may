@@ -65,6 +65,20 @@ namespace BUS
 		//	return true;
 		//}
 
+		//public bool DeleteSanPham(string id)
+		//{
+		//	dal.deleteSanPham(id);
+		//	if (dal.check(id) == true) { return false; }
+		//	return true;
+		//}
+
+		//public bool DeleteSanPham(string id)
+		//{
+		//	dal.deleteSanPham(id);
+		//	if (dal.check(id) == true) { return false; }
+		//	return true;
+		//}
+
 		public bool UpdateSanPham(string maSanPham, string tenSanPham, string maNXX, string maNCC, string khoiLuong,string thoiGianBH, string giaTien, DateTime ngaySX)
 		{
 			san_pham updateItem = new san_pham();

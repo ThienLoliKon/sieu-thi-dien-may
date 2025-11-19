@@ -6,25 +6,10 @@ GO
 -- Bảng: cap_bac_nhan_vien (20)
 INSERT INTO cap_bac_nhan_vien (ma_cap_bac, ten_cap_bac, mo_ta_cap_bac) VALUES
 ('CB001', N'Nhân viên', N'Nhân viên bán hàng, kho'),
-('CB002', N'Trưởng nhóm', N'Trưởng nhóm kinh doanh'),
-('CB003', N'Quản lý', N'Quản lý chi nhánh'),
-('CB004', N'Giám đốc', N'Giám đốc khu vực'),
-('CB005', N'Kế toán', N'Nhân viên phòng kế toán'),
-('CB006', N'Kỹ thuật', N'Nhân viên bảo hành, kỹ thuật'),
-('CB007', N'Thực tập', N'Thực tập sinh'),
-('CB008', N'Bảo vệ', N'Nhân viên an ninh'),
-('CB009', N'Tạp vụ', N'Nhân viên vệ sinh'),
-('CB010', N'Giám đốc CN', N'Giám đốc chi nhánh'),
-('CB011', N'Phó Giám đốc', N'Phó Giám đốc chi nhánh'),
-('CB012', N'Nhân sự', N'Chuyên viên tuyển dụng'),
-('CB013', N'Marketing', N'Chuyên viên quảng cáo'),
-('CB014', N'IT Helpdesk', N'Hỗ trợ kỹ thuật nội bộ'),
-('CB015', N'Tài xế', N'Nhân viên giao vận'),
-('CB016', N'Thu ngân', N'Nhân viên thu ngân'),
-('CB017', N'CSKH', N'Chăm sóc khách hàng'),
-('CB018', N'Trợ lý', N'Trợ lý giám đốc'),
-('CB019', N'Học việc', N'Nhân viên học việc'),
-('CB020', N'Quản lý Kho', N'Quản lý kho tổng');
+('CB002', N'Quản lý chi nhánh', N'Trưởng nhóm kinh doanh'),
+('CB003', N'Quản lý khu vực', N'Quản lý chi nhánh'),
+('CB004', N'Bộ phận sản phẩm', N'Giám đốc khu vực'),
+('CB005', N'Giám đốc', N'Nhân viên phòng kế toán')
 GO
 
 -- Bảng: loai_hang (20)
@@ -323,24 +308,24 @@ GO
 
 -- Bảng: nhan_vien (20)
 INSERT INTO nhan_vien (ma_nhan_vien, ho_va_ten, ma_cap_bac, so_dien_thoai, dia_chi_thuong_tru, ma_chi_nhanh, trang_thai) VALUES
-('NV001', N'Nguyễn Văn Hùng', 'CB003', '0912345678', N'Ba Đình, Hà Nội', 'CN001', 1),
+('NV001', N'Nguyễn Văn Hùng', 'CB001', '0912345678', N'Ba Đình, Hà Nội', 'CN001', 1),
 ('NV002', N'Trần Thị Thu', 'CB001', '0987654321', N'Quận 1, TP. HCM', 'CN006', 1),
 ('NV003', N'Lê Văn Luyện', 'CB001', '0905123456', N'Hải Châu, Đà Nẵng', 'CN004', 1),
-('NV004', N'Phạm Thị Mai', 'CB005', '0933456789', N'Cầu Giấy, Hà Nội', 'CN002', 1),
+('NV004', N'Phạm Thị Mai', 'CB004', '0933456789', N'Cầu Giấy, Hà Nội', 'CN002', 1),
 ('NV005', N'Võ Minh Đức', 'CB006', '0977890123', N'Quận 3, TP. HCM', 'CN007', 1),
 ('NV006', N'Hoàng Thị Kim', 'CB002', '0915678901', N'Lê Chân, Hải Phòng', 'CN003', 1),
 ('NV007', N'Đỗ Bá Phước', 'CB001', '0908901234', N'Ninh Kiều, Cần Thơ', 'CN008', 1),
-('NV008', N'Bùi Thu Trang', 'CB007', '0945123789', N'Ba Đình, Hà Nội', 'CN001', 1),
-('NV009', N'Lý Văn Toàn', 'CB004', '0909555888', N'Thủ Đức, TP. HCM', 'CN006', 0),
-('NV010', N'Mai Ngọc Anh', 'CB010', '0902789456', N'Sơn Trà, Đà Nẵng', 'CN004', 1),
+('NV008', N'Bùi Thu Trang', 'CB003', '0945123789', N'Ba Đình, Hà Nội', 'CN001', 1),
+('NV009', N'Lý Văn Toàn', 'CB003', '0909555888', N'Thủ Đức, TP. HCM', 'CN006', 0),
+('NV010', N'Mai Ngọc Anh', 'CB02', '0902789456', N'Sơn Trà, Đà Nẵng', 'CN004', 1),
 ('NV011', N'Đào Văn An', 'CB001', '0918111222', N'Tân Bình, TP. HCM', 'CN011', 1),
 ('NV012', N'Lê Thị Hoa', 'CB001', '0918222333', N'Thủ Dầu Một, Bình Dương', 'CN012', 1),
 ('NV013', N'Trần Văn Nam', 'CB001', '0918333444', N'Biên Hòa, Đồng Nai', 'CN013', 1),
 ('NV014', N'Ngô Thị Lan', 'CB002', '0918444555', N'Thanh Xuân, Hà Nội', 'CN014', 1),
-('NV015', N'Vũ Hải Đăng', 'CB008', '0918555666', N'Long Xuyên, An Giang', 'CN015', 1),
-('NV016', N'Hồ Văn Trung', 'CB015', '0918666777', N'Rạch Giá, Kiên Giang', 'CN016', 1),
-('NV017', N'Phan Thanh Bình', 'CB006', '0918777888', N'Thanh Khê, Đà Nẵng', 'CN017', 1),
-('NV018', N'Nguyễn Thị Kiều', 'CB016', '0918888999', N'Lê Chân, Hải Phòng', 'CN018', 1),
+('NV015', N'Vũ Hải Đăng', 'CB003', '0918555666', N'Long Xuyên, An Giang', 'CN015', 1),
+('NV016', N'Hồ Văn Trung', 'CB001', '0918666777', N'Rạch Giá, Kiên Giang', 'CN016', 1),
+('NV017', N'Phan Thanh Bình', 'CB005', '0918777888', N'Thanh Khê, Đà Nẵng', 'CN017', 1),
+('NV018', N'Nguyễn Thị Kiều', 'CB001', '0918888999', N'Lê Chân, Hải Phòng', 'CN018', 1),
 ('NV019', N'Lâm Văn Phát', 'CB001', '0918999000', N'Cái Răng, Cần Thơ', 'CN019', 1),
 ('NV020', N'Trương Mỹ Lan', 'CB003', '0918000111', N'Gò Vấp, TP. HCM', 'CN020', 1);
 GO
