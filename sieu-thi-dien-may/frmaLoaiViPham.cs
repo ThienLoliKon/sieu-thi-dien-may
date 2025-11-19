@@ -1,9 +1,9 @@
 ﻿using BUS;
 using System;
 using System.Data;
-using System.Linq; // Cần cho char.IsDigit
+using System.Linq; 
 using System.Windows.Forms;
-using System.Text.RegularExpressions; // Cần cho ký tự đặc biệt
+using System.Text.RegularExpressions; 
 
 namespace he_thong_dien_may
 {
@@ -16,7 +16,6 @@ namespace he_thong_dien_may
             InitializeComponent();
         }
 
-        // Hàm kiểm tra ký tự đặc biệt (Chỉ cho phép chữ, số, khoảng trắng và tiếng Việt)
         private bool ContainsSpecialChars(string input)
         {
             return Regex.IsMatch(input, @"[^a-zA-Z0-9\s\p{L}]");
@@ -24,20 +23,16 @@ namespace he_thong_dien_may
 
         private void ClearInputControls()
         {
-            // Giả định các controls có tên: txtMaLoaiViPham, txtMoTaViPham, txtMucDoViPham, txtMucPhat
             txtMaLoaiViPham.Text = "";
             txtMoTaViPham.Text = "";
             txtMucDoViPham.Text = "";
             txtMucPhat.Text = "";
 
-            // Đặt ReadOnly = false để KÍCH HOẠT chế độ THÊM MỚI
             txtMaLoaiViPham.ReadOnly = false;
         }
 
-        // Hàm xác thực dữ liệu đầu vào
         private bool ValidateInput(out int mucDo, out double mucPhat)
         {
-            // Lấy và làm sạch dữ liệu
             string moTa = txtMoTaViPham.Text.Trim();
             string mucDoStr = txtMucDoViPham.Text.Trim();
             string mucPhatStr = txtMucPhat.Text.Trim();
@@ -45,30 +40,35 @@ namespace he_thong_dien_may
             mucDo = 0;
             mucPhat = 0.0;
 
-            // Quy tắc 1: Kiểm tra trống
             if (string.IsNullOrEmpty(moTa) || string.IsNullOrEmpty(mucDoStr) || string.IsNullOrEmpty(mucPhatStr))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ Mô tả, Mức độ và Mức phạt.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            // Quy tắc 2: Kiểm tra ký tự đặc biệt (chỉ kiểm tra Mô tả)
             if (ContainsSpecialChars(moTa))
             {
                 MessageBox.Show("Mô tả không được chứa ký tự đặc biệt.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
-            // 3. Kiểm tra kiểu dữ liệu (Mức độ là Int, Mức phạt là Double)
-            if (!int.TryParse(mucDoStr, out mucDo) || mucDo < 1)
+            if (ContainsSpecialChars(mucDoStr))
+            {
+                MessageBox.Show("Mức độ không được chứa ký tự đặc biệt.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (ContainsSpecialChars(mucPhatStr))
+            {
+                MessageBox.Show("Mức phạt không được chứa ký tự đặc biệt.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (!int.TryParse(mucDoStr, out mucDo) || mucDo < 1 || mucDo > 4)
             {
                 MessageBox.Show("Mức độ phải là số nguyên dương.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            // Sử dụng Double.TryParse để xử lý số thập phân
             if (!double.TryParse(mucPhatStr, out mucPhat) || mucPhat < 0)
             {
-                MessageBox.Show("Mức phạt phải là số (>= 0).", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Mức phạt phải là số dương.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -84,7 +84,7 @@ namespace he_thong_dien_may
                 if (dtLoaiVP != null)
                 {
                     dgvLoaiViPham.DataSource = dtLoaiVP;
-                    dgvLoaiViPham.ReadOnly = true; // Đảm bảo không chỉnh sửa trực tiếp
+                    dgvLoaiViPham.ReadOnly = true; 
                 }
                 else
                 {
@@ -102,10 +102,10 @@ namespace he_thong_dien_may
         {
             dgvLoaiViPham.AutoGenerateColumns = false;
 
-            dgvLoaiViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã LVP", DataPropertyName = "MaLVP", Width = 80 });
+            dgvLoaiViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã LVP", DataPropertyName = "MaLVP", Width = 300 });
             dgvLoaiViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mô Tả Vi Phạm", DataPropertyName = "MoTa", Width = 300 });
-            dgvLoaiViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mức Độ", DataPropertyName = "MucDo", Width = 80 });
-            dgvLoaiViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mức Phạt (VND)", DataPropertyName = "MucPhat", Width = 150 });
+            dgvLoaiViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mức Độ", DataPropertyName = "MucDo", Width = 300 });
+            dgvLoaiViPham.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mức Phạt (VND)", DataPropertyName = "MucPhat", Width = 300 });
 
             LoadDL();
         }
@@ -116,7 +116,6 @@ namespace he_thong_dien_may
             int mucDo;
             double mucPhat;
 
-            // Thực hiện validation
             if (!ValidateInput(out mucDo, out mucPhat)) return;
 
             DialogResult result = MessageBox.Show("Bạn có muốn thêm mới Loại Vi phạm này không?", "Xác nhận Thêm", MessageBoxButtons.YesNo);
@@ -157,7 +156,6 @@ namespace he_thong_dien_may
                 return;
             }
 
-            // 2. Thực hiện validation
             if (!ValidateInput(out mucDo, out mucPhat)) return;
 
             DialogResult result = MessageBox.Show("Bạn có muốn cập nhật Loại Vi phạm này không?", "Xác nhận Sửa", MessageBoxButtons.YesNo);
@@ -192,13 +190,12 @@ namespace he_thong_dien_may
                 if (e.RowIndex < 0) return;
                 int line = e.RowIndex;
 
-                // Gán dữ liệu lên controls
                 txtMaLoaiViPham.Text = dgvLoaiViPham.Rows[line].Cells[0].Value.ToString();
                 txtMoTaViPham.Text = dgvLoaiViPham.Rows[line].Cells[1].Value.ToString();
                 txtMucDoViPham.Text = dgvLoaiViPham.Rows[line].Cells[2].Value.ToString();
                 txtMucPhat.Text = dgvLoaiViPham.Rows[line].Cells[3].Value.ToString();
 
-                txtMaLoaiViPham.ReadOnly = true; // Khóa Mã VP khi cập nhật (Chế độ Sửa)
+                txtMaLoaiViPham.ReadOnly = true; 
             }
             catch (Exception ex)
             {

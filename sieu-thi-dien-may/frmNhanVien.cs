@@ -66,13 +66,13 @@ namespace he_thong_dien_may
             LoadComboBoxData();
 
             dgvNhanVien.AutoGenerateColumns = false;
-            dgvNhanVien.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã NV", DataPropertyName = "MaNV", Width = 100 });
-            dgvNhanVien.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tên NV", DataPropertyName = "TenNV", Width = 200 });
-            dgvNhanVien.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã CB", DataPropertyName = "MaCB", Width = 100 });
-            dgvNhanVien.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "SDT", DataPropertyName = "SDT", Width = 100 });
-            dgvNhanVien.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Địa Chỉ", DataPropertyName = "DiaChi", Width = 100 });
-            dgvNhanVien.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã CN", DataPropertyName = "MaChiNhanh", Width = 100 });
-            dgvNhanVien.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Trạng Thái", DataPropertyName = "TrangThai", Width = 100 });
+            dgvNhanVien.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã NV", DataPropertyName = "MaNV", Width = 200 });
+            dgvNhanVien.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tên NV", DataPropertyName = "TenNV", Width = 235 });
+            dgvNhanVien.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã CB", DataPropertyName = "MaCB", Width = 200 });
+            dgvNhanVien.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "SDT", DataPropertyName = "SDT", Width = 200 });
+            dgvNhanVien.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Địa Chỉ", DataPropertyName = "DiaChi", Width = 250 });
+            dgvNhanVien.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã CN", DataPropertyName = "MaChiNhanh", Width = 200 });
+            dgvNhanVien.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Trạng Thái", DataPropertyName = "TrangThai", Width = 200 });
 
             LoadDL();
         }
@@ -329,6 +329,62 @@ namespace he_thong_dien_may
         {
             LoadComboBoxData();
             LoadDL();
+        }
+        private string GetSelectedMaNV()
+        {
+            if (dgvNhanVien.CurrentRow != null && dgvNhanVien.CurrentRow.Index >= 0)
+            {
+                return dgvNhanVien.CurrentRow.Cells[0].Value.ToString();
+            }
+            return null;
+        }
+
+        private void btnLuong_Click(object sender, EventArgs e)
+        {
+            string maNV = GetSelectedMaNV();
+            if (string.IsNullOrEmpty(maNV)) return;
+
+            frmLuong f = new frmLuong(maNV);
+            f.ShowDialog();
+        }
+
+        private void btnTaoTK_Click(object sender, EventArgs e)
+        {
+            string maNV = GetSelectedMaNV();
+            if (string.IsNullOrEmpty(maNV))
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên cần tạo tài khoản.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            frmTaiKhoan f = new frmTaiKhoan(maNV); // Truyền mã NV sang
+            f.ShowDialog();
+        }
+
+        private void btnDiemDanh_Click(object sender, EventArgs e)
+        {
+            string maNV = GetSelectedMaNV();
+            if (string.IsNullOrEmpty(maNV)) return; // Hoặc báo lỗi tùy ý
+
+            frmDiemDanh f = new frmDiemDanh(maNV);
+            f.ShowDialog();
+        }
+
+        private void btnThuong_Click(object sender, EventArgs e)
+        {
+            string maNV = GetSelectedMaNV();
+            if (string.IsNullOrEmpty(maNV)) return;
+
+            frmThuong f = new frmThuong(maNV);
+            f.ShowDialog();
+        }
+
+        private void btnViPham_Click(object sender, EventArgs e)
+        {
+            string maNV = GetSelectedMaNV();
+            if (string.IsNullOrEmpty(maNV)) return;
+
+            frmViPham f = new frmViPham(maNV);
+            f.ShowDialog();
         }
     }
 }

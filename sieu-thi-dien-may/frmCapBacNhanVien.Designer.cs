@@ -121,7 +121,7 @@
             this.btnDong.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.btnDong.Timer_Effect_1 = 5;
             this.btnDong.Timer_RGB = 300;
-            this.btnDong.CausesValidationChanged += new System.EventHandler(this.btnDong_Click);
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // dgvCapBac
             // 

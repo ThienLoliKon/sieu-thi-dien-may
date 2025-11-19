@@ -2,22 +2,54 @@
 using System;
 using System.Data;
 using System.Linq;
+using System.Text.RegularExpressions; 
 using System.Windows.Forms;
-using System.Text.RegularExpressions; // Giữ lại nếu cần cho các validation khác
+using CrystalDecisions.CrystalReports.Engine;
+using stdm;
 
 namespace he_thong_dien_may
 {
     public partial class frmLuong : Form
     {
+        private string _maNVCanLoc = null;
         private LuongBUS luongBus = new LuongBUS();
         private NhanVienBUS nvBus = new NhanVienBUS();
-
+        private ViPhamBUS vpBus = new ViPhamBUS();
+        private ThuongBUS tBus = new ThuongBUS();
+        public frmLuong(string maNV) : this() 
+        {
+            _maNVCanLoc = maNV;
+        }
         public frmLuong()
         {
             InitializeComponent();
             txtTongLuongNhan.ReadOnly = true;
+            cbbMaNV.SelectedValueChanged += new EventHandler(CapNhatThuongPhat_KhiChon);
+            dtpThangLuong.ValueChanged += new EventHandler(CapNhatThuongPhat_KhiChon);
         }
+        private void CapNhatThuongPhat_KhiChon(object sender, EventArgs e)
+        {
+            string maNV = cbbMaNV.SelectedValue?.ToString();
+            DateTime thang = dtpThangLuong.Value;
+            if (string.IsNullOrEmpty(maNV))
+            {
+                txtThuong.Text = "0";
+                txtPhat.Text = "0";
+                return;
+            }
 
+            try
+            {
+                double tongThuong = tBus.TinhTongThuong(maNV, thang);
+                txtThuong.Text = tongThuong.ToString();
+                double tongPhat = vpBus.TinhTongPhat(maNV, thang);
+                txtPhat.Text = tongPhat.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tự động cập nhật Thưởng/Phạt: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void ClearInputControls()
         {
@@ -30,6 +62,10 @@ namespace he_thong_dien_may
             dtpThangLuong.Value = DateTime.Now;
 
             txtMaPhieuLuong.ReadOnly = false;
+        }
+        private bool ContainsSpecialChars(string input)
+        {
+            return Regex.IsMatch(input, @"[^a-zA-Z0-9\s\p{L}]");
         }
 
         private bool ValidateInput(out double luongCB, out double thuong, out double phat)
@@ -44,6 +80,11 @@ namespace he_thong_dien_may
             if (string.IsNullOrEmpty(maNV) || string.IsNullOrEmpty(luongCBStr))
             {
                 MessageBox.Show("Vui lòng chọn Mã NV và nhập Lương CB.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (ContainsSpecialChars(luongCBStr))
+            {
+                MessageBox.Show("Lương cơ bản không được chứa ký tự đặc biệt.", "Lỗi xác thực", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (string.IsNullOrEmpty(thuongStr)) thuongStr = "0";
@@ -108,21 +149,49 @@ namespace he_thong_dien_may
                 MessageBox.Show($"Lỗi khi tải Mã NV: {ex.Message}", "Lỗi Load Dữ Liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void FilterByMaNV(string maNV)
+        {
+            try
+            {
+                DataTable dtKetQua = luongBus.timLuong(maNV);
+                if (dtKetQua != null && dtKetQua.Rows.Count > 0)
+                {
+                    dgvLuong.DataSource = dtKetQua;
+                }
+                else
+                {
+                    dgvLuong.DataSource = null;
+                }
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show($"Lỗi trong quá trình lọc dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void frmLuong_Load(object sender, EventArgs e)
         {
             LoadComboBoxData();
             dgvLuong.AutoGenerateColumns = false;
 
-            dgvLuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã Phiếu", DataPropertyName = "MaPhieuLuong", Width = 100 });
-            dgvLuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã NV", DataPropertyName = "MaNV", Width = 80 });
-            dgvLuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Lương CB", DataPropertyName = "LuongCB", Width = 100 });
-            dgvLuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tháng", DataPropertyName = "ThangLuong", Width = 120 });
-            dgvLuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Thưởng", DataPropertyName = "Thuong", Width = 100 });
-            dgvLuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Phạt", DataPropertyName = "Phat", Width = 100 });
-            dgvLuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tổng Nhận", DataPropertyName = "TongNhan", Width = 120 });
-
-            LoadDL();
+            dgvLuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã Phiếu", DataPropertyName = "MaPhieuLuong", Width = 220 });
+            dgvLuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã NV", DataPropertyName = "MaNV", Width = 220 });
+            dgvLuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Lương CB", DataPropertyName = "LuongCB", Width = 220 });
+            dgvLuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tháng", DataPropertyName = "ThangLuong", Width = 220 });
+            dgvLuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Thưởng", DataPropertyName = "Thuong", Width = 220 });
+            dgvLuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Phạt", DataPropertyName = "Phat", Width = 200 });
+            dgvLuong.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tổng Nhận", DataPropertyName = "TongNhan", Width = 200 });
+            if (!string.IsNullOrEmpty(_maNVCanLoc))
+            {
+                cbbMaNV.SelectedValue = _maNVCanLoc;
+                FilterByMaNV(_maNVCanLoc);
+            }
+            else
+            {
+                LoadDL(); 
+            }
+            ThuongBUS.OnThuongUpdated += (s, ev) => CapNhatThuongPhat_KhiChon(null, null);
+            ViPhamBUS.OnViPhamUpdated += (s, ev) => CapNhatThuongPhat_KhiChon(null, null);
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -188,19 +257,22 @@ namespace he_thong_dien_may
                 txtMaPhieuLuong.Text = dgvLuong.Rows[line].Cells[0].Value.ToString();
                 cbbMaNV.SelectedValue = dgvLuong.Rows[line].Cells[1].Value;
                 txtLuongCoBan.Text = dgvLuong.Rows[line].Cells[2].Value.ToString();
-                txtThuong.Text = dgvLuong.Rows[line].Cells[3].Value.ToString();
-                txtPhat.Text = dgvLuong.Rows[line].Cells[4].Value.ToString();
 
-                if (dgvLuong.Rows[line].Cells[5].Value != DBNull.Value)
+                if (dgvLuong.Rows[line].Cells[3].Value != DBNull.Value)
                 {
-                    dtpThangLuong.Value = Convert.ToDateTime(dgvLuong.Rows[line].Cells[5].Value);
+                    dtpThangLuong.Value = Convert.ToDateTime(dgvLuong.Rows[line].Cells[3].Value);
                 }
 
-                txtTongLuongNhan.Text = dgvLuong.Rows[line].Cells[6].Value.ToString();
+                txtThuong.Text = dgvLuong.Rows[line].Cells[4].Value.ToString(); 
+                txtPhat.Text = dgvLuong.Rows[line].Cells[5].Value.ToString();   
+                txtTongLuongNhan.Text = dgvLuong.Rows[line].Cells[6].Value.ToString(); 
 
                 txtMaPhieuLuong.ReadOnly = true;
             }
-            catch (Exception ex) { MessageBox.Show("Lỗi khi tải dữ liệu chi tiết: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu chi tiết: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -235,15 +307,13 @@ namespace he_thong_dien_may
             string maNVLoc = cbbTraCuu.SelectedValue?.ToString();
             if (string.IsNullOrEmpty(maNVLoc))
             {
-                LoadDL(); // Tải lại toàn bộ bảng lương
+                LoadDL(); 
                 return;
             }
-
             try
             {
                 DataTable dtKetQua = luongBus.timLuong(maNVLoc);
 
-                // 4. Hiển thị kết quả
                 if (dtKetQua != null && dtKetQua.Rows.Count > 0)
                 {
                     dgvLuong.DataSource = dtKetQua;
@@ -268,5 +338,6 @@ namespace he_thong_dien_may
                 this.Close();
             }
         }
+        
     }
 }

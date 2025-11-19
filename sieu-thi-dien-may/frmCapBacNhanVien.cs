@@ -43,9 +43,9 @@ namespace he_thong_dien_may
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
             dgvCapBac.AutoGenerateColumns = false;
-            dgvCapBac.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã CB", DataPropertyName = "MaCB", Width = 100 });
-            dgvCapBac.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tên CB", DataPropertyName = "TenCB", Width = 200 });
-            dgvCapBac.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mô Tả", DataPropertyName = "MotaCB", Width = 100 });
+            dgvCapBac.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mã CB", DataPropertyName = "MaCB", Width = 200 });
+            dgvCapBac.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Tên CB", DataPropertyName = "TenCB", Width = 300 });
+            dgvCapBac.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Mô Tả", DataPropertyName = "MotaCB", Width = 530 });
 
             LoadDL();
         }

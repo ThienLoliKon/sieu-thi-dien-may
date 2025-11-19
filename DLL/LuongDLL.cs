@@ -29,7 +29,6 @@ namespace DLL
 
         public void AddLuong(luong luongMoi)
         {
-            // Sử dụng 'using' để đảm bảo kết nối được đóng đúng cách
             using (DBSTDMDataContext dbContext = new DBSTDMDataContext())
             {
                 dbContext.luongs.InsertOnSubmit(luongMoi);
@@ -41,14 +40,12 @@ namespace DLL
         {
             using (DBSTDMDataContext dbContext = new DBSTDMDataContext())
             {
-                // Tìm phiếu lương cần cập nhật
                 var result = dbContext.luongs.SingleOrDefault(l => l.ma_phieu_luong == updateLuong.ma_phieu_luong);
                 if (result != null)
                 {
-                    // Cập nhật các trường
                     result.ma_nhan_vien = updateLuong.ma_nhan_vien;
                     result.luong_co_ban = updateLuong.luong_co_ban;
-                    result.he_so = updateLuong.he_so; // Cột này vẫn tồn tại trong DB
+                    result.he_so = updateLuong.he_so; 
                     result.thang_luong = updateLuong.thang_luong;
                     result.thuong = updateLuong.thuong;
                     result.phat = updateLuong.phat;
@@ -95,7 +92,6 @@ namespace DLL
 
         public List<luong> SearchLuong(string keyword)
         {
-            // Tìm kiếm theo Mã phiếu hoặc Mã NV
             return db.luongs
                 .Where(l => l.ma_phieu_luong.Contains(keyword) ||
                             l.ma_nhan_vien.Contains(keyword))
@@ -104,7 +100,6 @@ namespace DLL
 
         public bool check(string id)
         {
-            // Kiểm tra sự tồn tại của phiếu lương
             return db.luongs.Any(l => l.ma_phieu_luong == id);
         }
 
