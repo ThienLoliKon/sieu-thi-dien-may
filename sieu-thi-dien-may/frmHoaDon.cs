@@ -209,6 +209,11 @@ namespace he_thong_dien_may
 
 		private void btnXuatHoaDon_Click(object sender, EventArgs e)
 		{
+			if(CheckTestCase.checkKhoangTrang(txtMaHoaDon.Text) == false)
+			{
+				MessageBox.Show("Vui lòng chọn hóa đơn cần xuất");
+				return;
+			}
 			// 2. Tạo Form báo cáo mới VÀ TRUYỀN MÃ VÀO CONSTRUCTOR
 			frmReportInHD formBaoCao = new frmReportInHD(txtMaHoaDon.Text);
 

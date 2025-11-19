@@ -69,6 +69,7 @@
 			this.tsmiSPThinhHanhTheoKhuVic = new System.Windows.Forms.ToolStripMenuItem();
 			this.TaiKhoanTS = new System.Windows.Forms.ToolStripMenuItem();
 			this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.tsmiDoanhThuCacChiNhanh = new System.Windows.Forms.ToolStripMenuItem();
 			this.crownMenuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -425,7 +426,8 @@
             this.khuyếnMãiToolStripMenuItem1,
             this.doanhThuSảnPhẩmToolStripMenuItem,
             this.tsmiDoanhThuTheoThoiGian,
-            this.tsmiSPThinhHanhTheoKhuVic});
+            this.tsmiSPThinhHanhTheoKhuVic,
+            this.tsmiDoanhThuCacChiNhanh});
 			this.BaoCaoToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
 			this.BaoCaoToolStripMenuItem.Name = "BaoCaoToolStripMenuItem";
 			this.BaoCaoToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
@@ -476,6 +478,7 @@
 			this.TaiKhoanTS.Name = "TaiKhoanTS";
 			this.TaiKhoanTS.Size = new System.Drawing.Size(85, 24);
 			this.TaiKhoanTS.Text = "Tài khoản";
+			this.TaiKhoanTS.Click += new System.EventHandler(this.TaiKhoanTS_Click);
 			// 
 			// đăngXuấtToolStripMenuItem
 			// 
@@ -485,6 +488,15 @@
 			this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
 			this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
 			this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
+			// 
+			// tsmiDoanhThuCacChiNhanh
+			// 
+			this.tsmiDoanhThuCacChiNhanh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+			this.tsmiDoanhThuCacChiNhanh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+			this.tsmiDoanhThuCacChiNhanh.Name = "tsmiDoanhThuCacChiNhanh";
+			this.tsmiDoanhThuCacChiNhanh.Size = new System.Drawing.Size(354, 26);
+			this.tsmiDoanhThuCacChiNhanh.Text = "Doanh Thu Các Chi Nhánh";
+			this.tsmiDoanhThuCacChiNhanh.Click += new System.EventHandler(this.tsmiDoanhThuCacChiNhanh_Click);
 			// 
 			// frmMainMenu
 			// 
@@ -551,5 +563,6 @@
 		private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem khuyếnMãiToolStripMenuItem2;
 		private System.Windows.Forms.ToolStripMenuItem tsmiSPThinhHanhTheoKhuVic;
+		private System.Windows.Forms.ToolStripMenuItem tsmiDoanhThuCacChiNhanh;
 	}
 }

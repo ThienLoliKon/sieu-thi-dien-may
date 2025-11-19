@@ -30,7 +30,7 @@ namespace stdm
 			// Cấp 1: lùi từ Debug -> bin
 			// Cấp 2: lùi từ bin -> [Tên_Project_GUI]
 			// Cấp 3: lùi từ [Tên_Project_GUI] -> [Thư mục Solution]
-			string duongDanSolution = Directory.GetParent(duongDanChay).Parent.Parent.FullName;
+			string duongDanSolution = Directory.GetParent(duongDanChay).Parent.FullName;
 
 			// 3. Tên file report của bạn
 			string tenFileReport = "rptInHoaDon.rpt";

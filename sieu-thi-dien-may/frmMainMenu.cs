@@ -244,5 +244,16 @@ namespace he_thong_dien_may
 			frmReportSanPhamBanChay f = new frmReportSanPhamBanChay();
 			f.ShowDialog();
 		}
+
+		private void TaiKhoanTS_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void tsmiDoanhThuCacChiNhanh_Click(object sender, EventArgs e)
+		{
+			frmReportDoanhThuChiNhanh f = new frmReportDoanhThuChiNhanh();
+			f.ShowDialog();
+		}
 	}
 }

@@ -13,30 +13,21 @@ using System.Windows.Forms;
 
 namespace stdm
 {
-	public partial class frmReportSanPhamBanChay : Form
+	public partial class frmReportDoanhThuChiNhanh : Form
 	{
-		public frmReportSanPhamBanChay()
+		public frmReportDoanhThuChiNhanh()
 		{
 			InitializeComponent();
 		}
-		private void btnTimKiem_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				if(CheckTestCase.checkValidDateInOut(dtpNgayBatDau.Value, dtpNgayKetThuc.Value) == false)
-				{
-					MessageBox.Show("Ngày kết thúc phải sau hoặc bằng ngày bắt đầu!");
-					return;
-				}
-				
-				testDebug();
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("Lỗi: " + ex.Message);
-			}
-		}
 
+		private void crptViewDoanhThuChiNhanh_Load(object sender, EventArgs e)
+		{
+			// Cài đặt mặc định: Từ ngày 1 tháng này đến hôm nay
+			DateTime now = DateTime.Now;
+			dtpNgayBatDau.Value = new DateTime(now.Year, now.Month, 1);
+			dtpNgayKetThuc.Value = now;
+			testDebug();
+		}
 		private void testDebug()
 		{
 			// 1. Lấy thư mục đang chạy (là ...\bin\Debug)
@@ -49,7 +40,7 @@ namespace stdm
 			string duongDanSolution = Directory.GetParent(duongDanChay).Parent.FullName;
 
 			// 3. Tên file report của bạn
-			string tenFileReport = "rptTopSanPhamBanChay.rpt";
+			string tenFileReport = "rptDoanhThuChiNhanh.rpt";
 
 			// 4. Ghép lại để có đường dẫn TUYỆT ĐỐI
 			string duongDanDayDu = Path.Combine(duongDanSolution, tenFileReport);
@@ -66,21 +57,29 @@ namespace stdm
 			rpt.Load(duongDanDayDu);
 
 			// 6. Code của bạn
-			rpt.SetParameterValue("BatDau",dtpNgayBatDau.Value); 
-			rpt.SetParameterValue("KetThuc",dtpNgayKetThuc.Value);
+			rpt.SetParameterValue("BatDau", dtpNgayBatDau.Value);
+			rpt.SetParameterValue("KetThuc", dtpNgayKetThuc.Value);
 
-			crptViewSanPhamBanChay.ReportSource = rpt;
-			crptViewSanPhamBanChay.Refresh();
+			crptViewDoanhThuChiNhanh.ReportSource = rpt;
+			crptViewDoanhThuChiNhanh.Refresh();
 			//MessageBox.Show(maHoaDonCanIn +"a");
 		}
-
-		private void frmReportSanPhamBanChay_Load(object sender, EventArgs e)
+		private void btnTimKiem_Click(object sender, EventArgs e)
 		{
-			// Cài đặt mặc định: Từ ngày 1 tháng này đến hôm nay
-			DateTime now = DateTime.Now;
-			dtpNgayBatDau.Value = new DateTime(now.Year, now.Month, 1);
-			dtpNgayKetThuc.Value = now;
-			testDebug();
+			try
+			{
+				if (CheckTestCase.checkValidDateInOut(dtpNgayBatDau.Value, dtpNgayKetThuc.Value) == false)
+				{
+					MessageBox.Show("Ngày kết thúc phải sau hoặc bằng ngày bắt đầu!");
+					return;
+				}
+
+				testDebug();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Lỗi: " + ex.Message);
+			}
 		}
 	}
 }
