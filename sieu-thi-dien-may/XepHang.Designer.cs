@@ -28,9 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< Updated upstream
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+=======
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.cyberButton3 = new ReaLTaiizor.Controls.CyberButton();
+>>>>>>> Stashed changes
             this.cyberButton5 = new ReaLTaiizor.Controls.CyberButton();
             this.cyberButton6 = new ReaLTaiizor.Controls.CyberButton();
             this.cyberButton2 = new ReaLTaiizor.Controls.CyberButton();
@@ -40,9 +47,15 @@
             this.thunderLabel3 = new ReaLTaiizor.Controls.ThunderLabel();
             this.thunderLabel2 = new ReaLTaiizor.Controls.ThunderLabel();
             this.thunderLabel1 = new ReaLTaiizor.Controls.ThunderLabel();
+<<<<<<< Updated upstream
             this.txtTenRank = new ReaLTaiizor.Controls.CyberTextBox();
             this.txtYeuCau = new ReaLTaiizor.Controls.CyberTextBox();
             this.txtMaRank = new ReaLTaiizor.Controls.CyberTextBox();
+=======
+            this.cyberTextBox6 = new ReaLTaiizor.Controls.CyberTextBox();
+            this.cyberTextBox2 = new ReaLTaiizor.Controls.CyberTextBox();
+            this.cyberTextBox1 = new ReaLTaiizor.Controls.CyberTextBox();
+>>>>>>> Stashed changes
             this.dgvRank = new ReaLTaiizor.Controls.PoisonDataGridView();
             this.nightHeaderLabel1 = new ReaLTaiizor.Controls.NightHeaderLabel();
             this.RTKhachHangForm = new ReaLTaiizor.Forms.NightForm();
@@ -131,7 +144,10 @@
             this.cyberButton6.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberButton6.Timer_Effect_1 = 5;
             this.cyberButton6.Timer_RGB = 300;
+<<<<<<< Updated upstream
             this.cyberButton6.Click += new System.EventHandler(this.cyberButton6_Click);
+=======
+>>>>>>> Stashed changes
             // 
             // cyberButton2
             // 
@@ -387,6 +403,7 @@
             this.dgvRank.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvRank.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvRank.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+<<<<<<< Updated upstream
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -404,6 +421,25 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvRank.DefaultCellStyle = dataGridViewCellStyle2;
+=======
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRank.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvRank.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRank.DefaultCellStyle = dataGridViewCellStyle5;
+>>>>>>> Stashed changes
             this.dgvRank.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvRank.EnableHeadersVisualStyles = false;
             this.dgvRank.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -411,6 +447,7 @@
             this.dgvRank.Location = new System.Drawing.Point(0, 455);
             this.dgvRank.Name = "dgvRank";
             this.dgvRank.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+<<<<<<< Updated upstream
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -419,6 +456,16 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvRank.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+=======
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRank.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+>>>>>>> Stashed changes
             this.dgvRank.RowHeadersWidth = 51;
             this.dgvRank.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvRank.RowTemplate.Height = 24;
@@ -450,6 +497,10 @@
             // 
             this.RTKhachHangForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
             this.RTKhachHangForm.Controls.Add(this.btnReload);
+<<<<<<< Updated upstream
+=======
+            this.RTKhachHangForm.Controls.Add(this.cyberButton3);
+>>>>>>> Stashed changes
             this.RTKhachHangForm.Controls.Add(this.cyberButton5);
             this.RTKhachHangForm.Controls.Add(this.cyberButton6);
             this.RTKhachHangForm.Controls.Add(this.cyberButton2);
@@ -459,9 +510,15 @@
             this.RTKhachHangForm.Controls.Add(this.thunderLabel3);
             this.RTKhachHangForm.Controls.Add(this.thunderLabel2);
             this.RTKhachHangForm.Controls.Add(this.thunderLabel1);
+<<<<<<< Updated upstream
             this.RTKhachHangForm.Controls.Add(this.txtTenRank);
             this.RTKhachHangForm.Controls.Add(this.txtYeuCau);
             this.RTKhachHangForm.Controls.Add(this.txtMaRank);
+=======
+            this.RTKhachHangForm.Controls.Add(this.cyberTextBox6);
+            this.RTKhachHangForm.Controls.Add(this.cyberTextBox2);
+            this.RTKhachHangForm.Controls.Add(this.cyberTextBox1);
+>>>>>>> Stashed changes
             this.RTKhachHangForm.Controls.Add(this.dgvRank);
             this.RTKhachHangForm.Controls.Add(this.nightHeaderLabel1);
             this.RTKhachHangForm.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -549,9 +606,15 @@
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel3;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel2;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel1;
+<<<<<<< Updated upstream
         private ReaLTaiizor.Controls.CyberTextBox txtTenRank;
         private ReaLTaiizor.Controls.CyberTextBox txtYeuCau;
         private ReaLTaiizor.Controls.CyberTextBox txtMaRank;
+=======
+        private ReaLTaiizor.Controls.CyberTextBox cyberTextBox6;
+        private ReaLTaiizor.Controls.CyberTextBox cyberTextBox2;
+        private ReaLTaiizor.Controls.CyberTextBox cyberTextBox1;
+>>>>>>> Stashed changes
         private ReaLTaiizor.Controls.PoisonDataGridView dgvRank;
         private ReaLTaiizor.Controls.NightHeaderLabel nightHeaderLabel1;
         private ReaLTaiizor.Forms.NightForm RTKhachHangForm;

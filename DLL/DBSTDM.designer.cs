@@ -117,7 +117,11 @@ namespace DLL
     #endregion
 		
 		public DBSTDMDataContext() : 
+<<<<<<< Updated upstream
 				base(global::DLL.Properties.Settings.Default.dien_mayConnectionString2, mappingSource)
+=======
+				base(global::DLL.Properties.Settings.Default.dien_may4ConnectionString1, mappingSource)
+>>>>>>> Stashed changes
 		{
 			OnCreated();
 		}

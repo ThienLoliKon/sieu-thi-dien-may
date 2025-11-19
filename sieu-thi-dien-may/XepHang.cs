@@ -33,6 +33,7 @@ namespace he_thong_dien_may
         {
             dgvRank.DataSource = xephangbus.getAllRank();
         }
+<<<<<<< Updated upstream
 
         private void cyberButton1_Click(object sender, EventArgs e)
         {
@@ -136,5 +137,7 @@ namespace he_thong_dien_may
             }
             return noti;
         }
+=======
+>>>>>>> Stashed changes
     }
 }

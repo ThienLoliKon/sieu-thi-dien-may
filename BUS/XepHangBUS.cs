@@ -42,6 +42,7 @@ namespace BUS
             }
             return list;
         }
+<<<<<<< Updated upstream
         public int addRank(XepHang xh)
         {
             if (checkTrungIDRank(xh.mahang) == true)
@@ -98,6 +99,53 @@ namespace BUS
                 throw new Exception(ex.Message);
             }
         }
+=======
+        //public int addKhachHang(KhachHang kh)
+        //{
+        //    DLL.khach_hang khach = new DLL.khach_hang()
+        //    {
+        //        ma_khach_hang = createMaKhachHang(),
+        //        ho_ten_khach_hang = kh.tenkhachhang,
+        //        sdt = kh.sdt,
+        //        diachi = kh.diachi,
+        //        xep_hang = "bronze",
+        //        diem = 0
+        //    };
+        //    try
+        //    {
+        //        return khachhangdll.AddKhachHang(khach);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception(kh.xephang.ToString());
+        //    }
+        //}
+        //public int updateKhachHang(KhachHang kh)
+        //{
+        //    DLL.khach_hang khach = new DLL.khach_hang()
+        //    {
+        //        ma_khach_hang = kh.makhachhang,
+        //        ho_ten_khach_hang = kh.tenkhachhang,
+        //        sdt = kh.sdt,
+        //        diachi = kh.diachi,
+        //    };
+        //    return khachhangdll.updateKhachHang(khach);
+        //}
+        //public string createMaKhachHang()
+        //{
+        //    var khachhangcuoicung = khachhangdll.getAllKhachHang().LastOrDefault();
+        //    if (khachhangcuoicung != null)
+        //    {
+        //        string makhcuoicung = khachhangcuoicung.ma_khach_hang;
+        //        int so = int.Parse(makhcuoicung.Substring(2)) + 1;
+        //        return "KH" + so.ToString();
+        //    }
+        //    else
+        //    {
+        //        return "KH0001";
+        //    }
+        //}
+>>>>>>> Stashed changes
         //public List<KhachHang> searchKhachHang(string ma, string ten, string sdt)
         //{
         //    List<KhachHang> list = new List<KhachHang>();

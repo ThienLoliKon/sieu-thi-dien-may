@@ -47,6 +47,7 @@ namespace BUS
 			if (dal.check(addVariable.ma_san_pham) == true) { return false; }
 			return true;
 		}
+<<<<<<< Updated upstream
 		public string getTenSanPham(string masp)
 		{
 			var x = dal.GetAllSanPham();
@@ -57,6 +58,15 @@ namespace BUS
             }
 			return null;
         }
+=======
+
+		//public bool DeleteSanPham(string id)
+		//{
+		//	dal.deleteSanPham(id);
+		//	if (dal.check(id) == true) { return false; }
+		//	return true;
+		//}
+>>>>>>> Stashed changes
 
 		//public bool DeleteSanPham(string id)
 		//{
