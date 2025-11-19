@@ -52,7 +52,7 @@ namespace BUS
             List<SanPhamTrongKhoTong> list = new List<SanPhamTrongKhoTong>();
             foreach (var item in getAllSanPhamTrongKhoTong())
             {
-                if (item.masanpham.Contains(input) || item.tensanpham.Contains(input))
+                if (item.masanpham == input || item.tensanpham.Contains(input))
                 {
                     list.Add(item);
                 }
@@ -61,11 +61,15 @@ namespace BUS
         }
         public void updateSoLuongNhapKho(string makho, string masanpham, int soluong)
         {
-            if(searchSPTrongKhoTong(masanpham).Count == 0)
+            if (!sanphamtrongkhotongdll.checkTonTaiSanPhamTrongKhoTong(makho, masanpham))
             {
                 addSanPhamVaoKhoTong(makho, masanpham, soluong);
                 return;
             }
+            sanphamtrongkhotongdll.updateSoLuongNhapKho(makho, masanpham, soluong);
+        }
+        public void updateSucChua(string makho, string masanpham, int soluong)
+        {
             sanphamtrongkhotongdll.updateSoLuongNhapKho(makho, masanpham, soluong);
         }
     }

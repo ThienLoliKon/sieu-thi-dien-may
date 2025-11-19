@@ -22,7 +22,7 @@ namespace DLL
         }
         public void updateSoLuongNhapKho(string makho, string masanpham, int soluong)
         {
-            var sptrongkhotong = db.san_pham_trong_kho_tongs.Where(x => x.ma_kho.Trim() == makho.Trim() && x.ma_san_pham.Trim() == masanpham.Trim()).FirstOrDefault();
+            var sptrongkhotong = db.san_pham_trong_kho_tongs.SingleOrDefault(x => x.ma_kho.Trim() == makho.Trim() && x.ma_san_pham.Trim() == masanpham.Trim());
             if (sptrongkhotong != null)
             {
                 sptrongkhotong.so_luong += soluong;
@@ -45,6 +45,16 @@ namespace DLL
             {
                 return false;
             }
+        }
+        public bool checkTonTaiSanPhamTrongKhoTong(string makho, string masanpham)
+        {
+            return db.san_pham_trong_kho_tongs.Any(x => x.ma_kho.Trim() == makho.Trim() && x.ma_san_pham.Trim() == masanpham.Trim());
+            //var sptrongkhotong = db.san_pham_trong_kho_tongs.SingleOrDefault(x => x.ma_kho.Trim() == makho.Trim() && x.ma_san_pham.Trim() == masanpham.Trim());
+            //if (sptrongkhotong != null)
+            //{
+            //    return true;
+            //}
+            //return false;
         }
     }
 }
