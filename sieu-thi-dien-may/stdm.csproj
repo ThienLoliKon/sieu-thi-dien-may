@@ -320,7 +320,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RPSanPhamTrongKhoTong.rpt</DependentUpon>
-    <Compile Include="rptPhieuTiepNhanBaoHanh.cs">
+	</Compile>
+
+	<Compile Include="rptPhieuTiepNhanBaoHanh.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptPhieuTiepNhanBaoHanh.rpt</DependentUpon>
@@ -490,7 +492,8 @@
     <EmbeddedResource Include="RPSanPhamTrongKhoTong.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RPSanPhamTrongKhoTong.cs</LastGenOutput>
-    <EmbeddedResource Include="rptPhieuTiepNhanBaoHanh.rpt">
+	</EmbeddedResource>
+	<EmbeddedResource Include="rptPhieuTiepNhanBaoHanh.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptPhieuTiepNhanBaoHanh.cs</LastGenOutput>
     </EmbeddedResource>
