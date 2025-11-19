@@ -41,10 +41,7 @@ namespace DLL
                 var xephang = db.xep_hangs.SingleOrDefault(n => n.ma_hang == xh.ma_hang);
                 if (xephang != null)
                 {
-<<<<<<< Updated upstream
                     xephang.ma_hang = xh.ma_hang;
-=======
->>>>>>> Stashed changes
                     xephang.ten_hang = xh.ten_hang;
                     xephang.yeu_cau = xh.yeu_cau;
                     xephang.uu_dai = xh.uu_dai;
@@ -67,10 +64,7 @@ namespace DLL
                              select cthd;
             return listhoadon.ToList();
         }
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
         public int deleteRank(string mahang)
         {
             try

@@ -55,7 +55,6 @@ namespace DLL.Properties {
                 return ((string)(this["dien_may4ConnectionString1"]));
             }
         }
-<<<<<<< Updated upstream
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -78,7 +77,5 @@ namespace DLL.Properties {
                 return ((string)(this["dien_mayConnectionString2"]));
             }
         }
-=======
->>>>>>> Stashed changes
     }
 }

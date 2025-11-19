@@ -27,6 +27,7 @@
       <Value Profile="(Default)">Data Source=Ma\SQLEXPRESS;Initial Catalog=dien_may4;Integrated Security=True;Encrypt=True;TrustServerCertificate=True</Value>
     </Setting>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <Setting Name="dien_mayConnectionString1" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
@@ -43,6 +44,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=LAPTOP-T2PFFCGC\SQLEXPRESS;Initial Catalog=dien_may;Integrated Security=True;Encrypt=True;TrustServerCertificate=True</Value>
     </Setting>
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   </Settings>

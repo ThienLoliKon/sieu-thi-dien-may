@@ -42,7 +42,6 @@ namespace BUS
             }
             return list;
         }
-<<<<<<< Updated upstream
         public int addRank(XepHang xh)
         {
             if (checkTrungIDRank(xh.mahang) == true)
@@ -99,7 +98,6 @@ namespace BUS
                 throw new Exception(ex.Message);
             }
         }
-=======
         //public int addKhachHang(KhachHang kh)
         //{
         //    DLL.khach_hang khach = new DLL.khach_hang()
@@ -145,7 +143,6 @@ namespace BUS
         //        return "KH0001";
         //    }
         //}
->>>>>>> Stashed changes
         //public List<KhachHang> searchKhachHang(string ma, string ten, string sdt)
         //{
         //    List<KhachHang> list = new List<KhachHang>();
