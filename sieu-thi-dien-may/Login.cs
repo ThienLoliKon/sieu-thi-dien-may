@@ -34,7 +34,7 @@ namespace stdm
 		private void cyberButton1_Click(object sender, EventArgs e)
 		{
 			if (checkTaiKhoan() == false)
-			{			
+			{
 				MessageBox.Show("Sai tài khoản hoặc mật khẩu! Vui lòng thử lại.");
 				return;
 			}
@@ -51,13 +51,15 @@ namespace stdm
 			TaiKhoanBUS.currentChiNhanh = busNV.timChiNhanhByMaNhanVien(txtMaNV.Text);
 			TaiKhoanBUS.currentUserQuyen = busNV.timQuyenByMaNhanVien(txtMaNV.Text);
 
-			MessageBox.Show("Đăng nhập thành công!"); 
-            MessageBox.Show("Chi nhánh : "+ TaiKhoanBUS.currentChiNhanh);
-            MessageBox.Show("Mã nhân viên : " + TaiKhoanBUS.currentUserMaNV);
-            MessageBox.Show("Quyền : " + TaiKhoanBUS.currentUserQuyen);
+			MessageBox.Show("Đăng nhập thành công!");
+			MessageBox.Show("Chi nhánh : " + TaiKhoanBUS.currentChiNhanh);
+			MessageBox.Show("Mã nhân viên : " + TaiKhoanBUS.currentUserMaNV);
+			MessageBox.Show("Quyền : " + TaiKhoanBUS.currentUserQuyen);
 			f.Show();
-            this.Hide();
-        }
-    }
+			this.Hide();
+		}
+	}
+
+
 
 }
