@@ -35,6 +35,7 @@ namespace stdm
 		{
 			if (checkTaiKhoan() == false)
 			{
+			{			
 				MessageBox.Show("Sai tài khoản hoặc mật khẩu! Vui lòng thử lại.");
 				return;
 			}
@@ -62,4 +63,14 @@ namespace stdm
 
 
 
+			//MessageBox.Show("Đăng nhập thành công!"); 
+			//         MessageBox.Show("Chi nhánh : "+ TaiKhoanBUS.currentChiNhanh);
+			//         MessageBox.Show("Quyền : " + TaiKhoanBUS.currentUserQuyen);
+			MessageBox.Show("Đăng nhập thành công!");
+			this.Hide();
+			f.ShowDialog();
+			this.Close();
+		}
+
+	}
 }
