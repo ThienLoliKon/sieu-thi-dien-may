@@ -9,8 +9,7 @@ namespace DLL
     public class TaiKhoanDLL
     {
         private DBSTDMDataContext db;
-
-        public TaiKhoanDLL()
+		public TaiKhoanDLL()
         {
             db = new DBSTDMDataContext();
             if (!db.DatabaseExists())
@@ -56,7 +55,24 @@ namespace DLL
             }
         }
 
-        public List<tai_khoan> SearchTaiKhoan(string keyword)
+		// Trong file TaiKhoanDLL.cs
+		public bool KiemTraDangNhap(string maNV, string matKhau)
+		{
+			using (DBSTDMDataContext db = new DBSTDMDataContext())
+			{
+				// Vệ sinh dữ liệu đầu vào
+				string maNhanVien = maNV.Trim();
+				string matKhauNhanVien = matKhau.Trim();
+
+				// Dùng Any() để kiểm tra sự tồn tại (Trả về True/False)
+				// Lưu ý: Dùng Trim() trong LINQ để đảm bảo so sánh chính xác với kiểu char trong DB
+				bool ketQua = db.tai_khoans.Any(tk => tk.ma_nhan_vien.Trim() == maNhanVien
+												   && tk.mat_khau.Trim() == matKhauNhanVien);
+				return ketQua;
+			}
+		}
+
+		public List<tai_khoan> SearchTaiKhoan(string keyword)
         {
             return db.tai_khoans
                 .Where(taikhoan => taikhoan.ma_nhan_vien.Contains(keyword) || taikhoan.mat_khau.Contains(keyword) || taikhoan.quyen.Contains(keyword))

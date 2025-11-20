@@ -85,7 +85,7 @@ namespace DLL
 			{
 				maxId = listItem
 							.Where(m => m.StartsWith("KM")) // Lọc các mã bắt đầu bằng "TG"
-							.Select(m => int.Parse(m.Substring(3))) // Lấy phần số sau "TG"
+							.Select(m => int.Parse(m.Substring(8))) // Lấy phần số sau "TG"
 							.Max(); // Lấy giá trị lớn nhất
 			}
 
@@ -93,7 +93,7 @@ namespace DLL
 			maxId++;
 
 			// Tạo mã mới với tiền tố "NXB" và đảm bảo đúng định dạng
-			return "KM" + maxId.ToString("D3");
+			return "KM" + maxId.ToString("D8");
 		}
 		/// Lấy danh sách khuyến mãi ĐANG CÒN HẠN của một sản phẩm cụ thể
 		public List<khuyen_mai> GetActiveKhuyenMaiByMaSP(string maSanPham)

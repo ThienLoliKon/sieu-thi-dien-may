@@ -23,11 +23,13 @@ namespace he_thong_dien_may
 
 		private void a_Load(object sender, EventArgs e)
 		{
-		//	Form childForm = new frmSanPham();
-		//	childForm.MdiParent = this;
-		//	childForm.Show();
-		//Form childForm = new frmSanPham();
-		//	
+			// if(TaiKhoanBUS.currentUserMaNV)
+			//	Form childForm = new frmSanPham();
+			//	childForm.MdiParent = this;
+			//	childForm.Show();
+			//Form childForm = new frmSanPham();
+			//	
+			phanQuyenHienThi();
 		}
 
 		private void sanPhamToolStripMenuItem_Click(object sender, EventArgs e)
@@ -54,20 +56,10 @@ namespace he_thong_dien_may
             fkhuyenmai.ShowDialog();
         }
 
-        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void chiNhánhToolStripMenuItem_Click(object sender, EventArgs e)
         {
 			Form chinhanh = new ChiNhanh();
             chinhanh.ShowDialog();
-        }
-
-        private void quảnLíChiNhánhToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void loạiViPhạmToolStripMenuItem_Click(object sender, EventArgs e)
@@ -110,11 +102,6 @@ namespace he_thong_dien_may
         {
             Form f = new frmLuong();
             f.ShowDialog();
-        }
-
-        private void bộPhậnSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void nhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -245,15 +232,54 @@ namespace he_thong_dien_may
 			f.ShowDialog();
 		}
 
-		private void TaiKhoanTS_Click(object sender, EventArgs e)
-		{
-
-		}
-
 		private void tsmiDoanhThuCacChiNhanh_Click(object sender, EventArgs e)
 		{
 			frmReportDoanhThuChiNhanh f = new frmReportDoanhThuChiNhanh();
 			f.ShowDialog();
 		}
+
+
+		private void phanQuyenHienThi()
+		{
+			// Mặc định: Ẩn hết các menu quan trọng trước cho an toàn
+            tsQuanLyChiNhanh.Visible = false;
+            tsQuanLyKhuVuc.Visible = false;
+            tsBoPhanSanPham.Visible = false;
+            tsGiamDoc.Visible = false;
+            tsBaoCao.Visible = false;
+
+			// Bật lại theo từng quyền
+			switch (TaiKhoanBUS.currentUserQuyen)
+			{
+				case "CB10000001": // Nhân viên
+
+					break;
+
+				case "CB10000002": // Quản lý Chi nhánh
+                    tsQuanLyChiNhanh.Visible = true;
+					break;
+
+				case "CB10000003": // Quản lý Khu vực
+					tsQuanLyChiNhanh.Visible = true;
+					tsQuanLyKhuVuc.Visible = true;
+                    tsBaoCao.Visible = true;
+					break;
+
+				case "CB10000004": // Bộ phận Sản phẩm
+                    tsBoPhanSanPham.Visible = true;
+					break;
+
+				case "CB10000005": // Giám đốc (Full quyền)
+                    tsQuanLyChiNhanh.Visible = true;
+                    tsQuanLyKhuVuc.Visible = true;
+                    tsBoPhanSanPham.Visible = true;
+                    tsGiamDoc.Visible = true;
+                    tsBaoCao.Visible = true;
+					break;
+			}
+		}
+
+
+
 	}
 }

@@ -12,20 +12,44 @@ using System.Windows.Forms;
 
 namespace stdm
 {
-    public partial class Login : Form
-    {
-        public Login()
-        {
-            InitializeComponent();
-        }
+	public partial class Login : Form
+	{
+		NhanVienBUS busNV = new NhanVienBUS();
+		TaiKhoanBUS bus = new TaiKhoanBUS();
+		public Login()
+		{
+			InitializeComponent();
+		}
 
-        private void cyberButton1_Click(object sender, EventArgs e)
-        {
-            NhanVienBUS bus = new NhanVienBUS();
+		public bool checkTaiKhoan()
+		{
+			if (bus.CheckLogin(txtMaNV.Text, txtMatKhau.Text))
+			{
+				return true;
+			}
+			return false;
+		}
+
+
+		private void cyberButton1_Click(object sender, EventArgs e)
+		{
+			if (checkTaiKhoan() == false)
+			{			
+				MessageBox.Show("Sai tài khoản hoặc mật khẩu! Vui lòng thử lại.");
+				return;
+			}
+			if (busNV.KiemTraNhanVienConLamViec(TaiKhoanBUS.currentUserMaNV) == false)
+			{
+				MessageBox.Show("Tài khoản này đã bị KHÓA hoặc nhân viên đã nghỉ việc!",
+								"Cảnh báo",
+								MessageBoxButtons.OK,
+								MessageBoxIcon.Warning);
+				return; // Dừng lại, không cho vào
+			}
 			Form f = new frmMainMenu();
-            TaiKhoanBUS.currentUserMaNV = txtMaNV.TextButton+"     ";
-            TaiKhoanBUS.currentChiNhanh = bus.timChiNhanhByMaNhanVien(txtMaNV.TextButton);
-			TaiKhoanBUS.currentUserQuyen = bus.timQuyenByMaNhanVien(txtMaNV.TextButton);
+			TaiKhoanBUS.currentUserMaNV = txtMaNV.Text + "     ";
+			TaiKhoanBUS.currentChiNhanh = busNV.timChiNhanhByMaNhanVien(txtMaNV.Text);
+			TaiKhoanBUS.currentUserQuyen = busNV.timQuyenByMaNhanVien(txtMaNV.Text);
 
 			MessageBox.Show("Đăng nhập thành công!"); 
             MessageBox.Show("Chi nhánh : "+ TaiKhoanBUS.currentChiNhanh);
@@ -35,4 +59,5 @@ namespace stdm
             this.Hide();
         }
     }
+
 }

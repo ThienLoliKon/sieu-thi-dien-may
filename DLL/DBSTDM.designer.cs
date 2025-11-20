@@ -116,11 +116,11 @@ namespace DLL
     partial void Deletevi_pham(vi_pham instance);
     #endregion
 		
-		public DBSTDMDataContext() : 
-				base(global::DLL.Properties.Settings.Default.dien_mayConnectionString2, mappingSource)
-		{
-			OnCreated();
-		}
+		//public DBSTDMDataContext() : 
+		//		base(global::DLL.Properties.Settings.Default.dien_mayConnectionString2, mappingSource)
+		//{
+		//	OnCreated();
+		//}
 		
 		public DBSTDMDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -128,6 +128,11 @@ namespace DLL
 			OnCreated();
 		}
 		
+		public DBSTDMDataContext() :
+				base("Data Source=LAPTOP-T2PFFCGC\\SQLEXPRESS;Initial Catalog=dien_may;Integrated Security=True;TrustServerCertificate=True", mappingSource)
+		{
+			OnCreated();
+		}
 		public DBSTDMDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
