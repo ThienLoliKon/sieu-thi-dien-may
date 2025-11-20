@@ -328,7 +328,7 @@ namespace he_thong_dien_may
 		public float getUuDaiCuaKhachHang()
 		{
 			float uuDai = busCTHD.LayUuDaiCuaKhachBangMaHD(cboMaHoaDon.SelectedValue.ToString());
-			MessageBox.Show("Ưu đãi của khách hàng là: " + uuDai.ToString("F0") + "%", "Thông tin ưu đãi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			//MessageBox.Show("Ưu đãi của khách hàng là: " + uuDai.ToString("F0") + "%", "Thông tin ưu đãi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			return uuDai;
 		}
 

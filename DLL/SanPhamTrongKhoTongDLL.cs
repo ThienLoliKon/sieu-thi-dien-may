@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace DLL
 {
-    public class SanPhamTrongKhoTongDLL
-    {
+	public class SanPhamTrongKhoTongDLL
+	{
 		public enum TruKhoStatus { ThanhCong, KhoNotFound, KhongDuHang, Loi }
 		DBSTDMDataContext db = new DBSTDMDataContext();
         public SanPhamTrongKhoTongDLL()
