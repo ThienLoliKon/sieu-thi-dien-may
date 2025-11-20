@@ -37,7 +37,7 @@ namespace DLL
         {
             try
             {
-                var xuatkho = db.phieu_xuat_khos.SingleOrDefault(n => n.ma_phieu_xuat == kt.ma_phieu_xuat);
+                var xuatkho = db.phieu_xuat_khos.SingleOrDefault(n => n.ma_phieu_xuat.Trim() == kt.ma_phieu_xuat.Trim());
                 if (xuatkho != null)
                 {
                     xuatkho.ma_kho = kt.ma_kho;

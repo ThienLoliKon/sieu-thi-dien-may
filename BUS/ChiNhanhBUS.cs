@@ -32,11 +32,42 @@ namespace BUS
             }
         }
 
-        public List<chi_nhanh> GetAllChiNhanh()
+        public List<ChiNhanh> GetAllChiNhanh()
         {
-            return chinhanhdll.GetAllChiNhanh();
+            List<ChiNhanh> list = new List<ChiNhanh>();
+            foreach(var cn in chinhanhdll.GetAllChiNhanh())
+            {
+                ChiNhanh chinhanh = new ChiNhanh();
+                chinhanh.machinhanh = cn.ma_chi_nhanh;
+                chinhanh.tenchinhanh = cn.ten_chi_nhanh;
+                chinhanh.diachi = cn.dia_chi;
+                chinhanh.khuvuc = cn.khu_vuc;
+                list.Add(chinhanh);
+            }
+            return list;
         }
-
+        
+        public List<ChiNhanh> searchChiNhanh(string ma, string ten = "")
+        {
+            List<ChiNhanh> list = new List<ChiNhanh>();
+            foreach (var cn in GetAllChiNhanh())
+            {
+                if(ten != "")
+                {
+                    if (cn.machinhanh.Trim() == ma.Trim() || cn.tenchinhanh.Trim().Contains(ten))
+                    {
+                        list.Add(cn);
+                    }
+                }else
+                {
+                    if (cn.machinhanh.Trim() == ma.Trim())
+                    {
+                        list.Add(cn);
+                    }
+                }
+            }
+            return list;
+        }
         public bool AddChiNhanh(ChiNhanh cn)
         {
             chi_nhanh chinhanh = new chi_nhanh();

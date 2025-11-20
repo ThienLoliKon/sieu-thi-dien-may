@@ -217,6 +217,12 @@
     <Compile Include="frmReportSanPhamBanChay.Designer.cs">
       <DependentUpon>frmReportSanPhamBanChay.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRPSanPhamTrongKhoTong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRPSanPhamTrongKhoTong.Designer.cs">
+      <DependentUpon>frmRPSanPhamTrongKhoTong.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -428,6 +434,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportSanPhamBanChay.resx">
       <DependentUpon>frmReportSanPhamBanChay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRPSanPhamTrongKhoTong.resx">
+      <DependentUpon>frmRPSanPhamTrongKhoTong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSanPham.resx">
       <DependentUpon>frmSanPham.cs</DependentUpon>

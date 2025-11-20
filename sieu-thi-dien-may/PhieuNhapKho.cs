@@ -37,9 +37,30 @@ namespace he_thong_dien_may
                 dgvPhieuNhapKho.DataSource = nhapkhobus.searchNhapKho(txtMaPhieu.TextButton, this.mkho);
             }
         }
-
+        public bool validAllFields()
+        {
+            if(!CheckTestCase.checkKhoangTrang(txtSoLuong.TextButton, txtDonGia.TextButton))
+            {
+                MessageBox.Show("Vui lòng không nhập khoảng trắng!");
+                return false;
+            }
+            if (!CheckTestCase.checkLenghtChuoi(txtMaPhieu.TextButton, 10))
+            {
+                MessageBox.Show("Mã phiếu không được vượt quá 10 kí tự!");
+            }
+            if(!CheckTestCase.checkChiChuaSo(txtSoLuong.TextButton))
+            {
+                MessageBox.Show("Số lượng chỉ được chứa kí tự số!");
+                return false;
+            }
+            return true;
+        }
         private void cyberButton1_Click(object sender, EventArgs e)
         {
+            if (!validAllFields())
+            {
+                return;
+            }
             var item = createPhieuNhapItem();
             nhapkhobus.addPhieuNhap(item);
             SanPhamTrongKhoTongBUS spktbus = new SanPhamTrongKhoTongBUS();
@@ -60,7 +81,11 @@ namespace he_thong_dien_may
 
         private void cyberButton2_Click(object sender, EventArgs e)
         {
-            if(dgvPhieuNhapKho.SelectedRows.Count <= 0)
+            if(!validAllFields() == false)
+            {
+                return;
+            }
+            if (dgvPhieuNhapKho.SelectedRows.Count <= 0)
             {
                 MessageBox.Show("Vui lòng chọn phiếu nhập kho cần sửa!");
                 return;

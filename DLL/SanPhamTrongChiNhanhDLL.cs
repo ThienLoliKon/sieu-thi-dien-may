@@ -23,7 +23,7 @@ namespace DLL
         }
         public void updateSoLuongNhapKho(string machinhanh, string masanpham, int soluong)
         {
-            var sptrongchinhanh = db.san_pham_trong_chi_nhanhs.Where(x => x.ma_chi_nhanh == machinhanh && x.ma_san_pham == masanpham).FirstOrDefault();
+            var sptrongchinhanh = db.san_pham_trong_chi_nhanhs.Where(x => x.ma_chi_nhanh.Trim() == machinhanh.Trim() && x.ma_san_pham.Trim() == masanpham.Trim()).FirstOrDefault();
             if (sptrongchinhanh != null)
             {
                 sptrongchinhanh.so_luong += soluong;

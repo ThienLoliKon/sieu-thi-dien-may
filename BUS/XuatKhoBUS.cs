@@ -47,6 +47,10 @@ namespace BUS
         }
         public int addXuatKho(XuatKho nk)
         {
+            if(checkValidXuatKho(nk.makho, nk.masanpham, nk.soluong) == false)
+            {
+                throw new Exception("Số lượng xuất kho vượt quá số lượng tồn trong kho!"+nk.makho+" "+nk.masanpham+" "+" "+ nk.soluong);
+            }
             DLL.phieu_xuat_kho xuatkho = new DLL.phieu_xuat_kho()
             {
                 ma_phieu_xuat = createMaPhieuXuat(),
@@ -64,6 +68,22 @@ namespace BUS
             {
                 throw new Exception(ex.Message);
             }
+        }
+        public bool checkValidXuatKho(string makho, string masanpham, int soluong)
+        {
+            SanPhamTrongKhoTongBUS sptktbus = new SanPhamTrongKhoTongBUS();
+            var listsptrongkhotong = sptktbus.getAllSanPhamTrongKhoTong(makho);
+            foreach (var item in listsptrongkhotong)
+            {
+                if(item.masanpham.Trim() == masanpham.Trim() && item.makho.Trim() == makho.Trim())
+                {
+                    if(item.soluong >= soluong)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
         public int updateXuatKho(XuatKho nk)
         {
@@ -83,7 +103,7 @@ namespace BUS
             var khotongcuoicung = xuatkhodll.getAllPhieuXuat().LastOrDefault();
             if (khotongcuoicung != null)
             {
-                string makhotongcuoi = khotongcuoicung.ma_kho;
+                string makhotongcuoi = khotongcuoicung.ma_phieu_xuat;
                 int so = int.Parse(makhotongcuoi.Substring(2)) + 1;
                 return "PX" + so.ToString();
             }
@@ -98,7 +118,7 @@ namespace BUS
             List<XuatKho> list = new List<XuatKho>();
             foreach (var item in getAllXuatKho())
             {
-                if (item.maphieu == maphieuxuat && item.makho == makho)
+                if (item.maphieu.Trim() == maphieuxuat.Trim() && item.makho.Trim() == makho.Trim())
                 {
                     list.Add(item);
                 }
@@ -110,7 +130,7 @@ namespace BUS
             List<XuatKho> list = new List<XuatKho>();
             foreach (var item in getAllXuatKho())
             {
-                if (item.makho == makho)
+                if (item.makho.Trim() == makho.Trim())
                 {
                     list.Add(item);
                 }

@@ -91,6 +91,7 @@
             this.cyberButton3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             this.cyberButton3.Timer_Effect_1 = 5;
             this.cyberButton3.Timer_RGB = 300;
+            this.cyberButton3.Click += new System.EventHandler(this.cyberButton3_Click);
             // 
             // cyberButton5
             // 

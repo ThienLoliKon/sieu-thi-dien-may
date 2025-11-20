@@ -49,5 +49,10 @@ namespace he_thong_dien_may
             SanPhamTrongChiNhanh sptcnform = new SanPhamTrongChiNhanh(dgvChiNhanh.SelectedRows[0].Cells[0].Value.ToString());
             sptcnform.ShowDialog();
         }
+
+        private void cyberButton3_Click(object sender, EventArgs e)
+        {
+            dgvChiNhanh.DataSource = chinhanhbus.searchChiNhanh(txtMaChiNhanh.TextButton, txtTenChiNhanh.TextButton);
+        }
     }
 }

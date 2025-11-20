@@ -157,7 +157,7 @@ namespace he_thong_dien_may
 
         private void cyberButton8_Click_1(object sender, EventArgs e)
         {
-            PhieuXuatKho pxk = new PhieuXuatKho(dgvKhoTong.SelectedRows[0].Cells[1].Value.ToString());
+            PhieuXuatKho pxk = new PhieuXuatKho(dgvKhoTong.SelectedRows[0].Cells[0].Value.ToString());
             pxk.ShowDialog();
         }
         private void selectGridXuatNhap()
@@ -270,6 +270,12 @@ namespace he_thong_dien_may
             txtQuanLy.TextButton = "";
             txtTenQuanLy.TextButton = "";
             txtSucChua.TextButton = "";
+        }
+
+        private void cyberButton6_Click(object sender, EventArgs e)
+        {
+            frmRPSanPhamTrongKhoTong rptkhotong = new frmRPSanPhamTrongKhoTong(dgvKhoTong.SelectedRows[0].Cells[0].Value.ToString());
+            rptkhotong.ShowDialog();
         }
     }
 }
