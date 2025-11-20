@@ -65,6 +65,7 @@ namespace stdm
 
 			//MessageBox.Show("Đăng nhập thành công!"); 
 			//         MessageBox.Show("Chi nhánh : "+ TaiKhoanBUS.currentChiNhanh);
+			//         MessageBox.Show("Mã nhân viên : " + TaiKhoanBUS.currentUserMaNV);
 			//         MessageBox.Show("Quyền : " + TaiKhoanBUS.currentUserQuyen);
 			MessageBox.Show("Đăng nhập thành công!");
 			this.Hide();
