@@ -13,6 +13,7 @@ namespace BUS
         public static string currentUserMaNV;
         public static string currentChiNhanh;
         public static string currentUserQuyen;
+        public static string stringConnection = "Data Source=LAPTOP-T2PFFCGC\\SQLEXPRESS;Initial Catalog=dien_may;Integrated Security=True;TrustServerCertificate=True";
 
 		private TaiKhoanDLL dal;
 
@@ -78,7 +79,25 @@ namespace BUS
             return dt;
         }
 
-        public DataTable GetAllTaiKhoanAsTable()
+		public bool CheckLogin(string maNV, string matKhau)
+		{
+			if (string.IsNullOrEmpty(maNV) || string.IsNullOrEmpty(matKhau))
+			{
+				return false;
+			}
+
+			bool ketQua = dal.KiemTraDangNhap(maNV, matKhau);
+
+			if (ketQua)
+			{
+				// Nếu đăng nhập đúng, lưu lại mã nhân viên để dùng cho các form khác (ví dụ lập hóa đơn)
+				currentUserMaNV = maNV.Trim();
+			}
+
+			return ketQua;
+		}
+
+		public DataTable GetAllTaiKhoanAsTable()
         {
             List<tai_khoan> taikhoans = dal.GetAllTaiKhoan(); 
 

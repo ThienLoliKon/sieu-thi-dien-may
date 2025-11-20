@@ -169,6 +169,7 @@ namespace BUS
             }
             return dt;
         }
+    
         public string getNameNV(string manv)
         {
             var nhanviens = dal.GetAllNhanVien();
@@ -182,4 +183,16 @@ namespace BUS
             return null;
         }
     }
+
+		// Kiểm tra nhân viên còn làm việc hay không
+		public bool KiemTraNhanVienConLamViec(string maNV)
+		{
+			NhanVienDLL nvDLL = new NhanVienDLL();
+			return nvDLL.CheckTrangThaiHoatDong(maNV);
+		}
+
+
+
+
+	
 }

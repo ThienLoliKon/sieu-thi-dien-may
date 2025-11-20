@@ -21,7 +21,6 @@ namespace DLL
 			return db.chi_tiet_hoa_dons.ToList();
 		}
 
-
 		public int addChiTietHoaDon(chi_tiet_hoa_don addItem)
 		{
 			try
@@ -45,7 +44,6 @@ namespace DLL
 			return 1;
 		}
 
-
 		public int updateChiTietHoaDon(chi_tiet_hoa_don updateNew)
 		{
 			var entityUpdate = db.chi_tiet_hoa_dons.SingleOrDefault(n => n.ma_hoa_don == updateNew.ma_hoa_don && n.ma_san_pham == updateNew.ma_san_pham);
@@ -60,8 +58,6 @@ namespace DLL
 			}
 			return 0;
 		}
-
-
 
 		public List<chi_tiet_hoa_don> searchByNameOrID(string name_id)
 		{

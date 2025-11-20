@@ -87,17 +87,40 @@ namespace DLL
         public List<nhan_vien> SearchNhanVien(string keyword)
         {
             return db.nhan_viens
-                .Where(nhanvien => nhanvien.ma_nhan_vien.Contains(keyword) || nhanvien.ho_va_ten.Contains(keyword) || nhanvien.ma_cap_bac.Contains(keyword) || nhanvien.so_dien_thoai.Contains(keyword) || nhanvien.dia_chi_thuong_tru.Contains(keyword) || nhanvien.ma_chi_nhanh.Contains(keyword) )
+                .Where(nhanvien => nhanvien.ma_nhan_vien.Contains(keyword) || nhanvien.ho_va_ten.Contains(keyword) || nhanvien.ma_cap_bac.Contains(keyword) || nhanvien.so_dien_thoai.Contains(keyword) || nhanvien.dia_chi_thuong_tru.Contains(keyword) || nhanvien.ma_chi_nhanh.Contains(keyword))
                 .ToList();
         }
-		public nhan_vien GetNhanVienByMaNV(string maNV)
-		{
-			// Dùng Trim() để xóa dấu cách của kiểu CHAR
-			return db.nhan_viens.SingleOrDefault(nv => nv.ma_nhan_vien.Trim() == maNV.Trim());
-		}
-		public bool check(string id)
+        public nhan_vien GetNhanVienByMaNV(string maNV)
+        {
+            // Dùng Trim() để xóa dấu cách của kiểu CHAR
+            return db.nhan_viens.SingleOrDefault(nv => nv.ma_nhan_vien.Trim() == maNV.Trim());
+        }
+        public bool check(string id)
         {
             return db.nhan_viens.Any(p => p.ma_nhan_vien == id);
         }
+
+        // Kiểm tra trạng thái hoạt động của nhân viên bằng mã nhân viên
+        public bool CheckTrangThaiHoatDong(string maNV)
+        {
+            using (DBSTDMDataContext db = new DBSTDMDataContext())
+            {
+                // 1. Tìm nhân viên theo mã (Nhớ Trim() vì database dùng char cố định)
+                var nhanVien = db.nhan_viens.FirstOrDefault(nv => nv.ma_nhan_vien.Trim() == maNV.Trim());
+
+                // 2. Kiểm tra
+                if (nhanVien != null)
+                {
+                    // Trả về true nếu trang_thai là true (1), ngược lại false
+                    // (Lưu ý: cột trang_thai trong DB có thể là bool? nên cần so sánh == true)
+                    return nhanVien.trang_thai == true;
+                }
+
+                return false; // Không tìm thấy nhân viên coi như không hoạt động
+            }
+        }
+
+
+
     }
 }
