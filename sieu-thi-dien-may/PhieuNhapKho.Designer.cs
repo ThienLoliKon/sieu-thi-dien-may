@@ -562,6 +562,7 @@
             // 
             // RTKhachHangForm
             // 
+            this.RTKhachHangForm.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RTKhachHangForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
             this.RTKhachHangForm.Controls.Add(this.cbxSanPham);
             this.RTKhachHangForm.Controls.Add(this.cyberButton3);
@@ -583,7 +584,6 @@
             this.RTKhachHangForm.Controls.Add(this.txtMaPhieu);
             this.RTKhachHangForm.Controls.Add(this.dgvPhieuNhapKho);
             this.RTKhachHangForm.Controls.Add(this.lblHeader);
-            this.RTKhachHangForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RTKhachHangForm.DrawIcon = false;
             this.RTKhachHangForm.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.RTKhachHangForm.HeadColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));

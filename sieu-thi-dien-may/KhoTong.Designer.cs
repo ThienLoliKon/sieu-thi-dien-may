@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cyberButton3 = new ReaLTaiizor.Controls.CyberButton();
             this.cyberButton5 = new ReaLTaiizor.Controls.CyberButton();
             this.cyberButton6 = new ReaLTaiizor.Controls.CyberButton();
@@ -63,6 +63,7 @@
             // cyberButton3
             // 
             this.cyberButton3.Alpha = 20;
+            this.cyberButton3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cyberButton3.BackColor = System.Drawing.Color.Transparent;
             this.cyberButton3.Background = true;
             this.cyberButton3.Background_WidthPen = 4F;
@@ -104,6 +105,7 @@
             // cyberButton5
             // 
             this.cyberButton5.Alpha = 20;
+            this.cyberButton5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cyberButton5.BackColor = System.Drawing.Color.Transparent;
             this.cyberButton5.Background = true;
             this.cyberButton5.Background_WidthPen = 4F;
@@ -145,6 +147,7 @@
             // cyberButton6
             // 
             this.cyberButton6.Alpha = 20;
+            this.cyberButton6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cyberButton6.BackColor = System.Drawing.Color.Transparent;
             this.cyberButton6.Background = true;
             this.cyberButton6.Background_WidthPen = 4F;
@@ -186,6 +189,7 @@
             // cyberButton4
             // 
             this.cyberButton4.Alpha = 20;
+            this.cyberButton4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cyberButton4.BackColor = System.Drawing.Color.Transparent;
             this.cyberButton4.Background = true;
             this.cyberButton4.Background_WidthPen = 4F;
@@ -227,6 +231,7 @@
             // cyberButton2
             // 
             this.cyberButton2.Alpha = 20;
+            this.cyberButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cyberButton2.BackColor = System.Drawing.Color.Transparent;
             this.cyberButton2.Background = true;
             this.cyberButton2.Background_WidthPen = 4F;
@@ -268,6 +273,7 @@
             // cyberButton1
             // 
             this.cyberButton1.Alpha = 20;
+            this.cyberButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cyberButton1.BackColor = System.Drawing.Color.Transparent;
             this.cyberButton1.Background = true;
             this.cyberButton1.Background_WidthPen = 4F;
@@ -308,6 +314,7 @@
             // 
             // thunderLabel5
             // 
+            this.thunderLabel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.thunderLabel5.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel5.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -319,6 +326,7 @@
             // 
             // thunderLabel6
             // 
+            this.thunderLabel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.thunderLabel6.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel6.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -331,6 +339,7 @@
             // txtSucChua
             // 
             this.txtSucChua.Alpha = 20;
+            this.txtSucChua.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtSucChua.BackColor = System.Drawing.Color.Transparent;
             this.txtSucChua.Background_WidthPen = 3F;
             this.txtSucChua.BackgroundPen = true;
@@ -361,6 +370,7 @@
             // txtDiaChi
             // 
             this.txtDiaChi.Alpha = 20;
+            this.txtDiaChi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtDiaChi.BackColor = System.Drawing.Color.Transparent;
             this.txtDiaChi.Background_WidthPen = 3F;
             this.txtDiaChi.BackgroundPen = true;
@@ -390,6 +400,7 @@
             // 
             // thunderLabel3
             // 
+            this.thunderLabel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.thunderLabel3.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel3.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -401,6 +412,7 @@
             // 
             // thunderLabel2
             // 
+            this.thunderLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.thunderLabel2.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel2.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -412,6 +424,7 @@
             // 
             // thunderLabel1
             // 
+            this.thunderLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.thunderLabel1.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel1.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -424,6 +437,7 @@
             // txtQuanLy
             // 
             this.txtQuanLy.Alpha = 20;
+            this.txtQuanLy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtQuanLy.BackColor = System.Drawing.Color.Transparent;
             this.txtQuanLy.Background_WidthPen = 3F;
             this.txtQuanLy.BackgroundPen = true;
@@ -457,6 +471,7 @@
             // txtTenKho
             // 
             this.txtTenKho.Alpha = 20;
+            this.txtTenKho.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTenKho.BackColor = System.Drawing.Color.Transparent;
             this.txtTenKho.Background_WidthPen = 3F;
             this.txtTenKho.BackgroundPen = true;
@@ -487,6 +502,7 @@
             // txtMaKho
             // 
             this.txtMaKho.Alpha = 20;
+            this.txtMaKho.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtMaKho.BackColor = System.Drawing.Color.Transparent;
             this.txtMaKho.Background_WidthPen = 3F;
             this.txtMaKho.BackgroundPen = true;
@@ -517,43 +533,44 @@
             // dgvKhoTong
             // 
             this.dgvKhoTong.AllowUserToResizeRows = false;
+            this.dgvKhoTong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvKhoTong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhoTong.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvKhoTong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvKhoTong.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvKhoTong.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvKhoTong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvKhoTong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvKhoTong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvKhoTong.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvKhoTong.Dock = System.Windows.Forms.DockStyle.Bottom;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvKhoTong.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvKhoTong.EnableHeadersVisualStyles = false;
             this.dgvKhoTong.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvKhoTong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvKhoTong.Location = new System.Drawing.Point(0, 455);
             this.dgvKhoTong.Name = "dgvKhoTong";
             this.dgvKhoTong.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvKhoTong.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvKhoTong.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvKhoTong.RowHeadersWidth = 51;
             this.dgvKhoTong.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvKhoTong.RowTemplate.Height = 24;
@@ -567,8 +584,7 @@
             // 
             // nightHeaderLabel1
             // 
-            this.nightHeaderLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nightHeaderLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.nightHeaderLabel1.AutoSize = true;
             this.nightHeaderLabel1.BackColor = System.Drawing.Color.Transparent;
             this.nightHeaderLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
@@ -587,6 +603,9 @@
             // 
             // RTKhachHangForm
             // 
+            this.RTKhachHangForm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.RTKhachHangForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
             this.RTKhachHangForm.Controls.Add(this.btnNhap);
             this.RTKhachHangForm.Controls.Add(this.btnXuat);
@@ -612,7 +631,6 @@
             this.RTKhachHangForm.Controls.Add(this.txtMaKho);
             this.RTKhachHangForm.Controls.Add(this.dgvKhoTong);
             this.RTKhachHangForm.Controls.Add(this.nightHeaderLabel1);
-            this.RTKhachHangForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RTKhachHangForm.DrawIcon = false;
             this.RTKhachHangForm.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.RTKhachHangForm.HeadColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
@@ -622,13 +640,13 @@
             this.RTKhachHangForm.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
             this.RTKhachHangForm.Size = new System.Drawing.Size(1582, 853);
             this.RTKhachHangForm.TabIndex = 1;
-            this.RTKhachHangForm.Text = "KhachHang";
             this.RTKhachHangForm.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
             this.RTKhachHangForm.TitleBarTextColor = System.Drawing.Color.Gainsboro;
             // 
             // btnNhap
             // 
             this.btnNhap.Alpha = 20;
+            this.btnNhap.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnNhap.BackColor = System.Drawing.Color.Transparent;
             this.btnNhap.Background = true;
             this.btnNhap.Background_WidthPen = 4F;
@@ -670,6 +688,7 @@
             // btnXuat
             // 
             this.btnXuat.Alpha = 20;
+            this.btnXuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnXuat.BackColor = System.Drawing.Color.Transparent;
             this.btnXuat.Background = true;
             this.btnXuat.Background_WidthPen = 4F;
@@ -710,6 +729,7 @@
             // 
             // thunderLabel4
             // 
+            this.thunderLabel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.thunderLabel4.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel4.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -722,6 +742,7 @@
             // txtTenQuanLy
             // 
             this.txtTenQuanLy.Alpha = 20;
+            this.txtTenQuanLy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTenQuanLy.BackColor = System.Drawing.Color.Transparent;
             this.txtTenQuanLy.Background_WidthPen = 3F;
             this.txtTenQuanLy.BackgroundPen = true;
@@ -754,6 +775,7 @@
             // 
             // lblDanhSachTrong
             // 
+            this.lblDanhSachTrong.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDanhSachTrong.BackColor = System.Drawing.Color.Transparent;
             this.lblDanhSachTrong.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDanhSachTrong.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -767,6 +789,7 @@
             // cyberButton7
             // 
             this.cyberButton7.Alpha = 20;
+            this.cyberButton7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cyberButton7.BackColor = System.Drawing.Color.Transparent;
             this.cyberButton7.Background = true;
             this.cyberButton7.Background_WidthPen = 4F;
@@ -815,8 +838,9 @@
             this.MaximumSize = new System.Drawing.Size(1920, 1020);
             this.Name = "KhoTong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "KhoTrong";
+            this.Text = "KhoTong";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhoTong)).EndInit();
             this.RTKhachHangForm.ResumeLayout(false);
             this.RTKhachHangForm.PerformLayout();
