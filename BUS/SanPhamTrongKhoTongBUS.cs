@@ -34,6 +34,11 @@ namespace BUS
                 {
                     continue;
                 }
+                if (item.so_luong <= 0)
+                {
+                    sanphamtrongkhotongdll.xoaSPTrongKhoTong();
+                    continue;
+                }
                 SanPhamTrongKhoTong sptkt = new SanPhamTrongKhoTong();
                 sptkt.makho = item.ma_kho;
                 sptkt.masanpham = item.ma_san_pham;
