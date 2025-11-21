@@ -123,7 +123,7 @@ namespace DLL
 		}
 		
 		public DBSTDMDataContext() :
-				base("Data Source=LAPTOP-T2PFFCGC\\SQLEXPRESS;Initial Catalog=dien_may;Integrated Security=True;TrustServerCertificate=True", mappingSource)
+				base("Data Source=MA\\SQLEXPRESS;Initial Catalog=dien_may;Integrated Security=True;TrustServerCertificate=True", mappingSource)
 		{
 			OnCreated();
 		}

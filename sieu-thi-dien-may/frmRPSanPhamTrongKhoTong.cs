@@ -1,5 +1,6 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
+using CrystalDecisions.Windows.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +31,9 @@ namespace stdm
         private void frmRPSanPhamTrongKhoTong_Load(object sender, EventArgs e)
         {
             ReportDocument rpt = new ReportDocument();
-            rpt.Load("rptSanPhamTrongKhoTong.rpt");
+            string reportPath = @"E:\testgit\sieu-thi-dien-may\sieu-thi-dien-may\RPSanPhamTrongKhoTong.rpt";
+            rpt.Load(reportPath);
+            //rpt.Load("E:\\testgit\\sieu-thi-dien-may\\sieu-thi-dien-may\\RPSanPhamTrongKhoTong.rpt");
             rpt.SetParameterValue("MaKho", this.makho);
             cRPSPTrongKhoTong.ReportSource = rpt;
         }

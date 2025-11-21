@@ -32,7 +32,7 @@ namespace he_thong_dien_may
             chinhanh.tenchinhanh = txtTenChiNhanh.TextButton;
             chinhanh.diachi = txtDiaChi.TextButton;
             chinhanh.khuvuc = cbxKhuVuc.SelectedValue.ToString();
-            
+            chinhanhbus.AddChiNhanh(chinhanh);
         }
 
         private void cyberButton4_Click(object sender, EventArgs e)
@@ -53,6 +53,18 @@ namespace he_thong_dien_may
         private void cyberButton3_Click(object sender, EventArgs e)
         {
             dgvChiNhanh.DataSource = chinhanhbus.searchChiNhanh(txtMaChiNhanh.TextButton, txtTenChiNhanh.TextButton);
+        }
+
+        private void dgvChiNhanh_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ChiNhanh_Load(object sender, EventArgs e)
+        {
+            dgvChiNhanh.DataSource = chinhanhbus.GetAllChiNhanh();
+            KhuVucBUS khuvucbus = new KhuVucBUS();
+            cbxKhuVuc.DataSource = khuvucbus.getAllKhuVuc();
         }
     }
 }

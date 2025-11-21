@@ -79,12 +79,12 @@ namespace BUS
             if (khotongcuoicung != null)
             {
                 string makhotongcuoi = khotongcuoicung.ma_kho;
-                int so = int.Parse(makhotongcuoi.Substring(3)) + 1;
-                return "KHO" + so.ToString();
+                int so = int.Parse(makhotongcuoi.Substring(2)) + 1;
+                return "KT" + so.ToString();
             }
             else
             {
-                return "KHO1000001";
+                return "KT10000001";
             }
         }
         public void xoaKhoTong(string makho)
