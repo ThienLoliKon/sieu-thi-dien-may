@@ -197,7 +197,7 @@ namespace he_thong_dien_may
                 return;
             }
 
-            DialogResult result = MessageBox.Show("Bạn có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Bạn có muốn sửa không ?", "Thông báo", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 try
@@ -210,18 +210,18 @@ namespace he_thong_dien_may
 
                     if (isdelete)
                     {
-                        MessageBox.Show("Xóa nhân viên thành công.");
+                        MessageBox.Show("Sửa nhân viên thành công.");
                         ClearInputControls();
                     }
                     else
                     {
-                        MessageBox.Show("Xóa nhân viên thất bại. (Có thể do lỗi database hoặc trùng khóa).");
+                        MessageBox.Show("Sửa nhân viên thất bại. (Có thể do lỗi database hoặc trùng khóa).");
                     }
                     LoadDL();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Lỗi nghiệp vụ khi thêm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Lỗi nghiệp vụ khi sửa: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             

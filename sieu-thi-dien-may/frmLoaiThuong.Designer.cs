@@ -175,6 +175,7 @@
             this.dgvLoaiThuong.Size = new System.Drawing.Size(989, 745);
             this.dgvLoaiThuong.TabIndex = 17;
             this.dgvLoaiThuong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiThuong_CellClick);
+            this.dgvLoaiThuong.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvLoaiThuong_MouseDoubleClick);
             // 
             // btnXoa
             // 

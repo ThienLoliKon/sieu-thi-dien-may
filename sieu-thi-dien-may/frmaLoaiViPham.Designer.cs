@@ -139,6 +139,7 @@
             this.dgvLoaiViPham.Size = new System.Drawing.Size(989, 745);
             this.dgvLoaiViPham.TabIndex = 17;
             this.dgvLoaiViPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiViPham_CellClick);
+            this.dgvLoaiViPham.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvLoaiViPham_MouseDoubleClick);
             // 
             // btnXoa
             // 

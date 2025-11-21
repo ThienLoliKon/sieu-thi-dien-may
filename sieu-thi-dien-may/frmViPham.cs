@@ -354,5 +354,11 @@ namespace he_thong_dien_may
                 MessageBox.Show($"Lỗi trong quá trình lọc: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void dgvViPham_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            LoadComboBoxData();
+            LoadDL();
+        }
     }
 }

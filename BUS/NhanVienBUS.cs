@@ -69,59 +69,14 @@ namespace BUS
             try
             {
                 dal.UpdateNhanVien(nhanvien);
-                return true; 
+                return true;
             }
             catch (Exception)
             {
                 return false;
             }
         }
-		public string timChiNhanhByMaNhanVien(string keyword)
-		{
-			List<nhan_vien> nhanviens = dal.SearchNhanVien(keyword);
-			if (nhanviens == null || nhanviens.Count == 0)
-			{
-				return null;
-			}
-
-			DataTable dt = new DataTable();
-			dt.Columns.Add("MaNV", typeof(string));
-			dt.Columns.Add("TenNV", typeof(string));
-			dt.Columns.Add("MaCB", typeof(string));
-			dt.Columns.Add("SDT", typeof(string));
-			dt.Columns.Add("DiaChi", typeof(string));
-			dt.Columns.Add("MaChiNhanh", typeof(string));
-			dt.Columns.Add("TrangThai", typeof(string));
-
-			foreach (var nv in nhanviens)
-			{
-				string chiNhanh = nv.ma_chi_nhanh;
-
-				return chiNhanh;
-			}
-			return null;
-		}
-
-		public string timQuyenByMaNhanVien(string keyword)
-		{
-			List<nhan_vien> nhanviens = dal.SearchNhanVien(keyword);
-			if (nhanviens == null || nhanviens.Count == 0)
-			{
-				return null;
-			}
-
-			foreach (var nv in nhanviens)
-			{
-				string chiNhanh = nv.ma_cap_bac;
-
-				return chiNhanh;
-			}
-			return null;
-		}
-
-
-
-		public DataTable timNhanVien(string keyword)
+        public string timChiNhanhByMaNhanVien(string keyword)
         {
             List<nhan_vien> nhanviens = dal.SearchNhanVien(keyword);
             if (nhanviens == null || nhanviens.Count == 0)
@@ -135,7 +90,52 @@ namespace BUS
             dt.Columns.Add("MaCB", typeof(string));
             dt.Columns.Add("SDT", typeof(string));
             dt.Columns.Add("DiaChi", typeof(string));
-            dt.Columns.Add("MaChiNhanh", typeof(string)); 
+            dt.Columns.Add("MaChiNhanh", typeof(string));
+            dt.Columns.Add("TrangThai", typeof(string));
+
+            foreach (var nv in nhanviens)
+            {
+                string chiNhanh = nv.ma_chi_nhanh;
+
+                return chiNhanh;
+            }
+            return null;
+        }
+
+        public string timQuyenByMaNhanVien(string keyword)
+        {
+            List<nhan_vien> nhanviens = dal.SearchNhanVien(keyword);
+            if (nhanviens == null || nhanviens.Count == 0)
+            {
+                return null;
+            }
+
+            foreach (var nv in nhanviens)
+            {
+                string chiNhanh = nv.ma_cap_bac;
+
+                return chiNhanh;
+            }
+            return null;
+        }
+
+
+
+        public DataTable timNhanVien(string keyword)
+        {
+            List<nhan_vien> nhanviens = dal.SearchNhanVien(keyword);
+            if (nhanviens == null || nhanviens.Count == 0)
+            {
+                return null;
+            }
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("MaNV", typeof(string));
+            dt.Columns.Add("TenNV", typeof(string));
+            dt.Columns.Add("MaCB", typeof(string));
+            dt.Columns.Add("SDT", typeof(string));
+            dt.Columns.Add("DiaChi", typeof(string));
+            dt.Columns.Add("MaChiNhanh", typeof(string));
             dt.Columns.Add("TrangThai", typeof(string));
 
             foreach (var nv in nhanviens)
@@ -160,7 +160,7 @@ namespace BUS
             dt.Columns.Add("MaCB", typeof(string));
             dt.Columns.Add("SDT", typeof(string));
             dt.Columns.Add("DiaChi", typeof(string));
-            dt.Columns.Add("MaChiNhanh", typeof(string)); 
+            dt.Columns.Add("MaChiNhanh", typeof(string));
             dt.Columns.Add("TrangThai", typeof(string));
 
             foreach (var nv in nhanviens)
@@ -169,30 +169,29 @@ namespace BUS
             }
             return dt;
         }
-    
+
         public string getNameNV(string manv)
         {
             var nhanviens = dal.GetAllNhanVien();
             foreach (var nv in nhanviens)
             {
-                if(nv.ma_nhan_vien.Trim() == manv.Trim())
+                if (nv.ma_nhan_vien.Trim() == manv.Trim())
                 {
                     return nv.ho_va_ten;
                 }
             }
             return null;
         }
-    }
 
 		// Kiểm tra nhân viên còn làm việc hay không
 		public bool KiemTraNhanVienConLamViec(string maNV)
-		{
-			NhanVienDLL nvDLL = new NhanVienDLL();
-			return nvDLL.CheckTrangThaiHoatDong(maNV);
-		}
+        {
+            NhanVienDLL nvDLL = new NhanVienDLL();
+            return nvDLL.CheckTrangThaiHoatDong(maNV);
+        }
 
 
-
+    }
 
 	
 }

@@ -338,6 +338,11 @@ namespace he_thong_dien_may
                 this.Close();
             }
         }
-        
+
+        private void dgvLuong_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            LoadComboBoxData();
+            LoadDL();
+        }
     }
 }

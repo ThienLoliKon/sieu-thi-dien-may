@@ -218,6 +218,7 @@
             this.dgvViPham.Size = new System.Drawing.Size(1598, 447);
             this.dgvViPham.TabIndex = 36;
             this.dgvViPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViPham_CellClick);
+            this.dgvViPham.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvViPham_MouseDoubleClick);
             // 
             // btnDong
             // 
