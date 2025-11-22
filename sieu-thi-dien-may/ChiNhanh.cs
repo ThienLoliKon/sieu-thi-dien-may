@@ -42,5 +42,18 @@ namespace he_thong_dien_may
             cbxKhuVuc.ValueMember = "makhu";
             dgvChiNhanh.DataSource = chinhanhbus.GetAllChiNhanhAsTable();
         }
+<<<<<<< Updated upstream
+=======
+
+        private void dgvChiNhanh_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void cyberButton3_Click(object sender, EventArgs e)
+        {
+            dgvChiNhanh.DataSource = chinhanhbus.searchChiNhanh(txtMaChiNhanh.TextButton, txtTenChiNhanh.TextButton);
+        }
+>>>>>>> Stashed changes
     }
 }

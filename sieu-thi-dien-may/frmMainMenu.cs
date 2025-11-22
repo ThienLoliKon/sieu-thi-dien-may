@@ -217,5 +217,95 @@ namespace he_thong_dien_may
         {
             
         }
+<<<<<<< Updated upstream
+=======
+
+		private void crownMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+		{
+
+		}
+
+		private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+            Form f = new Login();
+            f.Show();
+            this.Hide();
+		}
+
+		private void khuyếnMãiToolStripMenuItem2_Click(object sender, EventArgs e)
+		{
+			Form f = new frmKhuyenMai();
+			f.ShowDialog();
+		}
+
+		private void tsmiSPThinhHanhTheoKhuVic_Click(object sender, EventArgs e)
+		{
+			
+		}
+
+		private void tsmiDoanhThuCacChiNhanh_Click(object sender, EventArgs e)
+		{
+			
+		}
+
+
+		private void phanQuyenHienThi()
+		{
+			// Mặc định: Ẩn hết các menu quan trọng trước cho an toàn
+            tsQuanLyChiNhanh.Visible = false;
+            tsQuanLyKhuVuc.Visible = false;
+            tsBoPhanSanPham.Visible = false;
+            tsGiamDoc.Visible = false;
+            tsBaoCao.Visible = false;
+
+			// Bật lại theo từng quyền
+			switch (TaiKhoanBUS.currentUserQuyen)
+			{
+				case "CB10000001": // Nhân viên
+
+					break;
+
+				case "CB10000002": // Quản lý Chi nhánh
+                    tsQuanLyChiNhanh.Visible = true;
+					break;
+
+				case "CB10000003": // Quản lý Khu vực
+					tsQuanLyChiNhanh.Visible = true;
+					tsQuanLyKhuVuc.Visible = true;
+                    tsBaoCao.Visible = true;
+					break;
+
+				case "CB10000004": // Bộ phận Sản phẩm
+                    tsBoPhanSanPham.Visible = true;
+					break;
+
+				case "CB10000005": // Giám đốc (Full quyền)
+                    tsQuanLyChiNhanh.Visible = true;
+                    tsQuanLyKhuVuc.Visible = true;
+                    tsBoPhanSanPham.Visible = true;
+                    tsGiamDoc.Visible = true;
+                    tsBaoCao.Visible = true;
+					break;
+			}
+		}
+
+        private void bảngLươngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PhieuLuong f = new PhieuLuong();
+            f.ShowDialog();
+        }
+
+        private void lỗiViPhạmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DanhSachViPham f = new DanhSachViPham();
+            f.ShowDialog();
+        }
+
+        private void danhSáchNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DanhSachNhanVien f = new DanhSachNhanVien();
+            f.ShowDialog();
+        }
+>>>>>>> Stashed changes
     }
 }

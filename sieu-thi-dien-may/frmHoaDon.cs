@@ -115,5 +115,61 @@ namespace he_thong_dien_may
 				MessageBox.Show("loi" + ex);
 			}
 		}
+<<<<<<< Updated upstream
+=======
+
+		private void btnSua_Click(object sender, EventArgs e)
+		{
+			if (!checkDuLieuNhap())
+			{
+				return;
+			}
+			if (CheckTestCase.checkKhoangTrang(txtMaHoaDon.Text) == false)
+			{
+				MessageBox.Show("Vui lòng chọn dữ liệu muốn sửa");
+				return;
+			}
+			else if(!bus.UpdateHoaDon(txtMaHoaDon.Text, cboNhanVienLap.SelectedValue.ToString(), cboKhachHang.SelectedValue.ToString()))
+			{
+				MessageBox.Show("Sửa hóa đơn thành công");
+			}
+			else
+			{
+				MessageBox.Show("Sửa hóa đơn thất bại");
+			}
+			loadData();
+
+		}
+
+		private void txtTimKiem_TextChanged(object sender, EventArgs e)
+		{
+			string keyword = txtTimKiem.Text;
+
+			if (string.IsNullOrEmpty(keyword))
+			{
+				// Nếu ô tìm kiếm trống, xóa bộ lọc và hiển thị tất cả
+				bs.Filter = null;
+			}
+			else
+			{
+				string safeKeyword = keyword.Replace("'", "''");
+				bs.Filter = string.Format(
+				" ma_hoa_don LIKE '%{0}%' OR " +
+				" ma_nhan_vien_lap LIKE '%{0}%' OR " +
+				" ma_khach_hang LIKE '%{0}%'", // <-- Sửa ở đây																			  
+				safeKeyword);
+			}
+		}
+
+		private void btnXuatHoaDon_Click(object sender, EventArgs e)
+		{
+			if(CheckTestCase.checkKhoangTrang(txtMaHoaDon.Text) == false)
+			{
+				MessageBox.Show("Vui lòng chọn hóa đơn cần xuất");
+				return;
+			}
+			
+		}
+>>>>>>> Stashed changes
 	}
 }

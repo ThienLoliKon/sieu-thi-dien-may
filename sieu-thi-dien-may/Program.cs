@@ -14,7 +14,11 @@ namespace he_thong_dien_may
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< Updated upstream
 			Application.Run(new PhieuLuong());
+=======
+			Application.Run(new DanhSachNhanVien());
+>>>>>>> Stashed changes
 		}
 	}
 }
