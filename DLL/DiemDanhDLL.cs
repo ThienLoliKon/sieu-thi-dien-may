@@ -77,7 +77,7 @@ namespace DLL
             maxId++;
 
             // Tạo mã mới với tiền tố "DD" và đảm bảo đúng định dạng
-            return "DD" + maxId.ToString("D3");
+            return "DD" + maxId.ToString("D8");
         }
 
         public List<diem_danh> SearchDiemDanh(string keyword)

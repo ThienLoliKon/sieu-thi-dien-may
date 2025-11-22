@@ -151,6 +151,18 @@
     <Compile Include="frmHoaDon.Designer.cs">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInLoiViPham1NV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInLoiViPham1NV.Designer.cs">
+      <DependentUpon>frmInLoiViPham1NV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInThuong1NV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInThuong1NV.Designer.cs">
+      <DependentUpon>frmInThuong1NV.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmKhuyenMai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,10 +345,22 @@
       <DependentUpon>rptPhieuTiepNhanBaoHanh.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="rptThuongNhanVien.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptThuongNhanVien.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="rptTopSanPhamBanChay.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptTopSanPhamBanChay.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptViPhamNhanVien.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptViPhamNhanVien.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="SanPhamTrongChiNhanh.cs">
@@ -401,6 +425,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHoaDon.resx">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInLoiViPham1NV.resx">
+      <DependentUpon>frmInLoiViPham1NV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInThuong1NV.resx">
+      <DependentUpon>frmInThuong1NV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKhuyenMai.resx">
       <DependentUpon>frmKhuyenMai.cs</DependentUpon>
@@ -505,9 +535,17 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptPhieuTiepNhanBaoHanh.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptThuongNhanVien.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptThuongNhanVien.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptTopSanPhamBanChay.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptTopSanPhamBanChay.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptViPhamNhanVien.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptViPhamNhanVien.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SanPhamTrongChiNhanh.resx">
       <DependentUpon>SanPhamTrongChiNhanh.cs</DependentUpon>

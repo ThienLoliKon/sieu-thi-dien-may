@@ -83,7 +83,7 @@ namespace DLL
 
             maxId++;
             // Tạo mã mới với tiền tố "VP" và đảm bảo đúng định dạng
-            return "LV" + maxId.ToString("D3");
+            return "LV" + maxId.ToString("D8");
         }
 
         public List<loai_vi_pham> SearchLoaiViPham(string keyword)

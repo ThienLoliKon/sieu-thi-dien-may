@@ -51,6 +51,7 @@
             this.txtMucThuong = new ReaLTaiizor.Controls.ForeverTextBox();
             this.foreverForm1 = new ReaLTaiizor.Forms.ForeverForm();
             this.txtMaThuong = new ReaLTaiizor.Controls.ForeverTextBox();
+            this.btnInDS = new ReaLTaiizor.Controls.CyberButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuong)).BeginInit();
             this.foreverForm1.SuspendLayout();
             this.SuspendLayout();
@@ -258,7 +259,7 @@
             this.btnDong.Lighting = false;
             this.btnDong.LinearGradient_Background = false;
             this.btnDong.LinearGradientPen = false;
-            this.btnDong.Location = new System.Drawing.Point(1142, 262);
+            this.btnDong.Location = new System.Drawing.Point(1174, 262);
             this.btnDong.Name = "btnDong";
             this.btnDong.PenWidth = 15;
             this.btnDong.Rounding = true;
@@ -299,7 +300,7 @@
             this.btnXoa.Lighting = false;
             this.btnXoa.LinearGradient_Background = false;
             this.btnXoa.LinearGradientPen = false;
-            this.btnXoa.Location = new System.Drawing.Point(824, 262);
+            this.btnXoa.Location = new System.Drawing.Point(917, 262);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.PenWidth = 15;
             this.btnXoa.Rounding = true;
@@ -340,7 +341,7 @@
             this.btnLuu.Lighting = false;
             this.btnLuu.LinearGradient_Background = false;
             this.btnLuu.LinearGradientPen = false;
-            this.btnLuu.Location = new System.Drawing.Point(482, 262);
+            this.btnLuu.Location = new System.Drawing.Point(381, 262);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.PenWidth = 15;
             this.btnLuu.Rounding = true;
@@ -498,6 +499,7 @@
             this.foreverForm1.Controls.Add(this.btnLoc);
             this.foreverForm1.Controls.Add(this.dgvThuong);
             this.foreverForm1.Controls.Add(this.btnDong);
+            this.foreverForm1.Controls.Add(this.btnInDS);
             this.foreverForm1.Controls.Add(this.btnXoa);
             this.foreverForm1.Controls.Add(this.btnLuu);
             this.foreverForm1.Controls.Add(this.btnThem);
@@ -544,6 +546,47 @@
             this.txtMaThuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtMaThuong.UseSystemPasswordChar = false;
             // 
+            // btnInDS
+            // 
+            this.btnInDS.Alpha = 20;
+            this.btnInDS.BackColor = System.Drawing.Color.Transparent;
+            this.btnInDS.Background = true;
+            this.btnInDS.Background_WidthPen = 4F;
+            this.btnInDS.BackgroundPen = true;
+            this.btnInDS.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnInDS.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnInDS.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.btnInDS.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnInDS.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnInDS.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnInDS.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.btnInDS.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.btnInDS.Effect_1 = true;
+            this.btnInDS.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnInDS.Effect_1_Transparency = 25;
+            this.btnInDS.Effect_2 = true;
+            this.btnInDS.Effect_2_ColorBackground = System.Drawing.Color.White;
+            this.btnInDS.Effect_2_Transparency = 20;
+            this.btnInDS.Font = new System.Drawing.Font("Arial", 11F);
+            this.btnInDS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.btnInDS.Lighting = false;
+            this.btnInDS.LinearGradient_Background = false;
+            this.btnInDS.LinearGradientPen = false;
+            this.btnInDS.Location = new System.Drawing.Point(671, 262);
+            this.btnInDS.Name = "btnInDS";
+            this.btnInDS.PenWidth = 15;
+            this.btnInDS.Rounding = true;
+            this.btnInDS.RoundingInt = 70;
+            this.btnInDS.Size = new System.Drawing.Size(130, 50);
+            this.btnInDS.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.btnInDS.TabIndex = 34;
+            this.btnInDS.Tag = "Cyber";
+            this.btnInDS.TextButton = "In DS";
+            this.btnInDS.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btnInDS.Timer_Effect_1 = 5;
+            this.btnInDS.Timer_RGB = 300;
+            this.btnInDS.Click += new System.EventHandler(this.btnInDS_Click);
+            // 
             // frmThuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -586,5 +629,6 @@
         private ReaLTaiizor.Controls.ForeverTextBox txtMucThuong;
         private ReaLTaiizor.Forms.ForeverForm foreverForm1;
         private ReaLTaiizor.Controls.ForeverTextBox txtMaThuong;
+        private ReaLTaiizor.Controls.CyberButton btnInDS;
     }
 }

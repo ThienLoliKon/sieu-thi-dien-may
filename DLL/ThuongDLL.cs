@@ -89,7 +89,7 @@ namespace DLL
 
             maxId++;
             // Tạo mã mới với tiền tố "T" và đảm bảo đúng định dạng (ví dụ: T001)
-            return "T" + maxId.ToString("D3");
+            return "T" + maxId.ToString("D9");
         }
 
         public List<thuong> SearchThuong(string keyword)

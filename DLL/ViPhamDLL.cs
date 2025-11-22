@@ -65,7 +65,7 @@ namespace DLL
                     .Max();
             }
             maxId++;
-            return "VP" + maxId.ToString("D4"); // Dùng D4 vì mã vi phạm thường dài
+            return "VP" + maxId.ToString("D8"); // Dùng D4 vì mã vi phạm thường dài
         }
 
         public List<vi_pham> SearchViPham(string keyword)

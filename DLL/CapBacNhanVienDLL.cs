@@ -80,7 +80,7 @@ namespace DLL
             maxId++;
 
             // Tạo mã mới với tiền tố "CB" và đảm bảo đúng định dạng
-            return "CB" + maxId.ToString("D3");
+            return "CB" + maxId.ToString("D8");
         }
 
         public List<cap_bac_nhan_vien> SearchCapBacNhanVien(string keyword)

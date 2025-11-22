@@ -163,5 +163,42 @@ namespace BUS
                 return (double)(query.Sum() ?? 0.0);
             }
         }
+        public DataTable LayDuLieuInBaoCao(string maNV)
+        {
+            using (var db = new DBSTDMDataContext())
+            {
+                var query = from vp in db.vi_phams
+                            join nv in db.nhan_viens on vp.ma_nhan_vien equals nv.ma_nhan_vien
+                            join lvp in db.loai_vi_phams on vp.ma_loai_vi_pham equals lvp.ma_loai_vi_pham
+                            where vp.ma_nhan_vien == maNV 
+                            select new
+                            {
+                                MaVP = vp.ma_vi_pham,
+                                MaNV = vp.ma_nhan_vien,
+                                TenNV = nv.ho_va_ten,       // Lấy tên để in
+                                TenLoaiVP = lvp.mo_ta_vi_pham, // Lấy tên lỗi
+                                ThoiGianVP = vp.thoi_gian_vi_pham,
+                                MucPhat = lvp.muc_phat,
+                                TrangThai = vp.trang_thai == true ? "Hoàn thành" : "Chưa đóng phạt"
+                            };
+
+                // Chuyển kết quả LINQ sang DataTable
+                DataTable dt = new DataTable();
+                dt.Columns.Add("MaVP");
+                dt.Columns.Add("MaNV");
+                dt.Columns.Add("TenNV");
+                dt.Columns.Add("TenLoaiVP");
+                dt.Columns.Add("ThoiGianVP", typeof(DateTime));
+                dt.Columns.Add("MucPhat", typeof(double)); // Hoặc decimal tùy DB
+                dt.Columns.Add("TrangThai");
+
+                foreach (var item in query)
+                {
+                    dt.Rows.Add(item.MaVP, item.MaNV, item.TenNV, item.TenLoaiVP, item.ThoiGianVP, item.MucPhat, item.TrangThai);
+                }
+
+                return dt;
+            }
+        }
     }
 }
