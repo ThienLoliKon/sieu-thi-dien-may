@@ -30,6 +30,7 @@
         {
             this.RTKhachHangForm = new ReaLTaiizor.Forms.NightForm();
             this.cRPSPTrongKhoTong = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.RPSanPhamTrongKhoTong1 = new stdm.RPSanPhamTrongKhoTong();
             this.RTKhachHangForm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,12 +54,13 @@
             // 
             // cRPSPTrongKhoTong
             // 
-            this.cRPSPTrongKhoTong.ActiveViewIndex = -1;
+            this.cRPSPTrongKhoTong.ActiveViewIndex = 0;
             this.cRPSPTrongKhoTong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cRPSPTrongKhoTong.Cursor = System.Windows.Forms.Cursors.Default;
             this.cRPSPTrongKhoTong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cRPSPTrongKhoTong.Location = new System.Drawing.Point(0, 31);
             this.cRPSPTrongKhoTong.Name = "cRPSPTrongKhoTong";
+            this.cRPSPTrongKhoTong.ReportSource = this.RPSanPhamTrongKhoTong1;
             this.cRPSPTrongKhoTong.Size = new System.Drawing.Size(1582, 822);
             this.cRPSPTrongKhoTong.TabIndex = 0;
             this.cRPSPTrongKhoTong.Load += new System.EventHandler(this.cRPSPTrongKhoTong_Load);
@@ -85,6 +87,7 @@
 
         private ReaLTaiizor.Forms.NightForm RTKhachHangForm;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer cRPSPTrongKhoTong;
+        private RPSanPhamTrongKhoTong RPSanPhamTrongKhoTong1;
         //private RPSanPhamTrongKhoTong RPSanPhamTrongKhoTong1;
     }
 }

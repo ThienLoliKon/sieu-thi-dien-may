@@ -34,11 +34,12 @@ namespace stdm
 		private void cyberButton1_Click(object sender, EventArgs e)
 		{
 			if (checkTaiKhoan() == false)
-			{
+			
 			{			
 				MessageBox.Show("Sai tài khoản hoặc mật khẩu! Vui lòng thử lại.");
 				return;
 			}
+
 			if (busNV.KiemTraNhanVienConLamViec(TaiKhoanBUS.currentUserMaNV) == false)
 			{
 				MessageBox.Show("Tài khoản này đã bị KHÓA hoặc nhân viên đã nghỉ việc!",
@@ -57,9 +58,6 @@ namespace stdm
    //         MessageBox.Show("Mã nhân viên : " + TaiKhoanBUS.currentUserMaNV);
    //         MessageBox.Show("Quyền : " + TaiKhoanBUS.currentUserQuyen);
 			MessageBox.Show("Đăng nhập thành công!");
-			MessageBox.Show("Chi nhánh : " + TaiKhoanBUS.currentChiNhanh);
-			MessageBox.Show("Mã nhân viên : " + TaiKhoanBUS.currentUserMaNV);
-			MessageBox.Show("Quyền : " + TaiKhoanBUS.currentUserQuyen);
 			f.Show();
 			this.Hide();
 		}
@@ -68,5 +66,5 @@ namespace stdm
 
 
 		
-	}
+	
 }

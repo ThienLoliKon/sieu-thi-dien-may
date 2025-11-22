@@ -76,12 +76,13 @@
             this.cyberButton3.Lighting = false;
             this.cyberButton3.LinearGradient_Background = false;
             this.cyberButton3.LinearGradientPen = false;
-            this.cyberButton3.Location = new System.Drawing.Point(1440, 199);
+            this.cyberButton3.Location = new System.Drawing.Point(1080, 162);
+            this.cyberButton3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cyberButton3.Name = "cyberButton3";
             this.cyberButton3.PenWidth = 15;
             this.cyberButton3.Rounding = true;
             this.cyberButton3.RoundingInt = 70;
-            this.cyberButton3.Size = new System.Drawing.Size(130, 50);
+            this.cyberButton3.Size = new System.Drawing.Size(98, 41);
             this.cyberButton3.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.cyberButton3.TabIndex = 32;
             this.cyberButton3.Tag = "Cyber";
@@ -117,12 +118,13 @@
             this.cyberButton5.Lighting = false;
             this.cyberButton5.LinearGradient_Background = false;
             this.cyberButton5.LinearGradientPen = false;
-            this.cyberButton5.Location = new System.Drawing.Point(1440, 322);
+            this.cyberButton5.Location = new System.Drawing.Point(1080, 262);
+            this.cyberButton5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cyberButton5.Name = "cyberButton5";
             this.cyberButton5.PenWidth = 15;
             this.cyberButton5.Rounding = true;
             this.cyberButton5.RoundingInt = 70;
-            this.cyberButton5.Size = new System.Drawing.Size(130, 50);
+            this.cyberButton5.Size = new System.Drawing.Size(98, 41);
             this.cyberButton5.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.cyberButton5.TabIndex = 31;
             this.cyberButton5.Tag = "Cyber";
@@ -158,12 +160,13 @@
             this.cyberButton6.Lighting = false;
             this.cyberButton6.LinearGradient_Background = false;
             this.cyberButton6.LinearGradientPen = false;
-            this.cyberButton6.Location = new System.Drawing.Point(1268, 322);
+            this.cyberButton6.Location = new System.Drawing.Point(951, 262);
+            this.cyberButton6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cyberButton6.Name = "cyberButton6";
             this.cyberButton6.PenWidth = 15;
             this.cyberButton6.Rounding = true;
             this.cyberButton6.RoundingInt = 70;
-            this.cyberButton6.Size = new System.Drawing.Size(130, 50);
+            this.cyberButton6.Size = new System.Drawing.Size(98, 41);
             this.cyberButton6.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.cyberButton6.TabIndex = 30;
             this.cyberButton6.Tag = "Cyber";
@@ -199,12 +202,13 @@
             this.cyberButton4.Lighting = false;
             this.cyberButton4.LinearGradient_Background = false;
             this.cyberButton4.LinearGradientPen = false;
-            this.cyberButton4.Location = new System.Drawing.Point(1268, 199);
+            this.cyberButton4.Location = new System.Drawing.Point(951, 162);
+            this.cyberButton4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cyberButton4.Name = "cyberButton4";
             this.cyberButton4.PenWidth = 15;
             this.cyberButton4.Rounding = true;
             this.cyberButton4.RoundingInt = 70;
-            this.cyberButton4.Size = new System.Drawing.Size(130, 50);
+            this.cyberButton4.Size = new System.Drawing.Size(98, 41);
             this.cyberButton4.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.cyberButton4.TabIndex = 28;
             this.cyberButton4.Tag = "Cyber";
@@ -240,12 +244,13 @@
             this.cyberButton2.Lighting = false;
             this.cyberButton2.LinearGradient_Background = false;
             this.cyberButton2.LinearGradientPen = false;
-            this.cyberButton2.Location = new System.Drawing.Point(1440, 80);
+            this.cyberButton2.Location = new System.Drawing.Point(1080, 65);
+            this.cyberButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cyberButton2.Name = "cyberButton2";
             this.cyberButton2.PenWidth = 15;
             this.cyberButton2.Rounding = true;
             this.cyberButton2.RoundingInt = 70;
-            this.cyberButton2.Size = new System.Drawing.Size(130, 50);
+            this.cyberButton2.Size = new System.Drawing.Size(98, 41);
             this.cyberButton2.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.cyberButton2.TabIndex = 27;
             this.cyberButton2.Tag = "Cyber";
@@ -281,12 +286,13 @@
             this.cyberButton1.Lighting = false;
             this.cyberButton1.LinearGradient_Background = false;
             this.cyberButton1.LinearGradientPen = false;
-            this.cyberButton1.Location = new System.Drawing.Point(1268, 80);
+            this.cyberButton1.Location = new System.Drawing.Point(951, 65);
+            this.cyberButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cyberButton1.Name = "cyberButton1";
             this.cyberButton1.PenWidth = 15;
             this.cyberButton1.Rounding = true;
             this.cyberButton1.RoundingInt = 70;
-            this.cyberButton1.Size = new System.Drawing.Size(130, 50);
+            this.cyberButton1.Size = new System.Drawing.Size(98, 41);
             this.cyberButton1.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.cyberButton1.TabIndex = 26;
             this.cyberButton1.Tag = "Cyber";
@@ -301,9 +307,10 @@
             this.thunderLabel3.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel3.Location = new System.Drawing.Point(43, 354);
+            this.thunderLabel3.Location = new System.Drawing.Point(32, 288);
+            this.thunderLabel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.thunderLabel3.Name = "thunderLabel3";
-            this.thunderLabel3.Size = new System.Drawing.Size(127, 18);
+            this.thunderLabel3.Size = new System.Drawing.Size(95, 15);
             this.thunderLabel3.TabIndex = 18;
             this.thunderLabel3.Text = "Quản lý";
             // 
@@ -312,9 +319,10 @@
             this.thunderLabel2.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel2.Location = new System.Drawing.Point(43, 231);
+            this.thunderLabel2.Location = new System.Drawing.Point(32, 188);
+            this.thunderLabel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.thunderLabel2.Name = "thunderLabel2";
-            this.thunderLabel2.Size = new System.Drawing.Size(127, 18);
+            this.thunderLabel2.Size = new System.Drawing.Size(95, 15);
             this.thunderLabel2.TabIndex = 17;
             this.thunderLabel2.Text = "Tên khu vực";
             // 
@@ -323,9 +331,10 @@
             this.thunderLabel1.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel1.Location = new System.Drawing.Point(43, 112);
+            this.thunderLabel1.Location = new System.Drawing.Point(32, 91);
+            this.thunderLabel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.thunderLabel1.Name = "thunderLabel1";
-            this.thunderLabel1.Size = new System.Drawing.Size(127, 18);
+            this.thunderLabel1.Size = new System.Drawing.Size(95, 15);
             this.thunderLabel1.TabIndex = 15;
             this.thunderLabel1.Text = "Mã khu vực";
             // 
@@ -341,17 +350,18 @@
             this.txtTenKhu.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
             this.txtTenKhu.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
             this.txtTenKhu.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.txtTenKhu.Font = new System.Drawing.Font("Arial", 10F);
+            this.txtTenKhu.Font = new System.Drawing.Font("Arial", 8F);
             this.txtTenKhu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.txtTenKhu.Lighting = false;
             this.txtTenKhu.LinearGradientPen = false;
-            this.txtTenKhu.Location = new System.Drawing.Point(176, 209);
+            this.txtTenKhu.Location = new System.Drawing.Point(132, 170);
+            this.txtTenKhu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTenKhu.Name = "txtTenKhu";
             this.txtTenKhu.PenWidth = 15;
             this.txtTenKhu.RGB = false;
             this.txtTenKhu.Rounding = true;
             this.txtTenKhu.RoundingInt = 60;
-            this.txtTenKhu.Size = new System.Drawing.Size(418, 40);
+            this.txtTenKhu.Size = new System.Drawing.Size(314, 32);
             this.txtTenKhu.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.txtTenKhu.TabIndex = 14;
             this.txtTenKhu.Tag = "Cyber";
@@ -371,17 +381,18 @@
             this.txtMaKhu.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
             this.txtMaKhu.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
             this.txtMaKhu.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            this.txtMaKhu.Font = new System.Drawing.Font("Arial", 10F);
+            this.txtMaKhu.Font = new System.Drawing.Font("Arial", 8F);
             this.txtMaKhu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.txtMaKhu.Lighting = false;
             this.txtMaKhu.LinearGradientPen = false;
-            this.txtMaKhu.Location = new System.Drawing.Point(176, 90);
+            this.txtMaKhu.Location = new System.Drawing.Point(132, 73);
+            this.txtMaKhu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMaKhu.Name = "txtMaKhu";
             this.txtMaKhu.PenWidth = 15;
             this.txtMaKhu.RGB = false;
             this.txtMaKhu.Rounding = true;
             this.txtMaKhu.RoundingInt = 60;
-            this.txtMaKhu.Size = new System.Drawing.Size(418, 40);
+            this.txtMaKhu.Size = new System.Drawing.Size(314, 32);
             this.txtMaKhu.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             this.txtMaKhu.TabIndex = 9;
             this.txtMaKhu.Tag = "Cyber";
@@ -417,7 +428,8 @@
             this.dgvKhuVuc.EnableHeadersVisualStyles = false;
             this.dgvKhuVuc.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvKhuVuc.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvKhuVuc.Location = new System.Drawing.Point(0, 455);
+            this.dgvKhuVuc.Location = new System.Drawing.Point(0, 340);
+            this.dgvKhuVuc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvKhuVuc.Name = "dgvKhuVuc";
             this.dgvKhuVuc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -432,7 +444,7 @@
             this.dgvKhuVuc.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvKhuVuc.RowTemplate.Height = 24;
             this.dgvKhuVuc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKhuVuc.Size = new System.Drawing.Size(1582, 398);
+            this.dgvKhuVuc.Size = new System.Drawing.Size(1152, 323);
             this.dgvKhuVuc.TabIndex = 2;
             // 
             // nightHeaderLabel1
@@ -444,11 +456,12 @@
             this.nightHeaderLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
             this.nightHeaderLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.nightHeaderLabel1.LeftSideForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.nightHeaderLabel1.Location = new System.Drawing.Point(630, 31);
+            this.nightHeaderLabel1.Location = new System.Drawing.Point(472, 25);
+            this.nightHeaderLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nightHeaderLabel1.Name = "nightHeaderLabel1";
             this.nightHeaderLabel1.RightSideForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(171)))), ((int)(((byte)(176)))));
             this.nightHeaderLabel1.Side = ReaLTaiizor.Controls.NightHeaderLabel.PanelSide.LeftPanel;
-            this.nightHeaderLabel1.Size = new System.Drawing.Size(282, 50);
+            this.nightHeaderLabel1.Size = new System.Drawing.Size(226, 40);
             this.nightHeaderLabel1.TabIndex = 1;
             this.nightHeaderLabel1.Text = "Quản lý khu vực";
             this.nightHeaderLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -477,10 +490,11 @@
             this.RTKhachHangForm.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.RTKhachHangForm.HeadColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
             this.RTKhachHangForm.Location = new System.Drawing.Point(0, 0);
-            this.RTKhachHangForm.MinimumSize = new System.Drawing.Size(100, 42);
+            this.RTKhachHangForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RTKhachHangForm.MinimumSize = new System.Drawing.Size(75, 34);
             this.RTKhachHangForm.Name = "RTKhachHangForm";
-            this.RTKhachHangForm.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
-            this.RTKhachHangForm.Size = new System.Drawing.Size(1582, 853);
+            this.RTKhachHangForm.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
+            this.RTKhachHangForm.Size = new System.Drawing.Size(1152, 663);
             this.RTKhachHangForm.TabIndex = 2;
             this.RTKhachHangForm.Text = "KhuVuc";
             this.RTKhachHangForm.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
@@ -489,21 +503,23 @@
             // cbxQuanLy
             // 
             this.cbxQuanLy.FormattingEnabled = true;
-            this.cbxQuanLy.ItemHeight = 24;
-            this.cbxQuanLy.Location = new System.Drawing.Point(176, 342);
+            this.cbxQuanLy.ItemHeight = 23;
+            this.cbxQuanLy.Location = new System.Drawing.Point(132, 278);
+            this.cbxQuanLy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxQuanLy.Name = "cbxQuanLy";
-            this.cbxQuanLy.Size = new System.Drawing.Size(418, 30);
+            this.cbxQuanLy.Size = new System.Drawing.Size(314, 29);
             this.cbxQuanLy.TabIndex = 34;
             this.cbxQuanLy.UseSelectable = true;
             // 
             // KhuVuc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1582, 853);
+            this.ClientSize = new System.Drawing.Size(1152, 663);
             this.Controls.Add(this.RTKhachHangForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(1920, 1020);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(1440, 829);
             this.Name = "KhuVuc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KhuVuc";

@@ -32,7 +32,7 @@ namespace he_thong_dien_may
             chinhanh.tenchinhanh = txtTenChiNhanh.TextButton;
             chinhanh.diachi = txtDiaChi.TextButton;
             chinhanh.khuvuc = cbxKhuVuc.SelectedValue.ToString();
-            
+            chinhanhbus.AddChiNhanh(chinhanh);
         }
 
         private void cyberButton4_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace he_thong_dien_may
             cbxKhuVuc.DataSource = khuvucbus.getAllKhuVuc();
             cbxKhuVuc.DisplayMember = "tenkhu";
             cbxKhuVuc.ValueMember = "makhu";
-            dgvChiNhanh.DataSource = chinhanhbus.GetAllChiNhanhAsTable();
+            dgvChiNhanh.DataSource = chinhanhbus.GetAllChiNhanh();
         }
 
         private void dgvChiNhanh_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -53,6 +53,35 @@ namespace he_thong_dien_may
         private void cyberButton3_Click(object sender, EventArgs e)
         {
             dgvChiNhanh.DataSource = chinhanhbus.searchChiNhanh(txtMaChiNhanh.TextButton, txtTenChiNhanh.TextButton);
+        }
+
+        private void dgvChiNhanh_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ChiNhanh_Load(object sender, EventArgs e)
+        {
+            dgvChiNhanh.DataSource = chinhanhbus.GetAllChiNhanh();
+            KhuVucBUS khuvucbus = new KhuVucBUS();
+            cbxKhuVuc.DataSource = khuvucbus.getAllKhuVuc();
+        }
+
+        private void cyberButton2_Click(object sender, EventArgs e)
+        {
+            ChiNhanhBUS.ChiNhanh chinhanh = new ChiNhanhBUS.ChiNhanh();
+            chinhanh.machinhanh = dgvChiNhanh.SelectedRows[0].Cells[0].Value.ToString();
+            chinhanh.tenchinhanh = txtTenChiNhanh.TextButton;
+            chinhanh.diachi = txtDiaChi.TextButton;
+            chinhanh.khuvuc = cbxKhuVuc.SelectedValue.ToString();
+            chinhanhbus.UpdateChiNhanhstring(chinhanh.machinhanh, chinhanh.tenchinhanh, chinhanh.diachi, chinhanh.khuvuc);
+        }
+
+        private void dgvChiNhanh_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtDiaChi.TextButton = dgvChiNhanh.SelectedRows[0].Cells[2].Value.ToString();
+            txtTenChiNhanh.TextButton = dgvChiNhanh.SelectedRows[0].Cells[1].Value.ToString();
+            //cbxKhuVuc.SelectedValue = dgvChiNhanh.SelectedRows[0].Cells[3].Value.ToString();
         }
     }
 }

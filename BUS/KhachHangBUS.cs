@@ -41,8 +41,9 @@ namespace BUS
                 kh.tenkhachhang = item.ho_ten_khach_hang;
                 kh.sdt = item.sdt;
                 kh.diachi = item.diachi;
-				//kh.xephang = item.xep_hang;
-				kh.diem = item.diem.HasValue ? item.diem.Value : 0;
+                //kh.xephang = item.xep_hang;
+                kh.diem = tinhTongTienHoaDonThanhDiem(kh.makhachhang);
+				//kh.diem = item.diem.HasValue ? item.diem.Value : 0;
                 kh.xephang = xepHangKhachHang(kh.diem);
                 //kh.diem = item.diem.HasValue ? item.diem.Value : 0;
                 list.Add(kh);
@@ -57,7 +58,7 @@ namespace BUS
                 ho_ten_khach_hang = kh.tenkhachhang,
                 sdt = kh.sdt,
                 diachi = kh.diachi,
-                xep_hang = "bronze",
+                xep_hang = "XH10000001",
                 diem = 0
             };
             try
@@ -127,7 +128,7 @@ namespace BUS
         }
         public string xepHangKhachHang(int diem)
         {
-            string rank = "bronze";
+            string rank = "XH10000001";
             var listxh = khachhangdll.getAllXepHang();
             foreach (var xh in listxh)
             {

@@ -47,6 +47,7 @@
             // 
             // lblDanhSachTrong
             // 
+            this.lblDanhSachTrong.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblDanhSachTrong.BackColor = System.Drawing.Color.Transparent;
             this.lblDanhSachTrong.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDanhSachTrong.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -59,6 +60,7 @@
             // cyberButton6
             // 
             this.cyberButton6.Alpha = 20;
+            this.cyberButton6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cyberButton6.BackColor = System.Drawing.Color.Transparent;
             this.cyberButton6.Background = true;
             this.cyberButton6.Background_WidthPen = 4F;
@@ -99,6 +101,7 @@
             // cyberButton4
             // 
             this.cyberButton4.Alpha = 20;
+            this.cyberButton4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cyberButton4.BackColor = System.Drawing.Color.Transparent;
             this.cyberButton4.Background = true;
             this.cyberButton4.Background_WidthPen = 4F;
@@ -140,6 +143,7 @@
             // cyberButton1
             // 
             this.cyberButton1.Alpha = 20;
+            this.cyberButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cyberButton1.BackColor = System.Drawing.Color.Transparent;
             this.cyberButton1.Background = true;
             this.cyberButton1.Background_WidthPen = 4F;
@@ -180,6 +184,7 @@
             // 
             // thunderLabel1
             // 
+            this.thunderLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.thunderLabel1.BackColor = System.Drawing.Color.Transparent;
             this.thunderLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thunderLabel1.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -192,6 +197,7 @@
             // txtTimKiem
             // 
             this.txtTimKiem.Alpha = 20;
+            this.txtTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTimKiem.BackColor = System.Drawing.Color.Transparent;
             this.txtTimKiem.Background_WidthPen = 3F;
             this.txtTimKiem.BackgroundPen = true;
@@ -268,8 +274,7 @@
             // 
             // lblSPTrongChiNhanh
             // 
-            this.lblSPTrongChiNhanh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSPTrongChiNhanh.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSPTrongChiNhanh.AutoSize = true;
             this.lblSPTrongChiNhanh.BackColor = System.Drawing.Color.Transparent;
             this.lblSPTrongChiNhanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
@@ -288,6 +293,7 @@
             // 
             // RTKhachHangForm
             // 
+            this.RTKhachHangForm.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RTKhachHangForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
             this.RTKhachHangForm.Controls.Add(this.cyberButton2);
             this.RTKhachHangForm.Controls.Add(this.lblDanhSachTrong);
@@ -298,7 +304,6 @@
             this.RTKhachHangForm.Controls.Add(this.txtTimKiem);
             this.RTKhachHangForm.Controls.Add(this.dgvKhoTong);
             this.RTKhachHangForm.Controls.Add(this.lblSPTrongChiNhanh);
-            this.RTKhachHangForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RTKhachHangForm.DrawIcon = false;
             this.RTKhachHangForm.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.RTKhachHangForm.HeadColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
@@ -315,6 +320,7 @@
             // cyberButton2
             // 
             this.cyberButton2.Alpha = 20;
+            this.cyberButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cyberButton2.BackColor = System.Drawing.Color.Transparent;
             this.cyberButton2.Background = true;
             this.cyberButton2.Background_WidthPen = 4F;
