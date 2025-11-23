@@ -12,7 +12,7 @@ namespace DLL
 
         public NhanVienDLL()
         {
-            db = new DBSTDMDataContext();
+            db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
             if (!db.DatabaseExists())
             {
                 throw new Exception("Không thể kết nối đến cơ sở dữ liệu.");
@@ -21,7 +21,7 @@ namespace DLL
 
         public List<nhan_vien> GetAllNhanVien()
         {
-            using (DBSTDMDataContext freshDb = new DBSTDMDataContext())
+            using (DBSTDMDataContext freshDb = new DBSTDMDataContext(ConnectDLL.ReadConnectionString()))
             {
                 return freshDb.nhan_viens.ToList();
             }
@@ -103,7 +103,7 @@ namespace DLL
         // Kiểm tra trạng thái hoạt động của nhân viên bằng mã nhân viên
         public bool CheckTrangThaiHoatDong(string maNV)
         {
-            using (DBSTDMDataContext db = new DBSTDMDataContext())
+            using (DBSTDMDataContext db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString()))
             {
                 // 1. Tìm nhân viên theo mã (Nhớ Trim() vì database dùng char cố định)
                 var nhanVien = db.nhan_viens.FirstOrDefault(nv => nv.ma_nhan_vien.Trim() == maNV.Trim());

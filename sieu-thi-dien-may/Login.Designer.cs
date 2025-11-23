@@ -34,12 +34,14 @@
 			this.thunderLabel2 = new ReaLTaiizor.Controls.ThunderLabel();
 			this.thunderLabel1 = new ReaLTaiizor.Controls.ThunderLabel();
 			this.cyberButton1 = new ReaLTaiizor.Controls.CyberButton();
+			this.btnConnect = new ReaLTaiizor.Controls.CyberButton();
 			this.nightForm1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// nightForm1
 			// 
 			this.nightForm1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
+			this.nightForm1.Controls.Add(this.btnConnect);
 			this.nightForm1.Controls.Add(this.txtMatKhau);
 			this.nightForm1.Controls.Add(this.txtMaNV);
 			this.nightForm1.Controls.Add(this.thunderLabel2);
@@ -138,20 +140,61 @@
 			this.cyberButton1.Lighting = false;
 			this.cyberButton1.LinearGradient_Background = false;
 			this.cyberButton1.LinearGradientPen = false;
-			this.cyberButton1.Location = new System.Drawing.Point(670, 310);
+			this.cyberButton1.Location = new System.Drawing.Point(556, 324);
 			this.cyberButton1.Name = "cyberButton1";
 			this.cyberButton1.PenWidth = 15;
 			this.cyberButton1.Rounding = true;
 			this.cyberButton1.RoundingInt = 70;
 			this.cyberButton1.Size = new System.Drawing.Size(130, 50);
 			this.cyberButton1.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-			this.cyberButton1.TabIndex = 0;
+			this.cyberButton1.TabIndex = 2;
 			this.cyberButton1.Tag = "Cyber";
 			this.cyberButton1.TextButton = "Đăng nhập";
 			this.cyberButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
 			this.cyberButton1.Timer_Effect_1 = 5;
 			this.cyberButton1.Timer_RGB = 300;
 			this.cyberButton1.Click += new System.EventHandler(this.cyberButton1_Click);
+			// 
+			// btnConnect
+			// 
+			this.btnConnect.Alpha = 20;
+			this.btnConnect.BackColor = System.Drawing.Color.Transparent;
+			this.btnConnect.Background = true;
+			this.btnConnect.Background_WidthPen = 4F;
+			this.btnConnect.BackgroundPen = true;
+			this.btnConnect.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+			this.btnConnect.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+			this.btnConnect.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+			this.btnConnect.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+			this.btnConnect.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+			this.btnConnect.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+			this.btnConnect.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+			this.btnConnect.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+			this.btnConnect.Effect_1 = true;
+			this.btnConnect.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+			this.btnConnect.Effect_1_Transparency = 25;
+			this.btnConnect.Effect_2 = true;
+			this.btnConnect.Effect_2_ColorBackground = System.Drawing.Color.White;
+			this.btnConnect.Effect_2_Transparency = 20;
+			this.btnConnect.Font = new System.Drawing.Font("Arial", 11F);
+			this.btnConnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+			this.btnConnect.Lighting = false;
+			this.btnConnect.LinearGradient_Background = false;
+			this.btnConnect.LinearGradientPen = false;
+			this.btnConnect.Location = new System.Drawing.Point(768, 324);
+			this.btnConnect.Name = "btnConnect";
+			this.btnConnect.PenWidth = 15;
+			this.btnConnect.Rounding = true;
+			this.btnConnect.RoundingInt = 70;
+			this.btnConnect.Size = new System.Drawing.Size(150, 50);
+			this.btnConnect.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+			this.btnConnect.TabIndex = 5;
+			this.btnConnect.Tag = "Cyber";
+			this.btnConnect.TextButton = "Cài đặt kết nối";
+			this.btnConnect.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+			this.btnConnect.Timer_Effect_1 = 5;
+			this.btnConnect.Timer_RGB = 300;
+			this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
 			// 
 			// Login
 			// 
@@ -178,5 +221,6 @@
         private ReaLTaiizor.Controls.CyberButton cyberButton1;
 		private ReaLTaiizor.Controls.ForeverTextBox txtMatKhau;
 		private ReaLTaiizor.Controls.ForeverTextBox txtMaNV;
+		private ReaLTaiizor.Controls.CyberButton btnConnect;
 	}
 }

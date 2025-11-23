@@ -250,6 +250,7 @@ namespace he_thong_dien_may
             tsGiamDoc.Visible = false;
             tsBaoCao.Visible = false;
 
+
 			// Bật lại theo từng quyền
 			switch (TaiKhoanBUS.currentUserQuyen)
 			{

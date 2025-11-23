@@ -9,7 +9,7 @@ namespace DLL
 	public class SanPhamTrongKhoTongDLL
 	{
 		public enum TruKhoStatus { ThanhCong, KhoNotFound, KhongDuHang, Loi }
-		DBSTDMDataContext db = new DBSTDMDataContext();
+		DBSTDMDataContext db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
         public SanPhamTrongKhoTongDLL()
         {
             if (!db.DatabaseExists())

@@ -8,7 +8,7 @@ namespace DLL
 {
     public class KhuVucDLL
     {
-        DBSTDMDataContext db = new DBSTDMDataContext();
+        DBSTDMDataContext db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
         public KhuVucDLL()
         {
             if (!db.DatabaseExists())

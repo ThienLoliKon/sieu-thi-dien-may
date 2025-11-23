@@ -8,7 +8,7 @@ namespace DLL
 {
 	public class NhaSanXuatDLL
 	{
-		DBSTDMDataContext db = new DBSTDMDataContext();
+		DBSTDMDataContext db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
 		public NhaSanXuatDLL()
 		{
 			if (!db.DatabaseExists())

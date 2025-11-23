@@ -12,7 +12,7 @@ namespace DLL
 
         public LuongDLL()
         {
-            db = new DBSTDMDataContext();
+            db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
             if (!db.DatabaseExists())
             {
                 throw new Exception("Không thể kết nối đến cơ sở dữ liệu.");
@@ -21,7 +21,7 @@ namespace DLL
 
         public List<luong> GetAllLuong()
         {
-            using (DBSTDMDataContext freshDb = new DBSTDMDataContext())
+            using (DBSTDMDataContext freshDb = new DBSTDMDataContext(ConnectDLL.ReadConnectionString()))
             {
                 return freshDb.luongs.ToList();
             }
@@ -29,7 +29,7 @@ namespace DLL
 
         public void AddLuong(luong luongMoi)
         {
-            using (DBSTDMDataContext dbContext = new DBSTDMDataContext())
+            using (DBSTDMDataContext dbContext = new DBSTDMDataContext(ConnectDLL.ReadConnectionString()))
             {
                 dbContext.luongs.InsertOnSubmit(luongMoi);
                 dbContext.SubmitChanges();
@@ -38,7 +38,7 @@ namespace DLL
 
         public void UpdateLuong(luong updateLuong)
         {
-            using (DBSTDMDataContext dbContext = new DBSTDMDataContext())
+            using (DBSTDMDataContext dbContext = new DBSTDMDataContext(ConnectDLL.ReadConnectionString()))
             {
                 var result = dbContext.luongs.SingleOrDefault(l => l.ma_phieu_luong == updateLuong.ma_phieu_luong);
                 if (result != null)
@@ -56,7 +56,7 @@ namespace DLL
 
         public void DeleteLuong(string maPhieuLuong)
         {
-            using (DBSTDMDataContext dbContext = new DBSTDMDataContext())
+            using (DBSTDMDataContext dbContext = new DBSTDMDataContext(ConnectDLL.ReadConnectionString()))
             {
                 var luong = dbContext.luongs.SingleOrDefault(l => l.ma_phieu_luong == maPhieuLuong);
 

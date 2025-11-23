@@ -8,7 +8,7 @@ namespace DLL
 {
     public class XuatKhoDLL
     {
-        DBSTDMDataContext db = new DBSTDMDataContext();
+        DBSTDMDataContext db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
         public XuatKhoDLL()
         {
             if (!db.DatabaseExists())

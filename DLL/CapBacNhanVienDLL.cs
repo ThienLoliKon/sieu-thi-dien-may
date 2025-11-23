@@ -12,7 +12,7 @@ namespace DLL
 
         public CapBacNhanVienDLL()
         {
-            db = new DBSTDMDataContext();
+            db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
             if (!db.DatabaseExists())
             {
                 throw new Exception("Không thể kết nối đến cơ sở dữ liệu.");
@@ -21,7 +21,7 @@ namespace DLL
 
         public List<cap_bac_nhan_vien> GetAllCapBacNhanVien()
         {
-            using (DBSTDMDataContext freshDb = new DBSTDMDataContext())
+            using (DBSTDMDataContext freshDb = new DBSTDMDataContext(ConnectDLL.ReadConnectionString()))
             {
                 return freshDb.cap_bac_nhan_viens.ToList();
             }

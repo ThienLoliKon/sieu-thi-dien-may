@@ -8,7 +8,7 @@ namespace DLL
 {
     public class KhoTongDLL
     {
-        DBSTDMDataContext db = new DBSTDMDataContext();
+        DBSTDMDataContext db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
         public KhoTongDLL()
         {
             if (!db.DatabaseExists())

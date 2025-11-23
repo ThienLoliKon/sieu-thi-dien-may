@@ -8,7 +8,7 @@ namespace DLL
 {
 	public class NhaCungCapDLL
 	{
-		DBSTDMDataContext db = new DBSTDMDataContext();
+		DBSTDMDataContext db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
 
 		public NhaCungCapDLL()
 		{

@@ -8,7 +8,7 @@ namespace DLL
 {
     public class XepHangDLL
     {
-        DBSTDMDataContext db = new DBSTDMDataContext();
+        DBSTDMDataContext db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
         public XepHangDLL()
         {
             if (!db.DatabaseExists())
@@ -84,7 +84,7 @@ namespace DLL
 
 		public float GetUuDaiByMaHoaDon(string maHD)
 		{
-			using (DBSTDMDataContext db = new DBSTDMDataContext())
+			using (DBSTDMDataContext db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString()))
 			{
 				var query = from hd in db.hoa_dons
 								// 1. Nối Hóa Đơn với Khách Hàng qua ma_khach_hang

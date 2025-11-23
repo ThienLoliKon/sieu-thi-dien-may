@@ -8,7 +8,7 @@ namespace DLL
 {
     public class NhapKhoDLL
     {
-        DBSTDMDataContext db = new DBSTDMDataContext();
+        DBSTDMDataContext db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
         public NhapKhoDLL()
         {
             if (!db.DatabaseExists())
