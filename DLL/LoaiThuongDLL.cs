@@ -12,7 +12,7 @@ namespace DLL
 
         public LoaiThuongDLL()
         {
-            db = new DBSTDMDataContext();
+            db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
             if (!db.DatabaseExists())
             {
                 throw new Exception("Không thể kết nối đến cơ sở dữ liệu.");
@@ -21,7 +21,7 @@ namespace DLL
 
         public List<loai_thuong> GetAllLoaiThuong()
         {
-            using (DBSTDMDataContext freshDb = new DBSTDMDataContext())
+            using (DBSTDMDataContext freshDb = new DBSTDMDataContext(ConnectDLL.ReadConnectionString()))
             {
                 return freshDb.loai_thuongs.ToList();
             }

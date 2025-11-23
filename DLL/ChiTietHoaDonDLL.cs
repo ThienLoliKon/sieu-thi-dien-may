@@ -8,7 +8,7 @@ namespace DLL
 {
 	public class ChiTietHoaDonDLL
 	{
-		DBSTDMDataContext db = new DBSTDMDataContext();
+		DBSTDMDataContext db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
 		public ChiTietHoaDonDLL()
 		{
 			if (!db.DatabaseExists())

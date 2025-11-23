@@ -83,5 +83,6 @@ namespace he_thong_dien_may
             txtTenChiNhanh.TextButton = dgvChiNhanh.SelectedRows[0].Cells[1].Value.ToString();
             //cbxKhuVuc.SelectedValue = dgvChiNhanh.SelectedRows[0].Cells[3].Value.ToString();
         }
+
     }
 }

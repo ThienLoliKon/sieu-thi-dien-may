@@ -11,16 +11,16 @@ namespace DLL
         private DBSTDMDataContext db;
 		public TaiKhoanDLL()
         {
-            db = new DBSTDMDataContext();
+            db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
             if (!db.DatabaseExists())
             {
                 throw new Exception("Không thể kết nối đến cơ sở dữ liệu.");
             }
         }
 
-        public List<tai_khoan> GetAllTaiKhoan()
+		public List<tai_khoan> GetAllTaiKhoan()
         {
-            using (DBSTDMDataContext freshDb = new DBSTDMDataContext())
+            using (DBSTDMDataContext freshDb = new DBSTDMDataContext(ConnectDLL.ReadConnectionString()))
             {
                 return freshDb.tai_khoans.ToList();
             }
@@ -58,7 +58,7 @@ namespace DLL
 		// Trong file TaiKhoanDLL.cs
 		public bool KiemTraDangNhap(string maNV, string matKhau)
 		{
-			using (DBSTDMDataContext db = new DBSTDMDataContext())
+			using (DBSTDMDataContext db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString()))
 			{
 				// Vệ sinh dữ liệu đầu vào
 				string maNhanVien = maNV.Trim();

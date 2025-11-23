@@ -20,7 +20,7 @@ namespace BUS
 
         private double GetMucThuongByLoaiThuong(string maLoaiThuong)
         {
-            var db = new DBSTDMDataContext();
+            var db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
             return db.loai_thuongs
                 .Where(lt => lt.ma_loai_thuong == maLoaiThuong)
                 .Select(lt => lt.muc_thuong)
@@ -122,7 +122,7 @@ namespace BUS
         public static event EventHandler OnThuongUpdated;
         public double TinhTongThuong(string maNV, DateTime thang)
         {
-            using (var db = new DBSTDMDataContext())
+            using (var db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString()))
             {
                 int month = thang.Month;
                 int year = thang.Year;

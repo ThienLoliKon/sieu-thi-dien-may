@@ -119,7 +119,7 @@ namespace he_thong_dien_may
 				coLoi = true;
 			}
 			return !coLoi; // SỬA LẠI THÀNH DÒNG NÀY
-						  
+
 		}
 
 		private void btnThem_Click(object sender, EventArgs e)
@@ -175,7 +175,7 @@ namespace he_thong_dien_may
 				MessageBox.Show("Vui lòng chọn dữ liệu muốn sửa");
 				return;
 			}
-			else if(!bus.UpdateHoaDon(txtMaHoaDon.Text, cboNhanVienLap.SelectedValue.ToString(), cboKhachHang.SelectedValue.ToString()))
+			else if (!bus.UpdateHoaDon(txtMaHoaDon.Text, cboNhanVienLap.SelectedValue.ToString(), cboKhachHang.SelectedValue.ToString()))
 			{
 				MessageBox.Show("Sửa hóa đơn thành công");
 			}
@@ -209,7 +209,7 @@ namespace he_thong_dien_may
 
 		private void btnXuatHoaDon_Click(object sender, EventArgs e)
 		{
-			if(CheckTestCase.checkKhoangTrang(txtMaHoaDon.Text) == false)
+			if (CheckTestCase.checkKhoangTrang(txtMaHoaDon.Text) == false)
 			{
 				MessageBox.Show("Vui lòng chọn hóa đơn cần xuất");
 				return;
@@ -220,5 +220,7 @@ namespace he_thong_dien_may
 			// 3. Hiển thị form báo cáo đó lên
 			formBaoCao.ShowDialog(); // Dùng .Show() hoặc .ShowDialog() tùy bạn
 		}
+
 	}
 }
+

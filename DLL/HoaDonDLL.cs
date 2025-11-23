@@ -8,7 +8,7 @@ namespace DLL
 {
 	public class HoaDonDLL
 	{
-		DBSTDMDataContext db = new DBSTDMDataContext();
+		DBSTDMDataContext db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
 		public HoaDonDLL()
 		{
 			if (!db.DatabaseExists())

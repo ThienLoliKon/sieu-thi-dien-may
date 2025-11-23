@@ -89,7 +89,7 @@ namespace BUS
         }
         private double GetMucPhatByLoaiPhat(string maLoaiThuong)
         {
-            var db = new DBSTDMDataContext();
+            var db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
             return db.loai_vi_phams
                 .Where(lt => lt.ma_loai_vi_pham == maLoaiThuong)
                 .Select(lt => lt.muc_phat)
@@ -148,7 +148,7 @@ namespace BUS
         public static event EventHandler OnViPhamUpdated;
         public double TinhTongPhat(string maNV, DateTime thang)
         {
-            using (var db = new DBSTDMDataContext())
+            using (var db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString()))
             {
                 int month = thang.Month;
                 int year = thang.Year;

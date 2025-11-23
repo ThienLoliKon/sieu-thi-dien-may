@@ -73,7 +73,7 @@
 			this.btnTimKiem.Lighting = false;
 			this.btnTimKiem.LinearGradient_Background = false;
 			this.btnTimKiem.LinearGradientPen = false;
-			this.btnTimKiem.Location = new System.Drawing.Point(932, 12);
+			this.btnTimKiem.Location = new System.Drawing.Point(881, 12);
 			this.btnTimKiem.Name = "btnTimKiem";
 			this.btnTimKiem.PenWidth = 15;
 			this.btnTimKiem.Rounding = true;
@@ -92,7 +92,7 @@
 			// 
 			this.dtpNgayKetThuc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.dtpNgayKetThuc.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
-			this.dtpNgayKetThuc.Location = new System.Drawing.Point(710, 23);
+			this.dtpNgayKetThuc.Location = new System.Drawing.Point(659, 23);
 			this.dtpNgayKetThuc.MinimumSize = new System.Drawing.Size(0, 30);
 			this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
 			this.dtpNgayKetThuc.Size = new System.Drawing.Size(200, 30);
@@ -102,7 +102,7 @@
 			// 
 			this.dtpNgayBatDau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.dtpNgayBatDau.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Medium;
-			this.dtpNgayBatDau.Location = new System.Drawing.Point(491, 23);
+			this.dtpNgayBatDau.Location = new System.Drawing.Point(440, 23);
 			this.dtpNgayBatDau.MinimumSize = new System.Drawing.Size(0, 30);
 			this.dtpNgayBatDau.Name = "dtpNgayBatDau";
 			this.dtpNgayBatDau.Size = new System.Drawing.Size(200, 30);

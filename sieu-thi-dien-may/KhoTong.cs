@@ -142,6 +142,11 @@ namespace he_thong_dien_may
             {
                 sptkt.ShowDialog();
             }
+            //SanPhamTrongKhoTong sptkt = new SanPhamTrongKhoTong(dgvKhoTong.SelectedRows[0].Cells[0].Value.ToString());
+            //if (sptkt != null)
+            //{
+            //    sptkt.ShowDialog();
+            //}
 
         }
 
@@ -276,6 +281,9 @@ namespace he_thong_dien_may
         {
             frmRPSanPhamTrongKhoTong rptkhotong = new frmRPSanPhamTrongKhoTong(dgvKhoTong.SelectedRows[0].Cells[0].Value.ToString());
             rptkhotong.ShowDialog();
+            
         }
+
+
     }
 }

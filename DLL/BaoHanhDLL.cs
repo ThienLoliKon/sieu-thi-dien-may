@@ -8,7 +8,7 @@ namespace DLL
 {
 	public class BaoHanhDLL
 	{
-		DBSTDMDataContext db = new DBSTDMDataContext();
+		DBSTDMDataContext db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
 		public BaoHanhDLL()
 		{
 			if (!db.DatabaseExists())

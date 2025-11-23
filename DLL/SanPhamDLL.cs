@@ -9,7 +9,7 @@ namespace DLL
 {
 	public class SanPhamDLL
 	{
-		DBSTDMDataContext db = new DBSTDMDataContext();
+		DBSTDMDataContext db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
 		public SanPhamDLL()
 		{
 			if (!db.DatabaseExists())

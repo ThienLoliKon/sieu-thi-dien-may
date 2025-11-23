@@ -12,7 +12,7 @@ namespace DLL
 
         public ThuongDLL()
         {
-            db = new DBSTDMDataContext();
+            db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
             if (!db.DatabaseExists())
             {
                 throw new Exception("Không thể kết nối đến cơ sở dữ liệu.");
@@ -20,7 +20,7 @@ namespace DLL
         }
         public double LayMucThuong(string maLT)
         {
-            using (var db = new DBSTDMDataContext())
+            using (var db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString()))
             {
                 return db.loai_thuongs
                     .Where(lt => lt.ma_loai_thuong == maLT)
@@ -31,7 +31,7 @@ namespace DLL
 
         public List<thuong> GetAllThuong()
         {
-            using (DBSTDMDataContext freshDb = new DBSTDMDataContext())
+            using (DBSTDMDataContext freshDb = new DBSTDMDataContext(ConnectDLL.ReadConnectionString()))
             {
                 return freshDb.thuongs.ToList();
             }

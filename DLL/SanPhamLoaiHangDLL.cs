@@ -8,7 +8,7 @@ namespace DLL
 {
 	public class SanPhamLoaiHangDLL
 	{
-		DBSTDMDataContext db = new DBSTDMDataContext();
+		DBSTDMDataContext db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
 		public SanPhamLoaiHangDLL()
 		{
 			if (!db.DatabaseExists())
