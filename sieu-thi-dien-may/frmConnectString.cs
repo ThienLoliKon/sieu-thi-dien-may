@@ -40,7 +40,7 @@ namespace stdm
 				bus.updateConnectString(server, dbName);
 				// --------------------------------
 
-				MessageBox.Show("Lưu thành công! Ứng dụng sẽ khởi động lại.");
+				MessageBox.Show("Lưu thành công!");
 				//Application.Restart();
 				//Environment.Exit(0);
 				Login login = new Login();
