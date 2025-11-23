@@ -83,5 +83,18 @@ namespace he_thong_dien_may
             txtTenChiNhanh.TextButton = dgvChiNhanh.SelectedRows[0].Cells[1].Value.ToString();
             //cbxKhuVuc.SelectedValue = dgvChiNhanh.SelectedRows[0].Cells[3].Value.ToString();
         }
+<<<<<<< Updated upstream
+=======
+
+        private void dgvChiNhanh_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void cyberButton3_Click(object sender, EventArgs e)
+        {
+            dgvChiNhanh.DataSource = chinhanhbus.searchChiNhanh(txtMaChiNhanh.TextButton, txtTenChiNhanh.TextButton);
+        }
+>>>>>>> Stashed changes
     }
 }

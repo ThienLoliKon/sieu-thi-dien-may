@@ -230,12 +230,14 @@ namespace he_thong_dien_may
 		{
 			frmReportSanPhamBanChay f = new frmReportSanPhamBanChay();
 			f.ShowDialog();
+			
 		}
 
 		private void tsmiDoanhThuCacChiNhanh_Click(object sender, EventArgs e)
 		{
 			frmReportDoanhThuChiNhanh f = new frmReportDoanhThuChiNhanh();
 			f.ShowDialog();
+			
 		}
 
 
@@ -280,6 +282,26 @@ namespace he_thong_dien_may
 		}
 
 
+        private void bảngLươngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PhieuLuong f = new PhieuLuong();
+            f.ShowDialog();
+        }
 
-	}
+        private void lỗiViPhạmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DanhSachViPham f = new DanhSachViPham();
+            f.ShowDialog();
+        }
+
+        private void danhSáchNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DanhSachNhanVien f = new DanhSachNhanVien();
+            f.ShowDialog();
+        }
+
+
+
+
+    }
 }
