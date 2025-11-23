@@ -57,6 +57,19 @@ namespace DLL
             //}
             //return false;
         }
+        public void xoaSPTrongKhoTong()
+        {
+            var sptrongkhotong = db.san_pham_trong_kho_tongs.Where(x => x.so_luong <= 0);
+            
+            if (sptrongkhotong != null)
+            {
+                foreach (var item in sptrongkhotong)
+                {
+                    db.san_pham_trong_kho_tongs.DeleteOnSubmit(item);
+                }
+                db.SubmitChanges();
+            }
+        }
     }
 		//public bool TruSoLuongKhoChiNhanh(string maSP, string maCN, int soLuongCanTru)
 		//{

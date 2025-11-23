@@ -1,6 +1,7 @@
 ﻿using DLL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,6 +40,11 @@ namespace BUS
             }
             return list;
         }
+        //}
+        //public DataTable getAllKVAsTable()
+        //{
+        //    return getAllKhuVuc(
+        //}
         public int addKhuVuc(KhuVuc kv)
         {
 

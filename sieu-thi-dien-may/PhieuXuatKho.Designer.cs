@@ -557,6 +557,9 @@
             // dgvPhieuXuatKho
             // 
             this.dgvPhieuXuatKho.AllowUserToResizeRows = false;
+            this.dgvPhieuXuatKho.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPhieuXuatKho.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhieuXuatKho.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvPhieuXuatKho.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -579,7 +582,6 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPhieuXuatKho.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPhieuXuatKho.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvPhieuXuatKho.EnableHeadersVisualStyles = false;
             this.dgvPhieuXuatKho.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvPhieuXuatKho.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -623,7 +625,8 @@
             // 
             // RTKhachHangForm
             // 
-            this.RTKhachHangForm.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.RTKhachHangForm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.RTKhachHangForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
             this.RTKhachHangForm.Controls.Add(this.cbxSanPham);
             this.RTKhachHangForm.Controls.Add(this.cyberButton3);
@@ -654,7 +657,6 @@
             this.RTKhachHangForm.Padding = new System.Windows.Forms.Padding(0, 31, 0, 0);
             this.RTKhachHangForm.Size = new System.Drawing.Size(1582, 853);
             this.RTKhachHangForm.TabIndex = 3;
-            this.RTKhachHangForm.Text = "KhachHang";
             this.RTKhachHangForm.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
             this.RTKhachHangForm.TitleBarTextColor = System.Drawing.Color.Gainsboro;
             // 

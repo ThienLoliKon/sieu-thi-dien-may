@@ -54,25 +54,25 @@ namespace he_thong_dien_may
         {
             if (!CheckTestCase.checkLenghtChuoi(txtMaPhieu.TextButton, 10))
             {
-                MessageBox.Show("Mã phiếu không được vượt quá 10 ký tự!");return false;
+                MessageBox.Show("Mã phiếu không được vượt quá 10 ký tự!"); return false;
             }
-            if(!CheckTestCase.checkKhoangTrang(txtSoLuong.TextButton, txtChiNhanh.TextButton))
+            if (!CheckTestCase.checkKhoangTrang(txtSoLuong.TextButton, txtChiNhanh.TextButton))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");return false;
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!"); return false;
             }
             if (!CheckTestCase.checkChiChuaSo(txtSoLuong.TextButton))
             {
-                MessageBox.Show("Số lượng phải nhập bằng số!");return false;
+                MessageBox.Show("Số lượng phải nhập bằng số!"); return false;
             }
             if (!CheckTestCase.checkLenghtChuoi(txtChiNhanh.TextButton, 10))
             {
-                MessageBox.Show("Chi nhánh chỉ được nhập tối đa 10 kí tự!");return false;
+                MessageBox.Show("Chi nhánh chỉ được nhập tối đa 10 kí tự!"); return false;
             }
             return true;
         }
         private void cyberButton1_Click_1(object sender, EventArgs e)
         {
-            if(validAllFields() == false)
+            if (validAllFields() == false)
             {
                 return;
             }
@@ -98,7 +98,10 @@ namespace he_thong_dien_may
             xk.manhanviennhapkho = txtNhanVien.TextButton;
             xk.soluong = int.Parse(txtSoLuong.TextButton);
             xk.machinhanh = this.machinhanh;
-            xk.maphieu = dgvPhieuXuatKho.SelectedRows[0].Cells[0].Value.ToString();
+            if (dgvPhieuXuatKho.Rows.Count != 0)
+            {
+                xk.maphieu = dgvPhieuXuatKho.SelectedRows[0].Cells[0].Value.ToString();
+            }
             return xk;
         }
 
@@ -121,7 +124,7 @@ namespace he_thong_dien_may
 
         private void cyberButton2_Click(object sender, EventArgs e)
         {
-            if(validAllFields() == false)
+            if (validAllFields() == false)
             {
                 return;
             }
