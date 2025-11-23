@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace stdm
 {
@@ -61,10 +62,15 @@ namespace stdm
 			f.Show();
 			this.Hide();
 		}
+
+		private void btnConnect_Click(object sender, EventArgs e)
+		{
+			ConnectBus.clearConnect();
+			frmConnectString frm = new frmConnectString(true);
+			frm.ShowDialog();
+			this.Hide();
+		}
+
+
 	}
-
-
-
-		
-	
 }

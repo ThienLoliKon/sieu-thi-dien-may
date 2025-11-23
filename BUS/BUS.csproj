@@ -51,6 +51,7 @@
     <Compile Include="BaoHanhBUS.cs" />
     <Compile Include="CheckTestCase.cs" />
     <Compile Include="ChiTietHoaDonBUS.cs" />
+    <Compile Include="ConnectBus.cs" />
     <Compile Include="DiemDanhBUS.cs" />
     <Compile Include="HamXuLy.cs" />
     <Compile Include="HoaDonBUS.cs" />

@@ -8,7 +8,7 @@ namespace DLL
 {
     public class KhachHangDLL
     {
-        DBSTDMDataContext db = new DBSTDMDataContext();
+        DBSTDMDataContext db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
         public KhachHangDLL()
         {
             if(!db.DatabaseExists())

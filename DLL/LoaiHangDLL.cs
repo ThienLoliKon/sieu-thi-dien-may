@@ -8,7 +8,7 @@ namespace DLL
 {
 	public class LoaiHangDLL
 	{
-		DBSTDMDataContext db = new DBSTDMDataContext();
+		DBSTDMDataContext db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
 
 		public LoaiHangDLL()
 		{

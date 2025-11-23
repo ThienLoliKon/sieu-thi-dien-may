@@ -74,6 +74,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -138,6 +141,12 @@
     </Compile>
     <Compile Include="frmChiTietHoaDon.Designer.cs">
       <DependentUpon>frmChiTietHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConnectString.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConnectString.Designer.cs">
+      <DependentUpon>frmConnectString.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDiemDanh.cs">
       <SubType>Form</SubType>
@@ -395,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietHoaDon.resx">
       <DependentUpon>frmChiTietHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConnectString.resx">
+      <DependentUpon>frmConnectString.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDiemDanh.resx">
       <DependentUpon>frmDiemDanh.cs</DependentUpon>

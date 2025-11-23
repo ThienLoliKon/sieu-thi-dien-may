@@ -8,7 +8,7 @@ namespace DLL
 {
 	public class KhuyenMaiDLL
 	{
-		DBSTDMDataContext db = new DBSTDMDataContext();
+		DBSTDMDataContext db = new DBSTDMDataContext(ConnectDLL.ReadConnectionString());
 
 		public KhuyenMaiDLL()
 		{
