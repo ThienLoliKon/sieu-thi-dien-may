@@ -1,7 +1,6 @@
 USE dien_may;
 GO
 
--- 1. XÓA SẠCH DỮ LIỆU CŨ
 EXEC sp_msforeachtable "ALTER TABLE ? NOCHECK CONSTRAINT all"
 DELETE FROM bao_hanh;
 DELETE FROM phieu_xuat_kho;
@@ -62,21 +61,21 @@ INSERT INTO khu_vuc (ma_khu_vuc, ten_khu_vuc, nhan_vien_quan_ly) VALUES
 
 -- Nhà Cung Cấp (NC...)
 INSERT INTO nha_cung_cap VALUES 
-('NC10000001', N'Sony VN', N'Q1 HCM'), 
-('NC10000002', N'Samsung Vina', N'Q9 HCM'), 
-('NC10000003', N'LG Electronics', N'Hà Nội'), 
-('NC10000004', N'Panasonic VN', N'HCM'), 
-('NC10000005', N'Daikin Vietnam', N'Hà Nội'), 
-('NC10000006', N'Apple FPT', N'Q3 HCM');
+('NCC1000001', N'Sony VN', N'Q1 HCM'), 
+('NCC1000002', N'Samsung Vina', N'Q9 HCM'), 
+('NCC1000003', N'LG Electronics', N'Hà Nội'), 
+('NCC1000004', N'Panasonic VN', N'HCM'), 
+('NCC1000005', N'Daikin Vietnam', N'Hà Nội'), 
+('NCC1000006', N'Apple FPT', N'Q3 HCM');
 
 -- Nhà Sản Xuất (NS...)
 INSERT INTO nha_san_xuat VALUES 
-('NS10000001', N'Sony', N'Nhật Bản'), 
-('NS10000002', N'Samsung', N'Hàn Quốc'), 
-('NS10000003', N'LG', N'Hàn Quốc'), 
-('NS10000004', N'Panasonic', N'Nhật Bản'), 
-('NS10000005', N'Daikin', N'Nhật Bản'), 
-('NS10000006', N'Apple', N'Mỹ');
+('NSX1000001', N'Sony', N'Nhật Bản'), 
+('NSX1000002', N'Samsung', N'Hàn Quốc'), 
+('NSX1000003', N'LG', N'Hàn Quốc'), 
+('NSX1000004', N'Panasonic', N'Nhật Bản'), 
+('NSX1000005', N'Daikin', N'Nhật Bản'), 
+('NSX1000006', N'Apple', N'Mỹ');
 
 -- Loại Hàng (LH...)
 INSERT INTO loai_hang VALUES 
@@ -109,33 +108,98 @@ INSERT INTO kho_tong VALUES
 ('KT10000002', NULL, N'Kho Miền Nam', N'BD', 8000);
 
 -- Vi Phạm & Thưởng (VP..., TH...)
-INSERT INTO loai_vi_pham VALUES ('VP10000001', N'Đi trễ', 1, 50000);
-INSERT INTO loai_thuong VALUES ('TH10000001', N'Chuyên cần', 26, 500000);
-
+go 
+INSERT INTO loai_vi_pham VALUES 
+('LV00000001', N'Đi muộn', 1, 50000),
+('LV00000002', N'Về sớm', 1, 50000),
+('LV00000003', N'Nghỉ không phép', 3, 500000),
+('LV00000004', N'Làm hỏng hàng', 2, 200000),
+('LV00000005', N'Mất trật tự', 1, 100000);
+go
+INSERT INTO loai_thuong VALUES 
+('LT00000001', N'Chuyên cần', 26, 500000),
+('LT00000002', N'Doanh số', 100, 2000000),
+('LT00000003', N'Xuất sắc', 1, 1000000),
+('LT00000004', N'Lễ tết', 0, 1000000),
+('LT00000005', N'Thâm niên', 5, 3000000);
+go
+INSERT INTO nhan_vien VALUES 
+('NV10000001', N'Nguyễn Quốc Hưng', 'CB10000005', '0901000001', N'HCM', 'CN10000004', 1), -- Giám đốc
+('NV10000002', N'Trần Thị Thu Hà', 'CB10000004', '0902000002', N'HN', 'CN10000001', 1),  -- QL Sản phẩm (Bắc)
+('NV10000003', N'Lê Văn Tùng', 'CB10000003', '0903000003', N'HCM', 'CN10000004', 1),  -- QL Khu vực Nam
+('NV10000004', N'Phạm Minh Tuấn', 'CB10000002', '0904000004', N'HN', 'CN10000001', 1),  -- QL Chi nhánh HN
+('NV10000005', N'Hoàng Thị Lan', 'CB10000002', '0905000005', N'ĐN', 'CN10000003', 1),  -- QL Chi nhánh ĐN
+('NV10000006', N'Võ Văn Kiệt', 'CB10000002', '0906000006', N'HCM', 'CN10000004', 1),  -- QL Chi nhánh Q1
+('NV10000007', N'Bùi Thị Hoa', 'CB10000001', '0907000007', N'HN', 'CN10000001', 1),   -- NV
+('NV10000008', N'Đỗ Văn Nam', 'CB10000001', '0908000008', N'HP', 'CN10000002', 1),
+('NV10000009', N'Ngô Thị Tuyết', 'CB10000001', '0909000009', N'ĐN', 'CN10000003', 1),
+('NV10000010', N'Lý Văn Hùng', 'CB10000001', '0910000010', N'HCM', 'CN10000004', 1),
+('NV10000011', N'Trương Thị Mỹ', 'CB10000001', '0911000011', N'HCM', 'CN10000004', 1),
+('NV10000012', N'Đinh Văn Dũng', 'CB10000001', '0912000012', N'HCM', 'CN10000005', 1),
+('NV10000013', N'Lâm Thị Bé', 'CB10000001', '0913000013', N'CT', 'CN10000006', 1),
+('NV10000014', N'Phan Văn Khải', 'CB10000001', '0914000014', N'HN', 'CN10000001', 1), -- NV Kho
+('NV10000015', N'Cao Thị Hồng', 'CB10000001', '0915000015', N'BD', 'CN10000004', 1);
+go
+INSERT INTO tai_khoan VALUES ('NV10000001', 'admin123', 'Admin');
+INSERT INTO tai_khoan VALUES ('NV10000002', '123456', 'QuanLy');
+INSERT INTO tai_khoan VALUES ('NV10000003', '123456', 'QuanLy');
+INSERT INTO tai_khoan VALUES ('NV10000004', '123', 'NhanVien');
+INSERT INTO tai_khoan VALUES ('NV10000006', '123', 'NhanVien');
+go 
+INSERT INTO diem_danh VALUES ('DD00000001', 'NV10000001', '2025-11-01 08:00:00', '2025-11-01 17:00:00');
+INSERT INTO diem_danh VALUES ('DD00000002', 'NV10000002', '2025-11-01 08:10:00', '2025-11-01 17:00:00'); -- Trễ
+INSERT INTO diem_danh VALUES ('DD00000003', 'NV10000003', '2025-11-01 07:55:00', '2025-11-01 17:10:00');
+INSERT INTO diem_danh VALUES ('DD00000004', 'NV10000004', '2025-11-01 08:00:00', '2025-11-01 16:30:00'); -- Về sớm
+INSERT INTO diem_danh VALUES ('DD00000005', 'NV10000006', '2025-11-01 08:00:00', '2025-11-01 17:00:00');
+INSERT INTO diem_danh VALUES ('DD00000006', 'NV10000001', '2025-11-02 08:00:00', '2025-11-02 17:00:00');
+INSERT INTO diem_danh VALUES ('DD00000007', 'NV10000002', '2025-11-02 08:00:00', '2025-11-02 17:00:00');
+INSERT INTO diem_danh VALUES ('DD00000008', 'NV10000003', '2025-11-02 08:00:00', '2025-11-02 17:00:00');
+INSERT INTO diem_danh VALUES ('DD00000009', 'NV10000004', '2025-11-02 08:30:00', '2025-11-02 17:00:00'); -- Trễ
+INSERT INTO diem_danh VALUES ('DD00000010', 'NV10000006', '2025-11-02 08:00:00', '2025-11-02 17:00:00');
+go
+INSERT INTO vi_pham VALUES ('VP00000001', 'NV10000002', 'LV00000001', '2025-11-01 08:10:00', 1);
+INSERT INTO vi_pham VALUES ('VP00000002', 'NV10000004', 'LV00000002', '2025-11-01 16:30:00', 1);
+INSERT INTO vi_pham VALUES ('VP00000003', 'NV10000004', 'LV00000001', '2025-11-02 08:30:00', 1);
+INSERT INTO vi_pham VALUES ('VP00000004', 'NV10000005', 'LV00000003', '2025-10-15 00:00:00', 1); -- Nghỉ việc
+INSERT INTO vi_pham VALUES ('VP00000005', 'NV10000006', 'LV00000004', '2025-11-05 10:00:00', 0);
+go
+-- Thưởng
+INSERT INTO thuong VALUES ('T000000001', 'NV10000001', 'LT00000002', 1, '2025-11-30 00:00:00');
+INSERT INTO thuong VALUES ('T000000002', 'NV10000003', 'LT00000001', 1, '2025-11-30 00:00:00');
+INSERT INTO thuong VALUES ('T000000003', 'NV10000006', 'LT00000003', 1, '2025-11-15 00:00:00');
+INSERT INTO thuong VALUES ('T000000004', 'NV10000001', 'LT00000005', 1, '2025-01-01 00:00:00');
+INSERT INTO thuong VALUES ('T000000005', 'NV10000002', 'LT00000004', 1, '2025-01-01 00:00:00');
+go
+-- Lương (Tháng 10)
+INSERT INTO luong VALUES ('L000000001', 'NV10000001', 30000000, 1.5, '2025-10-01', 5000000, 0);
+INSERT INTO luong VALUES ('L000000002', 'NV10000002', 15000000, 1.2, '2025-10-01', 1000000, 50000);
+INSERT INTO luong VALUES ('L000000003', 'NV10000003', 15000000, 1.2, '2025-10-01', 500000, 0);
+INSERT INTO luong VALUES ('L000000004', 'NV10000004', 8000000, 1.0, '2025-10-01', 0, 100000);
+INSERT INTO luong VALUES ('L000000005', 'NV10000006', 8000000, 1.0, '2025-10-01', 200000, 0);
 ---------------------------------------------------------------------------
 -- 4. SẢN PHẨM (SP...) - 20 Món
 ---------------------------------------------------------------------------
 INSERT INTO san_pham VALUES
-('SP10000001', N'Tivi Sony 4K 55 inch', 'NS10000001', 'NC10000001', 15, 24, 15000000, '2023-01-01'),
-('SP10000002', N'Tivi Samsung QLED 65"', 'NS10000002', 'NC10000002', 20, 36, 25000000, '2023-02-01'),
-('SP10000003', N'Tủ lạnh LG Inverter', 'NS10000003', 'NC10000003', 60, 24, 8000000, '2023-03-01'),
-('SP10000004', N'Tủ lạnh Pana 2 cánh', 'NS10000004', 'NC10000004', 55, 24, 7500000, '2023-03-15'),
-('SP10000005', N'Máy giặt LG Ngang', 'NS10000003', 'NC10000003', 50, 24, 9000000, '2023-04-01'),
-('SP10000006', N'Máy giặt Samsung Top', 'NS10000002', 'NC10000002', 45, 24, 6000000, '2023-04-10'),
-('SP10000007', N'Máy lạnh Daikin 1HP', 'NS10000005', 'NC10000005', 30, 12, 10000000, '2023-05-01'),
-('SP10000008', N'Máy lạnh Pana 1.5HP', 'NS10000004', 'NC10000004', 35, 12, 13000000, '2023-05-05'),
-('SP10000009', N'Nồi cơm Sharp', 'NS10000004', 'NC10000003', 3, 12, 1500000, '2023-06-01'),
-('SP10000010', N'Lò vi sóng Samsung', 'NS10000002', 'NC10000002', 10, 12, 3000000, '2023-06-15'),
-('SP10000011', N'Macbook Air M1', 'NS10000006', 'NC10000006', 1.2, 12, 18000000, '2022-12-01'),
-('SP10000012', N'Macbook Pro M2', 'NS10000006', 'NC10000006', 1.5, 12, 30000000, '2023-01-20'),
-('SP10000013', N'Quạt Senko', 'NS10000004', 'NC10000004', 5, 12, 500000, '2023-07-01'),
-('SP10000014', N'Bàn ủi Philips', 'NS10000004', 'NC10000003', 2, 12, 1200000, '2023-07-10'),
-('SP10000015', N'Máy xay Sunhouse', 'NS10000002', 'NC10000002', 3, 12, 800000, '2023-08-01'),
-('SP10000016', N'Tivi LG OLED 55"', 'NS10000003', 'NC10000003', 16, 24, 14000000, '2023-02-10'),
-('SP10000017', N'Máy lạnh LG Dual', 'NS10000003', 'NC10000003', 32, 24, 10500000, '2023-05-20'),
-('SP10000018', N'Tủ lạnh SideBySide', 'NS10000002', 'NC10000002', 100, 24, 30000000, '2023-03-20'),
-('SP10000019', N'Robot hút bụi Xiaomi', 'NS10000002', 'NC10000002', 4, 12, 6500000, '2023-09-01'),
-('SP10000020', N'Máy lọc không khí', 'NS10000004', 'NC10000004', 6, 12, 4000000, '2023-09-15');
+('SP10000001', N'Tivi Sony 4K 55 inch', 'NSX1000001', 'NCC1000001', 15, 24, 15000000, '2023-01-01'),
+('SP10000002', N'Tivi Samsung QLED 65"', 'NSX1000002', 'NCC1000002', 20, 36, 25000000, '2023-02-01'),
+('SP10000003', N'Tủ lạnh LG Inverter', 'NSX1000003', 'NCC1000003', 60, 24, 8000000, '2023-03-01'),
+('SP10000004', N'Tủ lạnh Pana 2 cánh', 'NSX1000004', 'NCC1000004', 55, 24, 7500000, '2023-03-15'),
+('SP10000005', N'Máy giặt LG Ngang', 'NSX1000003', 'NCC1000003', 50, 24, 9000000, '2023-04-01'),
+('SP10000006', N'Máy giặt Samsung Top', 'NSX1000002', 'NCC1000002', 45, 24, 6000000, '2023-04-10'),
+('SP10000007', N'Máy lạnh Daikin 1HP', 'NSX1000005', 'NCC1000005', 30, 12, 10000000, '2023-05-01'),
+('SP10000008', N'Máy lạnh Pana 1.5HP', 'NSX1000004', 'NCC1000004', 35, 12, 13000000, '2023-05-05'),
+('SP10000009', N'Nồi cơm Sharp', 'NSX1000004', 'NCC1000003', 3, 12, 1500000, '2023-06-01'),
+('SP10000010', N'Lò vi sóng Samsung', 'NSX1000002', 'NCC1000002', 10, 12, 3000000, '2023-06-15'),
+('SP10000011', N'Macbook Air M1', 'NSX1000006', 'NCC1000006', 1.2, 12, 18000000, '2022-12-01'),
+('SP10000012', N'Macbook Pro M2', 'NSX1000006', 'NCC1000006', 1.5, 12, 30000000, '2023-01-20'),
+('SP10000013', N'Quạt Senko', 'NSX1000004', 'NCC1000004', 5, 12, 500000, '2023-07-01'),
+('SP10000014', N'Bàn ủi Philips', 'NSX1000004', 'NCC1000003', 2, 12, 1200000, '2023-07-10'),
+('SP10000015', N'Máy xay Sunhouse', 'NSX1000002', 'NCC1000002', 3, 12, 800000, '2023-08-01'),
+('SP10000016', N'Tivi LG OLED 55"', 'NSX1000003', 'NCC1000003', 16, 24, 14000000, '2023-02-10'),
+('SP10000017', N'Máy lạnh LG Dual', 'NSX1000003', 'NCC1000003', 32, 24, 10500000, '2023-05-20'),
+('SP10000018', N'Tủ lạnh SideBySide', 'NSX1000002', 'NCC1000002', 100, 24, 30000000, '2023-03-20'),
+('SP10000019', N'Robot hút bụi Xiaomi', 'NSX1000002', 'NCC1000002', 4, 12, 6500000, '2023-09-01'),
+('SP10000020', N'Máy lọc không khí', 'NSX1000004', 'NCC1000004', 6, 12, 4000000, '2023-09-15');
 
 -- Liên kết Sản phẩm - Loại hàng
 INSERT INTO san_pham_loai_hang VALUES 
@@ -148,29 +212,13 @@ INSERT INTO san_pham_loai_hang VALUES
 ---------------------------------------------------------------------------
 -- 5. NHÂN SỰ & KHÁCH HÀNG (NV..., KH...)
 ---------------------------------------------------------------------------
-INSERT INTO nhan_vien VALUES 
-('NV10000001', N'Nguyễn Quốc Hưng', 'CB10000005', '0901', N'HCM', 'CN10000004', 1), -- Giám đốc
-('NV10000002', N'Trần Thị Thu Hà', 'CB10000004', '0902', N'HN', 'CN10000001', 1),  -- QL Sản phẩm (Bắc)
-('NV10000003', N'Lê Văn Tùng', 'CB10000003', '0903', N'HCM', 'CN10000004', 1),  -- QL Khu vực Nam
-('NV10000004', N'Phạm Minh Tuấn', 'CB10000002', '0904', N'HN', 'CN10000001', 1),  -- QL Chi nhánh HN
-('NV10000005', N'Hoàng Thị Lan', 'CB10000002', '0905', N'ĐN', 'CN10000003', 1),  -- QL Chi nhánh ĐN
-('NV10000006', N'Võ Văn Kiệt', 'CB10000002', '0906', N'HCM', 'CN10000004', 1),  -- QL Chi nhánh Q1
-('NV10000007', N'Bùi Thị Hoa', 'CB10000001', '0907', N'HN', 'CN10000001', 1),   -- NV
-('NV10000008', N'Đỗ Văn Nam', 'CB10000001', '0908', N'HP', 'CN10000002', 1),
-('NV10000009', N'Ngô Thị Tuyết', 'CB10000001', '0909', N'ĐN', 'CN10000003', 1),
-('NV10000010', N'Lý Văn Hùng', 'CB10000001', '0910', N'HCM', 'CN10000004', 1),
-('NV10000011', N'Trương Thị Mỹ', 'CB10000001', '0911', N'HCM', 'CN10000004', 1),
-('NV10000012', N'Đinh Văn Dũng', 'CB10000001', '0912', N'HCM', 'CN10000005', 1),
-('NV10000013', N'Lâm Thị Bé', 'CB10000001', '0913', N'CT', 'CN10000006', 1),
-('NV10000014', N'Phan Văn Khải', 'CB10000001', '0914', N'HN', 'CN10000001', 1), -- NV Kho
-('NV10000015', N'Cao Thị Hồng', 'CB10000001', '0915', N'BD', 'CN10000004', 1);
+
 
 -- Cập nhật quản lý kho/khu vực
 UPDATE kho_tong SET nhan_vien_quan_ly = 'NV10000002' WHERE ma_kho = 'KT10000001';
 UPDATE kho_tong SET nhan_vien_quan_ly = 'NV10000003' WHERE ma_kho = 'KT10000002';
 UPDATE khu_vuc SET nhan_vien_quan_ly = 'NV10000003' WHERE ma_khu_vuc = 'KV10000003';
 
-INSERT INTO tai_khoan SELECT ma_nhan_vien, '123', ma_cap_bac FROM nhan_vien;
 
 INSERT INTO khach_hang VALUES 
 ('KH10000001', N'Nguyễn Thị Mai', '000', N'N/A', 'XH10000001', 0),
@@ -213,6 +261,7 @@ INSERT INTO khuyen_mai VALUES
 ('KM10000001', 10, 'LH10000001', '2023-01-01', '2025-12-31'), -- 10% Tivi
 ('KM10000002', 20, 'LH10000004', '2023-06-01', '2023-09-30'), -- 20% Mùa hè
 ('KM10000003', 5,  'LH10000006', '2023-01-01', '2025-12-31'); -- 5% Laptop
+
 
 -- HD01: Khách Kim Cương (10%) mua Tivi (KM 10%)
 -- Giá Gốc 15tr. Giảm KH 10% (1.5tr). Giảm KM 10% (1.35tr). Còn 12.15tr.
@@ -279,3 +328,67 @@ INSERT INTO chi_tiet_hoa_don VALUES ('HD10000019', 'SP10000010', NULL, 1, 294000
 
 INSERT INTO hoa_don VALUES ('HD10000020', 'NV10000010', 'KH10000003', '2023-11-20');
 INSERT INTO chi_tiet_hoa_don VALUES ('HD10000020', 'SP10000016', 'KM10000001', 2, 11970000, 14000000, '2023-11-20');
+
+---------------------------------------------------------------------------
+-- 1. DỮ LIỆU BẢNG BẢO HÀNH (bao_hanh)
+---------------------------------------------------------------------------
+-- Logic: Lấy các khách hàng đã mua hàng trong bảng hoa_don để tạo bảo hành
+-- NV10000014 (Phan Văn Khải - Kho/Kỹ thuật) sẽ là người nhận bảo hành
+
+INSERT INTO bao_hanh (ma_bao_hanh, ma_san_pham, ma_khach_hang, nhan_vien_bao_hanh, ly_do, ngay_gui, ngay_xong, hoan_thanh) VALUES
+('BH10000001', 'SP10000001', 'KH10000002', 'NV10000014', N'Màn hình bị sọc ngang', '2023-12-01 09:00:00', '2023-12-05 10:00:00', 1), -- Đã xong
+('BH10000002', 'SP10000007', 'KH10000004', 'NV10000014', N'Máy lạnh không lạnh', '2023-11-25 14:00:00', '2023-11-27 16:00:00', 1), -- Đã xong
+('BH10000003', 'SP10000011', 'KH10000003', 'NV10000014', N'Bàn phím bị liệt phím A', '2023-11-20 08:30:00', NULL, 0), -- Đang sửa
+('BH10000004', 'SP10000003', 'KH10000001', 'NV10000014', N'Tủ lạnh kêu to', '2023-11-28 10:00:00', NULL, 0), -- Đang sửa
+('BH10000005', 'SP10000019', 'KH10000002', 'NV10000014', N'Robot không tự về dock sạc', '2023-11-18 11:00:00', '2023-11-19 09:00:00', 1);
+GO
+
+---------------------------------------------------------------------------
+-- 2. DỮ LIỆU PHIẾU NHẬP KHO (phieu_nhap_kho)
+---------------------------------------------------------------------------
+-- Logic: Nhập hàng từ Nhà cung cấp vào Kho Tổng
+-- Giá nhập thường thấp hơn giá bán khoảng 20-30%
+
+INSERT INTO phieu_nhap_kho (ma_phieu_nhap, ma_kho, ma_san_pham, ma_nhan_vien_kiem_tra, so_luong, don_gia) VALUES
+-- Nhập kho Miền Bắc (KT10000001)
+('PN10000001', 'KT10000001', 'SP10000001', 'NV10000014', 50, 12000000), -- Tivi Sony
+('PN10000002', 'KT10000001', 'SP10000007', 'NV10000014', 100, 8000000),  -- Máy lạnh Daikin
+('PN10000003', 'KT10000001', 'SP10000013', 'NV10000014', 200, 350000),   -- Quạt Senko
+
+-- Nhập kho Miền Nam (KT10000002)
+('PN10000004', 'KT10000002', 'SP10000002', 'NV10000014', 40, 20000000),  -- Tivi Samsung
+('PN10000005', 'KT10000002', 'SP10000004', 'NV10000014', 60, 6000000),   -- Tủ lạnh Pana
+('PN10000006', 'KT10000002', 'SP10000011', 'NV10000014', 30, 15000000);  -- Macbook Air M1
+GO
+
+---------------------------------------------------------------------------
+-- 3. DỮ LIỆU PHIẾU XUẤT KHO (phieu_xuat_kho)
+---------------------------------------------------------------------------
+-- Logic: Xuất từ Kho Tổng về các Chi Nhánh
+
+INSERT INTO phieu_xuat_kho (ma_phieu_xuat, ma_kho, ma_san_pham, ma_chi_nhanh_nhap, ma_nhan_vien_kiem_tra, so_luong) VALUES
+-- Xuất từ kho Bắc về CN Hà Nội (CN10000001)
+('PX10000001', 'KT10000001', 'SP10000001', 'CN10000001', 'NV10000014', 10),
+('PX10000002', 'KT10000001', 'SP10000007', 'CN10000001', 'NV10000014', 20),
+
+-- Xuất từ kho Bắc về CN Hải Phòng (CN10000002)
+('PX10000003', 'KT10000001', 'SP10000013', 'CN10000002', 'NV10000014', 50),
+
+-- Xuất từ kho Nam về CN Quận 1 (CN10000004)
+('PX10000004', 'KT10000002', 'SP10000002', 'CN10000004', 'NV10000014', 15),
+('PX10000005', 'KT10000002', 'SP10000011', 'CN10000004', 'NV10000014', 10),
+
+-- Xuất từ kho Nam về CN Cần Thơ (CN10000006)
+('PX10000006', 'KT10000002', 'SP10000004', 'CN10000006', 'NV10000014', 10);
+GO
+
+---------------------------------------------------------------------------
+-- 4. DỮ LIỆU NGHỈ VIỆC (nghi_viec)
+---------------------------------------------------------------------------
+-- Logic: Trong bảng vi_pham có nhân viên NV10000005 bị lỗi "Nghỉ không phép" nặng
+-- Ta cho nhân viên này nghỉ việc.
+
+
+-- Cập nhật trạng thái nhân viên này trong bảng nhan_vien thành 0 (đã nghỉ) nếu cần
+UPDATE nhan_vien SET trang_thai = 0 WHERE ma_nhan_vien = 'NV10000005';
+GO
