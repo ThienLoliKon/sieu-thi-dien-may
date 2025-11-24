@@ -241,5 +241,10 @@ namespace he_thong_dien_may
                 this.Close();
             }
         }
+
+        private void dgvLoaiThuong_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            LoadDL();
+        }
     }
 }

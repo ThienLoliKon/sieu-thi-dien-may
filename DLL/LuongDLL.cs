@@ -87,7 +87,7 @@ namespace DLL
             }
 
             maxId++;
-            return "L" + maxId.ToString("D3");
+            return "L" + maxId.ToString("D9");
         }
 
         public List<luong> SearchLuong(string keyword)

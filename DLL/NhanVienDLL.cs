@@ -82,7 +82,7 @@ namespace DLL
             maxId++;
 
             // Tạo mã mới với tiền tố "TG" và đảm bảo đúng định dạng
-            return "NV" + maxId.ToString("D3");
+            return "NV" + maxId.ToString("D8");
         }
         public List<nhan_vien> SearchNhanVien(string keyword)
         {

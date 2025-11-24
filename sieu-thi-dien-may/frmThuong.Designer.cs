@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbbTraCuu = new ReaLTaiizor.Controls.HopeComboBox();
             this.cbbMaNV = new ReaLTaiizor.Controls.HopeComboBox();
             this.cbbLoaiThuong = new ReaLTaiizor.Controls.HopeComboBox();
@@ -51,6 +51,7 @@
             this.txtMucThuong = new ReaLTaiizor.Controls.ForeverTextBox();
             this.foreverForm1 = new ReaLTaiizor.Forms.ForeverForm();
             this.txtMaThuong = new ReaLTaiizor.Controls.ForeverTextBox();
+            this.btnInDS = new ReaLTaiizor.Controls.CyberButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThuong)).BeginInit();
             this.foreverForm1.SuspendLayout();
             this.SuspendLayout();
@@ -192,37 +193,37 @@
             this.dgvThuong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvThuong.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvThuong.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvThuong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvThuong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvThuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvThuong.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvThuong.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvThuong.EnableHeadersVisualStyles = false;
             this.dgvThuong.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvThuong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvThuong.Location = new System.Drawing.Point(1, 352);
             this.dgvThuong.Name = "dgvThuong";
             this.dgvThuong.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvThuong.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvThuong.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvThuong.RowHeadersWidth = 51;
             this.dgvThuong.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvThuong.RowTemplate.Height = 24;
@@ -230,6 +231,7 @@
             this.dgvThuong.Size = new System.Drawing.Size(1598, 447);
             this.dgvThuong.TabIndex = 36;
             this.dgvThuong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThuong_CellClick);
+            this.dgvThuong.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvThuong_MouseDoubleClick);
             // 
             // btnDong
             // 
@@ -257,7 +259,7 @@
             this.btnDong.Lighting = false;
             this.btnDong.LinearGradient_Background = false;
             this.btnDong.LinearGradientPen = false;
-            this.btnDong.Location = new System.Drawing.Point(1142, 262);
+            this.btnDong.Location = new System.Drawing.Point(1174, 262);
             this.btnDong.Name = "btnDong";
             this.btnDong.PenWidth = 15;
             this.btnDong.Rounding = true;
@@ -298,7 +300,7 @@
             this.btnXoa.Lighting = false;
             this.btnXoa.LinearGradient_Background = false;
             this.btnXoa.LinearGradientPen = false;
-            this.btnXoa.Location = new System.Drawing.Point(824, 262);
+            this.btnXoa.Location = new System.Drawing.Point(917, 262);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.PenWidth = 15;
             this.btnXoa.Rounding = true;
@@ -339,7 +341,7 @@
             this.btnLuu.Lighting = false;
             this.btnLuu.LinearGradient_Background = false;
             this.btnLuu.LinearGradientPen = false;
-            this.btnLuu.Location = new System.Drawing.Point(482, 262);
+            this.btnLuu.Location = new System.Drawing.Point(381, 262);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.PenWidth = 15;
             this.btnLuu.Rounding = true;
@@ -497,6 +499,7 @@
             this.foreverForm1.Controls.Add(this.btnLoc);
             this.foreverForm1.Controls.Add(this.dgvThuong);
             this.foreverForm1.Controls.Add(this.btnDong);
+            this.foreverForm1.Controls.Add(this.btnInDS);
             this.foreverForm1.Controls.Add(this.btnXoa);
             this.foreverForm1.Controls.Add(this.btnLuu);
             this.foreverForm1.Controls.Add(this.btnThem);
@@ -543,6 +546,47 @@
             this.txtMaThuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtMaThuong.UseSystemPasswordChar = false;
             // 
+            // btnInDS
+            // 
+            this.btnInDS.Alpha = 20;
+            this.btnInDS.BackColor = System.Drawing.Color.Transparent;
+            this.btnInDS.Background = true;
+            this.btnInDS.Background_WidthPen = 4F;
+            this.btnInDS.BackgroundPen = true;
+            this.btnInDS.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnInDS.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnInDS.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.btnInDS.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnInDS.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnInDS.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+            this.btnInDS.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+            this.btnInDS.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            this.btnInDS.Effect_1 = true;
+            this.btnInDS.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+            this.btnInDS.Effect_1_Transparency = 25;
+            this.btnInDS.Effect_2 = true;
+            this.btnInDS.Effect_2_ColorBackground = System.Drawing.Color.White;
+            this.btnInDS.Effect_2_Transparency = 20;
+            this.btnInDS.Font = new System.Drawing.Font("Arial", 11F);
+            this.btnInDS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.btnInDS.Lighting = false;
+            this.btnInDS.LinearGradient_Background = false;
+            this.btnInDS.LinearGradientPen = false;
+            this.btnInDS.Location = new System.Drawing.Point(671, 262);
+            this.btnInDS.Name = "btnInDS";
+            this.btnInDS.PenWidth = 15;
+            this.btnInDS.Rounding = true;
+            this.btnInDS.RoundingInt = 70;
+            this.btnInDS.Size = new System.Drawing.Size(130, 50);
+            this.btnInDS.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.btnInDS.TabIndex = 34;
+            this.btnInDS.Tag = "Cyber";
+            this.btnInDS.TextButton = "In DS";
+            this.btnInDS.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.btnInDS.Timer_Effect_1 = 5;
+            this.btnInDS.Timer_RGB = 300;
+            this.btnInDS.Click += new System.EventHandler(this.btnInDS_Click);
+            // 
             // frmThuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -585,5 +629,6 @@
         private ReaLTaiizor.Controls.ForeverTextBox txtMucThuong;
         private ReaLTaiizor.Forms.ForeverForm foreverForm1;
         private ReaLTaiizor.Controls.ForeverTextBox txtMaThuong;
+        private ReaLTaiizor.Controls.CyberButton btnInDS;
     }
 }

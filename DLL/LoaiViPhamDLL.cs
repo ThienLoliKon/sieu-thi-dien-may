@@ -72,7 +72,7 @@ namespace DLL
             if (maLoaiViPhams.Any())
             {
                 maxId = maLoaiViPhams
-                            .Where(m => m.StartsWith("VP") && m.Length > 2)
+                            .Where(m => m.StartsWith("LV") && m.Length > 2)
                             .Select(m => {
                                 if (int.TryParse(m.Substring(2), out int id)) return id;
                                 return 0;
@@ -83,7 +83,7 @@ namespace DLL
 
             maxId++;
             // Tạo mã mới với tiền tố "VP" và đảm bảo đúng định dạng
-            return "VP" + maxId.ToString("D3");
+            return "LV" + maxId.ToString("D8");
         }
 
         public List<loai_vi_pham> SearchLoaiViPham(string keyword)

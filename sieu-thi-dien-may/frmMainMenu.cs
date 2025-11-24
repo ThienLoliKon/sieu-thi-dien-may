@@ -282,6 +282,11 @@ namespace he_thong_dien_may
 			}
 		}
 
+        private void bảngLươngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PhieuLuong f = new PhieuLuong();
+            f.ShowDialog();
+        }
 
         private void bảngLươngToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -294,6 +299,7 @@ namespace he_thong_dien_may
             DanhSachViPham f = new DanhSachViPham();
             f.ShowDialog();
         }
+
 
         private void danhSáchNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {

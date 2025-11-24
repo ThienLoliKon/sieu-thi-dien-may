@@ -121,13 +121,14 @@ namespace DLL
 		{
 			OnCreated();
 		}
-		
-		public DBSTDMDataContext() :
-				base("Data Source=LAPTOP-T2PFFCGC\\SQLEXPRESS;Initial Catalog=dien_may;Integrated Security=True;TrustServerCertificate=True", mappingSource)
-		{
-			OnCreated();
-		}
-		public DBSTDMDataContext(System.Data.IDbConnection connection) : 
+        public DBSTDMDataContext() :
+                base("Data Source=teedeedayne\\SQLEXPRESS;Initial Catalog=dien_may;Integrated Security=True;TrustServerCertificate=True", mappingSource)
+
+        {
+            OnCreated();
+        }
+
+        public DBSTDMDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -858,8 +859,6 @@ namespace DLL
 		
 		private EntitySet<nhan_vien> _nhan_viens;
 		
-		private EntitySet<tai_khoan> _tai_khoans;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -875,7 +874,6 @@ namespace DLL
 		public cap_bac_nhan_vien()
 		{
 			this._nhan_viens = new EntitySet<nhan_vien>(new Action<nhan_vien>(this.attach_nhan_viens), new Action<nhan_vien>(this.detach_nhan_viens));
-			this._tai_khoans = new EntitySet<tai_khoan>(new Action<tai_khoan>(this.attach_tai_khoans), new Action<tai_khoan>(this.detach_tai_khoans));
 			OnCreated();
 		}
 		
@@ -952,19 +950,6 @@ namespace DLL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="cap_bac_nhan_vien_tai_khoan", Storage="_tai_khoans", ThisKey="ma_cap_bac", OtherKey="quyen")]
-		public EntitySet<tai_khoan> tai_khoans
-		{
-			get
-			{
-				return this._tai_khoans;
-			}
-			set
-			{
-				this._tai_khoans.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -992,18 +977,6 @@ namespace DLL
 		}
 		
 		private void detach_nhan_viens(nhan_vien entity)
-		{
-			this.SendPropertyChanging();
-			entity.cap_bac_nhan_vien = null;
-		}
-		
-		private void attach_tai_khoans(tai_khoan entity)
-		{
-			this.SendPropertyChanging();
-			entity.cap_bac_nhan_vien = this;
-		}
-		
-		private void detach_tai_khoans(tai_khoan entity)
 		{
 			this.SendPropertyChanging();
 			entity.cap_bac_nhan_vien = null;
@@ -6427,8 +6400,6 @@ namespace DLL
 		
 		private string _quyen;
 		
-		private EntityRef<cap_bac_nhan_vien> _cap_bac_nhan_vien;
-		
 		private EntityRef<nhan_vien> _nhan_vien;
 		
     #region Extensibility Method Definitions
@@ -6445,7 +6416,6 @@ namespace DLL
 		
 		public tai_khoan()
 		{
-			this._cap_bac_nhan_vien = default(EntityRef<cap_bac_nhan_vien>);
 			this._nhan_vien = default(EntityRef<nhan_vien>);
 			OnCreated();
 		}
@@ -6505,49 +6475,11 @@ namespace DLL
 			{
 				if ((this._quyen != value))
 				{
-					if (this._cap_bac_nhan_vien.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnquyenChanging(value);
 					this.SendPropertyChanging();
 					this._quyen = value;
 					this.SendPropertyChanged("quyen");
 					this.OnquyenChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="cap_bac_nhan_vien_tai_khoan", Storage="_cap_bac_nhan_vien", ThisKey="quyen", OtherKey="ma_cap_bac", IsForeignKey=true)]
-		public cap_bac_nhan_vien cap_bac_nhan_vien
-		{
-			get
-			{
-				return this._cap_bac_nhan_vien.Entity;
-			}
-			set
-			{
-				cap_bac_nhan_vien previousValue = this._cap_bac_nhan_vien.Entity;
-				if (((previousValue != value) 
-							|| (this._cap_bac_nhan_vien.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._cap_bac_nhan_vien.Entity = null;
-						previousValue.tai_khoans.Remove(this);
-					}
-					this._cap_bac_nhan_vien.Entity = value;
-					if ((value != null))
-					{
-						value.tai_khoans.Add(this);
-						this._quyen = value.ma_cap_bac;
-					}
-					else
-					{
-						this._quyen = default(string);
-					}
-					this.SendPropertyChanged("cap_bac_nhan_vien");
 				}
 			}
 		}
