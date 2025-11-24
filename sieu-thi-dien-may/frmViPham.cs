@@ -3,7 +3,8 @@ using System;
 using System.Data;
 using System.Linq; 
 using System.Windows.Forms;
-using System.Text.RegularExpressions; 
+using System.Text.RegularExpressions;
+using stdm;
 
 namespace he_thong_dien_may
 {
@@ -359,6 +360,19 @@ namespace he_thong_dien_may
         {
             LoadComboBoxData();
             LoadDL();
+        }
+
+        private void InDS_Click(object sender, EventArgs e)
+        {
+            string maNV = cbbMaNV.SelectedValue?.ToString();
+            if (string.IsNullOrEmpty(maNV))
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên!");
+                return;
+            }
+
+            frmInLoiViPham1NV frm = new frmInLoiViPham1NV(maNV);
+            frm.ShowDialog();
         }
     }
 }

@@ -1,9 +1,10 @@
 ﻿using BUS;
+using stdm;
 using System;
 using System.Data;
 using System.Linq;
-using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace he_thong_dien_may
 {
@@ -298,6 +299,19 @@ namespace he_thong_dien_may
         {
             LoadComboBoxData();
             LoadDL();
+        }
+
+        private void btnInDS_Click(object sender, EventArgs e)
+        {
+            string maNV = cbbMaNV.SelectedValue?.ToString();
+            if (string.IsNullOrEmpty(maNV))
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên!");
+                return;
+            }
+
+            frmInThuong1NV frm = new frmInThuong1NV(maNV);
+            frm.ShowDialog();
         }
     }
 }
