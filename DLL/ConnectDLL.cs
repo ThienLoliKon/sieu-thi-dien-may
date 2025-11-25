@@ -12,59 +12,69 @@ namespace DLL
 		// Tên file cấu hình
 		private static string _fileName = "config.ini";
 
-		// Hàm lấy chuỗi kết nối từ file
-		public static string GetFilePath()
+		// --- HÀM LẤY ĐƯỜNG DẪN (ĐÃ SỬA) ---
+		private static string GetFilePath()
 		{
-			// Lấy đường dẫn thư mục chứa file .exe đang chạy (bin/Debug)
-			string basePath = AppDomain.CurrentDomain.BaseDirectory;
-			string filePath = Path.Combine(basePath, _fileName);
-			if (File.Exists(filePath))
+			string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+			string myFolder = Path.Combine(appDataPath, "SieuThiDienMay");
+
+			// SỬA LỖI 1: Dùng Directory.Exists và thêm dấu chấm than (!) để kiểm tra "Nếu chưa có"
+			if (!Directory.Exists(myFolder))
 			{
-				// Đọc và cắt bỏ khoảng trắng thừa
-				return File.ReadAllText(filePath).Trim();
+				Directory.CreateDirectory(myFolder);
 			}
 
-			return ""; // Trả về rỗng nếu chưa có file
+			return Path.Combine(myFolder, _fileName);
 		}
 
-		// Hàm GHI File (Static để gọi cho lẹ, hoặc để public thường cũng được)
+		// --- HÀM GHI FILE ---
 		public static void WriteConnectionString(string connString)
 		{
 			try
 			{
-				File.WriteAllText(_fileName, connString);
+				// SỬA LỖI 2: Lấy đường dẫn đầy đủ từ AppData
+				string path = GetFilePath();
+
+				// Ghi đè nội dung
+				File.WriteAllText(path, connString);
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Lỗi DLL: Không ghi được file cấu hình! " + GetFilePath() + ex.Message);
+				throw new Exception("Lỗi DLL: Không ghi được file cấu hình! " + ex.Message);
 			}
 		}
 
-		// Hàm ĐỌC File
+		// --- HÀM ĐỌC FILE ---
 		public static string ReadConnectionString()
 		{
-			//string path = GetFilePath();
-			if (File.Exists(_fileName))
+			try
 			{
-				return File.ReadAllText(_fileName).Trim();
+				string path = GetFilePath(); // Lấy đường dẫn AppData
+				if (File.Exists(path))
+				{
+					return File.ReadAllText(path).Trim();
+				}
 			}
+			catch { }
+
 			return "";
 		}
 
+		// --- HÀM XÓA FILE ---
 		public static void DeleteConnectionString()
 		{
 			try
 			{
-				if (File.Exists(_fileName))
+				string path = GetFilePath(); // SỬA LỖI 3: Lấy đường dẫn AppData
+				if (File.Exists(path))
 				{
-					File.Delete(_fileName);
+					File.Delete(path);
 				}
 			}
 			catch (Exception ex)
 			{
 				throw new Exception("Lỗi DLL: Không xóa được file cấu hình! " + ex.Message);
 			}
-
 		}
 
 
