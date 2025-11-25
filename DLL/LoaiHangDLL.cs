@@ -83,7 +83,7 @@ namespace DLL
 			{
 				maxId = listItem
 							.Where(m => m.StartsWith("LH")) 
-							.Select(m => int.Parse(m.Substring(8)))
+							.Select(m => int.Parse(m.Substring(2)))
 							.Max(); // Lấy giá trị lớn nhất
 			}
 

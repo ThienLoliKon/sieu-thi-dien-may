@@ -82,7 +82,7 @@ namespace DLL
 				.Where(m => m.StartsWith("NSX") && m.Length > 3)
 				.Select(m => {
 					int id;
-					return int.TryParse(m.Substring(7), out id) ? id : 0;
+					return int.TryParse(m.Substring(3), out id) ? id : 0;
 				});
 
 			if (nsxItems.Any())

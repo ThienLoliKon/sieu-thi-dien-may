@@ -83,7 +83,7 @@ namespace DLL
 			{
 				maxId = listItem
 							.Where(m => m.StartsWith("NCC")) // Lọc các mã bắt đầu bằng "TG"
-							.Select(m => int.Parse(m.Substring(7))) // Lấy phần số sau "TG"
+							.Select(m => int.Parse(m.Substring(3))) // Lấy phần số sau "TG"
 							.Max(); // Lấy giá trị lớn nhất
 			}
 
