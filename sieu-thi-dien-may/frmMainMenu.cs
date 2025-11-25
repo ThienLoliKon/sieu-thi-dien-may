@@ -193,21 +193,6 @@ namespace he_thong_dien_may
             f.ShowDialog();
         }
 
-        private void khuyếnMãiToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void doanhThuSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void doanhThuTheoThờiGianToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
 		private void crownMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
 		{
 

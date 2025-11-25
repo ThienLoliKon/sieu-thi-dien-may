@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
 			this.nightForm1 = new ReaLTaiizor.Forms.NightForm();
+			this.txtMatKhau = new ReaLTaiizor.Controls.ForeverTextBox();
 			this.btnConnect = new ReaLTaiizor.Controls.CyberButton();
 			this.txtMaNV = new ReaLTaiizor.Controls.ForeverTextBox();
 			this.thunderLabel2 = new ReaLTaiizor.Controls.ThunderLabel();
 			this.thunderLabel1 = new ReaLTaiizor.Controls.ThunderLabel();
 			this.cyberButton1 = new ReaLTaiizor.Controls.CyberButton();
-			this.txtMatKhau = new ReaLTaiizor.Controls.ForeverTextBox();
 			this.nightForm1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// nightForm1
 			// 
 			this.nightForm1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(51)))));
-			this.nightForm1.Controls.Add(this.btnConnect);
 			this.nightForm1.Controls.Add(this.txtMatKhau);
+			this.nightForm1.Controls.Add(this.btnConnect);
 			this.nightForm1.Controls.Add(this.txtMaNV);
 			this.nightForm1.Controls.Add(this.thunderLabel2);
 			this.nightForm1.Controls.Add(this.thunderLabel1);
@@ -59,6 +59,24 @@
 			this.nightForm1.TabIndex = 0;
 			this.nightForm1.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
 			this.nightForm1.TitleBarTextColor = System.Drawing.Color.Gainsboro;
+			// 
+			// txtMatKhau
+			// 
+			this.txtMatKhau.BackColor = System.Drawing.Color.Transparent;
+			this.txtMatKhau.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+			this.txtMatKhau.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+			this.txtMatKhau.DataBindings.Add(new System.Windows.Forms.Binding("UseSystemPasswordChar", global::stdm.Properties.Settings.Default, "pass", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.txtMatKhau.FocusOnHover = false;
+			this.txtMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+			this.txtMatKhau.Location = new System.Drawing.Point(556, 237);
+			this.txtMatKhau.MaxLength = 32767;
+			this.txtMatKhau.Multiline = false;
+			this.txtMatKhau.Name = "txtMatKhau";
+			this.txtMatKhau.ReadOnly = false;
+			this.txtMatKhau.Size = new System.Drawing.Size(362, 34);
+			this.txtMatKhau.TabIndex = 1;
+			this.txtMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+			this.txtMatKhau.UseSystemPasswordChar = global::stdm.Properties.Settings.Default.pass;
 			// 
 			// btnConnect
 			// 
@@ -179,24 +197,6 @@
 			this.cyberButton1.Timer_RGB = 300;
 			this.cyberButton1.Click += new System.EventHandler(this.cyberButton1_Click);
 			// 
-			// txtMatKhau
-			// 
-			this.txtMatKhau.BackColor = System.Drawing.Color.Transparent;
-			this.txtMatKhau.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-			this.txtMatKhau.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-			this.txtMatKhau.DataBindings.Add(new System.Windows.Forms.Binding("UseSystemPasswordChar", global::stdm.Properties.Settings.Default, "pass", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-			this.txtMatKhau.FocusOnHover = false;
-			this.txtMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.txtMatKhau.Location = new System.Drawing.Point(556, 237);
-			this.txtMatKhau.MaxLength = 32767;
-			this.txtMatKhau.Multiline = false;
-			this.txtMatKhau.Name = "txtMatKhau";
-			this.txtMatKhau.ReadOnly = false;
-			this.txtMatKhau.Size = new System.Drawing.Size(362, 34);
-			this.txtMatKhau.TabIndex = 1;
-			this.txtMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-			this.txtMatKhau.UseSystemPasswordChar = global::stdm.Properties.Settings.Default.pass;
-			// 
 			// Login
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -209,6 +209,7 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Login";
 			this.TransparencyKey = System.Drawing.Color.Fuchsia;
+			this.Load += new System.EventHandler(this.Login_Load);
 			this.nightForm1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
@@ -220,8 +221,8 @@
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel2;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel1;
         private ReaLTaiizor.Controls.CyberButton cyberButton1;
-		private ReaLTaiizor.Controls.ForeverTextBox txtMatKhau;
 		private ReaLTaiizor.Controls.ForeverTextBox txtMaNV;
 		private ReaLTaiizor.Controls.CyberButton btnConnect;
+		private ReaLTaiizor.Controls.ForeverTextBox txtMatKhau;
 	}
 }

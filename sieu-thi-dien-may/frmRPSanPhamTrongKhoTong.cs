@@ -99,8 +99,9 @@ namespace stdm
 		{
 			string duongDanChay = Application.StartupPath;
 			//string duongDanSolution = Directory.GetParent(duongDanChay).Parent.FullName;
+			string duongDanSolution = Directory.GetParent(duongDanChay).FullName;
 			string tenFileReport = "RPSanPhamTrongKhoTong.rpt";
-			string duongDanDayDu = Path.Combine(duongDanChay, tenFileReport);
+			string duongDanDayDu = Path.Combine(Application.StartupPath, tenFileReport);
 
 			// (Kiểm tra cho chắc)
 			if (!File.Exists(duongDanDayDu))
