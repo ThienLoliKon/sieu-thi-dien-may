@@ -5,12 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
 namespace stdm
 {
@@ -25,17 +26,56 @@ namespace stdm
         }
         private void loadConnectionInfo()
         {
-            ConnectionInfo myConnectionInfo = new ConnectionInfo();
-            myConnectionInfo.ServerName = @".\SQLEXPRESS";
-            myConnectionInfo.DatabaseName = "dien_may";
-            myConnectionInfo.IntegratedSecurity = true;
-
-            Tables tables = rpt.Database.Tables;
-            foreach (Table table in tables)
+            try
             {
-                TableLogOnInfo tableLogOnInfo = table.LogOnInfo;
-                tableLogOnInfo.ConnectionInfo = myConnectionInfo;
-                table.ApplyLogOnInfo(tableLogOnInfo);
+                // BƯỚC 1: Lấy chuỗi kết nối từ file Config (Gọi qua BUS hoặc DLL)
+                // (Hàm này là hàm bạn đã viết ở bài trước để đọc file .txt/.ini)
+                string fullConnectionString = BUS.ConnectBus.getStringConnect();
+
+                // Kiểm tra nếu chưa có chuỗi kết nối
+                if (string.IsNullOrEmpty(fullConnectionString))
+                {
+                    MessageBox.Show("Chưa có cấu hình kết nối database!");
+                    return;
+                }
+
+                // BƯỚC 2: Dùng "Máy bóc tách" SqlConnectionStringBuilder
+                // Nó sẽ tự động phân tích chuỗi "Data Source=...;Initial Catalog=..."
+                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder(fullConnectionString);
+
+                // BƯỚC 3: Gán thông tin đã bóc tách vào Crystal Report
+                ConnectionInfo myConnectionInfo = new ConnectionInfo();
+
+                // Lấy Server Name (Data Source)
+                myConnectionInfo.ServerName = builder.DataSource;
+
+                // Lấy Database Name (Initial Catalog)
+                myConnectionInfo.DatabaseName = builder.InitialCatalog;
+
+                // Xử lý đăng nhập (Windows hay SQL User)
+                if (builder.IntegratedSecurity)
+                {
+                    myConnectionInfo.IntegratedSecurity = true;
+                }
+                else
+                {
+                    myConnectionInfo.IntegratedSecurity = false;
+                    myConnectionInfo.UserID = builder.UserID;
+                    myConnectionInfo.Password = builder.Password;
+                }
+
+                // BƯỚC 4: Áp dụng cho tất cả các bảng trong Report
+                Tables tables = rpt.Database.Tables;
+                foreach (Table table in tables)
+                {
+                    TableLogOnInfo tableLogOnInfo = table.LogOnInfo;
+                    tableLogOnInfo.ConnectionInfo = myConnectionInfo;
+                    table.ApplyLogOnInfo(tableLogOnInfo);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi cấu hình Report: " + ex.Message);
             }
         }
 
