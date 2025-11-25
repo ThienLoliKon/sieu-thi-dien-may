@@ -98,9 +98,9 @@ namespace stdm
 		private void loadReport()
 		{
 			string duongDanChay = Application.StartupPath;
-			string duongDanSolution = Directory.GetParent(duongDanChay).Parent.FullName;
+			//string duongDanSolution = Directory.GetParent(duongDanChay).Parent.FullName;
 			string tenFileReport = "RPSanPhamTrongKhoTong.rpt";
-			string duongDanDayDu = Path.Combine(duongDanSolution, tenFileReport);
+			string duongDanDayDu = Path.Combine(duongDanChay, tenFileReport);
 
 			// (Kiểm tra cho chắc)
 			if (!File.Exists(duongDanDayDu))
