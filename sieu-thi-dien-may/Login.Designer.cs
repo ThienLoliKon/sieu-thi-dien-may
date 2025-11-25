@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
 			this.nightForm1 = new ReaLTaiizor.Forms.NightForm();
-			this.txtMatKhau = new ReaLTaiizor.Controls.ForeverTextBox();
+			this.btnConnect = new ReaLTaiizor.Controls.CyberButton();
 			this.txtMaNV = new ReaLTaiizor.Controls.ForeverTextBox();
 			this.thunderLabel2 = new ReaLTaiizor.Controls.ThunderLabel();
 			this.thunderLabel1 = new ReaLTaiizor.Controls.ThunderLabel();
 			this.cyberButton1 = new ReaLTaiizor.Controls.CyberButton();
-			this.btnConnect = new ReaLTaiizor.Controls.CyberButton();
+			this.txtMatKhau = new ReaLTaiizor.Controls.ForeverTextBox();
 			this.nightForm1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -60,22 +60,46 @@
 			this.nightForm1.TextAlignment = ReaLTaiizor.Forms.NightForm.Alignment.Left;
 			this.nightForm1.TitleBarTextColor = System.Drawing.Color.Gainsboro;
 			// 
-			// txtMatKhau
+			// btnConnect
 			// 
-			this.txtMatKhau.BackColor = System.Drawing.Color.Transparent;
-			this.txtMatKhau.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
-			this.txtMatKhau.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-			this.txtMatKhau.FocusOnHover = false;
-			this.txtMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.txtMatKhau.Location = new System.Drawing.Point(556, 237);
-			this.txtMatKhau.MaxLength = 32767;
-			this.txtMatKhau.Multiline = false;
-			this.txtMatKhau.Name = "txtMatKhau";
-			this.txtMatKhau.ReadOnly = false;
-			this.txtMatKhau.Size = new System.Drawing.Size(362, 34);
-			this.txtMatKhau.TabIndex = 1;
-			this.txtMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-			this.txtMatKhau.UseSystemPasswordChar = false;
+			this.btnConnect.Alpha = 20;
+			this.btnConnect.BackColor = System.Drawing.Color.Transparent;
+			this.btnConnect.Background = true;
+			this.btnConnect.Background_WidthPen = 4F;
+			this.btnConnect.BackgroundPen = true;
+			this.btnConnect.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+			this.btnConnect.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+			this.btnConnect.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+			this.btnConnect.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+			this.btnConnect.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+			this.btnConnect.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
+			this.btnConnect.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
+			this.btnConnect.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+			this.btnConnect.Effect_1 = true;
+			this.btnConnect.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
+			this.btnConnect.Effect_1_Transparency = 25;
+			this.btnConnect.Effect_2 = true;
+			this.btnConnect.Effect_2_ColorBackground = System.Drawing.Color.White;
+			this.btnConnect.Effect_2_Transparency = 20;
+			this.btnConnect.Font = new System.Drawing.Font("Arial", 11F);
+			this.btnConnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+			this.btnConnect.Lighting = false;
+			this.btnConnect.LinearGradient_Background = false;
+			this.btnConnect.LinearGradientPen = false;
+			this.btnConnect.Location = new System.Drawing.Point(768, 324);
+			this.btnConnect.Name = "btnConnect";
+			this.btnConnect.PenWidth = 15;
+			this.btnConnect.Rounding = true;
+			this.btnConnect.RoundingInt = 70;
+			this.btnConnect.Size = new System.Drawing.Size(150, 50);
+			this.btnConnect.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+			this.btnConnect.TabIndex = 5;
+			this.btnConnect.Tag = "Cyber";
+			this.btnConnect.TextButton = "Cài đặt kết nối";
+			this.btnConnect.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+			this.btnConnect.Timer_Effect_1 = 5;
+			this.btnConnect.Timer_RGB = 300;
+			this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
 			// 
 			// txtMaNV
 			// 
@@ -155,46 +179,23 @@
 			this.cyberButton1.Timer_RGB = 300;
 			this.cyberButton1.Click += new System.EventHandler(this.cyberButton1_Click);
 			// 
-			// btnConnect
+			// txtMatKhau
 			// 
-			this.btnConnect.Alpha = 20;
-			this.btnConnect.BackColor = System.Drawing.Color.Transparent;
-			this.btnConnect.Background = true;
-			this.btnConnect.Background_WidthPen = 4F;
-			this.btnConnect.BackgroundPen = true;
-			this.btnConnect.ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-			this.btnConnect.ColorBackground_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-			this.btnConnect.ColorBackground_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-			this.btnConnect.ColorBackground_Pen = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-			this.btnConnect.ColorLighting = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-			this.btnConnect.ColorPen_1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(52)))), ((int)(((byte)(68)))));
-			this.btnConnect.ColorPen_2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
-			this.btnConnect.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-			this.btnConnect.Effect_1 = true;
-			this.btnConnect.Effect_1_ColorBackground = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(200)))), ((int)(((byte)(238)))));
-			this.btnConnect.Effect_1_Transparency = 25;
-			this.btnConnect.Effect_2 = true;
-			this.btnConnect.Effect_2_ColorBackground = System.Drawing.Color.White;
-			this.btnConnect.Effect_2_Transparency = 20;
-			this.btnConnect.Font = new System.Drawing.Font("Arial", 11F);
-			this.btnConnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-			this.btnConnect.Lighting = false;
-			this.btnConnect.LinearGradient_Background = false;
-			this.btnConnect.LinearGradientPen = false;
-			this.btnConnect.Location = new System.Drawing.Point(768, 324);
-			this.btnConnect.Name = "btnConnect";
-			this.btnConnect.PenWidth = 15;
-			this.btnConnect.Rounding = true;
-			this.btnConnect.RoundingInt = 70;
-			this.btnConnect.Size = new System.Drawing.Size(150, 50);
-			this.btnConnect.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-			this.btnConnect.TabIndex = 5;
-			this.btnConnect.Tag = "Cyber";
-			this.btnConnect.TextButton = "Cài đặt kết nối";
-			this.btnConnect.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-			this.btnConnect.Timer_Effect_1 = 5;
-			this.btnConnect.Timer_RGB = 300;
-			this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+			this.txtMatKhau.BackColor = System.Drawing.Color.Transparent;
+			this.txtMatKhau.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
+			this.txtMatKhau.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+			this.txtMatKhau.DataBindings.Add(new System.Windows.Forms.Binding("UseSystemPasswordChar", global::stdm.Properties.Settings.Default, "pass", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.txtMatKhau.FocusOnHover = false;
+			this.txtMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+			this.txtMatKhau.Location = new System.Drawing.Point(556, 237);
+			this.txtMatKhau.MaxLength = 32767;
+			this.txtMatKhau.Multiline = false;
+			this.txtMatKhau.Name = "txtMatKhau";
+			this.txtMatKhau.ReadOnly = false;
+			this.txtMatKhau.Size = new System.Drawing.Size(362, 34);
+			this.txtMatKhau.TabIndex = 1;
+			this.txtMatKhau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+			this.txtMatKhau.UseSystemPasswordChar = global::stdm.Properties.Settings.Default.pass;
 			// 
 			// Login
 			// 

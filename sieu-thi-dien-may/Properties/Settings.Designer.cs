@@ -33,5 +33,17 @@ namespace stdm.Properties {
                 return ((string)(this["dien_mayConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool pass {
+            get {
+                return ((bool)(this["pass"]));
+            }
+            set {
+                this["pass"] = value;
+            }
+        }
     }
 }

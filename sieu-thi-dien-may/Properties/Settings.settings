@@ -10,5 +10,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=TEEDEEDAYNE\SQLEXPRESS;Initial Catalog=dien_may;Integrated Security=True;TrustServerCertificate=True</Value>
     </Setting>
+    <Setting Name="pass" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
