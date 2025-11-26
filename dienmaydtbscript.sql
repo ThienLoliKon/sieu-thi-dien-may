@@ -462,7 +462,3 @@ alter table chi_tiet_hoa_don
 add constraint FK_chi_tiet_hoa_don
     foreign key (ma_khuyen_mai) references khuyen_mai(ma_khuyen_mai);
 go
-
-alter table tai_khoan
-add constraint FK_tai_khoan 
-    foreign key (quyen) references cap_bac_nhan_vien(ma_cap_bac);
