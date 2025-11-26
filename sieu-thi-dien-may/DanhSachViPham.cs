@@ -80,7 +80,7 @@ namespace stdm
         {
             // 1. Lấy thư mục đang chạy (là ...\bin\Debug)
             string duongDanChay = Application.StartupPath;
-            string duongDanSolution = Directory.GetParent(duongDanChay).FullName;
+            //string duongDanSolution = Directory.GetParent(duongDanChay).FullName;
 
             // 3. Tên file report của bạn
             string tenFileReport = "rptViPham.rpt";

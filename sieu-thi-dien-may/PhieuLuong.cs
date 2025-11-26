@@ -27,13 +27,13 @@ namespace stdm
         {
             // 1. Lấy thư mục đang chạy (là ...\bin\Debug)
             string duongDanChay = Application.StartupPath;
-            string duongDanSolution = Directory.GetParent(duongDanChay).Parent.FullName;
+            //string duongDanSolution = Directory.GetParent(duongDanChay).Parent.FullName;
 
             // 3. Tên file report của bạn
             string tenFileReport = "rptPhieuLuong.rpt";
 
             // 4. Ghép lại để có đường dẫn TUYỆT ĐỐI
-            string duongDanDayDu = Path.Combine(duongDanSolution, tenFileReport);
+            string duongDanDayDu = Path.Combine(duongDanChay, tenFileReport);
 
             // (Kiểm tra cho chắc)
             if (!File.Exists(duongDanDayDu))
